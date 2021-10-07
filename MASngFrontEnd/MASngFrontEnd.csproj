@@ -2646,6 +2646,9 @@
     <EmbeddedResource Include="Transactional\CO\Cost\FrmCO15DetalleMop.resx">
       <DependentUpon>FrmCO15DetalleMop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO16_MopSinRegistrar.resx">
+      <DependentUpon>FrmCO16_MopSinRegistrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\FrmCierre1.resx">
       <DependentUpon>FrmCierre1.cs</DependentUpon>
     </EmbeddedResource>
