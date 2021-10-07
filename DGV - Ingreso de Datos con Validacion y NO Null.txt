@@ -1,0 +1,103 @@
+FrmHR10 - Ejemplo
+        private readonly decimal? _defaultValue = 0;
+        string defaultFormattedValue = "0"; //Some default formatted value
+
+        private void dgvData_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;  //Header
+            var celdaModificada = e.ColumnIndex;
+            var dgv = (DataGridView) sender;
+            decimal valor = 0;
+
+            var basico = (decimal) dgv[__basico.Name, e.RowIndex].Value;
+            var imponible= (decimal) dgv[__imponible.Name, e.RowIndex].Value;
+            var noimpo = (decimal)dgv[__noimponible.Name, e.RowIndex].Value;
+            var desc = (decimal)dgv[__descuento.Name, e.RowIndex].Value;
+            var desc2 = (decimal)dgv[__descuento2.Name, e.RowIndex].Value;
+            var adic = (decimal)dgv[__adicional.Name, e.RowIndex].Value;
+            var netoPagar = (decimal)dgv[__netoPagar.Name, e.RowIndex].Value;
+            var adeudado = (decimal)dgv[__adeudado.Name, e.RowIndex].Value;
+
+            valor = imponible + noimpo - desc - desc2+adic;
+            dgv[__netoPagar.Name, e.RowIndex].Value = valor;
+            dgv[__adeudado.Name, e.RowIndex].Value = valor;
+
+            ReindexAndSum();
+        }
+        private void dgvData_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            var dgv = (DataGridView) sender;
+            e.Control.KeyPress -= new KeyPressEventHandler(CeldaCheck_KeyPress);
+
+            if (dgv.CurrentCell.ColumnIndex == (decimal) dgv.Columns[__basico.Name].Index)
+            {
+                //Desired Column
+                if (e.Control is TextBox tb)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(CeldaCheck_KeyPress);
+                }
+            }
+
+            if (dgv.CurrentCell.ColumnIndex == (decimal) dgv.Columns[__imponible.Name].Index)
+            {
+                //Desired Column
+                if (e.Control is TextBox tb)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(CeldaCheck_KeyPress);
+                }
+            }
+
+            if (dgv.CurrentCell.ColumnIndex == (decimal) dgv.Columns[__noimponible.Name].Index)
+            {
+                //Desired Column
+                if (e.Control is TextBox tb)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(CeldaCheck_KeyPress);
+                }
+            }
+
+            if (dgv.CurrentCell.ColumnIndex == (decimal) dgv.Columns[__descuento2.Name].Index)
+            {
+                //Desired Column
+                if (e.Control is TextBox tb)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(CeldaCheck_KeyPress);
+                }
+            }
+
+
+            if (dgv.CurrentCell.ColumnIndex == (decimal) dgv.Columns[__descuento.Name].Index)
+            {
+                //Desired Column
+                if (e.Control is TextBox tb)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(CeldaCheck_KeyPress);
+                }
+            }
+
+
+            if (dgv.CurrentCell.ColumnIndex == (decimal) dgv.Columns[__adicional.Name].Index)
+            {
+                //Desired Column
+                if (e.Control is TextBox tb)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(CeldaCheck_KeyPress);
+                }
+            }
+        }
+        private void CeldaCheck_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormatAndConversions.SoloDecimalKeyPress(sender, e, true,allowSignoMoneda:true);
+        }
+        private void dgvData_CellParsing(object sender, DataGridViewCellParsingEventArgs e)
+        {
+            var value = string.Format("{0}", e.Value);
+            if (value == string.Empty || value == "\"\"")
+                e.Value = _defaultValue;
+            e.ParsingApplied = true;
+        }
+        private void dgvData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value is int? && (int?) e.Value == _defaultValue)
+                e.Value = defaultFormattedValue;
+        }

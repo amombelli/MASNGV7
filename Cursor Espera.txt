@@ -1,0 +1,7 @@
+// Set cursor as hourglass
+Cursor.Current = Cursors.WaitCursor;
+
+// Execute your time-intensive hashing code here...
+
+// Set cursor as default arrow
+Cursor.Current = Cursors.Default;

@@ -1,0 +1,10 @@
+Cuando desaparece POCO clase -->
+
+2020.07.30 - No pude de ninguna manera reconstruir las clases POCO
+1.- Borre modelo EDMX desde la aplicacion
+2.- Reconstruí modelo EDMX
+3. Elimine de SQL layer el model.tt y el Tecser.model.context
+
+TecserModel
+TescerData
+

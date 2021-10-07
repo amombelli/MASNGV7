@@ -1,0 +1,96 @@
+
+************  MENSAJE YESNO
+
+var dialogResult = MessageBox.Show(@"Confirma la reversion del ingreso ?", @"Reversion Ingreso Temporal", MessageBoxButtons.YesNo);
+if (dialogResult == DialogResult.Yes)
+{
+    //do something
+}
+else if (dialogResult == DialogResult.No)
+{
+    //do something else
+}
+
+
+***********    CURRENTVALUES.SETVALUES
+
+using (var db = new TecserData(GlobalApp.CnnApp))
+{
+var query = db.T0019_ZTERM.SingleOrDefault(c => c.ZTERM.Equals(structure.ZTERM));
+if (query == null)
+{
+db.T0019_ZTERM.Add(structure);
+}
+else
+{
+db.Entry(query).CurrentValues.SetValues(structure);
+}
+
+return db.SaveChanges() > 0;
+
+}
+
+
+****
+public IList ListSalesOrderbyClienteT6(int idClienteT6)
+{
+    using (var db = new TecserData(GlobalApp.CnnApp))
+    {
+        var query = from cli in db.T0007_CLI_ENTREGA
+            join so in db.T0045_OV_HEADER on cli.ID_CLI_ENTREGA equals so.CLIENTE
+            where cli.IDCLIENTE == idClienteT6
+            orderby so.IDOV descending
+            select new {so.IDOV, so.FECHA_OV, so.MetodoIngreso, so.StatusOV, so.StatusEN};
+        return query.ToList();
+    }
+
+}
+
+******
+public IList CRMHistorico_ByMaterial_and_ByCustomer(string materialAka, int idCustomerT6)
+{
+    using (var db = new TecserData(GlobalApp.CnnApp))
+    {
+        var query = from cli in db.T0007_CLI_ENTREGA
+            join h in db.T0045_OV_HEADER on cli.ID_CLI_ENTREGA equals h.CLIENTE
+            join I in db.T0046_OV_ITEM on new {a = h.IDOV} equals new {a = I.IDOV}
+            where cli.IDCLIENTE ==idCustomerT6
+            orderby h.IDOV descending 
+            select new
+            {
+                SO_N = h.IDOV,
+                KGPEDIDO = I.Cantidad,
+                KGDESPACHADO = I.KGStockDespachados,
+                MONEDA = I.MonedaCotiz,
+                LX = I.MODO,
+                PRECIO = I.PrecioUnitario,
+                PRL1 = I.PRECIO1,
+                PRL5 = I.PRECIO2,
+                ESTADO = I.StatusItem,
+                PRODUCTO = I.Material,
+                FECHA = h.FECHA_OV
+            };
+        return query.Where(c => c.PRODUCTO.Equals(materialAka)).ToList();
+    }
+}
+
+*** ***
+
+
+    using (var f0 = new FrmHr12PagoSyJ(idSyj))
+    {
+        if (f0.ShowDialog() == DialogResult.OK)
+        {
+            //string custName = f0.CustomerName;
+            //SaveToFile(custName);
+        }
+    }
+	
+	/***en el otro form
+		this.Close();
+		this.DialogResult = DialogResult.OK;
+		return;
+		**/
+
+
+

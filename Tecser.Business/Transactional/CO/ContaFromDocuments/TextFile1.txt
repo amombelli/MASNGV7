@@ -1,0 +1,5 @@
+﻿aca vamos a poner todos las clases para generar las rutinas enteras de la contabilizacion
+
+alta cta cte
+alta t0400
+alta t4041

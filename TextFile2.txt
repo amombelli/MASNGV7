@@ -1,0 +1,48 @@
+MANEJO DE PERMISOS - COMBOS
+
+Clase: HHComboManager
+
+Asingacion Combobox =>  cmbAprobadoPor.Items.AddRange(HRComboManager.GetListaEmployee("RTNAPRUEBAFE").ToArray());
+
+Seleccion: cmbAprobadoPor.SelectedItem.ToString()
+
+
+
+
+
+
+SELECT * FROM T0085_HHRR_PERSONAL_BASIC  --> Datos Basicos Empleados
+SELECT * FROM T0085_PERSONAL --> borrar
+SELECT * FROM T0086_HHRR_POSICIONES --> Posiciones Disponibles
+SELECT * FROM T0087_HHRR_DISPONIBILIDAD --> Caducar y pasar a nuevo formato
+SELECT * FROM T0088_HHRR_DatosPersonales --> Datos Personales Empleados
+
+
+
+
+
+
+
+
+
+ //var x = new HRComboManager();
+//x.Addfuncion("RecibeRtn","Recibe Devoluciones de Materiales de Cliente");
+//x.Addfuncion("ApruebaRtnFe", "Aprueba la Devolucion del Material FE (Lab)");
+//x.Addfuncion("ApruebaRtnCliente", "Aprueba la Devolucion por Error de Cliente");
+
+//x.AddAsignacion("JFILARDO","RECIBERTN");
+//x.AddAsignacion("NPEREYRA", "RECIBERTN");
+//x.AddAsignacion("LAVILA", "RECIBERTN");
+//x.AddAsignacion("NMOMBELLI", "RECIBERTN");
+
+//x.AddAsignacion("NMOMBELLI", "ApruebaRtnFe");
+//x.AddAsignacion("MMOMBELLI", "ApruebaRtnFe");
+//x.AddAsignacion("JFILARDO", "ApruebaRtnFe");
+//x.AddAsignacion("NPEREYRA", "ApruebaRtnFe");
+
+//x.AddAsignacion("NMOMBELLI", "ApruebaRtnCliente");
+//x.AddAsignacion("MMOMBELLI", "ApruebaRtnCliente");
+
+
+
+

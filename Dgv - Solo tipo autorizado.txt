@@ -1,0 +1,29 @@
+        /// <summary>
+        /// Asegurarse que el dato en el DGV sera del tipo autorizado
+        /// </summary>
+        private void dgvFormulaIngreso_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(Column1_KeyPress);
+            if (dgvFormulaIngreso.CurrentCell.ColumnIndex == (int) dgvFormulaIngreso.Columns["dgvkgreal"].Index)
+                //Desired Column
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(Column1_KeyPress);
+                }
+            }
+
+            if (dgvFormulaIngreso.CurrentCell.ColumnIndex == (int)dgvFormulaIngreso.Columns[__kgBatch.Name].Index)
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(Column1_KeyPress);
+                }
+            }
+        }
+        private void Column1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormatAndConversions.SoloDecimalKeyPress(sender, e, false);
+        }

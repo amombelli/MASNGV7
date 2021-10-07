@@ -1,0 +1,30 @@
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var dataOri = I;
+                var resultConsol = from data in dataOri
+                    group data by
+                        new
+                        {
+                            data.GLI,
+                            data.GLV,
+                            data.ITEM,
+                            data.MONEDA_FACT,
+                            data.IVA21,
+                            data.DESC_REMITO,
+                        }
+                    into grp
+                    select new T0401_FACTURA_I()
+                    {
+                        GLI =grp.Key.GLI,
+                        GLV =grp.Key.GLV,
+                        ITEM =grp.Key.ITEM,
+                        MONEDA_FACT = grp.Key.MONEDA_FACT,
+                        IVA21 =grp.Key.IVA21,
+                        DESC_REMITO =grp.Key.DESC_REMITO,
+                        KGDESPACHADOS_R = grp.Sum(c => c.KGDESPACHADOS_R.Value),
+                        PRECIOT_FACT_ARS = grp.Sum(c => c.PRECIOT_FACT_ARS),
+                        PRECIOT_FACT_USD = grp.Sum(c => c.PRECIOT_FACT_USD),
+                        PRECIOU_FACT_ARS = grp.Average(c => c.PRECIOU_FACT_ARS),
+                        PRECIOU_FACT_USD = grp.Average(c => c.PRECIOU_FACT_USD),
+                    };
+                return (List<T0401_FACTURA_I>) resultConsol.ToList();

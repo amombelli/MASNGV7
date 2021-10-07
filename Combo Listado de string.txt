@@ -1,0 +1,19 @@
+          
+          
+          BindingSource bs = new BindingSource();
+            bs.DataSource = new MaterialMasterManager().GetCompleteListMaterialAvailable();
+            cmbMaterial.DataSource = bs;
+            cmbMaterial.SelectedIndex = -1;
+
+
+                    public static List<string> GetListaMateriales(int idProveedor)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var listMateriales = from header in db.T0403_VENDOR_FACT_H
+                    where header.IDPROV == idProveedor
+                    join items in db.T0404_VENDOR_FACT_I on header.IDINT equals items.IDINT
+                    select items.ITEM_DESC;
+                return listMateriales.ToList();
+            }
+        }

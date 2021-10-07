@@ -1,0 +1,16 @@
+﻿[*.cs]
+
+# CA1303: No pasar cadenas literal como parámetros localizados
+dotnet_diagnostic.CA1303.severity = silent
+
+# CA1305: Especificar IFormatProvider
+dotnet_diagnostic.CA1305.severity = none
+
+# CA1304: Especificar CultureInfo
+dotnet_diagnostic.CA1304.severity = none
+
+# DV0001: Dependencia no válida
+dotnet_diagnostic.DV0001.severity = error
+
+# CA2000: Desechar (Dispose) objetos antes de perder el ámbito
+dotnet_diagnostic.CA2000.severity = none

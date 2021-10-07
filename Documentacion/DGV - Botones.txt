@@ -1,0 +1,33 @@
+
+** BOTONES EN DGV - 
+
+
+
+private void dgvInfoAKA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+{
+    var datagridview = (DataGridView) sender;
+    if (!(datagridview.Columns[e.ColumnIndex] is DataGridViewButtonColumn) || e.RowIndex < 0) return;
+
+    var cellValue = datagridview[e.ColumnIndex, e.RowIndex].Value.ToString();
+    var activo = Convert.ToBoolean(datagridview[aCTIVODataGridViewTextBoxColumn.Name, e.RowIndex].Value);
+    switch (cellValue)
+    {
+        case "Liberar":
+            using (var f0 = new FrmMaterialMasterAKA(primario, _modo, aka))
+            {
+                DialogResult dr = f0.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    //string custName = f0.CustomerName;
+                    //SaveToFile(custName);
+                }
+            }
+
+            break;
+
+
+        default:
+            MessageBox.Show(@"Boton no manejado aun");
+            break;
+    }
+}

@@ -1,0 +1,68 @@
+public class MyEntityRepository
+{
+    public MyEntity Update(int id, MyEntity newEntityValues)
+    {
+        using (var context = new MyDbContext())
+        {
+            var entity = context.MyEntities.Find(id);
+            context.Entry(entity).CurrentValues.SetValues(newEntityValues);
+            context.SaveChanges();
+
+            return entity;
+        }
+    }
+
+    public MyEntity Update(int id, MyEntityViewModel viewModel)
+    {
+        using (var context = new MyDbContext())
+        {
+            var entity = context.MyEntities.Find(id);
+            context.Entry(entity).CurrentValues.SetValues(viewModel);
+            context.SaveChanges();
+
+            return entity;
+        }
+    }
+}
+In the first method, we are replacing a MyEntity with a new MyEntity completely. Pretty cool! However in the second method, we’re using a MyEntityViewModel. This is interesting to note; the SetValues method takes in a generic object and will update all the properties that match on both the entity and the object you pass into the SetValues method. You can also use Dictionaries with property keys as the tuple key. For more information, check out this MSDN article.
+
+Enjoy!
+
+
+
+     public int GrabaAjusteTablaT0300(T0300_NCD_H header)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                if (header.IDH <= 0)
+                {
+                    header.IDH = db.T0300_NCD_H.Max(c => c.IDH) + 1;
+                    header.LOGUSER = Environment.UserName;
+                    header.LOGDATE = DateTime.Now;
+                    db.T0300_NCD_H.Add(header);
+                    db.SaveChanges();
+                    return header.IDH;
+                }
+                else
+                {
+                    var data = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == header.IDH);
+                    header.LOGUSER = Environment.UserName;
+                    header.LOGDATE = DateTime.Now;
+                    db.Entry(data).CurrentValues.SetValues(header);
+                    db.SaveChanges();
+                    return header.IDH;
+                }
+            }
+
+
+
+
+            //para valores reusar
+
+
+                data.Fecha_Ingreso = d.Fecha_Ingreso;
+                data.LogCreadoPor = d.LogCreadoPor;
+                db.Entry(d).CurrentValues.SetValues(data);
+                d.LogModificadoPor = Environment.UserName;
+                d.LogModoficadoEn = DateTime.Today;
+                return db.SaveChanges() > 0 ? d.IDCLIENTE : -1;

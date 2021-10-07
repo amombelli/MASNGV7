@@ -1,0 +1,875 @@
+ El volumen de la unidad C es OS
+ El n£mero de serie del volumen es: 8EF4-0351
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Application
+
+29/11/2019  16:27            18,428 Frm00MainAppStart.cs
+20/11/2019  10:32            57,356 Frm00MainAppStart.Designer.cs
+20/11/2019  10:32           314,427 Frm00MainAppStart.resx
+22/07/2019  17:48             4,988 FrmARBA02.cs
+22/07/2019  17:48            23,887 FrmARBA02.Designer.cs
+22/07/2019  17:48            10,754 FrmARBA02.resx
+22/07/2019  12:06               708 FrmARBA03ListadoPresentacionesRaffone.cs
+22/07/2019  12:06             2,490 FrmARBA03ListadoPresentacionesRaffone.Designer.cs
+22/07/2019  12:06             5,817 FrmARBA03ListadoPresentacionesRaffone.resx
+20/11/2019  10:28            17,519 FrmDevelopmentForm.cs
+08/04/2019  13:46            30,502 FrmDevelopmentForm.Designer.cs
+18/06/2019  18:31             5,916 FrmDevelopmentForm.resx
+10/12/2019  14:55            17,189 FrmFI78ImportacionComprobantesAFIP.cs
+15/11/2019  13:40            57,689 FrmFI78ImportacionComprobantesAFIP.Designer.cs
+15/11/2019  13:40             9,105 FrmFI78ImportacionComprobantesAFIP.resx
+17/07/2019  11:26             3,616 FrmForm1.cs
+10/06/2019  22:02             4,473 FrmForm1.Designer.cs
+18/06/2019  18:31             5,916 FrmForm1.resx
+20/11/2019  10:28             9,192 FrmStartAppLogin.cs
+14/11/2018  09:14             9,976 FrmStartAppLogin.designer.cs
+18/06/2019  18:31         2,078,493 FrmStartAppLogin.resx
+01/06/2019  09:05               689 FrmTest0.cs
+01/08/2019  04:26             9,866 FrmTest0.Designer.cs
+18/06/2019  18:31             6,333 FrmTest0.resx
+              24 archivos      2,705,329 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\FIX
+
+01/06/2019  09:05             8,752 FrmFixCae.cs
+10/11/2018  12:25            23,655 FrmFixCae.Designer.cs
+18/06/2019  18:31             5,916 FrmFixCae.resx
+30/11/2018  09:24             2,918 FrmFixFacturaConta.cs
+10/11/2018  12:25            25,860 FrmFixFacturaConta.Designer.cs
+18/06/2019  18:31             6,349 FrmFixFacturaConta.resx
+22/08/2019  13:10             2,878 FrmFixFacturaL5.cs
+10/11/2018  12:25             8,853 FrmFixFacturaL5.Designer.cs
+18/06/2019  18:31             5,916 FrmFixFacturaL5.resx
+10/11/2018  12:25             4,710 FrmMergeCustomersData.cs
+10/11/2018  12:25            27,374 FrmMergeCustomersData.Designer.cs
+18/06/2019  18:31             6,149 FrmMergeCustomersData.resx
+              12 archivos        129,330 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Forms
+
+01/06/2019  09:05             1,289 FrmMdc00CustomerSearchSaldos.cs
+12/05/2019  20:36             7,461 FrmMdc00CustomerSearchSaldos.Designer.cs
+18/06/2019  18:31             6,346 FrmMdc00CustomerSearchSaldos.resx
+12/05/2019  23:00               533 FrmMdc01CustomerSearchL1.cs
+12/05/2019  23:00             2,866 FrmMdc01CustomerSearchL1.Designer.cs
+18/06/2019  18:31             6,792 FrmMdc01CustomerSearchL1.resx
+21/05/2019  15:04               480 FrmTestUserComponents.cs
+21/05/2019  15:04            35,760 FrmTestUserComponents.Designer.cs
+18/06/2019  18:31             6,151 FrmTestUserComponents.resx
+22/09/2019  19:12             3,068 frmTestUserControl.cs
+14/05/2019  12:33            10,125 frmTestUserControl.Designer.cs
+18/06/2019  18:31             8,745 frmTestUserControl.resx
+              12 archivos         89,616 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Forms\CustomerSearchBase
+
+01/08/2019  04:26            11,610 FrmMDC00CustomerSearchBase.cs
+13/05/2019  15:27            24,204 FrmMDC00CustomerSearchBase.Designer.cs
+18/06/2019  18:31             9,151 FrmMDC00CustomerSearchBase.resx
+               3 archivos         44,965 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Forms\MaterialSearchBase
+
+01/06/2019  09:05             5,266 FrmMaterialMasterSearchBase.cs
+08/04/2019  14:58            34,428 FrmMaterialMasterSearchBase.Designer.cs
+18/06/2019  18:31            18,578 FrmMaterialMasterSearchBase.resx
+               3 archivos         58,272 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Forms\VendorSearchBase
+
+01/08/2019  04:26            13,360 FrmVendorSearchBase.cs
+06/04/2019  09:20            25,664 FrmVendorSearchBase.Designer.cs
+18/06/2019  18:31             8,996 FrmVendorSearchBase.resx
+               3 archivos         48,020 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\MasterData
+
+01/06/2019  09:05            12,252 FrmAddNewShipTo.cs
+10/11/2018  12:25            34,692 FrmAddNewShipTo.Designer.cs
+18/06/2019  18:31             5,916 FrmAddNewShipTo.resx
+03/09/2019  14:22            10,225 FrmApp13CheckWebServicesConfig.cs
+18/06/2019  18:35            36,161 FrmApp13CheckWebServicesConfig.Designer.cs
+18/06/2019  18:35             5,916 FrmApp13CheckWebServicesConfig.resx
+01/06/2019  09:05             1,242 FrmBusquedaAvanzadaCliente.cs
+10/11/2018  12:25            43,885 FrmBusquedaAvanzadaCliente.Designer.cs
+18/06/2019  18:31             6,788 FrmBusquedaAvanzadaCliente.resx
+01/06/2019  09:05             1,843 FrmBusquedaAvanzadaProveedor.cs
+10/11/2018  12:25            15,137 FrmBusquedaAvanzadaProveedor.Designer.cs
+18/06/2019  18:31             6,794 FrmBusquedaAvanzadaProveedor.resx
+17/05/2019  11:36             6,881 FrmCustomerSearchNew.cs
+24/01/2019  07:42            21,445 FrmCustomerSearchNew.Designer.cs
+18/06/2019  18:31             6,149 FrmCustomerSearchNew.resx
+10/11/2018  12:25             1,555 FrmCustomerShipToSelection.cs
+10/11/2018  12:25            12,571 FrmCustomerShipToSelection.Designer.cs
+18/06/2019  18:31             6,384 FrmCustomerShipToSelection.resx
+20/11/2019  09:14            22,228 FrmVendorDetailData.cs
+10/11/2018  12:25            60,306 FrmVendorDetailData.Designer.cs
+18/06/2019  18:31             6,544 FrmVendorDetailData.resx
+22/08/2019  13:12             5,711 FrmVendorSearch.cs
+10/11/2018  12:25            13,230 FrmVendorSearch.Designer.cs
+18/06/2019  18:31             5,916 FrmVendorSearch.resx
+              24 archivos        349,771 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\MasterData\BOM
+
+01/06/2019  09:05               235 FrmBOMCalculoBatch.cs
+26/12/2018  10:36             1,471 FrmBOMCalculoBatch.Designer.cs
+18/06/2019  18:31             5,916 FrmBOMCalculoBatch.resx
+10/11/2018  12:25             2,407 FrmBOMMaterialSelector.cs
+10/11/2018  12:25            10,253 FrmBOMMaterialSelector.Designer.cs
+18/06/2019  18:31             6,384 FrmBOMMaterialSelector.resx
+30/06/2019  20:03             6,793 FrmMDB01BomSearch.cs
+30/06/2019  20:03            21,089 FrmMDB01BomSearch.Designer.cs
+30/06/2019  20:03             6,231 FrmMDB01BomSearch.resx
+20/12/2019  17:36            45,579 FrmMDB02BomMainData.cs
+07/12/2019  09:03            76,657 FrmMDB02BomMainData.Designer.cs
+07/12/2019  09:03            21,749 FrmMDB02BomMainData.resx
+20/11/2019  10:37             3,888 FrmMDB05SearchByMP.cs
+20/11/2019  09:52            21,513 FrmMDB05SearchByMP.Designer.cs
+20/11/2019  09:52             6,581 FrmMDB05SearchByMP.resx
+20/11/2019  12:17             7,946 FrmMDB06MassFormActivate.cs
+20/11/2019  10:58            26,795 FrmMDB06MassFormActivate.Designer.cs
+20/11/2019  10:58             9,380 FrmMDB06MassFormActivate.resx
+              18 archivos        280,867 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\MasterData\Customer Master
+
+01/06/2019  09:05            12,752 FrmCustomerSearch.cs
+17/02/2019  09:09            26,326 FrmCustomerSearch.Designer.cs
+18/06/2019  18:31             6,568 FrmCustomerSearch.resx
+22/06/2019  09:18             4,051 FrmDatosPadronAfip.cs
+15/11/2018  14:36            15,139 FrmDatosPadronAfip.Designer.cs
+18/06/2019  18:31             5,916 FrmDatosPadronAfip.resx
+01/06/2019  09:05             2,632 FrmMdc01CustomerSearch.cs
+13/05/2019  17:13             9,554 FrmMDC01CustomerSearch.Designer.cs
+18/06/2019  18:31             8,545 FrmMdc01CustomerSearch.resx
+01/08/2019  04:26            51,388 FrmMdc02BillTo.cs
+02/07/2019  09:08           110,927 FrmMdc02BillTo.Designer.cs
+02/07/2019  09:08             9,233 FrmMdc02BillTo.resx
+01/06/2019  09:05            31,052 FrmMDC03ShipToData.cs
+12/05/2019  20:34            56,133 FrmMDC03ShipToData.Designer.cs
+18/06/2019  18:31             7,459 FrmMDC03ShipToData.resx
+              15 archivos        357,675 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\MasterData\HHRR
+
+01/06/2019  09:05            23,543 FrmHHRRDetail.cs
+25/03/2019  19:57            70,894 FrmHHRRDetail.Designer.cs
+18/06/2019  18:31            10,011 FrmHHRRDetail.resx
+23/03/2019  09:23             2,403 FrmHHRRSearch.cs
+10/11/2018  12:25             9,815 FrmHHRRSearch.Designer.cs
+18/06/2019  18:31             6,380 FrmHHRRSearch.resx
+               6 archivos        123,046 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\MasterData\Material Master
+
+24/06/2019  10:41            10,431 FrmMasterDataSearchScreen.cs
+24/06/2019  10:41            33,587 FrmMasterDataSearchScreen.Designer.cs
+24/06/2019  10:41             5,817 FrmMasterDataSearchScreen.resx
+01/06/2019  09:05             7,088 FrmMaterialMasterAKA.cs
+10/11/2018  12:25            15,144 FrmMaterialMasterAKA.Designer.cs
+18/06/2019  18:31             6,392 FrmMaterialMasterAKA.resx
+01/08/2019  04:26            13,437 FrmMDM03CodigoVentaScreen.cs
+11/07/2019  15:56            35,126 FrmMDM03CodigoVentaScreen.Designer.cs
+11/07/2019  15:56             6,409 FrmMDM03CodigoVentaScreen.resx
+12/07/2019  12:41            40,682 FrmNewMaterialMasterMainScreen.cs
+11/07/2019  11:59           121,950 FrmNewMaterialMasterMainScreen.Designer.cs
+11/07/2019  11:59            84,862 FrmNewMaterialMasterMainScreen.resx
+10/11/2018  12:25             2,248 FrmZRLBScreen.cs
+10/11/2018  12:25            10,336 FrmZRLBScreen.Designer.cs
+18/06/2019  18:31             6,150 FrmZRLBScreen.resx
+              15 archivos        399,659 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\MasterData\NEL
+
+11/07/2019  12:58             5,212 FrmQM01NelSearch.cs
+11/07/2019  12:37            24,459 FrmQM01NelSearch.Designer.cs
+11/07/2019  12:37             6,010 FrmQM01NelSearch.resx
+01/08/2019  04:26            25,542 FrmQM02NelMainData.cs
+11/07/2019  13:59            69,859 FrmQM02NelMainData.Designer.cs
+11/07/2019  13:59             6,803 FrmQM02NelMainData.resx
+11/07/2019  12:53             2,904 FrmQM03NelAddProgress.cs
+11/07/2019  12:53            14,557 FrmQM03NelAddProgress.Designer.cs
+11/07/2019  12:53             5,817 FrmQM03NelAddProgress.resx
+11/07/2019  12:55             2,728 FrmQm04AsignaCodigo.cs
+11/07/2019  12:55             9,076 FrmQm04AsignaCodigo.Designer.cs
+11/07/2019  12:55             5,817 FrmQm04AsignaCodigo.resx
+11/07/2019  12:57             1,234 FrmQm05NelCancelation.cs
+11/07/2019  12:57             9,195 FrmQm05NelCancelation.Designer.cs
+11/07/2019  12:57             5,817 FrmQm05NelCancelation.resx
+11/07/2019  12:58             1,503 FrmQm06AprobacionMuestra.cs
+11/07/2019  12:58            10,425 FrmQm06AprobacionMuestra.Designer.cs
+11/07/2019  12:58             5,817 FrmQm06AprobacionMuestra.resx
+              18 archivos        212,775 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\MasterData\Vendor
+
+23/06/2019  19:16             2,310 FrmMdv03VendorInfo.cs
+23/06/2019  19:16            15,033 FrmMdv03VendorInfo.Designer.cs
+23/06/2019  19:16             5,817 FrmMdv03VendorInfo.resx
+               3 archivos         23,160 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\SecurityConfig
+
+01/06/2019  09:05             4,116 FrmNewRole.cs
+31/03/2019  08:45             7,877 FrmNewRole.Designer.cs
+18/06/2019  18:31            10,957 FrmNewRole.resx
+01/06/2019  09:05             6,569 FrmNewTcode.cs
+13/11/2018  13:40            12,332 FrmNewTcode.Designer.cs
+18/06/2019  18:31             9,818 FrmNewTcode.resx
+01/06/2019  09:05               415 FrmNewUser.cs
+12/11/2018  15:02             9,525 FrmNewUser.Designer.cs
+18/06/2019  18:31           309,097 FrmNewUser.resx
+01/06/2019  09:05            12,608 FrmSecurityModule.cs
+13/11/2018  09:23            38,516 FrmSecurityModule.Designer.cs
+18/06/2019  18:31            86,885 FrmSecurityModule.resx
+              12 archivos        508,715 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\SuperMD
+
+22/08/2019  13:11             6,934 FrmAddressStructure.cs
+10/11/2018  12:24            11,201 FrmAddressStructure.Designer.cs
+18/06/2019  18:31             5,916 FrmAddressStructure.resx
+10/11/2018  12:25             7,431 FrmGLStructure.cs
+10/11/2018  12:24             9,849 FrmGLStructure.Designer.cs
+18/06/2019  18:31             6,319 FrmGLStructure.resx
+01/06/2019  09:05            11,425 FrmMaterialTypeManager.cs
+08/04/2019  11:47            42,439 FrmMaterialTypeManager.Designer.cs
+18/06/2019  18:31            13,324 FrmMaterialTypeManager.resx
+03/12/2019  14:38             9,190 FrmMdz01ZtermStructure.cs
+02/12/2019  15:17            19,932 FrmMdz01ZtermStructure.Designer.cs
+02/12/2019  15:17            17,181 FrmMdz01ZtermStructure.resx
+              12 archivos        161,141 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional
+
+01/06/2019  09:05             6,013 FrmDetalleDeudaProveedeor.cs
+03/01/2019  12:14            32,558 FrmDetalleDeudaProveedeor.Designer.cs
+18/06/2019  18:31             6,764 FrmDetalleDeudaProveedeor.resx
+30/11/2018  09:24            15,893 FrmMM0Accion.cs
+10/11/2018  12:24            41,019 FrmMM0Accion.Designer.cs
+18/06/2019  18:31             6,372 FrmMM0Accion.resx
+               6 archivos        108,619 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\Cierre
+
+17/07/2019  13:28               680 FrmFI70ImportacionOriginal.cs
+17/07/2019  13:28             2,316 FrmFI70ImportacionOriginal.Designer.cs
+17/07/2019  13:28             5,817 FrmFI70ImportacionOriginal.resx
+               3 archivos          8,813 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\CO
+
+01/06/2019  09:05             7,001 FrmCierre1.cs
+10/01/2019  17:23            28,896 FrmCierre1.Designer.cs
+18/06/2019  18:31            15,809 FrmCierre1.resx
+01/06/2019  09:05             1,338 FrmDetalleDocumentos.cs
+29/12/2018  18:06            28,049 FrmDetalleDocumentos.Designer.cs
+18/06/2019  18:31             6,128 FrmDetalleDocumentos.resx
+               6 archivos         87,221 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\CO\Asiento
+
+01/06/2019  09:05             1,944 FrmAsientoContableDetalle.cs
+07/01/2019  14:18            46,480 FrmAsientoContableDetalle.Designer.cs
+18/06/2019  18:31            11,352 FrmAsientoContableDetalle.resx
+               3 archivos         59,776 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\CO\CierreRaf
+
+01/06/2019  09:05             7,256 FrmCierreProveedores.cs
+10/01/2019  17:05            35,076 FrmCierreProveedores.Designer.cs
+18/06/2019  18:31            38,724 FrmCierreProveedores.resx
+01/06/2019  09:05               856 FrmDetalle203.cs
+07/01/2019  19:44            15,056 FrmDetalle203.Designer.cs
+18/06/2019  18:31             6,128 FrmDetalle203.resx
+17/07/2019  14:19             2,317 FrmDetalle403.cs
+17/07/2019  14:19            50,003 FrmDetalle403.Designer.cs
+17/07/2019  14:19             6,206 FrmDetalle403.resx
+01/06/2019  09:05               862 FrmDetalleEgresosREG.cs
+08/01/2019  18:48            19,896 FrmDetalleEgresosREG.Designer.cs
+18/06/2019  18:31             6,127 FrmDetalleEgresosREG.resx
+01/06/2019  09:05             1,056 FrmDetallesPagosPDOPx.cs
+10/01/2019  10:49             9,165 FrmDetallesPagosPDOPx.Designer.cs
+18/06/2019  18:31             6,340 FrmDetallesPagosPDOPx.resx
+01/06/2019  09:05             3,485 FrmSaldosCuentaCorrienteProveedores.cs
+11/01/2019  07:46            23,860 FrmSaldosCuentaCorrienteProveedores.Designer.cs
+18/06/2019  18:31            21,541 FrmSaldosCuentaCorrienteProveedores.resx
+              18 archivos        253,954 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\CO\Cost
+
+10/11/2019  20:50             6,622 FrmCO02_Reposicion.cs
+10/11/2019  10:00            39,279 FrmCO02_Reposicion.Designer.cs
+10/11/2019  10:00             9,840 FrmCO02_Reposicion.resx
+10/11/2019  10:00            19,041 FrmCO03_Manufactura.cs
+10/11/2019  10:00            56,612 FrmCO03_Manufactura.Designer.cs
+10/11/2019  10:00             9,747 FrmCO03_Manufactura.resx
+23/10/2019  14:32               919 FrmCO05BomExplosionLevelX.cs
+09/11/2019  10:15            20,649 FrmCO05BomExplosionLevelX.Designer.cs
+23/10/2019  14:32             6,205 FrmCO05BomExplosionLevelX.resx
+10/11/2019  10:00             3,944 FrmCO05HistorialCostoReposicion.cs
+30/10/2019  15:08            37,629 FrmCO05HistorialCostoReposicion.Designer.cs
+30/10/2019  15:08             6,254 FrmCO05HistorialCostoReposicion.resx
+09/11/2019  14:34             9,724 FrmCO05SeleccionaFormulaCosteo.cs
+09/11/2019  14:34            37,927 FrmCO05SeleccionaFormulaCosteo.Designer.cs
+09/11/2019  14:34            12,451 FrmCO05SeleccionaFormulaCosteo.resx
+09/11/2019  11:27             2,088 FrmCO06MfgCostExplosion.cs
+08/11/2019  17:42            24,442 FrmCO06MfgCostExplosion.Designer.cs
+08/11/2019  17:42             6,207 FrmCO06MfgCostExplosion.resx
+12/11/2019  16:01             4,805 FrmCO07CostoStandard.cs
+12/11/2019  16:01            27,067 FrmCO07CostoStandard.Designer.cs
+12/11/2019  16:01             9,620 FrmCO07CostoStandard.resx
+              21 archivos        351,072 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\CRM
+
+10/11/2018  12:25             1,922 FrmMensajeCustomerManager.cs
+10/11/2018  12:24            27,397 FrmMensajeCustomerManager.Designer.cs
+18/06/2019  18:31             6,806 FrmMensajeCustomerManager.resx
+10/01/2019  17:23             2,694 FrmNuevaAccion.cs
+10/11/2018  12:24            20,183 FrmNuevaAccion.Designer.cs
+18/06/2019  18:31             5,916 FrmNuevaAccion.resx
+10/11/2018  12:25             1,042 FrmPedidosPendientesMaterial.cs
+10/11/2018  12:24            17,749 FrmPedidosPendientesMaterial.Designer.cs
+18/06/2019  18:31             6,996 FrmPedidosPendientesMaterial.resx
+               9 archivos         90,705 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI
+
+10/11/2018  12:25             2,645 FrmCalculoRetenciones.cs
+10/11/2018  12:24            31,380 FrmCalculoRetenciones.Designer.cs
+18/06/2019  18:31             5,916 FrmCalculoRetenciones.resx
+26/08/2019  13:26            16,167 FrmFI34BusquedaCheques.cs
+25/08/2019  16:09            19,171 FrmFI34BusquedaCheques.Designer.cs
+25/08/2019  16:09            10,132 FrmFI34BusquedaCheques.resx
+10/11/2018  12:25             3,303 FrmModuloTax.cs
+10/11/2018  12:24            33,825 FrmModuloTax.Designer.cs
+18/06/2019  18:31             5,916 FrmModuloTax.resx
+10/11/2018  12:25             1,577 FrmTest1.cs
+10/11/2018  12:24            28,810 FrmTest1.Designer.cs
+18/06/2019  18:31             6,540 FrmTest1.resx
+              12 archivos        165,382 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\CCMAIN
+
+10/11/2018  12:25            16,049 frmCC1.cs
+10/11/2018  12:24            86,584 frmCC1.Designer.cs
+18/06/2019  18:31             6,817 frmCC1.resx
+10/11/2018  12:25             3,086 frmCC1Global.cs
+10/11/2018  12:24            34,547 frmCC1Global.Designer.cs
+18/06/2019  18:31             6,165 frmCC1Global.resx
+               6 archivos        153,248 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\Cobranza
+
+31/05/2019  23:37             9,336 FrmCobranzaSearchScreen.cs
+10/11/2018  12:24            34,989 FrmCobranzaSearchScreen.Designer.cs
+18/06/2019  18:31             7,403 FrmCobranzaSearchScreen.resx
+10/11/2018  12:25             7,422 FrmDetalleCobranzaIngresada.cs
+10/11/2018  12:24            55,402 FrmDetalleCobranzaIngresada.Designer.cs
+18/06/2019  18:31             6,150 FrmDetalleCobranzaIngresada.resx
+10/11/2018  12:25             3,960 FrmDetalleImputacionPorFactura.cs
+10/11/2018  12:24            37,117 FrmDetalleImputacionPorFactura.Designer.cs
+18/06/2019  18:31             8,004 FrmDetalleImputacionPorFactura.resx
+10/11/2018  12:25             4,307 FrmDetalleImputacionPorRecibo.cs
+10/11/2018  12:24            43,014 FrmDetalleImputacionPorRecibo.Designer.cs
+18/06/2019  18:31             7,190 FrmDetalleImputacionPorRecibo.resx
+10/12/2019  12:49            47,210 FrmFI42CobranzaTemporal.cs
+10/12/2019  12:49            60,625 FrmFI42CobranzaTemporal.Designer.cs
+10/12/2019  12:49            12,292 FrmFI42CobranzaTemporal.resx
+24/08/2019  16:52             2,958 FrmFI43ConversionCobranzas.cs
+24/08/2019  16:52            13,323 FrmFI43ConversionCobranzas.Designer.cs
+24/08/2019  16:52             6,275 FrmFI43ConversionCobranzas.resx
+16/10/2019  11:40            12,666 FrmFI47ChangeCobranzaType.cs
+16/10/2019  11:38            58,451 FrmFI47ChangeCobranzaType.Designer.cs
+16/10/2019  11:38             6,248 FrmFI47ChangeCobranzaType.resx
+31/05/2019  21:01            18,269 FrmImputacionCobranzas.cs
+10/11/2018  12:24            63,093 FrmImputacionCobranzas.Designer.cs
+18/06/2019  18:31             7,231 FrmImputacionCobranzas.resx
+09/11/2019  10:15            44,848 FrmIngresoCobranza.cs
+09/11/2019  10:15            82,602 FrmIngresoCobranza.Designer.cs
+24/08/2019  17:02             6,463 FrmIngresoCobranza.resx
+              27 archivos        666,848 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\ContabilizacioFactura\ConRemito
+
+10/11/2018  12:25               774 FrmCompleteFooter.cs
+10/11/2018  12:24            33,147 FrmCompleteFooter.Designer.cs
+18/06/2019  18:31             5,916 FrmCompleteFooter.resx
+09/11/2019  10:15            48,555 FrmContabilizacionProveedorConRemito.cs
+09/07/2019  10:04           115,232 FrmContabilizacionProveedorConRemito.Designer.cs
+09/07/2019  10:04             6,876 FrmContabilizacionProveedorConRemito.resx
+01/10/2019  16:04            32,636 FrmFI21AddItemToFactura.cs
+09/11/2019  10:15            80,078 FrmFI21AddItemToFactura.Designer.cs
+07/07/2019  10:58            12,074 FrmFI21AddItemToFactura.resx
+               9 archivos        335,288 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\ContabilizacioFactura\SinRemito
+
+15/11/2019  14:27            61,543 FrmContabilizacionSinRemito.cs
+15/08/2019  15:33           113,637 FrmContabilizacionSinRemito.Designer.cs
+15/08/2019  15:33             7,101 FrmContabilizacionSinRemito.resx
+09/09/2019  15:54               734 FrmInfoRecordContaR.cs
+09/09/2019  15:54             9,717 FrmInfoRecordContaR.Designer.cs
+09/09/2019  15:54             6,039 FrmInfoRecordContaR.resx
+               6 archivos        198,771 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\CustomerNCD
+
+23/11/2018  10:11             5,184 FrmCustomerNCD2.cs
+23/11/2018  10:11            23,485 FrmCustomerNCD2.designer.cs
+18/06/2019  18:31             9,901 FrmCustomerNCD2.resx
+01/06/2019  09:05             5,437 FrmCustomerNCDEditItem.cs
+10/11/2018  12:24            19,579 FrmCustomerNCDEditItem.Designer.cs
+18/06/2019  18:31             5,916 FrmCustomerNCDEditItem.resx
+02/12/2019  10:20             9,579 FrmCustomerNCDMain.cs
+29/11/2019  17:02            32,567 FrmCustomerNCDMain.Designer.cs
+29/11/2019  17:02            10,986 FrmCustomerNCDMain.resx
+01/08/2019  04:26            10,575 FrmFI40AjusteSaldoCliente.cs
+11/05/2019  08:36            49,153 FrmFI40AjusteSaldoCliente.Designer.cs
+18/06/2019  18:31            10,664 FrmFI40AjusteSaldoCliente.resx
+10/11/2018  12:25             3,182 FrmListadoChequesRechzados.cs
+10/11/2018  12:24            18,988 FrmListadoChequesRechzados.Designer.cs
+18/06/2019  18:31             6,821 FrmListadoChequesRechzados.resx
+01/06/2019  09:05             6,324 FrmNCDAddOtherConcept.cs
+17/12/2018  18:01            23,976 FrmNCDAddOtherConcept.Designer.cs
+18/06/2019  18:31            11,189 FrmNCDAddOtherConcept.resx
+04/12/2019  14:08            60,819 FrmNotaDebitoCreditoMainScreen.cs
+02/12/2019  15:48           116,422 FrmNotaDebitoCreditoMainScreen.Designer.cs
+02/12/2019  15:48            24,928 FrmNotaDebitoCreditoMainScreen.resx
+10/11/2018  12:25             1,827 FrmSeleccionAnulaFactura.cs
+01/08/2019  04:26            25,508 FrmSeleccionAnulaFactura.Designer.cs
+18/06/2019  18:31             6,148 FrmSeleccionAnulaFactura.resx
+24/08/2019  17:43             2,840 FrmSeleccionChequeRechazadoCliente.cs
+10/11/2018  12:24            19,947 FrmSeleccionChequeRechazadoCliente.Designer.cs
+18/06/2019  18:31             6,150 FrmSeleccionChequeRechazadoCliente.resx
+17/05/2019  11:36             8,097 FrmSeleccionDocAjustePrecioU.cs
+10/11/2018  12:24            51,419 FrmSeleccionDocAjustePrecioU.Designer.cs
+18/06/2019  18:31             6,784 FrmSeleccionDocAjustePrecioU.resx
+17/05/2019  11:36             7,475 FrmSeleccionDocumentoAjusteTipoCambio.cs
+22/11/2018  23:31            47,439 FrmSeleccionDocumentoAjusteTipoCambio.Designer.cs
+18/06/2019  18:31            11,215 FrmSeleccionDocumentoAjusteTipoCambio.resx
+01/06/2019  09:05             5,673 FrmSeleccionMaterialNcd.cs
+22/06/2019  09:03            38,256 FrmSeleccionMaterialNcd.Designer.cs
+18/06/2019  18:31             6,376 FrmSeleccionMaterialNcd.resx
+              36 archivos        710,829 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\Factura
+
+17/05/2019  11:36             8,641 FrmCustomerDocumentSearch.cs
+10/11/2018  12:24            38,488 FrmCustomerDocumentSearch.Designer.cs
+18/06/2019  18:31             7,017 FrmCustomerDocumentSearch.resx
+11/12/2019  12:08            13,621 FrmDetalleDocumentoFI.cs
+11/12/2019  10:57            99,703 FrmDetalleDocumentoFI.Designer.cs
+11/12/2019  10:57            10,653 FrmDetalleDocumentoFI.resx
+10/11/2018  12:25             1,933 FrmFacturaDetalleCliente.cs
+10/11/2018  12:24            22,441 FrmFacturaDetalleCliente.Designer.cs
+18/06/2019  18:31             5,916 FrmFacturaDetalleCliente.resx
+02/12/2019  10:20            57,374 FrmFacturaMain.cs
+02/12/2019  10:20           142,460 FrmFacturaMain.Designer.cs
+02/12/2019  10:20            30,474 FrmFacturaMain.resx
+10/11/2018  12:25             1,412 FrmLeyendasFactura.cs
+10/11/2018  12:24             8,176 FrmLeyendasFactura.Designer.cs
+18/06/2019  18:31             5,916 FrmLeyendasFactura.resx
+10/11/2018  12:25             2,301 FrmSeleccionZTerm.cs
+10/11/2018  12:24             9,481 FrmSeleccionZTerm.Designer.cs
+18/06/2019  18:31             6,145 FrmSeleccionZTerm.resx
+              18 archivos        472,152 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\FacturaElectronica
+
+20/06/2019  08:56             2,056 FrmFE00DetallesComponentesPyAFIP.cs
+19/06/2019  18:10            26,881 FrmFE00DetallesComponentesPyAFIP.Designer.cs
+19/06/2019  18:10            11,860 FrmFE00DetallesComponentesPyAFIP.resx
+22/08/2019  13:11             6,692 FrmFE01DatosComprobanteAfip.cs
+23/06/2019  10:24            40,651 FrmFE01DatosComprobanteAfip.Designer.cs
+23/06/2019  10:24             9,948 FrmFE01DatosComprobanteAfip.resx
+23/06/2019  09:36             1,937 FrmFE02UltimosComprobantesAfip.cs
+19/06/2019  14:20            19,428 FrmFE02UltimosComprobantesAfip.Designer.cs
+19/06/2019  14:20             9,978 FrmFE02UltimosComprobantesAfip.resx
+               9 archivos        129,431 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\FondoFijo
+
+10/11/2018  12:25             3,262 FrmFondoFijoConversion.cs
+10/11/2018  12:24            19,490 FrmFondoFijoConversion.Designer.cs
+18/06/2019  18:31             7,052 FrmFondoFijoConversion.resx
+09/11/2019  10:15            37,094 FrmImputacionFF.cs
+10/11/2018  12:24           104,031 FrmImputacionFF.Designer.cs
+18/06/2019  18:31             8,146 FrmImputacionFF.resx
+               6 archivos        179,075 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\GESCO
+
+01/06/2019  09:05             4,461 FrmGestionCreditosClientesMain.cs
+12/01/2019  10:18            34,638 FrmGestionCreditosClientesMain.Designer.cs
+18/06/2019  18:31            11,122 FrmGestionCreditosClientesMain.resx
+01/06/2019  09:05             9,946 FrmGestionCreditosClientesSearch.cs
+12/01/2019  09:55            25,756 FrmGestionCreditosClientesSearch.Designer.cs
+18/06/2019  18:31             6,987 FrmGestionCreditosClientesSearch.resx
+               6 archivos         92,910 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\GESPA
+
+10/11/2018  12:25               245 FrmGestionPagosMain.cs
+10/11/2018  12:24             1,218 FrmGestionPagosMain.Designer.cs
+               2 archivos          1,463 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\GestionCheques
+
+01/08/2019  04:26            19,640 FrmChequesInfo.cs
+31/03/2019  09:05            60,500 FrmChequesInfo.Designer.cs
+18/06/2019  18:31             6,790 FrmChequesInfo.resx
+10/11/2018  12:25               364 FrmGestionCheques.cs
+10/11/2018  12:24            30,126 FrmGestionCheques.Designer.cs
+18/06/2019  18:31             6,610 FrmGestionCheques.resx
+22/08/2019  13:11             8,396 FrmRechazarCheque.cs
+15/07/2019  16:10            41,823 FrmRechazarCheque.Designer.cs
+15/07/2019  16:10             6,457 FrmRechazarCheque.resx
+               9 archivos        180,706 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\Orden de Pago
+
+08/09/2019  11:12            10,833 FrmFI30OPSearch.cs
+08/09/2019  11:12            35,521 FrmFI30OPSearch.Designer.cs
+08/09/2019  11:12             8,314 FrmFI30OPSearch.resx
+09/11/2019  10:15            38,030 FrmFI31OPMainScreen.cs
+09/11/2019  10:15           124,273 FrmFI31OPMainScreen.Designer.cs
+08/09/2019  10:31            19,656 FrmFI31OPMainScreen.resx
+24/08/2019  17:25             2,767 FrmFI32OPAddItemPago.cs
+09/11/2019  10:15            13,339 FrmFI32OPAddItemPago.Designer.cs
+14/07/2019  18:48             8,757 FrmFI32OPAddItemPago.resx
+14/07/2019  18:57             7,782 FrmFI33OpImputacionRetenciones.cs
+14/07/2019  18:57            53,787 FrmFI33OpImputacionRetenciones.Designer.cs
+14/07/2019  18:55            11,316 FrmFI33OpImputacionRetenciones.resx
+              12 archivos        334,375 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\Transferencias
+
+01/09/2019  18:33            29,615 FrmFI15TransferenciasEC.cs
+09/11/2019  10:15            74,593 FrmFI15TransferenciasEC.Designer.cs
+01/09/2019  18:33            15,439 FrmFI15TransferenciasEC.resx
+               3 archivos        119,647 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\VendorNCD
+
+01/06/2019  09:05             3,088 FrmAgregaFacturaRetencion.cs
+10/11/2018  12:24            13,885 FrmAgregaFacturaRetencion.Designer.cs
+18/06/2019  18:31             6,146 FrmAgregaFacturaRetencion.resx
+22/08/2019  13:11             8,760 FrmSeleccionChequeRechazadoVendor.cs
+15/07/2019  16:35            42,657 FrmSeleccionChequeRechazadoVendor.Designer.cs
+15/07/2019  16:35             6,030 FrmSeleccionChequeRechazadoVendor.resx
+01/08/2019  04:26            42,393 FrmVendorNCD.cs
+10/11/2018  12:24            96,158 FrmVendorNCD.Designer.cs
+18/06/2019  18:31            11,379 FrmVendorNCD.resx
+01/06/2019  09:05             5,438 FrmVendorNCDEditItem.cs
+10/11/2018  12:24            19,075 FrmVendorNCDEditItem.Designer.cs
+18/06/2019  18:31             5,916 FrmVendorNCDEditItem.resx
+17/05/2019  11:36            12,601 FrmVendorNCDMain.cs
+10/11/2018  17:18            37,049 FrmVendorNCDMain.Designer.cs
+18/06/2019  18:31             6,388 FrmVendorNCDMain.resx
+              15 archivos        316,963 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\FI\VendorPRM
+
+22/10/2019  15:14             2,916 FrmFI50VendorPRMMain.cs
+22/10/2019  14:00            23,958 FrmFI50VendorPRMMain.Designer.cs
+22/10/2019  14:00            12,291 FrmFI50VendorPRMMain.resx
+09/09/2019  16:31             7,217 FrmFI51VendorInvoiceView.cs
+09/11/2019  10:15            47,721 FrmFI51VendorInvoiceView.Designer.cs
+09/09/2019  16:31             6,620 FrmFI51VendorInvoiceView.resx
+               6 archivos        100,723 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\MM
+
+09/11/2019  10:15             4,057 FrmAjusteStockSloc.cs
+25/03/2019  17:51             7,808 FrmAjusteStockSloc.Designer.cs
+18/06/2019  18:31             5,916 FrmAjusteStockSloc.resx
+01/08/2019  04:26            14,880 FrmBusquedaProveedores.cs
+10/11/2018  12:24            31,435 FrmBusquedaProveedores.Designer.cs
+18/06/2019  18:31             7,193 FrmBusquedaProveedores.resx
+22/10/2019  12:52            22,005 FrmCQ.cs
+22/10/2019  12:52            56,241 FrmCQ.Designer.cs
+22/10/2019  12:52            18,970 FrmCQ.resx
+01/06/2019  09:05            21,548 FrmGeneraOrdenProcesoMolienda.cs
+10/11/2018  12:24            62,429 FrmGeneraOrdenProcesoMolienda.Designer.cs
+18/06/2019  18:31             8,172 FrmGeneraOrdenProcesoMolienda.resx
+08/10/2019  08:38            16,938 FrmMM30IcOLD.cs
+08/10/2019  08:38            62,936 FrmMM30IcOLD.Designer.cs
+18/06/2019  18:31             6,639 FrmMM30IcOLD.resx
+22/10/2019  13:18             1,873 FrmMM31ListadoStockMaterial.cs
+22/10/2019  13:15            21,641 FrmMM31ListadoStockMaterial.Designer.cs
+22/10/2019  13:15             6,034 FrmMM31ListadoStockMaterial.resx
+31/05/2019  23:37             8,784 FrmMM5.cs
+10/11/2018  12:24            46,271 FrmMM5.Designer.cs
+18/06/2019  18:31             6,338 FrmMM5.resx
+22/08/2019  13:11            13,950 FrmOrdenCompraDetalleItem.cs
+03/06/2019  08:50            39,754 FrmOrdenCompraDetalleItem.Designer.cs
+18/06/2019  18:31             5,916 FrmOrdenCompraDetalleItem.resx
+22/08/2019  13:11            10,437 FrmOrdenCompraMain.cs
+10/11/2018  12:24            36,987 FrmOrdenCompraMain.Designer.cs
+18/06/2019  18:31             6,523 FrmOrdenCompraMain.resx
+01/06/2019  09:05            15,783 FrmRetornoMaterialAPlanta.cs
+10/11/2018  12:24            43,279 FrmRetornoMaterialAPlanta.Designer.cs
+18/06/2019  18:31             7,299 FrmRetornoMaterialAPlanta.resx
+              30 archivos        618,036 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\MM\Ingreso de Stock
+
+08/10/2019  10:09            19,164 FrmMM30IngresoStockOC.cs
+08/10/2019  10:08            67,708 FrmMM30IngresoStockOC.Designer.cs
+08/10/2019  10:08            16,229 FrmMM30IngresoStockOC.resx
+16/06/2019  19:10             3,879 FrmMM31DetalleIngresoStock.cs
+16/06/2019  19:10            32,563 FrmMM31DetalleIngresoStock.Designer.cs
+18/06/2019  18:31            14,491 FrmMM31DetalleIngresoStock.resx
+               6 archivos        154,034 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\MM\MMR
+
+31/05/2019  21:01             3,884 FrmMaterialMasterRename.cs
+10/11/2018  12:24            18,764 FrmMaterialMasterRename.Designer.cs
+18/06/2019  18:31             6,822 FrmMaterialMasterRename.resx
+               3 archivos         29,470 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\MM\MRP
+
+22/10/2019  13:22             2,513 FrmMRP02.cs
+22/10/2019  12:22            22,804 FrmMRP02.Designer.cs
+22/10/2019  12:22            12,614 FrmMRP02.resx
+22/10/2019  12:52             1,940 FrmMRP03.cs
+22/10/2019  12:29            12,877 FrmMRP03.Designer.cs
+22/10/2019  12:29             6,382 FrmMRP03.resx
+               6 archivos         59,130 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\MM\Orden de Compra
+
+22/10/2019  15:14             6,111 FrmMM20BuscadorOC.cs
+23/06/2019  18:58            27,349 FrmMM20BuscadorOC.Designer.cs
+23/06/2019  18:58            11,674 FrmMM20BuscadorOC.resx
+09/11/2019  10:15            13,268 FrmMM21DatosOC.cs
+09/11/2019  10:15            50,290 FrmMM21DatosOC.Designer.cs
+25/06/2019  12:08            16,222 FrmMM21DatosOC.resx
+25/06/2019  12:48            18,744 FrmMM22DetalleItemOC.cs
+25/06/2019  12:08            49,708 FrmMM22DetalleItemOC.Designer.cs
+25/06/2019  12:08            19,790 FrmMM22DetalleItemOC.resx
+               9 archivos        213,156 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\PP
+
+22/08/2019  13:11             5,408 FrmOrdenFabricacioAgregarItem.cs
+10/11/2018  12:24            17,139 FrmOrdenFabricacioAgregarItem.Designer.cs
+18/06/2019  18:31             8,780 FrmOrdenFabricacioAgregarItem.resx
+10/11/2018  12:25               269 FrmOrdenFabricacionFormulaImprimir.cs
+10/11/2018  12:24             1,242 FrmOrdenFabricacionFormulaImprimir.Designer.cs
+01/06/2019  09:05            16,326 FrmPP01PlanProduccion.cs
+09/11/2019  10:15            60,324 FrmPP01PlanProduccion.Designer.cs
+18/06/2019  18:31            27,379 FrmPP01PlanProduccion.resx
+22/10/2019  17:04            32,049 FrmPP02PlanificacionOF.cs
+21/05/2019  15:51           106,127 FrmPP02PlanificacionOF.Designer.cs
+18/06/2019  18:31            32,395 FrmPP02PlanificacionOF.resx
+27/04/2019  18:45            10,000 FrmPP03AltaOFManual.cs
+27/04/2019  18:45            22,111 FrmPP03AltaOFManual.Designer.cs
+18/06/2019  18:31            13,356 FrmPP03AltaOFManual.resx
+21/05/2019  16:55             1,681 FrmPP04CancelaOF.cs
+27/04/2019  18:55             7,730 FrmPP04CancelaOF.Designer.cs
+18/06/2019  18:31            10,320 FrmPP04CancelaOF.resx
+09/11/2019  10:15            42,679 FrmPP05ModificaBatchSize.cs
+01/08/2019  04:26            82,993 FrmPP05ModificaBatchSize.Designer.cs
+18/06/2019  18:31            23,468 FrmPP05ModificaBatchSize.resx
+09/11/2019  10:15            11,019 FrmPP06InterpolacionFormula.cs
+02/05/2019  08:42            24,090 FrmPP06InterpolacionFormula.Designer.cs
+18/06/2019  18:31            11,664 FrmPP06InterpolacionFormula.resx
+23/10/2019  18:48             4,612 FrmPP07SeleccionFormulaAFabricar.cs
+04/05/2019  08:28            31,673 FrmPP07SeleccionFormulaAFabricar.Designer.cs
+09/11/2019  10:15            13,230 FrmPP07SeleccionFormulaAFabricar.resx
+01/06/2019  09:05               393 FrmPP08IngresoTemporalSeleccion.cs
+03/05/2019  15:06             2,741 FrmPP08IngresoTemporalSeleccion.Designer.cs
+18/06/2019  18:31             8,125 FrmPP08IngresoTemporalSeleccion.resx
+28/05/2019  11:02            14,167 FrmPP09IngresoTemporal.cs
+27/05/2019  17:30            46,744 FrmPP09IngresoTemporal.Designer.cs
+18/06/2019  18:31            12,953 FrmPP09IngresoTemporal.resx
+13/12/2019  17:25            73,381 FrmPP10CierreOF.cs
+13/12/2019  17:21            98,468 FrmPP10CierreOF.Designer.cs
+13/12/2019  17:21             6,443 FrmPP10CierreOF.resx
+22/06/2019  09:03            12,284 FrmPP11SelectBatch.cs
+18/04/2019  09:21            37,189 FrmPP11SelectBatch.Designer.cs
+18/06/2019  18:31            17,999 FrmPP11SelectBatch.resx
+01/08/2019  04:26             5,412 FrmPP12DetalleIngresoTemporal.cs
+25/04/2019  14:35            60,527 FrmPP12DetalleIngresoTemporal.Designer.cs
+18/06/2019  18:31            13,121 FrmPP12DetalleIngresoTemporal.resx
+01/06/2019  09:05             1,144 FrmPP13VisualizarStockReservadoPF.cs
+25/05/2019  10:19            22,349 FrmPP13VisualizarStockReservadoPF.Designer.cs
+18/06/2019  18:31            11,387 FrmPP13VisualizarStockReservadoPF.resx
+09/11/2019  10:15            15,754 FrmPP14AgregarMaterialPF.cs
+04/05/2019  09:27            29,864 FrmPP14AgregarMaterialPF.Designer.cs
+18/06/2019  18:31            11,687 FrmPP14AgregarMaterialPF.resx
+01/06/2019  09:05             8,222 FrmPP15ConfirmacionLotesCierreOF.cs
+26/04/2019  12:05            30,529 FrmPP15ConfirmacionLotesCierreOF.Designer.cs
+18/06/2019  18:31            15,369 FrmPP15ConfirmacionLotesCierreOF.resx
+22/12/2019  11:11            21,093 FrmPP16DetallesOFCerrada.cs
+22/12/2019  09:44            85,079 FrmPP16DetallesOFCerrada.Designer.cs
+22/12/2019  09:44            14,054 FrmPP16DetallesOFCerrada.resx
+24/12/2019  09:26             8,214 FrmPP17AddUpdateDetalleRecursosProduccion.cs
+22/12/2019  11:25            42,429 FrmPP17AddUpdateDetalleRecursosProduccion.Designer.cs
+24/12/2019  09:26             8,990 FrmPP17AddUpdateDetalleRecursosProduccion.resx
+01/08/2019  04:26            20,798 FrmPP30CalculoBOM.cs
+01/05/2019  08:54            35,812 FrmPP30CalculoBOM.Designer.cs
+18/06/2019  18:31            15,156 FrmPP30CalculoBOM.resx
+01/06/2019  09:05               355 FrmPP31CalculoBOM.cs
+01/05/2019  08:51             1,565 FrmPP31CalculoBOM.Designer.cs
+18/06/2019  18:31             5,916 FrmPP31CalculoBOM.resx
+30/04/2019  15:33             4,220 FrmSeleccionBatch.cs
+10/11/2018  12:24            16,158 FrmSeleccionBatch.Designer.cs
+18/06/2019  18:31             8,118 FrmSeleccionBatch.resx
+              65 archivos      1,462,273 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\QM
+
+25/09/2019  10:52             2,407 FrmQm01MetodoInspeccionList.cs
+25/09/2019  10:52            12,794 FrmQm01MetodoInspeccionList.Designer.cs
+25/09/2019  10:52             9,744 FrmQm01MetodoInspeccionList.resx
+25/09/2019  10:41             7,071 FrmQM02NuevoMetodoInspeccion.cs
+25/09/2019  10:29            14,603 FrmQM02NuevoMetodoInspeccion.Designer.cs
+25/09/2019  10:29            11,840 FrmQM02NuevoMetodoInspeccion.resx
+26/09/2019  11:02             2,878 FrmQm04IpList.cs
+26/09/2019  11:02            18,662 FrmQm04IpList.Designer.cs
+26/09/2019  11:02             9,931 FrmQm04IpList.resx
+05/10/2019  19:01             7,266 FrmQM05DetalleAnalisisCalidad.cs
+20/09/2019  17:58            52,617 FrmQM05DetalleAnalisisCalidad.Designer.cs
+20/09/2019  17:58            24,855 FrmQM05DetalleAnalisisCalidad.resx
+05/10/2019  18:56             2,449 FrmQm06AddMetodoToPlan.cs
+05/10/2019  18:50             9,609 FrmQm06AddMetodoToPlan.Designer.cs
+05/10/2019  18:50             6,216 FrmQm06AddMetodoToPlan.resx
+25/09/2019  10:40             3,745 FrmQm10ListadoMetodos.cs
+25/09/2019  10:40            15,467 FrmQm10ListadoMetodos.Designer.cs
+25/09/2019  10:15             8,711 FrmQm10ListadoMetodos.resx
+26/09/2019  11:02             2,788 FrmQm12ListaMasterInspPlan.cs
+26/09/2019  11:02            12,495 FrmQm12ListaMasterInspPlan.Designer.cs
+26/09/2019  11:02            10,114 FrmQm12ListaMasterInspPlan.resx
+26/09/2019  09:28            11,162 FrmQm13MasterIPlanDetalle.cs
+26/09/2019  09:28            34,860 FrmQm13MasterIPlanDetalle.Designer.cs
+26/09/2019  09:28            20,432 FrmQm13MasterIPlanDetalle.resx
+24/09/2019  08:51             2,518 FrmQm15AsignacionMaterialIP.cs
+17/09/2019  17:37             9,601 FrmQm15AsignacionMaterialIP.Designer.cs
+17/09/2019  17:37             8,916 FrmQm15AsignacionMaterialIP.resx
+24/09/2019  08:51             2,115 FrmQm16MaterialesSinAsignacionPlan.cs
+17/09/2019  17:36             9,377 FrmQm16MaterialesSinAsignacionPlan.Designer.cs
+17/09/2019  17:36             5,997 FrmQm16MaterialesSinAsignacionPlan.resx
+01/10/2019  16:08             9,133 FrmQm21AddRegistroInspeccion.cs
+01/10/2019  16:08            31,477 FrmQm21AddRegistroInspeccion.Designer.cs
+01/10/2019  16:08            10,187 FrmQm21AddRegistroInspeccion.resx
+30/09/2019  16:23             2,441 FrmQm22SeleccionaRegistroCompra.cs
+29/09/2019  08:52            14,859 FrmQm22SeleccionaRegistroCompra.Designer.cs
+29/09/2019  08:52             6,627 FrmQm22SeleccionaRegistroCompra.resx
+12/10/2019  19:08             1,926 FrmQm30QmListaMainH1.cs
+12/10/2019  19:08            20,483 FrmQm30QmListaMainH1.Designer.cs
+12/10/2019  19:08            10,146 FrmQm30QmListaMainH1.resx
+12/10/2019  19:01             3,860 FrmQm31QmListaMainH2.cs
+12/10/2019  19:01            31,396 FrmQm31QmListaMainH2.Designer.cs
+12/10/2019  19:01            14,249 FrmQm31QmListaMainH2.resx
+12/10/2019  18:56            28,099 FrmQm32DetallePlanInspeccion.cs
+08/10/2019  17:29            68,639 FrmQm32DetallePlanInspeccion.Designer.cs
+08/10/2019  17:29            17,896 FrmQm32DetallePlanInspeccion.resx
+08/10/2019  14:06             4,030 FrmQm33SplitRegistroInspeccion.cs
+08/10/2019  13:54            20,513 FrmQm33SplitRegistroInspeccion.Designer.cs
+08/10/2019  13:54             8,305 FrmQm33SplitRegistroInspeccion.resx
+11/10/2019  11:48             5,473 FrmQM40RestringeLote.cs
+09/10/2019  13:52            18,735 FrmQM40RestringeLote.Designer.cs
+09/10/2019  13:52             7,545 FrmQM40RestringeLote.resx
+              51 archivos        687,259 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\SD
+
+13/11/2018  13:56               933 FrmCentroDespacho.cs
+10/11/2018  12:24            23,390 FrmCentroDespacho.Designer.cs
+18/06/2019  18:31             6,969 FrmCentroDespacho.resx
+               3 archivos         31,292 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\SD\CRM
+
+16/06/2019  19:33            10,002 frmCRM1.cs
+16/06/2019  19:33            91,808 frmCRM1.Designer.cs
+18/06/2019  18:31            10,070 frmCRM1.resx
+               3 archivos        111,880 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\SD\Hoja de Ruta
+
+01/06/2019  09:05             5,456 FrmAddRemitosRuta.cs
+10/11/2018  12:24            22,912 FrmAddRemitosRuta.Designer.cs
+18/06/2019  18:31             6,382 FrmAddRemitosRuta.resx
+01/06/2019  09:05             5,377 FrmCentroPreparacionHojaRuta.cs
+10/11/2018  12:25            30,237 FrmCentroPreparacionHojaRuta.Designer.cs
+18/06/2019  18:31             7,244 FrmCentroPreparacionHojaRuta.resx
+01/06/2019  09:05            14,756 FrmHojaRuta.cs
+10/11/2018  12:25            36,607 FrmHojaRuta.Designer.cs
+18/06/2019  18:31             7,588 FrmHojaRuta.resx
+               9 archivos        136,559 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\SD\Remito
+
+09/11/2019  10:15            45,956 FrmCentroPreparacionRemitos.cs
+09/11/2019  10:15            72,293 FrmCentroPreparacionRemitos.Designer.cs
+18/06/2019  18:31             8,522 FrmCentroPreparacionRemitos.resx
+10/11/2018  12:24             3,657 FrmConfirmacionPreparacion.cs
+10/11/2018  12:24            11,263 FrmConfirmacionPreparacion.Designer.cs
+18/06/2019  18:31             5,916 FrmConfirmacionPreparacion.resx
+24/11/2019  10:00            26,523 FrmImpresionRemito.cs
+14/10/2019  12:15            97,264 FrmImpresionRemito.Designer.cs
+14/10/2019  12:15            24,180 FrmImpresionRemito.resx
+29/11/2019  16:35            35,322 FrmSD06SeleccionRemisionCliente.cs
+29/11/2019  16:35            67,019 FrmSD06SeleccionRemisionCliente.Designer.cs
+29/11/2019  16:35            11,169 FrmSD06SeleccionRemisionCliente.resx
+10/11/2018  12:24             5,515 FrmSeleccionBatchDespacho.cs
+10/11/2018  12:24            22,200 FrmSeleccionBatchDespacho.Designer.cs
+18/06/2019  18:31             6,134 FrmSeleccionBatchDespacho.resx
+              15 archivos        442,933 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\SD\SalesOrder
+
+01/08/2019  04:26             7,979 FrmCompromisoMaterial.cs
+10/11/2018  12:24            17,982 FrmCompromisoMaterial.Designer.cs
+18/06/2019  18:31             6,145 FrmCompromisoMaterial.resx
+10/11/2018  12:24             2,774 FrmMotivoSinCargo.cs
+10/11/2018  12:24            13,763 FrmMotivoSinCargo.Designer.cs
+18/06/2019  18:31             6,380 FrmMotivoSinCargo.resx
+01/08/2019  04:26            29,744 FrmSalesOrderItemDetail.cs
+19/12/2018  16:57            67,624 FrmSalesOrderItemDetail.Designer.cs
+18/06/2019  18:31            11,084 FrmSalesOrderItemDetail.resx
+22/08/2019  13:10            21,236 FrmSalesOrderMain.cs
+23/01/2019  16:17            73,608 FrmSalesOrderMain.Designer.cs
+18/06/2019  18:31             9,705 FrmSalesOrderMain.resx
+29/11/2019  16:45             7,984 FrmSalesOrderSearch.cs
+29/11/2019  16:45            26,599 FrmSalesOrderSearch.Designer.cs
+29/11/2019  16:44            12,593 FrmSalesOrderSearch.resx
+              15 archivos        315,200 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\MASngFrontEnd\Transactional\WM
+
+22/08/2019  13:47             6,791 FrmWm01MoveStock.cs
+22/08/2019  12:02            21,614 FrmWm01MoveStock.Designer.cs
+22/08/2019  12:02             6,434 FrmWm01MoveStock.resx
+08/10/2019  22:43             7,154 FrmWM02ModificacionEstadoLote.cs
+22/08/2019  18:06            20,733 FrmWM02ModificacionEstadoLote.Designer.cs
+22/08/2019  18:06             7,545 FrmWM02ModificacionEstadoLote.resx
+22/08/2019  15:53             7,716 FrmWM03ModificarKG.cs
+22/08/2019  15:42            21,936 FrmWM03ModificarKG.Designer.cs
+22/08/2019  15:42             8,190 FrmWM03ModificarKG.resx
+22/08/2019  12:48             6,607 FrmWM04AddStockLine.cs
+22/08/2019  12:48            19,444 FrmWM04AddStockLine.Designer.cs
+22/08/2019  12:48             9,153 FrmWM04AddStockLine.resx
+22/08/2019  17:34             6,408 FrmWM05UpdateLoteNumber.cs
+22/08/2019  17:34            21,871 FrmWM05UpdateLoteNumber.Designer.cs
+22/08/2019  17:34             8,190 FrmWM05UpdateLoteNumber.resx
+              15 archivos        179,786 bytes
+
+ Directorio de C:\Users\amombelli\Desktop\Development\MASNG\Tecser.Business\Transactional\PP
+
+26/11/2017  09:03             2,568 FrmOrdenFabricacioAgregarItem.cs
+13/09/2018  12:19            15,085 FrmOrdenFabricacioAgregarItem.Designer.cs
+18/06/2019  18:31             6,354 FrmOrdenFabricacioAgregarItem.resx
+               3 archivos         24,007 bytes
+
+     Total de archivos en la lista:
+             661 archivos     15,075,327 bytes
+               0 dirs  188,832,493,568 bytes libres

@@ -1,0 +1,71 @@
+
+//**Generamos Lista de String (sencilla)
+
+        public static List<string> AutorizaSinCargo()
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var listaEmpl = from x in db.T0087_HHRR_DISPONIBILIDAD
+                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.AutorizaSinCargo
+                    select x.Shortname;
+                return listaEmpl.ToList();
+            }
+        }
+
+//**Generamos Lista de String (Compleja)
+        
+        public static List<string> GetListaMateriales(int idProveedor)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var listMateriales = from header in db.T0403_VENDOR_FACT_H
+                    where header.IDPROV == idProveedor
+                    join items in db.T0404_VENDOR_FACT_I on header.IDINT equals items.IDINT
+                    select items.ITEM_DESC;
+                return listMateriales.ToList();
+            }
+        }
+
+
+
+//**Agregamos lista de String (combobox metodo sencillo)
+
+  cmbAutorizo.Items.AddRange(HrDisponibilidadYPermisos.AutorizaSinCargo().ToArray());
+
+
+//**Agregamos lista de String (combbox metodo mas complejo?)
+
+BindingSource bs = new BindingSource();
+bs.DataSource = new MaterialMasterManager().GetCompleteListMaterialAvailable();
+cmbMaterial.DataSource = bs;
+cmbMaterial.SelectedIndex = -1;
+
+
+
+//**Manejamos el cambio en Combobox
+
+private void cmbAutorizo_SelectedIndexChanged(object sender, EventArgs e)
+{
+    if (cmbAutorizo.SelectedIndex == -1)
+    {
+        Autorizo = null;
+        return;
+    }
+    Autorizo = cmbAutorizo.SelectedItem.ToString();
+}
+
+
+//**Combobox no permite cualquier valor
+private void cmbVendedor_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var combo = (ComboBox)sender;
+            if (combo.SelectedValue == null && !string.IsNullOrEmpty(combo.Text))
+                e.Cancel = true;
+        }
+
+        private void cmbVendedor_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var combo = (ComboBox)sender;
+            if (combo.SelectedItem// == null && !string.IsNullOrEmpty(combo.Text))
+                e.Cancel = true;
+        }

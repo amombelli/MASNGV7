@@ -1,0 +1,3791 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B36C303-745D-4372-91A1-26A8FFA8E7DD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MASngFE</RootNamespace>
+    <AssemblyName>MASng</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TecserAppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MASngFE.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.3.3\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9, processorArchitecture=MSIL">
+      <HintPath>..\packages\RibbonWinForms.5.0.1.1\lib\net472\System.Windows.Forms.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TSControls">
+      <HintPath>..\TSControls\bin\Release\TSControls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\AppVersionManager.cs" />
+    <Compile Include="Application\FrmApp02ControlsInForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\FrmApp02ControlsInForms.Designer.cs">
+      <DependentUpon>FrmApp02ControlsInForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\FrmFI78ImportacionComprobantesAFIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\FrmFI78ImportacionComprobantesAFIP.Designer.cs">
+      <DependentUpon>FrmFI78ImportacionComprobantesAFIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\FrmARBA02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\FrmARBA02.Designer.cs">
+      <DependentUpon>FrmARBA02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\FrmARBA03ListadoPresentacionesRaffone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\FrmARBA03ListadoPresentacionesRaffone.Designer.cs">
+      <DependentUpon>FrmARBA03ListadoPresentacionesRaffone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\FrmForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\FrmForm1.Designer.cs">
+      <DependentUpon>FrmForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\FrmStartAppLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\FrmStartAppLogin.designer.cs">
+      <DependentUpon>FrmStartAppLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\FrmDevelopmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\FrmDevelopmentForm.Designer.cs">
+      <DependentUpon>FrmDevelopmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Frm00MainAppStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Frm00MainAppStart.Designer.cs">
+      <DependentUpon>Frm00MainAppStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\FrmTest0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\FrmTest0.Designer.cs">
+      <DependentUpon>FrmTest0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\uDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Application\uDataGridView.Designer.cs">
+      <DependentUpon>uDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f1delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f1delete.Designer.cs">
+      <DependentUpon>f1delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FIX\FrmFixCae.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FIX\FrmFixCae.Designer.cs">
+      <DependentUpon>FrmFixCae.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FIX\FrmFixFacturaConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FIX\FrmFixFacturaConta.Designer.cs">
+      <DependentUpon>FrmFixFacturaConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FIX\FrmFixFacturaL5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FIX\FrmFixFacturaL5.Designer.cs">
+      <DependentUpon>FrmFixFacturaL5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FIX\FrmMergeCustomersData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FIX\FrmMergeCustomersData.Designer.cs">
+      <DependentUpon>FrmMergeCustomersData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.Designer.cs">
+      <DependentUpon>FrmMDC00CustomerSearchBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAPP04_DatosPadron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAPP04_DatosPadron.Designer.cs">
+      <DependentUpon>FrmAPP04_DatosPadron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMdc01CustomerSearchL1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMdc01CustomerSearchL1.Designer.cs">
+      <DependentUpon>FrmMdc01CustomerSearchL1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMdc00CustomerSearchSaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMdc00CustomerSearchSaldos.Designer.cs">
+      <DependentUpon>FrmMdc00CustomerSearchSaldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTestUserComponents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTestUserComponents.Designer.cs">
+      <DependentUpon>FrmTestUserComponents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTestUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTestUserControl.Designer.cs">
+      <DependentUpon>frmTestUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MaterialSearchBase\FrmMaterialMasterSearchBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MaterialSearchBase\FrmMaterialMasterSearchBase.Designer.cs">
+      <DependentUpon>FrmMaterialMasterSearchBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VendorSearchBase\FrmVendorSearchBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VendorSearchBase\FrmVendorSearchBase.Designer.cs">
+      <DependentUpon>FrmVendorSearchBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="MasterData\BOM\FrmBOMCalculoBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmBOMCalculoBatch.Designer.cs">
+      <DependentUpon>FrmBOMCalculoBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmBOMMaterialSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmBOMMaterialSelector.Designer.cs">
+      <DependentUpon>FrmBOMMaterialSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmMDB05SearchByMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmMDB05SearchByMP.Designer.cs">
+      <DependentUpon>FrmMDB05SearchByMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmMDB06MassFormActivate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmMDB06MassFormActivate.Designer.cs">
+      <DependentUpon>FrmMDB06MassFormActivate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc02BillTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc02BillTo.Designer.cs">
+      <DependentUpon>FrmMdc02BillTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmCustomerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmCustomerSearch.Designer.cs">
+      <DependentUpon>FrmCustomerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmUt01ObtieneDatosPadronAFIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmUt01ObtieneDatosPadronAFIP.Designer.cs">
+      <DependentUpon>FrmUt01ObtieneDatosPadronAFIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc01CustomerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc01CustomerSearch.Designer.cs">
+      <DependentUpon>FrmMdc01CustomerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMDC03ShipToData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMDC03ShipToData.Designer.cs">
+      <DependentUpon>FrmMDC03ShipToData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc04ZtermMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc04ZtermMaintain.Designer.cs">
+      <DependentUpon>FrmMdc04ZtermMaintain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc05CreditLimitMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc05CreditLimitMaintain.Designer.cs">
+      <DependentUpon>FrmMdc05CreditLimitMaintain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc06CobranzaDataMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Customer Master\FrmMdc06CobranzaDataMaintain.Designer.cs">
+      <DependentUpon>FrmMdc06CobranzaDataMaintain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\FrmAddNewShipTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\FrmAddNewShipTo.Designer.cs">
+      <DependentUpon>FrmAddNewShipTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\FrmBusquedaAvanzadaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\FrmBusquedaAvanzadaCliente.Designer.cs">
+      <DependentUpon>FrmBusquedaAvanzadaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\FrmBusquedaAvanzadaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\FrmBusquedaAvanzadaProveedor.Designer.cs">
+      <DependentUpon>FrmBusquedaAvanzadaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\FrmCustomerSearchNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\FrmCustomerSearchNew.Designer.cs">
+      <DependentUpon>FrmCustomerSearchNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\FrmCustomerShipToSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\FrmCustomerShipToSelection.Designer.cs">
+      <DependentUpon>FrmCustomerShipToSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\FrmVendorDetailData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\FrmVendorDetailData.Designer.cs">
+      <DependentUpon>FrmVendorDetailData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\FrmVendorSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\FrmVendorSearch.Designer.cs">
+      <DependentUpon>FrmVendorSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\FrmApp13CheckWebServicesConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\FrmApp13CheckWebServicesConfig.Designer.cs">
+      <DependentUpon>FrmApp13CheckWebServicesConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmMDM03CodigoVentaScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmMDM03CodigoVentaScreen.Designer.cs">
+      <DependentUpon>FrmMDM03CodigoVentaScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmMasterDataSearchScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmMasterDataSearchScreen.Designer.cs">
+      <DependentUpon>FrmMasterDataSearchScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmMaterialMasterAKA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmMaterialMasterAKA.Designer.cs">
+      <DependentUpon>FrmMaterialMasterAKA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmMdm01MaterialMasterMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmMdm01MaterialMasterMain.Designer.cs">
+      <DependentUpon>FrmMdm01MaterialMasterMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmZRLBScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Material Master\FrmZRLBScreen.Designer.cs">
+      <DependentUpon>FrmZRLBScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQm06AprobacionMuestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQm06AprobacionMuestra.Designer.cs">
+      <DependentUpon>FrmQm06AprobacionMuestra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQm04AsignaCodigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQm04AsignaCodigo.Designer.cs">
+      <DependentUpon>FrmQm04AsignaCodigo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQM03NelAddProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQM03NelAddProgress.Designer.cs">
+      <DependentUpon>FrmQM03NelAddProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQm05NelCancelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQm05NelCancelation.Designer.cs">
+      <DependentUpon>FrmQm05NelCancelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQM02NelMainData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQM02NelMainData.Designer.cs">
+      <DependentUpon>FrmQM02NelMainData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQM01NelSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\NEL\FrmQM01NelSearch.Designer.cs">
+      <DependentUpon>FrmQM01NelSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Vendor\FrmMdv02VendorABMDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Vendor\FrmMdv02VendorABMDetail.Designer.cs">
+      <DependentUpon>FrmMdv02VendorABMDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Vendor\FrmMdv03VendorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\Vendor\FrmMdv03VendorInfo.Designer.cs">
+      <DependentUpon>FrmMdv03VendorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewUserControls\CtlAddress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewUserControls\CtlAddress.Designer.cs">
+      <DependentUpon>CtlAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewUserControls\_frmABMAdressControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUserControls\_frmABMAdressControl.Designer.cs">
+      <DependentUpon>_frmABMAdressControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ReportDataSource\dsBOMData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBOMData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsCobranzaTemporal.cs">
+      <DependentUpon>dsCobranzaTemporal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsCobranzaTemporal.Designer.cs" />
+    <Compile Include="Reports\ReportDataSource\dsCobranzaTemporal1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCobranzaTemporal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsFactura.Designer.cs" />
+    <Compile Include="Reports\ReportDataSource\dsFactura1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenCompra.cs">
+      <DependentUpon>dsOrdenCompra.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenCompra.Designer.cs">
+      <DependentUpon>dsOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenCompra1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOrdenCompra.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenFabricacion.cs">
+      <DependentUpon>dsOrdenFabricacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenFabricacion.Designer.cs">
+      <DependentUpon>dsOrdenFabricacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenFabricacion1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOrdenFabricacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenFabricacionNew.cs">
+      <DependentUpon>dsOrdenFabricacionNew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenFabricacionNew.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOrdenFabricacionNew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenPago.Designer.cs" />
+    <Compile Include="Reports\ReportDataSource\dsOrdenPago1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOrdenPago.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsPreparacionPedido.Designer.cs" />
+    <Compile Include="Reports\ReportDataSource\dsPreparacionPedido1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPreparacionPedido.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsReciboCobranza.Designer.cs" />
+    <Compile Include="Reports\ReportDataSource\dsReciboCobranza1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReciboCobranza.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsRemitoL2.Designer.cs" />
+    <Compile Include="Reports\ReportDataSource\dsRemitoL21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRemitoL2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsTransferenciaReg.Designer.cs" />
+    <Compile Include="Reports\ReportDataSource\dsTransferenciaReg1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTransferenciaReg.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvBOM.Designer.cs">
+      <DependentUpon>RpvBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvFacturaL1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvFacturaL1.Designer.cs">
+      <DependentUpon>RpvFacturaL1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvDocumentoXL1RetornoCheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvDocumentoXL1RetornoCheque.Designer.cs">
+      <DependentUpon>RpvDocumentoXL1RetornoCheque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvFacturaL1_PDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvFacturaL1_PDF.Designer.cs">
+      <DependentUpon>RpvFacturaL1_PDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvImprimirOFNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvImprimirOFNew.Designer.cs">
+      <DependentUpon>RpvImprimirOFNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvNCDL2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvNCDL2.Designer.cs">
+      <DependentUpon>RpvNCDL2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvFacturaL2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvFacturaL2.Designer.cs">
+      <DependentUpon>RpvFacturaL2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvOrdenCompra.Designer.cs">
+      <DependentUpon>RpvOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvOrdenFabricacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvOrdenFabricacion.Designer.cs">
+      <DependentUpon>RpvOrdenFabricacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvOrdePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvOrdePago.Designer.cs">
+      <DependentUpon>RpvOrdePago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvPreparacionPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvPreparacionPedido.Designer.cs">
+      <DependentUpon>RpvPreparacionPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvReciboCobranzaOficial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvReciboCobranzaOficial.Designer.cs">
+      <DependentUpon>RpvReciboCobranzaOficial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvReciboTemporal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvReciboTemporal.Designer.cs">
+      <DependentUpon>RpvReciboTemporal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvRemitoL1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvRemitoL1.Designer.cs">
+      <DependentUpon>RpvRemitoL1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvRemitoL2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvRemitoL2.Designer.cs">
+      <DependentUpon>RpvRemitoL2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvTransferenciaReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvTransferenciaReg.Designer.cs">
+      <DependentUpon>RpvTransferenciaReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvWmStandBy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RpvWmStandBy.Designer.cs">
+      <DependentUpon>RpvWmStandBy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmSec04RoleManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmSec04RoleManagement.Designer.cs">
+      <DependentUpon>FrmSec04RoleManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmSec03TcodeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmSec03TcodeManagement.Designer.cs">
+      <DependentUpon>FrmSec03TcodeManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmNewUser.Designer.cs">
+      <DependentUpon>FrmNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmSe02SecurityModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmSe02SecurityModule.Designer.cs">
+      <DependentUpon>FrmSe02SecurityModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmSS11AddComboFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityConfig\FrmSS11AddComboFunction.Designer.cs">
+      <DependentUpon>FrmSS11AddComboFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SuperMD\FrmCo10GLStructureTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuperMD\FrmCo10GLStructureTree.Designer.cs">
+      <DependentUpon>FrmCo10GLStructureTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuperMD\FrmMaterialTypeManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuperMD\FrmMaterialTypeManager.Designer.cs">
+      <DependentUpon>FrmMaterialTypeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuperMD\FrmMdz01ZtermStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuperMD\FrmMdz01ZtermStructure.Designer.cs">
+      <DependentUpon>FrmMdz01ZtermStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuperMD\FrmAddressStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuperMD\FrmAddressStructure.Designer.cs">
+      <DependentUpon>FrmAddressStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuperMD\FrmSMD01_AddressStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuperMD\FrmSMD01_AddressStructure.Designer.cs">
+      <DependentUpon>FrmSMD01_AddressStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\Cierre\FrmFI70ImportacionOriginal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\Cierre\FrmFI70ImportacionOriginal.Designer.cs">
+      <DependentUpon>FrmFI70ImportacionOriginal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Asiento\FrmAsientoContableDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Asiento\FrmAsientoContableDetalle.Designer.cs">
+      <DependentUpon>FrmAsientoContableDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCierreProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCierreProveedores.Designer.cs">
+      <DependentUpon>FrmCierreProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO13Conciliacion203204.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO13Conciliacion203204.Designer.cs">
+      <DependentUpon>FrmCO13Conciliacion203204.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO14SaldosAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO14SaldosAP.Designer.cs">
+      <DependentUpon>FrmCO14SaldosAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmDetalle203.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmDetalle203.Designer.cs">
+      <DependentUpon>FrmDetalle203.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmDetalle403.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmDetalle403.Designer.cs">
+      <DependentUpon>FrmDetalle403.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmDetalleEgresosREG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmDetalleEgresosREG.Designer.cs">
+      <DependentUpon>FrmDetalleEgresosREG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmDetallesPagosPDOPx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmDetallesPagosPDOPx.Designer.cs">
+      <DependentUpon>FrmDetallesPagosPDOPx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmC016ViewChangeCostoMop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmC016ViewChangeCostoMop.Designer.cs">
+      <DependentUpon>FrmC016ViewChangeCostoMop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO02_Reposicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO02_Reposicion.Designer.cs">
+      <DependentUpon>FrmCO02_Reposicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO03_Manufactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO03_Manufactura.Designer.cs">
+      <DependentUpon>FrmCO03_Manufactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO04_UpdateRepoCostHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO04_UpdateRepoCostHistory.Designer.cs">
+      <DependentUpon>FrmCO04_UpdateRepoCostHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO05SeleccionaFormulaCosteo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO05SeleccionaFormulaCosteo.Designer.cs">
+      <DependentUpon>FrmCO05SeleccionaFormulaCosteo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO06MfgCostExplosion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO06MfgCostExplosion.Designer.cs">
+      <DependentUpon>FrmCO06MfgCostExplosion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO07CostoStandard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO07CostoStandard.Designer.cs">
+      <DependentUpon>FrmCO07CostoStandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCo08CostManageControlCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCo08CostManageControlCenter.Designer.cs">
+      <DependentUpon>FrmCo08CostManageControlCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO09RevisionCostoMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO09RevisionCostoMP.Designer.cs">
+      <DependentUpon>FrmCO09RevisionCostoMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO10RevisionCostoFabricado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO10RevisionCostoFabricado.Designer.cs">
+      <DependentUpon>FrmCO10RevisionCostoFabricado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO11_ViewCostRollManufacturedDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO11_ViewCostRollManufacturedDetail.Designer.cs">
+      <DependentUpon>FrmCO11_ViewCostRollManufacturedDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO12UpdateRepoCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO12UpdateRepoCost.Designer.cs">
+      <DependentUpon>FrmCO12UpdateRepoCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO13MargenResumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO13MargenResumen.Designer.cs">
+      <DependentUpon>FrmCO13MargenResumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO14UpdateFCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO14UpdateFCost.Designer.cs">
+      <DependentUpon>FrmCO14UpdateFCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO15DetalleMop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO15DetalleMop.Designer.cs">
+      <DependentUpon>FrmCO15DetalleMop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO16_MopSinRegistrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\Cost\FrmCO16_MopSinRegistrar.Designer.cs">
+      <DependentUpon>FrmCO16_MopSinRegistrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\FrmCierre1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\FrmCierre1.Designer.cs">
+      <DependentUpon>FrmCierre1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\FrmDetalleDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\FrmDetalleDocumentos.Designer.cs">
+      <DependentUpon>FrmDetalleDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO20AbmGLAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO20AbmGLAccounts.Designer.cs">
+      <DependentUpon>FrmCO20AbmGLAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO30GLS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO30GLS.Designer.cs">
+      <DependentUpon>FrmCO30GLS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO31GLS_TreeResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO31GLS_TreeResults.Designer.cs">
+      <DependentUpon>FrmCO31GLS_TreeResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO32GLSReclass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO32GLSReclass.Designer.cs">
+      <DependentUpon>FrmCO32GLSReclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO33DetalleAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\GL\FrmCO33DetalleAsiento.Designer.cs">
+      <DependentUpon>FrmCO33DetalleAsiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM02GescoSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM02GescoSelect.Designer.cs">
+      <DependentUpon>FrmCRM02GescoSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM03GescoMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM03GescoMain.Designer.cs">
+      <DependentUpon>FrmCRM03GescoMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM04GescoCall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM04GescoCall.Designer.cs">
+      <DependentUpon>FrmCRM04GescoCall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM05GescoPagosListos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM05GescoPagosListos.Designer.cs">
+      <DependentUpon>FrmCRM05GescoPagosListos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM06GescoCtaCteEstiloCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM06GescoCtaCteEstiloCliente.Designer.cs">
+      <DependentUpon>FrmCRM06GescoCtaCteEstiloCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM07GescoDetallePagoListo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM07GescoDetallePagoListo.Designer.cs">
+      <DependentUpon>FrmCRM07GescoDetallePagoListo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM08PendientePorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmCRM08PendientePorProducto.Designer.cs">
+      <DependentUpon>FrmCRM08PendientePorProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmMensajeCustomerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmMensajeCustomerManager.Designer.cs">
+      <DependentUpon>FrmMensajeCustomerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmNuevaAccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmNuevaAccion.Designer.cs">
+      <DependentUpon>FrmNuevaAccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmPedidosPendientesMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CRM\FrmPedidosPendientesMaterial.Designer.cs">
+      <DependentUpon>FrmPedidosPendientesMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CCMAIN\frmCC1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CCMAIN\frmCC1.Designer.cs">
+      <DependentUpon>frmCC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CCMAIN\frmCC1Global.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CCMAIN\frmCC1Global.Designer.cs">
+      <DependentUpon>frmCC1Global.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI47ChangeCobranzaType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI47ChangeCobranzaType.Designer.cs">
+      <DependentUpon>FrmFI47ChangeCobranzaType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmCobranzaSearchScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmCobranzaSearchScreen.Designer.cs">
+      <DependentUpon>FrmCobranzaSearchScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI43ConversionCobranzas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI43ConversionCobranzas.Designer.cs">
+      <DependentUpon>FrmFI43ConversionCobranzas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmDetalleCobranzaIngresada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmDetalleCobranzaIngresada.Designer.cs">
+      <DependentUpon>FrmDetalleCobranzaIngresada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmDetalleImputacionPorRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmDetalleImputacionPorRecibo.Designer.cs">
+      <DependentUpon>FrmDetalleImputacionPorRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI45DetalleImputacionFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI45DetalleImputacionFactura.Designer.cs">
+      <DependentUpon>FrmFI45DetalleImputacionFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI48ImputacionCobranza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI48ImputacionCobranza.Designer.cs">
+      <DependentUpon>FrmFI48ImputacionCobranza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmImputacionCobranzas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmImputacionCobranzas.Designer.cs">
+      <DependentUpon>FrmImputacionCobranzas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmIngresoCobranza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmIngresoCobranza.Designer.cs">
+      <DependentUpon>FrmIngresoCobranza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI42CobranzaTemporal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI42CobranzaTemporal.Designer.cs">
+      <DependentUpon>FrmFI42CobranzaTemporal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI49IngresoItemsCobranza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Cobranza\FrmFI49IngresoItemsCobranza.Designer.cs">
+      <DependentUpon>FrmFI49IngresoItemsCobranza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI51GenerarNotaCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI51GenerarNotaCredito.Designer.cs">
+      <DependentUpon>FrmFI51GenerarNotaCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi52NotaCreditoDebitoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi57SeleccionDocModificacionPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi57SeleccionDocModificacionPrecio.Designer.cs">
+      <DependentUpon>FrmFi57SeleccionDocModificacionPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI59DescuentoGeneralPeriodoAsociado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI59DescuentoGeneralPeriodoAsociado.Designer.cs">
+      <DependentUpon>FrmFI59DescuentoGeneralPeriodoAsociado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI58SeleccionDocDescuentoGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI58SeleccionDocDescuentoGeneral.Designer.cs">
+      <DependentUpon>FrmFI58SeleccionDocDescuentoGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI61GenerarNotaDebito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI61GenerarNotaDebito.Designer.cs">
+      <DependentUpon>FrmFI61GenerarNotaDebito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI62SeleccionNcAnular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI62SeleccionNcAnular.Designer.cs">
+      <DependentUpon>FrmFI62SeleccionNcAnular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI63SeleccionDevolucionChequeACliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI63SeleccionDevolucionChequeACliente.Designer.cs">
+      <DependentUpon>FrmFI63SeleccionDevolucionChequeACliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi64DevolucionChequeCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi64DevolucionChequeCliente.Designer.cs">
+      <DependentUpon>FrmFi64DevolucionChequeCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI65GastosFinancieros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI65GastosFinancieros.Designer.cs">
+      <DependentUpon>FrmFI65GastosFinancieros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI66NCDAjustes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI66NCDAjustes.Designer.cs">
+      <DependentUpon>FrmFI66NCDAjustes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI71AjustesFI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI71AjustesFI.Designer.cs">
+      <DependentUpon>FrmFI71AjustesFI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI72AjusteRedondeo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI72AjusteRedondeo.Designer.cs">
+      <DependentUpon>FrmFI72AjusteRedondeo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI75AjusteEntreCuentasLx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI75AjusteEntreCuentasLx.Designer.cs">
+      <DependentUpon>FrmFI75AjusteEntreCuentasLx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmFI25RefacturacionDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmFI25RefacturacionDocumento.Designer.cs">
+      <DependentUpon>FrmFI25RefacturacionDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FRMFI90_FSR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FRMFI90_FSR.Designer.cs">
+      <DependentUpon>FRMFI90_FSR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmFI49DetalleDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmFI49DetalleDocumentos.Designer.cs">
+      <DependentUpon>FrmFI49DetalleDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmFI60ExchangeRage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmFI60ExchangeRage.Designer.cs">
+      <DependentUpon>FrmFI60ExchangeRage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmChr2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmChr2.Designer.cs">
+      <DependentUpon>FrmChr2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmCrh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmCrh.Designer.cs">
+      <DependentUpon>FrmCrh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI44ChequeRechazadoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI44ChequeRechazadoProveedor.Designer.cs">
+      <DependentUpon>FrmFI44ChequeRechazadoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI52RechazarChequeEntidadFinanciera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI52RechazarChequeEntidadFinanciera.Designer.cs">
+      <DependentUpon>FrmFI52RechazarChequeEntidadFinanciera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI53GestionChequeRechazado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI53GestionChequeRechazado.Designer.cs">
+      <DependentUpon>FrmFI53GestionChequeRechazado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI54GestionEntregaRechazos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI54GestionEntregaRechazos.Designer.cs">
+      <DependentUpon>FrmFI54GestionEntregaRechazos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI55ChequesEmitidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI55ChequesEmitidos.Designer.cs">
+      <DependentUpon>FrmFI55ChequesEmitidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI55GestionChequeDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmFI55GestionChequeDetalle.Designer.cs">
+      <DependentUpon>FrmFI55GestionChequeDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\TaxModule\FrmFI13TaxConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\TaxModule\FrmFI13TaxConfig.Designer.cs">
+      <DependentUpon>FrmFI13TaxConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\ConRemito\FrmFI21AddItemToFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\ConRemito\FrmFI21AddItemToFactura.Designer.cs">
+      <DependentUpon>FrmFI21AddItemToFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\ConRemito\FrmCompleteFooter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\ConRemito\FrmCompleteFooter.Designer.cs">
+      <DependentUpon>FrmCompleteFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\ConRemito\FrmFI17VendorContaConRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\ConRemito\FrmFI17VendorContaConRemito.Designer.cs">
+      <DependentUpon>FrmFI17VendorContaConRemito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\SinRemito\FrmFI16VendorContaSinRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\SinRemito\FrmFI16VendorContaSinRemito.Designer.cs">
+      <DependentUpon>FrmFI16VendorContaSinRemito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\SinRemito\FrmFI18IngresoFacturasInterfaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\SinRemito\FrmFI18IngresoFacturasInterfaz.Designer.cs">
+      <DependentUpon>FrmFI18IngresoFacturasInterfaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\SinRemito\FrmFI60ContaCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\SinRemito\FrmFI60ContaCancel.Designer.cs">
+      <DependentUpon>FrmFI60ContaCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\SinRemito\FrmInfoRecordContaR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Vendor\SinRemito\FrmInfoRecordContaR.Designer.cs">
+      <DependentUpon>FrmInfoRecordContaR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmCustomerNCD2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmCustomerNCD2.designer.cs">
+      <DependentUpon>FrmCustomerNCD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmCustomerNCDEditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmCustomerNCDEditItem.Designer.cs">
+      <DependentUpon>FrmCustomerNCDEditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmCustomerNCDMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmCustomerNCDMain.Designer.cs">
+      <DependentUpon>FrmCustomerNCDMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI40AjusteSaldoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI40AjusteSaldoCliente.Designer.cs">
+      <DependentUpon>FrmFI40AjusteSaldoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmListadoChequesRechzados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmListadoChequesRechzados.Designer.cs">
+      <DependentUpon>FrmListadoChequesRechzados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmNCDAddOtherConcept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmNCDAddOtherConcept.Designer.cs">
+      <DependentUpon>FrmNCDAddOtherConcept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmNotaDebitoCreditoMainScreen.cs" />
+    <Compile Include="Transactional\FI\CustomerNCD\FrmNotaDebitoCreditoMainScreen.Designer.cs">
+      <DependentUpon>FrmNotaDebitoCreditoMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi53SeleccionFacturaAnular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi53SeleccionFacturaAnular.Designer.cs">
+      <DependentUpon>FrmFi53SeleccionFacturaAnular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmSeleccionChequeRechazadoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmSeleccionChequeRechazadoCliente.Designer.cs">
+      <DependentUpon>FrmSeleccionChequeRechazadoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi55SeleccionDocDiferenciaPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi55SeleccionDocDiferenciaPrecio.Designer.cs">
+      <DependentUpon>FrmFi55SeleccionDocDiferenciaPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi56SeleccionDocumentoAjusteTc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi56SeleccionDocumentoAjusteTc.Designer.cs">
+      <DependentUpon>FrmFi56SeleccionDocumentoAjusteTc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi54NcDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFi54NcDevolucion.Designer.cs">
+      <DependentUpon>FrmFi54NcDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FacturaElectronica\FrmFE00DetallesComponentesPyAFIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FacturaElectronica\FrmFE00DetallesComponentesPyAFIP.Designer.cs">
+      <DependentUpon>FrmFE00DetallesComponentesPyAFIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FacturaElectronica\FrmFE01DatosComprobanteAfip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FacturaElectronica\FrmFE01DatosComprobanteAfip.Designer.cs">
+      <DependentUpon>FrmFE01DatosComprobanteAfip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FacturaElectronica\FrmFE02UltimosComprobantesAfip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FacturaElectronica\FrmFE02UltimosComprobantesAfip.Designer.cs">
+      <DependentUpon>FrmFE02UltimosComprobantesAfip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmCustomerDocumentSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmCustomerDocumentSearch.Designer.cs">
+      <DependentUpon>FrmCustomerDocumentSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmDetalleDocumentoFI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmDetalleDocumentoFI.Designer.cs">
+      <DependentUpon>FrmDetalleDocumentoFI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmFacturaDetalleCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmFacturaDetalleCliente.Designer.cs">
+      <DependentUpon>FrmFacturaDetalleCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmFI20MainDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmFI20MainDocument.Designer.cs">
+      <DependentUpon>FrmFI20MainDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmLeyendasFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmLeyendasFactura.Designer.cs">
+      <DependentUpon>FrmLeyendasFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmSeleccionZTerm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Factura\FrmSeleccionZTerm.Designer.cs">
+      <DependentUpon>FrmSeleccionZTerm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FondoFijo\FrmFondoFijoConversion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FondoFijo\FrmFondoFijoConversion.Designer.cs">
+      <DependentUpon>FrmFondoFijoConversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FondoFijo\FrmImputacionFF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FondoFijo\FrmImputacionFF.Designer.cs">
+      <DependentUpon>FrmImputacionFF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmAgregaFacturaRetencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmAgregaFacturaRetencion.Designer.cs">
+      <DependentUpon>FrmAgregaFacturaRetencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmFI34BusquedaCheques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmFI34BusquedaCheques.Designer.cs">
+      <DependentUpon>FrmFI34BusquedaCheques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmCalculoRetenciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmCalculoRetenciones.Designer.cs">
+      <DependentUpon>FrmCalculoRetenciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI33OpImputacionRetenciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI33OpImputacionRetenciones.Designer.cs">
+      <DependentUpon>FrmFI33OpImputacionRetenciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmModuloTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmModuloTax.Designer.cs">
+      <DependentUpon>FrmModuloTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI32OPAddItemPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI32OPAddItemPago.Designer.cs">
+      <DependentUpon>FrmFI32OPAddItemPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI31OPMainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI31OPMainScreen.Designer.cs">
+      <DependentUpon>FrmFI31OPMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI30OPSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI30OPSearch.Designer.cs">
+      <DependentUpon>FrmFI30OPSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmTest1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\FrmTest1.Designer.cs">
+      <DependentUpon>FrmTest1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GESCO\FrmGestionCreditosClientesMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GESCO\FrmGestionCreditosClientesMain.Designer.cs">
+      <DependentUpon>FrmGestionCreditosClientesMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GESCO\FrmGestionCreditosClientesSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GESCO\FrmGestionCreditosClientesSearch.Designer.cs">
+      <DependentUpon>FrmGestionCreditosClientesSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GESPA\FrmGestionPagosMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GESPA\FrmGestionPagosMain.Designer.cs">
+      <DependentUpon>FrmGestionPagosMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmChequesInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmChequesInfo.Designer.cs">
+      <DependentUpon>FrmChequesInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmGestionCheques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmGestionCheques.Designer.cs">
+      <DependentUpon>FrmGestionCheques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmRechazarCheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\GestionCheques\FrmRechazarCheque.Designer.cs">
+      <DependentUpon>FrmRechazarCheque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\PRM\DetalleDocumentosProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\PRM\DetalleDocumentosProveedores.Designer.cs">
+      <DependentUpon>DetalleDocumentosProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Transferencias\FrmFI15TransferenciasEC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Transferencias\FrmFI15TransferenciasEC.Designer.cs">
+      <DependentUpon>FrmFI15TransferenciasEC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmFI85VendorNCDSeleccionItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmFI85VendorNCDSeleccionItem.Designer.cs">
+      <DependentUpon>FrmFI85VendorNCDSeleccionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmFI82SeleccionChequeRechazadoVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmFI82SeleccionChequeRechazadoVendor.Designer.cs">
+      <DependentUpon>FrmFI82SeleccionChequeRechazadoVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmFI81VendorNcdMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmFI81VendorNcdMain.Designer.cs">
+      <DependentUpon>FrmFI81VendorNcdMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmVendorNCDEditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmVendorNCDEditItem.Designer.cs">
+      <DependentUpon>FrmVendorNCDEditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmFI80VendorNcdScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorNCD\FrmFI80VendorNcdScreen1.Designer.cs">
+      <DependentUpon>FrmFI80VendorNcdScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorPRM\FrmFI50VendorPRMMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorPRM\FrmFI50VendorPRMMain.Designer.cs">
+      <DependentUpon>FrmFI50VendorPRMMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorPRM\FrmFI51VendorInvoiceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\VendorPRM\FrmFI51VendorInvoiceView.Designer.cs">
+      <DependentUpon>FrmFI51VendorInvoiceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FrmDetalleDeudaProveedeor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FrmDetalleDeudaProveedeor.Designer.cs">
+      <DependentUpon>FrmDetalleDeudaProveedeor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FrmMM0Accion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FrmMM0Accion.Designer.cs">
+      <DependentUpon>FrmMM0Accion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr02PersonalABMSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr02PersonalABMSelect.Designer.cs">
+      <DependentUpon>FrmHr02PersonalABMSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR03PersonalABMMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR03PersonalABMMain.Designer.cs">
+      <DependentUpon>FrmHR03PersonalABMMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr04Posiciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr04Posiciones.Designer.cs">
+      <DependentUpon>FrmHr04Posiciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr05PosicionMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr05PosicionMaintain.Designer.cs">
+      <DependentUpon>FrmHr05PosicionMaintain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR05SYJH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR05SYJH.Designer.cs">
+      <DependentUpon>FrmHR05SYJH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR06SYJAddManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR06SYJAddManual.Designer.cs">
+      <DependentUpon>FrmHR06SYJAddManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR07AnticiposLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR07AnticiposLoad.Designer.cs">
+      <DependentUpon>FrmHR07AnticiposLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR08PagoAdelantos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR08PagoAdelantos.Designer.cs">
+      <DependentUpon>FrmHR08PagoAdelantos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR09DetalleRegistroAdelanto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR09DetalleRegistroAdelanto.Designer.cs">
+      <DependentUpon>FrmHR09DetalleRegistroAdelanto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR10AbonarDesdeCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHR10AbonarDesdeCuenta.Designer.cs">
+      <DependentUpon>FrmHR10AbonarDesdeCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr10CargaSyj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr10CargaSyj.Designer.cs">
+      <DependentUpon>FrmHr10CargaSyj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr11ListaSyJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr11ListaSyJ.Designer.cs">
+      <DependentUpon>FrmHr11ListaSyJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr12PagoSyJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\HR\FrmHr12PagoSyJ.Designer.cs">
+      <DependentUpon>FrmHr12PagoSyJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmAjusteStockSloc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmAjusteStockSloc.Designer.cs">
+      <DependentUpon>FrmAjusteStockSloc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmBusquedaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmBusquedaProveedores.Designer.cs">
+      <DependentUpon>FrmBusquedaProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmCQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmCQ.Designer.cs">
+      <DependentUpon>FrmCQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmGeneraOrdenProcesoMolienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmGeneraOrdenProcesoMolienda.Designer.cs">
+      <DependentUpon>FrmGeneraOrdenProcesoMolienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmMM30IcOLD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmMM30IcOLD.Designer.cs">
+      <DependentUpon>FrmMM30IcOLD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmMM31ListadoStockMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmMM31ListadoStockMaterial.Designer.cs">
+      <DependentUpon>FrmMM31ListadoStockMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmMM67FasonExternoMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmMM67FasonExternoMain.Designer.cs">
+      <DependentUpon>FrmMM67FasonExternoMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmOrdenCompraDetalleItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmOrdenCompraDetalleItem.Designer.cs">
+      <DependentUpon>FrmOrdenCompraDetalleItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmOrdenCompraMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmOrdenCompraMain.Designer.cs">
+      <DependentUpon>FrmOrdenCompraMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmMM5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmMM5.Designer.cs">
+      <DependentUpon>FrmMM5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmRetornoMaterialAPlanta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\FrmRetornoMaterialAPlanta.Designer.cs">
+      <DependentUpon>FrmRetornoMaterialAPlanta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\Ingreso de Stock\FrmMM30IngresoStockOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\Ingreso de Stock\FrmMM30IngresoStockOC.Designer.cs">
+      <DependentUpon>FrmMM30IngresoStockOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\Ingreso de Stock\FrmMM31DetalleIngresoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\Ingreso de Stock\FrmMM31DetalleIngresoStock.Designer.cs">
+      <DependentUpon>FrmMM31DetalleIngresoStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\MMR\FrmMaterialMasterRename.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\MMR\FrmMaterialMasterRename.Designer.cs">
+      <DependentUpon>FrmMaterialMasterRename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmMDB02BomMainData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmMDB02BomMainData.Designer.cs">
+      <DependentUpon>FrmMDB02BomMainData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmMDB01BomSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData\BOM\FrmMDB01BomSearch.Designer.cs">
+      <DependentUpon>FrmMDB01BomSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\MRP\FrmMRP02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\MRP\FrmMRP02.Designer.cs">
+      <DependentUpon>FrmMRP02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\MRP\FrmMRP03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\MRP\FrmMRP03.Designer.cs">
+      <DependentUpon>FrmMRP03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\Orden de Compra\FrmMM20BuscadorOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\Orden de Compra\FrmMM20BuscadorOC.Designer.cs">
+      <DependentUpon>FrmMM20BuscadorOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\Orden de Compra\FrmMM21DatosOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\Orden de Compra\FrmMM21DatosOC.Designer.cs">
+      <DependentUpon>FrmMM21DatosOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\Orden de Compra\FrmMM22DetalleItemOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\Orden de Compra\FrmMM22DetalleItemOC.Designer.cs">
+      <DependentUpon>FrmMM22DetalleItemOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\Requisicin\FrmMM54RequisicionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\Requisicin\FrmMM54RequisicionList.Designer.cs">
+      <DependentUpon>FrmMM54RequisicionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\Requisicin\FrmMM55RequisicionMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\Requisicin\FrmMM55RequisicionMain.Designer.cs">
+      <DependentUpon>FrmMM55RequisicionMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\MM\Requisicin\FrmMM56RcPendientePorProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\MM\Requisicin\FrmMM56RcPendientePorProveedor.Designer.cs">
+      <DependentUpon>FrmMM56RcPendientePorProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP03AltaOFManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP03AltaOFManual.Designer.cs">
+      <DependentUpon>FrmPP03AltaOFManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP08IngresoTemporalSeleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP08IngresoTemporalSeleccion.Designer.cs">
+      <DependentUpon>FrmPP08IngresoTemporalSeleccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP17AddUpdateDetalleRecursosProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP17AddUpdateDetalleRecursosProduccion.Designer.cs">
+      <DependentUpon>FrmPP17AddUpdateDetalleRecursosProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP17CambiarOF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP17CambiarOF.Designer.cs">
+      <DependentUpon>FrmPP17CambiarOF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP18UpdateKgFabricar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP18UpdateKgFabricar.Designer.cs">
+      <DependentUpon>FrmPP18UpdateKgFabricar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP19MRP1Consumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP19MRP1Consumos.Designer.cs">
+      <DependentUpon>FrmPP19MRP1Consumos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP30CalculoBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP30CalculoBOM.Designer.cs">
+      <DependentUpon>FrmPP30CalculoBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP06InterpolacionFormula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP06InterpolacionFormula.Designer.cs">
+      <DependentUpon>FrmPP06InterpolacionFormula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP15ConfirmacionLotesCierreOF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP15ConfirmacionLotesCierreOF.Designer.cs">
+      <DependentUpon>FrmPP15ConfirmacionLotesCierreOF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP10CierreOF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP10CierreOF.Designer.cs">
+      <DependentUpon>FrmPP10CierreOF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP09IngresoTemporal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP09IngresoTemporal.Designer.cs">
+      <DependentUpon>FrmPP09IngresoTemporal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmOrdenFabricacioAgregarItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmOrdenFabricacioAgregarItem.Designer.cs">
+      <DependentUpon>FrmOrdenFabricacioAgregarItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP04CancelaOF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP04CancelaOF.Designer.cs">
+      <DependentUpon>FrmPP04CancelaOF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmOrdenFabricacionFormulaImprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmOrdenFabricacionFormulaImprimir.Designer.cs">
+      <DependentUpon>FrmOrdenFabricacionFormulaImprimir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP16DetallesOFCerrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP16DetallesOFCerrada.Designer.cs">
+      <DependentUpon>FrmPP16DetallesOFCerrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP05ModificaBatchSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP05ModificaBatchSize.Designer.cs">
+      <DependentUpon>FrmPP05ModificaBatchSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP01PlanProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP01PlanProduccion.Designer.cs">
+      <DependentUpon>FrmPP01PlanProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP02PlanificacionOF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP02PlanificacionOF.Designer.cs">
+      <DependentUpon>FrmPP02PlanificacionOF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP07SeleccionFormulaAFabricar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP07SeleccionFormulaAFabricar.Designer.cs">
+      <DependentUpon>FrmPP07SeleccionFormulaAFabricar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP12DetalleIngresoTemporal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP12DetalleIngresoTemporal.Designer.cs">
+      <DependentUpon>FrmPP12DetalleIngresoTemporal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP13VisualizarStockReservadoPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP13VisualizarStockReservadoPF.Designer.cs">
+      <DependentUpon>FrmPP13VisualizarStockReservadoPF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP14AgregarMaterialPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP14AgregarMaterialPF.Designer.cs">
+      <DependentUpon>FrmPP14AgregarMaterialPF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP31CalculoBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP31CalculoBOM.Designer.cs">
+      <DependentUpon>FrmPP31CalculoBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmSeleccionBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmSeleccionBatch.Designer.cs">
+      <DependentUpon>FrmSeleccionBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP11SelectBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmPP11SelectBatch.Designer.cs">
+      <DependentUpon>FrmPP11SelectBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm01MetodoInspeccionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm01MetodoInspeccionList.Designer.cs">
+      <DependentUpon>FrmQm01MetodoInspeccionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQM02NuevoMetodoInspeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQM02NuevoMetodoInspeccion.Designer.cs">
+      <DependentUpon>FrmQM02NuevoMetodoInspeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm06AddMetodoToPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm06AddMetodoToPlan.Designer.cs">
+      <DependentUpon>FrmQm06AddMetodoToPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm12ListaMasterInspPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm12ListaMasterInspPlan.Designer.cs">
+      <DependentUpon>FrmQm12ListaMasterInspPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm04IpList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm04IpList.Designer.cs">
+      <DependentUpon>FrmQm04IpList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm10ListadoMetodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm10ListadoMetodos.Designer.cs">
+      <DependentUpon>FrmQm10ListadoMetodos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm15AsignacionMaterialIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm15AsignacionMaterialIP.Designer.cs">
+      <DependentUpon>FrmQm15AsignacionMaterialIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm16MaterialesSinAsignacionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm16MaterialesSinAsignacionPlan.Designer.cs">
+      <DependentUpon>FrmQm16MaterialesSinAsignacionPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQM05DetalleAnalisisCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQM05DetalleAnalisisCalidad.Designer.cs">
+      <DependentUpon>FrmQM05DetalleAnalisisCalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm13MasterIPlanDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm13MasterIPlanDetalle.Designer.cs">
+      <DependentUpon>FrmQm13MasterIPlanDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm21AddRegistroInspeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm21AddRegistroInspeccion.Designer.cs">
+      <DependentUpon>FrmQm21AddRegistroInspeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm22SeleccionaRegistroCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm22SeleccionaRegistroCompra.Designer.cs">
+      <DependentUpon>FrmQm22SeleccionaRegistroCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm30QmListaMainH1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm30QmListaMainH1.Designer.cs">
+      <DependentUpon>FrmQm30QmListaMainH1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm31QmListaMainH2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm31QmListaMainH2.Designer.cs">
+      <DependentUpon>FrmQm31QmListaMainH2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm32DetallePlanInspeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm32DetallePlanInspeccion.Designer.cs">
+      <DependentUpon>FrmQm32DetallePlanInspeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm33SplitRegistroInspeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQm33SplitRegistroInspeccion.Designer.cs">
+      <DependentUpon>FrmQm33SplitRegistroInspeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQM40RestringeLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\QM\FrmQM40RestringeLote.Designer.cs">
+      <DependentUpon>FrmQM40RestringeLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\CRM\frmCRM1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\CRM\frmCRM1.Designer.cs">
+      <DependentUpon>frmCRM1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\FrmSD05CentroDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\FrmSD05CentroDespacho.Designer.cs">
+      <DependentUpon>FrmSD05CentroDespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\Hoja de Ruta\FrmAddRemitosRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\Hoja de Ruta\FrmAddRemitosRuta.Designer.cs">
+      <DependentUpon>FrmAddRemitosRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\Hoja de Ruta\FrmHojaRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\Hoja de Ruta\FrmHojaRuta.Designer.cs">
+      <DependentUpon>FrmHojaRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\Hoja de Ruta\FrmCentroPreparacionHojaRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\Hoja de Ruta\FrmCentroPreparacionHojaRuta.Designer.cs">
+      <DependentUpon>FrmCentroPreparacionHojaRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmCentroPreparacionRemitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmCentroPreparacionRemitos.Designer.cs">
+      <DependentUpon>FrmCentroPreparacionRemitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmSD08ConfirmaPreparacionRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmSD08ConfirmaPreparacionRemito.Designer.cs">
+      <DependentUpon>FrmSD08ConfirmaPreparacionRemito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmSD22RefactuRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmSD22RefactuRemito.Designer.cs">
+      <DependentUpon>FrmSD22RefactuRemito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmSD22RemitoRefactu.cs" />
+    <Compile Include="Transactional\SD\Remito\FrmSeleccionBatchDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmSeleccionBatchDespacho.Designer.cs">
+      <DependentUpon>FrmSeleccionBatchDespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmSD06SeleccionRemisionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmSD06SeleccionRemisionCliente.Designer.cs">
+      <DependentUpon>FrmSD06SeleccionRemisionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmImpresionRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\Remito\FrmImpresionRemito.Designer.cs">
+      <DependentUpon>FrmImpresionRemito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmMM18CompromisoMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmMM18CompromisoMaterial.Designer.cs">
+      <DependentUpon>FrmMM18CompromisoMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmSD03SoDetalleItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmSD03SoDetalleItem.Designer.cs">
+      <DependentUpon>FrmSD03SoDetalleItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmSD02SalesOrderMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmSD02SalesOrderMain.Designer.cs">
+      <DependentUpon>FrmSD02SalesOrderMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmSalesOrderSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmSalesOrderSearch.Designer.cs">
+      <DependentUpon>FrmSalesOrderSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmSD04MotivosSC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\SD\SalesOrder\FrmSD04MotivosSC.Designer.cs">
+      <DependentUpon>FrmSD04MotivosSC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM02ModificacionEstadoLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM02ModificacionEstadoLote.Designer.cs">
+      <DependentUpon>FrmWM02ModificacionEstadoLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM03ModificarKG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM03ModificarKG.Designer.cs">
+      <DependentUpon>FrmWM03ModificarKG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM04AddStockLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM04AddStockLine.Designer.cs">
+      <DependentUpon>FrmWM04AddStockLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWm01MoveStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWm01MoveStock.Designer.cs">
+      <DependentUpon>FrmWm01MoveStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM05UpdateLoteNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM05UpdateLoteNumber.Designer.cs">
+      <DependentUpon>FrmWM05UpdateLoteNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWm06LiberarCompromiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWm06LiberarCompromiso.Designer.cs">
+      <DependentUpon>FrmWm06LiberarCompromiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM07LiberarReservaRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM07LiberarReservaRE.Designer.cs">
+      <DependentUpon>FrmWM07LiberarReservaRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM10VisualizarStockSimpre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\WM\FrmWM10VisualizarStockSimpre.Designer.cs">
+      <DependentUpon>FrmWM10VisualizarStockSimpre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitTesting\TesteoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitTesting\TesteoStock.Designer.cs">
+      <DependentUpon>TesteoStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_0TSUserControls\TsCustomerSearchEventArgs.cs" />
+    <Compile Include="_UserControls\AwsTextBoxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_UserControls\AwsTextBoxBase.Designer.cs">
+      <DependentUpon>AwsTextBoxBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\CheckDesign.cs" />
+    <Compile Include="_UserControls\CurrencyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_UserControls\CurrencyTextBox.Designer.cs">
+      <DependentUpon>CurrencyTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\FechaControlBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_UserControls\FechaControlBase.Designer.cs">
+      <DependentUpon>FechaControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\DecimalTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_UserControls\DecimalTextBox.Designer.cs">
+      <DependentUpon>DecimalTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\FechaTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_UserControls\FechaTextBox.Designer.cs">
+      <DependentUpon>FechaTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\FechaTextBoxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_UserControls\FechaTextBoxBase.Designer.cs">
+      <DependentUpon>FechaTextBoxBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\otroTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_UserControls\otroTextbox.Designer.cs">
+      <DependentUpon>otroTextbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\PorcentajeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_UserControls\PorcentajeTextBox.Designer.cs">
+      <DependentUpon>PorcentajeTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_0TSUserControls\TsUcCustomerSearch1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_0TSUserControls\TsUcCustomerSearch1.Designer.cs">
+      <DependentUpon>TsUcCustomerSearch1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\UCurrencyTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControls\UCurrencyTextBox.Designer.cs">
+      <DependentUpon>UCurrencyTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\UCustomerSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControls\UCustomerSearch.Designer.cs">
+      <DependentUpon>UCustomerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\UDecimalTextbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControls\UDecimalTextbox.Designer.cs">
+      <DependentUpon>UDecimalTextbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\UMaterialSearchBasic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControls\UMaterialSearchBasic.Designer.cs">
+      <DependentUpon>UMaterialSearchBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\USemaforo4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControls\USemaforo4.Designer.cs">
+      <DependentUpon>USemaforo4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\UCheckbox1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControls\UCheckbox1.Designer.cs">
+      <DependentUpon>UCheckbox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\UserTextboxBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControls\UserTextboxBase.Designer.cs">
+      <DependentUpon>UserTextboxBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControls\UVendorSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_UserControls\UVendorSearch.Designer.cs">
+      <DependentUpon>UVendorSearch.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Application\FrmApp02ControlsInForms.resx">
+      <DependentUpon>FrmApp02ControlsInForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\FrmFI78ImportacionComprobantesAFIP.resx">
+      <DependentUpon>FrmFI78ImportacionComprobantesAFIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\FrmARBA02.resx">
+      <DependentUpon>FrmARBA02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\FrmARBA03ListadoPresentacionesRaffone.resx">
+      <DependentUpon>FrmARBA03ListadoPresentacionesRaffone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\FrmForm1.resx">
+      <DependentUpon>FrmForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\FrmStartAppLogin.resx">
+      <DependentUpon>FrmStartAppLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\FrmDevelopmentForm.resx">
+      <DependentUpon>FrmDevelopmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Frm00MainAppStart.resx">
+      <DependentUpon>Frm00MainAppStart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\FrmTest0.resx">
+      <DependentUpon>FrmTest0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\uDataGridView.resx">
+      <DependentUpon>uDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f1delete.resx">
+      <DependentUpon>f1delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FIX\FrmFixCae.resx">
+      <DependentUpon>FrmFixCae.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FIX\FrmFixFacturaConta.resx">
+      <DependentUpon>FrmFixFacturaConta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FIX\FrmFixFacturaL5.resx">
+      <DependentUpon>FrmFixFacturaL5.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FIX\FrmMergeCustomersData.resx">
+      <DependentUpon>FrmMergeCustomersData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.resx">
+      <DependentUpon>FrmMDC00CustomerSearchBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAPP04_DatosPadron.resx">
+      <DependentUpon>FrmAPP04_DatosPadron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMdc01CustomerSearchL1.resx">
+      <DependentUpon>FrmMdc01CustomerSearchL1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMdc00CustomerSearchSaldos.resx">
+      <DependentUpon>FrmMdc00CustomerSearchSaldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTestUserComponents.resx">
+      <DependentUpon>FrmTestUserComponents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTestUserControl.resx">
+      <DependentUpon>frmTestUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MaterialSearchBase\FrmMaterialMasterSearchBase.resx">
+      <DependentUpon>FrmMaterialMasterSearchBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VendorSearchBase\FrmVendorSearchBase.resx">
+      <DependentUpon>FrmVendorSearchBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\BOM\FrmBOMCalculoBatch.resx">
+      <DependentUpon>FrmBOMCalculoBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\BOM\FrmMDB02BomMainData.resx">
+      <DependentUpon>FrmMDB02BomMainData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\BOM\FrmBOMMaterialSelector.resx">
+      <DependentUpon>FrmBOMMaterialSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\BOM\FrmMDB01BomSearch.resx">
+      <DependentUpon>FrmMDB01BomSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\BOM\FrmMDB05SearchByMP.resx">
+      <DependentUpon>FrmMDB05SearchByMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\BOM\FrmMDB06MassFormActivate.resx">
+      <DependentUpon>FrmMDB06MassFormActivate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Customer Master\FrmMdc02BillTo.resx">
+      <DependentUpon>FrmMdc02BillTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Customer Master\FrmCustomerSearch.resx">
+      <DependentUpon>FrmCustomerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Customer Master\FrmUt01ObtieneDatosPadronAFIP.resx">
+      <DependentUpon>FrmUt01ObtieneDatosPadronAFIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Customer Master\FrmMdc01CustomerSearch.resx">
+      <DependentUpon>FrmMdc01CustomerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Customer Master\FrmMDC03ShipToData.resx">
+      <DependentUpon>FrmMDC03ShipToData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Customer Master\FrmMdc04ZtermMaintain.resx">
+      <DependentUpon>FrmMdc04ZtermMaintain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Customer Master\FrmMdc05CreditLimitMaintain.resx">
+      <DependentUpon>FrmMdc05CreditLimitMaintain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Customer Master\FrmMdc06CobranzaDataMaintain.resx">
+      <DependentUpon>FrmMdc06CobranzaDataMaintain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\FrmAddNewShipTo.resx">
+      <DependentUpon>FrmAddNewShipTo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\FrmBusquedaAvanzadaCliente.resx">
+      <DependentUpon>FrmBusquedaAvanzadaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\FrmBusquedaAvanzadaProveedor.resx">
+      <DependentUpon>FrmBusquedaAvanzadaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\FrmCustomerSearchNew.resx">
+      <DependentUpon>FrmCustomerSearchNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\FrmCustomerShipToSelection.resx">
+      <DependentUpon>FrmCustomerShipToSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\FrmVendorDetailData.resx">
+      <DependentUpon>FrmVendorDetailData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\FrmVendorSearch.resx">
+      <DependentUpon>FrmVendorSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\FrmApp13CheckWebServicesConfig.resx">
+      <DependentUpon>FrmApp13CheckWebServicesConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Material Master\FrmMDM03CodigoVentaScreen.resx">
+      <DependentUpon>FrmMDM03CodigoVentaScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Material Master\FrmMasterDataSearchScreen.resx">
+      <DependentUpon>FrmMasterDataSearchScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Material Master\FrmMaterialMasterAKA.resx">
+      <DependentUpon>FrmMaterialMasterAKA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Material Master\FrmMdm01MaterialMasterMain.resx">
+      <DependentUpon>FrmMdm01MaterialMasterMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Material Master\FrmZRLBScreen.resx">
+      <DependentUpon>FrmZRLBScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\NEL\FrmQm06AprobacionMuestra.resx">
+      <DependentUpon>FrmQm06AprobacionMuestra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\NEL\FrmQm04AsignaCodigo.resx">
+      <DependentUpon>FrmQm04AsignaCodigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\NEL\FrmQM03NelAddProgress.resx">
+      <DependentUpon>FrmQM03NelAddProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\NEL\FrmQm05NelCancelation.resx">
+      <DependentUpon>FrmQm05NelCancelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\NEL\FrmQM02NelMainData.resx">
+      <DependentUpon>FrmQM02NelMainData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\NEL\FrmQM01NelSearch.resx">
+      <DependentUpon>FrmQM01NelSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Vendor\FrmMdv02VendorABMDetail.resx">
+      <DependentUpon>FrmMdv02VendorABMDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData\Vendor\FrmMdv03VendorInfo.resx">
+      <DependentUpon>FrmMdv03VendorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUserControls\CtlAddress.resx">
+      <DependentUpon>CtlAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUserControls\_frmABMAdressControl.resx">
+      <DependentUpon>_frmABMAdressControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\ReportDesign\FacturaA - Copia.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\FacturaA.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\DocumentoXRetornoChequeL1.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\FacturaA_SinPreimpreso - Copia.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\FacturaA_SinPreimpreso.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\GenericBOM.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\NCDL2.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\FacturaL2.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\ReciboCobranzaL1.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportDesign\ReciboTemporalProvisorio.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\RptImpresionOF_New.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\RptRemitoL1.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\RptRemitoL2.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\RptOrdenPago.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\RptOrdenFabricacion.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\RptPreparacionPedido.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\RptTransferenciaReg.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\WmReporteStandBy.rdlc" />
+    <EmbeddedResource Include="Reports\ReportManager\RpvBOM.resx">
+      <DependentUpon>RpvBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvFacturaL1.resx">
+      <DependentUpon>RpvFacturaL1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvDocumentoXL1RetornoCheque.resx">
+      <DependentUpon>RpvDocumentoXL1RetornoCheque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvFacturaL1_PDF.resx">
+      <DependentUpon>RpvFacturaL1_PDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvImprimirOFNew.resx">
+      <DependentUpon>RpvImprimirOFNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvNCDL2.resx">
+      <DependentUpon>RpvNCDL2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvFacturaL2.resx">
+      <DependentUpon>RpvFacturaL2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvOrdenCompra.resx">
+      <DependentUpon>RpvOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportDesign\ReporteOrdenCompra.rdlc" />
+    <EmbeddedResource Include="Reports\ReportManager\RpvOrdenFabricacion.resx">
+      <DependentUpon>RpvOrdenFabricacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvOrdePago.resx">
+      <DependentUpon>RpvOrdePago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvPreparacionPedido.resx">
+      <DependentUpon>RpvPreparacionPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvReciboCobranzaOficial.resx">
+      <DependentUpon>RpvReciboCobranzaOficial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvReciboTemporal.resx">
+      <DependentUpon>RpvReciboTemporal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvRemitoL1.resx">
+      <DependentUpon>RpvRemitoL1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvRemitoL2.resx">
+      <DependentUpon>RpvRemitoL2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvTransferenciaReg.resx">
+      <DependentUpon>RpvTransferenciaReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RpvWmStandBy.resx">
+      <DependentUpon>RpvWmStandBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityConfig\FrmSec04RoleManagement.resx">
+      <DependentUpon>FrmSec04RoleManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityConfig\FrmSec03TcodeManagement.resx">
+      <DependentUpon>FrmSec03TcodeManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityConfig\FrmNewUser.resx">
+      <DependentUpon>FrmNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityConfig\FrmSe02SecurityModule.resx">
+      <DependentUpon>FrmSe02SecurityModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityConfig\FrmSS11AddComboFunction.resx">
+      <DependentUpon>FrmSS11AddComboFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperMD\FrmCo10GLStructureTree.resx">
+      <DependentUpon>FrmCo10GLStructureTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperMD\FrmMaterialTypeManager.resx">
+      <DependentUpon>FrmMaterialTypeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperMD\FrmMdz01ZtermStructure.resx">
+      <DependentUpon>FrmMdz01ZtermStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperMD\FrmAddressStructure.resx">
+      <DependentUpon>FrmAddressStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperMD\FrmSMD01_AddressStructure.resx">
+      <DependentUpon>FrmSMD01_AddressStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\Cierre\FrmFI70ImportacionOriginal.resx">
+      <DependentUpon>FrmFI70ImportacionOriginal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Asiento\FrmAsientoContableDetalle.resx">
+      <DependentUpon>FrmAsientoContableDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCierreProveedores.resx">
+      <DependentUpon>FrmCierreProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO13Conciliacion203204.resx">
+      <DependentUpon>FrmCO13Conciliacion203204.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO14SaldosAP.resx">
+      <DependentUpon>FrmCO14SaldosAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetalle203.resx">
+      <DependentUpon>FrmDetalle203.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetalle403.resx">
+      <DependentUpon>FrmDetalle403.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetalleEgresosREG.resx">
+      <DependentUpon>FrmDetalleEgresosREG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetallesPagosPDOPx.resx">
+      <DependentUpon>FrmDetallesPagosPDOPx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmC016ViewChangeCostoMop.resx">
+      <DependentUpon>FrmC016ViewChangeCostoMop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO02_Reposicion.resx">
+      <DependentUpon>FrmCO02_Reposicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO03_Manufactura.resx">
+      <DependentUpon>FrmCO03_Manufactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO04_UpdateRepoCostHistory.resx">
+      <DependentUpon>FrmCO04_UpdateRepoCostHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO05SeleccionaFormulaCosteo.resx">
+      <DependentUpon>FrmCO05SeleccionaFormulaCosteo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO06MfgCostExplosion.resx">
+      <DependentUpon>FrmCO06MfgCostExplosion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO07CostoStandard.resx">
+      <DependentUpon>FrmCO07CostoStandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCo08CostManageControlCenter.resx">
+      <DependentUpon>FrmCo08CostManageControlCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO09RevisionCostoMP.resx">
+      <DependentUpon>FrmCO09RevisionCostoMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO10RevisionCostoFabricado.resx">
+      <DependentUpon>FrmCO10RevisionCostoFabricado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO11_ViewCostRollManufacturedDetail.resx">
+      <DependentUpon>FrmCO11_ViewCostRollManufacturedDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO12UpdateRepoCost.resx">
+      <DependentUpon>FrmCO12UpdateRepoCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO13MargenResumen.resx">
+      <DependentUpon>FrmCO13MargenResumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO14UpdateFCost.resx">
+      <DependentUpon>FrmCO14UpdateFCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO15DetalleMop.resx">
+      <DependentUpon>FrmCO15DetalleMop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\FrmCierre1.resx">
+      <DependentUpon>FrmCierre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\FrmDetalleDocumentos.resx">
+      <DependentUpon>FrmDetalleDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\GL\FrmCO20AbmGLAccounts.resx">
+      <DependentUpon>FrmCO20AbmGLAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\GL\FrmCO30GLS.resx">
+      <DependentUpon>FrmCO30GLS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\GL\FrmCO31GLS_TreeResults.resx">
+      <DependentUpon>FrmCO31GLS_TreeResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\GL\FrmCO32GLSReclass.resx">
+      <DependentUpon>FrmCO32GLSReclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\GL\FrmCO33DetalleAsiento.resx">
+      <DependentUpon>FrmCO33DetalleAsiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmCRM02GescoSelect.resx">
+      <DependentUpon>FrmCRM02GescoSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmCRM03GescoMain.resx">
+      <DependentUpon>FrmCRM03GescoMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmCRM04GescoCall.resx">
+      <DependentUpon>FrmCRM04GescoCall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmCRM05GescoPagosListos.resx">
+      <DependentUpon>FrmCRM05GescoPagosListos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmCRM06GescoCtaCteEstiloCliente.resx">
+      <DependentUpon>FrmCRM06GescoCtaCteEstiloCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmCRM07GescoDetallePagoListo.resx">
+      <DependentUpon>FrmCRM07GescoDetallePagoListo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmCRM08PendientePorProducto.resx">
+      <DependentUpon>FrmCRM08PendientePorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmMensajeCustomerManager.resx">
+      <DependentUpon>FrmMensajeCustomerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmNuevaAccion.resx">
+      <DependentUpon>FrmNuevaAccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CRM\FrmPedidosPendientesMaterial.resx">
+      <DependentUpon>FrmPedidosPendientesMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CCMAIN\frmCC1.resx">
+      <DependentUpon>frmCC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CCMAIN\frmCC1Global.resx">
+      <DependentUpon>frmCC1Global.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmFI47ChangeCobranzaType.resx">
+      <DependentUpon>FrmFI47ChangeCobranzaType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmCobranzaSearchScreen.resx">
+      <DependentUpon>FrmCobranzaSearchScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmFI43ConversionCobranzas.resx">
+      <DependentUpon>FrmFI43ConversionCobranzas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmDetalleCobranzaIngresada.resx">
+      <DependentUpon>FrmDetalleCobranzaIngresada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmDetalleImputacionPorRecibo.resx">
+      <DependentUpon>FrmDetalleImputacionPorRecibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmFI45DetalleImputacionFactura.resx">
+      <DependentUpon>FrmFI45DetalleImputacionFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmFI48ImputacionCobranza.resx">
+      <DependentUpon>FrmFI48ImputacionCobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmImputacionCobranzas.resx">
+      <DependentUpon>FrmImputacionCobranzas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmIngresoCobranza.resx">
+      <DependentUpon>FrmIngresoCobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmFI42CobranzaTemporal.resx">
+      <DependentUpon>FrmFI42CobranzaTemporal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Cobranza\FrmFI49IngresoItemsCobranza.resx">
+      <DependentUpon>FrmFI49IngresoItemsCobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI51GenerarNotaCredito.resx">
+      <DependentUpon>FrmFI51GenerarNotaCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFi57SeleccionDocModificacionPrecio.resx">
+      <DependentUpon>FrmFi57SeleccionDocModificacionPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI59DescuentoGeneralPeriodoAsociado.resx">
+      <DependentUpon>FrmFI59DescuentoGeneralPeriodoAsociado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI58SeleccionDocDescuentoGeneral.resx">
+      <DependentUpon>FrmFI58SeleccionDocDescuentoGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI61GenerarNotaDebito.resx">
+      <DependentUpon>FrmFI61GenerarNotaDebito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI62SeleccionNcAnular.resx">
+      <DependentUpon>FrmFI62SeleccionNcAnular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI63SeleccionDevolucionChequeACliente.resx">
+      <DependentUpon>FrmFI63SeleccionDevolucionChequeACliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFi64DevolucionChequeCliente.resx">
+      <DependentUpon>FrmFi64DevolucionChequeCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI65GastosFinancieros.resx">
+      <DependentUpon>FrmFI65GastosFinancieros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI66NCDAjustes.resx">
+      <DependentUpon>FrmFI66NCDAjustes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI71AjustesFI.resx">
+      <DependentUpon>FrmFI71AjustesFI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI72AjusteRedondeo.resx">
+      <DependentUpon>FrmFI72AjusteRedondeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI75AjusteEntreCuentasLx.resx">
+      <DependentUpon>FrmFI75AjusteEntreCuentasLx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Factura\FrmFI25RefacturacionDocumento.resx">
+      <DependentUpon>FrmFI25RefacturacionDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Factura\FRMFI90_FSR.resx">
+      <DependentUpon>FRMFI90_FSR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FrmFI49DetalleDocumentos.resx">
+      <DependentUpon>FrmFI49DetalleDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FrmFI60ExchangeRage.resx">
+      <DependentUpon>FrmFI60ExchangeRage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmChr2.resx">
+      <DependentUpon>FrmChr2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmCrh.resx">
+      <DependentUpon>FrmCrh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmFI44ChequeRechazadoProveedor.resx">
+      <DependentUpon>FrmFI44ChequeRechazadoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmFI52RechazarChequeEntidadFinanciera.resx">
+      <DependentUpon>FrmFI52RechazarChequeEntidadFinanciera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmFI53GestionChequeRechazado.resx">
+      <DependentUpon>FrmFI53GestionChequeRechazado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmFI54GestionEntregaRechazos.resx">
+      <DependentUpon>FrmFI54GestionEntregaRechazos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmFI55ChequesEmitidos.resx">
+      <DependentUpon>FrmFI55ChequesEmitidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmFI55GestionChequeDetalle.resx">
+      <DependentUpon>FrmFI55GestionChequeDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\TaxModule\FrmFI13TaxConfig.resx">
+      <DependentUpon>FrmFI13TaxConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Vendor\ConRemito\FrmFI21AddItemToFactura.resx">
+      <DependentUpon>FrmFI21AddItemToFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Vendor\ConRemito\FrmCompleteFooter.resx">
+      <DependentUpon>FrmCompleteFooter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Vendor\ConRemito\FrmFI17VendorContaConRemito.resx">
+      <DependentUpon>FrmFI17VendorContaConRemito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Vendor\SinRemito\FrmFI16VendorContaSinRemito.resx">
+      <DependentUpon>FrmFI16VendorContaSinRemito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Vendor\SinRemito\FrmFI18IngresoFacturasInterfaz.resx">
+      <DependentUpon>FrmFI18IngresoFacturasInterfaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Vendor\SinRemito\FrmFI60ContaCancel.resx">
+      <DependentUpon>FrmFI60ContaCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Vendor\SinRemito\FrmInfoRecordContaR.resx">
+      <DependentUpon>FrmInfoRecordContaR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmCustomerNCD2.resx">
+      <DependentUpon>FrmCustomerNCD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmCustomerNCDEditItem.resx">
+      <DependentUpon>FrmCustomerNCDEditItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmCustomerNCDMain.resx">
+      <DependentUpon>FrmCustomerNCDMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI40AjusteSaldoCliente.resx">
+      <DependentUpon>FrmFI40AjusteSaldoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmListadoChequesRechzados.resx">
+      <DependentUpon>FrmListadoChequesRechzados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmNCDAddOtherConcept.resx">
+      <DependentUpon>FrmNCDAddOtherConcept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmNotaDebitoCreditoMainScreen.resx">
+      <DependentUpon>FrmNotaDebitoCreditoMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFi53SeleccionFacturaAnular.resx">
+      <DependentUpon>FrmFi53SeleccionFacturaAnular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmSeleccionChequeRechazadoCliente.resx">
+      <DependentUpon>FrmSeleccionChequeRechazadoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFi55SeleccionDocDiferenciaPrecio.resx">
+      <DependentUpon>FrmFi55SeleccionDocDiferenciaPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFi56SeleccionDocumentoAjusteTc.resx">
+      <DependentUpon>FrmFi56SeleccionDocumentoAjusteTc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFi54NcDevolucion.resx">
+      <DependentUpon>FrmFi54NcDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FacturaElectronica\FrmFE00DetallesComponentesPyAFIP.resx">
+      <DependentUpon>FrmFE00DetallesComponentesPyAFIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FacturaElectronica\FrmFE01DatosComprobanteAfip.resx">
+      <DependentUpon>FrmFE01DatosComprobanteAfip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FacturaElectronica\FrmFE02UltimosComprobantesAfip.resx">
+      <DependentUpon>FrmFE02UltimosComprobantesAfip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Factura\FrmCustomerDocumentSearch.resx">
+      <DependentUpon>FrmCustomerDocumentSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Factura\FrmDetalleDocumentoFI.resx">
+      <DependentUpon>FrmDetalleDocumentoFI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Factura\FrmFacturaDetalleCliente.resx">
+      <DependentUpon>FrmFacturaDetalleCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Factura\FrmFI20MainDocument.resx">
+      <DependentUpon>FrmFI20MainDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Factura\FrmLeyendasFactura.resx">
+      <DependentUpon>FrmLeyendasFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Factura\FrmSeleccionZTerm.resx">
+      <DependentUpon>FrmSeleccionZTerm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FondoFijo\FrmFondoFijoConversion.resx">
+      <DependentUpon>FrmFondoFijoConversion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FondoFijo\FrmImputacionFF.resx">
+      <DependentUpon>FrmImputacionFF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\VendorNCD\FrmAgregaFacturaRetencion.resx">
+      <DependentUpon>FrmAgregaFacturaRetencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FrmFI34BusquedaCheques.resx">
+      <DependentUpon>FrmFI34BusquedaCheques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FrmCalculoRetenciones.resx">
+      <DependentUpon>FrmCalculoRetenciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI33OpImputacionRetenciones.resx">
+      <DependentUpon>FrmFI33OpImputacionRetenciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FrmModuloTax.resx">
+      <DependentUpon>FrmModuloTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI32OPAddItemPago.resx">
+      <DependentUpon>FrmFI32OPAddItemPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI31OPMainScreen.resx">
+      <DependentUpon>FrmFI31OPMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI30OPSearch.resx">
+      <DependentUpon>FrmFI30OPSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\FrmTest1.resx">
+      <DependentUpon>FrmTest1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GESCO\FrmGestionCreditosClientesMain.resx">
+      <DependentUpon>FrmGestionCreditosClientesMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GESCO\FrmGestionCreditosClientesSearch.resx">
+      <DependentUpon>FrmGestionCreditosClientesSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmChequesInfo.resx">
+      <DependentUpon>FrmChequesInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmGestionCheques.resx">
+      <DependentUpon>FrmGestionCheques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmRechazarCheque.resx">
+      <DependentUpon>FrmRechazarCheque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\PRM\DetalleDocumentosProveedores.resx">
+      <DependentUpon>DetalleDocumentosProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Transferencias\FrmFI15TransferenciasEC.resx">
+      <DependentUpon>FrmFI15TransferenciasEC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\VendorNCD\FrmFI85VendorNCDSeleccionItem.resx">
+      <DependentUpon>FrmFI85VendorNCDSeleccionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\VendorNCD\FrmFI82SeleccionChequeRechazadoVendor.resx">
+      <DependentUpon>FrmFI82SeleccionChequeRechazadoVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\VendorNCD\FrmFI81VendorNcdMain.resx">
+      <DependentUpon>FrmFI81VendorNcdMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\VendorNCD\FrmVendorNCDEditItem.resx">
+      <DependentUpon>FrmVendorNCDEditItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\VendorNCD\FrmFI80VendorNcdScreen1.resx">
+      <DependentUpon>FrmFI80VendorNcdScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\VendorPRM\FrmFI50VendorPRMMain.resx">
+      <DependentUpon>FrmFI50VendorPRMMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\VendorPRM\FrmFI51VendorInvoiceView.resx">
+      <DependentUpon>FrmFI51VendorInvoiceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FrmDetalleDeudaProveedeor.resx">
+      <DependentUpon>FrmDetalleDeudaProveedeor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FrmMM0Accion.resx">
+      <DependentUpon>FrmMM0Accion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHr02PersonalABMSelect.resx">
+      <DependentUpon>FrmHr02PersonalABMSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHR03PersonalABMMain.resx">
+      <DependentUpon>FrmHR03PersonalABMMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHr04Posiciones.resx">
+      <DependentUpon>FrmHr04Posiciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHr05PosicionMaintain.resx">
+      <DependentUpon>FrmHr05PosicionMaintain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHR05SYJH.resx">
+      <DependentUpon>FrmHR05SYJH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHR06SYJAddManual.resx">
+      <DependentUpon>FrmHR06SYJAddManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHR07AnticiposLoad.resx">
+      <DependentUpon>FrmHR07AnticiposLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHR08PagoAdelantos.resx">
+      <DependentUpon>FrmHR08PagoAdelantos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHR09DetalleRegistroAdelanto.resx">
+      <DependentUpon>FrmHR09DetalleRegistroAdelanto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHR10AbonarDesdeCuenta.resx">
+      <DependentUpon>FrmHR10AbonarDesdeCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHr10CargaSyj.resx">
+      <DependentUpon>FrmHr10CargaSyj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHr11ListaSyJ.resx">
+      <DependentUpon>FrmHr11ListaSyJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\HR\FrmHr12PagoSyJ.resx">
+      <DependentUpon>FrmHr12PagoSyJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmAjusteStockSloc.resx">
+      <DependentUpon>FrmAjusteStockSloc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmBusquedaProveedores.resx">
+      <DependentUpon>FrmBusquedaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmCQ.resx">
+      <DependentUpon>FrmCQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmGeneraOrdenProcesoMolienda.resx">
+      <DependentUpon>FrmGeneraOrdenProcesoMolienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmMM30IcOLD.resx">
+      <DependentUpon>FrmMM30IcOLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmMM31ListadoStockMaterial.resx">
+      <DependentUpon>FrmMM31ListadoStockMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmMM67FasonExternoMain.resx">
+      <DependentUpon>FrmMM67FasonExternoMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmOrdenCompraDetalleItem.resx">
+      <DependentUpon>FrmOrdenCompraDetalleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmOrdenCompraMain.resx">
+      <DependentUpon>FrmOrdenCompraMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmMM5.resx">
+      <DependentUpon>FrmMM5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\FrmRetornoMaterialAPlanta.resx">
+      <DependentUpon>FrmRetornoMaterialAPlanta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\Ingreso de Stock\FrmMM30IngresoStockOC.resx">
+      <DependentUpon>FrmMM30IngresoStockOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\Ingreso de Stock\FrmMM31DetalleIngresoStock.resx">
+      <DependentUpon>FrmMM31DetalleIngresoStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\MMR\FrmMaterialMasterRename.resx">
+      <DependentUpon>FrmMaterialMasterRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\MRP\FrmMRP02.resx">
+      <DependentUpon>FrmMRP02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\MRP\FrmMRP03.resx">
+      <DependentUpon>FrmMRP03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\Orden de Compra\FrmMM20BuscadorOC.resx">
+      <DependentUpon>FrmMM20BuscadorOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\Orden de Compra\FrmMM21DatosOC.resx">
+      <DependentUpon>FrmMM21DatosOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\Orden de Compra\FrmMM22DetalleItemOC.resx">
+      <DependentUpon>FrmMM22DetalleItemOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\Requisicin\FrmMM54RequisicionList.resx">
+      <DependentUpon>FrmMM54RequisicionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\Requisicin\FrmMM55RequisicionMain.resx">
+      <DependentUpon>FrmMM55RequisicionMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\MM\Requisicin\FrmMM56RcPendientePorProveedor.resx">
+      <DependentUpon>FrmMM56RcPendientePorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP03AltaOFManual.resx">
+      <DependentUpon>FrmPP03AltaOFManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP08IngresoTemporalSeleccion.resx">
+      <DependentUpon>FrmPP08IngresoTemporalSeleccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP17AddUpdateDetalleRecursosProduccion.resx">
+      <DependentUpon>FrmPP17AddUpdateDetalleRecursosProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP17CambiarOF.resx">
+      <DependentUpon>FrmPP17CambiarOF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP18UpdateKgFabricar.resx">
+      <DependentUpon>FrmPP18UpdateKgFabricar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP19MRP1Consumos.resx">
+      <DependentUpon>FrmPP19MRP1Consumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP30CalculoBOM.resx">
+      <DependentUpon>FrmPP30CalculoBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP06InterpolacionFormula.resx">
+      <DependentUpon>FrmPP06InterpolacionFormula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP15ConfirmacionLotesCierreOF.resx">
+      <DependentUpon>FrmPP15ConfirmacionLotesCierreOF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP10CierreOF.resx">
+      <DependentUpon>FrmPP10CierreOF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP09IngresoTemporal.resx">
+      <DependentUpon>FrmPP09IngresoTemporal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmOrdenFabricacioAgregarItem.resx">
+      <DependentUpon>FrmOrdenFabricacioAgregarItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP04CancelaOF.resx">
+      <DependentUpon>FrmPP04CancelaOF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP16DetallesOFCerrada.resx">
+      <DependentUpon>FrmPP16DetallesOFCerrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP05ModificaBatchSize.resx">
+      <DependentUpon>FrmPP05ModificaBatchSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP01PlanProduccion.resx">
+      <DependentUpon>FrmPP01PlanProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP02PlanificacionOF.resx">
+      <DependentUpon>FrmPP02PlanificacionOF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP07SeleccionFormulaAFabricar.resx">
+      <DependentUpon>FrmPP07SeleccionFormulaAFabricar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP12DetalleIngresoTemporal.resx">
+      <DependentUpon>FrmPP12DetalleIngresoTemporal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP13VisualizarStockReservadoPF.resx">
+      <DependentUpon>FrmPP13VisualizarStockReservadoPF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP14AgregarMaterialPF.resx">
+      <DependentUpon>FrmPP14AgregarMaterialPF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP31CalculoBOM.resx">
+      <DependentUpon>FrmPP31CalculoBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmSeleccionBatch.resx">
+      <DependentUpon>FrmSeleccionBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmPP11SelectBatch.resx">
+      <DependentUpon>FrmPP11SelectBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm01MetodoInspeccionList.resx">
+      <DependentUpon>FrmQm01MetodoInspeccionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQM02NuevoMetodoInspeccion.resx">
+      <DependentUpon>FrmQM02NuevoMetodoInspeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm06AddMetodoToPlan.resx">
+      <DependentUpon>FrmQm06AddMetodoToPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm12ListaMasterInspPlan.resx">
+      <DependentUpon>FrmQm12ListaMasterInspPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm04IpList.resx">
+      <DependentUpon>FrmQm04IpList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm10ListadoMetodos.resx">
+      <DependentUpon>FrmQm10ListadoMetodos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm15AsignacionMaterialIP.resx">
+      <DependentUpon>FrmQm15AsignacionMaterialIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm16MaterialesSinAsignacionPlan.resx">
+      <DependentUpon>FrmQm16MaterialesSinAsignacionPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQM05DetalleAnalisisCalidad.resx">
+      <DependentUpon>FrmQM05DetalleAnalisisCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm13MasterIPlanDetalle.resx">
+      <DependentUpon>FrmQm13MasterIPlanDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm21AddRegistroInspeccion.resx">
+      <DependentUpon>FrmQm21AddRegistroInspeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm22SeleccionaRegistroCompra.resx">
+      <DependentUpon>FrmQm22SeleccionaRegistroCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm30QmListaMainH1.resx">
+      <DependentUpon>FrmQm30QmListaMainH1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm31QmListaMainH2.resx">
+      <DependentUpon>FrmQm31QmListaMainH2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm32DetallePlanInspeccion.resx">
+      <DependentUpon>FrmQm32DetallePlanInspeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQm33SplitRegistroInspeccion.resx">
+      <DependentUpon>FrmQm33SplitRegistroInspeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\QM\FrmQM40RestringeLote.resx">
+      <DependentUpon>FrmQM40RestringeLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\CRM\frmCRM1.resx">
+      <DependentUpon>frmCRM1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\FrmSD05CentroDespacho.resx">
+      <DependentUpon>FrmSD05CentroDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\Hoja de Ruta\FrmAddRemitosRuta.resx">
+      <DependentUpon>FrmAddRemitosRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\Hoja de Ruta\FrmHojaRuta.resx">
+      <DependentUpon>FrmHojaRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\Hoja de Ruta\FrmCentroPreparacionHojaRuta.resx">
+      <DependentUpon>FrmCentroPreparacionHojaRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\Remito\FrmCentroPreparacionRemitos.resx">
+      <DependentUpon>FrmCentroPreparacionRemitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\Remito\FrmSD08ConfirmaPreparacionRemito.resx">
+      <DependentUpon>FrmSD08ConfirmaPreparacionRemito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\Remito\FrmSD22RefactuRemito.resx">
+      <DependentUpon>FrmSD22RefactuRemito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\Remito\FrmSeleccionBatchDespacho.resx">
+      <DependentUpon>FrmSeleccionBatchDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\Remito\FrmSD06SeleccionRemisionCliente.resx">
+      <DependentUpon>FrmSD06SeleccionRemisionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\Remito\FrmImpresionRemito.resx">
+      <DependentUpon>FrmImpresionRemito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\SalesOrder\FrmMM18CompromisoMaterial.resx">
+      <DependentUpon>FrmMM18CompromisoMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\SalesOrder\FrmSD03SoDetalleItem.resx">
+      <DependentUpon>FrmSD03SoDetalleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\SalesOrder\FrmSD02SalesOrderMain.resx">
+      <DependentUpon>FrmSD02SalesOrderMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\SalesOrder\FrmSalesOrderSearch.resx">
+      <DependentUpon>FrmSalesOrderSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\SD\SalesOrder\FrmSD04MotivosSC.resx">
+      <DependentUpon>FrmSD04MotivosSC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\WM\FrmWM02ModificacionEstadoLote.resx">
+      <DependentUpon>FrmWM02ModificacionEstadoLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\WM\FrmWM03ModificarKG.resx">
+      <DependentUpon>FrmWM03ModificarKG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\WM\FrmWM04AddStockLine.resx">
+      <DependentUpon>FrmWM04AddStockLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\WM\FrmWm01MoveStock.resx">
+      <DependentUpon>FrmWm01MoveStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\WM\FrmWM05UpdateLoteNumber.resx">
+      <DependentUpon>FrmWM05UpdateLoteNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\WM\FrmWm06LiberarCompromiso.resx">
+      <DependentUpon>FrmWm06LiberarCompromiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\WM\FrmWM07LiberarReservaRE.resx">
+      <DependentUpon>FrmWM07LiberarReservaRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\WM\FrmWM10VisualizarStockSimpre.resx">
+      <DependentUpon>FrmWM10VisualizarStockSimpre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitTesting\TesteoStock.resx">
+      <DependentUpon>TesteoStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\AwsTextBoxBase.resx">
+      <DependentUpon>AwsTextBoxBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\CurrencyTextBox.resx">
+      <DependentUpon>CurrencyTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\DecimalTextBox.resx">
+      <DependentUpon>DecimalTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\FechaControlBase.resx">
+      <DependentUpon>FechaControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\FechaTextBoxBase.resx">
+      <DependentUpon>FechaTextBoxBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\otroTextbox.resx">
+      <DependentUpon>otroTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_0TSUserControls\TsUcCustomerSearch1.resx">
+      <DependentUpon>TsUcCustomerSearch1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\UCurrencyTextBox.resx">
+      <DependentUpon>UCurrencyTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\UCustomerSearch.resx">
+      <DependentUpon>UCustomerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\UDecimalTextbox.resx">
+      <DependentUpon>UDecimalTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\UMaterialSearchBasic.resx">
+      <DependentUpon>UMaterialSearchBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\USemaforo4.resx">
+      <DependentUpon>USemaforo4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\UCheckbox1.resx">
+      <DependentUpon>UCheckbox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\UserTextboxBase.resx">
+      <DependentUpon>UserTextboxBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_UserControls\UVendorSearch.resx">
+      <DependentUpon>UVendorSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.ConciliacionSaldoVendor203Vs204.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.EstructuraSaldosProveedores.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.RetornaConciliacion.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.StructureConcil203.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.CO.Costos.CostItems.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.CRM.CrmCustomerDataList.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.CRM.PendientesDespacho+EstructuraPendientes.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.CRM.PendientesDespacho.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.PP.HeaderOF.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.PP.ItemsOF.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.SD.SalesOrderDataList.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.AddressStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.CustomerMensajes.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.BOM.EstructuraMPenFormula.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.BOM.StxBomHeaderWithCost.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.BomItemsStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.Cc1DataStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CDStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CobranzaHeaderSerach.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CobranzaItemStructureDetail.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CompleteMaterialList+SimpleMaterialList.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CostHeader.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CostItems.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.Costos.StxCrManufactura.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.Costos.StxCrReposicion.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CostoUltimasCompras.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CqStockStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CtaCteCliSaldoAcumuladoStx.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CtaCteEstiloClienteStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DatosXReg.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsGescoPagoListo.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsOrdenPagoFacturasIncluidas.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsOrdenPagoValoresList.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsSalesOrderList.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.EstructuraAdelanto.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.GescoStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.ItemFactura.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.MargenOperacionL1Structure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.MM5Structure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.MRP.MRP1Struct.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.MRP.MRP2Struct.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.NcdpDevolucionMPStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.OrdenCompraDgvCompleteo.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.PercepcionArbaStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.PP.DsHeaderOF.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.PP.DsItemOF.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.QmLoteSupplierStruct.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.RcDataStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.ReducedMaterialMaster.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.RemitoHeaderStructureCF.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.RtnElmentControlManaged.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.RtnListControlInForm.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.SD_CRM.CRMSalesOrder.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.SD_CRM.MaterialRequestedInSO.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.StockLoteEstadoUbicacion.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.TsCheques1.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.TsChequesRechazados.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.TS_Cheques1.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.GetStockDataSetCompleto_Result.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0001_TRANSACTIONS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0005_MPROVEEDORES.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0006_MCLIENTES.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0007_CLI_ENTREGA.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0008_REGION.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0010_Container.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0010_LOCALIDAD.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0010_MATERIALES.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0010_PARTIDO.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0011_MATERIALES_AKA.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0011_MaterialType.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0012_TIPO_MATERIAL.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0013_COLORES.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0014_TIPO_PROVEEDOR.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0015_TIPO_FACTURA.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0016_TaxModuleDefinition.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0019_ZTERM.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0020_FORMULA_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0021_FORMULA_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0028_SLOC.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0029_ESTADO_STOCK.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0030_STOCK.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0032_RECURSOS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0033_COSTL1.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0033_COSTL2.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0033_COSTL3.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0033_COSTL4.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0033_COSTL5.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0033_COSTL6.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0033_COSTL7.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0033_COSTL8.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0035_CostRoll.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0037_CostRollExplosionL1.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0038_CostoMfgExplo.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0039_REPOHISTORY.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0040_MAT_MOVIMIENTOS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0042_PRODUCCION_DET.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0045_OV_HEADER.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0046_OV_ITEM.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0055_REMITO_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0056_REMITO_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0057_REMITO_I_PRINT1.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0059_ENTREGAS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0059_HOJARUTA_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0059_HOJARUTA_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0060_OCOMPRA_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0061_OCOMPRA_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0063_ITEMS_OC_INGRESADOS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0066_ITEMS_PROVEEDOR_OC.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0068RequisicionCompra.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0070_PLANPRODUCCION.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0072_FORMULA_TEMP.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0073_FORMULA_PRINT.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0073_FORMULA_PRINT1.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0085_HHRR_DATOSPERSONALES.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0085_HHRR_PERSONAL_BASIC.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0085_PERSONAL.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0086_HHRR_POSICIONES.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0091_HHRR_COMBOCODE.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0092_HHRR_COMBOASSIGN.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0099_NELS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0099_NELUPDATE.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0102_EXCHANGE.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0130_GLL0.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0131_GLL1.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0132_GLL2.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0133_GLL3.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0134_GLL4.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0135_GLX.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0135_GLX_FF.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0136_GLTREE.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0140_MargenOperacion.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0150_CUENTAS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0154_CHEQUES.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0156_CHEQUE_RECH.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0159_CHEQUES_EMITIDOS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0160_BANCOS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0201_CTACTE.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0203_CTACTE_PROV.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0203_CTACTE_PROV_IMPU.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0205_COBRANZA_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0206_COBRANZA_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0207_SPLITFACTURAS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0208_COB_NO_APLICADA.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0210_OP_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0212_OP_ITEM.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0213_OP_FACT.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0231_GescoDetail.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0232_GescoPagosListos.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0300_NCD_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0301_NCD_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0311_NCDP_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0360_RTN.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0400_FACTURA_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0401_FACTURA_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0403_VENDOR_FACT_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0404_VENDOR_FACT_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0405_FACTURAS_RETENCIONES.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0406_RendicionFF_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0407_RendicionFF_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0518_ConceptosHR.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0520_SYJItems.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0525_SueldoAdelanto.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0550_HHRR_SYJ_Header.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0551_EMPLPAYMENTS_I.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0552_EMPL_PAYMENTS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0602_DOCU_S.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0800_CQ_METODOS.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0801_QMMasterIPHeader.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0802_CQ_IP_DEF.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0805_QMIRecordH1.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0806_QMIRecordH2.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0807QMIDetail.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0810_CQH.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0811_CQI.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T1205_CobranzaConvertirHeader.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.tLogBloqueoClientes.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.TSecRole.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.TSecRoleAssignment.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.TSecUsr.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.XREGISTER.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.XREGISTER_I.datasource" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tecser.Business.VBTools\Tecser.Business.VBTools.vbproj">
+      <Project>{DC16DC07-FD05-4E1A-9BBF-6127E69719CE}</Project>
+      <Name>Tecser.Business.VBTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tecser.Business.WebServices\Tecser.Business.WebServices.vbproj">
+      <Project>{1cce4e9a-29a8-4b35-b282-a6572cdb00e3}</Project>
+      <Name>Tecser.Business.WebServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tecser.Business\Tecser.Business.csproj">
+      <Project>{0378b1f9-0ef6-4cbd-afc7-60adf8e4b4fb}</Project>
+      <Name>Tecser.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TecserEF.Entity\TecserEF.Entity.csproj">
+      <Project>{44dbfa92-2622-4889-98d5-2f931d3bb77f}</Project>
+      <Name>TecserEF.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TecserSQL.Data\TecserSQL.Data.csproj">
+      <Project>{01730ED6-E628-4AF1-B8AE-3EC99992A9FD}</Project>
+      <Name>TecserSQL.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebServicesAFIP\WebServicesAFIP.csproj">
+      <Project>{dfbdb39c-dafe-4417-b555-718633ed5691}</Project>
+      <Name>WebServicesAFIP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\ReportDataSource\dsBOMData.xsc">
+      <DependentUpon>dsBOMData.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsBOMData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBOMData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ReportDataSource\dsBOMData.xss">
+      <DependentUpon>dsBOMData.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsCobranzaTemporal.xsc">
+      <DependentUpon>dsCobranzaTemporal.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsCobranzaTemporal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCobranzaTemporal1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ReportDataSource\dsCobranzaTemporal.xss">
+      <DependentUpon>dsCobranzaTemporal.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsFactura.xsc">
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsFactura.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFactura1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ReportDataSource\dsFactura.xss">
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenCompra.xsc">
+      <DependentUpon>dsOrdenCompra.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenCompra.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOrdenCompra1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenCompra.xss">
+      <DependentUpon>dsOrdenCompra.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenFabricacion.xsc">
+      <DependentUpon>dsOrdenFabricacion.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenFabricacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOrdenFabricacion1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenFabricacion.xss">
+      <DependentUpon>dsOrdenFabricacion.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenFabricacionNew.xsc">
+      <DependentUpon>dsOrdenFabricacionNew.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenFabricacionNew.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOrdenFabricacionNew.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenFabricacionNew.xss">
+      <DependentUpon>dsOrdenFabricacionNew.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenPago.xsc">
+      <DependentUpon>dsOrdenPago.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenPago.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOrdenPago1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenPago.xss">
+      <DependentUpon>dsOrdenPago.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsPreparacionPedido.xsc">
+      <DependentUpon>dsPreparacionPedido.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsPreparacionPedido.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPreparacionPedido1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ReportDataSource\dsPreparacionPedido.xss">
+      <DependentUpon>dsPreparacionPedido.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsReciboCobranza.xsc">
+      <DependentUpon>dsReciboCobranza.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsReciboCobranza.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReciboCobranza1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ReportDataSource\dsReciboCobranza.xss">
+      <DependentUpon>dsReciboCobranza.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsRemitoL2.xsc">
+      <DependentUpon>dsRemitoL2.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsRemitoL2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRemitoL21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ReportDataSource\dsRemitoL2.xss">
+      <DependentUpon>dsRemitoL2.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsTransferenciaReg.xsc">
+      <DependentUpon>dsTransferenciaReg.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsTransferenciaReg.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTransferenciaReg1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ReportDataSource\dsTransferenciaReg.xss">
+      <DependentUpon>dsTransferenciaReg.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Tecser horizontal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_cerrar.png" />
+    <None Include="Resources\btn_ingresar.png" />
+    <None Include="Resources\btn_ingresar_log1.png" />
+    <None Include="Resources\btn_ingresar2_log1.png" />
+    <None Include="Resources\btn_min.png" />
+    <None Include="Resources\Fondo.png" />
+    <None Include="Resources\fondo_login2.jpg" />
+    <None Include="Resources\login1.png" />
+    <None Include="Resources\login2.png" />
+    <None Include="Resources\_verde.bmp" />
+    <None Include="Resources\iconfinder_ledgreen_1784 %282%29.png" />
+    <None Include="Resources\iconfinder_ledred_1789 %281%29.png" />
+    <None Include="Resources\1ms-excel-icon.png" />
+    <None Include="Resources\AddNewUser32.png" />
+    <None Include="Resources\almacen.png" />
+    <None Include="Resources\analitica.png" />
+    <None Include="Resources\grua %281%29.png" />
+    <None Include="Resources\iconfinder_3floppy_unmount_28779.png" />
+    <None Include="Resources\iconfinder_calculator_icon_1741324.png" />
+    <None Include="Resources\iconfinder_edit_add_1727.png" />
+    <None Include="Resources\iconfinder_edu_science_1245.png" />
+    <None Include="Resources\iconfinder_Forward_Skip_2001880.png" />
+    <None Include="Resources\iconfinder_kaddressbook_1274.png" />
+    <None Include="Resources\iconfinder_kwrite_1409.png" />
+    <None Include="Resources\icons8-eliminar-32.png" />
+    <None Include="Resources\if_gnome-session-logout_30682.png" />
+    <None Include="Resources\if_raw_material_45070.png" />
+    <None Include="Resources\if_Retort_32545.png" />
+    <None Include="Resources\if_SEO_data_save_protection_3059894.png" />
+    <None Include="Resources\if_services_45125.png" />
+    <None Include="Resources\if_truck_44870.png" />
+    <None Include="Resources\investigacion.png" />
+    <None Include="Resources\invoice.png" />
+    <None Include="Resources\lego.png" />
+    <None Include="Resources\money.png" />
+    <None Include="Resources\Ok-icon24.png" />
+    <None Include="Resources\pantone.png" />
+    <None Include="Resources\quimica.png" />
+    <None Include="Resources\robot-arm.png" />
+    <None Include="Resources\seo.png" />
+    <None Include="Resources\unir.png" />
+    <Content Include="fiu.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\LogoMombelli.bmp" />
+    <None Include="Resources\LogoMombelli.jpg" />
+    <None Include="Resources\mombelli-01.jpg" />
+    <None Include="Resources\tecser_compuestos_pvc-01.jpg" />
+    <None Include="Resources\ghostview_search_document_6161.png" />
+    <None Include="Resources\delete_remove_file_13947.png" />
+    <None Include="Resources\file_delete_remove_13907.png" />
+    <None Include="Resources\remove_delete_document_13987.png" />
+    <None Include="Resources\remove_delete_document_file_14027.png" />
+    <None Include="Resources\remove_delete_13955.png" />
+    <None Include="Resources\delete_remove_13995.png" />
+    <None Include="Resources\remove_delete_14035.png" />
+    <None Include="Resources\search_locate_find_13974.png" />
+    <None Include="Resources\search_find_locate_14014.png" />
+    <None Include="Resources\find_search_locate_9572.png" />
+    <None Include="Resources\search_find_locate_13934.png" />
+    <None Include="Resources\letra M.jpg" />
+    <None Include="Resources\Logo MOMBELLI.jpg" />
+    <None Include="Resources\Logo Tecser Masterbatch.jpg" />
+    <None Include="Resources\Logo Tecser PVC.jpg" />
+    <None Include="Resources\Letra M Azul.jpg" />
+    <None Include="Resources\Letra M Azul fondo Transp.png" />
+    <None Include="Resources\Contabilizar.png" />
+    <Content Include="TecserAppIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MasterData\HHRR\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

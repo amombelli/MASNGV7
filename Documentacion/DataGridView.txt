@@ -1,0 +1,192 @@
+        //Cofiguracion de columnas CRM-CLIENTE/PRODUCTO
+            dgvCRM.AutoGenerateColumns = false;
+            dgvCRM.ColumnHeadersVisible = true;
+            DataGridViewTextBoxColumn[] columna = new DataGridViewTextBoxColumn[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                columna[i] = new DataGridViewTextBoxColumn();
+            }
+            columna[0].Name = "Sales O#";
+            columna[0].DataPropertyName = "SO_N";
+            columna[0].ReadOnly = true;
+
+            columna[1].Name = "FECHA";
+            columna[1].DataPropertyName = "FECHA";
+            columna[1].ReadOnly = true;
+
+            columna[2].Name = "LX";
+            columna[2].DataPropertyName = "LX";
+            columna[2].ReadOnly = true;
+
+            columna[3].Name = "MON";
+            columna[3].DataPropertyName = "MONEDA";
+            columna[3].ReadOnly = true;
+
+            columna[4].Name = "P.UNIT";
+            columna[4].DataPropertyName = "PRECIO";
+            columna[4].ReadOnly = true;
+
+            columna[5].Name = "PEDIDO";
+            columna[5].DataPropertyName = "KGPEDIDO";
+            columna[5].ReadOnly = true;
+
+            columna[6].Name = "DESPACH";
+            columna[6].DataPropertyName = "KGDESPACHADO";
+            columna[6].ReadOnly = true;
+
+            columna[7].Name = "STATUS";
+            columna[7].DataPropertyName = "ESTADO";
+            columna[7].ReadOnly = true;
+
+            columna[8].Name = "PL1";
+            columna[8].DataPropertyName = "PRL1";
+            columna[8].ReadOnly = true;
+
+            columna[9].Name = "PL2";
+            columna[9].DataPropertyName = "PRL2";
+            columna[9].ReadOnly = true;
+
+            dgvCRM.Columns.Add(columna[0]);
+            dgvCRM.Columns.Add(columna[1]);
+            dgvCRM.Columns.Add(columna[2]);
+            dgvCRM.Columns.Add(columna[3]);
+            dgvCRM.Columns.Add(columna[4]);
+            dgvCRM.Columns.Add(columna[5]);
+            dgvCRM.Columns.Add(columna[6]);
+            dgvCRM.Columns.Add(columna[7]);
+            dgvCRM.Columns.Add(columna[8]);
+            dgvCRM.Columns.Add(columna[9]);
+
+            dgvCRM.Columns[0].Width = 80;
+            dgvCRM.Columns[1].Width = 80;
+            dgvCRM.Columns[2].Width = 30;
+            dgvCRM.Columns[3].Width = 40;
+            dgvCRM.Columns[4].Width = 50;
+            dgvCRM.Columns[5].Width = 50;
+            dgvCRM.Columns[6].Width = 60;
+            dgvCRM.Columns[7].Width = 80;
+            dgvCRM.Columns[8].Width = 50;
+            dgvCRM.Columns[9].Width = 50;
+
+   
+
+            //      // Configures columns for the DataGridView control.
+            //private void AddColumns()
+            //{
+            //    DataGridViewTextBoxColumn idColumn =
+            //        new DataGridViewTextBoxColumn();
+            //    idColumn.Name = "Task";
+            //    idColumn.DataPropertyName = "Id";
+            //    idColumn.ReadOnly = true;
+
+            //    DataGridViewComboBoxColumn assignedToColumn =
+            //        new DataGridViewComboBoxColumn();
+
+            //    // Populate the combo box drop-down list with Employee objects. 
+            //    foreach (Employee e in employees) assignedToColumn.Items.Add(e);
+
+            //    // Add "unassigned" to the drop-down list and display it for 
+            //    // empty AssignedTo values or when the user presses CTRL+0. 
+            //    assignedToColumn.Items.Add("unassigned");
+            //    assignedToColumn.DefaultCellStyle.NullValue = "unassigned";
+
+            //    assignedToColumn.Name = "Assigned To";
+            //    assignedToColumn.DataPropertyName = "AssignedTo";
+            //    assignedToColumn.AutoComplete = true;
+            //    assignedToColumn.DisplayMember = "Name";
+            //    assignedToColumn.ValueMember = "Self";
+
+            //    // Add a button column. 
+            //    DataGridViewButtonColumn buttonColumn =
+            //        new DataGridViewButtonColumn();
+            //    buttonColumn.HeaderText = "";
+            //    buttonColumn.Name = "Status Request";
+            //    buttonColumn.Text = "Request Status";
+            //    buttonColumn.UseColumnTextForButtonValue = true;
+
+            //    dataGridView1.Columns.Add(idColumn);
+            //    dataGridView1.Columns.Add(assignedToColumn);
+            //    dataGridView1.Columns.Add(buttonColumn);
+
+            //    // Add a CellClick handler to handle clicks in the button column.
+            //    dataGridView1.CellClick +=
+            //        new DataGridViewCellEventHandler(dataGridView1_CellClick);
+            //}
+
+            //// Reports on task assignments. 
+            //private void reportButton_Click(object sender, EventArgs e)
+            //{
+            //    StringBuilder report = new StringBuilder();
+            //    foreach (Task t in tasks)
+            //    {
+            //        String assignment =
+            //            t.AssignedTo == null ?
+            //            "unassigned" : "assigned to " + t.AssignedTo.Name;
+            //        report.AppendFormat("Task {0} is {1}.", t.Id, assignment);
+            //        report.Append(Environment.NewLine);
+            //    }
+            //    MessageBox.Show(report.ToString(), "Task Assignments");
+            //}
+
+            //// Calls the Employee.RequestStatus method.
+            //void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+            //{
+            //    // Ignore clicks that are not on button cells. 
+            //    if (e.RowIndex < 0 || e.ColumnIndex !=
+            //        dataGridView1.Columns["Status Request"].Index) return;
+
+            //    // Retrieve the task ID.
+            //    Int32 taskID = (Int32)dataGridView1[0, e.RowIndex].Value;
+
+            //    // Retrieve the Employee object from the "Assigned To" cell.
+            //    Employee assignedTo = dataGridView1.Rows[e.RowIndex]
+            //        .Cells["Assigned To"].Value as Employee;
+
+            //    // Request status through the Employee object if present. 
+            //    if (assignedTo != null)
+            //    {
+            //        assignedTo.RequestStatus(taskID);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(String.Format(
+            //            "Task {0} is unassigned.", taskID), "Status Request");
+            //    }
+            //}
+
+
+
+
+
+
+
+			//accion de botones en dgv
+
+	private void dgvListadoSO_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            if (!(senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn) || e.RowIndex < 0) return;
+
+            var idSalesOrder = Convert.ToInt32(dgvListadoSO[dgvListadoSO.Columns[0].Index, e.RowIndex].Value);
+
+            switch (senderGrid.CurrentCell.Value.ToString())
+            {
+                case "View":
+                    var f0 = new FrmSalesOrderMain(3,idSalesOrder);
+                    f0.Show();
+                    this.Close();
+                    break;
+
+                case "Edit":
+                    var f1 = new FrmSalesOrderMain(2, idSalesOrder);
+                    f1.Show();
+                    this.Close();
+                    break;
+
+                default:
+                    MessageBox.Show(@"Este boton no se encuentra manejado", @"Aplicacion en desarrollo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+        }

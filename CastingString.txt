@@ -1,0 +1,7 @@
+
+
+
+string clienteRs;
+clienteRs = dataRemitoH.T0007_CLI_ENTREGA.T0006_MCLIENTES.cli_rsocial.Length > 30
+? dataRemitoH.T0007_CLI_ENTREGA.T0006_MCLIENTES.cli_rsocial.Substring(0, 29)
+: dataRemitoH.T0007_CLI_ENTREGA.T0006_MCLIENTES.cli_rsocial;

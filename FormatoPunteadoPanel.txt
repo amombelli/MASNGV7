@@ -1,0 +1,11 @@
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            Panel panel = (Panel)sender;
+            float width = (float)1.0;
+            Pen pen = new Pen(SystemColors.ControlDarkDark, width);
+            pen.DashStyle = DashStyle.Dot;
+            e.Graphics.DrawLine(pen, 0, 0, 0, panel.Height - 0);
+            e.Graphics.DrawLine(pen, 0, 0, panel.Width - 0, 0);
+            e.Graphics.DrawLine(pen, panel.Width - 1, panel.Height - 1, 0, panel.Height - 1);
+            e.Graphics.DrawLine(pen, panel.Width - 1, panel.Height - 1, panel.Width - 1, 0);
+        }

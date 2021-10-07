@@ -1,0 +1,23 @@
+  bool zvalid = true;
+            var vx = new ValidacionManager(this, ep, toolTip1);
+            if (vx.Valida(txtShipToDescription, string.IsNullOrEmpty(txtShipToDescription.Text),
+                "Debe Completar la Descripcion del Shipto (Cliente-Entrega)"))
+            {
+                if (!vx.Valida(txtShipToDescription,
+                    new CustomerManager().CheckIfShipToDescriptionExist(_idCliente7, txtShipToDescription.Text),
+                    "Ya Existe esta descripcion. Debe Seleccionar una diferente"))
+                {
+                    vx.Valida(txtShipToDescription, txtShipToDescription.Text.Length > 30,
+                        "La Descripcion no puede ser mayor a 30 caracteres");
+                }
+            }
+
+            vx.Valida(cmbTransporte, (ckEsTransporte.Checked && cmbTransporte.SelectedValue == null),
+                "Si selecciona Entrega en Transporte debe seleccionar el Transporte");
+
+            vx.Valida(txtDireccion, string.IsNullOrEmpty(txtDireccion.Text), "Debe completar Direccion de Entrega");
+
+            vx.Valida(txtProvincia, string.IsNullOrEmpty(txtProvincia.Text), "Debe Completar Provincia");
+
+            vx.Valida(txtProvinciaID, string.IsNullOrEmpty(txtProvinciaID.Text),
+       

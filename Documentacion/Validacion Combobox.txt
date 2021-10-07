@@ -1,0 +1,22 @@
+        private void cmbCuenta_Validating(object sender, CancelEventArgs e)
+        {
+            var combo = (ComboBox) sender;
+            if (combo.SelectedValue == null && combo.Text != string.Empty)
+                e.Cancel = true;
+        }
+
+
+        var d = (T0085_PERSONAL) cmbVendedor.SelectedItem;
+                txtVendedorName.Text = d.NOMBRE + " " + d.APELLIDO;
+
+
+
+
+
+
+**** obtener datos de la entidad completa al selecionar un valor en el CMB
+T0150_CUENTAS data = (T0150_CUENTAS) cmbCuenta.SelectedItem;
+
+**** validacion de que en un cmb se ingrese un valor valido
+en evento Validating => e.Cancel = Validaciones.CheckCmb(cmbCuenta);
+

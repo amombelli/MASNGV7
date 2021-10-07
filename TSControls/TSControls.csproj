@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FACC8F94-85EA-475D-95BA-2F3FB5E035C8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TSControls</RootNamespace>
+    <AssemblyName>TSControls</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ctlAlarmClock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlAlarmClock.Designer.cs">
+      <DependentUpon>ctlAlarmClock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtlCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlCheckBox.Designer.cs">
+      <DependentUpon>CtlCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctlClock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlClock.Designer.cs">
+      <DependentUpon>ctlClock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtlControlCuit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlControlCuit.Designer.cs">
+      <DependentUpon>CtlControlCuit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtlFechaTs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlFechaTs.Designer.cs">
+      <DependentUpon>CtlFechaTs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtlIconos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlIconos.Designer.cs">
+      <DependentUpon>CtlIconos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtlPeriodo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlPeriodo.Designer.cs">
+      <DependentUpon>CtlPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtlSemaforo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlSemaforo.Designer.cs">
+      <DependentUpon>CtlSemaforo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtlTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlTextBox.Designer.cs">
+      <DependentUpon>CtlTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUserInputTexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserInputTexto.Designer.cs">
+      <DependentUpon>FrmUserInputTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TsButton1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TsButton1.Designer.cs">
+      <DependentUpon>TsButton1.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ctlAlarmClock.resx">
+      <DependentUpon>ctlAlarmClock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlCheckBox.resx">
+      <DependentUpon>CtlCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctlClock.resx">
+      <DependentUpon>ctlClock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlControlCuit.resx">
+      <DependentUpon>CtlControlCuit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlFechaTs.resx">
+      <DependentUpon>CtlFechaTs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlIconos.resx">
+      <DependentUpon>CtlIconos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlPeriodo.resx">
+      <DependentUpon>CtlPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlSemaforo.resx">
+      <DependentUpon>CtlSemaforo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlTextBox.resx">
+      <DependentUpon>CtlTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserInputTexto.resx">
+      <DependentUpon>FrmUserInputTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TsButton1.resx">
+      <DependentUpon>TsButton1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tecser.Business.VBTools\Tecser.Business.VBTools.vbproj">
+      <Project>{DC16DC07-FD05-4E1A-9BBF-6127E69719CE}</Project>
+      <Name>Tecser.Business.VBTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tecser.Business\Tecser.Business.csproj">
+      <Project>{0378B1F9-0EF6-4CBD-AFC7-60ADF8E4B4FB}</Project>
+      <Name>Tecser.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

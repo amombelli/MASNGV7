@@ -1,0 +1,62 @@
+         
+		 //CHECK THE COMBOBOX
+		 en validation event
+		  e.Cancel = Validaciones.CheckCmb(cmbMaterial);
+
+
+		 /*****
+
+		    if (TsSecurityMng.CheckifRoleIsGrantedToRun("NEL1", "NEL1", true, true)) return;
+            var f = new FrmNelMain(1);
+            f.Show();
+		 
+		 
+		 /****
+		 
+		 
+		    if (!Tecser.Business.Security.TsSecurityMng.CheckifRoleIsGrantedToRun("MM"+modo, "MM2"))
+            {
+                MessageBox.Show(@"El Usuario no cuenta con los permisos necesarios", @"Acceso no Aprobado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
+            }
+			
+			  private void HabilitaBotonesSegunPermisos()
+        {
+            //disabled all buttons
+            btnDetalleBom.Enabled = false;
+            btnEditMaterial.Enabled = false;
+            btnDetalleMaterial.Enabled = false;
+            btnInfoRecordClientes.Enabled = false;
+            btnIrCQ.Enabled = false;
+            btnPlanProduccion.Enabled = false;
+
+            switch (_funcion)
+            {
+                case "MDSEARCH":
+                    //acciona botones segun permisos
+                    btnDetalleBom.Enabled = TsSecurityMng.CheckToEnableButton("FORM0");
+                    btnEditMaterial.Enabled = TsSecurityMng.CheckToEnableButton("MM2");
+                    btnDetalleMaterial.Enabled = TsSecurityMng.CheckToEnableButton("MM3");
+                    btnInfoRecordClientes.Enabled = TsSecurityMng.CheckToEnableButton("CL4");
+                    btnIrCQ.Enabled = TsSecurityMng.CheckToEnableButton("CQ0");
+                    btnPlanProduccion.Enabled = TsSecurityMng.CheckToEnableButton("PF");
+                    break;
+                case "MM23":
+                    //Edicion/Visualizacion de Materiales
+                    if (_modo == 2)
+                    {
+                        btnEditMaterial.Enabled = true;
+                    }
+                    else
+                    {
+                        btnDetalleMaterial.Enabled = true;
+                    }
+                    break;
+                default:
+                    MessageBox.Show(@"La funcion configurada en TTransactions no se encuentra disponible",
+                        @"Error en Config", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+
+            }
+        }

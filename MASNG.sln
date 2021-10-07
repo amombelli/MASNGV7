@@ -1,0 +1,149 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0DataAccessLayer", "0DataAccessLayer", "{CDC46DDB-2831-479A-AB6D-C453B407A8F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1EntityAccessLayer", "1EntityAccessLayer", "{93DA5F40-305F-49C4-9756-20B3C5CD0E8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2BusinessLayer", "2BusinessLayer", "{48CDE9AF-E519-42C6-B01C-624817DC2658}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3PresentationLayer", "3PresentationLayer", "{A79122F2-3B4C-480F-8881-5A90F7BCC261}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A-Documentacion", "A-Documentacion", "{189DC45A-7EE6-4103-903E-94C42AA62F1C}"
+	ProjectSection(SolutionItems) = preProject
+		CastingString.txt = CastingString.txt
+		CheckRoleToRun.txt = CheckRoleToRun.txt
+		CMB - Lista String.txt = CMB - Lista String.txt
+		Combo Listado de string.txt = Combo Listado de string.txt
+		Cursor Espera.txt = Cursor Espera.txt
+		Documentacion\DataGridView.txt = Documentacion\DataGridView.txt
+		DesaparicionPOCO.txt = DesaparicionPOCO.txt
+		Documentacion\DGV - Botones.txt = Documentacion\DGV - Botones.txt
+		DGV - Ingreso de Datos con Validacion y NO Null.txt = DGV - Ingreso de Datos con Validacion y NO Null.txt
+		Documentacion\DGV - Mostrar datos row seleccionada.txt = Documentacion\DGV - Mostrar datos row seleccionada.txt
+		Dgv - Solo tipo autorizado.txt = Dgv - Solo tipo autorizado.txt
+		Documentacion\Dgv nombre de columnas.txt = Documentacion\Dgv nombre de columnas.txt
+		Documentacion\Dialgobox example1.txt = Documentacion\Dialgobox example1.txt
+		Duplicar Form.txt = Duplicar Form.txt
+		FormatoPunteadoPanel.txt = FormatoPunteadoPanel.txt
+		GroupBy.txt = GroupBy.txt
+		Import EXCEL.txt = Import EXCEL.txt
+		LINQ_Varios.txt = LINQ_Varios.txt
+		nuevas validaciones.txt = nuevas validaciones.txt
+		Documentacion\OverrideSaveChanges.txt = Documentacion\OverrideSaveChanges.txt
+		Documentacion\TextFile1.txt = Documentacion\TextFile1.txt
+		TextFile2.txt = TextFile2.txt
+		Update Replacing.txt = Update Replacing.txt
+		Documentacion\Validacion Combobox.txt = Documentacion\Validacion Combobox.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomException", "CustomException", "{739947C1-5705-4A09-87A1-8F7EFDAC3C56}"
+	ProjectSection(SolutionItems) = preProject
+		Tecser.Business\MainApp\TipoDatoIncorrecto.cs = Tecser.Business\MainApp\TipoDatoIncorrecto.cs
+		ValorDatoIncorrecto.cs = ValorDatoIncorrecto.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{14BFE096-8A57-476D-9343-AD99BDAB9BFF}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecserSQL.Data", "TecserSQL.Data\TecserSQL.Data.csproj", "{01730ED6-E628-4AF1-B8AE-3EC99992A9FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecserEF.Entity", "TecserEF.Entity\TecserEF.Entity.csproj", "{44DBFA92-2622-4889-98D5-2F931D3BB77F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tecser.Business", "Tecser.Business\Tecser.Business.csproj", "{0378B1F9-0EF6-4CBD-AFC7-60ADF8E4B4FB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Tecser.Business.WebServices", "Tecser.Business.WebServices\Tecser.Business.WebServices.vbproj", "{1CCE4E9A-29A8-4B35-B282-A6572CDB00E3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Tecser.Business.VBTools", "Tecser.Business.VBTools\Tecser.Business.VBTools.vbproj", "{DC16DC07-FD05-4E1A-9BBF-6127E69719CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServicesAFIP", "WebServicesAFIP\WebServicesAFIP.csproj", "{DFBDB39C-DAFE-4417-B555-718633ED5691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASngFrontEnd", "MASngFrontEnd\MASngFrontEnd.csproj", "{8B36C303-745D-4372-91A1-26A8FFA8E7DD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FACC8F94-85EA-475D-95BA-2F3FB5E035C8} = {FACC8F94-85EA-475D-95BA-2F3FB5E035C8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSControls", "TSControls\TSControls.csproj", "{FACC8F94-85EA-475D-95BA-2F3FB5E035C8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{01730ED6-E628-4AF1-B8AE-3EC99992A9FD} = {01730ED6-E628-4AF1-B8AE-3EC99992A9FD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewsUtils", "AndrewsUtils\AndrewsUtils.csproj", "{EFF0DA86-C2A2-4D07-8087-DFF1B47D7BC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9C2038FF-0449-49B5-A762-283D755EEDB4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAS3", "MAS3\MAS3.csproj", "{16DBEE05-962F-420F-8500-6FB8F6CA29B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01730ED6-E628-4AF1-B8AE-3EC99992A9FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01730ED6-E628-4AF1-B8AE-3EC99992A9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01730ED6-E628-4AF1-B8AE-3EC99992A9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01730ED6-E628-4AF1-B8AE-3EC99992A9FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44DBFA92-2622-4889-98D5-2F931D3BB77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44DBFA92-2622-4889-98D5-2F931D3BB77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44DBFA92-2622-4889-98D5-2F931D3BB77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44DBFA92-2622-4889-98D5-2F931D3BB77F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0378B1F9-0EF6-4CBD-AFC7-60ADF8E4B4FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0378B1F9-0EF6-4CBD-AFC7-60ADF8E4B4FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0378B1F9-0EF6-4CBD-AFC7-60ADF8E4B4FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0378B1F9-0EF6-4CBD-AFC7-60ADF8E4B4FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0378B1F9-0EF6-4CBD-AFC7-60ADF8E4B4FB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1CCE4E9A-29A8-4B35-B282-A6572CDB00E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CCE4E9A-29A8-4B35-B282-A6572CDB00E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CCE4E9A-29A8-4B35-B282-A6572CDB00E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CCE4E9A-29A8-4B35-B282-A6572CDB00E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC16DC07-FD05-4E1A-9BBF-6127E69719CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC16DC07-FD05-4E1A-9BBF-6127E69719CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC16DC07-FD05-4E1A-9BBF-6127E69719CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC16DC07-FD05-4E1A-9BBF-6127E69719CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFBDB39C-DAFE-4417-B555-718633ED5691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFBDB39C-DAFE-4417-B555-718633ED5691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFBDB39C-DAFE-4417-B555-718633ED5691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFBDB39C-DAFE-4417-B555-718633ED5691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B36C303-745D-4372-91A1-26A8FFA8E7DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B36C303-745D-4372-91A1-26A8FFA8E7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B36C303-745D-4372-91A1-26A8FFA8E7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B36C303-745D-4372-91A1-26A8FFA8E7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FACC8F94-85EA-475D-95BA-2F3FB5E035C8}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{FACC8F94-85EA-475D-95BA-2F3FB5E035C8}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{FACC8F94-85EA-475D-95BA-2F3FB5E035C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FACC8F94-85EA-475D-95BA-2F3FB5E035C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF0DA86-C2A2-4D07-8087-DFF1B47D7BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF0DA86-C2A2-4D07-8087-DFF1B47D7BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16DBEE05-962F-420F-8500-6FB8F6CA29B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16DBEE05-962F-420F-8500-6FB8F6CA29B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16DBEE05-962F-420F-8500-6FB8F6CA29B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16DBEE05-962F-420F-8500-6FB8F6CA29B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{739947C1-5705-4A09-87A1-8F7EFDAC3C56} = {48CDE9AF-E519-42C6-B01C-624817DC2658}
+		{01730ED6-E628-4AF1-B8AE-3EC99992A9FD} = {CDC46DDB-2831-479A-AB6D-C453B407A8F1}
+		{44DBFA92-2622-4889-98D5-2F931D3BB77F} = {93DA5F40-305F-49C4-9756-20B3C5CD0E8E}
+		{0378B1F9-0EF6-4CBD-AFC7-60ADF8E4B4FB} = {48CDE9AF-E519-42C6-B01C-624817DC2658}
+		{1CCE4E9A-29A8-4B35-B282-A6572CDB00E3} = {48CDE9AF-E519-42C6-B01C-624817DC2658}
+		{DC16DC07-FD05-4E1A-9BBF-6127E69719CE} = {48CDE9AF-E519-42C6-B01C-624817DC2658}
+		{DFBDB39C-DAFE-4417-B555-718633ED5691} = {48CDE9AF-E519-42C6-B01C-624817DC2658}
+		{8B36C303-745D-4372-91A1-26A8FFA8E7DD} = {A79122F2-3B4C-480F-8881-5A90F7BCC261}
+		{16DBEE05-962F-420F-8500-6FB8F6CA29B7} = {A79122F2-3B4C-480F-8881-5A90F7BCC261}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD29C458-8A0B-4D06-9373-D934055A9969}
+	EndGlobalSection
+EndGlobal

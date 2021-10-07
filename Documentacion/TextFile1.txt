@@ -1,0 +1,39 @@
+mystring.Substring(Math.Max(0, mystring.Length - 8));
+
+/******************
+if (record == null)
+	 throw new InvalidOperationException("No Existe el registro en T0202");
+
+	 /********************
+protected override void LoadDataInObjectMemory()
+{
+	throw new NotImplementedException();
+}
+
+/************************
+txtItemSeleccionado.Text = dgvFormula[dgvFormula.Columns["material"].Index, e.RowIndex].Value.ToString();
+
+ MessageBox.Show($"se han completado automaticamente {i} nombres de Cliente relacionados con Ordenes de Venta", @"Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+ORDEN DE PAGO 
+
+1.- CLASE CTACTE manejar insercion/update en T0203. T0204
+1.- CLASE CONTAORDENPAGO manejar la secuencia de contabilizacion
+
+
+
+
+To join on multiple field in LINQ, you have to create a new anonymous type containing the columns you want to compare and then use that anonymous type in the join:
+var results = from t1 in context.tb1
+              join t2 in context.tb2
+              on new { t1.Col1, t1.Col2, t1.Col3 } equals
+                  new { t2.Col1, t2.Col2, t2.Col3 }
+              where t2.Col1 == col1 && t2.Col2 == col2 && t2.Col4 == someString
+              select t1;
+
+
+
+
+MessageBox.Show($"El Usuario {Environment.UserName} no tiene permiso para utilizar la aplicacion",
+@"Cheque de Permisos de Usuario",MessageBoxButtons.OK, MessageBoxIcon.Hand);

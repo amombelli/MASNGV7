@@ -1,0 +1,4 @@
+Copy and paste the form.
+Rename the pasted form .cs to match the new form class name. This should auto rename other related files.
+Open up .cs file. Change the class name and the name of the constructor(s) and destructor.
+Open up .Designer.cs file and change the class name.

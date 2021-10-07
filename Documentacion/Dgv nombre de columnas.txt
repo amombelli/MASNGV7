@@ -1,0 +1,8 @@
+
+
+
+dgvFormula[dgvFormula.Columns["material"].Index, e.RowIndex].Value.ToString();
+
+
+VALOR CELDA
+(int) dgvFormula[__idItemFormula.Name, e.RowIndex].Value

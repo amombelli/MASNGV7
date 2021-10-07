@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TecserSecData.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T0001_TRANSACTIONS">
+          <Key>
+            <PropertyRef Name="TCode" />
+          </Key>
+          <Property Name="TCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Module" Type="nvarchar" MaxLength="2" />
+          <Property Name="Type" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FormToCall" Type="nvarchar" MaxLength="100" />
+          <Property Name="FunctionToCall" Type="nvarchar" MaxLength="100" />
+          <Property Name="Arg1" Type="nvarchar" MaxLength="10" />
+          <Property Name="Arg2" Type="nvarchar" MaxLength="10" />
+          <Property Name="Arg3" Type="nvarchar" MaxLength="10" />
+          <Property Name="NumberOfParameters" Type="int" Nullable="false" />
+          <Property Name="CheckPermission" Type="bit" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Namespace" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Modo" Type="int" />
+        </EntityType>
+        <EntityType Name="TLogTcode">
+          <Key>
+            <PropertyRef Name="IdLog" />
+          </Key>
+          <Property Name="IdLog" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Tcode" Type="nchar" MaxLength="25" Nullable="false" />
+          <Property Name="Username" Type="nchar" MaxLength="25" Nullable="false" />
+          <Property Name="Computer" Type="nchar" MaxLength="25" />
+          <Property Name="LogDate" Type="datetime" />
+          <Property Name="IPLog" Type="nchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="TSecRole">
+          <Key>
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsTcode" Type="bit" Nullable="false" />
+          <Property Name="isFunction" Type="bit" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="Modulo" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="TSecRoleAssignment">
+          <Key>
+            <PropertyRef Name="idUser" />
+            <PropertyRef Name="idRole" />
+          </Key>
+          <Property Name="idUser" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idRole" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TSecurityLog">
+          <Key>
+            <PropertyRef Name="idLog" />
+          </Key>
+          <Property Name="idLog" Type="int" Nullable="false" />
+          <Property Name="TCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Computer" Type="nvarchar" MaxLength="100" />
+          <Property Name="IP" Type="nvarchar" MaxLength="100" />
+          <Property Name="Alert" Type="nvarchar(max)" />
+          <Property Name="LogDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TsecurityLogCheck">
+          <Key>
+            <PropertyRef Name="idMsg" />
+          </Key>
+          <Property Name="idMsg" Type="int" Nullable="false" />
+          <Property Name="Tcode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="RoleCheck" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="AccessGranted" Type="bit" Nullable="false" />
+          <Property Name="Equipo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mensaje" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TSecUsr">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShortnameEmpleado" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_TSecRoleAssignment_TSecRole">
+          <End Role="TSecRole" Type="Self.TSecRole" Multiplicity="1" />
+          <End Role="TSecRoleAssignment" Type="Self.TSecRoleAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSecRole">
+              <PropertyRef Name="RoleName" />
+            </Principal>
+            <Dependent Role="TSecRoleAssignment">
+              <PropertyRef Name="idRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSecRoleAssignment_TSecUsr">
+          <End Role="TSecUsr" Type="Self.TSecUsr" Multiplicity="1" />
+          <End Role="TSecRoleAssignment" Type="Self.TSecRoleAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSecUsr">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="TSecRoleAssignment">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TecserSecDataStoreContainer">
+          <EntitySet Name="T0001_TRANSACTIONS" EntityType="Self.T0001_TRANSACTIONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TLogTcode" EntityType="Self.TLogTcode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSecRole" EntityType="Self.TSecRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSecRoleAssignment" EntityType="Self.TSecRoleAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSecurityLog" EntityType="Self.TSecurityLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TsecurityLogCheck" EntityType="Self.TsecurityLogCheck" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSecUsr" EntityType="Self.TSecUsr" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TSecRoleAssignment_TSecRole" Association="Self.FK_TSecRoleAssignment_TSecRole">
+            <End Role="TSecRole" EntitySet="TSecRole" />
+            <End Role="TSecRoleAssignment" EntitySet="TSecRoleAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSecRoleAssignment_TSecUsr" Association="Self.FK_TSecRoleAssignment_TSecUsr">
+            <End Role="TSecUsr" EntitySet="TSecUsr" />
+            <End Role="TSecRoleAssignment" EntitySet="TSecRoleAssignment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TecserSecData" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T0001_TRANSACTIONS">
+          <Key>
+            <PropertyRef Name="TCode" />
+          </Key>
+          <Property Name="TCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Module" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FormToCall" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FunctionToCall" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Arg1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Arg2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Arg3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NumberOfParameters" Type="Int32" Nullable="false" />
+          <Property Name="CheckPermission" Type="Boolean" Nullable="false" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Namespace" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Modo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TLogTcode">
+          <Key>
+            <PropertyRef Name="IdLog" />
+          </Key>
+          <Property Name="IdLog" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Tcode" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Computer" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="LogDate" Type="DateTime" Precision="3" />
+          <Property Name="IPLog" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TSecRole">
+          <Key>
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsTcode" Type="Boolean" Nullable="false" />
+          <Property Name="isFunction" Type="Boolean" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="Modulo" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TSecRoleAssignment" Relationship="Self.FK_TSecRoleAssignment_TSecRole" FromRole="TSecRole" ToRole="TSecRoleAssignment" />
+        </EntityType>
+        <EntityType Name="TSecRoleAssignment">
+          <Key>
+            <PropertyRef Name="idUser" />
+            <PropertyRef Name="idRole" />
+          </Key>
+          <Property Name="idUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TSecRole" Relationship="Self.FK_TSecRoleAssignment_TSecRole" FromRole="TSecRoleAssignment" ToRole="TSecRole" />
+          <NavigationProperty Name="TSecUsr" Relationship="Self.FK_TSecRoleAssignment_TSecUsr" FromRole="TSecRoleAssignment" ToRole="TSecUsr" />
+        </EntityType>
+        <EntityType Name="TSecurityLog">
+          <Key>
+            <PropertyRef Name="idLog" />
+          </Key>
+          <Property Name="idLog" Type="Int32" Nullable="false" />
+          <Property Name="TCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Computer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Alert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TsecurityLogCheck">
+          <Key>
+            <PropertyRef Name="idMsg" />
+          </Key>
+          <Property Name="idMsg" Type="Int32" Nullable="false" />
+          <Property Name="Tcode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleCheck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AccessGranted" Type="Boolean" Nullable="false" />
+          <Property Name="Equipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mensaje" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TSecUsr">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShortnameEmpleado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TSecRoleAssignment" Relationship="Self.FK_TSecRoleAssignment_TSecUsr" FromRole="TSecUsr" ToRole="TSecRoleAssignment" />
+        </EntityType>
+        <Association Name="FK_TSecRoleAssignment_TSecRole">
+          <End Role="TSecRole" Type="Self.TSecRole" Multiplicity="1" />
+          <End Role="TSecRoleAssignment" Type="Self.TSecRoleAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSecRole">
+              <PropertyRef Name="RoleName" />
+            </Principal>
+            <Dependent Role="TSecRoleAssignment">
+              <PropertyRef Name="idRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSecRoleAssignment_TSecUsr">
+          <End Role="TSecUsr" Type="Self.TSecUsr" Multiplicity="1" />
+          <End Role="TSecRoleAssignment" Type="Self.TSecRoleAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSecUsr">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="TSecRoleAssignment">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TecserDataS" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T0001_TRANSACTIONS" EntityType="Self.T0001_TRANSACTIONS" />
+          <EntitySet Name="TLogTcode" EntityType="Self.TLogTcode" />
+          <EntitySet Name="TSecRole" EntityType="Self.TSecRole" />
+          <EntitySet Name="TSecRoleAssignment" EntityType="Self.TSecRoleAssignment" />
+          <EntitySet Name="TSecurityLog" EntityType="Self.TSecurityLog" />
+          <EntitySet Name="TsecurityLogCheck" EntityType="Self.TsecurityLogCheck" />
+          <EntitySet Name="TSecUsr" EntityType="Self.TSecUsr" />
+          <AssociationSet Name="FK_TSecRoleAssignment_TSecRole" Association="Self.FK_TSecRoleAssignment_TSecRole">
+            <End Role="TSecRole" EntitySet="TSecRole" />
+            <End Role="TSecRoleAssignment" EntitySet="TSecRoleAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSecRoleAssignment_TSecUsr" Association="Self.FK_TSecRoleAssignment_TSecUsr">
+            <End Role="TSecUsr" EntitySet="TSecUsr" />
+            <End Role="TSecRoleAssignment" EntitySet="TSecRoleAssignment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TecserSecDataStoreContainer" CdmEntityContainer="TecserDataS">
+          <EntitySetMapping Name="T0001_TRANSACTIONS">
+            <EntityTypeMapping TypeName="TecserSecData.T0001_TRANSACTIONS">
+              <MappingFragment StoreEntitySet="T0001_TRANSACTIONS">
+                <ScalarProperty Name="TCode" ColumnName="TCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Module" ColumnName="Module" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="FormToCall" ColumnName="FormToCall" />
+                <ScalarProperty Name="FunctionToCall" ColumnName="FunctionToCall" />
+                <ScalarProperty Name="Arg1" ColumnName="Arg1" />
+                <ScalarProperty Name="Arg2" ColumnName="Arg2" />
+                <ScalarProperty Name="Arg3" ColumnName="Arg3" />
+                <ScalarProperty Name="NumberOfParameters" ColumnName="NumberOfParameters" />
+                <ScalarProperty Name="CheckPermission" ColumnName="CheckPermission" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Namespace" ColumnName="Namespace" />
+                <ScalarProperty Name="Modo" ColumnName="Modo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TLogTcode">
+            <EntityTypeMapping TypeName="TecserSecData.TLogTcode">
+              <MappingFragment StoreEntitySet="TLogTcode">
+                <ScalarProperty Name="IdLog" ColumnName="IdLog" />
+                <ScalarProperty Name="Tcode" ColumnName="Tcode" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Computer" ColumnName="Computer" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="IPLog" ColumnName="IPLog" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSecRole">
+            <EntityTypeMapping TypeName="TecserSecData.TSecRole">
+              <MappingFragment StoreEntitySet="TSecRole">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+                <ScalarProperty Name="IsTcode" ColumnName="IsTcode" />
+                <ScalarProperty Name="isFunction" ColumnName="isFunction" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Modulo" ColumnName="Modulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSecRoleAssignment">
+            <EntityTypeMapping TypeName="TecserSecData.TSecRoleAssignment">
+              <MappingFragment StoreEntitySet="TSecRoleAssignment">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="idRole" ColumnName="idRole" />
+                <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSecurityLog">
+            <EntityTypeMapping TypeName="TecserSecData.TSecurityLog">
+              <MappingFragment StoreEntitySet="TSecurityLog">
+                <ScalarProperty Name="idLog" ColumnName="idLog" />
+                <ScalarProperty Name="TCode" ColumnName="TCode" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Computer" ColumnName="Computer" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="Alert" ColumnName="Alert" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TsecurityLogCheck">
+            <EntityTypeMapping TypeName="TecserSecData.TsecurityLogCheck">
+              <MappingFragment StoreEntitySet="TsecurityLogCheck">
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="idMsg" ColumnName="idMsg" />
+                <ScalarProperty Name="Tcode" ColumnName="Tcode" />
+                <ScalarProperty Name="RoleCheck" ColumnName="RoleCheck" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="AccessGranted" ColumnName="AccessGranted" />
+                <ScalarProperty Name="Equipo" ColumnName="Equipo" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSecUsr">
+            <EntityTypeMapping TypeName="TecserSecData.TSecUsr">
+              <MappingFragment StoreEntitySet="TSecUsr">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ShortnameEmpleado" ColumnName="ShortnameEmpleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

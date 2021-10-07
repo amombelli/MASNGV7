@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0378B1F9-0EF6-4CBD-AFC7-60ADF8E4B4FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tecser.Business</RootNamespace>
+    <AssemblyName>Tecser.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.3.3\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.1\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.1\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataFix\FixCompletaIdT400enTablaCheRechazado.cs" />
+    <Compile Include="DataFix\FixContabilizacionIssues.cs" />
+    <Compile Include="DataFix\FixFacturaL5_MAS.cs" />
+    <Compile Include="DataFix\FixIdClienteTablaCheque.cs" />
+    <Compile Include="DataFix\FixIdCtaCteT400.cs" />
+    <Compile Include="DataFix\FixImputacionIssues.cs" />
+    <Compile Include="DataFix\FixNelDesarrolladoParaBOM.cs" />
+    <Compile Include="DataFix\FixOrdenPagoModelo2019.cs" />
+    <Compile Include="DataFix\FixPreciosSalesOrder.cs" />
+    <Compile Include="DataFix\FixStockRedondeo.cs" />
+    <Compile Include="DataFix\GescoMigrateOldData.cs" />
+    <Compile Include="DataFix\InicializaConRepositoryFix.cs" />
+    <Compile Include="DataFix\PFFixKGTemporales.cs" />
+    <Compile Include="DataFix\PFFix_AddCustomerInPF.cs" />
+    <Compile Include="DataFix\PFFix_SinIdItem.cs" />
+    <Compile Include="DataFix\PP_FIX.CS" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="MainApp\AutoCompleteBehavior.cs" />
+    <Compile Include="MainApp\DataGraph.cs" />
+    <Compile Include="MainApp\EF_Repository.cs" />
+    <Compile Include="MainApp\Global.cs" />
+    <Compile Include="MainApp\ImageAndTextDgvCell.cs" />
+    <Compile Include="MainApp\ImageManager.cs" />
+    <Compile Include="MainApp\MessageLog.cs" />
+    <Compile Include="MainApp\miLinq.cs" />
+    <Compile Include="MainApp\StringExt.cs" />
+    <Compile Include="MainApp\TipoDatoIncorrecto.cs" />
+    <Compile Include="MainApp\TcodeManager.cs" />
+    <Compile Include="MasterData\BOM\BomExplosion.cs" />
+    <Compile Include="MasterData\CustomerMDActionsAndLog.cs" />
+    <Compile Include="MasterData\BOM\BOMCreateUpdateManager.cs" />
+    <Compile Include="MasterData\BOM\BomItemStructure.cs" />
+    <Compile Include="MasterData\BOM\BOMManagerMD.cs" />
+    <Compile Include="MasterData\BOM\BOMStatus.cs" />
+    <Compile Include="MasterData\BOM\ReemplazoMP.cs" />
+    <Compile Include="MasterData\BOM\ZRLBManager.cs" />
+    <Compile Include="MasterData\CuentasManager.cs" />
+    <Compile Include="MasterData\CustomerManager.cs" />
+    <Compile Include="MasterData\CustomerSelectedManager.cs" />
+    <Compile Include="MasterData\Material Master\AbmCustomerMaster.cs" />
+    <Compile Include="MasterData\Material Master\AkaManager.cs" />
+    <Compile Include="MasterData\Material Master\ContainerManager.cs" />
+    <Compile Include="MasterData\Material Master\MaterialMasterSpecManager.cs" />
+    <Compile Include="MasterData\Material Master\MMR.cs" />
+    <Compile Include="MasterData\MaterialMasterManager.cs" />
+    <Compile Include="MasterData\MaterialOrigenDataType.OrigenDataType.cs" />
+    <Compile Include="MasterData\NelManager.cs" />
+    <Compile Include="MasterData\Vendor Master\VendorValidation.cs" />
+    <Compile Include="MasterData\VendorInforRecordManager.cs" />
+    <Compile Include="MasterData\VendorManager.cs" />
+    <Compile Include="Network\Email2.cs" />
+    <Compile Include="Network\EmailManager.cs" />
+    <Compile Include="Network\IpAddress.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\SecurityAppVersion.cs" />
+    <Compile Include="Security\SecurityInterface.cs" />
+    <Compile Include="Security\SecurityLog.cs" />
+    <Compile Include="Security\TsSecurityMng.cs" />
+    <Compile Include="SuperMD\AddressManager.cs" />
+    <Compile Include="SuperMD\BankManager.cs" />
+    <Compile Include="SuperMD\ColoresManagement.cs" />
+    <Compile Include="SuperMD\ComprobantesAfip.cs" />
+    <Compile Include="SuperMD\ControlAddressManager.cs" />
+    <Compile Include="SuperMD\GLAccountStructureManager.cs" />
+    <Compile Include="SuperMD\HumanResourcesManager.cs" />
+    <Compile Include="SuperMD\MaterialTypeManager.cs" />
+    <Compile Include="SuperMD\Monedas.cs" />
+    <Compile Include="SuperMD\NewAddressManager.cs" />
+    <Compile Include="SuperMD\PlantasManager.cs" />
+    <Compile Include="SuperMD\RecursosProduccio.cs" />
+    <Compile Include="SuperMD\StockEstadoManager.cs" />
+    <Compile Include="SuperMD\TipoResponsableManager.cs" />
+    <Compile Include="SuperMD\TipoVendorManager.cs" />
+    <Compile Include="SuperMD\TaxDataManager.cs" />
+    <Compile Include="SuperMD\Ubicaciones.cs" />
+    <Compile Include="SuperMD\ZtermManager.cs" />
+    <Compile Include="Tecser.Business.ARBA\ArbaValidation.cs" />
+    <Compile Include="Tools\ControlsInForm.cs" />
+    <Compile Include="Tools\DataGridViewDisableButtonCell.cs" />
+    <Compile Include="Tools\ColumnsName.cs" />
+    <Compile Include="Tools\ConfigurationDataT000.cs" />
+    <Compile Include="Tools\ConfigurationKeyManager.cs" />
+    <Compile Include="Tools\ExcelImport.cs" />
+    <Compile Include="Tools\ExcelUtilities.cs" />
+    <Compile Include="Tools\FileInUse.cs" />
+    <Compile Include="Tools\FormatAndConversions.cs" />
+    <Compile Include="Tools\FormsInProject.cs" />
+    <Compile Include="Tools\ControlesEnFormularios.cs" />
+    <Compile Include="Tools\FrmUserInputTexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmUserInputTexto.Designer.cs">
+      <DependentUpon>FrmUserInputTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\NumeroToLetras.cs" />
+    <Compile Include="Tools\MySortableBindingList.cs" />
+    <Compile Include="Tools\StructureConversion.cs" />
+    <Compile Include="Tools\PeriodoConversion.cs" />
+    <Compile Include="Tools\ReadOnlyFormControl.cs" />
+    <Compile Include="Tools\TsDialogo.cs" />
+    <Compile Include="Tools\Validaciones.cs" />
+    <Compile Include="Tools\ValidacionManager.cs" />
+    <Compile Include="Transactional\Cierre\ConciliacionSaldos203_204.cs" />
+    <Compile Include="Transactional\Cierre\ConciliaGeneral.cs" />
+    <Compile Include="Transactional\Cierre\VendorConcil.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\ACustomerL2_T400.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsientoCopia.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsientoMateriales.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsientoNumeracion.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsientoVendorDocument.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\ManageFB01.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\Modules\AsientoAjusteStock.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\Modules\AsCobranza.cs" />
+    <Compile Include="Transactional\CO\AsientoContableManager.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsientoBase.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsCustomerDocument.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsCustomerL1.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsientoDBInteraction.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsientoGenerico.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\Modules\AsientoOrdenPago.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\AsientoVendorSpecific.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\Modules\AsientoSyJ.cs" />
+    <Compile Include="Transactional\CO\AsientoDBManager.cs" />
+    <Compile Include="Transactional\CO\CancelaOrdenPago.cs" />
+    <Compile Include="Transactional\CO\ChangeCobranzaCustomer.cs" />
+    <Compile Include="Transactional\CO\ChangeCobranzaType.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaClienteAjusteL2.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaClienteBase.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaClienteFacturaL2.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaClienteNotaCreditoL2.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaClienteNotaDebitoL2.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaClienteT400L1.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaCustomerDocument.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaCustomerFromInvoice.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaDocumentBase.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaOrdenPago.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaVendorDocument.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ContaVendorFromInvoice.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\XContabilizaDocumentosBase.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ZContaNotaCreditoConT400.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\XContabilizaNotaDebito.cs" />
+    <Compile Include="Transactional\CO\ContaFromDocuments\ZContaNotaDebito.cs" />
+    <Compile Include="Transactional\CO\Costos\ACosto.cs" />
+    <Compile Include="Transactional\CO\Costos\ACostoMfg.cs" />
+    <Compile Include="Transactional\CO\Costos\AcostoMfgCR.cs" />
+    <Compile Include="Transactional\CO\Costos\ACostoMfgNowStd.cs" />
+    <Compile Include="Transactional\CO\Costos\ACostoMfgNowUc.cs" />
+    <Compile Include="Transactional\CO\Costos\ACostoStandard.cs" />
+    <Compile Include="Transactional\CO\Costos\ACostsoRepo.cs" />
+    <Compile Include="Transactional\CO\Costos\AStructureReposicionRtn.cs" />
+    <Compile Include="Transactional\CO\Costos\BFcostManager.cs" />
+    <Compile Include="Transactional\CO\Costos\CostRollExplosion.cs" />
+    <Compile Include="Transactional\CO\Costos\CostRollManager.cs" />
+    <Compile Include="Transactional\CO\Costos\CostRollRevisionMP.cs" />
+    <Compile Include="Transactional\CO\Costos\CostRollRevisionFabricado.cs" />
+    <Compile Include="Transactional\CO\Costos\MargenDocument.cs" />
+    <Compile Include="Transactional\CO\Costos\RepoHistoryManager.cs" />
+    <Compile Include="Transactional\CO\GLSManagement\GLAccountManager.cs" />
+    <Compile Include="Transactional\CO\GLSManagement\GLSManagement.cs" />
+    <Compile Include="Transactional\CO\PeriodoAvailability.cs" />
+    <Compile Include="Transactional\CRMMensajeInterno.cs" />
+    <Compile Include="Transactional\CRM\Gesco.cs" />
+    <Compile Include="Transactional\CRM\GescoListManager.cs" />
+    <Compile Include="Transactional\CRM\GescoPagoListo.cs" />
+    <Compile Include="Transactional\CRM\PendientesDespacho.cs" />
+    <Compile Include="Transactional\FI\AfipQrCodeManager.cs" />
+    <Compile Include="Transactional\FI\AsignacionNumerosDocumentosFI.cs" />
+    <Compile Include="Transactional\FI\ChequeRechazadoManager.cs" />
+    <Compile Include="Transactional\FI\Cobranza\CobranzaDesimputa.cs" />
+    <Compile Include="Transactional\FI\Cobranza\CobranzaImputacionManagerNew.cs" />
+    <Compile Include="Transactional\FI\Cobranza\CobranzaManagerExt2.cs" />
+    <Compile Include="Transactional\FI\Cobranza\CobranzaNoImputada.cs" />
+    <Compile Include="Transactional\FI\Cobranza\CobranzaSearch.cs" />
+    <Compile Include="Transactional\FI\Cobranza\CobranzaTemporalManager.cs" />
+    <Compile Include="Transactional\FI\Cobranza\CobranzaUtils.cs" />
+    <Compile Include="Transactional\FI\Cobranza\CobranzaImputacion.cs" />
+    <Compile Include="Transactional\FI\Cobranza\ImputacionAuxiliarGetData.cs" />
+    <Compile Include="Transactional\FI\CodigoBarrasAfip.cs" />
+    <Compile Include="Transactional\FI\ComboboxTipoDocumento.cs" />
+    <Compile Include="Transactional\FI\ContabilizacionProveedores\InterfazItemsIngresados.cs" />
+    <Compile Include="Transactional\FI\ContabilizacionProveedores\ItemFactura.cs" />
+    <Compile Include="Transactional\FI\ContabilizacionProveedores\ManageContaConRemito.cs" />
+    <Compile Include="Transactional\FI\CtaCte\Cc1Manager.cs" />
+    <Compile Include="Transactional\FI\CtaCte\CtaCteCustomerCc1.cs" />
+    <Compile Include="Transactional\FI\CtaCte\CtaCteCustomerGlobal.cs" />
+    <Compile Include="Transactional\FI\CtaCte\CtaCteEstiloCliente.cs" />
+    <Compile Include="Transactional\FI\CtaCte\CtaCteVendorDetalleDocumentos.cs" />
+    <Compile Include="Transactional\FI\CtaCte\CustomerCreditLimiteManager.cs" />
+    <Compile Include="Transactional\FI\CustDocTotalesStruct.cs" />
+    <Compile Include="Transactional\FI\CustomerAjustes.cs" />
+    <Compile Include="Transactional\FI\CustomerDoc.cs" />
+    <Compile Include="Transactional\FI\CustomerNC.cs" />
+    <Compile Include="Transactional\FI\CustomerND.cs" />
+    <Compile Include="Transactional\FI\Customers\PercepcionesManager.cs" />
+    <Compile Include="Transactional\FI\DocumentBlockManager.cs" />
+    <Compile Include="Transactional\FI\GESCO\CreditAndRiskControl.cs" />
+    <Compile Include="Transactional\FI\GestionChequesEmitidos.cs" />
+    <Compile Include="Transactional\FI\GestionT300.cs" />
+    <Compile Include="Transactional\FI\GestionT400.cs" />
+    <Compile Include="Transactional\FI\GestionT400Status.cs" />
+    <Compile Include="Transactional\FI\IntegridadContable\ValidacionFaturasAfip.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\CustomerDocumentSearch.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\CustomerNCDAjustes.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\CustomerNCDManagement.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Customer\FSR.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Customer\NotaCreditoDebitoCustomer.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Customer\ReRemision.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Customer\T400Manager.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Customer\Refacturacion.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\ManageTotalesCustomerNCD.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\GetTabla400401.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\NCDCalculoDiferenciaTC.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\NCDSeleccionItemsKg.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\NCDTableManager.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\TraspasoSaldoCliente.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\VendorNCDManageDevoluciones.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Vendor\CancelVendorConta.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Vendor\RendicionFF.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Vendor\ValidacionVendorDocument.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Vendor\VendorDocuments.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Vendor\VendorNcdManager.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\Vendor\XVendorDocumentBase.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\XCustomerDocumentBase.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\XCustomerNCD.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\EstadisticasPagoOP.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\OPImportesManagement.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\OPCreateAndUpdateData.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\VendorMainDocument.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\VendorInvoice.cs" />
+    <Compile Include="Transactional\CO\ContabilizacionFacturaProveedor.cs" />
+    <Compile Include="Transactional\CO\ContabilizacionOP.cs" />
+    <Compile Include="Transactional\CO\ExchangeRateManager.cs" />
+    <Compile Include="Transactional\CO\GLManagement.cs" />
+    <Compile Include="Transactional\CO\SubdiarioCajaManager.cs" />
+    <Compile Include="Transactional\CRM\CRMCustomerDataList.cs" />
+    <Compile Include="Transactional\CRM\CustomerMessageManager.cs" />
+    <Compile Include="Transactional\FI\CtaCte\CtaCteBase.cs" />
+    <Compile Include="Transactional\FI\CtaCte\CtaCteCustomer.cs" />
+    <Compile Include="Transactional\FI\CtaCte\CtaCteVendor.cs" />
+    <Compile Include="Transactional\FI\Customers\CuitChequeManager.cs" />
+    <Compile Include="Transactional\FI\Customers\ManageSinImputar.cs" />
+    <Compile Include="Transactional\FI\Customers\MergeClientes.cs" />
+    <Compile Include="Transactional\FI\GESCO\GescoDataUpdateManager.cs" />
+    <Compile Include="Transactional\FI\GestionPercepciones.cs" />
+    <Compile Include="Transactional\FI\Imputacion\ManageVendorImputacionDocumentos.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\OPImputacionFactura.cs" />
+    <Compile Include="Transactional\FI\RegisterManager.cs" />
+    <Compile Include="Transactional\FI\TaxModule\TaxModuleManager.cs" />
+    <Compile Include="Transactional\FI\TaxModule\TaxModuleVendorManager.cs" />
+    <Compile Include="Transactional\FI\TotalCustomerFactura.cs" />
+    <Compile Include="Transactional\FI\ChequesManager.cs" />
+    <Compile Include="Transactional\FI\Cobranza\CobranzaManager.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\CustomerMainDocument.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\CustomerInvoice.cs" />
+    <Compile Include="Transactional\FI\MainDocumentData\MainDocumentBase.cs" />
+    <Compile Include="Transactional\FI\DocumentFIStatusManager.cs" />
+    <Compile Include="Transactional\FI\FacturacionElectronicaTecser.cs" />
+    <Compile Include="Transactional\FI\ManageDocumentType.cs" />
+    <Compile Include="Transactional\FI\MngRetencionesFacturasProv.cs" />
+    <Compile Include="Transactional\FI\OrdenPagoFilter.cs" />
+    <Compile Include="Transactional\FI\OrdenPagoManageDatos.cs" />
+    <Compile Include="Transactional\FI\OrdenPagoStatus.cs" />
+    <Compile Include="Transactional\FI\Retenciones.cs" />
+    <Compile Include="Transactional\FI\TotalesCustomerFi.cs" />
+    <Compile Include="Transactional\FI\TransferenciaEntreCuentasManager.cs" />
+    <Compile Include="Transactional\FI\VendorAcountManager.cs" />
+    <Compile Include="Transactional\FI\VendorContabilizacionDocumentManager.cs" />
+    <Compile Include="Transactional\FI\VendorDocumentsManager.cs" />
+    <Compile Include="Transactional\HR\HRComboManager.cs" />
+    <Compile Include="Transactional\HR\HRDisponibilidadYPermisos.cs" />
+    <Compile Include="Transactional\HR\HRMasterManagement.cs" />
+    <Compile Include="Transactional\HR\HRPosicionesManagement.cs" />
+    <Compile Include="Transactional\HR\ManejoAdelantos.cs" />
+    <Compile Include="Transactional\HR\SyJAdministracionPagos.cs" />
+    <Compile Include="Transactional\HR\SyJConceptos.cs" />
+    <Compile Include="Transactional\HR\SyjDataManager.cs" />
+    <Compile Include="Transactional\HR\SyJManagerNew.cs" />
+    <Compile Include="Transactional\MM\FasonExternoMng.cs" />
+    <Compile Include="Transactional\MM\FasonExternoStatusManager.cs" />
+    <Compile Include="Transactional\MM\IngresoStockManager.cs" />
+    <Compile Include="Transactional\MM\ManageRetornoMaterial.cs" />
+    <Compile Include="Transactional\MM\MMList.cs" />
+    <Compile Include="Transactional\MM\MMLog.cs" />
+    <Compile Include="Transactional\MM\MRPController\MRPManager.cs" />
+    <Compile Include="Transactional\MM\OrdenCompraManager.cs" />
+    <Compile Include="Transactional\MM\OrdenCompraStatusManager.cs" />
+    <Compile Include="Transactional\MM\RcManagement.cs" />
+    <Compile Include="Transactional\MM\RcStatusManagement.cs" />
+    <Compile Include="Transactional\MM\ReprocesoManagement.cs" />
+    <Compile Include="Transactional\MM\RtnIdentificacionMaterial.cs" />
+    <Compile Include="Transactional\MM\RtnMaterialSimpleValidation.cs" />
+    <Compile Include="Transactional\MM\StockManager\StockABM.cs" />
+    <Compile Include="Transactional\MM\StockAvailability.cs" />
+    <Compile Include="Transactional\MM\StockManager\StockBase.cs" />
+    <Compile Include="Transactional\MM\StockBatchManageRE.cs" />
+    <Compile Include="Transactional\MM\StockBatchManagerOF.cs" />
+    <Compile Include="Transactional\MM\StockBatchManagerSD.cs" />
+    <Compile Include="Transactional\MM\StockList.cs" />
+    <Compile Include="Transactional\MM\StockManager.cs" />
+    <Compile Include="Transactional\MM\StockManager\StockMovements.cs" />
+    <Compile Include="Transactional\MM\StockManager\StockOptimization.cs" />
+    <Compile Include="Transactional\MM\ReservaStockOF.cs" />
+    <Compile Include="Transactional\MM\StockStatusManager.cs" />
+    <Compile Include="Transactional\MM\VendorInfoRecordManager.cs" />
+    <Compile Include="Transactional\PP\AprobacionPlanificar.cs" />
+    <Compile Include="Transactional\PP\BOM\BOMManager.cs" />
+    <Compile Include="Transactional\PP\BOM\BOMUtilities.cs" />
+    <Compile Include="Transactional\PP\FrmOrdenFabricacioAgregarItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\PP\FrmOrdenFabricacioAgregarItem.Designer.cs">
+      <DependentUpon>FrmOrdenFabricacioAgregarItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\PP\MRP\MRPConsumoMaterialStats.cs" />
+    <Compile Include="Transactional\PP\MRP\MrpCrmStats.cs" />
+    <Compile Include="Transactional\PP\OFPrintData.cs" />
+    <Compile Include="Transactional\PP\OrdenFabricacionBOMManager.cs" />
+    <Compile Include="Transactional\PP\MRPManager.cs" />
+    <Compile Include="Transactional\PP\PFLog.cs" />
+    <Compile Include="Transactional\PP\PlanProduccionListManager.cs" />
+    <Compile Include="Transactional\PP\PlanProduccionManager.cs" />
+    <Compile Include="Transactional\PP\PlanProduccionStatusManager.cs" />
+    <Compile Include="Transactional\PP\PPReversionIngresoStock.cs" />
+    <Compile Include="Transactional\PP\ProductionPlanningStockManager.cs" />
+    <Compile Include="Transactional\QM\QmInspectionStatus.cs" />
+    <Compile Include="Transactional\QM\QmManageList.cs" />
+    <Compile Include="Transactional\QM\QmMasterData.cs" />
+    <Compile Include="Transactional\QM\QmMasterIPlan.cs" />
+    <Compile Include="Transactional\QM\QMMetodoDataType.cs" />
+    <Compile Include="Transactional\QM\QmMetodoInspeccion.cs" />
+    <Compile Include="Transactional\QM\QmRegistroInspeccion.cs" />
+    <Compile Include="Transactional\QM\QmRegistroInspeccionH1H2.cs" />
+    <Compile Include="Transactional\SD\CDListManager.cs" />
+    <Compile Include="Transactional\SD\CFRemitoManager.cs" />
+    <Compile Include="Transactional\SD\CustomerInfoRecord.cs" />
+    <Compile Include="Transactional\SD\EntregaStatusManager.cs" />
+    <Compile Include="Transactional\SD\GestorEntregas.cs" />
+    <Compile Include="Transactional\SD\HojaRutaManager.cs" />
+    <Compile Include="Transactional\SD\HojaRutaStatusManager.cs" />
+    <Compile Include="Transactional\SD\RemitoCancelacion.cs" />
+    <Compile Include="Transactional\SD\RemitoGeneracionImpresion.cs" />
+    <Compile Include="Transactional\SD\CRMLista.cs" />
+    <Compile Include="Transactional\SD\ManageGeneracionRemitoFinal.cs" />
+    <Compile Include="Transactional\SD\RemitoHeaderManager.cs" />
+    <Compile Include="Transactional\SD\RemitoItemManager.cs" />
+    <Compile Include="Transactional\SD\ManageCreacionRemitoInicial.cs" />
+    <Compile Include="Transactional\SD\RemitoL5Manager.cs" />
+    <Compile Include="Transactional\SD\RemitoStatusManager.cs" />
+    <Compile Include="Transactional\SD\RemitoStockManager.cs" />
+    <Compile Include="Transactional\SD\SalesOrderDataList.cs" />
+    <Compile Include="Transactional\SD\SalesOrderDataManager.cs" />
+    <Compile Include="Transactional\SD\SalesOrderDeliveryManager.cs" />
+    <Compile Include="Transactional\SD\SalesOrderStatusManager.cs" />
+    <Compile Include="Transactional\SD\TipoEntregaStatusManager.cs" />
+    <Compile Include="Transactional\WM\CompromisoManager.cs" />
+    <Compile Include="Transactional\WM\CqStockManager.cs" />
+    <Compile Include="SuperMD\StorageLocationManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tecser.Business.WebServices\Tecser.Business.WebServices.vbproj">
+      <Project>{1CCE4E9A-29A8-4B35-B282-A6572CDB00E3}</Project>
+      <Name>Tecser.Business.WebServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TecserEF.Entity\TecserEF.Entity.csproj">
+      <Project>{44dbfa92-2622-4889-98d5-2f931d3bb77f}</Project>
+      <Name>TecserEF.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TecserSQL.Data\TecserSQL.Data.csproj">
+      <Project>{01730ed6-e628-4af1-b8ae-3ec99992a9fd}</Project>
+      <Name>TecserSQL.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebServicesAFIP\WebServicesAFIP.csproj">
+      <Project>{dfbdb39c-dafe-4417-b555-718633ed5691}</Project>
+      <Name>WebServicesAFIP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.Cc1AnalisisDiferenciaStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0030_STOCK.datasource" />
+    <None Include="Tecser.Business.AFIP\app.config" />
+    <None Include="Tecser.Business.AFIP\My Project\Settings.settings" />
+    <None Include="Tecser.Business.AFIP\obj\Debug\BLV.vbproj.GenerateResource.Cache" />
+    <None Include="Tecser.Business.AFIP\obj\Debug\BLV.vbprojResolveAssemblyReference.cache" />
+    <None Include="Tecser.Business.AFIP\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Tecser.Business.AFIP\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Tecser.Business.AFIP\obj\Debug\Tecser.Afip.Business.vbproj.GenerateResource.Cache" />
+    <None Include="Tecser.Business.AFIP\obj\Debug\Tecser.Afip.Business.vbprojResolveAssemblyReference.cache" />
+    <None Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.vbproj.GenerateResource.Cache" />
+    <None Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.vbprojResolveAssemblyReference.cache" />
+    <None Include="Tecser.Business.AFIP\obj\Release\BLV.vbproj.GenerateResource.Cache" />
+    <None Include="Tecser.Business.AFIP\obj\Release\BLV.vbprojResolveAssemblyReference.cache" />
+    <None Include="Tecser.Business.AFIP\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Tecser.Business.AFIP\packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Transactional\PRM\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tecser.Business.AFIP\My Project\Resources.resx" />
+    <EmbeddedResource Include="Tecser.Business.AFIP\obj\Debug\BLV.Resources.resources" />
+    <EmbeddedResource Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.Resources.resources" />
+    <EmbeddedResource Include="Tecser.Business.AFIP\obj\Release\BLV.Resources.resources" />
+    <EmbeddedResource Include="Tools\FrmUserInputTexto.resx">
+      <DependentUpon>FrmUserInputTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\PP\FrmOrdenFabricacioAgregarItem.resx">
+      <DependentUpon>FrmOrdenFabricacioAgregarItem.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Transactional\MM\IngresoStockProduccion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Letra M Azul fondo Transp.png" />
+    <None Include="Resources\Logo MOMBELLI.jpg" />
+    <None Include="Resources\Button-Add-icon.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\accept.png" />
+    <None Include="Resources\cancel.bmp" />
+    <None Include="Resources\accept.jpg" />
+    <Content Include="Tecser.Business.AFIP\bin\Debug\BLV.dll" />
+    <Content Include="Tecser.Business.AFIP\bin\Debug\BLV.pdb" />
+    <Content Include="Tecser.Business.AFIP\bin\Debug\BLV.xml" />
+    <Content Include="Tecser.Business.AFIP\bin\Release\AutoMapper.dll" />
+    <Content Include="Tecser.Business.AFIP\bin\Release\AutoMapper.xml" />
+    <Content Include="Tecser.Business.AFIP\bin\Release\BLV.dll" />
+    <Content Include="Tecser.Business.AFIP\bin\Release\BLV.pdb" />
+    <Content Include="Tecser.Business.AFIP\bin\Release\BLV.xml" />
+    <Content Include="Tecser.Business.AFIP\CuitValidation.vb" />
+    <Content Include="Tecser.Business.AFIP\My Project\Application.Designer.vb" />
+    <Content Include="Tecser.Business.AFIP\My Project\Application.myapp" />
+    <Content Include="Tecser.Business.AFIP\My Project\AssemblyInfo.vb" />
+    <Content Include="Tecser.Business.AFIP\My Project\Resources.Designer.vb" />
+    <Content Include="Tecser.Business.AFIP\My Project\Settings.Designer.vb" />
+    <Content Include="Tecser.Business.AFIP\obj\Debug\BLV.dll" />
+    <Content Include="Tecser.Business.AFIP\obj\Debug\BLV.pdb" />
+    <Content Include="Tecser.Business.AFIP\obj\Debug\BLV.vbproj.FileListAbsolute.txt" />
+    <Content Include="Tecser.Business.AFIP\obj\Debug\BLV.xml" />
+    <Content Include="Tecser.Business.AFIP\obj\Debug\Tecser.Afip.Business.vbproj.FileListAbsolute.txt" />
+    <Content Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.vbproj.FileListAbsolute.txt" />
+    <Content Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.xml" />
+    <Content Include="Tecser.Business.AFIP\obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+    <Content Include="Tecser.Business.AFIP\obj\Release\BLV.dll" />
+    <Content Include="Tecser.Business.AFIP\obj\Release\BLV.pdb" />
+    <Content Include="Tecser.Business.AFIP\obj\Release\BLV.vbproj.FileListAbsolute.txt" />
+    <Content Include="Tecser.Business.AFIP\obj\Release\BLV.xml" />
+    <Content Include="Tecser.Business.AFIP\obj\Release\TempPE\My Project.Resources.Designer.vb.dll" />
+    <Content Include="Tecser.Business.AFIP\PadronAfip.vb" />
+    <Content Include="Tecser.Business.AFIP\Tecser.Business.AFIP.vbproj" />
+    <Content Include="Transactional\CO\ContaFromDocuments\TextFile1.txt" />
+    <Content Include="Transactional\FI\CtaCte\_readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
