@@ -153,5 +153,18 @@ namespace MASngFE.Transactional.CO.Cost
             var f = new FrmCO13MargenResumen();
             f.Show();
         }
+
+        private void btnVerNoIngresados_Click(object sender, EventArgs e)
+        {
+            using (var x = new FrmCO16_MopSinRegistrar())
+            {
+                x.ShowDialog();
+            }
+        }
+
+        private void btnAltaTest_Click(object sender, EventArgs e)
+        {
+            new MargenDocument().AddItemNotaCredito(2823);
+        }
     }
 }

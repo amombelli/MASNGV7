@@ -109,6 +109,8 @@
             this.dtpRemitoDesde = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.btnRecomponer = new System.Windows.Forms.Button();
+            this.btnVerNoIngresados = new System.Windows.Forms.Button();
+            this.btnAltaTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MargenBs)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -823,12 +825,44 @@
             this.btnRecomponer.UseVisualStyleBackColor = true;
             this.btnRecomponer.Click += new System.EventHandler(this.btnRecomponer_Click);
             // 
+            // btnVerNoIngresados
+            // 
+            this.btnVerNoIngresados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnVerNoIngresados.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerNoIngresados.Image = ((System.Drawing.Image)(resources.GetObject("btnVerNoIngresados.Image")));
+            this.btnVerNoIngresados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerNoIngresados.Location = new System.Drawing.Point(1272, 40);
+            this.btnVerNoIngresados.Name = "btnVerNoIngresados";
+            this.btnVerNoIngresados.Size = new System.Drawing.Size(100, 40);
+            this.btnVerNoIngresados.TabIndex = 185;
+            this.btnVerNoIngresados.Text = "Ver No in";
+            this.btnVerNoIngresados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVerNoIngresados.UseVisualStyleBackColor = true;
+            this.btnVerNoIngresados.Click += new System.EventHandler(this.btnVerNoIngresados_Click);
+            // 
+            // btnAltaTest
+            // 
+            this.btnAltaTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAltaTest.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaTest.Image = ((System.Drawing.Image)(resources.GetObject("btnAltaTest.Image")));
+            this.btnAltaTest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAltaTest.Location = new System.Drawing.Point(717, 41);
+            this.btnAltaTest.Name = "btnAltaTest";
+            this.btnAltaTest.Size = new System.Drawing.Size(100, 40);
+            this.btnAltaTest.TabIndex = 186;
+            this.btnAltaTest.Text = "Alta Test";
+            this.btnAltaTest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAltaTest.UseVisualStyleBackColor = true;
+            this.btnAltaTest.Click += new System.EventHandler(this.btnAltaTest_Click);
+            // 
             // FrmCO13MargenResumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1745, 816);
+            this.Controls.Add(this.btnAltaTest);
+            this.Controls.Add(this.btnVerNoIngresados);
             this.Controls.Add(this.btnRecomponer);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dtpRemitoDesde);
@@ -926,5 +960,7 @@
         private System.Windows.Forms.DateTimePicker dtpRemitoDesde;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnRecomponer;
+        private System.Windows.Forms.Button btnVerNoIngresados;
+        private System.Windows.Forms.Button btnAltaTest;
     }
 }

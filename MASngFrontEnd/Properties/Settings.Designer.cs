@@ -60,7 +60,7 @@ namespace MASngFE.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("P")]
+        [global::System.Configuration.DefaultSettingValueAttribute("D")]
         public char AppMode {
             get {
                 return ((char)(this["AppMode"]));

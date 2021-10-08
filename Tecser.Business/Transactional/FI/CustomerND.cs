@@ -37,9 +37,8 @@ namespace Tecser.Business.Transactional.FI
             DiferenciaPrecio,
             DiferenciaCambio,
             DiferenciaKg,
-            DevolucionMaterial,
-            DesGeneralDocumentos,
-            DesGeneralPeriodo,
+            CargoGralDocumentos,
+            CargoGralPeriodo,
             GastoBancario,
             SinMotivo
         }

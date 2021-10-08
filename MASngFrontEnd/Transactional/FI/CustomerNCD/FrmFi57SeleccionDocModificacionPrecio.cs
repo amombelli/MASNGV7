@@ -151,19 +151,21 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             BlanqueaItemsAModificar();
             return;
         }
+
         private void dgvSeleccionItem_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 var idItemSelected = Convert.ToInt32(dgvSeleccionItem[___idITem.Name, e.RowIndex].Value);
-                var zidFactura = Convert.ToInt32(dgvSeleccionItem[___idFactura.Name, e.RowIndex].Value);
-                var g = new GestionT400(zidFactura);
+                _idFacturaSeleccionada = Convert.ToInt32(dgvSeleccionItem[___idFactura.Name, e.RowIndex].Value);
+                var g = new GestionT400(_idFacturaSeleccionada);
                 itemSelected = g.I4.SingleOrDefault(c => c.IDITEM == idItemSelected);
                 if (_headerSelected == null)
                 {
                     BlanqueaDatosItem();
                     return;
                 }
+
                 //
                 txtMaterial.Text = itemSelected.ITEM;
                 txtIdItem.Text = idItemSelected.ToString();
@@ -184,6 +186,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     txt1PrecioUFact.Text = itemSelected.PRECIOU_FACT_USD.ToString("C2");
                     txt1PrecioTotFactu.Text = itemSelected.PRECIOT_FACT_USD.ToString("C2");
                 }
+
                 //map valores a modifcar por mismo valores panel1
                 txt1Cantidad.Text = itemSelected.KGDESPACHADOS_R.Value.ToString();
                 txt1Tc.Text = itemSelected.TC.ToString("N2");
@@ -217,7 +220,8 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
         }
 
-        
+
+
         //modificaciones
 
         private void c2Cantidad_Validated(object sender, EventArgs e)
@@ -329,7 +333,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             dgvFactuHeader.ReadOnly = true;
             
             //Alta del Item
-            _nc.AddItems("DESCGRAL",txtDescripcionItemNC.Text,c3PrecioUNC.GetValueDecimal,itemSelected.GLV,itemSelected.IVA21,cCantidadNc.GetValueDecimal);
+            _nc.AddItems(txtMaterial.Text,txtDescripcionItemNC.Text,c3PrecioUNC.GetValueDecimal,itemSelected.GLV,itemSelected.IVA21,cCantidadNc.GetValueDecimal);
             _nc.SetTotalesInHeaderFromItems();
             _nc.SetDocumentoAsociado(_idFacturaSeleccionada);
             dgvSeleccionItem.ClearSelection();

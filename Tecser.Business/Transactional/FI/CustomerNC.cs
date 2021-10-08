@@ -54,9 +54,7 @@ namespace Tecser.Business.Transactional.FI
             if (h.TotalFacturaN == (Subtotal + Iva21 + IIBB))
                 OK = true;
         }
-
-
-      
+        
 
 
         /// <summary>
@@ -181,8 +179,7 @@ namespace Tecser.Business.Transactional.FI
             OK = true;
         }
     }
-
-
+    
     /// <summary>
     /// Nueva Clase de Gestion de Notas de Debito 2021.07.10
     /// </summary>
@@ -195,9 +192,18 @@ namespace Tecser.Business.Transactional.FI
             motivoDocumentoString = xmotivo.ToString();
         }
 
-        //aca va otro consutrctor para carga de datos existenes -- 
-        //todo: hacer en conjunto con customernd
+        public CustomerNc()
+        {
+            //usado para funcion MAP-
+        }
 
+        public CustomerNc(int idFactura)
+        {
+            //hacer constructor - para 
+            //todo: hacer en conjunto con customernd
+        }
+
+        
         public enum MotivoNotaCredito
         {
             AnulaDocumento,
@@ -313,8 +319,6 @@ namespace Tecser.Business.Transactional.FI
 
         //Fin de Revision
 
-
-
         public T0400_FACTURA_H H4 = new T0400_FACTURA_H();
         public List<T0401_FACTURA_I> I4 = new List<T0401_FACTURA_I>();
         public T0300_NCD_H H3 = new T0300_NCD_H();
@@ -323,32 +327,7 @@ namespace Tecser.Business.Transactional.FI
        
         private DocumentFIStatusManager.StatusHeader _status400;
         
-
-        //public CustomerNc(ManageDocumentType.TipoDocumento tipoDoc)
-        //{
-        //    Id400 = -1;
-        //    Id300 = -1;
-        //    _status400 = DocumentFIStatusManager.StatusHeader.Pendiente;
-        //    _tipoDocumento = tipoDoc;
-        //    tdocGenerar = ManageDocumentType.GetSystemDocumentType(tipoDoc);
-        //    _asignacionNumerosDocumentosFI = new AsignacionNumerosDocumentosFI(this);
-        //    //Pendiente significa solo en memoria
-        //}
-        //public List<T0401_FACTURA_I> Get400Items()
-        //{
-        //    return I4;
-        //}
-        //public List<T0301_NCD_I> Get300Items()
-        //{
-        //    return I3;
-        //}
-
-        //public void UpdateTipoDocumento(ManageDocumentType.TipoDocumento tipoDoc)
-        //{
-        //    _tipoDocumento = tipoDoc;
-        //    tdocGenerar = ManageDocumentType.GetSystemDocumentType(tipoDoc);
-        //}
-
+        
         /// <summary>
         /// Copia datos basicos de la factura enviada
         /// Blanquea Importes a 0.- + ID a 0

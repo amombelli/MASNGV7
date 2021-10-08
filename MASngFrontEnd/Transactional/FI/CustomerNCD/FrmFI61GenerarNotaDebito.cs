@@ -426,11 +426,9 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     break;
                 case CustomerNd.MotivoNotaDebito.DiferenciaKg:
                     break;
-                case CustomerNd.MotivoNotaDebito.DevolucionMaterial:
+                case CustomerNd.MotivoNotaDebito.CargoGralDocumentos:
                     break;
-                case CustomerNd.MotivoNotaDebito.DesGeneralDocumentos:
-                    break;
-                case CustomerNd.MotivoNotaDebito.DesGeneralPeriodo:
+                case CustomerNd.MotivoNotaDebito.CargoGralPeriodo:
                     break;
                 case CustomerNd.MotivoNotaDebito.GastoBancario:
                     FxGastosBancariosFinancieros();

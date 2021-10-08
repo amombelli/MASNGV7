@@ -197,10 +197,11 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     FxDiferenciaPrecioItem();
                     break;
                 case CustomerNc.MotivoNotaCredito.DiferenciaCambio:
+                    //Todo: Falta Construir Funcion
                     //NcAjusteTCDocumentoCompleto();
                     break;
                 case CustomerNc.MotivoNotaCredito.DiferenciaKg:
-                    //todo: construir funcion
+                    //Todo: Falta Construir Funcion
                     break;
                 case CustomerNc.MotivoNotaCredito.DevolucionMaterial:
                     FxDevolucionItem();
@@ -494,17 +495,6 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     MapTotalesFactura400(_nc.GetTotalesFromHeader());
                     MapHeaderDocumento1();
 
-                    //_iddocumentoAnula = f0.XIdFactura;
-                    //_numeroFacturaAnula = f0.txtNumeroDocumento.Text;
-                    //  if (_iddocumentoAnula == null) return;
-
-                    //_nc.CargaDatosNcDesdeListaItems(_iddocumentoAnula.Value, f0.ItemList);
-                    //dgv400.DataSource = _nc.Get400Items();
-                    //dgv300.DataSource = _nc.Get300Items();
-                    //MapTotalesFactura400(_nc.GetTotales());
-                    //MapHeaderNc();
-                    //_data400Ok = true;
-                    //_data300Ok = true;
                 }
                 else
                 {
