@@ -18,6 +18,7 @@ namespace Tecser.Business.MainApp
     {
         Produccion,
         Desarrollo,
-        Testeo
+        Testeo,
+        Desarrollo2
     };
 }

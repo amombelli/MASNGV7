@@ -201,6 +201,10 @@
             this.t0001TRANSACTIONSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rbMainApplication = new System.Windows.Forms.Ribbon();
+            this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
+            this.rbTaxModuleConfig = new System.Windows.Forms.RibbonButton();
+            this.rbTaxAssign = new System.Windows.Forms.RibbonButton();
             this.button41 = new System.Windows.Forms.Button();
             this.button40 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
@@ -216,10 +220,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
-            this.rbTaxModuleConfig = new System.Windows.Forms.RibbonButton();
-            this.rbTaxAssign = new System.Windows.Forms.RibbonButton();
             this.stBar1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -279,9 +279,10 @@
             // 
             this.btnRemisionCliente.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemisionCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemisionCliente.Location = new System.Drawing.Point(9, 59);
+            this.btnRemisionCliente.Location = new System.Drawing.Point(22, 148);
+            this.btnRemisionCliente.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btnRemisionCliente.Name = "btnRemisionCliente";
-            this.btnRemisionCliente.Size = new System.Drawing.Size(119, 43);
+            this.btnRemisionCliente.Size = new System.Drawing.Size(298, 108);
             this.btnRemisionCliente.TabIndex = 15;
             this.btnRemisionCliente.Text = "Prepara\r\nCliente";
             this.btnRemisionCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -292,9 +293,10 @@
             // 
             this.button3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(9, 102);
+            this.button3.Location = new System.Drawing.Point(22, 255);
+            this.button3.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 43);
+            this.button3.Size = new System.Drawing.Size(298, 108);
             this.button3.TabIndex = 16;
             this.button3.Text = "Prepara\r\nRemito";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -306,11 +308,11 @@
             this.txtServiceStatus.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtServiceStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtServiceStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServiceStatus.Location = new System.Drawing.Point(1156, 148);
-            this.txtServiceStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtServiceStatus.Location = new System.Drawing.Point(2890, 370);
+            this.txtServiceStatus.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.txtServiceStatus.Name = "txtServiceStatus";
             this.txtServiceStatus.ReadOnly = true;
-            this.txtServiceStatus.Size = new System.Drawing.Size(104, 21);
+            this.txtServiceStatus.Size = new System.Drawing.Size(257, 41);
             this.txtServiceStatus.TabIndex = 23;
             this.txtServiceStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -318,9 +320,10 @@
             // 
             this.btnCentroEntregas.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCentroEntregas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCentroEntregas.Location = new System.Drawing.Point(9, 188);
+            this.btnCentroEntregas.Location = new System.Drawing.Point(22, 470);
+            this.btnCentroEntregas.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btnCentroEntregas.Name = "btnCentroEntregas";
-            this.btnCentroEntregas.Size = new System.Drawing.Size(119, 43);
+            this.btnCentroEntregas.Size = new System.Drawing.Size(298, 108);
             this.btnCentroEntregas.TabIndex = 30;
             this.btnCentroEntregas.Text = "Centro\r\nEntregas";
             this.btnCentroEntregas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -330,10 +333,10 @@
             // button27
             // 
             this.button27.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.Location = new System.Drawing.Point(27, 221);
-            this.button27.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button27.Location = new System.Drawing.Point(68, 552);
+            this.button27.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(87, 39);
+            this.button27.Size = new System.Drawing.Size(218, 98);
             this.button27.TabIndex = 74;
             this.button27.Text = "IMPUTACION FF";
             this.button27.UseVisualStyleBackColor = true;
@@ -342,10 +345,10 @@
             // button28
             // 
             this.button28.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Location = new System.Drawing.Point(27, 260);
-            this.button28.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button28.Location = new System.Drawing.Point(68, 650);
+            this.button28.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(87, 39);
+            this.button28.Size = new System.Drawing.Size(218, 98);
             this.button28.TabIndex = 75;
             this.button28.Text = "IMPUTACION FF";
             this.button28.UseVisualStyleBackColor = true;
@@ -355,10 +358,10 @@
             // 
             this.button29.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button29.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button29.Location = new System.Drawing.Point(9, 317);
-            this.button29.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button29.Location = new System.Drawing.Point(22, 792);
+            this.button29.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(119, 43);
+            this.button29.Size = new System.Drawing.Size(298, 108);
             this.button29.TabIndex = 77;
             this.button29.Text = "COBCONV";
             this.button29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -368,9 +371,10 @@
             // btnDevelopmentForm
             // 
             this.btnDevelopmentForm.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevelopmentForm.Location = new System.Drawing.Point(26, 108);
+            this.btnDevelopmentForm.Location = new System.Drawing.Point(65, 270);
+            this.btnDevelopmentForm.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btnDevelopmentForm.Name = "btnDevelopmentForm";
-            this.btnDevelopmentForm.Size = new System.Drawing.Size(87, 39);
+            this.btnDevelopmentForm.Size = new System.Drawing.Size(218, 98);
             this.btnDevelopmentForm.TabIndex = 80;
             this.btnDevelopmentForm.Text = "Development Forms";
             this.btnDevelopmentForm.UseVisualStyleBackColor = true;
@@ -379,6 +383,7 @@
             // stBar1
             // 
             this.stBar1.BackColor = System.Drawing.Color.Gainsboro;
+            this.stBar1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.stBar1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stbarTcode,
             this.stbarUsername,
@@ -386,9 +391,10 @@
             this.stbarAppVersion,
             this.stbarModo,
             this.toolStripStatusLabel1});
-            this.stBar1.Location = new System.Drawing.Point(0, 712);
+            this.stBar1.Location = new System.Drawing.Point(0, 1784);
             this.stBar1.Name = "stBar1";
-            this.stBar1.Size = new System.Drawing.Size(1261, 25);
+            this.stBar1.Padding = new System.Windows.Forms.Padding(2, 0, 35, 0);
+            this.stBar1.Size = new System.Drawing.Size(3152, 58);
             this.stBar1.TabIndex = 83;
             this.stBar1.Text = "statusStrip1";
             // 
@@ -400,7 +406,7 @@
             this.stbarTcode.ForeColor = System.Drawing.Color.DarkGreen;
             this.stbarTcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stbarTcode.Name = "stbarTcode";
-            this.stbarTcode.Size = new System.Drawing.Size(100, 20);
+            this.stbarTcode.Size = new System.Drawing.Size(100, 45);
             this.stbarTcode.Text = "TCODE";
             // 
             // stbarUsername
@@ -408,13 +414,13 @@
             this.stbarUsername.AutoSize = false;
             this.stbarUsername.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.stbarUsername.Name = "stbarUsername";
-            this.stbarUsername.Size = new System.Drawing.Size(230, 20);
+            this.stbarUsername.Size = new System.Drawing.Size(230, 45);
             this.stbarUsername.Text = "USERNAME";
             // 
             // stbarComputer
             // 
             this.stbarComputer.Name = "stbarComputer";
-            this.stbarComputer.Size = new System.Drawing.Size(106, 20);
+            this.stbarComputer.Size = new System.Drawing.Size(264, 45);
             this.stbarComputer.Text = "COMPUTER NAME";
             // 
             // stbarAppVersion
@@ -422,7 +428,7 @@
             this.stbarAppVersion.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.stbarAppVersion.ForeColor = System.Drawing.Color.MidnightBlue;
             this.stbarAppVersion.Name = "stbarAppVersion";
-            this.stbarAppVersion.Size = new System.Drawing.Size(83, 20);
+            this.stbarAppVersion.Size = new System.Drawing.Size(204, 45);
             this.stbarAppVersion.Text = "APP VERSION";
             // 
             // stbarModo
@@ -430,14 +436,14 @@
             this.stbarModo.AutoSize = false;
             this.stbarModo.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.stbarModo.Name = "stbarModo";
-            this.stbarModo.Size = new System.Drawing.Size(100, 20);
+            this.stbarModo.Size = new System.Drawing.Size(100, 45);
             this.stbarModo.Text = "MODO";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.AutoSize = false;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(400, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(400, 45);
             this.toolStripStatusLabel1.Text = "** TECSER MASTERBATCH MOMBELLI E HIJOS SRL **";
             // 
             // imageList1
@@ -449,10 +455,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(27, 299);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(68, 748);
+            this.button1.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 39);
+            this.button1.Size = new System.Drawing.Size(218, 98);
             this.button1.TabIndex = 84;
             this.button1.Text = "COBCONV";
             this.button1.UseVisualStyleBackColor = true;
@@ -461,10 +467,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(131, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(328, 12);
+            this.button2.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 39);
+            this.button2.Size = new System.Drawing.Size(218, 98);
             this.button2.TabIndex = 85;
             this.button2.Text = "COBCONV";
             this.button2.UseVisualStyleBackColor = true;
@@ -473,10 +479,10 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(131, 45);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(328, 112);
+            this.button4.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 39);
+            this.button4.Size = new System.Drawing.Size(218, 98);
             this.button4.TabIndex = 86;
             this.button4.Text = "COBCONV";
             this.button4.UseVisualStyleBackColor = true;
@@ -485,10 +491,10 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(27, 193);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Location = new System.Drawing.Point(68, 482);
+            this.button6.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 39);
+            this.button6.Size = new System.Drawing.Size(218, 98);
             this.button6.TabIndex = 89;
             this.button6.Text = "WS\r\nConfig";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -501,10 +507,10 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaShell;
-            this.label1.Location = new System.Drawing.Point(3, 148);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(8, 370);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 21);
+            this.label1.Size = new System.Drawing.Size(214, 50);
             this.label1.TabIndex = 90;
             this.label1.Text = "TCODE #";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -512,10 +518,10 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(131, 85);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button7.Location = new System.Drawing.Point(328, 212);
+            this.button7.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(87, 39);
+            this.button7.Size = new System.Drawing.Size(218, 98);
             this.button7.TabIndex = 92;
             this.button7.Text = "File\r\nImport";
             this.button7.UseVisualStyleBackColor = true;
@@ -524,10 +530,10 @@
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(131, 125);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button8.Location = new System.Drawing.Point(328, 312);
+            this.button8.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(87, 43);
+            this.button8.Size = new System.Drawing.Size(218, 108);
             this.button8.TabIndex = 93;
             this.button8.Text = "Presentar\r\nARBA";
             this.button8.UseVisualStyleBackColor = true;
@@ -537,10 +543,10 @@
             // 
             this.button10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(7, 363);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button10.Location = new System.Drawing.Point(18, 908);
+            this.button10.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(119, 43);
+            this.button10.Size = new System.Drawing.Size(298, 108);
             this.button10.TabIndex = 95;
             this.button10.Text = "QM";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -551,10 +557,10 @@
             // 
             this.button11.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(127, 278);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button11.Location = new System.Drawing.Point(318, 695);
+            this.button11.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(119, 43);
+            this.button11.Size = new System.Drawing.Size(298, 108);
             this.button11.TabIndex = 96;
             this.button11.Text = "QM21";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -565,10 +571,10 @@
             // 
             this.button12.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(252, 16);
-            this.button12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button12.Location = new System.Drawing.Point(630, 40);
+            this.button12.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(119, 43);
+            this.button12.Size = new System.Drawing.Size(298, 108);
             this.button12.TabIndex = 100;
             this.button12.Text = "Repo\r\nCost";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -579,10 +585,10 @@
             // 
             this.button13.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(252, 59);
-            this.button13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button13.Location = new System.Drawing.Point(630, 148);
+            this.button13.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(119, 43);
+            this.button13.Size = new System.Drawing.Size(298, 108);
             this.button13.TabIndex = 101;
             this.button13.Text = "Manufactura\r\nCost";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -593,10 +599,10 @@
             // 
             this.button14.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(252, 102);
-            this.button14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button14.Location = new System.Drawing.Point(630, 255);
+            this.button14.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(119, 43);
+            this.button14.Size = new System.Drawing.Size(298, 108);
             this.button14.TabIndex = 102;
             this.button14.Text = "Standard\r\nCost";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -607,10 +613,10 @@
             // 
             this.button15.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button15.Location = new System.Drawing.Point(131, 102);
-            this.button15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button15.Location = new System.Drawing.Point(328, 255);
+            this.button15.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(119, 43);
+            this.button15.Size = new System.Drawing.Size(298, 108);
             this.button15.TabIndex = 103;
             this.button15.Text = "MP List \r\nin-Forms";
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -621,10 +627,10 @@
             // 
             this.button16.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button16.Location = new System.Drawing.Point(131, 145);
-            this.button16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button16.Location = new System.Drawing.Point(328, 362);
+            this.button16.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(119, 43);
+            this.button16.Size = new System.Drawing.Size(298, 108);
             this.button16.TabIndex = 104;
             this.button16.Text = "Mass Activate";
             this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -635,10 +641,10 @@
             // 
             this.button17.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.Location = new System.Drawing.Point(250, 159);
-            this.button17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button17.Location = new System.Drawing.Point(625, 398);
+            this.button17.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(119, 43);
+            this.button17.Size = new System.Drawing.Size(298, 108);
             this.button17.TabIndex = 105;
             this.button17.Text = "Reclass";
             this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -649,10 +655,10 @@
             // 
             this.button20.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(250, 203);
-            this.button20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button20.Location = new System.Drawing.Point(625, 508);
+            this.button20.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(119, 43);
+            this.button20.Size = new System.Drawing.Size(298, 108);
             this.button20.TabIndex = 108;
             this.button20.Text = "zfix1";
             this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -663,10 +669,10 @@
             // 
             this.button21.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button21.Location = new System.Drawing.Point(127, 71);
-            this.button21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button21.Location = new System.Drawing.Point(318, 178);
+            this.button21.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(119, 43);
+            this.button21.Size = new System.Drawing.Size(298, 108);
             this.button21.TabIndex = 110;
             this.button21.Text = "SYJ\r\n";
             this.button21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -677,10 +683,10 @@
             // 
             this.button22.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.Location = new System.Drawing.Point(127, 115);
-            this.button22.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button22.Location = new System.Drawing.Point(318, 288);
+            this.button22.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(119, 43);
+            this.button22.Size = new System.Drawing.Size(298, 108);
             this.button22.TabIndex = 111;
             this.button22.Text = "Solicita\r\nAdelanto";
             this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -691,10 +697,10 @@
             // 
             this.button23.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.Location = new System.Drawing.Point(127, 149);
-            this.button23.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button23.Location = new System.Drawing.Point(318, 372);
+            this.button23.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(119, 43);
+            this.button23.Size = new System.Drawing.Size(298, 108);
             this.button23.TabIndex = 112;
             this.button23.Text = "Pago\r\nAdelanto";
             this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -705,10 +711,10 @@
             // 
             this.button25.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button25.Location = new System.Drawing.Point(250, 115);
-            this.button25.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button25.Location = new System.Drawing.Point(625, 288);
+            this.button25.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(119, 43);
+            this.button25.Size = new System.Drawing.Size(298, 108);
             this.button25.TabIndex = 113;
             this.button25.Text = "Conta Cancel";
             this.button25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -719,10 +725,10 @@
             // 
             this.button26.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button26.Location = new System.Drawing.Point(127, 192);
-            this.button26.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button26.Location = new System.Drawing.Point(318, 480);
+            this.button26.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(119, 43);
+            this.button26.Size = new System.Drawing.Size(298, 108);
             this.button26.TabIndex = 114;
             this.button26.Text = "GLS TEST";
             this.button26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -733,10 +739,10 @@
             // 
             this.button30.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button30.Location = new System.Drawing.Point(250, 71);
-            this.button30.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button30.Location = new System.Drawing.Point(625, 178);
+            this.button30.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(119, 43);
+            this.button30.Size = new System.Drawing.Size(298, 108);
             this.button30.TabIndex = 115;
             this.button30.Text = "GLS TEST";
             this.button30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -747,10 +753,10 @@
             // 
             this.button31.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button31.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button31.Location = new System.Drawing.Point(131, 230);
-            this.button31.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button31.Location = new System.Drawing.Point(328, 575);
+            this.button31.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(119, 43);
+            this.button31.Size = new System.Drawing.Size(298, 108);
             this.button31.TabIndex = 116;
             this.button31.Text = "Nueva\r\nRC";
             this.button31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -761,10 +767,10 @@
             // 
             this.button32.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button32.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button32.Location = new System.Drawing.Point(131, 274);
-            this.button32.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button32.Location = new System.Drawing.Point(328, 685);
+            this.button32.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(119, 43);
+            this.button32.Size = new System.Drawing.Size(298, 108);
             this.button32.TabIndex = 117;
             this.button32.Text = "Listado\r\nRC";
             this.button32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -775,10 +781,10 @@
             // 
             this.button38.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button38.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button38.Location = new System.Drawing.Point(252, 145);
-            this.button38.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button38.Location = new System.Drawing.Point(630, 362);
+            this.button38.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(119, 43);
+            this.button38.Size = new System.Drawing.Size(298, 108);
             this.button38.TabIndex = 124;
             this.button38.Text = "Cost Roll\r\nManager";
             this.button38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -789,10 +795,10 @@
             // 
             this.button39.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button39.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button39.Location = new System.Drawing.Point(252, 188);
-            this.button39.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button39.Location = new System.Drawing.Point(630, 470);
+            this.button39.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(119, 43);
+            this.button39.Size = new System.Drawing.Size(298, 108);
             this.button39.TabIndex = 125;
             this.button39.Text = "Operacion";
             this.button39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -803,10 +809,10 @@
             // 
             this.button42.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button42.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button42.Location = new System.Drawing.Point(127, 27);
-            this.button42.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button42.Location = new System.Drawing.Point(318, 68);
+            this.button42.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(119, 43);
+            this.button42.Size = new System.Drawing.Size(298, 108);
             this.button42.TabIndex = 128;
             this.button42.Text = "FSR";
             this.button42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -817,10 +823,10 @@
             // 
             this.button43.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button43.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button43.Location = new System.Drawing.Point(7, 278);
-            this.button43.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button43.Location = new System.Drawing.Point(18, 695);
+            this.button43.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(119, 43);
+            this.button43.Size = new System.Drawing.Size(298, 108);
             this.button43.TabIndex = 129;
             this.button43.Text = "Fason Externo";
             this.button43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -831,10 +837,10 @@
             // 
             this.button45.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button45.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button45.Location = new System.Drawing.Point(226, 2);
-            this.button45.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button45.Location = new System.Drawing.Point(565, 5);
+            this.button45.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(119, 43);
+            this.button45.Size = new System.Drawing.Size(298, 108);
             this.button45.TabIndex = 131;
             this.button45.Text = "SYJIN";
             this.button45.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -845,10 +851,10 @@
             // 
             this.button46.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button46.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button46.Location = new System.Drawing.Point(226, 31);
-            this.button46.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button46.Location = new System.Drawing.Point(565, 78);
+            this.button46.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(119, 43);
+            this.button46.Size = new System.Drawing.Size(298, 108);
             this.button46.TabIndex = 132;
             this.button46.Text = "SYJp";
             this.button46.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -858,10 +864,10 @@
             // 
             this.button47.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button47.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button47.Location = new System.Drawing.Point(226, 74);
-            this.button47.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button47.Location = new System.Drawing.Point(565, 185);
+            this.button47.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(119, 43);
+            this.button47.Size = new System.Drawing.Size(298, 108);
             this.button47.TabIndex = 133;
             this.button47.Text = "HRMain";
             this.button47.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -872,10 +878,10 @@
             // 
             this.button48.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button48.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button48.Location = new System.Drawing.Point(127, 235);
-            this.button48.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button48.Location = new System.Drawing.Point(318, 588);
+            this.button48.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(119, 43);
+            this.button48.Size = new System.Drawing.Size(298, 108);
             this.button48.TabIndex = 134;
             this.button48.Text = "SYJ LIST";
             this.button48.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -886,10 +892,10 @@
             // 
             this.button52.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button52.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button52.Location = new System.Drawing.Point(127, 322);
-            this.button52.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button52.Location = new System.Drawing.Point(318, 805);
+            this.button52.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(119, 43);
+            this.button52.Size = new System.Drawing.Size(298, 108);
             this.button52.TabIndex = 143;
             this.button52.Text = "SYJ LIST";
             this.button52.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -900,10 +906,10 @@
             // 
             this.button53.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button53.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button53.Location = new System.Drawing.Point(250, 28);
-            this.button53.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button53.Location = new System.Drawing.Point(625, 70);
+            this.button53.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button53.Name = "button53";
-            this.button53.Size = new System.Drawing.Size(119, 43);
+            this.button53.Size = new System.Drawing.Size(298, 108);
             this.button53.TabIndex = 144;
             this.button53.Text = "Cheques\r\nEmitidos";
             this.button53.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -914,10 +920,10 @@
             // 
             this.btnDesimputarCtaCte.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesimputarCtaCte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesimputarCtaCte.Location = new System.Drawing.Point(6, 5);
-            this.btnDesimputarCtaCte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDesimputarCtaCte.Location = new System.Drawing.Point(15, 12);
+            this.btnDesimputarCtaCte.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.btnDesimputarCtaCte.Name = "btnDesimputarCtaCte";
-            this.btnDesimputarCtaCte.Size = new System.Drawing.Size(119, 43);
+            this.btnDesimputarCtaCte.Size = new System.Drawing.Size(298, 108);
             this.btnDesimputarCtaCte.TabIndex = 146;
             this.btnDesimputarCtaCte.Text = "Desimputa IDCtaCte";
             this.btnDesimputarCtaCte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -930,10 +936,10 @@
             this.txtid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtid1.ForeColor = System.Drawing.Color.Crimson;
-            this.txtid1.Location = new System.Drawing.Point(26, 69);
-            this.txtid1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtid1.Location = new System.Drawing.Point(65, 172);
+            this.txtid1.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.txtid1.Name = "txtid1";
-            this.txtid1.Size = new System.Drawing.Size(58, 21);
+            this.txtid1.Size = new System.Drawing.Size(142, 41);
             this.txtid1.TabIndex = 91;
             this.txtid1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1575,9 +1581,10 @@
             // label18
             // 
             this.label18.BackColor = System.Drawing.Color.DarkMagenta;
-            this.label18.Location = new System.Drawing.Point(-4, 170);
+            this.label18.Location = new System.Drawing.Point(-10, 425);
+            this.label18.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(1264, 3);
+            this.label18.Size = new System.Drawing.Size(3160, 8);
             this.label18.TabIndex = 294;
             // 
             // txtNTcode
@@ -1585,10 +1592,10 @@
             this.txtNTcode.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtNTcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNTcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNTcode.Location = new System.Drawing.Point(88, 148);
-            this.txtNTcode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNTcode.Location = new System.Drawing.Point(220, 370);
+            this.txtNTcode.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.txtNTcode.Name = "txtNTcode";
-            this.txtNTcode.Size = new System.Drawing.Size(109, 21);
+            this.txtNTcode.Size = new System.Drawing.Size(270, 41);
             this.txtNTcode.TabIndex = 295;
             this.txtNTcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1598,10 +1605,10 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SeaShell;
-            this.label2.Location = new System.Drawing.Point(1070, 148);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(2675, 370);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 21);
+            this.label2.Size = new System.Drawing.Size(214, 50);
             this.label2.TabIndex = 296;
             this.label2.Text = "Service Status";
             // 
@@ -1610,9 +1617,10 @@
             this.btnConfirmTCode.BackColor = System.Drawing.Color.Tan;
             this.btnConfirmTCode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmTCode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConfirmTCode.Location = new System.Drawing.Point(196, 148);
+            this.btnConfirmTCode.Location = new System.Drawing.Point(490, 370);
+            this.btnConfirmTCode.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btnConfirmTCode.Name = "btnConfirmTCode";
-            this.btnConfirmTCode.Size = new System.Drawing.Size(49, 21);
+            this.btnConfirmTCode.Size = new System.Drawing.Size(122, 52);
             this.btnConfirmTCode.TabIndex = 297;
             this.btnConfirmTCode.Text = "OK";
             this.btnConfirmTCode.UseVisualStyleBackColor = false;
@@ -1623,9 +1631,10 @@
             this.button55.BackColor = System.Drawing.Color.Tan;
             this.button55.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button55.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button55.Location = new System.Drawing.Point(3, 176);
+            this.button55.Location = new System.Drawing.Point(8, 440);
+            this.button55.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button55.Name = "button55";
-            this.button55.Size = new System.Drawing.Size(229, 21);
+            this.button55.Size = new System.Drawing.Size(572, 52);
             this.button55.TabIndex = 298;
             this.button55.Text = "SD - Ventas y Distribucion";
             this.button55.UseVisualStyleBackColor = false;
@@ -1635,9 +1644,10 @@
             this.button58.BackColor = System.Drawing.Color.Wheat;
             this.button58.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button58.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button58.Location = new System.Drawing.Point(467, 176);
+            this.button58.Location = new System.Drawing.Point(1168, 440);
+            this.button58.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button58.Name = "button58";
-            this.button58.Size = new System.Drawing.Size(229, 21);
+            this.button58.Size = new System.Drawing.Size(572, 52);
             this.button58.TabIndex = 300;
             this.button58.Text = "FI -Administracion y Finanzas";
             this.button58.UseVisualStyleBackColor = false;
@@ -1647,9 +1657,10 @@
             this.button56.BackColor = System.Drawing.Color.Wheat;
             this.button56.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button56.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button56.Location = new System.Drawing.Point(3, 199);
+            this.button56.Location = new System.Drawing.Point(8, 498);
+            this.button56.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button56.Name = "button56";
-            this.button56.Size = new System.Drawing.Size(229, 21);
+            this.button56.Size = new System.Drawing.Size(572, 52);
             this.button56.TabIndex = 302;
             this.button56.Text = "CO - Controlling FI-CO";
             this.button56.UseVisualStyleBackColor = false;
@@ -1659,9 +1670,10 @@
             this.button57.BackColor = System.Drawing.Color.Tan;
             this.button57.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button57.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button57.Location = new System.Drawing.Point(929, 176);
+            this.button57.Location = new System.Drawing.Point(2322, 440);
+            this.button57.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button57.Name = "button57";
-            this.button57.Size = new System.Drawing.Size(229, 21);
+            this.button57.Size = new System.Drawing.Size(572, 52);
             this.button57.TabIndex = 301;
             this.button57.Text = "MM - Admin Materiales/Compras";
             this.button57.UseVisualStyleBackColor = false;
@@ -1671,9 +1683,10 @@
             this.button59.BackColor = System.Drawing.Color.Wheat;
             this.button59.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button59.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button59.Location = new System.Drawing.Point(467, 199);
+            this.button59.Location = new System.Drawing.Point(1168, 498);
+            this.button59.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button59.Name = "button59";
-            this.button59.Size = new System.Drawing.Size(229, 21);
+            this.button59.Size = new System.Drawing.Size(572, 52);
             this.button59.TabIndex = 306;
             this.button59.Text = "MD - Master Data/Config";
             this.button59.UseVisualStyleBackColor = false;
@@ -1683,9 +1696,10 @@
             this.button60.BackColor = System.Drawing.Color.Tan;
             this.button60.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button60.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button60.Location = new System.Drawing.Point(929, 199);
+            this.button60.Location = new System.Drawing.Point(2322, 498);
+            this.button60.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button60.Name = "button60";
-            this.button60.Size = new System.Drawing.Size(229, 21);
+            this.button60.Size = new System.Drawing.Size(572, 52);
             this.button60.TabIndex = 305;
             this.button60.Text = "HR - Recursos Humanos";
             this.button60.UseVisualStyleBackColor = false;
@@ -1695,9 +1709,10 @@
             this.button61.BackColor = System.Drawing.Color.Wheat;
             this.button61.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button61.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button61.Location = new System.Drawing.Point(698, 176);
+            this.button61.Location = new System.Drawing.Point(1745, 440);
+            this.button61.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button61.Name = "button61";
-            this.button61.Size = new System.Drawing.Size(229, 21);
+            this.button61.Size = new System.Drawing.Size(572, 52);
             this.button61.TabIndex = 304;
             this.button61.Text = "QM - Control de Calidad";
             this.button61.UseVisualStyleBackColor = false;
@@ -1707,9 +1722,10 @@
             this.button62.BackColor = System.Drawing.Color.Tan;
             this.button62.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button62.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button62.Location = new System.Drawing.Point(234, 176);
+            this.button62.Location = new System.Drawing.Point(585, 440);
+            this.button62.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button62.Name = "button62";
-            this.button62.Size = new System.Drawing.Size(229, 21);
+            this.button62.Size = new System.Drawing.Size(572, 52);
             this.button62.TabIndex = 303;
             this.button62.Text = "PP - Planeamiento de Produccion";
             this.button62.UseVisualStyleBackColor = false;
@@ -1718,10 +1734,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(819, 225);
+            this.tabControl1.Location = new System.Drawing.Point(2048, 562);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(429, 483);
+            this.tabControl1.Size = new System.Drawing.Size(1072, 1208);
             this.tabControl1.TabIndex = 307;
             // 
             // tabPage1
@@ -1750,10 +1767,11 @@
             this.tabPage1.Controls.Add(this.button22);
             this.tabPage1.Controls.Add(this.button23);
             this.tabPage1.Controls.Add(this.button26);
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
+            this.tabPage1.Location = new System.Drawing.Point(10, 54);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(421, 456);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tabPage1.Size = new System.Drawing.Size(1052, 1144);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1762,10 +1780,10 @@
             // 
             this.button63.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button63.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button63.Location = new System.Drawing.Point(251, 278);
-            this.button63.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button63.Location = new System.Drawing.Point(628, 695);
+            this.button63.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button63.Name = "button63";
-            this.button63.Size = new System.Drawing.Size(119, 43);
+            this.button63.Size = new System.Drawing.Size(298, 108);
             this.button63.TabIndex = 150;
             this.button63.Text = "Vendor NEW";
             this.button63.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1776,10 +1794,10 @@
             // 
             this.button54.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button54.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button54.Location = new System.Drawing.Point(254, 363);
-            this.button54.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button54.Location = new System.Drawing.Point(635, 908);
+            this.button54.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button54.Name = "button54";
-            this.button54.Size = new System.Drawing.Size(119, 43);
+            this.button54.Size = new System.Drawing.Size(298, 108);
             this.button54.TabIndex = 128;
             this.button54.Text = "CtaCte\r\nGesCO";
             this.button54.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1790,10 +1808,10 @@
             // 
             this.button51.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button51.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button51.Location = new System.Drawing.Point(7, 235);
-            this.button51.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button51.Location = new System.Drawing.Point(18, 588);
+            this.button51.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(119, 43);
+            this.button51.Size = new System.Drawing.Size(298, 108);
             this.button51.TabIndex = 149;
             this.button51.Text = "ximputacion de compb";
             this.button51.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1804,10 +1822,10 @@
             // 
             this.button50.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button50.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button50.Location = new System.Drawing.Point(7, 27);
-            this.button50.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button50.Location = new System.Drawing.Point(18, 68);
+            this.button50.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(119, 43);
+            this.button50.Size = new System.Drawing.Size(298, 108);
             this.button50.TabIndex = 136;
             this.button50.Text = "TESTchr";
             this.button50.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1819,10 +1837,10 @@
             this.button36.Enabled = false;
             this.button36.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button36.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button36.Location = new System.Drawing.Point(7, 156);
-            this.button36.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button36.Location = new System.Drawing.Point(18, 390);
+            this.button36.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(119, 43);
+            this.button36.Size = new System.Drawing.Size(298, 108);
             this.button36.TabIndex = 123;
             this.button36.Text = "TEST\r\nControls";
             this.button36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1833,10 +1851,10 @@
             // 
             this.button44.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button44.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button44.Location = new System.Drawing.Point(7, 112);
-            this.button44.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button44.Location = new System.Drawing.Point(18, 280);
+            this.button44.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(119, 43);
+            this.button44.Size = new System.Drawing.Size(298, 108);
             this.button44.TabIndex = 130;
             this.button44.Text = "Regenera\r\nOPER";
             this.button44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1848,10 +1866,10 @@
             this.button49.Enabled = false;
             this.button49.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button49.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button49.Location = new System.Drawing.Point(7, 71);
-            this.button49.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button49.Location = new System.Drawing.Point(18, 178);
+            this.button49.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(119, 43);
+            this.button49.Size = new System.Drawing.Size(298, 108);
             this.button49.TabIndex = 135;
             this.button49.Text = "TEST";
             this.button49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1862,10 +1880,10 @@
             // 
             this.btnXRemito.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXRemito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXRemito.Location = new System.Drawing.Point(7, 193);
-            this.btnXRemito.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXRemito.Location = new System.Drawing.Point(18, 482);
+            this.btnXRemito.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.btnXRemito.Name = "btnXRemito";
-            this.btnXRemito.Size = new System.Drawing.Size(119, 43);
+            this.btnXRemito.Size = new System.Drawing.Size(298, 108);
             this.btnXRemito.TabIndex = 148;
             this.btnXRemito.Text = "Remito XX";
             this.btnXRemito.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1876,10 +1894,10 @@
             // 
             this.button33.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button33.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button33.Location = new System.Drawing.Point(7, 321);
-            this.button33.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button33.Location = new System.Drawing.Point(18, 802);
+            this.button33.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(119, 43);
+            this.button33.Size = new System.Drawing.Size(298, 108);
             this.button33.TabIndex = 118;
             this.button33.Text = "Re\r\nFacturacion";
             this.button33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1903,10 +1921,11 @@
             this.tabPage2.Controls.Add(this.btnDevelopmentForm);
             this.tabPage2.Controls.Add(this.txtid1);
             this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(10, 54);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(421, 457);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tabPage2.Size = new System.Drawing.Size(1052, 1144);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1914,10 +1933,10 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(26, 149);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Location = new System.Drawing.Point(65, 372);
+            this.button5.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 39);
+            this.button5.Size = new System.Drawing.Size(218, 98);
             this.button5.TabIndex = 87;
             this.button5.Text = "IMPORTAR";
             this.button5.UseVisualStyleBackColor = true;
@@ -1926,9 +1945,10 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(0, 707);
+            this.label4.Location = new System.Drawing.Point(0, 1768);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1261, 4);
+            this.label4.Size = new System.Drawing.Size(3152, 10);
             this.label4.TabIndex = 309;
             // 
             // dgvTcodeList
@@ -1945,11 +1965,12 @@
             this.moduleDataGridViewTextBoxColumn});
             this.dgvTcodeList.DataSource = this.t0001TRANSACTIONSBindingSource;
             this.dgvTcodeList.GridColor = System.Drawing.Color.Crimson;
-            this.dgvTcodeList.Location = new System.Drawing.Point(3, 221);
+            this.dgvTcodeList.Location = new System.Drawing.Point(8, 552);
+            this.dgvTcodeList.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.dgvTcodeList.Name = "dgvTcodeList";
             this.dgvTcodeList.ReadOnly = true;
             this.dgvTcodeList.RowHeadersWidth = 10;
-            this.dgvTcodeList.Size = new System.Drawing.Size(402, 483);
+            this.dgvTcodeList.Size = new System.Drawing.Size(1005, 1208);
             this.dgvTcodeList.TabIndex = 310;
             this.dgvTcodeList.Visible = false;
             // 
@@ -1957,14 +1978,17 @@
             // 
             this.visibleDataGridViewCheckBoxColumn.DataPropertyName = "Visible";
             this.visibleDataGridViewCheckBoxColumn.HeaderText = "V";
+            this.visibleDataGridViewCheckBoxColumn.MinimumWidth = 12;
             this.visibleDataGridViewCheckBoxColumn.Name = "visibleDataGridViewCheckBoxColumn";
             this.visibleDataGridViewCheckBoxColumn.ReadOnly = true;
             this.visibleDataGridViewCheckBoxColumn.Visible = false;
+            this.visibleDataGridViewCheckBoxColumn.Width = 250;
             // 
             // tCodeDataGridViewTextBoxColumn
             // 
             this.tCodeDataGridViewTextBoxColumn.DataPropertyName = "TCode";
             this.tCodeDataGridViewTextBoxColumn.HeaderText = "TCode";
+            this.tCodeDataGridViewTextBoxColumn.MinimumWidth = 12;
             this.tCodeDataGridViewTextBoxColumn.Name = "tCodeDataGridViewTextBoxColumn";
             this.tCodeDataGridViewTextBoxColumn.ReadOnly = true;
             this.tCodeDataGridViewTextBoxColumn.Width = 80;
@@ -1973,6 +1997,7 @@
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 12;
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             this.descriptionDataGridViewTextBoxColumn.Width = 250;
@@ -1981,6 +2006,7 @@
             // 
             this.moduleDataGridViewTextBoxColumn.DataPropertyName = "Module";
             this.moduleDataGridViewTextBoxColumn.HeaderText = "Mod";
+            this.moduleDataGridViewTextBoxColumn.MinimumWidth = 12;
             this.moduleDataGridViewTextBoxColumn.Name = "moduleDataGridViewTextBoxColumn";
             this.moduleDataGridViewTextBoxColumn.ReadOnly = true;
             this.moduleDataGridViewTextBoxColumn.Width = 50;
@@ -1995,9 +2021,10 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = global::MASngFE.Properties.Resources.mombelli_01;
-            this.pictureBox1.Location = new System.Drawing.Point(698, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(1745, 118);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(495, 78);
+            this.pictureBox1.Size = new System.Drawing.Size(1238, 195);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
@@ -2013,6 +2040,7 @@
             this.rbMainApplication.ForeColor = System.Drawing.Color.Navy;
             this.rbMainApplication.HideSingleTabIfTextEmpty = false;
             this.rbMainApplication.Location = new System.Drawing.Point(0, 0);
+            this.rbMainApplication.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.rbMainApplication.Minimized = false;
             this.rbMainApplication.Name = "rbMainApplication";
             // 
@@ -2027,7 +2055,7 @@
             this.rbMainApplication.OrbText = "ORB TEXT";
             this.rbMainApplication.OrbVisible = false;
             this.rbMainApplication.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.rbMainApplication.Size = new System.Drawing.Size(1261, 147);
+            this.rbMainApplication.Size = new System.Drawing.Size(3152, 200);
             this.rbMainApplication.TabIndex = 1;
             this.rbMainApplication.Tabs.Add(this.rbTabMain);
             this.rbMainApplication.Tabs.Add(this.ribbonTab1);
@@ -2048,13 +2076,44 @@
             this.rbMainApplication.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
             this.rbMainApplication.UseAlwaysStandardTheme = true;
             // 
+            // ribbonTab7
+            // 
+            this.ribbonTab7.Name = "ribbonTab7";
+            this.ribbonTab7.Panels.Add(this.ribbonPanel5);
+            this.ribbonTab7.Text = "Module Config";
+            // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.Items.Add(this.rbTaxModuleConfig);
+            this.ribbonPanel5.Items.Add(this.rbTaxAssign);
+            this.ribbonPanel5.Name = "ribbonPanel5";
+            this.ribbonPanel5.Text = "TAX Module";
+            // 
+            // rbTaxModuleConfig
+            // 
+            this.rbTaxModuleConfig.Image = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.Image")));
+            this.rbTaxModuleConfig.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.LargeImage")));
+            this.rbTaxModuleConfig.Name = "rbTaxModuleConfig";
+            this.rbTaxModuleConfig.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.SmallImage")));
+            this.rbTaxModuleConfig.Text = "TAX Config";
+            this.rbTaxModuleConfig.Click += new System.EventHandler(this.rbTaxModuleConfig_Click);
+            // 
+            // rbTaxAssign
+            // 
+            this.rbTaxAssign.Image = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.Image")));
+            this.rbTaxAssign.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.LargeImage")));
+            this.rbTaxAssign.Name = "rbTaxAssign";
+            this.rbTaxAssign.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.SmallImage")));
+            this.rbTaxAssign.Text = "TAX Assign";
+            // 
             // button41
             // 
             this.button41.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button41.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button41.Location = new System.Drawing.Point(9, 16);
+            this.button41.Location = new System.Drawing.Point(22, 40);
+            this.button41.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(119, 43);
+            this.button41.Size = new System.Drawing.Size(298, 108);
             this.button41.TabIndex = 127;
             this.button41.Text = "CD";
             this.button41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2067,10 +2126,10 @@
             this.button40.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button40.Image = ((System.Drawing.Image)(resources.GetObject("button40.Image")));
             this.button40.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button40.Location = new System.Drawing.Point(9, 403);
-            this.button40.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button40.Location = new System.Drawing.Point(22, 1008);
+            this.button40.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(119, 43);
+            this.button40.Size = new System.Drawing.Size(298, 108);
             this.button40.TabIndex = 126;
             this.button40.Text = "Nuevo\r\nXRATE!";
             this.button40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2081,10 +2140,10 @@
             // 
             this.button37.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button37.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button37.Location = new System.Drawing.Point(131, 403);
-            this.button37.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button37.Location = new System.Drawing.Point(328, 1008);
+            this.button37.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(119, 43);
+            this.button37.Size = new System.Drawing.Size(298, 108);
             this.button37.TabIndex = 122;
             this.button37.Text = "CtaCte\r\nGesCO";
             this.button37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2095,10 +2154,10 @@
             // 
             this.button35.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button35.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button35.Location = new System.Drawing.Point(131, 360);
-            this.button35.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button35.Location = new System.Drawing.Point(328, 900);
+            this.button35.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(119, 43);
+            this.button35.Size = new System.Drawing.Size(298, 108);
             this.button35.TabIndex = 120;
             this.button35.Text = "Resumen\r\nGesCO";
             this.button35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2109,10 +2168,10 @@
             // 
             this.button34.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button34.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button34.Location = new System.Drawing.Point(131, 317);
-            this.button34.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button34.Location = new System.Drawing.Point(328, 792);
+            this.button34.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(119, 43);
+            this.button34.Size = new System.Drawing.Size(298, 108);
             this.button34.TabIndex = 119;
             this.button34.Text = "Nuevo\r\nGesCO";
             this.button34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2123,10 +2182,10 @@
             // 
             this.button19.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button19.Location = new System.Drawing.Point(9, 274);
-            this.button19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button19.Location = new System.Drawing.Point(22, 685);
+            this.button19.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(119, 43);
+            this.button19.Size = new System.Drawing.Size(298, 108);
             this.button19.TabIndex = 107;
             this.button19.Text = "Gestion\r\nRechazo";
             this.button19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2137,10 +2196,10 @@
             // 
             this.button18.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.Location = new System.Drawing.Point(9, 360);
-            this.button18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button18.Location = new System.Drawing.Point(22, 900);
+            this.button18.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(119, 43);
+            this.button18.Size = new System.Drawing.Size(298, 108);
             this.button18.TabIndex = 106;
             this.button18.Text = "Gestion CH\r\nRechazo";
             this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2151,10 +2210,10 @@
             // 
             this.btnMRPTest.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMRPTest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMRPTest.Location = new System.Drawing.Point(131, 16);
-            this.btnMRPTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnMRPTest.Location = new System.Drawing.Point(328, 40);
+            this.btnMRPTest.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.btnMRPTest.Name = "btnMRPTest";
-            this.btnMRPTest.Size = new System.Drawing.Size(119, 43);
+            this.btnMRPTest.Size = new System.Drawing.Size(298, 108);
             this.btnMRPTest.TabIndex = 97;
             this.btnMRPTest.Text = "M.R.P";
             this.btnMRPTest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2165,10 +2224,10 @@
             // 
             this.button9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(131, 59);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button9.Location = new System.Drawing.Point(328, 148);
+            this.button9.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(119, 43);
+            this.button9.Size = new System.Drawing.Size(298, 108);
             this.button9.TabIndex = 94;
             this.button9.Text = "P.R.M\r\nProveedor";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2179,10 +2238,10 @@
             // 
             this.btnIngresoCobranzaTemporal.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresoCobranzaTemporal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresoCobranzaTemporal.Location = new System.Drawing.Point(9, 231);
-            this.btnIngresoCobranzaTemporal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnIngresoCobranzaTemporal.Location = new System.Drawing.Point(22, 578);
+            this.btnIngresoCobranzaTemporal.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.btnIngresoCobranzaTemporal.Name = "btnIngresoCobranzaTemporal";
-            this.btnIngresoCobranzaTemporal.Size = new System.Drawing.Size(119, 43);
+            this.btnIngresoCobranzaTemporal.Size = new System.Drawing.Size(298, 108);
             this.btnIngresoCobranzaTemporal.TabIndex = 76;
             this.btnIngresoCobranzaTemporal.Text = "Ingreso\r\nPago Prov";
             this.btnIngresoCobranzaTemporal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2193,9 +2252,10 @@
             // 
             this.button24.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.Location = new System.Drawing.Point(9, 145);
+            this.button24.Location = new System.Drawing.Point(22, 362);
+            this.button24.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(119, 43);
+            this.button24.Size = new System.Drawing.Size(298, 108);
             this.button24.TabIndex = 65;
             this.button24.Text = "Factu\r\nSearch!";
             this.button24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2228,15 +2288,17 @@
             this.panelBoton1.Controls.Add(this.button40);
             this.panelBoton1.Controls.Add(this.button31);
             this.panelBoton1.Controls.Add(this.button39);
-            this.panelBoton1.Location = new System.Drawing.Point(411, 221);
+            this.panelBoton1.Location = new System.Drawing.Point(1028, 552);
+            this.panelBoton1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.panelBoton1.Name = "panelBoton1";
-            this.panelBoton1.Size = new System.Drawing.Size(402, 483);
+            this.panelBoton1.Size = new System.Drawing.Size(1005, 1208);
             this.panelBoton1.TabIndex = 311;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "TCode";
             this.dataGridViewTextBoxColumn1.HeaderText = "TCode";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 12;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 50;
             // 
@@ -2244,6 +2306,7 @@
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Description";
             this.dataGridViewTextBoxColumn2.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 12;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 250;
             // 
@@ -2251,47 +2314,20 @@
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Module";
             this.dataGridViewTextBoxColumn3.HeaderText = "Mod";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 12;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 50;
             // 
-            // ribbonTab7
-            // 
-            this.ribbonTab7.Name = "ribbonTab7";
-            this.ribbonTab7.Panels.Add(this.ribbonPanel5);
-            this.ribbonTab7.Text = "Module Config";
-            // 
-            // ribbonPanel5
-            // 
-            this.ribbonPanel5.Items.Add(this.rbTaxModuleConfig);
-            this.ribbonPanel5.Items.Add(this.rbTaxAssign);
-            this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Text = "TAX Module";
-            // 
-            // rbTaxModuleConfig
-            // 
-            this.rbTaxModuleConfig.Image = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.Image")));
-            this.rbTaxModuleConfig.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.LargeImage")));
-            this.rbTaxModuleConfig.Name = "rbTaxModuleConfig";
-            this.rbTaxModuleConfig.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.SmallImage")));
-            this.rbTaxModuleConfig.Text = "TAX Config";
-            this.rbTaxModuleConfig.Click += new System.EventHandler(this.rbTaxModuleConfig_Click);
-            // 
-            // rbTaxAssign
-            // 
-            this.rbTaxAssign.Image = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.Image")));
-            this.rbTaxAssign.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.LargeImage")));
-            this.rbTaxAssign.Name = "rbTaxAssign";
-            this.rbTaxAssign.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.SmallImage")));
-            this.rbTaxAssign.Text = "TAX Assign";
-            // 
             // Frm00MainAppStart
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1261, 737);
+            this.ClientSize = new System.Drawing.Size(3152, 1842);
             this.Controls.Add(this.panelBoton1);
             this.Controls.Add(this.dgvTcodeList);
             this.Controls.Add(this.label4);
@@ -2317,7 +2353,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.Name = "Frm00MainAppStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TECSER MASTERBATCH - SISTEMA DE GESTION EMPRESARIAL - MOMBELLI APPLICATION SYSTEM" +

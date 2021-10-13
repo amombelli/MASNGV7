@@ -480,20 +480,11 @@
     <None Include="Properties\DataSources\TecserEF.Entity.T0030_STOCK.datasource" />
     <None Include="Tecser.Business.AFIP\app.config" />
     <None Include="Tecser.Business.AFIP\My Project\Settings.settings" />
-    <None Include="Tecser.Business.AFIP\obj\Debug\BLV.vbproj.GenerateResource.Cache" />
-    <None Include="Tecser.Business.AFIP\obj\Debug\BLV.vbprojResolveAssemblyReference.cache" />
-    <None Include="Tecser.Business.AFIP\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="Tecser.Business.AFIP\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="Tecser.Business.AFIP\obj\Debug\Tecser.Afip.Business.vbproj.GenerateResource.Cache" />
-    <None Include="Tecser.Business.AFIP\obj\Debug\Tecser.Afip.Business.vbprojResolveAssemblyReference.cache" />
-    <None Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.vbproj.GenerateResource.Cache" />
-    <None Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.vbprojResolveAssemblyReference.cache" />
-    <None Include="Tecser.Business.AFIP\obj\Release\BLV.vbproj.GenerateResource.Cache" />
-    <None Include="Tecser.Business.AFIP\obj\Release\BLV.vbprojResolveAssemblyReference.cache" />
-    <None Include="Tecser.Business.AFIP\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Tecser.Business.AFIP\packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Tecser.Business.AFIP\bin\" />
+    <Folder Include="Tecser.Business.AFIP\obj\" />
     <Folder Include="Transactional\PRM\" />
   </ItemGroup>
   <ItemGroup>
@@ -502,9 +493,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Tecser.Business.AFIP\My Project\Resources.resx" />
-    <EmbeddedResource Include="Tecser.Business.AFIP\obj\Debug\BLV.Resources.resources" />
-    <EmbeddedResource Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.Resources.resources" />
-    <EmbeddedResource Include="Tecser.Business.AFIP\obj\Release\BLV.Resources.resources" />
     <EmbeddedResource Include="Tools\FrmUserInputTexto.resx">
       <DependentUpon>FrmUserInputTexto.cs</DependentUpon>
     </EmbeddedResource>
@@ -523,33 +511,12 @@
     <None Include="Resources\accept.png" />
     <None Include="Resources\cancel.bmp" />
     <None Include="Resources\accept.jpg" />
-    <Content Include="Tecser.Business.AFIP\bin\Debug\BLV.dll" />
-    <Content Include="Tecser.Business.AFIP\bin\Debug\BLV.pdb" />
-    <Content Include="Tecser.Business.AFIP\bin\Debug\BLV.xml" />
-    <Content Include="Tecser.Business.AFIP\bin\Release\AutoMapper.dll" />
-    <Content Include="Tecser.Business.AFIP\bin\Release\AutoMapper.xml" />
-    <Content Include="Tecser.Business.AFIP\bin\Release\BLV.dll" />
-    <Content Include="Tecser.Business.AFIP\bin\Release\BLV.pdb" />
-    <Content Include="Tecser.Business.AFIP\bin\Release\BLV.xml" />
     <Content Include="Tecser.Business.AFIP\CuitValidation.vb" />
     <Content Include="Tecser.Business.AFIP\My Project\Application.Designer.vb" />
     <Content Include="Tecser.Business.AFIP\My Project\Application.myapp" />
     <Content Include="Tecser.Business.AFIP\My Project\AssemblyInfo.vb" />
     <Content Include="Tecser.Business.AFIP\My Project\Resources.Designer.vb" />
     <Content Include="Tecser.Business.AFIP\My Project\Settings.Designer.vb" />
-    <Content Include="Tecser.Business.AFIP\obj\Debug\BLV.dll" />
-    <Content Include="Tecser.Business.AFIP\obj\Debug\BLV.pdb" />
-    <Content Include="Tecser.Business.AFIP\obj\Debug\BLV.vbproj.FileListAbsolute.txt" />
-    <Content Include="Tecser.Business.AFIP\obj\Debug\BLV.xml" />
-    <Content Include="Tecser.Business.AFIP\obj\Debug\Tecser.Afip.Business.vbproj.FileListAbsolute.txt" />
-    <Content Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.vbproj.FileListAbsolute.txt" />
-    <Content Include="Tecser.Business.AFIP\obj\Debug\Tecser.Business.AFIP.xml" />
-    <Content Include="Tecser.Business.AFIP\obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
-    <Content Include="Tecser.Business.AFIP\obj\Release\BLV.dll" />
-    <Content Include="Tecser.Business.AFIP\obj\Release\BLV.pdb" />
-    <Content Include="Tecser.Business.AFIP\obj\Release\BLV.vbproj.FileListAbsolute.txt" />
-    <Content Include="Tecser.Business.AFIP\obj\Release\BLV.xml" />
-    <Content Include="Tecser.Business.AFIP\obj\Release\TempPE\My Project.Resources.Designer.vb.dll" />
     <Content Include="Tecser.Business.AFIP\PadronAfip.vb" />
     <Content Include="Tecser.Business.AFIP\Tecser.Business.AFIP.vbproj" />
     <Content Include="Transactional\CO\ContaFromDocuments\TextFile1.txt" />

@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -6,12 +7,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MASng")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Mombelli Application System for Enterprises")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("TECSER ENTERPISE")]
+[assembly: AssemblyCompany("Mombelli Enterprise SD")]
 [assembly: AssemblyProduct("MASng")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Mombelli")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -36,4 +37,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: InternalsVisibleTo("MASng.Tests")]
 [assembly: InternalsVisibleTo("MASng.Explorables")]
-
+[assembly: NeutralResourcesLanguage("es-419")]
