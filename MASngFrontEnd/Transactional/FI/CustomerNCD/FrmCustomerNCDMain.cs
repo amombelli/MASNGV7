@@ -261,8 +261,8 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
             else
             {
-                var f = new FrmFi52NotaCreditoDebitoCliente(_idCliente.Value, _tipoLx, _tipoDocumento, _indicador);
-                f.Show();
+                //var f = new FrmFi52NotaCreditoDebitoCliente(_idCliente.Value, _tipoLx, _tipoDocumento, _indicador);
+                //f.Show();
             }
         }
 

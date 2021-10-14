@@ -188,6 +188,7 @@ namespace Tecser.Business.Transactional.FI
     {
         public CustomerNc(MotivoNotaCredito xmotivo)
         {
+            T400= new GestionT400(GestionT400.SignoRegistracion.Negativo);
             _motivoDocumento = xmotivo;
             motivoDocumentoString = xmotivo.ToString();
         }

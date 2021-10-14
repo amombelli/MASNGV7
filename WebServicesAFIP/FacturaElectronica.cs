@@ -459,8 +459,6 @@ namespace WebServicesAFIP
                 //Console.WriteLine("Reprocesar:" + _wsfev1.Reprocesar);
                 //Console.WriteLine("Reproceso:" + _wsfev1.Reproceso);
                 //Console.WriteLine("EmisionTipo:" + _wsfev1.EmisionTipo);
-
-
                 //MsgBox("Resultado:" & WSFEv1.Resultado & " CAE: " & CAE & " Venc: " & WSFEv1.Vencimiento & " Reproceso: " & WSFEv1.Reproceso, vbInformation + vbOKOnly)
 
                 if (_wsfev1.ErrMsg != "")

@@ -146,7 +146,7 @@ namespace MASngFE.Transactional.CO.Cost
             }
 
             //    //
-            new MargenDocument().LinkFactura(31358);
+            new MargenDocument().UpdateRemito_FacturaData(31358);
             new MargenDocument().UpdateStatusCobranza(31358);
 
 
@@ -154,7 +154,16 @@ namespace MASngFE.Transactional.CO.Cost
             f.Show();
         }
 
-        private void btnVerNoIngresados_Click(object sender, EventArgs e)
+
+
+        private void btnAltaTest_Click(object sender, EventArgs e)
+        {
+            new MargenDocument().AddItemNotaCredito(2823);
+        }
+
+
+
+        private void rbVerNoIncluidos_Click(object sender, EventArgs e)
         {
             using (var x = new FrmCO16_MopSinRegistrar())
             {
@@ -162,9 +171,10 @@ namespace MASngFE.Transactional.CO.Cost
             }
         }
 
-        private void btnAltaTest_Click(object sender, EventArgs e)
+        private void rbDelete_Click(object sender, EventArgs e)
         {
-            new MargenDocument().AddItemNotaCredito(2823);
+            //aca abrir una interfaz - preguntar fecha desde - fecha hasta
+            //mostrar y eliminanr
         }
     }
 }

@@ -186,7 +186,6 @@
             this.button51 = new System.Windows.Forms.Button();
             this.button50 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
             this.button49 = new System.Windows.Forms.Button();
             this.btnXRemito = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
@@ -201,6 +200,10 @@
             this.t0001TRANSACTIONSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rbMainApplication = new System.Windows.Forms.Ribbon();
+            this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
+            this.rbTaxModuleConfig = new System.Windows.Forms.RibbonButton();
+            this.rbTaxAssign = new System.Windows.Forms.RibbonButton();
             this.button41 = new System.Windows.Forms.Button();
             this.button40 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
@@ -216,10 +219,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
-            this.rbTaxModuleConfig = new System.Windows.Forms.RibbonButton();
-            this.rbTaxAssign = new System.Windows.Forms.RibbonButton();
             this.stBar1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1731,7 +1730,6 @@
             this.tabPage1.Controls.Add(this.button51);
             this.tabPage1.Controls.Add(this.button50);
             this.tabPage1.Controls.Add(this.button36);
-            this.tabPage1.Controls.Add(this.button44);
             this.tabPage1.Controls.Add(this.button49);
             this.tabPage1.Controls.Add(this.btnXRemito);
             this.tabPage1.Controls.Add(this.button43);
@@ -1776,7 +1774,7 @@
             // 
             this.button54.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button54.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button54.Location = new System.Drawing.Point(254, 363);
+            this.button54.Location = new System.Drawing.Point(254, 362);
             this.button54.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button54.Name = "button54";
             this.button54.Size = new System.Drawing.Size(119, 43);
@@ -1828,20 +1826,6 @@
             this.button36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button36.UseVisualStyleBackColor = true;
             this.button36.Click += new System.EventHandler(this.button36_Click_1);
-            // 
-            // button44
-            // 
-            this.button44.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button44.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button44.Location = new System.Drawing.Point(7, 112);
-            this.button44.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(119, 43);
-            this.button44.TabIndex = 130;
-            this.button44.Text = "Regenera\r\nOPER";
-            this.button44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button44.UseVisualStyleBackColor = true;
-            this.button44.Click += new System.EventHandler(this.button44_Click);
             // 
             // button49
             // 
@@ -2047,6 +2031,36 @@
             this.rbMainApplication.Text = "MAS";
             this.rbMainApplication.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
             this.rbMainApplication.UseAlwaysStandardTheme = true;
+            // 
+            // ribbonTab7
+            // 
+            this.ribbonTab7.Name = "ribbonTab7";
+            this.ribbonTab7.Panels.Add(this.ribbonPanel5);
+            this.ribbonTab7.Text = "Module Config";
+            // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.Items.Add(this.rbTaxModuleConfig);
+            this.ribbonPanel5.Items.Add(this.rbTaxAssign);
+            this.ribbonPanel5.Name = "ribbonPanel5";
+            this.ribbonPanel5.Text = "TAX Module";
+            // 
+            // rbTaxModuleConfig
+            // 
+            this.rbTaxModuleConfig.Image = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.Image")));
+            this.rbTaxModuleConfig.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.LargeImage")));
+            this.rbTaxModuleConfig.Name = "rbTaxModuleConfig";
+            this.rbTaxModuleConfig.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.SmallImage")));
+            this.rbTaxModuleConfig.Text = "TAX Config";
+            this.rbTaxModuleConfig.Click += new System.EventHandler(this.rbTaxModuleConfig_Click);
+            // 
+            // rbTaxAssign
+            // 
+            this.rbTaxAssign.Image = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.Image")));
+            this.rbTaxAssign.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.LargeImage")));
+            this.rbTaxAssign.Name = "rbTaxAssign";
+            this.rbTaxAssign.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.SmallImage")));
+            this.rbTaxAssign.Text = "TAX Assign";
             // 
             // button41
             // 
@@ -2254,36 +2268,6 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 50;
             // 
-            // ribbonTab7
-            // 
-            this.ribbonTab7.Name = "ribbonTab7";
-            this.ribbonTab7.Panels.Add(this.ribbonPanel5);
-            this.ribbonTab7.Text = "Module Config";
-            // 
-            // ribbonPanel5
-            // 
-            this.ribbonPanel5.Items.Add(this.rbTaxModuleConfig);
-            this.ribbonPanel5.Items.Add(this.rbTaxAssign);
-            this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Text = "TAX Module";
-            // 
-            // rbTaxModuleConfig
-            // 
-            this.rbTaxModuleConfig.Image = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.Image")));
-            this.rbTaxModuleConfig.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.LargeImage")));
-            this.rbTaxModuleConfig.Name = "rbTaxModuleConfig";
-            this.rbTaxModuleConfig.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.SmallImage")));
-            this.rbTaxModuleConfig.Text = "TAX Config";
-            this.rbTaxModuleConfig.Click += new System.EventHandler(this.rbTaxModuleConfig_Click);
-            // 
-            // rbTaxAssign
-            // 
-            this.rbTaxAssign.Image = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.Image")));
-            this.rbTaxAssign.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.LargeImage")));
-            this.rbTaxAssign.Name = "rbTaxAssign";
-            this.rbTaxAssign.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.SmallImage")));
-            this.rbTaxAssign.Text = "TAX Assign";
-            // 
             // Frm00MainAppStart
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2408,7 +2392,6 @@
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Button button43;
-        private System.Windows.Forms.Button button44;
         private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Button button46;
         private System.Windows.Forms.Button button47;

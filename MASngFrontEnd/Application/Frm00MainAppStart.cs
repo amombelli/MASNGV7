@@ -583,19 +583,19 @@ namespace MASngFE.Application
 
 
 
-            int a = 30328;
-            int b = 30328;
-            //30304 - 304113
+            //int a = 30328;
+            //int b = 30328;
+            ////30304 - 304113
 
-            for (var i = a; i <= b; i++)
-            {
-                new MargenDocument().AddMargenDocumentAndMapCost(i);
+            //for (var i = a; i <= b; i++)
+            //{
+            //    new MargenDocument().AddMargenDocumentAndMapCost(i);
 
-            }
+            //}
 
-            //    //
-            new MargenDocument().LinkFactura(31358);
-            new MargenDocument().UpdateStatusCobranza(31358);
+            ////    //
+            //new MargenDocument().UpdateRemito_FacturaData(31358);
+            //new MargenDocument().UpdateStatusCobranza(31358);
 
 
             var f = new FrmCO13MargenResumen();
@@ -628,34 +628,7 @@ namespace MASngFE.Application
 
         private void button44_Click(object sender, EventArgs e)
         {
-            var p = new MargenDocument().GetListaRemitosSinMargen();
-            for (var i = 0; i < p.Count; i++)
-            {
-                new MargenDocument().AddMargenDocumentAndMapCost(p[i]);
-            }
-
-            using (var db = new TecserData(GlobalApp.CnnApp))
-            {
-                var x = db.T0140_MargenOperacion.Where(c => c.FechaFactura == null).ToList();
-                foreach (var f in x)
-                {
-                    var fx = db.T0400_FACTURA_H.SingleOrDefault(c => c.IDRemito == f.IdRemito);
-                    if (fx != null)
-                    {
-                        //if (fx.IDFACTURA == 40137)
-                        //{
-                        //    var a = 1;
-                        //}
-                        new MargenDocument().LinkFactura(fx.IDFACTURA);
-                        new MargenDocument().UpdateStatusCobranza(fx.IDFACTURA);
-                        Debug.Print($"Linkeo Factura {fx.IDFACTURA}");
-                    }
-                    else
-                    {
-                        Debug.Print($"Factura No Encontrada--- IDRemito ={f.IdRemito} ");
-                    }
-                }
-            }
+           
         }
 
         private void button45_Click(object sender, EventArgs e)

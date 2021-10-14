@@ -8,6 +8,7 @@ using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.CO;
 using Tecser.Business.Transactional.CO.ContaFromDocuments;
+using Tecser.Business.Transactional.CO.Costos;
 using Tecser.Business.Transactional.FI;
 using Tecser.Business.Transactional.FI.Cobranza;
 using Tecser.Business.Transactional.FI.Customers;
@@ -911,6 +912,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 else
                 {
                     SolicitaCaeCompletaData(1, _nc.GetId400(), _nc.IdFacturaAsociada, _nc.PeriodoDesde, _nc.PeriodoHasta);
+                    new MargenDocument().AddItemNotaCredito(_nc.GetId300());
                 }
             }
 
@@ -927,6 +929,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 {
                     SolicitaCaeCompletaData(2, _nc2.GetId400(), _nc2.IdFacturaAsociada, _nc2.PeriodoDesde,
                         _nc2.PeriodoHasta);
+                    new MargenDocument().AddItemNotaCredito(_nc2.Id300);
                 }
             }
         }
@@ -982,15 +985,14 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             if (_lx == Lx.L1 && _tipoDocumento == ManageDocumentType.TipoDocumento.NotaCreditoVentaA)
             {
                 //Si es NC 'A' --> va a Pendiente CAE
-                _statusDocumento =
-                    gestionStatus.SetContabilizada(zz.IdCtaCte, zz.RtnAsiento.IdDocu, zz.RtnAsiento.Nasx1);
+                _statusDocumento = gestionStatus.SetContabilizada(zz.IdCtaCte, zz.RtnAsiento.IdDocu, zz.RtnAsiento.Nasx1);
                 _statusDocumento = gestionStatus.SetPendienteCae();
             }
             else
             {
                 //Si es CX --> va a Contabilizada o 'L2'
-                _statusDocumento =
-                    gestionStatus.SetContabilizada(zz.IdCtaCte, zz.RtnAsiento.IdDocu, zz.RtnAsiento.Nasx1);
+                _statusDocumento = gestionStatus.SetContabilizada(zz.IdCtaCte, zz.RtnAsiento.IdDocu, zz.RtnAsiento.Nasx1);
+                new MargenDocument().AddItemNotaCredito(_nc.Id300);
             }
             
             //****** Acciones POST-Conta Asociadas al motivo ******
@@ -1043,7 +1045,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 return;
 
             rTabDocumentos.Enabled = false;
-            _statusDocumento = _nc.Registrar(txtMotivoGeneralDocumento.Text);
+            _statusDocumento = _nc.Registrar(txtMotivoGeneralDocumento.Text,false);
             MapHeaderDocumento1();
             if (_existeDocumentoSecundario)
             {

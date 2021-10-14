@@ -147,7 +147,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
 
             //Alta del Item
-            _nc.AddItems("DESCGRAL",txtDescripcionItemNC.Text, c1DescuentoPeso.GetValueDecimal,"4.1.3",ckIVA.Checked,1,"ARS");
+            _nc.AddItems("DESCGRAL",txtDescripcionItemNC.Text,Math.Abs(c1DescuentoPeso.GetValueDecimal)*-1 ,"4.1.3",ckIVA.Checked,1,"ARS");
             _nc.SetTotalesInHeaderFromItems();
             _nc.SetDocumentoAsociado(_idFacturaSeleccionada);
             if (FechaAplicaDesde == null)

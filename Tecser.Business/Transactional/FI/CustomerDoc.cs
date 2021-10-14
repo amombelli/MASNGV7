@@ -11,11 +11,22 @@ namespace Tecser.Business.Transactional.FI
 {
     public abstract class CustomerDoc
     {
+        //public CustomerDoc(int signo)
+        //{
+        //    if (signo == 1)
+        //    {
+        //        xxsigno = GestionT400.SignoRegistracion.Positivo;
+        //    }
+        //    else
+        //    {
+        //        xxsigno = GestionT400.SignoRegistracion.Negativo;
+        //    }
+        //}
         protected string DocumentoAutorizadoPor="Sin Asignar";
         protected ManageDocumentType.TipoDocumento TipoDocumento;
         protected string motivoDocumentoString;
         protected int? IdAlternativo = null; //id1 Pasado como parametro por ejemplo IdCheque [Rechazo]
-        protected GestionT400 T400 = new GestionT400();
+        protected GestionT400 T400;
         protected GestionT300 T300 = new GestionT300();
         public int? IdFacturaAsociada { get; private set; } //Para CAE
         public DateTime? PeriodoDesde { get; private set; } //Para CAE

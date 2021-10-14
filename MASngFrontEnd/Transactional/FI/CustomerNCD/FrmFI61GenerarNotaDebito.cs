@@ -8,6 +8,7 @@ using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.CO;
 using Tecser.Business.Transactional.CO.ContaFromDocuments;
+using Tecser.Business.Transactional.CO.Costos;
 using Tecser.Business.Transactional.FI;
 using Tecser.Business.Transactional.FI.Customers;
 using Tecser.Business.Transactional.FI.MainDocumentData;
@@ -264,6 +265,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 {
                     //Si es DX --> va a Contabilizada
                     _statusDocumento = gestionStatus.SetContabilizada(zz.IdCtaCte, zz.RtnAsiento.IdDocu, zz.RtnAsiento.Nasx1);
+                    new MargenDocument().AddItemNotaCredito(_nd.GetId300());
                 }
 
             }
@@ -271,6 +273,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             {
                 //*** Motivo Cheque Rechazado
                 //Pueden existir 2 documentos[Si tiene Gastos/IVA] *Doc1 => Cheque
+                //Esta parte seguro que No Va a Operaciones
                 var zz1 = new ContaClienteNotaDebitoL2(_nd.GetId400(), _idCliente, txtTdoc.Text);
                 zz1.ContabilizaCompletoHeaderND();
                 txtIdCtaCte1.Text = zz1.IdCtaCte.ToString();
@@ -289,6 +292,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     //Update en Tabla T0156-Rechazo
                     new ChequeRechazadoManager().UpdateAfterContabilizacionNd(_idRetorno, Convert.ToInt32(txtNas1.Text),
                         _nd.GetId400(), txtNumeroDocumento.Text);
+                    
                 }
 
                 //Contabilizacion de segundo documento [Siempre Gastos]
@@ -367,6 +371,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 else
                 {
                     SolicitaCaeCompletaData(1, _nd.GetId400(), _nd.IdFacturaAsociada, _nd.PeriodoDesde, _nd.PeriodoHasta);
+                    new MargenDocument().AddItemNotaCredito(_nd.GetId300());
                 }
             }
 
@@ -383,6 +388,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 {
                     SolicitaCaeCompletaData(2, _nd2.GetId400(), _nd2.IdFacturaAsociada, _nd2.PeriodoDesde,
                         _nd2.PeriodoHasta);
+                    //Esta parte no va a Operaciones
                 }
             }
         }

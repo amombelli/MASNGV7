@@ -27,7 +27,6 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
             AddData201(_idNcd);
             UpdateData202();
             AddData208();
-            //AddData207AltaDocumentoNuevo(10); //dias de vencimiento
             var as1 = new AsCustomerL2T400(IdFactura, "NCDX");
             var z = as1.AsNdAnunlaNcCompleta();
             RtnAsiento.IdDocu = z.IdDocu;
@@ -44,7 +43,6 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
             AddData201(_idNcd);
             UpdateData202();
             AddData208();
-            //AddData207AltaDocumentoNuevo(10); //dias de vencimiento
             var as1 = new AsCustomerL2T400(IdFactura, "NCDX");
             var z = as1.AsNotaDebitoCreditoFromT400("Emision NC");
             RtnAsiento.IdDocu = z.IdDocu;
