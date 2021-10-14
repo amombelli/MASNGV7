@@ -68,6 +68,7 @@ namespace MASngFE.Application
                         @"ENTORNO PRODUCTIVO PR1", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     break;
                 case Tecser.Business.MainApp.ModoApp.Desarrollo:
+                case ModoApp.Desarrollo2:
                     stbarModo.Text = @"DESARROLLO";
                     stbarModo.ForeColor = Color.Red;
                     break;

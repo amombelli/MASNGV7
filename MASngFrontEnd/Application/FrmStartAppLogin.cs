@@ -40,15 +40,21 @@ namespace MASngFE.Application
 
             var modo = Settings.Default.AppMode;
             switch (modo)
-            {
+            { 
                 case 'D':
                     GlobalApp.Modo = Tecser.Business.MainApp.ModoApp.Desarrollo;
                     break;
                 case 'P':
                     GlobalApp.Modo = Tecser.Business.MainApp.ModoApp.Produccion;
                     break;
+                case 'G':
+                    GlobalApp.Modo = ModoApp.Desarrollo2;
+                    break;
+                case 'T':
+                    GlobalApp.Modo = ModoApp.Testeo;
+                    break;
                 default:
-                    MessageBox.Show(@"El Modo de Ejecucion es Incorrecto. No se puede continuar", @"Modo Incorrecto",
+                    MessageBox.Show($@"El Modo de Ejecucion {modo} es Incorrecto. No se puede continuar", @"Modo de Ejecucion Incorrecto",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
             }
@@ -58,46 +64,73 @@ namespace MASngFE.Application
             var conexionSec = dataDb.ConnectionStrings.ConnectionStrings["TecserDataS"].ConnectionString;
             var ecsBuilderApp = new EntityConnectionStringBuilder(conexionApp);
             var ecsBuilderSec = new EntityConnectionStringBuilder(conexionSec);
-
-            if (GlobalApp.Modo == Tecser.Business.MainApp.ModoApp.Desarrollo)
+            SqlConnectionStringBuilder sqlBuilderApp;
+            SqlConnectionStringBuilder sqlBuilderSec;
+            switch (GlobalApp.Modo)
             {
-                //Para modo desarrollo utilizar el siguiente nombre de equipo/pass
-                var sqlBuilderApp = new SqlConnectionStringBuilder(ecsBuilderApp.ProviderConnectionString)
-                {
-                    DataSource = "ANDREWS2",
-                    Password = "Andrews555",
-                };
-                ecsBuilderApp.ProviderConnectionString = sqlBuilderApp.ToString();
+                case ModoApp.Produccion:
+                    sqlBuilderApp = new SqlConnectionStringBuilder(ecsBuilderApp.ProviderConnectionString)
+                    {
+                        DataSource = "TS2\\TECSER",
+                        Password = "andrews555",
+                    };
+                    ecsBuilderApp.ProviderConnectionString = sqlBuilderApp.ToString();
+                    sqlBuilderSec = new SqlConnectionStringBuilder(ecsBuilderSec.ProviderConnectionString)
+                    {
+                        DataSource = "TS2\\TECSER",
+                        Password = "andrews555",
+                    };
+                    ecsBuilderSec.ProviderConnectionString = sqlBuilderSec.ToString();
+                    GlobalApp.CnnApp = ecsBuilderApp.ToString();
+                    GlobalApp.CnnSec = ecsBuilderSec.ToString();
+                    break;
+                case ModoApp.Desarrollo:
+                    //Para modo desarrollo utilizar el siguiente nombre de equipo/pass
+                    sqlBuilderApp = new SqlConnectionStringBuilder(ecsBuilderApp.ProviderConnectionString)
+                    {
+                        DataSource = "ANDREWS2",
+                        Password = "Andrews555",
+                    };
+                    ecsBuilderApp.ProviderConnectionString = sqlBuilderApp.ToString();
 
-                var sqlBuilderSec = new SqlConnectionStringBuilder(ecsBuilderSec.ProviderConnectionString)
-                {
-                    DataSource = "ANDREWS2",
-                    Password = "Andrews555",
-                };
-                ecsBuilderSec.ProviderConnectionString = sqlBuilderSec.ToString();
+                    sqlBuilderSec = new SqlConnectionStringBuilder(ecsBuilderSec.ProviderConnectionString)
+                    {
+                        DataSource = "ANDREWS2",
+                        Password = "Andrews555",
+                    };
+                    ecsBuilderSec.ProviderConnectionString = sqlBuilderSec.ToString();
 
-                //Se toman los datos default del Config.APP
-                GlobalApp.CnnApp = ecsBuilderApp.ToString();
-                GlobalApp.CnnSec = ecsBuilderSec.ToString();
+                    //Se toman los datos default del Config.APP
+                    GlobalApp.CnnApp = ecsBuilderApp.ToString();
+                    GlobalApp.CnnSec = ecsBuilderSec.ToString();
+
+                    break;
+                case ModoApp.Testeo:
+                    //
+                    break;
+                case ModoApp.Desarrollo2:
+                    //modo desarrollo notebook AERO
+                    sqlBuilderApp = new SqlConnectionStringBuilder(ecsBuilderApp.ProviderConnectionString)
+                    {
+                        DataSource = "ANDRES_GB\\SQLSERVERGB",
+                        Password = "Andrews555",
+                    };
+                    ecsBuilderApp.ProviderConnectionString = sqlBuilderApp.ToString();
+
+                    sqlBuilderSec = new SqlConnectionStringBuilder(ecsBuilderSec.ProviderConnectionString)
+                    {
+                        DataSource = "ANDRES_GB\\SQLSERVERGB",
+                        Password = "Andrews555",
+                    };
+                    ecsBuilderSec.ProviderConnectionString = sqlBuilderSec.ToString();
+
+                    //Se toman los datos default del Config.APP
+                    GlobalApp.CnnApp = ecsBuilderApp.ToString();
+                    GlobalApp.CnnSec = ecsBuilderSec.ToString();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
-            else
-            {
-                var sqlBuilderApp = new SqlConnectionStringBuilder(ecsBuilderApp.ProviderConnectionString)
-                {
-                    DataSource = "TS2\\TECSER",
-                    Password = "andrews555",
-                };
-                ecsBuilderApp.ProviderConnectionString = sqlBuilderApp.ToString();
-
-                var sqlBuilderSec = new SqlConnectionStringBuilder(ecsBuilderSec.ProviderConnectionString)
-                {
-                    DataSource = "TS2\\TECSER",
-                    Password = "andrews555",
-                };
-                ecsBuilderSec.ProviderConnectionString = sqlBuilderSec.ToString();
-            }
-            GlobalApp.CnnApp = ecsBuilderApp.ToString();
-            GlobalApp.CnnSec = ecsBuilderSec.ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
