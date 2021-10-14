@@ -79,14 +79,14 @@
             this.cFechaDocumento = new TSControls.CtlFechaTs();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cAImporteDescuentoBruto = new TSControls.CtlTextBox();
+            this.caImporteDescuentoNeto = new TSControls.CtlTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cAPorcentaje = new TSControls.CtlTextBox();
+            this.cAImporteNetoBase = new TSControls.CtlTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.cAImporteNetoBase = new TSControls.CtlTextBox();
-            this.cAPorcentaje = new TSControls.CtlTextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.caImporteDescuentoNeto = new TSControls.CtlTextBox();
-            this.cAImporteDescuentoBruto = new TSControls.CtlTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.t0401FACTURAIBindingSource)).BeginInit();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -225,7 +225,7 @@
             this.txtId6.Size = new System.Drawing.Size(38, 21);
             this.txtId6.TabIndex = 9;
             // 
-            // txtFantasia
+            // txtMotivo
             // 
             this.txtMotivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -442,16 +442,16 @@
             this.cTotalFinal.Size = new System.Drawing.Size(101, 21);
             this.cTotalFinal.TabIndex = 292;
             this.cTotalFinal.ValorMaximo = new decimal(new int[] {
-            9999999,
+            0,
             0,
             0,
             0});
             this.cTotalFinal.ValorMinimo = new decimal(new int[] {
+            999999,
             0,
             0,
-            0,
-            0});
-            this.cTotalFinal.XReadOnly = false;
+            -2147483648});
+            this.cTotalFinal.XReadOnly = true;
             // 
             // label6
             // 
@@ -480,15 +480,15 @@
             this.cPercepcionIIBB.Size = new System.Drawing.Size(91, 21);
             this.cPercepcionIIBB.TabIndex = 290;
             this.cPercepcionIIBB.ValorMaximo = new decimal(new int[] {
-            9999999,
+            0,
             0,
             0,
             0});
             this.cPercepcionIIBB.ValorMinimo = new decimal(new int[] {
+            999999,
             0,
             0,
-            0,
-            0});
+            -2147483648});
             this.cPercepcionIIBB.XReadOnly = false;
             // 
             // label8
@@ -518,15 +518,15 @@
             this.cIva.Size = new System.Drawing.Size(91, 21);
             this.cIva.TabIndex = 288;
             this.cIva.ValorMaximo = new decimal(new int[] {
-            9999999,
+            0,
             0,
             0,
             0});
             this.cIva.ValorMinimo = new decimal(new int[] {
+            999999,
             0,
             0,
-            0,
-            0});
+            -2147483648});
             this.cIva.XReadOnly = false;
             // 
             // label14
@@ -556,15 +556,15 @@
             this.cImponible.Size = new System.Drawing.Size(91, 21);
             this.cImponible.TabIndex = 286;
             this.cImponible.ValorMaximo = new decimal(new int[] {
-            9999999,
+            0,
             0,
             0,
             0});
             this.cImponible.ValorMinimo = new decimal(new int[] {
+            999999,
             0,
             0,
-            0,
-            0});
+            -2147483648});
             this.cImponible.XReadOnly = false;
             // 
             // label25
@@ -594,16 +594,16 @@
             this.cSubtotal.Size = new System.Drawing.Size(91, 21);
             this.cSubtotal.TabIndex = 284;
             this.cSubtotal.ValorMaximo = new decimal(new int[] {
-            9999999,
+            0,
             0,
             0,
             0});
             this.cSubtotal.ValorMinimo = new decimal(new int[] {
+            999999,
             0,
             0,
-            0,
-            0});
-            this.cSubtotal.XReadOnly = false;
+            -2147483648});
+            this.cSubtotal.XReadOnly = true;
             // 
             // label24
             // 
@@ -632,16 +632,16 @@
             this.cDescuento.Size = new System.Drawing.Size(91, 21);
             this.cDescuento.TabIndex = 282;
             this.cDescuento.ValorMaximo = new decimal(new int[] {
-            9999999,
+            0,
             0,
             0,
             0});
             this.cDescuento.ValorMinimo = new decimal(new int[] {
+            999999,
             0,
             0,
-            0,
-            0});
-            this.cDescuento.XReadOnly = false;
+            -2147483648});
+            this.cDescuento.XReadOnly = true;
             // 
             // label37
             // 
@@ -670,16 +670,16 @@
             this.cBruto.Size = new System.Drawing.Size(91, 21);
             this.cBruto.TabIndex = 281;
             this.cBruto.ValorMaximo = new decimal(new int[] {
-            9999999,
+            0,
             0,
             0,
             0});
             this.cBruto.ValorMinimo = new decimal(new int[] {
+            999999,
             0,
             0,
-            0,
-            0});
-            this.cBruto.XReadOnly = false;
+            -2147483648});
+            this.cBruto.XReadOnly = true;
             // 
             // label38
             // 
@@ -811,58 +811,64 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Auxliar Calculo Importe BRUTO";
             // 
-            // label7
+            // cAImporteDescuentoBruto
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 69);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(154, 15);
-            this.label7.TabIndex = 274;
-            this.label7.Text = "Importe Desc NETO (Final)";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(8, 47);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(153, 15);
-            this.label16.TabIndex = 21;
-            this.label16.Text = "Porcentaje Desc. Deseado";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(45, 25);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(116, 15);
-            this.label19.TabIndex = 18;
-            this.label19.Text = "Importe NETO Base";
-            // 
-            // cAImporteNetoBase
-            // 
-            this.cAImporteNetoBase.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cAImporteNetoBase.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.cAImporteNetoBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cAImporteNetoBase.Location = new System.Drawing.Point(167, 22);
-            this.cAImporteNetoBase.Margin = new System.Windows.Forms.Padding(0);
-            this.cAImporteNetoBase.Name = "cAImporteNetoBase";
-            this.cAImporteNetoBase.SetAlineacion = TSControls.CtlTextBox.Alineacion.Derecha;
-            this.cAImporteNetoBase.SetDecimales = 2;
-            this.cAImporteNetoBase.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cAImporteNetoBase.Size = new System.Drawing.Size(97, 21);
-            this.cAImporteNetoBase.TabIndex = 314;
-            this.cAImporteNetoBase.ValorMaximo = new decimal(new int[] {
+            this.cAImporteDescuentoBruto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cAImporteDescuentoBruto.BackColor = System.Drawing.Color.Beige;
+            this.cAImporteDescuentoBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cAImporteDescuentoBruto.Location = new System.Drawing.Point(167, 88);
+            this.cAImporteDescuentoBruto.Margin = new System.Windows.Forms.Padding(0);
+            this.cAImporteDescuentoBruto.Name = "cAImporteDescuentoBruto";
+            this.cAImporteDescuentoBruto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Derecha;
+            this.cAImporteDescuentoBruto.SetDecimales = 2;
+            this.cAImporteDescuentoBruto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cAImporteDescuentoBruto.Size = new System.Drawing.Size(97, 21);
+            this.cAImporteDescuentoBruto.TabIndex = 318;
+            this.cAImporteDescuentoBruto.ValorMaximo = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
-            this.cAImporteNetoBase.ValorMinimo = new decimal(new int[] {
+            this.cAImporteDescuentoBruto.ValorMinimo = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.cAImporteNetoBase.XReadOnly = false;
-            this.cAImporteNetoBase.Validated += new System.EventHandler(this.cAImporteNetoBase_Validated);
+            this.cAImporteDescuentoBruto.XReadOnly = false;
+            // 
+            // caImporteDescuentoNeto
+            // 
+            this.caImporteDescuentoNeto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.caImporteDescuentoNeto.BackColor = System.Drawing.Color.Beige;
+            this.caImporteDescuentoNeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caImporteDescuentoNeto.Location = new System.Drawing.Point(167, 66);
+            this.caImporteDescuentoNeto.Margin = new System.Windows.Forms.Padding(0);
+            this.caImporteDescuentoNeto.Name = "caImporteDescuentoNeto";
+            this.caImporteDescuentoNeto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Derecha;
+            this.caImporteDescuentoNeto.SetDecimales = 2;
+            this.caImporteDescuentoNeto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.caImporteDescuentoNeto.Size = new System.Drawing.Size(97, 21);
+            this.caImporteDescuentoNeto.TabIndex = 317;
+            this.caImporteDescuentoNeto.ValorMaximo = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.caImporteDescuentoNeto.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.caImporteDescuentoNeto.XReadOnly = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(36, 91);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(125, 15);
+            this.label20.TabIndex = 316;
+            this.label20.Text = "Importe Desc BRUTO";
             // 
             // cAPorcentaje
             // 
@@ -890,64 +896,58 @@
             this.cAPorcentaje.XReadOnly = false;
             this.cAPorcentaje.Validated += new System.EventHandler(this.cAImporteNetoBase_Validated);
             // 
-            // label20
+            // cAImporteNetoBase
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(36, 91);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(125, 15);
-            this.label20.TabIndex = 316;
-            this.label20.Text = "Importe Desc BRUTO";
-            // 
-            // caImporteDescuentoNeto
-            // 
-            this.caImporteDescuentoNeto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.caImporteDescuentoNeto.BackColor = System.Drawing.Color.Beige;
-            this.caImporteDescuentoNeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.caImporteDescuentoNeto.Location = new System.Drawing.Point(167, 66);
-            this.caImporteDescuentoNeto.Margin = new System.Windows.Forms.Padding(0);
-            this.caImporteDescuentoNeto.Name = "caImporteDescuentoNeto";
-            this.caImporteDescuentoNeto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Derecha;
-            this.caImporteDescuentoNeto.SetDecimales = 2;
-            this.caImporteDescuentoNeto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.caImporteDescuentoNeto.Size = new System.Drawing.Size(97, 21);
-            this.caImporteDescuentoNeto.TabIndex = 317;
-            this.caImporteDescuentoNeto.ValorMaximo = new decimal(new int[] {
+            this.cAImporteNetoBase.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cAImporteNetoBase.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.cAImporteNetoBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cAImporteNetoBase.Location = new System.Drawing.Point(167, 22);
+            this.cAImporteNetoBase.Margin = new System.Windows.Forms.Padding(0);
+            this.cAImporteNetoBase.Name = "cAImporteNetoBase";
+            this.cAImporteNetoBase.SetAlineacion = TSControls.CtlTextBox.Alineacion.Derecha;
+            this.cAImporteNetoBase.SetDecimales = 2;
+            this.cAImporteNetoBase.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cAImporteNetoBase.Size = new System.Drawing.Size(97, 21);
+            this.cAImporteNetoBase.TabIndex = 314;
+            this.cAImporteNetoBase.ValorMaximo = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
-            this.caImporteDescuentoNeto.ValorMinimo = new decimal(new int[] {
+            this.cAImporteNetoBase.ValorMinimo = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.caImporteDescuentoNeto.XReadOnly = false;
+            this.cAImporteNetoBase.XReadOnly = false;
+            this.cAImporteNetoBase.Validated += new System.EventHandler(this.cAImporteNetoBase_Validated);
             // 
-            // cAImporteDescuentoBruto
+            // label7
             // 
-            this.cAImporteDescuentoBruto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cAImporteDescuentoBruto.BackColor = System.Drawing.Color.Beige;
-            this.cAImporteDescuentoBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cAImporteDescuentoBruto.Location = new System.Drawing.Point(167, 88);
-            this.cAImporteDescuentoBruto.Margin = new System.Windows.Forms.Padding(0);
-            this.cAImporteDescuentoBruto.Name = "cAImporteDescuentoBruto";
-            this.cAImporteDescuentoBruto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Derecha;
-            this.cAImporteDescuentoBruto.SetDecimales = 2;
-            this.cAImporteDescuentoBruto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cAImporteDescuentoBruto.Size = new System.Drawing.Size(97, 21);
-            this.cAImporteDescuentoBruto.TabIndex = 318;
-            this.cAImporteDescuentoBruto.ValorMaximo = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.cAImporteDescuentoBruto.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cAImporteDescuentoBruto.XReadOnly = false;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(154, 15);
+            this.label7.TabIndex = 274;
+            this.label7.Text = "Importe Desc NETO (Final)";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(8, 47);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(153, 15);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "Porcentaje Desc. Deseado";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(45, 25);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(116, 15);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "Importe NETO Base";
             // 
             // FrmFI59DescuentoGeneralPeriodoAsociado
             // 

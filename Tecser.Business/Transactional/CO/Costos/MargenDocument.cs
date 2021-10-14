@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using Tecser.Business.MainApp;
+using Tecser.Business.Transactional.FI;
 using Tecser.Business.Transactional.FI.Cobranza;
 using Tecser.Business.Transactional.FI.MainDocumentData.Customer;
 using Tecser.Business.Transactional.SD;
@@ -35,37 +36,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                     c.IdRemito == idRemito && c.IdItem == idRemitoItem);
             }
         }
-
-        public struct p
-        {
-            public int idR;
-            public int? idr1;
-        }
-
-        public List<int> GetListaRemitosSinMargen()
-        {
-            var r = new List<int>();
-            using (var db = new TecserData(GlobalApp.CnnApp))
-            {
-                var fechaX = new DateTime(2021, 03, 01);
-                var data = from rem in db.T0055_REMITO_H
-                           join op in db.T0140_MargenOperacion on rem.IDREMITO equals op.IdRemito into joinedT
-                           from op in joinedT.DefaultIfEmpty()
-                           where rem.StatusRemito == "IMPRESO" && rem.FECHA >= fechaX
-                           select new
-                           {
-                               idR = rem.IDREMITO,
-                               idr1 = op == null ? 999999 : op.IdRemito
-                           };
-                var p3 = data.ToList();
-                foreach (var c in p3.Where(c => c.idr1 == 999999))
-                {
-                    r.Add(c.idR);
-                }
-                return r;
-            }
-        }
-
+        
 
         public void AddMargenDocumentNcAnulacion()
         {
@@ -96,6 +67,323 @@ namespace Tecser.Business.Transactional.CO.Costos
 
             }
             return true;
+        }
+
+        
+        public void AddItemNotaCredito(int idNcHeader)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var ncd = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == idNcHeader);
+                if (ncd == null) return;
+                NcRemoveExistingData(idNcHeader);
+                
+                var nc400 = db.T0400_FACTURA_H.SingleOrDefault(c => c.IDFACTURA == ncd.idFacturaT0400.Value);
+                if (nc400 == null) return;
+                var it400 = db.T0401_FACTURA_I.Where(c => c.IDFactura == nc400.IDFACTURA).ToList();
+                decimal p1 = 0;
+                decimal p2 = 0;
+
+                if (ncd.ImporteARS > 0)
+                {
+                   //debito
+                    var motivo = new CustomerNd(-1).MapMotivoFromTextoToType(ncd.Motivo);
+                    switch (motivo)
+                    {
+                        case CustomerNd.MotivoNotaDebito.AnulaDocumento:
+                            //esto anula una NC
+                            break;
+                        case CustomerNd.MotivoNotaDebito.ChequeRechazado:
+                            //no va a OPERACIONES
+                            break;
+                        case CustomerNd.MotivoNotaDebito.ChequeSinRechazo:
+                            //no va a OPERACIONES
+                            break;
+                        case CustomerNd.MotivoNotaDebito.DiferenciaPrecio:
+                            break;
+                        case CustomerNd.MotivoNotaDebito.DiferenciaCambio:
+                            break;
+                        case CustomerNd.MotivoNotaDebito.DiferenciaKg:
+                            break;
+                        case CustomerNd.MotivoNotaDebito.CargoGralDocumentos:
+                            break;
+                        case CustomerNd.MotivoNotaDebito.CargoGralPeriodo:
+                            break;
+                        case CustomerNd.MotivoNotaDebito.GastoBancario:
+                            break;
+                        case CustomerNd.MotivoNotaDebito.SinMotivo:
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                }
+                else
+                {
+                    //credito
+                    var motivo = new CustomerNc().MapMotivoFromTextoToType(ncd.Motivo);
+                    switch (motivo)
+                    {
+                        case CustomerNc.MotivoNotaCredito.AnulaDocumento:
+                            foreach (var i in it400)
+                            {
+                                if (ncd.LX == "L1")
+                                {
+                                    p1 = i.PRECIOU_FACT_USD;
+                                    p2 = 0;
+                                }
+                                else
+                                {
+                                    p2 = i.PRECIOU_FACT_USD;
+                                    p1 = 0;
+                                }
+                                NcAddSingleItemToTable140_Complete(i.ITEM, ncd.IDH, i.IDITEM, 0, p1, p2,
+                                    (p1 + p2) * i.KGDESPACHADOS_R.Value, 0, ncd.idFacturaT0400.Value, ncd.NDOC);
+                            }
+
+                            break;
+                        case CustomerNc.MotivoNotaCredito.DiferenciaPrecio:
+                            foreach (var i in it400)
+                            {
+                                if (ncd.LX == "L1")
+                                {
+                                    p1 = i.PRECIOU_FACT_USD;
+                                    p2 = 0;
+                                }
+                                else
+                                {
+                                    p2 = i.PRECIOU_FACT_USD;
+                                    p1 = 0;
+                                }
+                                NcAddSingleItemToTable140_Complete(i.ITEM, ncd.IDH, i.IDITEM, 0, p1, p2,
+                                    (p1 + p2) * i.KGDESPACHADOS_R.Value, 0, ncd.idFacturaT0400.Value, ncd.NDOC);
+
+                                //luego hacer update de cantiadad a CERO-
+                            }
+                            break;
+                        case CustomerNc.MotivoNotaCredito.DiferenciaCambio:
+                            break;
+                        case CustomerNc.MotivoNotaCredito.DiferenciaKg:
+                            break;
+                        case CustomerNc.MotivoNotaCredito.DevolucionMaterial:
+                            foreach (var i in it400)
+                            {
+                                if (ncd.LX == "L1")
+                                {
+                                    p1 = i.PRECIOU_FACT_USD;
+                                    p2 = 0;
+                                }
+                                else
+                                {
+                                    p2 = i.PRECIOU_FACT_USD;
+                                    p1 = 0;
+                                }
+                                NcAddSingleItemToTable140_Complete(i.ITEM, ncd.IDH, i.IDITEM, 0, p1, p2,
+                                    (p1 + p2) * i.KGDESPACHADOS_R.Value, 0, ncd.idFacturaAsociada.Value, ncd.NDOC);
+
+                            } 
+                            break;
+                        case CustomerNc.MotivoNotaCredito.DesGeneralDocumentos:
+                            foreach (var i in it400)
+                            {
+                                if (ncd.LX == "L1")
+                                {
+                                    p1 = i.PRECIOU_FACT_USD;
+                                    p2 = 0;
+                                }
+                                else
+                                {
+                                    p2 = i.PRECIOU_FACT_USD;
+                                    p1 = 0;
+                                }
+                                NcAddSingleItemToTable140_Complete(i.ITEM, ncd.IDH, i.IDITEM, 0, p1, p2,
+                                    (p1 + p2) * i.KGDESPACHADOS_R.Value, 0, ncd.idFacturaT0400.Value, ncd.NDOC);
+
+                            }
+                            break;
+                        case CustomerNc.MotivoNotaCredito.DesGeneralPeriodo:
+                            foreach (var i in it400)
+                            {
+                                if (ncd.LX == "L1")
+                                {
+                                    p1 = i.PRECIOU_FACT_USD;
+                                    p2 = 0;
+                                }
+                                else
+                                {
+                                    p2 = i.PRECIOU_FACT_USD;
+                                    p1 = 0;
+                                }
+                                NcAddSingleItemToTable140_Complete(i.ITEM, ncd.IDH, i.IDITEM, 0, p1, p2, (p1 + p2) * i.KGDESPACHADOS_R.Value, 0, ncd.idFacturaT0400.Value, ncd.NDOC);
+                            }
+                            break;
+                        case CustomerNc.MotivoNotaCredito.SinMotivo:
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                }
+            }
+        }
+
+        private bool NcRemoveExistingData(int idNcHeader)
+        {
+            //auxiliar para remover datos existentes
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var nc = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == idNcHeader);
+                if (nc?.idFacturaT0400 == null) return false;
+                var fAsoc = db.T0401_FACTURA_I.Where(c => c.IDFactura == nc.idFacturaT0400.Value).ToList();
+                foreach (var fi in fAsoc)
+                {
+                    var dataExiste = db.T0140_MargenOperacion.SingleOrDefault(c =>
+                        c.IdRemito == nc.IDH && c.IdItem == fi.IDITEM && c.IdFactura == nc.idFacturaT0400.Value);
+                    if (dataExiste != null)
+                    {
+                        db.T0140_MargenOperacion.Remove(dataExiste);
+                        db.SaveChanges();
+                    }
+                }
+                return true;
+            }
+        }
+
+
+        /// <summary>
+        /// Para USAR en algun tipo de NC donde no se pueda obtener los datos directamente.-
+        /// </summary>
+        private bool NcAddSingleItemToTable140_Complete(string item, int ncHeader, int idItem, decimal cantidad,
+            decimal precio1, decimal precio2, decimal precioTotal, decimal costoStd, int IdDocumentoT400,
+            string numeroDocumento, string numeroRemito = null)
+        {
+            decimal costoTotalOperacionProporcional = 0;
+            decimal costoEstadistico = 0;
+            decimal costoAdicionalTotal = 0;
+            decimal costoUnitarioAdicional = 0;
+
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                decimal costoMfg = costoStd;
+
+                var nc = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == ncHeader);
+                var crHeader = db.T0034_CostRollHeader.SingleOrDefault(c => c.VersionActiva);
+                var clienteRs = nc.RazonSocial.Length > 30
+                    ? nc.RazonSocial.Substring(0, 29)
+                    : nc.RazonSocial;
+                int idClienteEntrega = 0; //ver si vamos a  mandar ClienteEntrega p/paramentnro
+                string Vendedor = "XX"; //ver si vamos a mandar Vendedor p/paramentro
+                var stx = new T0140_MargenOperacion()
+                {
+                    IdRemito = nc.IDH,
+                    IdItem = idItem,
+                    RemitoNum = numeroRemito ?? numeroDocumento,
+                    Cantidad = cantidad,
+                    CostoMfg = costoMfg, //al costo del dia de la NC
+                    MonCosto = "USD",
+                    CostoStadistico = costoEstadistico,
+                    CostoTotalAdd = costoAdicionalTotal,
+                    CostoUAdd = costoUnitarioAdicional,
+                    CostoTotal = costoMfg + costoEstadistico + costoUnitarioAdicional +
+                                 costoTotalOperacionProporcional,
+                    FacturaNum = numeroDocumento,
+                    FechaFactura = nc.FECHA,
+                    FechaRemito = nc.FECHA,
+                    TCFactura = nc.TC,
+                    TipoLX = nc.LX,
+                    PrecioU1 = precio1,
+                    PrecioU2 = precio2,
+                    PrecioU = precio1 + precio2,
+                    PrecioTotal = precioTotal,
+                    PorcentajeCobrado = 0,
+                    PrecioCobradoTotal = 0,
+                    MargenOperacionFinal = 0,
+                    MargenOperacionVenta = 0,
+                    Material = item,
+                    IdCliente = nc.IdCliente,
+                    ClienteRs = clienteRs,
+                    IdFactura = IdDocumentoT400,
+                    CRVersion = crHeader.idCostRoll,
+                    CostMapDate = DateTime.Now,
+                    IdClienteEntrega = idClienteEntrega,
+                    Vendedor = Vendedor,
+                };
+                stx.MargenOperacionVenta = stx.PrecioTotal - ((stx.Cantidad * stx.CostoTotal) + stx.CostoTotalAdd);
+                db.T0140_MargenOperacion.Add(stx);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+
+        private bool NcAddSingleItemToTable140(string item, int ncHeader,int idItem,decimal cantidad,decimal precio1, decimal precio2,int idDocumentoT400,string numeroDocumento,string numeroRemito=null)
+        {
+            decimal costoTotalOperacionProporcional = 0;
+            decimal costoEstadistico = 0;
+            decimal costoAdicionalTotal = 0;
+            decimal costoUnitarioAdicional = 0;
+            decimal costoMfg;
+            
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var std = new ACostoStandard(item);
+                std.GetCost();
+                if (std.Encontrado == false || std.ValorUSD > 9999)
+                {
+                    var xmfgStd = new ACostoMfgNowStd(item);
+                    xmfgStd.GetCost();
+                    costoMfg = xmfgStd.Moneda == "ARS" ? xmfgStd.ValorARS : xmfgStd.ValorUSD;
+                }
+                else
+                {
+                    costoMfg = std.Moneda == "ARS" ? std.ValorARS : std.ValorUSD;
+                }
+
+                var nc = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == ncHeader);
+                var crHeader = db.T0034_CostRollHeader.SingleOrDefault(c => c.VersionActiva);
+                var clienteRs = nc.RazonSocial.Length > 30
+                    ? nc.RazonSocial.Substring(0, 29)
+                    : nc.RazonSocial;
+                int idClienteEntrega = 0;   //ver si vamos a  mandar ClienteEntrega p/paramentnro
+                string Vendedor = "XX";     //ver si vamos a mandar Vendedor p/paramentro
+                var stx = new T0140_MargenOperacion()
+                {
+                    IdRemito = nc.IDH,
+                    IdItem = idItem,
+                    RemitoNum = numeroRemito ?? numeroDocumento,
+                    Cantidad = cantidad,
+                    CostoMfg = costoMfg, //al costo del dia de la NC
+                    MonCosto = std.Moneda,
+                    CostoStadistico = costoEstadistico,
+                    CostoTotalAdd = costoAdicionalTotal,
+                    CostoUAdd = costoUnitarioAdicional,
+                    CostoTotal = costoMfg + costoEstadistico + costoUnitarioAdicional +
+                                 costoTotalOperacionProporcional,
+                    FacturaNum = numeroDocumento,
+                    FechaFactura = nc.FECHA,
+                    FechaRemito = nc.FECHA,
+                    TCFactura = nc.TC,
+                    TipoLX = nc.LX,
+                    PrecioU1 = precio1,
+                    PrecioU2 = precio2,
+                    PrecioU = precio1+precio2,
+                    PrecioTotal = (precio1+precio2)*cantidad,
+                    PorcentajeCobrado = 0,
+                    PrecioCobradoTotal = 0,
+                    MargenOperacionFinal = 0,
+                    MargenOperacionVenta = 0,
+                    Material = item,
+                    IdCliente = nc.IdCliente,
+                    ClienteRs = clienteRs,
+                    IdFactura = idDocumentoT400,
+                    CRVersion = crHeader.idCostRoll,
+                    CostMapDate = DateTime.Now,
+                    IdClienteEntrega = idClienteEntrega,
+                    Vendedor = Vendedor,
+                };
+                stx.MargenOperacionVenta = stx.PrecioTotal - ((stx.Cantidad * stx.CostoTotal) + stx.CostoTotalAdd);
+                db.T0140_MargenOperacion.Add(stx);
+                db.SaveChanges();
+                return true;
+            }
         }
 
 
@@ -456,7 +744,7 @@ namespace Tecser.Business.Transactional.CO.Costos
         /// Mapea el IDFactura y el numero de factura al doucmento de MOP
         /// IdFActura == 0 para ejecutar y relinkear lo que no tenga Link
         /// </summary>
-        public void LinkFactura(int idFactura)
+        public void UpdateRemito_FacturaData(int idFactura)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -487,22 +775,49 @@ namespace Tecser.Business.Transactional.CO.Costos
                 {
                     //funcion normal a la hora de Contabilizar
                     var fact = db.T0400_FACTURA_H.FirstOrDefault(c => c.IDFACTURA == idFactura);
-                    var listaRegistros = db.T0140_MargenOperacion.Where(c => c.IdRemito == fact.IDRemito).ToList();
-                    foreach (var Item140 in listaRegistros)
+                    if (fact.IDRemito != null)
                     {
-                        Item140.IdFactura = idFactura;
-                        if (fact.TIPOFACT == "L2")
+                        var listaRegistros = db.T0140_MargenOperacion.Where(c => c.IdRemito == fact.IDRemito).ToList();
+                        foreach (var Item140 in listaRegistros)
                         {
-                            Item140.FacturaNum = fact.Remito;
+                            Item140.IdFactura = idFactura;
+                            if (fact.TIPOFACT == "L2")
+                            {
+                                Item140.FacturaNum = fact.Remito;
+                            }
+                            else
+                            {
+                                Item140.FacturaNum = fact.PV_AFIP + "-" + fact.ND_AFIP;
+                            }
+                            Item140.TCFactura = fact.TC;
+                            Item140.FechaFactura = fact.FECHA;
+                            db.SaveChanges();
                         }
-                        else
-                        {
-                            Item140.FacturaNum = fact.PV_AFIP + "-" + fact.ND_AFIP;
-                        }
-                        Item140.TCFactura = fact.TC;
-                        Item140.FechaFactura = fact.FECHA;
-                        db.SaveChanges();
                     }
+                    else
+                    {
+                        //si IDRemito no esta en T0140 no se puede agergar nada desde esta funcion
+
+
+                        //if (fact.IdNCD != null)
+                        //{
+                        //    var listaRegistro = db.T0140_MargenOperacion.Where(c => c.IdRemito == fact.IDRemito)
+                        //        .ToList();
+                        //    foreach (var Item140 in listaRegistro)
+                        //    {
+                        //        Item140.IdFactura = idFactura;
+                        //        Item140.FacturaNum = fact.NumeroDoc;
+                        //        Item140.TCFactura = fact.TC;
+                        //        Item140.FechaFactura = fact.FECHA;
+                        //        db.SaveChanges();
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    //no se cuenta en T0140 con informacion de linkeo IDRemito o IDNcd
+                        //}
+                    }
+                   
                 }
             }
         }

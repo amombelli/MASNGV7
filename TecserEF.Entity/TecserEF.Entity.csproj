@@ -122,6 +122,7 @@
     <Compile Include="DataStructure\SD_CRM\WmReservaReStructure.cs" />
     <Compile Include="DataStructure\SimpleStock.cs" />
     <Compile Include="DataStructure\StockLoteEstadoUbicacion.cs" />
+    <Compile Include="DataStructure\StxDocumentosNotInOperaciones.cs" />
     <Compile Include="DataStructure\TsCheques1.cs" />
     <Compile Include="ErrorLog.cs">
       <DependentUpon>TecserModel.tt</DependentUpon>

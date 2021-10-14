@@ -90,8 +90,9 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
 
             //Alta del Item
-            var xiva = cIva.GetValueDecimal > 0;
-            _nc.AddItems("DESCGRAL", txtDescripcionItemNC.Text, c1DescuentoPeso.GetValueDecimal, "4.1.3", xiva, 1, "ARS");
+            //Opcion1 - Cantidad Positiva - Importe U negativo
+            var xiva = Math.Abs(cIva.GetValueDecimal) > 0;
+            _nc.AddItems("DESCGRAL", txtDescripcionItemNC.Text, Math.Abs(c1DescuentoPeso.GetValueDecimal)*-1, "4.1.3", xiva, 1, "ARS");
             _nc.SetTotalesInHeaderFromItems();
             _nc.SetPeriodoAsociado(cFechaDesde.Value.Value,cFechaHasta.Value.Value);
             this.Close();
@@ -144,7 +145,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         }
         private void c1DescuentoPeso_Validated(object sender, EventArgs e)
         {
-            cBruto.SetValue = c1DescuentoPeso.GetValueDecimal;
+            cBruto.SetValue = c1DescuentoPeso.GetValueDecimal *-1;
             cDescuento.SetValue = 0;
             cSubtotal.SetValue = cBruto.GetValueDecimal;
 
@@ -160,9 +161,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 cIva.SetValue = 0;
                 cPercepcionIIBB.SetValue = 0;
             }
-
             cTotalFinal.SetValue = cSubtotal.GetValueDecimal + cIva.GetValueDecimal + cPercepcionIIBB.GetValueDecimal;
-
         }
 
         private void cAImporteNetoBase_Validated(object sender, EventArgs e)

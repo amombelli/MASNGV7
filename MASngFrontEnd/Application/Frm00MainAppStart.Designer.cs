@@ -186,7 +186,6 @@
             this.button51 = new System.Windows.Forms.Button();
             this.button50 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
             this.button49 = new System.Windows.Forms.Button();
             this.btnXRemito = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
@@ -1748,7 +1747,6 @@
             this.tabPage1.Controls.Add(this.button51);
             this.tabPage1.Controls.Add(this.button50);
             this.tabPage1.Controls.Add(this.button36);
-            this.tabPage1.Controls.Add(this.button44);
             this.tabPage1.Controls.Add(this.button49);
             this.tabPage1.Controls.Add(this.btnXRemito);
             this.tabPage1.Controls.Add(this.button43);
@@ -1792,10 +1790,8 @@
             // 
             // button54
             // 
-            this.button54.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button54.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button54.Location = new System.Drawing.Point(635, 908);
-            this.button54.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
+            this.button54.Location = new System.Drawing.Point(254, 362);
+            this.button54.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button54.Name = "button54";
             this.button54.Size = new System.Drawing.Size(298, 108);
             this.button54.TabIndex = 128;
@@ -1846,20 +1842,6 @@
             this.button36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button36.UseVisualStyleBackColor = true;
             this.button36.Click += new System.EventHandler(this.button36_Click_1);
-            // 
-            // button44
-            // 
-            this.button44.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button44.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button44.Location = new System.Drawing.Point(18, 280);
-            this.button44.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(298, 108);
-            this.button44.TabIndex = 130;
-            this.button44.Text = "Regenera\r\nOPER";
-            this.button44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button44.UseVisualStyleBackColor = true;
-            this.button44.Click += new System.EventHandler(this.button44_Click);
             // 
             // button49
             // 
@@ -2444,7 +2426,6 @@
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Button button43;
-        private System.Windows.Forms.Button button44;
         private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Button button46;
         private System.Windows.Forms.Button button47;

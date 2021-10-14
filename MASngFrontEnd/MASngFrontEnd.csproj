@@ -1059,9 +1059,6 @@
     <Compile Include="Transactional\FI\CustomerNCD\FrmFI51GenerarNotaCredito.Designer.cs">
       <DependentUpon>FrmFI51GenerarNotaCredito.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transactional\FI\CustomerNCD\FrmFi52NotaCreditoDebitoCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Transactional\FI\CustomerNCD\FrmFi57SeleccionDocModificacionPrecio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1254,12 +1251,6 @@
     <Compile Include="Transactional\FI\Vendor\SinRemito\FrmInfoRecordContaR.Designer.cs">
       <DependentUpon>FrmInfoRecordContaR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transactional\FI\CustomerNCD\FrmCustomerNCD2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Transactional\FI\CustomerNCD\FrmCustomerNCD2.designer.cs">
-      <DependentUpon>FrmCustomerNCD2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Transactional\FI\CustomerNCD\FrmCustomerNCDEditItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1289,10 +1280,6 @@
     </Compile>
     <Compile Include="Transactional\FI\CustomerNCD\FrmNCDAddOtherConcept.Designer.cs">
       <DependentUpon>FrmNCDAddOtherConcept.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Transactional\FI\CustomerNCD\FrmNotaDebitoCreditoMainScreen.cs" />
-    <Compile Include="Transactional\FI\CustomerNCD\FrmNotaDebitoCreditoMainScreen.Designer.cs">
-      <DependentUpon>FrmNotaDebitoCreditoMainScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactional\FI\CustomerNCD\FrmFi53SeleccionFacturaAnular.cs">
       <SubType>Form</SubType>
@@ -2647,6 +2634,9 @@
     <EmbeddedResource Include="Transactional\CO\Cost\FrmCO15DetalleMop.resx">
       <DependentUpon>FrmCO15DetalleMop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\Cost\FrmCO16_MopSinRegistrar.resx">
+      <DependentUpon>FrmCO16_MopSinRegistrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\FrmCierre1.resx">
       <DependentUpon>FrmCierre1.cs</DependentUpon>
     </EmbeddedResource>
@@ -2836,9 +2826,6 @@
     <EmbeddedResource Include="Transactional\FI\Vendor\SinRemito\FrmInfoRecordContaR.resx">
       <DependentUpon>FrmInfoRecordContaR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmCustomerNCD2.resx">
-      <DependentUpon>FrmCustomerNCD2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmCustomerNCDEditItem.resx">
       <DependentUpon>FrmCustomerNCDEditItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -2853,9 +2840,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmNCDAddOtherConcept.resx">
       <DependentUpon>FrmNCDAddOtherConcept.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmNotaDebitoCreditoMainScreen.resx">
-      <DependentUpon>FrmNotaDebitoCreditoMainScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFi53SeleccionFacturaAnular.resx">
       <DependentUpon>FrmFi53SeleccionFacturaAnular.cs</DependentUpon>
@@ -3384,6 +3368,7 @@
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.SD_CRM.CRMSalesOrder.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.SD_CRM.MaterialRequestedInSO.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.StockLoteEstadoUbicacion.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.StxDocumentosNotInOperaciones.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.TsCheques1.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.TsChequesRechazados.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.TS_Cheques1.datasource" />

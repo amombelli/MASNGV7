@@ -896,7 +896,7 @@ namespace MASngFE.Transactional.FI.Factura
                         txtNumeroDocumento.Text, false); //marca como NO PENDIENTE DE FACTURACION
                 }
                 //Accion Margen
-                new MargenDocument().LinkFactura(_facturaIdStruct.IdFactura);
+                new MargenDocument().UpdateRemito_FacturaData(_facturaIdStruct.IdFactura);
             }
             AccionEstadoDocumento();
         }

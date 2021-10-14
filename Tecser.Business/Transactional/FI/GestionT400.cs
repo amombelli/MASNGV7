@@ -12,12 +12,26 @@ namespace Tecser.Business.Transactional.FI
     public class GestionT400
     {
 
+        public enum SignoRegistracion
+        {
+            Positivo,
+            Negativo
+        };
+
+
         /// <summary>
         /// Constructor default sin paramatros
         /// </summary>
-        public GestionT400()
+        public GestionT400(SignoRegistracion signo)
         {
-            
+            if (signo == SignoRegistracion.Positivo)
+            {
+                _signo = 1;
+            }
+            else
+            {
+                _signo = -1;
+            }
         }
 
         /// <summary>
@@ -33,15 +47,25 @@ namespace Tecser.Business.Transactional.FI
                 Status = new DocumentFIStatusManager().MapStatusHeaderFromText(H4.StatusFactura);
                 _tipoDocumento = ManageDocumentType.GetTipoDocumentoFromTdocString(H4.TIPO_DOC, H4.TIPOFACT);
 
-                if (_tipoDocumento == ManageDocumentType.TipoDocumento.NotaCreditoVenta2 ||
-                    _tipoDocumento == ManageDocumentType.TipoDocumento.NotaCreditoVentaA)
+                //if (_tipoDocumento == ManageDocumentType.TipoDocumento.NotaCreditoVenta2 ||
+                //    _tipoDocumento == ManageDocumentType.TipoDocumento.NotaCreditoVentaA)
+                //{
+                //    _signo = -1;
+                //}
+                //else
+                //{
+                //    _signo = -1;
+                //}
+
+                if (H4.TotalFacturaN > 0)
                 {
-                    _signo = -1;
+                    _signo = 1;
                 }
                 else
                 {
                     _signo = -1;
                 }
+
             }
         }
         public T0400_FACTURA_H H4 { get; private set; } = new T0400_FACTURA_H();
@@ -70,7 +94,7 @@ namespace Tecser.Business.Transactional.FI
 
         public void AddHeaderMemory(ManageDocumentType.TipoDocumento tipoDocumento, int idCliente, string lx, DateTime fechaDoc, decimal tc, string zterm, string glAR,bool impactaVentas, int? idRemito, string monedaDoc="ARS")
         {
-            _signo = 1;  //signo default;
+            //_signo = 1;  //signo default;
             _tipoDocumento = tipoDocumento;
             _tipoDocumentoXx = ManageDocumentType.GetSystemDocumentType(tipoDocumento);  //tipo documento XX (FA)
             _sucursalTemporal = "XXXX";
@@ -387,6 +411,13 @@ namespace Tecser.Business.Transactional.FI
                         {
                             //utiliza los valors con signo 
                             //nuevo approach
+                            H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB) * _signo;
+                            H4.TotalImpo = Math.Abs(H4.TotalImpo) * _signo;
+                            H4.TotalIVA21 = Math.Abs(H4.TotalIVA21) * _signo;
+                            H4.TotalIIBB = Math.Abs(H4.TotalIIBB) * _signo;
+                            H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN) * _signo;
+                            H4.Tax2Importe = Math.Abs(H4.Tax2Importe) * _signo;
+                            if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1;
                         }
                         db.T0400_FACTURA_H.Add(H4);
                     }
@@ -426,8 +457,14 @@ namespace Tecser.Business.Transactional.FI
                         }
                         else
                         {
-                            //utiliza los valors con signo 
-                            //nuevo approach
+                            // * utiliza los valors con signo nuevo approach
+                            H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB) * _signo;
+                            H4.TotalImpo = Math.Abs(H4.TotalImpo) * _signo;
+                            H4.TotalIVA21 = Math.Abs(H4.TotalIVA21) * _signo;
+                            H4.TotalIIBB = Math.Abs(H4.TotalIIBB) * _signo;
+                            H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN) * _signo;
+                            H4.Tax2Importe = Math.Abs(H4.Tax2Importe) * _signo;
+                            if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1; //revisar?
                         }
                     }
                     var numeroItem = 0;
@@ -457,6 +494,7 @@ namespace Tecser.Business.Transactional.FI
                         else
                         {
                             //dejamos los valores con el signo correspondiente
+
                         }
                     }
                     db.T0401_FACTURA_I.AddRange(I4);

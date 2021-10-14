@@ -105,16 +105,35 @@ namespace Tecser.Business.Transactional.FI
                 }
             }
             Subtotal = Bruto - Descuento;
-            decimal porcentajeImponibleAntesDescuento = Math.Round(baseImpo / Bruto, 4);
-            BaseImponible = Math.Round(Subtotal * porcentajeImponibleAntesDescuento, 2);
-            NoImponible = Subtotal - BaseImponible;
-            Iva21 = Math.Round(BaseImponible * (decimal) 0.21, 2);
-            AlicuotaIIBB = Math.Round(alicuotaIIBB, 4);
-            AlicuotaTax2 = Math.Round(alicuotaTax2, 4);
-            IIBB = Math.Round(baseImpo * AlicuotaIIBB, 2);
-            Tax2 = Math.Round(baseImpo * alicuotaTax2, 2);
-            TotalImpuestos = Iva21 + IIBB + Tax2;
-            TotalFinal = Subtotal + TotalImpuestos;
+
+            if (Bruto == 0)
+            {
+                decimal porcentajeImponibleAntesDescuento = 0;
+                BaseImponible = 0;
+                NoImponible = 0;
+                Iva21 = 0;
+                AlicuotaIIBB = 0;
+                AlicuotaTax2 = 0;
+                IIBB = 0;
+                Tax2 = 0;
+                TotalImpuestos = Iva21 + IIBB + Tax2;
+                TotalFinal = Subtotal + TotalImpuestos;
+            }
+            else
+            {
+                decimal porcentajeImponibleAntesDescuento = Math.Round(baseImpo / Bruto, 4);
+                BaseImponible = Math.Round(Subtotal * porcentajeImponibleAntesDescuento, 2);
+                NoImponible = Subtotal - BaseImponible;
+                Iva21 = Math.Round(BaseImponible * (decimal)0.21, 2);
+                AlicuotaIIBB = Math.Round(alicuotaIIBB, 4);
+                AlicuotaTax2 = Math.Round(alicuotaTax2, 4);
+                IIBB = Math.Round(baseImpo * AlicuotaIIBB, 2);
+                Tax2 = Math.Round(baseImpo * alicuotaTax2, 2);
+                TotalImpuestos = Iva21 + IIBB + Tax2;
+                TotalFinal = Subtotal + TotalImpuestos;
+            }
+
+            
             OK = true;
         }
     }

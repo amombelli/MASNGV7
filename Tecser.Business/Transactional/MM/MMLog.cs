@@ -243,7 +243,7 @@ namespace Tecser.Business.Transactional.MM
                 int idClienteT6 = h.T0007_CLI_ENTREGA.IDCLIENTE;
                 var tipoMovimiento = TipoMovimiento.ReversionEgresoVentaConOV;
 
-                var logOut = LogMovimientoT40(x.MATERIAL, DateTime.Today, Convert.ToInt32(tipoMovimiento), "CANR",
+                var logOut = LogMovimientoT40(x.MATERIAL, DateTime.Today, Convert.ToInt32(tipoMovimiento), "RZ",
                     x.NUMREMITO, x.KGDESPACHADOS, "CANR", x.SLOC,
                     StockStatusManager.EstadoLote.Liberado.ToString(), "I", h.TIPO_REMITO, x.BATCH,
                     idCli: idClienteT6, comentarioMovimiento: "Cancelacion de Remito", refTableName: "T0055_REMITO_I",

@@ -253,6 +253,7 @@
     <Compile Include="Transactional\CO\Costos\CostRollRevisionMP.cs" />
     <Compile Include="Transactional\CO\Costos\CostRollRevisionFabricado.cs" />
     <Compile Include="Transactional\CO\Costos\MargenDocument.cs" />
+    <Compile Include="Transactional\CO\Costos\MopMapeo.cs" />
     <Compile Include="Transactional\CO\Costos\RepoHistoryManager.cs" />
     <Compile Include="Transactional\CO\GLSManagement\GLAccountManager.cs" />
     <Compile Include="Transactional\CO\GLSManagement\GLSManagement.cs" />
