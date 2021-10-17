@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.Transactional.FI;
 using Tecser.Business.Transactional.FI.CtaCte;
@@ -32,7 +25,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             txtLx.Text = _lx;
             txtTipoDocumento.Text = h.TIPO_DOC;
         }
-        
+
         private void FrmFI72AjusteRedondeo_Load(object sender, EventArgs e)
         {
             cSaldoActual.SetValue = new CtaCteCustomer(_idCliente).GetResultadoCtaCte(_lx).SaldoResumen;
@@ -64,7 +57,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 return;
             }
             MotivoAjuste = txtMotivoAjuste.Text;
-            _aj.AddItems("ZAJCC", txtTextoAuto400.Text, cImporteAjuste.GetValueDecimal, "7.1.1", false,1);
+            _aj.AddItems("ZAJCC", txtTextoAuto400.Text, cImporteAjuste.GetValueDecimal, "7.1.1", false, 1);
             this.Close();
             this.DialogResult = DialogResult.OK;
             return;

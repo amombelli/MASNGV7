@@ -14,7 +14,7 @@ namespace Tecser.Business.Transactional.CO.Costos
         {
             TipoCosto = CostType.MfgNowUc;
         }
-        
+
         public new void SetFCost(int fcost)
         {
             base.SetFCost(fcost);
@@ -24,7 +24,7 @@ namespace Tecser.Business.Transactional.CO.Costos
         {
             throw new NotImplementedException();
         }
-        
+
         /// <summary>
         /// Funcion GetCost on the Fly funciona OK 2021.01.13
         /// Explotado a Nivel Std segun formula Orignal

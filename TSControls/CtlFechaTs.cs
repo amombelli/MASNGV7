@@ -82,7 +82,7 @@ namespace TSControls
 
         public bool ObtieneTCAuto { get; set; }
         public bool CheckPeriodoFIAuto { get; set; }
-   
+
 
         private bool CheckPeriodoFIisOpen()
         {
@@ -121,7 +121,7 @@ namespace TSControls
                     throw new ArgumentOutOfRangeException(nameof(colorS), colorS, null);
             }
         }
-        
+
         private void mskFecha1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             Fecha = null;
@@ -237,7 +237,7 @@ namespace TSControls
                 }
             }
         }
-        
+
         public override Font Font
         {
             get => base.Font;
@@ -246,7 +246,7 @@ namespace TSControls
                 base.Font = value;
                 mskFecha1.Font = value;
                 mskFecha1.Location = new Point(1, 1);
-                zRed.Size = new Size(22,22);
+                zRed.Size = new Size(22, 22);
                 zYellow.Size = new Size(22, 22);
                 zGreen.Size = new Size(22, 22);
                 if (mskFecha1.Height < 21)
@@ -255,13 +255,13 @@ namespace TSControls
                 }
                 else
                 {
-                    base.Size = new Size(mskFecha1.Width +zRed.Width+5,mskFecha1.Height+2);
+                    base.Size = new Size(mskFecha1.Width + zRed.Width + 5, mskFecha1.Height + 2);
                 }
 
-                int altura = (base.Height/2)-11;
+                int altura = (base.Height / 2) - 11;
                 if (altura < 0)
                     altura = 0;
-                zYellow.Location = new Point(mskFecha1.Width + 3,altura);
+                zYellow.Location = new Point(mskFecha1.Width + 3, altura);
                 zRed.Location = new Point(mskFecha1.Width + 3, altura);
                 zGreen.Location = new Point(mskFecha1.Width + 3, altura);
             }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.Transactional.HR;
 using TSControls;
@@ -33,7 +28,7 @@ namespace MASngFE.SecurityConfig
 
         private void txtNombreFuncion_Validating(object sender, CancelEventArgs e)
         {
-            var t = (TextBox) sender;
+            var t = (TextBox)sender;
             if (string.IsNullOrEmpty(t.Text))
             {
                 cicon1.Set = CIconos.Azul;
@@ -82,7 +77,7 @@ namespace MASngFE.SecurityConfig
 
         private void dgv1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            var dgv = (DataGridView) sender;
+            var dgv = (DataGridView)sender;
             if (e.RowIndex > 0)
             {
                 txtNombreFuncion.Text = dgv[__code.Name, e.RowIndex].Value.ToString();
@@ -123,7 +118,7 @@ namespace MASngFE.SecurityConfig
             {
                 cicon2.Set = CIconos.Verde;
             }
-            new HRComboManager().AddAsignacion(cmbEmpleado.SelectedItem.ToString().ToUpper(),txtNombreFuncion.Text);
+            new HRComboManager().AddAsignacion(cmbEmpleado.SelectedItem.ToString().ToUpper(), txtNombreFuncion.Text);
             dgv2.DataSource = HRComboManager.GetListaAsignacionesPorFuncion(txtNombreFuncion.Text).ToList();
 
 
@@ -143,7 +138,7 @@ namespace MASngFE.SecurityConfig
                 return;
             }
 
-            var r =HRComboManager.ExisteAsignacion(txtNombreFuncion.Text, cmbEmpleado.SelectedItem.ToString());
+            var r = HRComboManager.ExisteAsignacion(txtNombreFuncion.Text, cmbEmpleado.SelectedItem.ToString());
             if (r)
             {
                 cicon2.Set = CIconos.Rojo;
@@ -170,7 +165,7 @@ namespace MASngFE.SecurityConfig
 
         private void dgv2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var dgv = (DataGridView) sender;
+            var dgv = (DataGridView)sender;
             if (!(dgv.Columns[e.ColumnIndex] is DataGridViewButtonColumn) || e.RowIndex < 0) return;
 
             var nombreBoton = dgv[e.ColumnIndex, e.RowIndex].Value.ToString();
@@ -179,7 +174,7 @@ namespace MASngFE.SecurityConfig
                 case "DEL":
                     var fx = dgv[__2Funcion.Name, e.RowIndex].Value.ToString();
                     var shortname = dgv[__2Shortname.Name, e.RowIndex].Value.ToString();
-                    HRComboManager.DeleteAsignacion(shortname,fx);
+                    HRComboManager.DeleteAsignacion(shortname, fx);
                     dgv2.DataSource = HRComboManager.GetListaAsignacionesPorFuncion(txtNombreFuncion.Text).ToList();
                     break;
                 default:

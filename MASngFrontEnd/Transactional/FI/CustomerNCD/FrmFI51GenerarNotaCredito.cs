@@ -63,7 +63,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
         //fin ver si se puede borrar
         private decimal _nuevoTC = 1;
-        
+
         //Inicio OK
         private void FrmFI52GenerarNotaCredito_Load(object sender, EventArgs e)
         {
@@ -235,9 +235,9 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             var autorizado = "NO-Autorizado";
             if (cmbAutorizadoPor.SelectedItem != null) autorizado = cmbAutorizadoPor.SelectedItem.Text;
 
-            _nc = new CustomerNc(CustomerNc.MotivoNotaCredito.DevolucionMaterial); 
+            _nc = new CustomerNc(CustomerNc.MotivoNotaCredito.DevolucionMaterial);
             _nc.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", true, autorizado);
-            
+
             using (var f0 = new FrmFi54NcDevolucion(_nc))
             {
                 DialogResult dr = f0.ShowDialog();
@@ -256,9 +256,9 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     }
                     else
                     {
-                        _nc.SetPeriodoAsociado(dtpFechaDocumento.Value,dtpFechaDocumento.Value);
+                        _nc.SetPeriodoAsociado(dtpFechaDocumento.Value, dtpFechaDocumento.Value);
                     }
-                    
+
                     //aca hacer funciona para cerrar en RTN el credito a la hora de contabilizar
                 }
                 else
@@ -267,7 +267,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
             //using (var f0 = new FrmFI58SeleccionDocDescuentoGeneral(_nc, _motivoCredito))
             //{
             //    DialogResult dr = f0.ShowDialog();
@@ -276,7 +276,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             //        dgv400.DataSource = _nc.GetItems();
             //        MapTotalesFactura400(_nc.GetTotalesFromHeader());
             //        MapHeaderDocumento1();
-                    
+
             //        //var listaDocBonifica = f0.FacturaAplica;            //array de documentos y/o fechas
             //        //var listaNumerosDocu = f0.NumeroDocumentoAplica; //array de numeros documento aplica
             //        ////_nc.CargaDatosNcDescuentoGeneral(_idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "ARS", f0.ItemList);
@@ -299,7 +299,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             //    }
             //}
         }
-        
+
         /// <summary>
         /// Se anula completamente una Factura o Nota de Debito por Motivo X
         /// Siempre será un solo documento que anula un documento de contrapartida NC-> FA o ND
@@ -350,7 +350,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     }
 
                     _nc = new CustomerNc(_motivoCredito);
-                    _nc.CreaHeader( _tipoDocumento, _idCliente, _lx.ToString(),
+                    _nc.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(),
                         dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", false, autorizado);
                     _nc.AnulaDocumentoCompleto(_idRetorno);
                     txtMotivoGeneralDocumento.BackColor = string.IsNullOrEmpty(txtMotivoGeneralDocumento.Text)
@@ -361,7 +361,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     MapTotalesFactura400(_nc.GetTotalesFromHeader());
                     MapHeaderDocumento1();
                     _existeDocumentoSecundario = false;
-                    
+
                 }
             }
         }
@@ -386,9 +386,9 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
             string autorizado = "NO-Autorizado";
             if (cmbAutorizadoPor.SelectedItem != null) autorizado = cmbAutorizadoPor.SelectedItem.Text;
-            
+
             _nc = new CustomerNc(CustomerNc.MotivoNotaCredito.DesGeneralDocumentos);
-            _nc.CreaHeader(_tipoDocumento,_idCliente,_lx.ToString(),dtpFechaDocumento.Value,cTc.GetValueDecimal,"0E","0.0.0.0",true,autorizado);
+            _nc.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", true, autorizado);
             using (var f0 = new FrmFI58SeleccionDocDescuentoGeneral(_nc, _motivoCredito))
             {
                 DialogResult dr = f0.ShowDialog();
@@ -444,7 +444,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             if (cmbAutorizadoPor.SelectedItem != null) autorizado = cmbAutorizadoPor.SelectedItem.Text;
             _nc = new CustomerNc(CustomerNc.MotivoNotaCredito.DesGeneralPeriodo);
             _nc.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", true, autorizado);
-            using (var f0 = new FrmFI59DescuentoGeneralPeriodoAsociado(_nc,_motivoCredito))
+            using (var f0 = new FrmFI59DescuentoGeneralPeriodoAsociado(_nc, _motivoCredito))
             {
                 DialogResult dr = f0.ShowDialog();
                 if (dr == DialogResult.OK)
@@ -455,8 +455,8 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
 
                     //_nc.SetPeriodoAsociado(f0.FechaAplicaDesde.Value, f0.FechaAplicaHasta.Value);
-                   // _periodoAnulaDesde = f0.FechaAplicaDesde;
-                   // _periodoAnulaHasta = f0.FechaAplicaHasta;
+                    // _periodoAnulaDesde = f0.FechaAplicaDesde;
+                    // _periodoAnulaHasta = f0.FechaAplicaHasta;
                 }
                 else
                 {
@@ -464,7 +464,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 }
             }
         }
-        
+
         /// <summary>
         /// Estoy por aca ahora 
         /// </summary>
@@ -504,7 +504,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 }
             }
         }
-        
+
         private void NcAjusteTCDocumentoCompleto()
         {
             //Esta funcion es para hacer NC o ND por Ajuste en Tipo de Cambio
@@ -514,12 +514,12 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 DialogResult dr = f0.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
-                 //   _iddocumentoAnula = f0.IdFacturaSeleccionada;
+                    //   _iddocumentoAnula = f0.IdFacturaSeleccionada;
                     //_numeroFacturaAnula = f0.NumeroDocumentoSeleccionado; //cambiar por numero doc
                     _nuevoTC = f0.NuevoTC;
-                 //   if (_iddocumentoAnula == null) return;
+                    //   if (_iddocumentoAnula == null) return;
                     if (_nuevoTC <= 0) return;
-                //    _nc.CargaDatosNcActualizaPrecioDiferenciaCambio(_iddocumentoAnula.Value,_nuevoTC); //nueva
+                    //    _nc.CargaDatosNcActualizaPrecioDiferenciaCambio(_iddocumentoAnula.Value,_nuevoTC); //nueva
                 }
                 else
                 {
@@ -649,7 +649,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            
+
             if (string.IsNullOrEmpty(txtMotivoGeneralDocumento.Text))
             {
                 MessageBox.Show(@"Debe completar el motivo por el que se está generando el documento (interno)",
@@ -701,7 +701,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            
+
             switch (_statusDocumento2)
             {
                 case DocumentFIStatusManager.StatusHeader.Pendiente:
@@ -799,7 +799,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             return true;
         }
-        
+
         #region botones
         private void btnImprmir_Click(object sender, EventArgs e)
         {
@@ -994,9 +994,9 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 _statusDocumento = gestionStatus.SetContabilizada(zz.IdCtaCte, zz.RtnAsiento.IdDocu, zz.RtnAsiento.Nasx1);
                 new MargenDocument().AddItemNotaCredito(_nc.Id300);
             }
-            
+
             //****** Acciones POST-Conta Asociadas al motivo ******
-            
+
             if (_motivoCredito == CustomerNc.MotivoNotaCredito.AnulaDocumento)
             {
                 if (_flagReingresarStockAlSistema & IdRemitoAsociado > 0)
@@ -1010,7 +1010,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                             txtMotivoGeneralDocumento.Text, txtLx.Text, GlobalApp.AppUsername,
                             StockStatusManager.EstadoLote.Liberado);
                     }
-                    
+
                     var x = new RemitoCancelacion(IdRemitoAsociado).CancelaRemito_OV_DesdeNC();
                     if (x == false)
                     {
@@ -1045,7 +1045,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 return;
 
             rTabDocumentos.Enabled = false;
-            _statusDocumento = _nc.Registrar(txtMotivoGeneralDocumento.Text,false);
+            _statusDocumento = _nc.Registrar(txtMotivoGeneralDocumento.Text, false);
             MapHeaderDocumento1();
             if (_existeDocumentoSecundario)
             {

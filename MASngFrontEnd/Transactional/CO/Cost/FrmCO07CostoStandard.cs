@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Text;
 using System.Windows.Forms;
 using Tecser.Business.MasterData;
 using Tecser.Business.Tools;
@@ -75,7 +74,7 @@ namespace MASngFE.Transactional.CO.Cost
                     txtCostoCRUSD.Text = Math.Round(crCost.CostoCR / tc.GetValueDecimal, 3).ToString("C3");
                 }
             }
-            
+
             //Define costo de referencia
             if (txtOrigen.Text == @"FAB")
             {

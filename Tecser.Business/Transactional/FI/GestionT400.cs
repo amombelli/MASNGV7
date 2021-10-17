@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
 using TecserEF.Entity;
@@ -73,26 +71,26 @@ namespace Tecser.Business.Transactional.FI
         public DocumentFIStatusManager.StatusHeader Status { get; private set; }
         private ManageDocumentType.TipoDocumento _tipoDocumento;
         private int _id400;
-        private TotalesCustomerFi _totales=new TotalesCustomerFi();
+        private TotalesCustomerFi _totales = new TotalesCustomerFi();
         private int _signo;
         private string _tipoDocumentoXx;
         private string _sucursalTemporal; //sucursal temporal que se asigna por TDOC al registrar
         private string _tipoLx;
-        
+
         public bool AllowToRegister()
         {
-            if (Status ==DocumentFIStatusManager.StatusHeader.Pendiente)
+            if (Status == DocumentFIStatusManager.StatusHeader.Pendiente)
                 return true;
             return false;
         }
         public bool AllowToUnregister()
         {
-            if (Status ==DocumentFIStatusManager.StatusHeader.Registrada)
+            if (Status == DocumentFIStatusManager.StatusHeader.Registrada)
                 return true;
             return false;
         }
 
-        public void AddHeaderMemory(ManageDocumentType.TipoDocumento tipoDocumento, int idCliente, string lx, DateTime fechaDoc, decimal tc, string zterm, string glAR,bool impactaVentas, int? idRemito, string monedaDoc="ARS")
+        public void AddHeaderMemory(ManageDocumentType.TipoDocumento tipoDocumento, int idCliente, string lx, DateTime fechaDoc, decimal tc, string zterm, string glAR, bool impactaVentas, int? idRemito, string monedaDoc = "ARS")
         {
             //_signo = 1;  //signo default;
             _tipoDocumento = tipoDocumento;
@@ -237,14 +235,14 @@ namespace Tecser.Business.Transactional.FI
 
             var i = new T0401_FACTURA_I()
             {
-                IDITEM = I4.Count+1,
+                IDITEM = I4.Count + 1,
                 ITEM = item,
                 DESC_REMITO = itemDescripcion,
                 KGDESPACHADOS_R = cantidad,
                 MONEDA_FACT = H4.FacturaMoneda,
                 MONEDA_COTIZ = monedaCotizacion,
                 PRECIOU_COTIZ = precioUnitarioCotizacion,
-                PRECIOT_COTIZ = Math.Round(precioUnitarioCotizacion * cantidad,3),
+                PRECIOT_COTIZ = Math.Round(precioUnitarioCotizacion * cantidad, 3),
                 TC = H4.TC,
                 IVA21 = iva21,
                 CostoStd = costoStd,
@@ -260,7 +258,7 @@ namespace Tecser.Business.Transactional.FI
                 {
                     //el PU-Fact no se provee - se calcula
                     if (monedaCotizacion == "USD")
-                    { 
+                    {
                         i.PRECIOU_FACT_ARS = Math.Round(precioUnitarioCotizacion * H4.TC, 3);
                         i.PRECIOU_FACT_USD = precioUnitarioCotizacion;
                         i.PRECIOT_FACT_ARS = precioUnitarioCotizacion * cantidad;
@@ -280,8 +278,8 @@ namespace Tecser.Business.Transactional.FI
                     //el PU-Fact se provee -- esta opcion es rara poque se cotiza en USD y se factura el TC
                     i.PRECIOU_FACT_ARS = precioUMonedaFactura.Value;
                     i.PRECIOU_FACT_USD = Math.Round(precioUMonedaFactura.Value / H4.TC, 3);
-                    i.PRECIOT_FACT_USD = Math.Round(precioUMonedaFactura.Value / H4.TC*cantidad, 3);
-                    i.PRECIOT_FACT_ARS = precioUMonedaFactura.Value *cantidad;
+                    i.PRECIOT_FACT_USD = Math.Round(precioUMonedaFactura.Value / H4.TC * cantidad, 3);
+                    i.PRECIOT_FACT_ARS = precioUMonedaFactura.Value * cantidad;
                 }
             }
             else
@@ -299,7 +297,7 @@ namespace Tecser.Business.Transactional.FI
             I4.Add(i);
             MapImportesCalculadaosToH4();
         }
-        
+
         /// <summary>
         /// Actualiza Parametros Factura y Recalcula Importes
         /// </summary>
@@ -336,7 +334,7 @@ namespace Tecser.Business.Transactional.FI
             _totales.MapImportesFrom400Header(H4);
             return _totales;
         }
-        
+
         /// <summary>
         /// Calcula los Importes desde los Items y los mapea en H4 Header
         /// </summary>
@@ -351,7 +349,7 @@ namespace Tecser.Business.Transactional.FI
             if (H4.DescuentoPorc == null)
                 H4.DescuentoPorc = 0;
 
-            _totales.CalculaTotalesFromItems(I4, H4.IIBB_PORC.Value,H4.Descuento.Value,H4.DescuentoPorc.Value,H4.Tax2Alicuota);
+            _totales.CalculaTotalesFromItems(I4, H4.IIBB_PORC.Value, H4.Descuento.Value, H4.DescuentoPorc.Value, H4.Tax2Alicuota);
             H4.TotalFacturaB = _totales.Bruto;
             H4.Descuento = _totales.Descuento;
             H4.TotalImpo = _totales.BaseImponible;
@@ -370,7 +368,7 @@ namespace Tecser.Business.Transactional.FI
             _totales.MapImportesFrom400Header(H4);
             return _totales;
         }
-        
+
         /// <summary>
         /// Funcion para Grabar en DB el registro de memoria
         /// </summary>
@@ -380,134 +378,134 @@ namespace Tecser.Business.Transactional.FI
                 return -1;
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                    if (H4.IDFACTURA > 0)
+                if (H4.IDFACTURA > 0)
+                {
+                    //Si IDfactura es >0 => Ya tiene Asignado un ID --> Elimino datos Existentes en T400
+                    var z = db.T0401_FACTURA_I.Where(c => c.IDFactura == H4.IDFACTURA).ToList();
+                    foreach (var i in z)
                     {
-                        //Si IDfactura es >0 => Ya tiene Asignado un ID --> Elimino datos Existentes en T400
-                        var z = db.T0401_FACTURA_I.Where(c => c.IDFactura == H4.IDFACTURA).ToList();
-                        foreach (var i in z)
-                        {
-                            db.T0401_FACTURA_I.Remove(i);
-                            db.SaveChanges();
-                        }
-                        var facturaH = db.T0400_FACTURA_H.SingleOrDefault(c => c.IDFACTURA == H4.IDFACTURA);
-                        if (facturaH != null) db.T0400_FACTURA_H.Remove(facturaH);
+                        db.T0401_FACTURA_I.Remove(i);
                         db.SaveChanges();
-                        Status = DocumentFIStatusManager.StatusHeader.Registrada;
-                        H4.StatusFactura = Status.ToString();
-                        H4.FechaLog = DateTime.Now;
-                        H4.UserLog = Environment.UserName;
-                        //Colocamos siempre el valor absoluto en DB
-                        if (usarValorAbsoluto)
-                        {
-                            H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB);
-                            H4.TotalImpo = Math.Abs(H4.TotalImpo);
-                            H4.TotalIVA21 = Math.Abs(H4.TotalIVA21);
-                            H4.TotalIIBB = Math.Abs(H4.TotalIIBB);
-                            H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN);
-                            H4.Tax2Importe = Math.Abs(H4.Tax2Importe);
-                            if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1;
-                        }
-                        else
-                        {
-                            //utiliza los valors con signo 
-                            //nuevo approach
-                            H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB) * _signo;
-                            H4.TotalImpo = Math.Abs(H4.TotalImpo) * _signo;
-                            H4.TotalIVA21 = Math.Abs(H4.TotalIVA21) * _signo;
-                            H4.TotalIIBB = Math.Abs(H4.TotalIIBB) * _signo;
-                            H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN) * _signo;
-                            H4.Tax2Importe = Math.Abs(H4.Tax2Importe) * _signo;
-                            if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1;
-                        }
-                        db.T0400_FACTURA_H.Add(H4);
+                    }
+                    var facturaH = db.T0400_FACTURA_H.SingleOrDefault(c => c.IDFACTURA == H4.IDFACTURA);
+                    if (facturaH != null) db.T0400_FACTURA_H.Remove(facturaH);
+                    db.SaveChanges();
+                    Status = DocumentFIStatusManager.StatusHeader.Registrada;
+                    H4.StatusFactura = Status.ToString();
+                    H4.FechaLog = DateTime.Now;
+                    H4.UserLog = Environment.UserName;
+                    //Colocamos siempre el valor absoluto en DB
+                    if (usarValorAbsoluto)
+                    {
+                        H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB);
+                        H4.TotalImpo = Math.Abs(H4.TotalImpo);
+                        H4.TotalIVA21 = Math.Abs(H4.TotalIVA21);
+                        H4.TotalIIBB = Math.Abs(H4.TotalIIBB);
+                        H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN);
+                        H4.Tax2Importe = Math.Abs(H4.Tax2Importe);
+                        if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1;
                     }
                     else
                     {
-                        //Aisgna un ID400
-                        H4.IDFACTURA = db.T0400_FACTURA_H.Max(c => c.IDFACTURA) + 1;
-                        H4.IDFACTURAX = GetNextIdFacturaX();
-                        H4.FechaLog = DateTime.Now;
-                        H4.UserLog = Environment.UserName;
-                        H4.StatusFactura = DocumentFIStatusManager.StatusHeader.Registrada.ToString();
-                        H4.PV_AFIP = AsignaSucursalTemporal();
-                        H4.ND_AFIP = AsignaNumeroTemporal();
-                        H4.NumeroDoc = H4.PV_AFIP + "-" + H4.ND_AFIP;
-                        H4.Anulado = false;
-                        db.T0400_FACTURA_H.Add(H4);
-                        if (db.SaveChanges() == 0)
-                        {
-                            _id400 = -1;
-                            Status = DocumentFIStatusManager.StatusHeader.Pendiente;
-                        }
-                        else
-                        {
-                            _id400 = H4.IDFACTURA;
-                            Status = DocumentFIStatusManager.StatusHeader.Registrada;
-                        }
-                        //Colocamos siempre el valor absoluto en DB
-                        if (usarValorAbsoluto)
-                        {
-                            H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB);
-                            H4.TotalImpo = Math.Abs(H4.TotalImpo);
-                            H4.TotalIVA21 = Math.Abs(H4.TotalIVA21);
-                            H4.TotalIIBB = Math.Abs(H4.TotalIIBB);
-                            H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN);
-                            H4.Tax2Importe = Math.Abs(H4.Tax2Importe);
-                            if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1;
-                        }
-                        else
-                        {
-                            // * utiliza los valors con signo nuevo approach
-                            H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB) * _signo;
-                            H4.TotalImpo = Math.Abs(H4.TotalImpo) * _signo;
-                            H4.TotalIVA21 = Math.Abs(H4.TotalIVA21) * _signo;
-                            H4.TotalIIBB = Math.Abs(H4.TotalIIBB) * _signo;
-                            H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN) * _signo;
-                            H4.Tax2Importe = Math.Abs(H4.Tax2Importe) * _signo;
-                            if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1; //revisar?
-                        }
+                        //utiliza los valors con signo 
+                        //nuevo approach
+                        H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB) * _signo;
+                        H4.TotalImpo = Math.Abs(H4.TotalImpo) * _signo;
+                        H4.TotalIVA21 = Math.Abs(H4.TotalIVA21) * _signo;
+                        H4.TotalIIBB = Math.Abs(H4.TotalIIBB) * _signo;
+                        H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN) * _signo;
+                        H4.Tax2Importe = Math.Abs(H4.Tax2Importe) * _signo;
+                        if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1;
                     }
-                    var numeroItem = 0;
-                    var _c = db.T0401_FACTURA_I.Where(c => c.IDFactura == H4.IDFACTURA).ToList();
-                    if (_c.Any())
+                    db.T0400_FACTURA_H.Add(H4);
+                }
+                else
+                {
+                    //Aisgna un ID400
+                    H4.IDFACTURA = db.T0400_FACTURA_H.Max(c => c.IDFACTURA) + 1;
+                    H4.IDFACTURAX = GetNextIdFacturaX();
+                    H4.FechaLog = DateTime.Now;
+                    H4.UserLog = Environment.UserName;
+                    H4.StatusFactura = DocumentFIStatusManager.StatusHeader.Registrada.ToString();
+                    H4.PV_AFIP = AsignaSucursalTemporal();
+                    H4.ND_AFIP = AsignaNumeroTemporal();
+                    H4.NumeroDoc = H4.PV_AFIP + "-" + H4.ND_AFIP;
+                    H4.Anulado = false;
+                    db.T0400_FACTURA_H.Add(H4);
+                    if (db.SaveChanges() == 0)
                     {
-                        db.T0401_FACTURA_I.RemoveRange(_c);
-                        db.SaveChanges();
+                        _id400 = -1;
+                        Status = DocumentFIStatusManager.StatusHeader.Pendiente;
                     }
-
-                    foreach (var item in I4)
+                    else
                     {
-                        numeroItem++;
-                        item.IDFactura = H4.IDFACTURA;
-                        item.IDITEM = numeroItem;
-                        item.IDFACTURAX = H4.IDFACTURAX;
-                        //Colocamos valor Absoluto en los items -- solo dejamos la cantidad con signo
-                        if (usarValorAbsoluto)
-                        {
-                            item.PRECIOU_COTIZ = Math.Abs(item.PRECIOU_COTIZ);
-                            item.PRECIOT_COTIZ = Math.Abs(item.PRECIOT_COTIZ);
-                            item.PRECIOU_FACT_ARS = Math.Abs(item.PRECIOU_FACT_ARS);
-                            item.PRECIOT_FACT_ARS = Math.Abs(item.PRECIOT_FACT_ARS);
-                            item.PRECIOU_FACT_USD = Math.Abs(item.PRECIOU_FACT_USD);
-                            item.PRECIOT_FACT_USD = Math.Abs(item.PRECIOT_FACT_USD);
-                        }
-                        else
-                        {
-                            //dejamos los valores con el signo correspondiente
-
-                        }
+                        _id400 = H4.IDFACTURA;
+                        Status = DocumentFIStatusManager.StatusHeader.Registrada;
                     }
-                    db.T0401_FACTURA_I.AddRange(I4);
+                    //Colocamos siempre el valor absoluto en DB
+                    if (usarValorAbsoluto)
+                    {
+                        H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB);
+                        H4.TotalImpo = Math.Abs(H4.TotalImpo);
+                        H4.TotalIVA21 = Math.Abs(H4.TotalIVA21);
+                        H4.TotalIIBB = Math.Abs(H4.TotalIIBB);
+                        H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN);
+                        H4.Tax2Importe = Math.Abs(H4.Tax2Importe);
+                        if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1;
+                    }
+                    else
+                    {
+                        // * utiliza los valors con signo nuevo approach
+                        H4.TotalFacturaB = Math.Abs(H4.TotalFacturaB) * _signo;
+                        H4.TotalImpo = Math.Abs(H4.TotalImpo) * _signo;
+                        H4.TotalIVA21 = Math.Abs(H4.TotalIVA21) * _signo;
+                        H4.TotalIIBB = Math.Abs(H4.TotalIIBB) * _signo;
+                        H4.TotalFacturaN = Math.Abs(H4.TotalFacturaN) * _signo;
+                        H4.Tax2Importe = Math.Abs(H4.Tax2Importe) * _signo;
+                        if (H4.Descuento < 0) H4.Descuento = H4.Descuento * -1; //revisar?
+                    }
+                }
+                var numeroItem = 0;
+                var _c = db.T0401_FACTURA_I.Where(c => c.IDFactura == H4.IDFACTURA).ToList();
+                if (_c.Any())
+                {
+                    db.T0401_FACTURA_I.RemoveRange(_c);
                     db.SaveChanges();
-                    H4.StatusFactura = Status.ToString();
-                    return H4.IDFACTURA;
+                }
+
+                foreach (var item in I4)
+                {
+                    numeroItem++;
+                    item.IDFactura = H4.IDFACTURA;
+                    item.IDITEM = numeroItem;
+                    item.IDFACTURAX = H4.IDFACTURAX;
+                    //Colocamos valor Absoluto en los items -- solo dejamos la cantidad con signo
+                    if (usarValorAbsoluto)
+                    {
+                        item.PRECIOU_COTIZ = Math.Abs(item.PRECIOU_COTIZ);
+                        item.PRECIOT_COTIZ = Math.Abs(item.PRECIOT_COTIZ);
+                        item.PRECIOU_FACT_ARS = Math.Abs(item.PRECIOU_FACT_ARS);
+                        item.PRECIOT_FACT_ARS = Math.Abs(item.PRECIOT_FACT_ARS);
+                        item.PRECIOU_FACT_USD = Math.Abs(item.PRECIOU_FACT_USD);
+                        item.PRECIOT_FACT_USD = Math.Abs(item.PRECIOT_FACT_USD);
+                    }
+                    else
+                    {
+                        //dejamos los valores con el signo correspondiente
+
+                    }
+                }
+                db.T0401_FACTURA_I.AddRange(I4);
+                db.SaveChanges();
+                H4.StatusFactura = Status.ToString();
+                return H4.IDFACTURA;
             }
         }
         public void UnRegistrar()
         {
 
         }
-        
+
         /// <summary>
         /// Popula el IDNCD en T400
         /// </summary>
@@ -527,7 +525,7 @@ namespace Tecser.Business.Transactional.FI
             {
                 var max = db.T0400_FACTURA_H.Where(c => c.TIPOFACT == _tipoLx).Max(c => c.IDFACTURAX);
                 if (max != null)
-                    return (int) max + 1;
+                    return (int)max + 1;
                 return 1;
             }
         }

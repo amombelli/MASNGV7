@@ -25,7 +25,7 @@ namespace Tecser.Business.Transactional.FI
         public int AddNewCheque(string tipoLx, string numeroReciboIngreso, DateTime fechaRecibido,
             int idCliente, DateTime fechaAcreditacion, decimal importe, string numero, string numeroBanco,
             bool interior, string numeroCuit, string titular = null, string moneda = "ARS", string observacion = null,
-            int idCobranza = 0, int idClienteRecibido = 0, string codigoPostal = null, bool eCheque = false,string echequeBco=null)
+            int idCobranza = 0, int idClienteRecibido = 0, string codigoPostal = null, bool eCheque = false, string echequeBco = null)
         {
             var ch = new T0154_CHEQUES()
             {
@@ -81,13 +81,13 @@ namespace Tecser.Business.Transactional.FI
         /// Funcion para listar cheques recibidos de clientes
         /// Para 'rechazo directo', 'devolucion' etc sin haber sido entregado a proveedor/despositado
         /// </summary>
-        public List<T0154_CHEQUES> GetListaChequesRecibidosCliente(int idCliente, int diasDesdeAcreditacion=180,bool disponible=true)
+        public List<T0154_CHEQUES> GetListaChequesRecibidosCliente(int idCliente, int diasDesdeAcreditacion = 180, bool disponible = true)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 diasDesdeAcreditacion *= -1;
                 var fa = DateTime.Today.AddDays(diasDesdeAcreditacion);
-                var ch = db.T0154_CHEQUES.Where(c => c.IdClienteRecibido == idCliente && c.CHE_FECHA > fa).OrderByDescending(c=>c.CHE_FECHA).ToList();
+                var ch = db.T0154_CHEQUES.Where(c => c.IdClienteRecibido == idCliente && c.CHE_FECHA > fa).OrderByDescending(c => c.CHE_FECHA).ToList();
                 if (disponible)
                     return ch.Where(c => c.DISPONIBLE).ToList();
                 return ch;
@@ -210,7 +210,7 @@ namespace Tecser.Business.Transactional.FI
                 }
             }
         }
-        
+
         /// <summary>
         /// Devuelve si el cheque esta disponible
         /// </summary>
@@ -278,7 +278,7 @@ namespace Tecser.Business.Transactional.FI
 
 
         }
-        
+
         /// <summary>
         /// Pasa el cheque a no disponible utilizado en una Orden de Pago
         /// </summary>
@@ -319,7 +319,7 @@ namespace Tecser.Business.Transactional.FI
         }
 
         /// <returns></returns>
-        public bool LiberaCheque(int idCheque,bool esReingreso = false)
+        public bool LiberaCheque(int idCheque, bool esReingreso = false)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -367,7 +367,7 @@ namespace Tecser.Business.Transactional.FI
                 return db.SaveChanges() > 0;
             }
         }
-        
+
         public List<T0154_CHEQUES> GetListaChequesEntregadosAProveedor(int idVendor, string tipoLx = null,
             bool soloNoRechazados = true)
         {
@@ -399,7 +399,7 @@ namespace Tecser.Business.Transactional.FI
                 }
             }
         }
-        
+
         public List<T0154_CHEQUES> GetListaChequesPorCUIT(string numeroCuitFirmante, bool disponible = true,
             bool nodisponible = true, bool rechazado = true, bool noRechazado = true)
         {
@@ -466,7 +466,7 @@ namespace Tecser.Business.Transactional.FI
                 }
             }
         }
-        
+
         public List<T0154_CHEQUES> GetListaChequesNumeroCheque(string numeroCheque, bool disponible = true,
             bool nodisponible = true,
             int top = 100)
@@ -781,7 +781,7 @@ namespace Tecser.Business.Transactional.FI
                 }
             }
         }
-        
+
         public List<TsCheques1> GetListaChequesFiltrada(string lx, bool verDisponible = true, bool verNoDisponible = false,
             string numeroCheque = "", int idCheque = -1, DateTime? menorIgualaFecha = null, bool verInterior = true, bool verNoInterior = true)
         {
@@ -913,7 +913,7 @@ namespace Tecser.Business.Transactional.FI
                 }
             }
         }
-        
+
         public ChequesStats GetChequeStats(string cuit, DateTime? fechaDesde = null)
         {
             if (fechaDesde == null)
@@ -938,7 +938,7 @@ namespace Tecser.Business.Transactional.FI
                 return rtn;
             }
         }
-        
+
         public void DesAcreditarCheque(int idCheque)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -987,7 +987,7 @@ namespace Tecser.Business.Transactional.FI
                 return db.SaveChanges();
             }
         }
-        
+
         public List<TsCheques1> GetListaChequeRecibidoCliente(int idCliente, string lx, bool verDisponible = true, bool verNoDisponible = false)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -1000,7 +1000,7 @@ namespace Tecser.Business.Transactional.FI
                         return null;
                     }
                 }
-                var result = db.T0154_CHEQUES.Where(c=>c.IdClienteRecibido==idCliente).Join(db.T0160_BANCOS, che => che.CHE_BANCO, ban => ban.ID_BANCO,
+                var result = db.T0154_CHEQUES.Where(c => c.IdClienteRecibido == idCliente).Join(db.T0160_BANCOS, che => che.CHE_BANCO, ban => ban.ID_BANCO,
                     (che, ban) => new TsCheques1()
                     {
                         Idcheque = che.IDCHEQUE,

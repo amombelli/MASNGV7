@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using MASngFE.Transactional.WM;
-using Tecser.Business.Tools;
 using Tecser.Business.Transactional.MM;
 using Tecser.Business.Transactional.PP;
 using TecserEF.Entity;
@@ -32,11 +31,11 @@ namespace MASngFE.Transactional.PP
         private readonly int _numeroOF;
         private int _numeroOFReservadaLiberar = 0;
         private List<T0030_STOCK> _stockList = new List<T0030_STOCK>();
-        
 
-        public decimal KgSeleccionados  {get;private set;} 
-        public int IdstockSeleccionado { get;private set; }
-        
+
+        public decimal KgSeleccionados { get; private set; }
+        public int IdstockSeleccionado { get; private set; }
+
         //------------------------------------------------------------------------------------------------
         private void FrmSeleccionBatch_Load(object sender, EventArgs e)
         {
@@ -52,8 +51,8 @@ namespace MASngFE.Transactional.PP
                 ckSoloStockMayorIgual.Checked = true;
                 ckSoloStockMayorIgual.AutoCheck = false;
                 cKgUtilizar.XReadOnly = true;
-                cKgUtilizar.BackColor= Color.LightGray;
-                cKgUtilizar.ForeColor= Color.Black;
+                cKgUtilizar.BackColor = Color.LightGray;
+                cKgUtilizar.ForeColor = Color.Black;
             }
             else
             {
@@ -61,8 +60,8 @@ namespace MASngFE.Transactional.PP
                 ckSoloStockMayorIgual.AutoCheck = true;
                 cKgUtilizar.XReadOnly = false;
                 cKgUtilizar.BackColor = Color.White;
-                cKgUtilizar.ForeColor= Color.Navy;
-                
+                cKgUtilizar.ForeColor = Color.Navy;
+
             }
             this.dgvStockDisponible.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockDisponible_CellEnter);
             ckSoloDisponible.Checked = true;
@@ -117,7 +116,7 @@ namespace MASngFE.Transactional.PP
                 txtStatusOfReserva.Text = xplan.STATUS;
             }
 
-            
+
             if (kgSeleccion > _kgRequeridosOF)
             {
                 cKgUtilizar.SetValue = _kgRequeridosOF;
@@ -272,11 +271,11 @@ namespace MASngFE.Transactional.PP
         {
             if (cKgUtilizar.GetValueDecimal > _kgRequeridosOF)
             {
-                ep1.SetError(cKgUtilizar,"La Cantidad no puede superar al Maximo Requerido");
+                ep1.SetError(cKgUtilizar, "La Cantidad no puede superar al Maximo Requerido");
                 e.Cancel = true;
                 return;
             }
-            ep1.SetError(cKgUtilizar,"");
+            ep1.SetError(cKgUtilizar, "");
 
         }
     }
@@ -288,5 +287,5 @@ namespace MASngFE.Transactional.PP
 
 
 
-                   
+
 

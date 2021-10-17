@@ -69,8 +69,8 @@ namespace Tecser.Business.Transactional.HR
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var listaEmpl = from x in db.T0087_HHRR_DISPONIBILIDAD
-                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Venta
-                    select x.Shortname;
+                                where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Venta
+                                select x.Shortname;
                 return listaEmpl.ToList();
             }
         }
@@ -83,8 +83,8 @@ namespace Tecser.Business.Transactional.HR
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var listaEmpl = from x in db.T0087_HHRR_DISPONIBILIDAD
-                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Despacho
-                    select x.Shortname;
+                                where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Despacho
+                                select x.Shortname;
                 return listaEmpl.ToList();
             }
         }
@@ -94,8 +94,8 @@ namespace Tecser.Business.Transactional.HR
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var listaEmpl = from x in db.T0087_HHRR_DISPONIBILIDAD
-                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.ControlCalidad
-                    select x.Shortname;
+                                where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.ControlCalidad
+                                select x.Shortname;
                 return listaEmpl.ToList();
             }
         }
@@ -105,8 +105,8 @@ namespace Tecser.Business.Transactional.HR
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var listaEmpl = from x in db.T0087_HHRR_DISPONIBILIDAD
-                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Operario
-                    select x.Shortname;
+                                where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Operario
+                                select x.Shortname;
                 return listaEmpl.ToList();
             }
         }
@@ -116,8 +116,8 @@ namespace Tecser.Business.Transactional.HR
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var listaEmpl = from x in db.T0087_HHRR_DISPONIBILIDAD
-                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Cobranza
-                    select x.Shortname;
+                                where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Cobranza
+                                select x.Shortname;
                 return listaEmpl.ToList();
             }
         }
@@ -127,8 +127,8 @@ namespace Tecser.Business.Transactional.HR
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var listaEmpl = from x in db.T0087_HHRR_DISPONIBILIDAD
-                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.IngresoIC
-                    select x.Shortname;
+                                where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.IngresoIC
+                                select x.Shortname;
                 return listaEmpl.ToList();
             }
         }
@@ -138,8 +138,8 @@ namespace Tecser.Business.Transactional.HR
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var listaEmpl = from x in db.T0087_HHRR_DISPONIBILIDAD
-                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Operario
-                    select x.Shortname;
+                                where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Operario
+                                select x.Shortname;
                 return listaEmpl.ToList();
             }
         }
@@ -149,8 +149,8 @@ namespace Tecser.Business.Transactional.HR
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var listaEmpl = from x in db.T0087_HHRR_DISPONIBILIDAD
-                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.AutorizaSinCargo
-                    select x.Shortname;
+                                where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.AutorizaSinCargo
+                                select x.Shortname;
                 return listaEmpl.ToList();
             }
         }
@@ -162,14 +162,14 @@ namespace Tecser.Business.Transactional.HR
                 if (soloActivos)
                 {
                     var listaEmpl = from x in db.T0085_HHRR_PERSONAL_BASIC
-                        where x.Activo == true
-                        select x.Shortname;
+                                    where x.Activo == true
+                                    select x.Shortname;
                     return listaEmpl.ToList();
                 }
                 else
                 {
                     var listaEmpl = from x in db.T0085_HHRR_PERSONAL_BASIC
-                        select x.Shortname;
+                                    select x.Shortname;
                     return listaEmpl.ToList();
                 }
             }

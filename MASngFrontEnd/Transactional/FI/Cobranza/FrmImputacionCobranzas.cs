@@ -324,7 +324,7 @@ namespace MASngFE.Transactional.FI.Cobranza
                 Convert.ToInt32(txtIdCobranzaSeleccionada.Text),
                 FormatAndConversions.CCurrencyADecimal(txtImporteAImputar.Text));
 
-           var z = new CobranzaUtils().DiasPromedioPagoFacturaImputada(Convert.ToInt32(txtIdCtaCteImpu.Text));
+            var z = new CobranzaUtils().DiasPromedioPagoFacturaImputada(Convert.ToInt32(txtIdCtaCteImpu.Text));
 
             if (z.ErrorDetectado)
             {

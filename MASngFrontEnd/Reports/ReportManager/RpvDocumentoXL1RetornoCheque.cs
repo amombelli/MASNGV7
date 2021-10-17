@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Tecser.Business.MainApp;
-using Tecser.Business.Transactional.FI;
-using Tecser.Business.Transactional.FI.MainDocumentData;
 using TecserEF.Entity;
 
 namespace MASngFE.Reports.ReportManager
@@ -68,8 +65,8 @@ namespace MASngFE.Reports.ReportManager
             int idcliente = dataHeader[0].IdCliente;
             var cliData = new TecserData(GlobalApp.CnnApp).T0006_MCLIENTES.SingleOrDefault(c => c.IDCLIENTE == idcliente);
             string cuit = cliData.CUIT;
-            string direccionFiscal = cliData.Direccion_facturacion + ", " + cliData.Direfactu_Localidad; 
-            
+            string direccionFiscal = cliData.Direccion_facturacion + ", " + cliData.Direfactu_Localidad;
+
             //Documento AX 
             tipoDocumento = "NO FISCAL";
             codigo = "Cod.000";

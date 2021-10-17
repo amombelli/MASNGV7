@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Globalization;
 using System.Windows.Forms;
 using Tecser.Business.Tools;
 
@@ -57,16 +56,16 @@ namespace TSControls
             {
                 base.Font = value;
                 myTextBox.Font = value;
-                myTextBox.Location = new Point(0,0);
+                myTextBox.Location = new Point(0, 0);
                 base.Height = myTextBox.Height;
-                myTextBox.Size = new Size(this.Width-1, this.Height);
+                myTextBox.Size = new Size(this.Width - 1, this.Height);
             }
         }
         private void CtlTextBox_Resize(object sender, EventArgs e)
         {
             myTextBox.Size = new Size(this.Width, this.Height);
         }
-        public decimal SetValue 
+        public decimal SetValue
         {
             set
             {
@@ -101,9 +100,9 @@ namespace TSControls
         private bool _locked;
         private Alineacion _textAlign = Alineacion.Centro;
         public decimal GetValueDecimal => _valor;
-        
+
         //Propiedades Accesibles
-        
+
         public Alineacion SetAlineacion
         {
             get => _textAlign;
@@ -201,7 +200,7 @@ namespace TSControls
         }
         private void CtlTextBox_Load(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(myTextBox.Text))
+            if (string.IsNullOrEmpty(myTextBox.Text))
             {
                 this.SetValue = 0;
             }

@@ -790,7 +790,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
                 decimal importeOP = FormatAndConversions.CCurrencyADecimal(txtImporteOrdenPagoFinal.Text);
                 decimal importeDocs = FormatAndConversions.CCurrencyADecimal(txtTotalFacturasOP.Text);
 
-                if (importeDocs!=0)
+                if (importeDocs != 0)
                     txtCoberturaOP.Text = (importeOP / importeDocs).ToString("P2");
                 AccionSegunEstadoOP();
             }

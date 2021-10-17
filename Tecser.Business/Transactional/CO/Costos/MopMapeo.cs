@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using Tecser.Business.Transactional.FI;
 using TecserEF.Entity;
@@ -19,23 +17,23 @@ namespace Tecser.Business.Transactional.CO.Costos
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var data = from rem in db.T0055_REMITO_H
-                    join op in db.T0140_MargenOperacion on rem.IDREMITO equals op.IdRemito into joinedT
-                    from op in joinedT.DefaultIfEmpty()
-                    where rem.StatusRemito == "IMPRESO" && rem.FECHA >= fechaDesde
-                    select new
-                    {
-                        idR = rem.IDREMITO,
-                        idr1 = op == null ? 999999 : op.IdRemito,
-                        idFactura = rem.Factura ?? 0,
-                        lx = rem.TIPO_REMITO,
-                        numeroRemito = rem.NUMREMITO,
-                        numeroDocumento = rem.NUMFACTURA,
-                        fechaRemito = rem.FECHA,
-                        moneda = "USD",
-                        esLx = (rem.RLINK != null && rem.TIPO_REMITO == "L2") ? true : false,
-                        IdCliente = rem.T0007_CLI_ENTREGA.T0006_MCLIENTES.IDCLIENTE,
-                        RazonSocial = rem.T0007_CLI_ENTREGA.T0006_MCLIENTES.cli_rsocial
-                    };
+                           join op in db.T0140_MargenOperacion on rem.IDREMITO equals op.IdRemito into joinedT
+                           from op in joinedT.DefaultIfEmpty()
+                           where rem.StatusRemito == "IMPRESO" && rem.FECHA >= fechaDesde
+                           select new
+                           {
+                               idR = rem.IDREMITO,
+                               idr1 = op == null ? 999999 : op.IdRemito,
+                               idFactura = rem.Factura ?? 0,
+                               lx = rem.TIPO_REMITO,
+                               numeroRemito = rem.NUMREMITO,
+                               numeroDocumento = rem.NUMFACTURA,
+                               fechaRemito = rem.FECHA,
+                               moneda = "USD",
+                               esLx = (rem.RLINK != null && rem.TIPO_REMITO == "L2") ? true : false,
+                               IdCliente = rem.T0007_CLI_ENTREGA.T0006_MCLIENTES.IDCLIENTE,
+                               RazonSocial = rem.T0007_CLI_ENTREGA.T0006_MCLIENTES.cli_rsocial
+                           };
                 var p3 = data.ToList();
                 foreach (var ix in p3.Where(c => (c.idr1 == 999999) && c.esLx == false))
                 {
@@ -59,7 +57,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                             tipoDocumento = "",
                             RazonSocial = ix.RazonSocial,
                             idCliente = ix.IdCliente
-                            
+
                         };
                         if (ix.idFactura >= 1)
                         {
@@ -96,25 +94,25 @@ namespace Tecser.Business.Transactional.CO.Costos
 
                 //secccion NC/ND
                 var dataNc = from nc in db.T0300_NCD_H
-                    join t400 in db.T0400_FACTURA_H
-                        on nc.idFacturaT0400 equals t400.IDFACTURA into join1
-                    join op in db.T0140_MargenOperacion on nc.IDH equals op.IdRemito into join2
-                    from op in join2.DefaultIfEmpty()
-                    where nc.FECHA > fechaDesde
-                    select new
-                    {
-                        idR = nc.IDH,
-                        idop = op == null ? 999999 : op.IdRemito,
-                        idFactura = nc.idFacturaT0400 == null ? -1 : nc.idFacturaT0400.Value,
-                        lx = nc.LX,
-                        numeroNcD = nc.NDOC,
-                        tipoDoc = nc.TDOC,
-                        importe = nc.ImporteUSD,
-                        fechaDoc = nc.FECHA,
-                        motivo = nc.Motivo,
-                        idCliente = nc.IdCliente,
-                        RazonSocial = nc.RazonSocial
-                    };
+                             join t400 in db.T0400_FACTURA_H
+                                 on nc.idFacturaT0400 equals t400.IDFACTURA into join1
+                             join op in db.T0140_MargenOperacion on nc.IDH equals op.IdRemito into join2
+                             from op in join2.DefaultIfEmpty()
+                             where nc.FECHA > fechaDesde
+                             select new
+                             {
+                                 idR = nc.IDH,
+                                 idop = op == null ? 999999 : op.IdRemito,
+                                 idFactura = nc.idFacturaT0400 == null ? -1 : nc.idFacturaT0400.Value,
+                                 lx = nc.LX,
+                                 numeroNcD = nc.NDOC,
+                                 tipoDoc = nc.TDOC,
+                                 importe = nc.ImporteUSD,
+                                 fechaDoc = nc.FECHA,
+                                 motivo = nc.Motivo,
+                                 idCliente = nc.IdCliente,
+                                 RazonSocial = nc.RazonSocial
+                             };
                 var p4 = dataNc.ToList();
                 foreach (var ix in p4.Where(c => (c.idop == 999999) && c.idFactura > 0))
                 {
@@ -161,7 +159,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                         switch (cmotivo)
                         {
                             case CustomerNc.MotivoNotaCredito.AnulaDocumento:
-                                s.AddRange(MapeoNcdValido(ix.idFactura,ix.idR));
+                                s.AddRange(MapeoNcdValido(ix.idFactura, ix.idR));
                                 break;
                             case CustomerNc.MotivoNotaCredito.DiferenciaPrecio:
                                 s.AddRange(MapeoNcdValido(ix.idFactura, ix.idR));
@@ -191,7 +189,7 @@ namespace Tecser.Business.Transactional.CO.Costos
             }
             return s;
         }
-        private List<StxDocumentosNotInOperaciones> MapeoNcdValido(int idFactura,int idncd )
+        private List<StxDocumentosNotInOperaciones> MapeoNcdValido(int idFactura, int idncd)
         {
             var rtnList = new List<StxDocumentosNotInOperaciones>();
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -208,7 +206,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                         numeroRemito = item.T0400_FACTURA_H.NumeroDoc,
                         moneda = "USD",
                         idFactura = idFactura,
-                        idRemito =idncd,
+                        idRemito = idncd,
                         idItem = item.IDITEM,
                         precioU = item.PRECIOU_FACT_USD,
                         precioT = item.PRECIOT_FACT_USD,
@@ -230,14 +228,14 @@ namespace Tecser.Business.Transactional.CO.Costos
             {
                 var fechaX = new DateTime(2021, 03, 01);
                 var data = from rem in db.T0055_REMITO_H
-                    join op in db.T0140_MargenOperacion on rem.IDREMITO equals op.IdRemito into joinedT
-                    from op in joinedT.DefaultIfEmpty()
-                    where rem.StatusRemito == "IMPRESO" && rem.FECHA >= fechaX
-                    select new
-                    {
-                        idR = rem.IDREMITO,
-                        idr1 = op == null ? 999999 : op.IdRemito
-                    };
+                           join op in db.T0140_MargenOperacion on rem.IDREMITO equals op.IdRemito into joinedT
+                           from op in joinedT.DefaultIfEmpty()
+                           where rem.StatusRemito == "IMPRESO" && rem.FECHA >= fechaX
+                           select new
+                           {
+                               idR = rem.IDREMITO,
+                               idr1 = op == null ? 999999 : op.IdRemito
+                           };
                 var p3 = data.ToList();
                 foreach (var c in p3.Where(c => c.idr1 == 999999))
                 {

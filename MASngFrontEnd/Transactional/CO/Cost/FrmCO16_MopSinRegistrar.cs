@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.Transactional.CO.Costos;
 
@@ -57,7 +50,7 @@ namespace MASngFE.Transactional.CO.Cost
                     //            //{
                     //            //    var a = 1;
                     //            //}
-                                //new MargenDocument().UpdateRemito_FacturaData(fx.IDFACTURA);
+                    //new MargenDocument().UpdateRemito_FacturaData(fx.IDFACTURA);
                     //            new MargenDocument().UpdateStatusCobranza(fx.IDFACTURA);
                     //            Debug.Print($"Linkeo Factura {fx.IDFACTURA}");
                     //        }

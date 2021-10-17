@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.Transactional.CO.AsientoContable;
 using Tecser.Business.Transactional.FI;
 
 namespace Tecser.Business.Transactional.CO.ContaFromDocuments
 {
-    public class ContaClienteAjusteL2:ContaClienteT400L1
+    public class ContaClienteAjusteL2 : ContaClienteT400L1
     {
-        public ContaClienteAjusteL2(int idFactura, int idCliente,string tDocXx="AJ"):base(idCliente,idFactura)
+        public ContaClienteAjusteL2(int idFactura, int idCliente, string tDocXx = "AJ") : base(idCliente, idFactura)
         {
             if (T4H.TotalFacturaB < 0)
             {

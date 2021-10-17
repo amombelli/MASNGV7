@@ -25,10 +25,10 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
         }
 
         protected ReturnContaAjuste VarRtn = new ReturnContaAjuste();
-        private int GetSignoCtaCte(ManageDocumentType.TipoDocumento tdoc,decimal importe)
+        private int GetSignoCtaCte(ManageDocumentType.TipoDocumento tdoc, decimal importe)
         {
             if (importe < 0)
-                return 1; 
+                return 1;
 
             switch (tdoc)
             {
@@ -107,9 +107,9 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
                     return -1;
 
                 var xTdoc = ManageDocumentType.GetTipoDocumentoFromTdocString(header.TDOC, header.LX);
-                decimal importeArs=0;
-                decimal importeOrigen=0;
-                
+                decimal importeArs = 0;
+                decimal importeOrigen = 0;
+
                 if (header.MON == @"ARS")
                 {
                     importeOrigen = header.ImporteARS;
@@ -118,7 +118,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
                 else
                 {
                     importeOrigen = header.ImporteUSD;
-                    importeArs = Math.Round(importeOrigen * header.TC,2);
+                    importeArs = Math.Round(importeOrigen * header.TC, 2);
                 }
 
                 //----------------------------------------------------------------------------------
@@ -128,15 +128,15 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
                 //T201
                 int idCtaCte = 0;
                 if (header.idFacturaT0400 == null)
-                { 
+                {
                     //Documento no tiene registro en T0400
                     idCtaCte = cc.AddCtaCteDetalleRecord(header.TDOC, header.LX, header.FECHA, header.NDOC,
-                    idNcd.ToString(), header.MON, importeOrigen*signo, header.TC, importeOrigen*signo, importeArs, idNcd);
+                    idNcd.ToString(), header.MON, importeOrigen * signo, header.TC, importeOrigen * signo, importeArs, idNcd);
                 }
                 else
                 {
                     idCtaCte = cc.AddCtaCteDetalleRecord(header.TDOC, header.LX, header.FECHA, header.NDOC,
-                        header.idFacturaX.ToString(), header.MON, importeOrigen * signo, header.TC, importeOrigen * signo, importeArs, idNcd,header.idFacturaT0400.Value);
+                        header.idFacturaX.ToString(), header.MON, importeOrigen * signo, header.TC, importeOrigen * signo, importeArs, idNcd, header.idFacturaT0400.Value);
                 }
                 //T202
                 cc.UpdateSaldoCtaCteResumen(header.LX, importeOrigen, header.MON, header.TC);

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation.Results;
 using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
 using TecserEF.Entity;
@@ -27,11 +24,11 @@ namespace Tecser.Business.Transactional.FI.TaxModule
                 return db.T0017_TaxModuleAssign.SingleOrDefault(c => c.CP.Contains("P") && c.IdNumero == idVendor && c.IdTax == taxId);
             }
         }
-        public static void AssignTaxToVendor(int idVendor, string taxId, bool exento, DateTime fechaDesde, DateTime fechaHasta, string numeroCertificado )
+        public static void AssignTaxToVendor(int idVendor, string taxId, bool exento, DateTime fechaDesde, DateTime fechaHasta, string numeroCertificado)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                var x= db.T0017_TaxModuleAssign.SingleOrDefault(c => c.CP.Contains("P") && c.IdNumero == idVendor && c.IdTax == taxId);
+                var x = db.T0017_TaxModuleAssign.SingleOrDefault(c => c.CP.Contains("P") && c.IdNumero == idVendor && c.IdTax == taxId);
                 var prov = new VendorManager().GetSpecificVendor(idVendor);
                 var s = new T0017_TaxModuleAssign()
                 {
@@ -59,7 +56,7 @@ namespace Tecser.Business.Transactional.FI.TaxModule
                 db.SaveChanges();
             }
         }
-        
+
 
     }
 }

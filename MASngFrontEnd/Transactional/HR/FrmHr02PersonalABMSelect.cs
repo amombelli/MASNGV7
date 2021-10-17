@@ -76,7 +76,7 @@ namespace MASngFE.Transactional.HR
             l.Clear();
             if (ckConLegajoRaffone.Checked)
             {
-                l.AddRange(lista1.Where(c=>!string.IsNullOrEmpty(c.LegajoRaf)));
+                l.AddRange(lista1.Where(c => !string.IsNullOrEmpty(c.LegajoRaf)));
             }
 
             if (ckSinLegajoRaffone.Checked)

@@ -36,7 +36,7 @@ namespace MASngFE.Transactional.HR
             LoadGLAccountsPrefix();
             ConfiguraSegunModo();
         }
-        
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -47,7 +47,7 @@ namespace MASngFE.Transactional.HR
             if (!ValidaGrabar())
                 return;
             new HrMasterManagement().SaveBasicData(MapBasicData());
-            if (_modo==1)
+            if (_modo == 1)
                 _shortname = txtShortname.Text.ToUpper();
             HrMasterManagement.UpdateCreateDatosPersonales(_shortname, cmbBanco.Text, txtNumeroCuenta.Text, txtDireccion.Text, txtBarrio.Text, txtLocalidad_.Text, txtCodigoPostal.Text, txtemail.Text, ctlFechaNacimiento.Value, txtTelefono1.Text, txtTelefono2.Text);
             HrDisponibilidadYPermisos.SetRegistroPermiso(_shortname, ckPventa.Checked, ckPDespacho.Checked,
@@ -130,35 +130,35 @@ namespace MASngFE.Transactional.HR
         }
 
         public void RecargaValoresPosicion()
+        {
+            if (cmbPosicion.SelectedIndex == -1)
             {
-                if (cmbPosicion.SelectedIndex == -1)
+                txtIdPosicion.Text = null;
+                txtValorHora.Text = 0.ToString("C2");
+                txtValorMensual.Text = 0.ToString("C2");
+                txtPresentismo.Text = 0.ToString("C2");
+                txtOtrasSumasSindicato.Text = 0.ToString("C2");
+            }
+            else
+            {
+                txtIdPosicion.Text = cmbPosicion.SelectedValue.ToString();
+                var pos = HrPosicionesManagement.GetPosicion(Convert.ToInt32(cmbPosicion.SelectedValue));
+                if (pos != null)
                 {
-                    txtIdPosicion.Text = null;
+                    txtValorHora.Text = pos.ValorHora.ToString("C2");
+                    txtValorMensual.Text = pos.ValorMensual.ToString("C2");
+                    txtPresentismo.Text = pos.AdicionalPresentismo.ToString("C2");
+                    txtOtrasSumasSindicato.Text = pos.AdicionalBono1.ToString("C2");
+                    ckConvenio.Checked = pos.EnConvenio;
+                }
+                else
+                {
                     txtValorHora.Text = 0.ToString("C2");
                     txtValorMensual.Text = 0.ToString("C2");
                     txtPresentismo.Text = 0.ToString("C2");
                     txtOtrasSumasSindicato.Text = 0.ToString("C2");
                 }
-                else
-                {
-                    txtIdPosicion.Text = cmbPosicion.SelectedValue.ToString();
-                    var pos = HrPosicionesManagement.GetPosicion(Convert.ToInt32(cmbPosicion.SelectedValue));
-                    if (pos != null)
-                    {
-                        txtValorHora.Text = pos.ValorHora.ToString("C2");
-                        txtValorMensual.Text = pos.ValorMensual.ToString("C2");
-                        txtPresentismo.Text = pos.AdicionalPresentismo.ToString("C2");
-                        txtOtrasSumasSindicato.Text = pos.AdicionalBono1.ToString("C2");
-                        ckConvenio.Checked = pos.EnConvenio;
-                    }
-                    else
-                    {
-                        txtValorHora.Text = 0.ToString("C2");
-                        txtValorMensual.Text = 0.ToString("C2");
-                        txtPresentismo.Text = 0.ToString("C2");
-                        txtOtrasSumasSindicato.Text = 0.ToString("C2");
-                    }
-                }
+            }
         }
         private void cmbPosicion_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -407,17 +407,17 @@ namespace MASngFE.Transactional.HR
         {
             if (t.Text == @"Cuenta Inexistente")
             {
-                t.BackColor= Color.Orange;
+                t.BackColor = Color.Orange;
                 t.ForeColor = Color.Red;
             }
             else
             {
-                t.BackColor=Color.LightBlue;
-                t.ForeColor=Color.DarkBlue;
+                t.BackColor = Color.LightBlue;
+                t.ForeColor = Color.DarkBlue;
             }
         }
 
-        
+
         /// <summary>
         /// Creacion de cuentas GL de Empleados para SYJ segun prefijo
         /// </summary> 
@@ -719,7 +719,7 @@ namespace MASngFE.Transactional.HR
                 return;
             }
 
-            using (var f = new FrmHr05PosicionMaintain(1,Convert.ToInt32(txtIdPosicion.Text)))
+            using (var f = new FrmHr05PosicionMaintain(1, Convert.ToInt32(txtIdPosicion.Text)))
             {
                 f.ShowDialog();
                 if (f.DialogResult == DialogResult.Yes)
@@ -728,7 +728,7 @@ namespace MASngFE.Transactional.HR
                 }
                 else
                 {
-                    
+
                 }
                 RecargaValoresPosicion();
             }

@@ -60,7 +60,7 @@ namespace WebServicesAFIP
         public string CompAsociadoNumero { get; set; }
         public string CompAsociadoFechaPeriodoDesde { get; set; }
         public string CompAsociadoFechaPeriodoHasta { get; set; }
-       
+
     }
 
     /// <summary>

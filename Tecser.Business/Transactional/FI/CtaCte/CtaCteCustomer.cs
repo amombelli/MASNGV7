@@ -20,7 +20,7 @@ namespace Tecser.Business.Transactional.FI.CtaCte
         {
             //Constructor 1
         }
-        
+
         public List<T0201_CTACTE> GetListaMovimientosCtaCte(bool includeL1, bool includeL2, bool soloSaldoPendiente)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -129,7 +129,7 @@ namespace Tecser.Business.Transactional.FI.CtaCte
                 return x;
             }
         }
-        public override bool UpdateSaldoCtaCteResumen(string tipoLx, decimal importeConSigno, string moneda = "ARS", decimal? exchangeRate = null, DateTime? fechaUltimaFacturaEmitida=null)
+        public override bool UpdateSaldoCtaCteResumen(string tipoLx, decimal importeConSigno, string moneda = "ARS", decimal? exchangeRate = null, DateTime? fechaUltimaFacturaEmitida = null)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -167,7 +167,7 @@ namespace Tecser.Business.Transactional.FI.CtaCte
                 if (data.DEUDA_ARS == null) data.DEUDA_ARS = 0;
                 if (data.DEUDA_USD == null) data.DEUDA_USD = 0;
                 if (data.DEUDA_TOT_ARS == null) data.DEUDA_TOT_ARS = 0;
-                
+
                 if (moneda == @"ARS")
                 {
                     data.DEUDA_ARS += importeConSigno;
@@ -252,8 +252,8 @@ namespace Tecser.Business.Transactional.FI.CtaCte
                 return false;
             }
         }
-        
-        public int AddSinImputarRecord(DateTime fecha, int idReferencia, string moneda, decimal importe, string tipoLx, string tipoDoc, string numeroRecibo, int idCtaCte, int idNcd=-1)
+
+        public int AddSinImputarRecord(DateTime fecha, int idReferencia, string moneda, decimal importe, string tipoLx, string tipoDoc, string numeroRecibo, int idCtaCte, int idNcd = -1)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -283,7 +283,7 @@ namespace Tecser.Business.Transactional.FI.CtaCte
                 return db.SaveChanges() > 0 ? t208.ID : 0;
             }
         }
-        
+
 
 
 
@@ -322,7 +322,7 @@ namespace Tecser.Business.Transactional.FI.CtaCte
                 return 0;
             }
         }
-        
+
         private int AddRecordDocumentT207CompleteConstructor(string tipoDocumento, string tipoLx, int idCtaCte,
             int idDocumento, string numeroDocumento, int idCliente,
             int numeroSplit, DateTime fechaDocumento, string moneda, decimal montoDocumento, decimal montoRestante,
@@ -352,8 +352,8 @@ namespace Tecser.Business.Transactional.FI.CtaCte
                     NRECIBO = numeroRecibo,
                     //PFECHA=
                     //XCOMENTARIO,
-                    
-                    
+
+
                 };
                 db.T0207_SPLITFACTURAS.Add(h);
                 if (db.SaveChanges() > 0)
@@ -402,7 +402,7 @@ namespace Tecser.Business.Transactional.FI.CtaCte
                 }
             }
         }
-     
+
         //Agrega un registro nuevo de CtaCteT0202
         public override void AddNewCtaCteSummaryRecord(string tipoLx)
         {

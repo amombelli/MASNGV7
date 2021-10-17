@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -12,7 +9,7 @@ namespace Tecser.Business.Transactional.FI
     /// <summary>
     /// Nueva Clase de Gestion de Notas de Debito 2021.07.10
     /// </summary>
-    public class CustomerNd:CustomerDoc
+    public class CustomerNd : CustomerDoc
     {
         public CustomerNd(MotivoNotaDebito xmotivo)
         {
@@ -28,7 +25,7 @@ namespace Tecser.Business.Transactional.FI
             Id400 = idFactura400;
             //_t400 = new GestionT400(idFactura400,ManageDocumentType.TipoDocumento.NotaDebitoVentaA);
         }
-        
+
         public enum MotivoNotaDebito
         {
             AnulaDocumento,
@@ -139,7 +136,7 @@ namespace Tecser.Business.Transactional.FI
         {
             T300.UpdateIdAsociadoAltearnativo(idCheque);
         }
-        
-  
+
+
     }
 }

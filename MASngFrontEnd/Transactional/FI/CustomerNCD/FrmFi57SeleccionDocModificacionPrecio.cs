@@ -37,11 +37,11 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         public DateTime? FechaAplicaDesde { get; private set; } //En caso de Periodo: Fecha Desde
         public DateTime? FechaAplicaHasta { get; private set; } //En caso de Periodo: Fecha Hasta
 
-        
-        
+
+
         //----------------------------------------------------------------------------------------
-       //ver si eliminar algo ?
-        
+        //ver si eliminar algo ?
+
 
         public decimal KgNotaCredito;
         public int IdFactura;
@@ -53,7 +53,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         //public List<T0401_FACTURA_I> ItemList = new List<T0401_FACTURA_I>();
         public int XIdFactura { get; private set; }
         public int XIdItem { get; private set; }
-        
+
 
         //----------------------------------------------------------------------------------------
         private void FrmSeleccionMaterialNcd_Load(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             txtId6.Text = _nc.H4.Cliente.ToString();
             txtLx.Text = _nc.H4.TIPOFACT;
             this.dgvFactuHeader.CellEnter -= new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactuHeader_CellEnter);
-            dgvFactuHeader.DataSource = CustomerDoc.GetListaDocumentosSeleccionar(_idCliente, _tipoLx,true,false,false,false,false,false);
+            dgvFactuHeader.DataSource = CustomerDoc.GetListaDocumentosSeleccionar(_idCliente, _tipoLx, true, false, false, false, false, false);
             ConfiguraSegunMotivo();
             dgvFactuHeader.ClearSelection();
             this.dgvFactuHeader.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactuHeader_CellEnter);
@@ -231,7 +231,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         }
         private void txt2MonCot_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            var t = (TextBox) sender;
+            var t = (TextBox)sender;
             if (t.Text == @"ARS" || t.Text == @"USD")
             {
                 e.Cancel = false;
@@ -261,10 +261,10 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             {
                 cCantidadNc.SetValue = c2Cantidad.GetValueDecimal;
             }
-            
+
             decimal vUnitArs;
             decimal vUnitUsd;
-            if (c2Tc.GetValueDecimal <= (decimal) 0.1)
+            if (c2Tc.GetValueDecimal <= (decimal)0.1)
             {
                 c2Tc.SetValue = 1;
             }
@@ -276,7 +276,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
             else
             {
-                vUnitArs = c2PrecioUnitCot.GetValueDecimal* c2Tc.GetValueDecimal;
+                vUnitArs = c2PrecioUnitCot.GetValueDecimal * c2Tc.GetValueDecimal;
                 vUnitUsd = c2PrecioUnitCot.GetValueDecimal;
             }
 
@@ -292,19 +292,19 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
 
             c3PrecioUNC.SetValue = Math.Round((c2PrecioUnitFactu.GetValueDecimal -
-                                              FormatAndConversions.CCurrencyADecimal(txt1PrecioUFact.Text)),2);
+                                              FormatAndConversions.CCurrencyADecimal(txt1PrecioUFact.Text)), 2);
             c3PrecioTotalNC.SetValue = Math.Round(c2PrecioTotFactu.GetValueDecimal - FormatAndConversions.CCurrencyADecimal(txt1PrecioTotFactu.Text), 2);
-            
+
             c3VarCantidad.SetValue = c2Cantidad.GetValueDecimal - Convert.ToDecimal(txt1Cantidad.Text);
             switch (_motivo)
             {
-               case CustomerNc.MotivoNotaCredito.DiferenciaPrecio:
-                   cCantidadNc.SetValue = c2Cantidad.GetValueDecimal;
-                   if (string.IsNullOrEmpty(txtDescripcionItemNC.Text))
-                   {
-                       txtDescripcionItemNC.Text = $@"Dif. Precio  {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
-                   }
-                   break;
+                case CustomerNc.MotivoNotaCredito.DiferenciaPrecio:
+                    cCantidadNc.SetValue = c2Cantidad.GetValueDecimal;
+                    if (string.IsNullOrEmpty(txtDescripcionItemNC.Text))
+                    {
+                        txtDescripcionItemNC.Text = $@"Dif. Precio  {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
+                    }
+                    break;
                 case CustomerNc.MotivoNotaCredito.DiferenciaCambio:
                     txtDescripcionItemNC.Text = $@"Dif. Precio por Dif TC {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
                     break;
@@ -327,13 +327,13 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             this.Close();
         }
 
-        
+
         private void tdAddButton_BotonClick(object sender, EventArgs e)
         {
             dgvFactuHeader.ReadOnly = true;
-            
+
             //Alta del Item
-            _nc.AddItems(txtMaterial.Text,txtDescripcionItemNC.Text,c3PrecioUNC.GetValueDecimal,itemSelected.GLV,itemSelected.IVA21,cCantidadNc.GetValueDecimal);
+            _nc.AddItems(txtMaterial.Text, txtDescripcionItemNC.Text, c3PrecioUNC.GetValueDecimal, itemSelected.GLV, itemSelected.IVA21, cCantidadNc.GetValueDecimal);
             _nc.SetTotalesInHeaderFromItems();
             _nc.SetDocumentoAsociado(_idFacturaSeleccionada);
             dgvSeleccionItem.ClearSelection();

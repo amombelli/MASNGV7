@@ -66,7 +66,7 @@ namespace Tecser.Business.Transactional.SD
             }
         }
         public bool CancelacionCompletaRemito()
-            {
+        {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var h = db.T0055_REMITO_H.SingleOrDefault(c => c.IDREMITO == _idRemito);

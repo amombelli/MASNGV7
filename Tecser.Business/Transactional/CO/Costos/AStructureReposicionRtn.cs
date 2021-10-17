@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MasterData;
 
 namespace Tecser.Business.Transactional.CO.Costos
 {
     public class AStructureReposicionRtn
     {
-        public AStructureReposicionRtn(string material=null)
+        public AStructureReposicionRtn(string material = null)
         {
             PrecioArs = 9999999;
             PrecioUsd = 9999999;

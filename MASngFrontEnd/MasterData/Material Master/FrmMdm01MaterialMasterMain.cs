@@ -107,7 +107,7 @@ namespace MASngFE.MasterData.Material_Master
             txtDescripcionTipoMaterial.MaxLength = 50;
             //
         }
-         private void AccionSegunModo()
+        private void AccionSegunModo()
         {
             switch (_modo)
             {
@@ -142,7 +142,7 @@ namespace MASngFE.MasterData.Material_Master
                     break;
             }
         }
-       private void CargaPrimaryData()
+        private void CargaPrimaryData()
         {
             _primarioData = new MaterialMasterManager().GetPrimarioInfo(_primario);
             if (_primarioData == null)

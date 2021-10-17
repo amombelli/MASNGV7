@@ -37,11 +37,11 @@ namespace Tecser.Business.MasterData
         /// <summary>
         /// Funcion usada para retornar el cliente desde vendor master al crear un nuevo
         /// </summary>
-        public T0006_MCLIENTES ReturnCustomerByCuit(string numeroCUIT,string ttaxId="80")
+        public T0006_MCLIENTES ReturnCustomerByCuit(string numeroCUIT, string ttaxId = "80")
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                var cli = db.T0006_MCLIENTES.FirstOrDefault(c => c.CUIT == numeroCUIT && c.TTAX == ttaxId );
+                var cli = db.T0006_MCLIENTES.FirstOrDefault(c => c.CUIT == numeroCUIT && c.TTAX == ttaxId);
                 return cli;
             }
         }

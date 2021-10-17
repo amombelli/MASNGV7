@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using Tecser.Business.Transactional.CO;
 using Tecser.Business.Transactional.FI.Customers;
@@ -23,7 +20,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
         private readonly int _numeroSplit;
         private readonly decimal _montoImputar;
         public bool ResultadoImputacion { get; private set; }
-        public decimal ImportePendienteImputar { get; private set; } 
+        public decimal ImportePendienteImputar { get; private set; }
         public bool OKImpuFinal { get; private set; } //Todas las validaciones OK
         public bool OKImpuIIBB { get; private set; }
         public bool OK208 { get; private set; }
@@ -34,7 +31,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
         private T0208_COB_NO_APLICADA data208;
         public bool OKImporteSplits { get; private set; }
         public bool OKSumaImputadoNoImputado { get; private set; }
-       
+
         public bool OK207_400 { get; private set; }     //Datos de 207 estan OK con data 400
         public bool ErrorDataIIBBnoRegistrada { get; private set; } //Los datos en Tabla IIBB no estan y deberian
         public decimal ImportePendienteIibb { get; private set; }
@@ -49,7 +46,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
 
 
         //Al instanciar la clase hace todas las validacions
-        public CobranzaImputacionManagerNew(int id208,int idctacteFactu207,int numeroSplit, decimal montoImputar)
+        public CobranzaImputacionManagerNew(int id208, int idctacteFactu207, int numeroSplit, decimal montoImputar)
         {
             _id208 = id208;
             _idctacteFactu207 = idctacteFactu207;
@@ -68,7 +65,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
             //cargamos factura
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                data207 = db.T0207_SPLITFACTURAS.SingleOrDefault(c => c.IDCTACTE ==_idctacteFactu207 && c.FACTSPLIT == _numeroSplit);
+                data207 = db.T0207_SPLITFACTURAS.SingleOrDefault(c => c.IDCTACTE == _idctacteFactu207 && c.FACTSPLIT == _numeroSplit);
                 data208 = db.T0208_COB_NO_APLICADA.SingleOrDefault(c => c.ID == id208);
                 data201Factura = db.T0201_CTACTE.SingleOrDefault(c => c.IDCTACTE == data207.IDCTACTE);
                 data201Credito = db.T0201_CTACTE.SingleOrDefault(c => c.IDCTACTE == data208.IDCTACTE.Value);
@@ -121,7 +118,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                     return;
                 }
                 OKSumaImputadoNoImputado = true;
-                
+
                 if (data201Factura.IMPORTE_ARS != data207.ImporteDocumento)
                 {
                     OK207 = false;
@@ -166,7 +163,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                             OKImpuIIBB = false;
                             ErrorDataIIBBnoRegistrada = true;
                             return;
-                            
+
                         }
                         else
                         {
@@ -208,15 +205,15 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 {
                     return;
                 }
-                
+
                 if (ImporteAImputar > importeSaldoPendienteFactura)
                 {
                     //Ajusta el Importe a Imputar al Maximo posible
                     ImporteAImputar = importeSaldoPendienteFactura;
                 }
-                
+
                 data208.MONTO = data208.MONTO - ImporteAImputar; //recalcula el credito pendiente
-                
+
                 //1.Ajustar Importe a Imputar
                 decimal creditoPendiente = data208.MONTO.Value;
                 if (ImporteAImputar > importeSaldoPendienteFactura)
@@ -292,14 +289,14 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                         data207.TipoDocCancel = "COB";
                         data207.DiasPPCob = cobData.DIAS_PP;
                         data207.DiasImpu = diasImpu < 0 ? 0 : diasImpu;
-                        data207.USDImpu = Math.Round(ImporteAImputar /cobData.TC, 2);
+                        data207.USDImpu = Math.Round(ImporteAImputar / cobData.TC, 2);
                         break;
                     case "NCD":
                     case "NC":
                         var ncData = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == data208.IDNCD.Value);
                         if (ncData == null)
                         {
-                            ncData= db.T0300_NCD_H.SingleOrDefault(c => c.IDH == data208.IDRECIBO);
+                            ncData = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == data208.IDRECIBO);
                             if (ncData == null)
                             {
                                 data207.NumeroDoc = data208.NRECIBO;
@@ -346,10 +343,10 @@ namespace Tecser.Business.Transactional.FI.Cobranza
 
                 DiasCobranza = data207.DiasPPCob ?? 0;
                 DiasImputacion = data207.DiasImpu ?? 0;
-                ImporteUSD = data207.USDImpu ??0;
+                ImporteUSD = data207.USDImpu ?? 0;
                 ResultadoAunSinImputar = saldoSplit;
                 data201Factura.SALDOFACTURA = saldoSplit;
-                data201Credito.SALDOFACTURA = creditoPendiente*-1;
+                data201Credito.SALDOFACTURA = creditoPendiente * -1;
                 var x = db.SaveChanges();
 
 

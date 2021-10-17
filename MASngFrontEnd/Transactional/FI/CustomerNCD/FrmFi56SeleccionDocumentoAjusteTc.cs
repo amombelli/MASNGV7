@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using Tecser.Business.DataFix;
 using Tecser.Business.MasterData;
 using Tecser.Business.Tools;
 using Tecser.Business.Transactional.FI;

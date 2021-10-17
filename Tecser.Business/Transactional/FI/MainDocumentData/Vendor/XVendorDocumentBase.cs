@@ -469,7 +469,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Vendor
                 //Mantiene Cheques Rechazados
                 foreach (var chr in _listaChR)
                 {
-                    new ChequeRechazadoManager().AddChequeRechazado(chr.IDCHEQUE, chr.FECHA_RE.Value, chr.MOTIVO_RE,gastos:chr.GastosOrigen,ivaGastos:chr.IVAGastosOrigen,origenRechazo:chr.OrigenRechazo);
+                    new ChequeRechazadoManager().AddChequeRechazado(chr.IDCHEQUE, chr.FECHA_RE.Value, chr.MOTIVO_RE, gastos: chr.GastosOrigen, ivaGastos: chr.IVAGastosOrigen, origenRechazo: chr.OrigenRechazo);
                     new ChequeRechazadoManager().SetChequeRechazadoTablaCheque(chr.IDCHEQUE, chr.MOTIVO_RE);
                 }
 

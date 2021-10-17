@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using MASngFE._UserControls;
 
 namespace MASngFE.MasterData.Customer_Master
 {
@@ -20,7 +19,7 @@ namespace MASngFE.MasterData.Customer_Master
         {
             uCustomerSearch1.InicializaUc(true, true, Color.LightGreen);
             dgvClientes.DataSource = uCustomerSearch1.T0006DgvBs;
-           
+
 
             //Configura nombre del boton
             switch (_modo)
@@ -54,16 +53,16 @@ namespace MASngFE.MasterData.Customer_Master
             ClienteSeleccionado = Convert.ToInt32(miDgv[iDCLIENTEDataGridViewTextBoxColumn.Name, e.RowIndex].Value);
             var idCliente = ClienteSeleccionado;
             var cellValue = miDgv[e.ColumnIndex, e.RowIndex].Value.ToString();
-            if (cellValue!="SEL")
+            if (cellValue != "SEL")
                 cellValue = "GO";
             switch (cellValue)
             {
                 case "SEL":
-                {
-                    this.Close();
-                    this.DialogResult = DialogResult.OK;
-                    return;
-                }
+                    {
+                        this.Close();
+                        this.DialogResult = DialogResult.OK;
+                        return;
+                    }
                 case "GO":
                     using (var f0 = new FrmMdc02BillTo(_modo, idCliente, "MD"))
                     {

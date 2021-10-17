@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,9 +10,7 @@ using Tecser.Business.Transactional.CO.ContaFromDocuments;
 using Tecser.Business.Transactional.CO.Costos;
 using Tecser.Business.Transactional.FI;
 using Tecser.Business.Transactional.FI.Customers;
-using Tecser.Business.Transactional.FI.MainDocumentData;
 using Tecser.Business.VBTools;
-using TecserEF.Entity;
 using TSControls;
 using WebServicesAFIP;
 
@@ -34,7 +31,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         private DocumentFIStatusManager.StatusHeader _statusDocumento2 = DocumentFIStatusManager.StatusHeader.Pendiente;
         private int _idRetorno = -1; //ID de Retorno de la seleccion de documento
 
-        
+
         public FrmFI61GenerarNotaDebito(int idCliente)
         {
             _idCliente = idCliente;
@@ -44,7 +41,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             InitializeComponent();
         }
-        public FrmFI61GenerarNotaDebito(int idFactura,int modo)
+        public FrmFI61GenerarNotaDebito(int idFactura, int modo)
         {
             //todo Constructor para carga de documentos existente
         }
@@ -292,7 +289,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     //Update en Tabla T0156-Rechazo
                     new ChequeRechazadoManager().UpdateAfterContabilizacionNd(_idRetorno, Convert.ToInt32(txtNas1.Text),
                         _nd.GetId400(), txtNumeroDocumento.Text);
-                    
+
                 }
 
                 //Contabilizacion de segundo documento [Siempre Gastos]
@@ -511,7 +508,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
                     txtMotivoGeneralDocumento.BackColor = string.IsNullOrEmpty(txtMotivoGeneralDocumento.Text) ? Color.LightPink : Color.LightGreen;
                     txtCondicionVenta.Text = @"0E - Pago Contraentrega Documento";
-                    
+
                     dgv400.DataSource = _nd.GetItems();
                     MapTotalesFactura400(_nd.GetTotalesFromHeader());
                     MapHeaderDocumento1();
@@ -551,7 +548,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             _nd = new CustomerNd(_motivoDebito);
             _nd.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", false, autorizado);
             using (var f0 = new FrmFI63SeleccionDevolucionChequeACliente(_nd, 1, _lx.ToString())) //cambiar ch
-            { 
+            {
                 DialogResult dr = f0.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
@@ -611,7 +608,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 DialogResult dr = f0.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
-                    _nd.SetPeriodoAsociado(dtpFechaDocumento.Value,dtpFechaDocumento.Value);
+                    _nd.SetPeriodoAsociado(dtpFechaDocumento.Value, dtpFechaDocumento.Value);
                     txtMotivoGeneralDocumento.BackColor = Color.LightGreen;
                     txtCondicionVenta.Text = @"0E - Pago Contraentrega Documento";
                     dgv400.DataSource = _nd.GetItems();
@@ -647,7 +644,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             var autorizado = "NO-Autorizado";
             if (cmbAutorizadoPor.SelectedItem != null) autorizado = cmbAutorizadoPor.SelectedItem.Text;
             _nd = new CustomerNd(_motivoDebito);
-            _nd.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", false,autorizado);
+            _nd.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", false, autorizado);
             using (var f0 = new FrmFi64DevolucionChequeCliente(_nd))
             {
                 DialogResult dr = f0.ShowDialog();
@@ -769,14 +766,14 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             tt.Show("", txtMotivoGeneralDocumento);
             return true;
         }
-       
+
         private void SetScreenStatus()
         {
             rPanelRegistracion.Enabled = false;
             rPanelContabilizacion.Enabled = false;
             btnContabilizar.Enabled = false;
             btnSolicitarCae.Enabled = false;
-            
+
             txtStatusDoc1.Text = _statusDocumento.ToString();
             txtStatusDoc2.Text = _statusDocumento2.ToString();
             switch (_statusDocumento)
@@ -826,7 +823,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            
+
             if (_statusDocumento2 == DocumentFIStatusManager.StatusHeader.PendienteCAE ||
                 _statusDocumento == DocumentFIStatusManager.StatusHeader.PendienteCAE)
             {
@@ -834,13 +831,13 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 btnSolicitarCae.Enabled = true;
             }
         }
-        private void SolicitaCaeCompletaData(int posicionDocumento,int iddoc, int? idDocAnula, DateTime? fechaD, DateTime? fechaH)
+        private void SolicitaCaeCompletaData(int posicionDocumento, int iddoc, int? idDocAnula, DateTime? fechaD, DateTime? fechaH)
         {
             var fe = new FacturacionElectronicaTecser(_modoAfip);
             var resultado = idDocAnula != null
                 ? fe.SolicitudCAEFromT0400(iddoc, idDocAnula, null, null)
                 : fe.SolicitudCAEFromT0400(iddoc, null, fechaD, fechaH);
-            
+
             if (resultado.Resultado == "A")
             {
                 if (posicionDocumento == 1)
@@ -896,6 +893,6 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 MessageBox.Show(@"Ha Ocurrido un error al solicitar el CAE", @"Error en SOLICITUD DE CAE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
     }
 }

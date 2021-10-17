@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -52,7 +48,7 @@ namespace Tecser.Business.Transactional.HR
                 }
             }
         }
-        public void AddAsignacion(string shortname, string funcion,bool valor=true)
+        public void AddAsignacion(string shortname, string funcion, bool valor = true)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -78,14 +74,14 @@ namespace Tecser.Business.Transactional.HR
                 }
             }
         }
-        public static List<string> GetListaEmployee(string funcion,bool valor=true)
+        public static List<string> GetListaEmployee(string funcion, bool valor = true)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var listaEmpl = from x in db.T0092_HHRR_COMBOASSIGN
-                    where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Valor == valor &&
-                          x.ComboCode == funcion.ToUpper()
-                    select x.Shortname;
+                                where x.T0085_HHRR_PERSONAL_BASIC.Activo == true && x.Valor == valor &&
+                                      x.ComboCode == funcion.ToUpper()
+                                select x.Shortname;
                 return listaEmpl.ToList();
             }
         }
@@ -101,7 +97,7 @@ namespace Tecser.Business.Transactional.HR
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var r = db.T0091_HHRR_COMBOCODE.SingleOrDefault(c => c.ComboCode.ToUpper() == funcion.ToUpper());
-                return r!=null;
+                return r != null;
             }
         }
         public static bool ExisteAsignacion(string funcion, string empleado)

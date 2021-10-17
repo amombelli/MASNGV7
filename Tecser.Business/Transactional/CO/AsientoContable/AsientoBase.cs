@@ -79,7 +79,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             else
             {
                 Header.TOT_ORI = Math.Abs(importeMoneda);
-                Header.TOT_ARS = Math.Abs(Math.Round(importeMoneda * TC,2));
+                Header.TOT_ARS = Math.Abs(Math.Round(importeMoneda * TC, 2));
             }
 
         }
@@ -163,7 +163,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             Items.Add(seg);
             return seg.IDSEG;
         }
-        
+
         /// <summary>
         /// Nueva funciona Graba Asiento New
         /// Eliminar la funciona GrabaAsiento
@@ -201,7 +201,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                 return rtn;
             }
         }
-        
+
         /// <summary>
         /// Validacion de DEBE = HABER
         /// </summary>
@@ -258,7 +258,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             public decimal NasX1 { get; set; }
             public decimal NasX2 { get; set; }
         }
-        
+
         /// <summary>
         /// Funcion que inicializa el Header del asiento en memoria.
         /// Los id del asiento se generan al grabarlo en memoria. Importe ARS si no se provee se calcula automaticamente (sentido solo en USD)
@@ -360,7 +360,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             return GrabaAsiento();
         }
 
-       
+
 
         /// <summary>
         /// Metodo completo para cargar todos los datos de un segmento
@@ -511,7 +511,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             }
         }
 
-        
+
         protected string GetSystemDocumentType(ManageDocumentType.TipoDocumento tipo)
         {
             return ManageDocumentType.GetSystemDocumentType(tipo);

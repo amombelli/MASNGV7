@@ -20,7 +20,7 @@ namespace Tecser.Business.Transactional.CRM
             public string StatusI { get; set; }
             public DateTime? FechaOV { get; set; }
         }
-        public List<EstructuraPendientes> ListaPendientes = new List<EstructuraPendientes>(); 
+        public List<EstructuraPendientes> ListaPendientes = new List<EstructuraPendientes>();
         public decimal KgPendientesDespacho { get; private set; }
         public int CantidadRegistros { get; private set; }
         public int CantidadClientesDiferentes { get; private set; }
@@ -73,7 +73,7 @@ namespace Tecser.Business.Transactional.CRM
                 {
                     KgPendientesDespacho = lx.Sum(c => c.Pendiente);
                     var query2 = from c in lx
-                        group c by c.Cliente;
+                                 group c by c.Cliente;
                     CantidadClientesDiferentes = query2.Count();
                 }
             }

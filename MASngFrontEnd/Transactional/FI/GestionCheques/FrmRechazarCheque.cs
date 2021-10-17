@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO.Pipes;
 using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
-using Tecser.Business.DataFix;
 using Tecser.Business.MasterData;
-using Tecser.Business.Tools;
 using Tecser.Business.Transactional.CO;
 using Tecser.Business.Transactional.CO.AsientoContable;
-using Tecser.Business.Transactional.CO.GLSManagement;
 using Tecser.Business.Transactional.FI;
 using Tecser.Business.Transactional.FI.CtaCte;
-using Tecser.Business.Transactional.FI.MainDocumentData;
 using TecserEF.Entity;
 using TSControls;
 
@@ -36,7 +30,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
         private bool _runRb = false;
         private bool _runPopulaCheque = false;
 
-        private T0154_CHEQUES _chequeSeleccionado =new T0154_CHEQUES();
+        private T0154_CHEQUES _chequeSeleccionado = new T0154_CHEQUES();
         private int _idTracker = -1;
 
         private AccionUbicacionCheque _ubicacionCheque;
@@ -83,7 +77,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             NoSeleccionado
         }
 
-   
+
         private void ResetAllSections()
         {
             ResetSeccionChequeSeleccionado();
@@ -116,7 +110,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
         }
         private void ResetSeccionRechazo()
         {
-            dtpFechaRechazo.Value= DateTime.Today;
+            dtpFechaRechazo.Value = DateTime.Today;
             txtMotivoRechazo.Text = null;
             cChImporte.SetValue = 0;
             cGastoRechazo.SetValue = 0;
@@ -177,7 +171,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             rb2SinNdProveedor.Checked = false;
             rb2NDProveedor.AutoCheck = false;
             rb2SinNdProveedor.AutoCheck = false;
-            cIcono2NDRecepcion.Set= CIconos.TrianguloNaranja;
+            cIcono2NDRecepcion.Set = CIconos.TrianguloNaranja;
             _accionProveedor = AccionProveedor.NoSelecionado;
             //Deshabilito Accion del Cheque
             rb3Rechazado.Checked = false;
@@ -187,18 +181,18 @@ namespace MASngFE.Transactional.FI.GestionCheques
             rb3SinRechazoACartera.AutoCheck = false;
             rb3SinRechazoACliente.AutoCheck = false;
             _accionCheque = AccionCheque.NoSeleccionado;
-            cIcono3AccionCheque.Set= CIconos.TrianguloNaranja;
+            cIcono3AccionCheque.Set = CIconos.TrianguloNaranja;
             //Deshabilito Accion Al Cliente
             rb4GenerarAX.Checked = false;
             rb4GenerarNd.Checked = false;
             rb4GenerarAX.AutoCheck = false;
             rb4GenerarNd.AutoCheck = false;
             _accionCliente = AccionCliente.NoSelecionado;
-            cIcono4AccionACliente.Set= CIconos.TrianguloNaranja;
+            cIcono4AccionACliente.Set = CIconos.TrianguloNaranja;
             //Listado de Cheques
             _ListaCheques = null;
             dgvListaCheques.DataSource = _ListaCheques;
-            cIcono5SeleccionCheque.Set= CIconos.TrianguloNaranja;
+            cIcono5SeleccionCheque.Set = CIconos.TrianguloNaranja;
             //
             ResetAllSections();
             lMotivo.Text = "Motivo Rechazo";
@@ -248,8 +242,8 @@ namespace MASngFE.Transactional.FI.GestionCheques
                     cmbFiltroOrigen.SelectedIndex = -1;
                     //
                     _runSelectedIndex = true;
-                    toolTip1.SetToolTip(rb3SinRechazoACliente,"El Cheque ha sido Rechazado por una Entidad Financiera");
-                    toolTip1.SetToolTip(rb3SinRechazoACartera,"El Cheque ha sido depositado Antes de tiempo o por Error (Sin Rechazo)");
+                    toolTip1.SetToolTip(rb3SinRechazoACliente, "El Cheque ha sido Rechazado por una Entidad Financiera");
+                    toolTip1.SetToolTip(rb3SinRechazoACartera, "El Cheque ha sido depositado Antes de tiempo o por Error (Sin Rechazo)");
                     toolTip1.SetToolTip(rb3Rechazado, "El Cheque ha sido RECHAZADO");
                     //Permite las 3 opciones
                     _runRb = true;
@@ -339,11 +333,11 @@ namespace MASngFE.Transactional.FI.GestionCheques
         //Seleccion Accion Cliente
         private void rb1NDCLI_CheckedChanged(object sender, EventArgs e)
         {
-          
+
         }
 
-      
-        
+
+
         private void cmbFiltroOrigen_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (_runSelectedIndex == false)
@@ -394,7 +388,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
             //PopulaDatosCheque();
         }
-        
+
         //Al Ingreso del DGV
         private void dgvListaCheques_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -404,7 +398,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 return;
             }
 
-            var g = (DataGridView) sender;
+            var g = (DataGridView)sender;
             if (g.SelectedCells.Count != 0)
             {
                 _idChequeSeleccionado =
@@ -415,7 +409,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             }
         }
 
-        
+
         private void PopulaDatosCheque()
         {
             if (!_runPopulaCheque)
@@ -431,10 +425,10 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 cChImporte.SetValue = 0;
                 txtIdClienteNd.Text = null;
                 txtClienteRsND.Text = null;
-                dtpFechaNdACliente.Value=DateTime.Today;
+                dtpFechaNdACliente.Value = DateTime.Today;
                 //
                 txtMotivoRechazo.Text = null;
-                dtpFechaRechazo.Value=DateTime.Today;
+                dtpFechaRechazo.Value = DateTime.Today;
                 cChImporte.SetValue = 0;
                 cIvaGastoRechazo.SetValue = 0;
                 cGastoRechazo.SetValue = 0;
@@ -558,9 +552,9 @@ namespace MASngFE.Transactional.FI.GestionCheques
             {
                 if (_chequeSeleccionado.IdProveedorSalida == null)
                 {
-                   toolTip1.Show("Error en el Proveedor de Salida!",cmbFiltroOrigen,cmbFiltroOrigen.Width,0,1500);
-                   _proveedorSeleccionado = null;
-                   return false;
+                    toolTip1.Show("Error en el Proveedor de Salida!", cmbFiltroOrigen, cmbFiltroOrigen.Width, 0, 1500);
+                    _proveedorSeleccionado = null;
+                    return false;
                 }
                 _proveedorSeleccionado = _chequeSeleccionado.IdProveedorSalida.Value;
             }
@@ -592,7 +586,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                     return false;
                 }
             }
-            
+
             if (_idChequeSeleccionado == null)
             {
                 MessageBox.Show(@"Debe Seleccionar un cheque para Rechazar", @"Rechazo de Cheques", MessageBoxButtons.OK,
@@ -614,9 +608,9 @@ namespace MASngFE.Transactional.FI.GestionCheques
                     MessageBoxIcon.Error);
                 return false;
             }
-            
-            _tipoLx= rbL1Rechazo.Checked ? "L1" : "L2";
-            
+
+            _tipoLx = rbL1Rechazo.Checked ? "L1" : "L2";
+
             if (_accionCheque == AccionCheque.ACarteraSR)
             {
                 if (cIvaGastoRechazo.GetValueDecimal != 0)
@@ -665,8 +659,8 @@ namespace MASngFE.Transactional.FI.GestionCheques
                     return false;
                 }
             }
-  
-            string tipoR=null;
+
+            string tipoR = null;
             if (rbL1Rechazo.Checked)
             {
                 tipoR = @"L1";
@@ -717,7 +711,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            
+
             _idTracker = new ChequeRechazadoManager().AddChrTracker(_idChequeSeleccionado.Value,
                 _chequeSeleccionado.T0160_BANCOS.BCO_SHORTDESC, _chequeSeleccionado.IMPORTE.Value,
                 _ubicacionCheque.ToString(), cuentaOrigen, _accionCheque.ToString(), cuentaDestino,
@@ -727,7 +721,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 MessageBox.Show(@"Ha Ocurrido un Error al Generar el Tracker del Cheque - Reintente Nuevamente",
                     @"Error en Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 new ChequeRechazadoManager().DeleteTracker(_idTracker);
-                _idTracker =-1;
+                _idTracker = -1;
             }
         }
         private void P2SalidaBancoConRechazo()
@@ -735,7 +729,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             var dataCheque = new ChequesManager().GetCheque(_idChequeSeleccionado.Value);
             string glAP_CyB;
 
-            if (_ubicacionCheque ==AccionUbicacionCheque.EnBanco)
+            if (_ubicacionCheque == AccionUbicacionCheque.EnBanco)
             {
                 glAP_CyB = new CuentasManager().GetGL(dataCheque.PROVEEDOR);
             }
@@ -768,10 +762,10 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 return;
             }
             new ChequeRechazadoManager().UpdateAsientoTracker(_idTracker, AsientoRtn.IdDocu);
-            
+
             //Registro de Rechazo
             new ChequeRechazadoManager().AddChequeRechazado(_chequeSeleccionado.IDCHEQUE,
-                dtpFechaRechazo.Value, txtMotivoRechazo.Text, _tipoLx,cGastoRechazo.GetValueDecimal,cIvaGastoRechazo.GetValueDecimal,"$$$%");
+                dtpFechaRechazo.Value, txtMotivoRechazo.Text, _tipoLx, cGastoRechazo.GetValueDecimal, cIvaGastoRechazo.GetValueDecimal, "$$$%");
         }
         private void P3IngresoCarteraFromVendor()
         {
@@ -827,8 +821,8 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
             //Registra Ingreso del Cheque (Subdiario IN)
             new RegisterManager().AddRegisterRecord("CHE", DateTime.Today, "CHR", dataTracker.DocumentoRef,
-                TipoEntidad.Transferencia, 0, "REIN: " + txtMotivoRechazo.Text, "ARS", 
-                _chequeSeleccionado.IMPORTE.Value,0, _idChequeSeleccionado.Value, _tipoLx, glCheque, AsientoRtn.IdDocu,
+                TipoEntidad.Transferencia, 0, "REIN: " + txtMotivoRechazo.Text, "ARS",
+                _chequeSeleccionado.IMPORTE.Value, 0, _idChequeSeleccionado.Value, _tipoLx, glCheque, AsientoRtn.IdDocu,
                 "CHR", true, cuentaO);
         }
 
@@ -836,12 +830,12 @@ namespace MASngFE.Transactional.FI.GestionCheques
         {
             string numeroDocumento = _idTracker.ToString("00000000");
             var ctaCtaCliente = new CtaCteCustomer(_chequeSeleccionado.IdClienteRecibido.Value);
-            
+
             var idCtaCteXX = ctaCtaCliente.AddCtaCteDetalleRecord("AX", _tipoLx, dtpFechaRechazo.Value, numeroDocumento, "TK-",
                 "ARS", cChImporte.GetValueDecimal, new ExchangeRateManager().GetExchangeRate(dtpFechaRechazo.Value),
                 cChImporte.GetValueDecimal, idDocAlternativo: _idTracker);
             ctaCtaCliente.AddRecordDocumentT0207FromIdCtaCte(idCtaCteXX);
-            ctaCtaCliente.UpdateSaldoCtaCteResumen(_tipoLx, cChImporte.GetValueDecimal,"ARS");
+            ctaCtaCliente.UpdateSaldoCtaCteResumen(_tipoLx, cChImporte.GetValueDecimal, "ARS");
         }
 
         private void btnRechazar_Click(object sender, EventArgs e)
@@ -867,13 +861,13 @@ namespace MASngFE.Transactional.FI.GestionCheques
             if (resp == DialogResult.No)
                 return;
             //------------------------------------------------------------------------------------------------
-            
+
             decimal xrate = new ExchangeRateManager().GetExchangeRate(DateTime.Today);
             AsientoBase.IdentificacionAsiento AsientoRtn = new AsientoBase.IdentificacionAsiento();
             TipoEntidad tipoEntidad = TipoEntidad.Proveedor;
 
             //------------------------------------------------------------------------------------------------
-            
+
             RegistraOperacionTracker();
             if (_idTracker < 1)
                 return;
@@ -893,7 +887,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                     //B21 (De Proveedor SIN Rechazo) //Puede ser con o sin ND Proveedor
                     //Implementando --
                     P3IngresoCarteraFromVendor();
-                    
+
 
 
 
@@ -1032,7 +1026,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
             //var asiento = new AsientoGenerico("CHR").CreaAsientoChequeRechazado(_idChequeSeleccionado.Value,
             //    txtMotivoRechazo.Text, txtGL.Text, dtpFechaRechazo.Value, cImporteGastos.GetValueDecimal, cIvaGastos.GetValueDecimal);
-            
+
             //chrmng.CompleteNumeroAsientoRechazo(_idChequeSeleccionado.Value, asiento.IdDocu);
 
             //if (asiento.IdDocu > 0)
@@ -1050,7 +1044,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             _idChequeSeleccionado = null;
             PopulaDatosCheque();
         }
-        
+
         private void AsientoContableReingresoCartera()
         {
 
@@ -1085,7 +1079,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             {
                 if (cIvaGastoRechazo.GetValueDecimal != 0)
                 {
-                    toolTip1.SetToolTip(cIvaGastoRechazo,"En Cuenta L2 no puede haber IVA");
+                    toolTip1.SetToolTip(cIvaGastoRechazo, "En Cuenta L2 no puede haber IVA");
                     toolTip1.Show("Se paso el Valor a 0", this, 1500);
                     cIvaGastoRechazo.SetValue = 0;
                 }

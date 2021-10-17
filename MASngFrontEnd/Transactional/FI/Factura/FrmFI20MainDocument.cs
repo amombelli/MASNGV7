@@ -1172,7 +1172,7 @@ namespace MASngFE.Transactional.FI.Factura
                     @"Fallo de Condiciones para Pedir CAE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var resultado = fe.SolicitudCAEFromT0400(_facturaIdStruct.IdFactura,null,null,null);
+            var resultado = fe.SolicitudCAEFromT0400(_facturaIdStruct.IdFactura, null, null, null);
 
             if (resultado.Resultado == "A")
             {

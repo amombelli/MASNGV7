@@ -163,7 +163,7 @@ namespace MASngFE.Reports.ReportManager
                 var z = Qr.GeneraCodigoQrFacturas(_idFactura, true);
                 if (z != null)
                 {
-                    archivoBarra = @"file:\\\"+Qr.GetCompleteFilename();
+                    archivoBarra = @"file:\\\" + Qr.GetCompleteFilename();
                 }
                 else
                 {

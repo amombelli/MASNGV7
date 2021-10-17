@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.Transactional.CO.AsientoContable;
 using Tecser.Business.Transactional.FI;
-using TecserEF.Entity.DataStructure;
 
 namespace Tecser.Business.Transactional.CO.ContaFromDocuments
 {
-    public class ContaClienteNotaCreditoL2:ContaClienteT400L1
+    public class ContaClienteNotaCreditoL2 : ContaClienteT400L1
     {
         public ContaClienteNotaCreditoL2(int idFactura, int idCliente, string tDocXX = "NC") : base(idCliente, idFactura)
         {
@@ -18,7 +13,7 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
             _idNcd = T4H.IdNCD ?? 0;
         }
         private readonly int _idNcd;
-        
+
         /// <summary>
         /// Anulacion completa de Nota de Debito o Factura //El Asiento es Copiando Invertido el link
         /// </summary>
@@ -59,7 +54,7 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
         {
             return CtaCteMng.AddSinImputarRecord(FechaConta, _idNcd, MonedaConta, Math.Abs(T4H.TotalFacturaN), LX.ToString(),
                 "NCD", NumeroDocumento, IdCtaCte, _idNcd);
-            
+
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Tecser.Business.MainApp;
-using TecserEF.Entity;
 
 namespace Tecser.Business.Transactional.CO.Costos
 {
@@ -32,7 +30,7 @@ namespace Tecser.Business.Transactional.CO.Costos
             //    }
             //    else
             //    {
-                    
+
 
 
             //    }

@@ -68,8 +68,8 @@ namespace Tecser.Business.Transactional.CO.Costos
                             d.UpdatedBy = GlobalApp.AppUsername;
                             d.UpdatedOn = DateTime.Now;
                             d.VarCostoArs = d.CostoArs - d.CostoArsOld;
-                            d.VarCostoUsd =d.CostoUsd - d.CostoUsdOld;
-                            db.SaveChanges(); 
+                            d.VarCostoUsd = d.CostoUsd - d.CostoUsdOld;
+                            db.SaveChanges();
                         }
                     }
                     else

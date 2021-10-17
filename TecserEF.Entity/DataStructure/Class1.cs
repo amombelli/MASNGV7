@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TecserEF.Entity.DataStructure
+﻿namespace TecserEF.Entity.DataStructure
 {
     class Class1
     {

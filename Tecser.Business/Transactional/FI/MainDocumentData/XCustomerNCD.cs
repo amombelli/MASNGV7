@@ -40,7 +40,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
             }
         }
 
-        
+
         /// <summary>
         /// Constructor para cargar datos NCD
         /// </summary>
@@ -62,7 +62,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
             }
         }
 
-        
+
         //Modifiaciones para RG
         public void AddDocumentoAsociado(int idFacturaAsociada)
         {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
@@ -17,7 +16,7 @@ namespace Tecser.Business.SuperMD
     {
 
         //-----------------------------------------------------------------------------------------------------------------
-  //-----------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------
 
         public static T0086_HHRR_POSICIONES GetPosicioneData(int idPosicion)
         {
@@ -26,8 +25,8 @@ namespace Tecser.Business.SuperMD
                 return db.T0086_HHRR_POSICIONES.SingleOrDefault(c => c.IDPOSICION == idPosicion);
             }
         }
-       
-        
+
+
         public List<T0085_PERSONAL> GetListEmployees(bool onlyActive = true)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -51,7 +50,7 @@ namespace Tecser.Business.SuperMD
                 return db.T0085_PERSONAL.SingleOrDefault(c => c.SHORTNAME.ToUpper().Equals(shortname.ToUpper()));
             }
         }
-    
+
 
 
         //de aca para abajo son viejas...

@@ -15,7 +15,6 @@ using MASngFE.Transactional.FI.Cobranza;
 using MASngFE.Transactional.FI.Factura;
 using MASngFE.Transactional.FI.FondoFijo;
 using MASngFE.Transactional.FI.GestionCheques;
-using MASngFE.Transactional.FI.VendorNCD;
 using MASngFE.Transactional.MM;
 using MASngFE.Transactional.MM.MMR;
 using MASngFE.Transactional.SD.Hoja_de_Ruta;
@@ -190,7 +189,7 @@ namespace MASngFE.Application
             MessageBox.Show($@"Dias Imputacion {respuesta.DiasPP_FacturaRecibo} -- Dias Cobranza {respuesta.DiasPP_ReciboPago}");
         }
 
-        
+
         private void button28_Click(object sender, EventArgs e)
         {
             var fx = new FrmFondoFijoConversion();

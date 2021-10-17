@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
-using Tecser.Business.MasterData;
 using TecserEF.Entity;
 
 namespace Tecser.Business.Transactional.FI
@@ -31,7 +27,7 @@ namespace Tecser.Business.Transactional.FI
             //    return StatusStockMemoria.SinStock;
             try
             {
-                return (StatusChequeEmitido) Enum.Parse(typeof(StatusChequeEmitido), status, true);
+                return (StatusChequeEmitido)Enum.Parse(typeof(StatusChequeEmitido), status, true);
             }
             catch (Exception)
             {

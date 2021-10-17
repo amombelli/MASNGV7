@@ -20,7 +20,6 @@ using MASngFE.Transactional.FI.FondoFijo;
 using MASngFE.Transactional.FI.GestionCheques;
 using MASngFE.Transactional.FI.TaxModule;
 using MASngFE.Transactional.FI.Vendor.SinRemito;
-using MASngFE.Transactional.FI.VendorNCD;
 using MASngFE.Transactional.FI.VendorPRM;
 using MASngFE.Transactional.HR;
 using MASngFE.Transactional.MM;
@@ -119,7 +118,7 @@ namespace MASngFE.Application
                     break;
             }
         }
-    
+
 
 
         private void RunTransaction()
@@ -629,7 +628,7 @@ namespace MASngFE.Application
 
         private void button44_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button45_Click(object sender, EventArgs e)
@@ -861,13 +860,13 @@ namespace MASngFE.Application
                 return;
             }
         }
-           
+
 
         private void btnViewListaTcode_Click(object sender, EventArgs e)
         {
             panelBoton1.Location = new Point(411, 221);
             dgvTcodeList.Visible = true;
-            
+
         }
 
         private void btnHideListaTcode_Click(object sender, EventArgs e)

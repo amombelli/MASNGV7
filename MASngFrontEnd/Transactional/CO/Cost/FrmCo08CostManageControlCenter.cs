@@ -18,7 +18,7 @@ namespace MASngFE.Transactional.CO.Cost
         {
             InitializeComponent();
         }
-        
+
         private Guid? _costRollId = null;
         private T0034_CostRollHeader _crHeader;
         private void FrmCO08_CostManageControlCenter_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace MASngFE.Transactional.CO.Cost
             }
             btnSetAsStandard.Enabled = true;
         }
-        
+
         #region Botones
         private void btnExit_Click(object sender, EventArgs e)
         {

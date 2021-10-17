@@ -19,7 +19,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         private readonly string _tipoLx;
         //-------------------------------------------------------------------------------------
         public int? Id400Selected { private set; get; }
-        public string  TDoc { private set; get; }
+        public string TDoc { private set; get; }
         public string NumeroFacturaAnula { private set; get; }
         public bool ReingresarStock { private set; get; }
         public int idRemitoAsociado { private set; get; }
@@ -33,7 +33,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 .Where(c => c.TIPO_DOC != "NC").ToList();
             dgvListadoFacturas.ClearSelection();
             this.dgvListadoFacturas.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoFacturas_CellEnter);
-            
+
             idRemitoAsociado = 0;
             ReingresarStock = false;
             NumeroFacturaAnula = null;
@@ -50,8 +50,8 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             if (e.RowIndex >= 0)
             {
-                Id400Selected = Convert.ToInt32(dgvListadoFacturas[__idFactura.Name,e.RowIndex].Value);
-                if (dgvListadoFacturas[__numeroDocumento.Name, e.RowIndex].Value == null && dgvListadoFacturas[remitoDataGridViewTextBoxColumn.Name, e.RowIndex].Value==null)
+                Id400Selected = Convert.ToInt32(dgvListadoFacturas[__idFactura.Name, e.RowIndex].Value);
+                if (dgvListadoFacturas[__numeroDocumento.Name, e.RowIndex].Value == null && dgvListadoFacturas[remitoDataGridViewTextBoxColumn.Name, e.RowIndex].Value == null)
                 {
                     NumeroFacturaAnula = null;
                 }
@@ -65,7 +65,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     {
                         NumeroFacturaAnula = dgvListadoFacturas[__numeroDocumento.Name, e.RowIndex].Value.ToString();
                     }
-                    
+
                     TDoc = dgvListadoFacturas[__Tdoc.Name, e.RowIndex].Value.ToString();
                     var idRemito = dgvListadoFacturas[__idRemito.Name, e.RowIndex].Value;
                     if (idRemito == null)

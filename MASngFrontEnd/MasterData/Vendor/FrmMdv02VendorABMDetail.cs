@@ -4,15 +4,11 @@ using System.Drawing;
 using System.Windows.Forms;
 using MASngFE.Forms;
 using Tecser.Business.MasterData;
-using Tecser.Business.MasterData.Vendor_Master;
 using Tecser.Business.SuperMD;
-using Tecser.Business.Tools;
 using Tecser.Business.Transactional.FI.TaxModule;
 using Tecser.Business.VBTools;
 using TecserEF.Entity;
-using TecserEF.Entity.DataStructure;
 using TSControls;
-using WebServicesAFIP;
 
 namespace MASngFE.MasterData.Vendor
 {
@@ -33,7 +29,7 @@ namespace MASngFE.MasterData.Vendor
             else
             {
                 _idvendor = idvendor;
-                if (idvendor<1) this.Close();
+                if (idvendor < 1) this.Close();
             }
             InitializeComponent();
         }
@@ -47,7 +43,7 @@ namespace MASngFE.MasterData.Vendor
             cmbTipoDocumento.SelectedItem = "CUIT";
             //HAY QUE PONER EL 80?
         }
-        
+
         private void FrmMdv02VendorABMDetail_Load(object sender, EventArgs e)
         {
             cIconoClienteExiste.Set = CIconos.Amarillo;
@@ -60,7 +56,7 @@ namespace MASngFE.MasterData.Vendor
             cmbZtermL1.SelectedValue = "0E";
             cmbZtermL2.SelectedIndex = -1;
             cmbZtermL2.Enabled = false;
-            
+
             switch (_modo)
             {
                 case 1:
@@ -138,26 +134,26 @@ namespace MASngFE.MasterData.Vendor
         }
         private void cmbZtermL1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var cmb = (ComboBox) sender;
+            var cmb = (ComboBox)sender;
             if (cmb.SelectedIndex == -1)
             {
                 txtZtermL1Descripcion.Text = null;
                 return;
             }
 
-            var data = (T0019_ZTERM) cmb.SelectedItem;
+            var data = (T0019_ZTERM)cmb.SelectedItem;
             txtZtermL1Descripcion.Text = data.ZTERMDESC;
         }
         private void cmbZtermL2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var cmb = (ComboBox) sender;
+            var cmb = (ComboBox)sender;
             if (cmb.SelectedIndex == -1)
             {
                 txtZtermL2Descripcion.Text = null;
                 return;
             }
 
-            var data = (T0019_ZTERM) cmb.SelectedItem;
+            var data = (T0019_ZTERM)cmb.SelectedItem;
             txtZtermL2Descripcion.Text = data.ZTERMDESC;
         }
         private bool ValResult(Control ob, string error = null)
@@ -229,7 +225,7 @@ namespace MASngFE.MasterData.Vendor
                 Dire_Provincia = infoAddress.Provincia,
                 ZTERM = cmbZtermL1.SelectedValue.ToString(),
                 BANK_ACC = txtCuentaBanco.Text,
-                Cliente =string.IsNullOrEmpty(txtIdCliente.Text)?(int?)null:Convert.ToInt32(txtIdCliente.Text),
+                Cliente = string.IsNullOrEmpty(txtIdCliente.Text) ? (int?)null : Convert.ToInt32(txtIdCliente.Text),
                 CONDI_IVA = txtCondicionIVA.Text,
                 IdLocalidadAddress = infoAddress.IdLocalidad,
             };
@@ -304,12 +300,12 @@ namespace MASngFE.MasterData.Vendor
                 if (string.IsNullOrEmpty(cmbTipoDocumento.Text))
                 {
                     //como el tipo de documento esta vacio - permito
-                    ValResult((MaskedTextBox) mtxtNumeroDocumento);
+                    ValResult((MaskedTextBox)mtxtNumeroDocumento);
                     cValidacionCuit.Set = CIconos.Amarillo;
                 }
                 else
                 {
-                    ValResult((MaskedTextBox) mtxtNumeroDocumento, "El # no puede estar vacio [00000...]");
+                    ValResult((MaskedTextBox)mtxtNumeroDocumento, "El # no puede estar vacio [00000...]");
                     cValidacionCuit.Set = CIconos.Rojo;
                     return;
                 }
@@ -321,7 +317,7 @@ namespace MASngFE.MasterData.Vendor
                 cValidacionCuit.Set = CIconos.Amarillo;
                 return;
             }
-            
+
             if (txtTipoDocumento.Text == @"80")
             {
                 if (mtxtNumeroDocumento.Text == @"00000000000")
@@ -341,7 +337,7 @@ namespace MASngFE.MasterData.Vendor
                 ValResult((MaskedTextBox)mtxtNumeroDocumento);
                 cValidacionCuit.Set = CIconos.Verde;
             }
-            
+
             if (_modo == 1 && mtxtNumeroDocumento.Text != @"00000000000")
             {
                 //validar si el proveedor ya existe en la base
@@ -571,7 +567,7 @@ namespace MASngFE.MasterData.Vendor
                     {
                         ctlAddress1.CargaControl("AR", f.cn.Provincia, "", f.cn.Localidad);
                     }
-                    
+
                     if (f.cn.Estado != "ACTIVO")
                     {
                         MessageBox.Show(@"El CUIT del proveedor se encuentra INACTIVO en AFIP", @"Atencion Proveedor INACTIVO",
@@ -590,7 +586,7 @@ namespace MASngFE.MasterData.Vendor
                     txtDireccion.ForeColor = Color.Red;
                     txtCodigoPostal.Text = f.cn.CodPostal;
                     txtCodigoPostal.ForeColor = Color.Red;
-                   
+
                     if (f.cn.TipoDocumento == 80)
                     {
                         cmbTipoDocumento.SelectedItem = "CUIT";
@@ -615,7 +611,7 @@ namespace MASngFE.MasterData.Vendor
             //    return;
             //}
 
-           
+
             Cursor.Current = Cursors.Default;
 
 
@@ -665,8 +661,8 @@ namespace MASngFE.MasterData.Vendor
 
         private void txtRazonSocial_Enter(object sender, EventArgs e)
         {
-            var contro = (TextBox) sender;
-            if (_modo < 3 || _modo>5)
+            var contro = (TextBox)sender;
+            if (_modo < 3 || _modo > 5)
             {
                 contro.ForeColor = Color.Black;
             }
@@ -697,7 +693,7 @@ namespace MASngFE.MasterData.Vendor
                         txtIdCliente.Text = p.IDCLIENTE.ToString();
                         txtClienteRazonSocial.Text = p.cli_rsocial;
                         txtIdCliente.BackColor = Color.LightGoldenrodYellow;
-                        txtClienteRazonSocial.BackColor= Color.LightGoldenrodYellow;
+                        txtClienteRazonSocial.BackColor = Color.LightGoldenrodYellow;
                         var r = MessageBox.Show(
                             @"Se ha encontrado a este proveedor dado de alta como cliente en nuestro sistema" +
                             Environment.NewLine + @"Desea traer la inforamcion disponible?",

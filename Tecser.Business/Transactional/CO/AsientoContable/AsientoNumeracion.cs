@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -46,16 +41,16 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                 {
                     case TipoLx.L1:
                         prefijo = "1";
-                        tipo1= "1";
+                        tipo1 = "1";
                         break;
                     case TipoLx.L2:
                         prefijo = "8";
                         tipo1 = "2";
                         break;
                     default:
-                    throw new ArgumentOutOfRangeException(nameof(lx), lx, null);
+                        throw new ArgumentOutOfRangeException(nameof(lx), lx, null);
                 }
-                
+
                 var d = db.T0004_ASN.SingleOrDefault(c => c.XYEAR == _xyear && c.TIPO == tipo1);
                 if (d == null)
                 {
@@ -64,7 +59,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                     d.ASN = 0;
                     d.XDOC = "AS";
                     d.PRE = prefijo;
-                    d.NASX1X2 = Convert.ToDecimal(prefijo+ _xyear +_mes+d.ASN.Value.ToString("D5"));
+                    d.NASX1X2 = Convert.ToDecimal(prefijo + _xyear + _mes + d.ASN.Value.ToString("D5"));
                     db.T0004_ASN.Add(d);
                     db.SaveChanges();
                 }
@@ -77,7 +72,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
 
                 rtn.IdDocu = db.T0601_DOCU_H.Max(c => c.IDDOCU) + 1;
                 rtn.Nasx1 = Convert.ToDecimal(d.NASX1X2);
-                rtn.Nasx2 = (decimal) d.ASN;
+                rtn.Nasx2 = (decimal)d.ASN;
                 return rtn;
             }
         }

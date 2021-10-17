@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using Tecser.Business.Transactional.CO.Costos;
 using TecserEF.Entity;
@@ -88,12 +86,12 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var t3 = db.T0300_NCD_H.SingleOrDefault(c => c.idFacturaT0400 == _h4.IDFACTURA);
-                texto01Header = "Ajuste CC >"  + t3.COMENTARIO;
+                texto01Header = "Ajuste CC >" + t3.COMENTARIO;
                 if (texto01Header.Length > 30)
                 {
                     texto01Header = texto01Header.Substring(0, 29);
                 }
-                
+
                 if (_h4.TotalFacturaB > 0)
                 {
                     //Ajuste positivo => Facturacion
@@ -107,11 +105,11 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                     descripcionAsientoItem = "Ajuste Contable -";
                 }
                 CreaHeaderMemoriaNew(texto01Header, Math.Abs(_h4.TotalFacturaN)); //El Header va ABS
-                
+
                 //Segmento A/R
                 SegmentoAR(dh, Math.Abs(_h4.TotalFacturaN), "A/R Ajuste: " + _h4.RAZONSOC, descripcionAsientoItem + _h4.RAZONSOC,
                     _h4.GLAR, "T400", _h4.IDFACTURA);
-                
+
                 //Segmentos Resultado -- Invierte Debe/Haber del A/R
                 dh = dh == DebeHaber.Debe ? DebeHaber.Haber : DebeHaber.Debe;
                 foreach (var i in _i4)
@@ -139,7 +137,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             {
                 var t3 = db.T0300_NCD_H.SingleOrDefault(c => c.idFacturaT0400 == _h4.IDFACTURA);
                 var facturaAsociada = t3?.idFacturaAsociada;
-                texto01 = texto01 +" " + t3.COMENTARIO;
+                texto01 = texto01 + " " + t3.COMENTARIO;
                 if (texto01.Length > 30)
                 {
                     texto01 = texto01.Substring(0, 29);
@@ -214,13 +212,13 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                 return GrabaAsientoNew();
             }
         }
-    
 
 
 
 
 
-    /// <summary>
+
+        /// <summary>
         /// Recorre la Lista de T400 y Genera el asiento completo de una Factura Normal
         /// </summary>
         public void GeneraAsientoFactura()
@@ -232,17 +230,17 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                 decimal cantidad = 1;
                 if (i.KGDESPACHADOS_R != null)
                     cantidad = i.KGDESPACHADOS_R.Value;
-                
+
                 if (_h4.FacturaMoneda == "ARS")
                 {
                     //Factura en ARS
                     //Segmento Item Venta Producto [Haber]
                     AddGenericCompleteSegmentNew(i.PRECIOT_FACT_ARS, "Venta Bruta@" + i.ITEM, "/", DebeHaber.Haber,
                         i.GLV, _h4.Cliente, nombreTablaReferencia: "T400", numeroIdReferencia: _h4.IDFACTURA,
-                        material: i.ITEM, kg:cantidad);
+                        material: i.ITEM, kg: cantidad);
 
                     //Segmentos de Costos [Debe]
-                    costoAsiento = stdCost.Encontrado ? Math.Round(stdCost.ValorARS * cantidad,2) : 0;
+                    costoAsiento = stdCost.Encontrado ? Math.Round(stdCost.ValorARS * cantidad, 2) : 0;
                     AddGenericCompleteSegmentNew(costoAsiento, "Costo STD[" + _h4.FacturaMoneda + "]@" + i.ITEM, i.ITEM,
                         DebeHaber.Debe, GLAccountManagement.GetGLAccount(GLAccountManagement.GLAccount.CostoMercaderiaVendida),
                         _h4.Cliente, nombreTablaReferencia: "T400", numeroIdReferencia: _h4.IDFACTURA,
@@ -274,13 +272,13 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                         material: i.ITEM, kg: cantidad);
                 }
             }
-            
+
             //Segmento Impuesto IVA, IIBB [Haber]
             if (_h4.TIPOFACT == "L1")
             {
-               if (_h4.IIBB_PORC == null) _h4.IIBB_PORC = 0;
+                if (_h4.IIBB_PORC == null) _h4.IIBB_PORC = 0;
                 SegmentoTaxT400(DebeHaber.Haber, _h4.TotalIVA21, _h4.TotalIIBB, _h4.IIBB_PORC.Value, _h4.Tax2Importe,
-                    _h4.Tax2Alicuota, _h4.TotalImpo,  "T400", _h4.IDFACTURA);
+                    _h4.Tax2Alicuota, _h4.TotalImpo, "T400", _h4.IDFACTURA);
             }
 
             if (_h4.Descuento == null) _h4.Descuento = 0;
@@ -289,10 +287,10 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             //Segmento Descuento [Debe]
             if (_h4.Descuento.Value != 0)
                 SegmentoDescuentos(DebeHaber.Debe, _h4.Descuento.Value, _h4.DescuentoPorc.Value, "T400", _h4.IDFACTURA);
-            
+
             //Segmento AR [Debe]
-            SegmentoAR(DebeHaber.Debe,_h4.TotalFacturaN,"A/R: " + _h4.RAZONSOC,"Facturacion a " + _h4.RAZONSOC,_h4.GLAR,"T400", _h4.IDFACTURA);
-          
+            SegmentoAR(DebeHaber.Debe, _h4.TotalFacturaN, "A/R: " + _h4.RAZONSOC, "Facturacion a " + _h4.RAZONSOC, _h4.GLAR, "T400", _h4.IDFACTURA);
+
         }
     }
 }

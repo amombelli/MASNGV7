@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSControls;
 
@@ -22,10 +15,10 @@ namespace MASngFE
         {
 
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            ctlAddress1.CargaControl("AR","Buenos Aires","","Lomas del Mirador ");
+            ctlAddress1.CargaControl("AR", "Buenos Aires", "", "Lomas del Mirador ");
             ctlIconos1.Set = CIconos.Estrella;
             MessageBox.Show(ctlPeriodo1.FechaFinal.ToLongDateString());
         }

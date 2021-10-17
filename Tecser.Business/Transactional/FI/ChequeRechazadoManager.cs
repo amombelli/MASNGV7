@@ -19,7 +19,7 @@ namespace Tecser.Business.Transactional.FI
         /// <summary>
         /// Actualizacion de Datos de ND en T0156
         /// </summary>
-        public bool UpdateAfterContabilizacionNd(int idcheque, int numeroAsiento, int idT400,string numeroND)
+        public bool UpdateAfterContabilizacionNd(int idcheque, int numeroAsiento, int idT400, string numeroND)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -35,7 +35,7 @@ namespace Tecser.Business.Transactional.FI
         }
 
         public void AddChequeRechazado(int idCheque, DateTime fechaRechazo, string motivoRechazo,
-            string tipoLxRechazo = null,decimal gastos =0, decimal ivaGastos=0, string origenRechazo="")
+            string tipoLxRechazo = null, decimal gastos = 0, decimal ivaGastos = 0, string origenRechazo = "")
         {
             var ch = new ChequesManager().GetCheque(idCheque);
 
@@ -317,9 +317,9 @@ namespace Tecser.Business.Transactional.FI
                 return rtn;
             }
         }
-        
-        public int AddChrTracker(int idCheque, string chBanco, decimal chImporte, string origenCheque,string cuentaOrigen,
-            string accionCheque, string cuentaDestino, string accionCliente,string motivo, string numeroNd, int numeroAsiento = -1)
+
+        public int AddChrTracker(int idCheque, string chBanco, decimal chImporte, string origenCheque, string cuentaOrigen,
+            string accionCheque, string cuentaDestino, string accionCliente, string motivo, string numeroNd, int numeroAsiento = -1)
         {
 
             using (var db = new TecserData(GlobalApp.CnnApp))

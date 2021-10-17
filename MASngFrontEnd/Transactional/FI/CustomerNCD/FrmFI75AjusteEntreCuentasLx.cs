@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.CO;
@@ -21,11 +15,11 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         private readonly CustomerAjustes _aj2;
         private readonly DateTime _fechaDocumento;
         private readonly string _autorizado;
-        private readonly  int _idCliente;
+        private readonly int _idCliente;
         private string _lxOrigen;
         private string _lxDestino;
         public string MotivoDescripcionAjuste { get; private set; }
-        public FrmFI75AjusteEntreCuentasLx(CustomerAjustes aj1, CustomerAjustes aj2,int idCliente, DateTime fechaDocumento,string autorizado)
+        public FrmFI75AjusteEntreCuentasLx(CustomerAjustes aj1, CustomerAjustes aj2, int idCliente, DateTime fechaDocumento, string autorizado)
         {
             _aj1 = aj1;
             _aj2 = aj2;
@@ -39,7 +33,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             txtRazonSocial.Text = cli.cli_rsocial;
             txtMotivo.Text = CustomerAjustes.MotivoAjustes.TraspasoTipo.ToString();
             txtTipoDocumento.Text = @"AJ";
-            _lxOrigen ="L1";
+            _lxOrigen = "L1";
         }
 
         private void FrmFI75AjusteEntreCuentasLx_Load(object sender, EventArgs e)
@@ -61,7 +55,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
         private void rbOrigenL2_CheckedChanged(object sender, EventArgs e)
         {
-            var y = (RadioButton) sender;
+            var y = (RadioButton)sender;
             if (y.Checked == false) return;
             if (rbOrigenL1.Checked)
             {
@@ -151,7 +145,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
             MotivoDescripcionAjuste = txtMotivoAjuste.Text;
             var r = MessageBox.Show(@"Confirma el traspaso de saldos entre cuentas -- " + Environment.NewLine +
-                                    $@"Traspaso Desde {_lxOrigen} ---> Hacia {_lxDestino} "+ Environment.NewLine  +
+                                    $@"Traspaso Desde {_lxOrigen} ---> Hacia {_lxDestino} " + Environment.NewLine +
                                     $@"Importe a Traspasar = {cSaldoTraspaso.GetValueDecimal.ToString("C2")}?",
                 @"Confirmacion Traspaso Entre Cuentas", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.No) return;

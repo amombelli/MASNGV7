@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Tecser.Business.DataFix;
 using Tecser.Business.MainApp;
 using Tecser.Business.SuperMD;
 using Tecser.Business.Tools;
@@ -38,9 +37,9 @@ namespace MASngFE.Transactional.PP
         private bool _completarConsumoMP = false;
         private bool _flagRequiereRecalculo;
         private bool _stockDisponibleLineas;
-        private readonly decimal margenVariacionMP = (decimal) 0.05; //5% CONFIGURACION
-        private readonly decimal mermaMaxima = (decimal) 0.1; //10% CONFIGURACION
-      
+        private readonly decimal margenVariacionMP = (decimal)0.05; //5% CONFIGURACION
+        private readonly decimal mermaMaxima = (decimal)0.1; //10% CONFIGURACION
+
         //--------------------------------------------------------------------------------------------------------------------------------
 
         private List<T0072_FORMULA_TEMP> _lstDescuentoStock = new List<T0072_FORMULA_TEMP>();
@@ -103,7 +102,7 @@ namespace MASngFE.Transactional.PP
                 decimal lineaKgBatch = Math.Round(kgTotal / batchQty, 2);
                 _xKgMpBatch += lineaKgBatch; //abajo llamó
                 dgv[__kgBatch.Name, i].Value = lineaKgBatch;
-                
+
 
                 if (Convert.ToDecimal(dgv[__stockLiberado.Name, i].Value) >= kgTotal)
                 {
@@ -113,7 +112,7 @@ namespace MASngFE.Transactional.PP
                 {
                     dgv[__stockLiberado.Name, i].Style.ForeColor = Color.Red;
                 }
-                
+
 
                 dgv.Rows[i].Cells[__recalculo.Index].Style.BackColor =
                     (bool)dgv.Rows[i].Cells[__recalculo.Index].Value == true ? Color.LightCoral : Color.White;
@@ -179,7 +178,7 @@ namespace MASngFE.Transactional.PP
                     }
                 }
 
-                if (dgv[__Lote.Name, i].Value==null)
+                if (dgv[__Lote.Name, i].Value == null)
                 {
                     dgv[__Lote.Name, i].Style.BackColor = Color.LightGray;
                 }
@@ -196,9 +195,9 @@ namespace MASngFE.Transactional.PP
                 }
 
                 //Chequeo de Status de Stock
-                var statusLineaString = dgv[__StatusStock.Name,i].Value.ToString();
+                var statusLineaString = dgv[__StatusStock.Name, i].Value.ToString();
                 var statusLineaType = ProductionPlanningStockManager.MapStatusOfFromText(statusLineaString);
-                var celda = dgv[__StatusStock.Name,i].Style;
+                var celda = dgv[__StatusStock.Name, i].Style;
                 switch (statusLineaType)
                 {
                     case StatusStockDescuento.StockOK:
@@ -269,7 +268,7 @@ namespace MASngFE.Transactional.PP
             iconRecalculo.Set = _flagRequiereRecalculo ? CIconos.Rojo : CIconos.Verde;
             iconStatusDescuentoMPok.Set = _stockDisponibleLineas ? CIconos.Verde : CIconos.Rojo;
         }
-        
+
         private void FrmIngresoProduccion_Load(object sender, EventArgs e)
         {
             _completarConsumoMP = true;
@@ -277,7 +276,7 @@ namespace MASngFE.Transactional.PP
             CargaDatosOF();
             HabilitaBotonesSegunEstado();
             _completarConsumoMP = false;
-            
+
         }
         private void ConfiguraCombobox()
         {
@@ -307,7 +306,7 @@ namespace MASngFE.Transactional.PP
             {
                 MessageBox.Show(
                     @"No Existen datos para la OF Seleccionada" + Environment.NewLine + @"No se puede Continuar con la carga de la OF",
-                    @"Sin Datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    @"Sin Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
             txtNumeroOF.Text = _numeroOF.ToString();
@@ -369,11 +368,11 @@ namespace MASngFE.Transactional.PP
                 //recalcula mp
                 new OrdenFabricacionBOMManager().RecalculaMateriaPrimaFormula(_numeroOF, _dataOf.KG_FABRICAR);
                 new PlanProduccionManager().SetKgRecalculo(_numeroOF, _dataOf.KG_FABRICAR);
-                RefrescaDisponibilidadStockOF(-1,true);
+                RefrescaDisponibilidadStockOF(-1, true);
             }
             else
             {
-                RefrescaDisponibilidadStockOF(-1,true);
+                RefrescaDisponibilidadStockOF(-1, true);
             }
 
             iconContainer.Set = _materialConB ? CIconos.Verde : CIconos.Rojo;
@@ -405,14 +404,14 @@ namespace MASngFE.Transactional.PP
             rbSetStandBy.Enabled = false;
             rbtnVerReservas.Enabled = false;
             rbVerIngresoTemporal.Enabled = false;
-            rbIngresarTemporal.Enabled=false;
+            rbIngresarTemporal.Enabled = false;
             rbRecalculoBatch.Enabled = false;
             rbRecalculoFabricadoTotal.Enabled = false;
             rbtnRecalcularGrilla.Enabled = false;
             rbCerrarOF.Enabled = false;
             rbAgregarComplementoCierre.Enabled = false;
             rbAddMaterial.Enabled = false;
-            
+
             switch (_statusOf)
             {
                 case PlanProduccionStatusManager.StatusOf.Pendiente:
@@ -439,7 +438,7 @@ namespace MASngFE.Transactional.PP
                     rbSetProceso.Enabled = true;
                     rbSetStandBy.Enabled = true;
                     rbtnVerReservas.Enabled = true;
-                    if (cKgingresadosTemporal.GetValueDecimal>0)
+                    if (cKgingresadosTemporal.GetValueDecimal > 0)
                         rbVerIngresoTemporal.Enabled = true;
 
                     rbIngresarTemporal.Enabled = true;
@@ -449,7 +448,7 @@ namespace MASngFE.Transactional.PP
                     rbCerrarOF.Enabled = true;
                     rbAgregarComplementoCierre.Enabled = true;
                     rbAddMaterial.Enabled = true;
-                    
+
 
                     break;
                 case PlanProduccionStatusManager.StatusOf.Proceso:
@@ -475,7 +474,7 @@ namespace MASngFE.Transactional.PP
                     rbCerrarOF.Enabled = true;
                     rbAgregarComplementoCierre.Enabled = true;
                     rbAddMaterial.Enabled = true;
-                    
+
                     break;
                 case PlanProduccionStatusManager.StatusOf.Cerrada:
                     //vamos a la pantalla de OF Cerrada .
@@ -530,7 +529,7 @@ namespace MASngFE.Transactional.PP
             cStockAIngresarAhora.SetValue = cKgTotalFabricados.GetValueDecimal - cKgingresadosTemporal.GetValueDecimal;
             if (ingresoTemporal != cKgingresadosTemporal.GetValueDecimal)
             {
-                var x=MessageBox.Show(@"Atencion: Los KG Temporales han cambiado desde que se cargo esta pantalla"+Environment.NewLine + "Desea Continuar con el cierre?",
+                var x = MessageBox.Show(@"Atencion: Los KG Temporales han cambiado desde que se cargo esta pantalla" + Environment.NewLine + "Desea Continuar con el cierre?",
                     @"Modificacion de Datos", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (x == DialogResult.No)
                     return false;
@@ -606,7 +605,7 @@ namespace MASngFE.Transactional.PP
             else
             {
                 iNumeroBatch.Set = CIconos.ExclamacionRed;
-                SetEp(cCantidadBatches,"La cantidad de Batches no puede ser 0");
+                SetEp(cCantidadBatches, "La cantidad de Batches no puede ser 0");
                 resp = false;
             }
 
@@ -654,7 +653,7 @@ namespace MASngFE.Transactional.PP
         {
             txtNumeroLote.ReadOnly = false;
         }
-        
+
         /// <summary>
         /// Identifica automaticamente si existe un unico lote para descontar. Sino abre el form para 
         /// seleccionar lote
@@ -705,7 +704,7 @@ namespace MASngFE.Transactional.PP
                                 _listaAdded = true;
                             }
                         }
-                        else if (decimal.Round((decimal) stockfound.Stock, 2) > kgSeleccionado)
+                        else if (decimal.Round((decimal)stockfound.Stock, 2) > kgSeleccionado)
                         {
                             //Hace split en stock
                             new StockManager().SplitStock(idstock, kgSeleccionado);
@@ -767,7 +766,7 @@ namespace MASngFE.Transactional.PP
                 RefrescaDgvCompleto();
             }
         }
-        
+
         /// <summary>
         /// Remueve el stock reservado + Ingreso del stock + Log
         /// </summary>
@@ -886,7 +885,7 @@ namespace MASngFE.Transactional.PP
         private bool AsignacionFinaldeLotes()
         {
             RefrescaDisponibilidadStockOF();
-            if (_stockDisponibleLineas==false)
+            if (_stockDisponibleLineas == false)
             {
                 MessageBox.Show(
                     @"ATENCION: No se puede continuar porque EXISTEN ITEMS que no tienen stock disponible O se encuentran en estado Desconocido (Unknown)!",
@@ -953,7 +952,7 @@ namespace MASngFE.Transactional.PP
             if (statusOKDescontar == true)
             {
                 //Abre la pantalle de confirmacion de lotes
-                using (var f1 = new FrmPP15ConfirmacionLotesCierreOF(_numeroOF, _lstDescuentoStock, cKgTotalFabricados.GetValueDecimal,cStockAIngresarAhora.GetValueDecimal))
+                using (var f1 = new FrmPP15ConfirmacionLotesCierreOF(_numeroOF, _lstDescuentoStock, cKgTotalFabricados.GetValueDecimal, cStockAIngresarAhora.GetValueDecimal))
                 {
                     DialogResult dr = f1.ShowDialog();
                     switch (dr)
@@ -982,7 +981,7 @@ namespace MASngFE.Transactional.PP
                 return false;
             }
         }
-        
+
 
         //Al Aceptar el valor de KG Modificadods
         private void dgvFormulaIngreso_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -994,7 +993,7 @@ namespace MASngFE.Transactional.PP
             var cantidadBatch = cCantidadBatches.GetValueDecimal;
 
             //modificacion de columnas KG-Batch o KG-Real
-            if (e.ColumnIndex == (int) dgv.Columns[__kgBatch.Name].Index)
+            if (e.ColumnIndex == (int)dgv.Columns[__kgBatch.Name].Index)
             {
                 //modificando columna KG-Batch
                 kgBatch = Convert.ToDecimal(dgv[__kgBatch.Name, e.RowIndex].Value);
@@ -1002,15 +1001,15 @@ namespace MASngFE.Transactional.PP
             }
             else
             {
-                if (e.ColumnIndex == (int) dgv.Columns[__kgReal.Name].Index)
+                if (e.ColumnIndex == (int)dgv.Columns[__kgReal.Name].Index)
                 {
                     //modificando columna KG-Real
                     kgReal = Convert.ToDecimal(dgv[__kgReal.Name, e.RowIndex].Value);
-                    kgBatch = Math.Round((kgReal / cCantidadBatches.GetValueDecimal),3);
+                    kgBatch = Math.Round((kgReal / cCantidadBatches.GetValueDecimal), 3);
                     dgv[__kgBatch.Name, e.RowIndex].Value = kgBatch;
                 }
             }
-            
+
             bool manualAdded = (bool)dgv[dgv.Columns[__added.Name].Index, e.RowIndex].Value;
             var iditem = Convert.ToInt32(dgv[__idItemFormula.Name, e.RowIndex].Value);
             if (kgReal == 0)
@@ -1025,14 +1024,14 @@ namespace MASngFE.Transactional.PP
                 }
                 else
                 {
-                    new OrdenFabricacionBOMManager().UpdateKgReal(_numeroOF, iditem, kgReal,false);
+                    new OrdenFabricacionBOMManager().UpdateKgReal(_numeroOF, iditem, kgReal, false);
                 }
             }
             else
             {
                 if (manualAdded == false)
                 {
-                    new OrdenFabricacionBOMManager().UpdateKgReal(_numeroOF, iditem, kgReal,false);
+                    new OrdenFabricacionBOMManager().UpdateKgReal(_numeroOF, iditem, kgReal, false);
                 }
                 else
                 {
@@ -1046,7 +1045,7 @@ namespace MASngFE.Transactional.PP
         private void dgvFormulaIngreso_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             e.Control.KeyPress -= new KeyPressEventHandler(Column1_KeyPress);
-            if (dgv.CurrentCell.ColumnIndex == (int) dgv.Columns[__kgReal.Name].Index)
+            if (dgv.CurrentCell.ColumnIndex == (int)dgv.Columns[__kgReal.Name].Index)
             {
                 if (e.Control is TextBox tb)
                 {
@@ -1054,7 +1053,7 @@ namespace MASngFE.Transactional.PP
                 }
             }
 
-            if (dgv.CurrentCell.ColumnIndex == (int) dgv.Columns[__kgBatch.Name].Index)
+            if (dgv.CurrentCell.ColumnIndex == (int)dgv.Columns[__kgBatch.Name].Index)
             {
                 if (e.Control is TextBox tb)
                 {
@@ -1068,7 +1067,7 @@ namespace MASngFE.Transactional.PP
         }
         private void dgvFormulaIngreso_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var myDgv = (DataGridView) sender;
+            var myDgv = (DataGridView)sender;
 
             if (e.ColumnIndex == myDgv.Columns[__Lote.Name].Index && e.RowIndex >= 0)
             {
@@ -1178,7 +1177,7 @@ namespace MASngFE.Transactional.PP
                 this.dgv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFormulaIngreso_CellValueChanged);
             }
         }
-        
+
         #region Botones
 
         private void btnIngresoTemporal_Click(object sender, EventArgs e)
@@ -1205,13 +1204,13 @@ namespace MASngFE.Transactional.PP
             var f = new FrmPP13VisualizarStockReservadoPF(_numeroOF);
             f.ShowDialog();
         }
-        
+
         #endregion
 
 
         private void cmbOperador_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            var combo = (ComboBox) sender;
+            var combo = (ComboBox)sender;
             if (combo.SelectedItem == null && !string.IsNullOrEmpty(combo.Text))
                 e.Cancel = true;
         }
@@ -1220,7 +1219,7 @@ namespace MASngFE.Transactional.PP
         {
             //aca hacer un reset por status?!
         }
-        
+
 
         private void btnIngresoProduccionTemporal_Click(object sender, EventArgs e)
         {
@@ -1306,7 +1305,7 @@ namespace MASngFE.Transactional.PP
         }
 
 
-        
+
 
         private void cKgTotalFabricados_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -1567,7 +1566,7 @@ namespace MASngFE.Transactional.PP
                         new PlanProduccionManager().SetKgRecalculo(_numeroOF, cConsumoTotalMP.GetValueDecimal);
                         this.dgv.CellValueChanged -= new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFormulaIngreso_CellValueChanged);
                         _completarConsumoMP = true;
-                        RefrescaDisponibilidadStockOF(-1,true);
+                        RefrescaDisponibilidadStockOF(-1, true);
                         this.dgv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFormulaIngreso_CellValueChanged);
                         SetEp(cConsumoTotalMP);
                         SetEp(cConsumoMPxBatch);
@@ -1645,9 +1644,9 @@ namespace MASngFE.Transactional.PP
             iMpXBatch.Set = CIconos.Tilde;
             iMpTotal.Set = CIconos.ExclamacionYellow;
         }
-        
-        
-        
+
+
+
         private void rbRecalculoBatch_Click(object sender, EventArgs e)
         {
             var resp = MessageBox.Show(
@@ -1702,7 +1701,7 @@ namespace MASngFE.Transactional.PP
             {
                 if (IngresoFinalProduccion_Log())
                 {
-                    PlanProduccionStatusManager.SetStatusCerrado(_numeroOF, (int) cCantidadBatches.GetValueDecimal);
+                    PlanProduccionStatusManager.SetStatusCerrado(_numeroOF, (int)cCantidadBatches.GetValueDecimal);
                     new OrdenFabricacionBOMManager().RecalculaPorcentajeRealUtilizado(_numeroOF, cConsumoTotalMP.GetValueDecimal);
 
                     if (rb2Si.Checked)
@@ -1736,7 +1735,7 @@ namespace MASngFE.Transactional.PP
                     rbCerrarOF.Enabled = false;
                     new ReservaStockOF().LiberaStockReservadoOF(_numeroOF, false);  //Libera stock que pueda haber llegado a quedar "tomado"
                     new BOMManager().SetUltimoUso(_dataOf.Formula.Value, dtpFechaIngresoProduccion.Value); //Actualiza Ultimo USO
-                    
+
                     MessageBox.Show(@"Se ha CERRADO correctamente la Orden de Fabricacion", @"Cierre Exitoso",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 

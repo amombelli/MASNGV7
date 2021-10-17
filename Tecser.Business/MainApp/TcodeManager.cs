@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Tecser.Business.Security;
-using Tecser.Business.Transactional.HR;
 using T0001_TRANSACTIONS = TecserSQL.Data.EDMX.TSSecurity.T0001_TRANSACTIONS;
 
 namespace Tecser.Business.MainApp
@@ -33,8 +32,8 @@ namespace Tecser.Business.MainApp
         private T0001_TRANSACTIONS _tx;
         private bool _validadoToRun = false;
         private Type _myType;
-        public TcodeResponse ResultadoRun { get; private set;}
-        public Form FormToOpen { get;private set; }
+        public TcodeResponse ResultadoRun { get; private set; }
+        public Form FormToOpen { get; private set; }
         //---------------------------------------------------------------------------------
 
 
@@ -64,7 +63,7 @@ namespace Tecser.Business.MainApp
 
                 if (_tx.Type == "FORM")
                 {
-                    _myType = Type.GetType(_tx.Namespace.Trim() + "." + _tx.FormToCall.Trim()+ ", MasNg");
+                    _myType = Type.GetType(_tx.Namespace.Trim() + "." + _tx.FormToCall.Trim() + ", MasNg");
                     if (_myType == null)
                     {
                         ResultadoRun = TcodeResponse.ErrorConfig;
@@ -108,7 +107,7 @@ namespace Tecser.Business.MainApp
                 }
             }
         }
-        
+
         private void tcodeRunFunction()
         {
             //hacer aca funciones!
@@ -121,7 +120,7 @@ namespace Tecser.Business.MainApp
             using (var db = new TecserSQL.Data.EDMX.TSSecurity.TecserDataS(GlobalApp.CnnSec))
             {
                 if (onlyVisible)
-                    return db.T0001_TRANSACTIONS.Where(c=>c.Visible).ToList();
+                    return db.T0001_TRANSACTIONS.Where(c => c.Visible).ToList();
                 return db.T0001_TRANSACTIONS.ToList();
             }
         }
@@ -153,7 +152,7 @@ namespace Tecser.Business.MainApp
         {
             return _tx.Namespace.Trim() + "." + _tx.FormToCall.Trim();
         }
-        
+
         public TcodeResponse ValidateTransactionBeforeRun(string tcode)
         {
             _tcode = tcode.ToUpper();

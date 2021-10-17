@@ -16,7 +16,7 @@ namespace TSControls
         //Declaracion de Variables
         private DateTime _fechaI;   //fecha inicial
         private DateTime _fechaF;   //fecha final
-        private int _yearMinimo=DateTime.Today.AddYears(-2).Year;
+        private int _yearMinimo = DateTime.Today.AddYears(-2).Year;
         private int _yearMaximo = DateTime.Today.AddYears(2).Year;
         private string _periodo;    //periodo seleccionado
         public DateTime FechaInicio => _fechaI;
@@ -100,12 +100,12 @@ namespace TSControls
             if (month < 1 || month > 12)
             {
                 toolTipX.ToolTipTitle = "Periodo Invalido";
-                toolTipX.Show("Debe proveer un periodo valido en formato AAAA-MM - MES fuera de Rango", txtPeriodo, txtPeriodo.Width +1, 0,
+                toolTipX.Show("Debe proveer un periodo valido en formato AAAA-MM - MES fuera de Rango", txtPeriodo, txtPeriodo.Width + 1, 0,
                     1500);
                 e.Cancel = true;
                 return;
             }
-            
+
             _fechaI = new PeriodoConversion().GetFechaPrimerDiaPeriodo(txtPeriodo.Text);
             _fechaF = new PeriodoConversion().GetFechaUltimoDiaPeriodo(txtPeriodo.Text);
             _periodo = txtPeriodo.Text;

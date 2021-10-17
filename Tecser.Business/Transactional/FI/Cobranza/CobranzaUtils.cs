@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Security.Policy;
 using System.Windows.Forms;
 using Tecser.Business.MainApp;
 using Tecser.Business.Transactional.CO;
@@ -194,7 +192,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                var data = db.T0201_CTACTE.SingleOrDefault(c =>c.TDOC=="CO" && c.IDT2 == idCob);
+                var data = db.T0201_CTACTE.SingleOrDefault(c => c.TDOC == "CO" && c.IDT2 == idCob);
                 return data;
             }
         }
@@ -336,15 +334,15 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 var imputacion = db.T0207_SPLITFACTURAS.Where(c => c.IDCTACTE == facH.IdCtaCte.Value && c.MontoImputado > 0).ToList();
                 if (facH == null)
                     return rtn;
-                
+
                 decimal valorFacturaARS = facH.TotalFacturaN;
-                decimal valorFacturaUSD = Math.Round(facH.TotalFacturaN / facH.TC,2);  //Tipo de Cambio Facturacion
-                
+                decimal valorFacturaUSD = Math.Round(facH.TotalFacturaN / facH.TC, 2);  //Tipo de Cambio Facturacion
+
                 rtn.ArsTotalCobrado = ctacte.IMPORTE_ARS - ctacte.SALDOFACTURA;
                 rtn.ArsValorImpuestos = facH.TotalIIBB + facH.TotalIVA21;
                 rtn.ArsValorProductos = facH.TotalFacturaN - rtn.ArsValorImpuestos;
-                rtn.UsdValorImpuestos = Math.Round(rtn.ArsValorImpuestos/facH.TC,3);
-                rtn.UsdValorProductos = Math.Round(rtn.ArsValorProductos/facH.TC,3);
+                rtn.UsdValorImpuestos = Math.Round(rtn.ArsValorImpuestos / facH.TC, 3);
+                rtn.UsdValorProductos = Math.Round(rtn.ArsValorProductos / facH.TC, 3);
                 rtn.ArsSaldoImpago = ctacte.SALDOFACTURA;
 
                 decimal valorImputacion207 = imputacion.Sum(c => c.MontoImputado);
@@ -353,7 +351,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                     //No Coincide el valor de lo cobrado entre la T201  y la sumatorio T207
                     return rtn;
                 }
-                
+
                 if (facH.TotalFacturaN == 0)
                 {
                     //se puede tratar de una entrega s/c
@@ -370,7 +368,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 {
                     rtn.PorcPagoTotalArs = Math.Round(rtn.ArsTotalCobrado / facH.TotalFacturaN, 5);//porcentaje pago pesos
                 }
-                
+
                 decimal saldoImpuestos = rtn.ArsValorImpuestos;
                 decimal valorPago207 = 0;
                 decimal valorPagadoProductosARS = 0;
@@ -409,8 +407,8 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                         var xcob = db.T0205_COBRANZA_H.SingleOrDefault(c => c.IDCOB == ximpu.IDCOB.Value);
                         if (xcob != null)
                         {
-                           cobTC = xcob.TC;
-                           ximpu.USDImpu = Math.Round(ximpu.MontoImputado / xcob.TC, 3);
+                            cobTC = xcob.TC;
+                            ximpu.USDImpu = Math.Round(ximpu.MontoImputado / xcob.TC, 3);
                         }
                     }
                     else
@@ -431,7 +429,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 db.SaveChanges();  //update valor USDImpu
                 rtn.ValidacionPorcPago = valorPago207 == rtn.ArsTotalCobrado;
                 rtn.PorcPagoImpuestos = rtn.ArsValorImpuestos == 0 ? 1 : Math.Round(rtn.ArsCobradoImpuestos / rtn.ArsValorImpuestos, 5);
-                rtn.PorcPagoProductos = rtn.ArsValorProductos ==0 ?1 : Math.Round(rtn.ArsCobradoProductos / rtn.ArsValorProductos, 5);
+                rtn.PorcPagoProductos = rtn.ArsValorProductos == 0 ? 1 : Math.Round(rtn.ArsCobradoProductos / rtn.ArsValorProductos, 5);
                 if (rtn.UsdTotalCobrado == 0)
                 {
                     rtn.XratePp = facH.TC;

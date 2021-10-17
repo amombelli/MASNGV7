@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -18,7 +15,7 @@ namespace Tecser.Business.Transactional.PP.MRP
         public decimal KgFabricados { get; private set; }
         public decimal KgConsumidos { get; private set; }
         public decimal KgDespachados { get; private set; }
-        public  decimal KgRetornados { get; private set; }
+        public decimal KgRetornados { get; private set; }
         public DateTime fechaDesde { get; private set; }
 
         public MRPConsumoMaterialStats(string material)
@@ -38,22 +35,22 @@ namespace Tecser.Business.Transactional.PP.MRP
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var p = from mov in db.T0040_MAT_MOVIMIENTOS
-                    where
-                        (mov.TIPOMOVIMIENTO == 50 || mov.TIPOMOVIMIENTO == 51 || mov.TIPOMOVIMIENTO == 5 ||
-                         mov.TIPOMOVIMIENTO == 6 || mov.TIPOMOVIMIENTO == 7 || mov.TIPOMOVIMIENTO == 10 ||
-                         mov.TIPOMOVIMIENTO == 11 || mov.TIPOMOVIMIENTO == 1 || mov.TIPOMOVIMIENTO == 2) &&
-                        (mov.FECHAMOV >= fechaDesde) &&
-                        mov.IDMATERIAL.ToUpper().Equals(Material)
-                    group mov by new
-                    {
-                        mov.TIPOMOVIMIENTO
-                    }
+                        where
+                            (mov.TIPOMOVIMIENTO == 50 || mov.TIPOMOVIMIENTO == 51 || mov.TIPOMOVIMIENTO == 5 ||
+                             mov.TIPOMOVIMIENTO == 6 || mov.TIPOMOVIMIENTO == 7 || mov.TIPOMOVIMIENTO == 10 ||
+                             mov.TIPOMOVIMIENTO == 11 || mov.TIPOMOVIMIENTO == 1 || mov.TIPOMOVIMIENTO == 2) &&
+                            (mov.FECHAMOV >= fechaDesde) &&
+                            mov.IDMATERIAL.ToUpper().Equals(Material)
+                        group mov by new
+                        {
+                            mov.TIPOMOVIMIENTO
+                        }
                     into grp
-                    select new
-                    {
-                        TipoMov = grp.Key.TIPOMOVIMIENTO.Value,
-                        SumKG = grp.Sum(x => x.CANTIDAD.Value)
-                    };
+                        select new
+                        {
+                            TipoMov = grp.Key.TIPOMOVIMIENTO.Value,
+                            SumKG = grp.Sum(x => x.CANTIDAD.Value)
+                        };
 
                 foreach (var i in p)
                 {

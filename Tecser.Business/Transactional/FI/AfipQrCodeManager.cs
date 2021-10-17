@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 using WebServicesAFIP;
@@ -48,7 +44,7 @@ namespace Tecser.Business.Transactional.FI
                     System.IO.Directory.CreateDirectory(path);
                 var fileName = d.PV_AFIP.PadLeft(4, '0') + "- " + d.ND_AFIP.PadLeft(8, '0') + ".jpg";
                 DocumentoQr = path + fileName;
-                if (regenerarQr==false)
+                if (regenerarQr == false)
                 {
                     if (!File.Exists(path + fileName))
                     {
@@ -68,14 +64,14 @@ namespace Tecser.Business.Transactional.FI
             return DocumentoQr;
         }
 
-        private string GeneraCodigoQR(string fecha,long cuit, int ptoVta, int nroCmp, int tipoCmp,long codAut, float importe,string moneda,float ctz,int tipo_doc_rec, long nro_doc_rec)
+        private string GeneraCodigoQR(string fecha, long cuit, int ptoVta, int nroCmp, int tipoCmp, long codAut, float importe, string moneda, float ctz, int tipo_doc_rec, long nro_doc_rec)
         {
             dynamic qr = Activator.CreateInstance(Type.GetTypeFromProgID("PyQR"));
             qr.Extension = "JPEG";  //Establecer tipo de imagen (PNG o JPEG):
             qr.archivo = DocumentoQr;
             string tipo_cod_aut = "E";
             object ver = 1;  //? 
-            
+
             //fecha = "2020-10-13"
             //cuit = 30000000007#
             //pto_vta = 10

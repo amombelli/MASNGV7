@@ -21,7 +21,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable.Modules
         private T0205_COBRANZA_H _h;
         private readonly string _numeroRecibo;
 
-        protected  void LoadHeaderData()
+        protected void LoadHeaderData()
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {

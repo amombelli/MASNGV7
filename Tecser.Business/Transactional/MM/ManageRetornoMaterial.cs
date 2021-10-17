@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Linq;
 using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
@@ -100,7 +99,7 @@ namespace Tecser.Business.Transactional.MM
                         id360 = t.IDX
                     };
                 }
-                return new RetornoDevolucion() {id360 = -1, id40 = -1};
+                return new RetornoDevolucion() { id360 = -1, id40 = -1 };
             }
         }
 
@@ -142,28 +141,28 @@ namespace Tecser.Business.Transactional.MM
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 if (soloPendienteNc)
-                    return db.T0360_RTN.Where(c => c.IDCLI == idCliente && c.NumeroNC==null).ToList();
+                    return db.T0360_RTN.Where(c => c.IDCLI == idCliente && c.NumeroNC == null).ToList();
                 return db.T0360_RTN.Where(c => c.IDCLI == idCliente).ToList();
             }
         }
 
         public List<T0401_FACTURA_I> GetUltimasComprasClienteMaterialReturn(string material, string lote, int idCliente, int top)
         {
-            List<T0401_FACTURA_I> rtn=new List<T0401_FACTURA_I>();
+            List<T0401_FACTURA_I> rtn = new List<T0401_FACTURA_I>();
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var x = db.T0056_REMITO_I.Where(c =>
-                    c.MATERIAL == material && c.BATCH ==lote && c.T0055_REMITO_H.T0007_CLI_ENTREGA.IDCLIENTE == idCliente).ToList();
+                    c.MATERIAL == material && c.BATCH == lote && c.T0055_REMITO_H.T0007_CLI_ENTREGA.IDCLIENTE == idCliente).ToList();
                 foreach (var lst in x)
                 {
-                    var z = db.T0401_FACTURA_I.Where(c => c.IDFactura == lst.T0055_REMITO_H.Factura && c.ITEM==material).ToList();
+                    var z = db.T0401_FACTURA_I.Where(c => c.IDFactura == lst.T0055_REMITO_H.Factura && c.ITEM == material).ToList();
                     if (z.Any())
                         rtn.AddRange(z);
                 }
                 return rtn;
             }
         }
-        
+
         public void UpdateNumeroNc(int idRetorno, string numeroNc, decimal kg)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -185,7 +184,7 @@ namespace Tecser.Business.Transactional.MM
             }
         }
 
-        public void UpdateRegistroRtnAfterNotaCredito(int idRtn, int idNC,decimal kgNotaCredito)
+        public void UpdateRegistroRtnAfterNotaCredito(int idRtn, int idNC, decimal kgNotaCredito)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.FI;
@@ -28,7 +21,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             _tipoLx = h.TIPOFACT;
             InitializeComponent();
             txtTipoDocumento.Text = h.TIPO_DOC;
-            
+
         }
 
         private void FrmFI64GastosFinancieros_Load(object sender, EventArgs e)
@@ -55,7 +48,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             if (ckCalcularIva.Checked)
             {
-                cAClientesIva.SetValue = cAClienteGastoFinanciero.GetValueDecimal * (decimal) 0.21;
+                cAClientesIva.SetValue = cAClienteGastoFinanciero.GetValueDecimal * (decimal)0.21;
             }
             else
             {
@@ -106,7 +99,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 return;
             }
 
-            _znd.AddItems("GSFIN",txtAClientesMotivo.Text,cAClienteGastoFinanciero.GetValueDecimal,txtGlFinanciero.Text,ckCalcularIva.Checked,cCantidad.GetValueDecimal);
+            _znd.AddItems("GSFIN", txtAClientesMotivo.Text, cAClienteGastoFinanciero.GetValueDecimal, txtGlFinanciero.Text, ckCalcularIva.Checked, cCantidad.GetValueDecimal);
             _znd.SetTotalesInHeaderFromItems();
             //_znd.SetPeriodoAsociado(); el Periodo Asociado lo pasamos en el form de origen
             this.Close();

@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.MasterData;
-using Tecser.Business.SuperMD;
 using Tecser.Business.Tools;
 using Tecser.Business.Transactional.HR;
 using Tecser.Business.Transactional.SD;
@@ -83,7 +76,7 @@ namespace MASngFE.Transactional.SD.Remito
             else
             {
                 cboResponsablePrep.SelectedItem = data.PREPAREDBY;
-              
+
             }
 
             var cliente = new CustomerManager().GetCustomerShipToData(data.CODCLIENTREGA);

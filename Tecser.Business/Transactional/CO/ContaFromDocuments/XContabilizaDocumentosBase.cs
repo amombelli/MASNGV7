@@ -130,7 +130,7 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
                 }
 
                 var r401 = db.T0401_FACTURA_I.Where(c => c.IDFactura == H.IDFACTURA).ToList();
-                foreach (var  r in r401)
+                foreach (var r in r401)
                 {
                     r.NAS = H.NAS;
                 }

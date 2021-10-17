@@ -9,6 +9,6 @@
             _customerNc = customerNc;
         }
 
-      
+
     }
 }

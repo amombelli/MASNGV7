@@ -34,7 +34,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
                 return db.T0401_FACTURA_I.Where(c => c.IDFactura == idFactura).ToList();
             }
         }
-        
+
         public static T0401_FACTURA_I GetItemSeleccionado(int idFactura, int idItem)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -56,7 +56,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
             }
         }
 
-        public static T0300_NCD_H GetNCDHeader (int idH)
+        public static T0300_NCD_H GetNCDHeader(int idH)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {

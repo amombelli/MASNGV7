@@ -44,7 +44,7 @@ namespace TSControls
         {
             InitializeComponent();
         }
-        
+
         private CIconos _iconoSeleccionado;
         private TamañoIcono _iconoSize = TamañoIcono.Chico;
         private UbicacionIcono _iconLocation = UbicacionIcono.Normal;
@@ -150,7 +150,7 @@ namespace TSControls
                 switch (value)
                 {
                     case TamañoIcono.Chico:
-                         x.Size = new Size(16,16);
+                        x.Size = new Size(16, 16);
                         base.Size = x.Size;
                         break;
                     case TamañoIcono.Mediano:
@@ -181,7 +181,7 @@ namespace TSControls
             pestrella.Visible = false;
             pexclaNaranja.Visible = false;
             zBlue.Visible = false;
-            zYellow.Visible=false;
+            zYellow.Visible = false;
             zGreen.Visible = false;
             zRed.Visible = false;
         }

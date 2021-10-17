@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
 using Tecser.Business.MainApp;
 using Tecser.Business.Transactional.CO.Costos;
 using TecserEF.Entity;
@@ -182,7 +177,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
             }
         }
 
-        
+
 
         /// <summary>
         /// Desimputacion de un documento (Factura/ND/NC?)
@@ -198,7 +193,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 if (ctacte.IMPORTE_ORI == ctacte.SALDOFACTURA) return false;
                 var c207 = db.T0207_SPLITFACTURAS.Where(c => c.IDCTACTE == idCtaCteDocumentoADesimputar).ToList();
                 if (!c207.Any()) return false;
-                
+
                 foreach (var i in c207)
                 {
                     if (i.IDCOB != null || i.IDNC != null)
@@ -236,7 +231,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                                 var d208 = db.T0208_COB_NO_APLICADA.FirstOrDefault(c => c.IDRECIBO == i.IDCOB.Value);
                                 if (d208 == null)
                                 {
-                                    new CobranzaNoImputada().AddSinImputarRecord(cob.IDCTACTE,i.ImporteAImputar);
+                                    new CobranzaNoImputada().AddSinImputarRecord(cob.IDCTACTE, i.ImporteAImputar);
                                     //var x208 = new T0208_COB_NO_APLICADA()
                                     //{
                                     //    FECHA = cob.Fecha.Value,

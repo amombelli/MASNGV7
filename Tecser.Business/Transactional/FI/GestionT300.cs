@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -14,7 +11,7 @@ namespace Tecser.Business.Transactional.FI
 
         public GestionT300()
         {
-            
+
         }
 
         public GestionT300(int idH)
@@ -28,7 +25,7 @@ namespace Tecser.Business.Transactional.FI
 
         //Variables
         public T0300_NCD_H H3 { get; private set; } = new T0300_NCD_H();
-        public void CreaHeaderMemoria(T0400_FACTURA_H h, string comentario,string motivoApp, int? idFacturaAjusta, DateTime? periodoAjusteDesde, DateTime? periodoAjusteHasta, int? idSegunMotivo, string autorizadoPor)
+        public void CreaHeaderMemoria(T0400_FACTURA_H h, string comentario, string motivoApp, int? idFacturaAjusta, DateTime? periodoAjusteDesde, DateTime? periodoAjusteHasta, int? idSegunMotivo, string autorizadoPor)
         {
             H3 = new T0300_NCD_H()
             {
@@ -135,7 +132,7 @@ namespace Tecser.Business.Transactional.FI
             {
                 var h = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == H3.IDH);
                 var h400 = db.T0400_FACTURA_H.SingleOrDefault(c => c.IDFACTURA == H3.idFacturaT0400.Value);
-                
+
                 //Update Importes
                 if (h400.FacturaMoneda == "ARS")
                 {
@@ -146,7 +143,7 @@ namespace Tecser.Business.Transactional.FI
                 else
                 {
                     //moneda USD
-                    h.ImporteARS = Math.Round(h400.TotalFacturaN/h.TC, 2);
+                    h.ImporteARS = Math.Round(h400.TotalFacturaN / h.TC, 2);
                     h.ImporteUSD = Math.Round(h400.TotalFacturaN, 2);
                 }
                 h.TEMP = false;

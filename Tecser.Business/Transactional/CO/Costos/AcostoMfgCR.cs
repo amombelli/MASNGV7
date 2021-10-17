@@ -27,12 +27,12 @@ namespace Tecser.Business.Transactional.CO.Costos
         public List<CostItems> CostItems { get; protected set; }
         public List<CostHeader> CostHeader { get; protected set; }
         private List<CostHeader> StoredMaterials { get; set; } //Lista para el manejo de todos los materiales que se van costeando (MP/PM,...)
-        
+
         public void GetCostXplodAll(string material = null)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                if (_tc==null)
+                if (_tc == null)
                     _tc = new ExchangeRateManager().GetExchangeRate(DateTime.Today);
                 var materialesCostear = material == null
                     ? db.T0035_CostRoll.Where(c => c.MOrigen == "FAB").ToList()
@@ -64,7 +64,7 @@ namespace Tecser.Business.Transactional.CO.Costos
             bool calculoOK = true;
             int nivelExplosion = 0;
             DateTime fechaCostoOlder = DateTime.Today.AddYears(+5);
-            
+
             if (idFormula == null) idFormula = -1; //manejo de producto con formula null.
 
             using (var db = new TecserData(GlobalApp.CnnApp))

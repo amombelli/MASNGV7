@@ -21,7 +21,7 @@ namespace MASngFE.Transactional.CO.Cost
         private void FrmCO11_ViewCostRollManufacturedDetail_Load(object sender, EventArgs e)
         {
 
-           
+
 
             //var mfg = new CostoManufactura();
             rbReposicion.Checked = true;

@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MASngFE.MasterData.Customer_Master;
 using Tecser.Business.MasterData;
-using Tecser.Business.Tools;
 using Tecser.Business.Transactional.CO;
 using Tecser.Business.Transactional.CO.ContaFromDocuments;
 using Tecser.Business.Transactional.FI;
@@ -45,7 +39,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             L2,
             NoSeleccionado
         };
-        
+
         public FrmFI71AjustesFI()
         {
             InitializeComponent();
@@ -270,7 +264,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 return;
             }
 
-            
+
             {
                 //aca se contabiliza de acuerdo al motivo
                 //Si no -> va accion general de contabilizacion
@@ -282,18 +276,18 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             txtNas1.Text = zz.RtnAsiento.IdDocu.ToString();
             var gestionStatus = new GestionT400Status(_aj1.GetId400());
             _statusDocumento = gestionStatus.SetContabilizada(zz.IdCtaCte, zz.RtnAsiento.IdDocu, zz.RtnAsiento.Nasx1);
-            
+
             //Contabilizacion de segundo documento /Contradocumento []
             if (_existeDocumentoSecundario)
             {
-                var zz2 = new ContaClienteAjusteL2( _aj2.GetId400(), _idCliente, txtTipoDocumento2.Text);
+                var zz2 = new ContaClienteAjusteL2(_aj2.GetId400(), _idCliente, txtTipoDocumento2.Text);
                 zz2.ContabilizaCompletaAjusteRedondeo();
                 txtNas2.Text = zz2.RtnAsiento.IdDocu.ToString();
                 txtIdCtaCte2.Text = zz2.IdCtaCte.ToString();
                 var gestionStatus2 = new GestionT400Status(_aj2.GetId400());
                 _statusDocumento2 = gestionStatus2.SetContabilizada(zz2.IdCtaCte, zz2.RtnAsiento.IdDocu, zz2.RtnAsiento.Nasx1);
             }
-            
+
 
             //aca van acciones POST-Contabilizacion
             {
@@ -367,7 +361,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             //    }
             SetScreenStatus();
         }
-    
+
         private void rbtnSolicitarCae_Click(object sender, EventArgs e)
         {
 
@@ -395,7 +389,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             rPanelRegistracion.Enabled = true;
             rbtnUnregistrar.Enabled = false;
             rPanelTipoDoc.Enabled = false;
-            
+
             switch (_motivoAjuste)
             {
                 case CustomerAjustes.MotivoAjustes.SinMotivo:
@@ -466,9 +460,9 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             string autorizado = "NO-Autorizado";
             if (rbCmdAutorizado.SelectedItem != null) autorizado = rbCmdAutorizado.SelectedItem.Text;
             _aj1 = new CustomerAjustes(_motivoAjuste);
-            _aj2=  new CustomerAjustes(_motivoAjuste);
-           
-            using (var f0 = new FrmFI75AjusteEntreCuentasLx(_aj1,_aj2,_idCliente,dtpFechaDocumento.Value,autorizado))
+            _aj2 = new CustomerAjustes(_motivoAjuste);
+
+            using (var f0 = new FrmFI75AjusteEntreCuentasLx(_aj1, _aj2, _idCliente, dtpFechaDocumento.Value, autorizado))
             {
                 DialogResult dr = f0.ShowDialog();
                 if (dr == DialogResult.OK)
@@ -499,7 +493,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
         #endregion
 
-        
+
         private void MapTotalesFactura400(TotalesCustomerFi total)
         {
             if (!total.OK)
@@ -571,7 +565,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             txtSIdFacturaAsociada1.Text = _aj1.NumeroDocumentoAsociado;
             txtSLx1.Text = h3.LX;
         }
-        
+
         //todo:revisar y mejoar esta funcion
         private void SetScreenStatus()
         {
@@ -657,7 +651,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
                     //Acciones Post-Cae Aprobado 
 
-                   // End Acciones
+                    // End Acciones
                 }
                 else
                 {
