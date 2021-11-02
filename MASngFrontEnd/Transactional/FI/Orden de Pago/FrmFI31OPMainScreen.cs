@@ -9,8 +9,10 @@ using Tecser.Business.MasterData;
 using Tecser.Business.Tools;
 using Tecser.Business.TOOLS;
 using Tecser.Business.Transactional.CO;
+using Tecser.Business.Transactional.CO.AsientoContable;
 using Tecser.Business.Transactional.CO.AsientoContable.Modules;
 using Tecser.Business.Transactional.FI;
+using Tecser.Business.Transactional.FI.Cobranza;
 using Tecser.Business.Transactional.FI.CtaCte;
 using Tecser.Business.Transactional.FI.Imputacion;
 using Tecser.Business.Transactional.FI.OrdenPago;
@@ -750,10 +752,11 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
                     FormatAndConversions.CCurrencyADecimal(txtDifFavorTecser.Text), 0,
                     txtComentariosOP.Text);
 
+                AsientoBase.IdentificacionAsiento resultado=new AsientoBase.IdentificacionAsiento();
                 if (_op.Header.IMP_OP > 0)
                 {
                     var asientoN = new AsientoOrdenPago(_numeroOP, "OPX");
-                    var resultado = asientoN.GeneraAsientoFromOrdenPago();
+                    resultado = asientoN.GeneraAsientoFromOrdenPago();
 
                     if (resultado.IdDocu > 0)
                     {
@@ -779,7 +782,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
                 _estadoOP = OrdenPagoStatus.StatusOP.Generada;
                 _op.GeneraSubdiario();
                 _op.ActualizaCuentasCorrientes();
-                _op.RegistraChequesEmitidos(); //no se registra en REG pero se registra en Cheques Emitidos T0159
+                _op.RegistraChequesEmitidos(resultado.IdDocu); //no se registra en REG pero se registra en Cheques Emitidos T0159
                 new ManageVendorImputacionDocumentos().GeneraImputacionDesdeOP(_numeroOP);
                 MessageBox.Show($@"Se ha generado correctamente la orden de pago # {_numeroOP}", @"Orden de Pago",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

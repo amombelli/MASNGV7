@@ -25,11 +25,6 @@ namespace MASngFE.Transactional.FI.GestionCheques
             bsChequesRech.DataSource = new ChequesManager().GetListaChequesRechazados(ckNoEntregados.Value);
         }
 
-        private void tsUcCustomerSearch11_ClienteModificado(object source, TsCustomerSearchEventArgs args)
-        {
-            MessageBox.Show($@"Se modificado el cliente - El cliente es: {args.RazonSocial}");
-        }
-
         private void dgvChequesRech_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var datagridview = (DataGridView)sender;

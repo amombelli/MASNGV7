@@ -70,7 +70,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         }
         private void ConfiguraSegunMotivo()
         {
-            txt2MonCot.ReadOnly = true;
+            cmbMonedaPrecioActualizado.Enabled = false;
             c2PrecioUnitCot.XReadOnly = true;
             c2Tc.XReadOnly = true;
             c2Cantidad.XReadOnly = true;
@@ -79,6 +79,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             {
                 case CustomerNc.MotivoNotaCredito.DiferenciaPrecio:
                     c2PrecioUnitCot.XReadOnly = false;
+                    cmbMonedaPrecioActualizado.Enabled = true;
                     break;
                 case CustomerNc.MotivoNotaCredito.DiferenciaCambio:
                     c2Tc.XReadOnly = false;
@@ -119,7 +120,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         private void BlanqueaItemsAModificar()
         {
             itemSelected = null;
-            txt2MonCot.Text = null;
+            cmbMonedaPrecioActualizado.Text = null; //!
             c2PrecioUnitCot.SetValue = 0;
             c2Tc.SetValue = 0;
             c2Cantidad.SetValue = 0;
@@ -206,7 +207,8 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
                 c2Cantidad.SetValue = itemSelected.KGDESPACHADOS_R.Value;
                 c2Tc.SetValue = _headerSelected.TC;
-                txt2MonCot.Text = itemSelected.MONEDA_COTIZ;
+                cmbMonedaPrecioActualizado.SelectedItem = itemSelected.MONEDA_COTIZ;
+                //txt2MonCot.Text = itemSelected.MONEDA_COTIZ;
                 c2PrecioUnitCot.SetValue = itemSelected.PRECIOU_COTIZ;
                 txt2MonFactu.Text = itemSelected.MONEDA_FACT;
                 //
@@ -269,7 +271,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 c2Tc.SetValue = 1;
             }
 
-            if (txt2MonCot.Text == @"ARS")
+            if (cmbMonedaPrecioActualizado.SelectedItem.ToString() == @"ARS")
             {
                 vUnitArs = c2PrecioUnitCot.GetValueDecimal;
                 vUnitUsd = c2PrecioUnitCot.GetValueDecimal / c2Tc.GetValueDecimal;
@@ -279,6 +281,17 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 vUnitArs = c2PrecioUnitCot.GetValueDecimal * c2Tc.GetValueDecimal;
                 vUnitUsd = c2PrecioUnitCot.GetValueDecimal;
             }
+
+            //if (txt2MonCot.Text == @"ARS")
+            //{
+            //    vUnitArs = c2PrecioUnitCot.GetValueDecimal;
+            //    vUnitUsd = c2PrecioUnitCot.GetValueDecimal / c2Tc.GetValueDecimal;
+            //}
+            //else
+            //{
+            //    vUnitArs = c2PrecioUnitCot.GetValueDecimal * c2Tc.GetValueDecimal;
+            //    vUnitUsd = c2PrecioUnitCot.GetValueDecimal;
+            //}
 
             if (txt2MonFactu.Text == @"ARS")
             {
@@ -344,6 +357,19 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             this.Close();
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void cmbMonedaPrecioActualizado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (cmbMonedaPrecioActualizado.SelectedItem.ToString() == @"ARS")
+            //{
+
+            //}
+            //else
+            //{
+
+            //}
+
         }
     }
 }

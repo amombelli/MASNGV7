@@ -31,7 +31,7 @@ namespace MASngFE.Transactional.CO.CierreRaf
             txtFechaDesde.Text = new PeriodoConversion().GetFechaPrimerDiaPeriodo(_periodo).ToString("d");
             txtFechaHasta.Text = new PeriodoConversion().GetFechaUltimoDiaPeriodo(_periodo).ToString("d");
             txtLx.Text = _tipoLx;
-            var listaData = new VendorConcil().GetListaPagosPD_OP(_periodo, _tipoLx);
+            var listaData = new VendorConcil(_periodo,_tipoLx).GetListaPagosPD_OP(_periodo, _tipoLx);
             t203Bs.DataSource = listaData;
             txtMontoOut.Text = Math.Abs(listaData.Sum(c => c.IMPORTE_ARS)).ToString("C2");
             txtSaldoImpago.Text = Math.Abs(listaData.Sum(c => c.SALDOFACTURA)).ToString("C2");

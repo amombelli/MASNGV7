@@ -65,12 +65,12 @@
             this.cCantidadRtn = new TSControls.CtlTextBox();
             this.txtMaterialRecibido = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.tsUcCustomerSearch11 = new MASngFE._0TSUserControls.TsUcCustomerSearch1();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.tsUcCustomer31 = new MASngFE._0TSUserControls.TsUcCustomer3();
             ((System.ComponentModel.ISupportInitialize)(this.t0006MCLIENTESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t0028SLOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t0011MATERIALESAKABindingSource)).BeginInit();
@@ -138,7 +138,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(584, 9);
+            this.btnSalir.Location = new System.Drawing.Point(592, 7);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 41);
             this.btnSalir.TabIndex = 20;
@@ -148,7 +148,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(584, 50);
+            this.btnIngresar.Location = new System.Drawing.Point(592, 48);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(100, 41);
             this.btnIngresar.TabIndex = 94;
@@ -158,7 +158,7 @@
             // 
             // btnImprimirRecepcion
             // 
-            this.btnImprimirRecepcion.Location = new System.Drawing.Point(584, 91);
+            this.btnImprimirRecepcion.Location = new System.Drawing.Point(592, 89);
             this.btnImprimirRecepcion.Name = "btnImprimirRecepcion";
             this.btnImprimirRecepcion.Size = new System.Drawing.Size(100, 41);
             this.btnImprimirRecepcion.TabIndex = 95;
@@ -267,7 +267,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 223);
+            this.label16.Location = new System.Drawing.Point(12, 224);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(256, 15);
             this.label16.TabIndex = 110;
@@ -305,7 +305,7 @@
             this.grp1.Controls.Add(this.txtMaterialRecibido);
             this.grp1.Controls.Add(this.label25);
             this.grp1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grp1.Location = new System.Drawing.Point(9, 100);
+            this.grp1.Location = new System.Drawing.Point(9, 101);
             this.grp1.Name = "grp1";
             this.grp1.Size = new System.Drawing.Size(500, 118);
             this.grp1.TabIndex = 117;
@@ -464,15 +464,6 @@
             this.label25.TabIndex = 109;
             this.label25.Text = "Material Recibido";
             // 
-            // tsUcCustomerSearch11
-            // 
-            this.tsUcCustomerSearch11.ClienteId = null;
-            this.tsUcCustomerSearch11.Location = new System.Drawing.Point(6, 8);
-            this.tsUcCustomerSearch11.Name = "tsUcCustomerSearch11";
-            this.tsUcCustomerSearch11.Size = new System.Drawing.Size(537, 89);
-            this.tsUcCustomerSearch11.TabIndex = 324;
-            this.tsUcCustomerSearch11.ClienteModificado += new MASngFE._0TSUserControls.TsUcCustomerSearch1.ClienteModificadoEventHandler(this.tsUcCustomerSearch11_ClienteModificado);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -490,7 +481,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Location = new System.Drawing.Point(2, 2);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(807, 3);
+            this.label2.Size = new System.Drawing.Size(695, 3);
             this.label2.TabIndex = 325;
             // 
             // label3
@@ -499,7 +490,7 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Location = new System.Drawing.Point(2, 480);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(809, 3);
+            this.label3.Size = new System.Drawing.Size(697, 3);
             this.label3.TabIndex = 326;
             // 
             // label4
@@ -515,23 +506,36 @@
             // 
             this.label6.BackColor = System.Drawing.Color.Navy;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(808, 2);
+            this.label6.Location = new System.Drawing.Point(696, 2);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(3, 478);
             this.label6.TabIndex = 328;
+            // 
+            // tsUcCustomer31
+            // 
+            this.tsUcCustomer31.BackColor = System.Drawing.Color.White;
+            this.tsUcCustomer31.ClienteId = null;
+            this.tsUcCustomer31.ColorContorno = System.Drawing.Color.Navy;
+            this.tsUcCustomer31.FondoControl = System.Drawing.Color.White;
+            this.tsUcCustomer31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsUcCustomer31.Location = new System.Drawing.Point(9, 7);
+            this.tsUcCustomer31.Name = "tsUcCustomer31";
+            this.tsUcCustomer31.Size = new System.Drawing.Size(577, 91);
+            this.tsUcCustomer31.TabIndex = 329;
+            this.tsUcCustomer31.ClienteModificado += new MASngFE._0TSUserControls.TsUcCustomer3.ClienteModificadoEventHandler(this.tsUcCustomer31_ClienteModificado);
             // 
             // FrmRetornoMaterialAPlanta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(813, 486);
+            this.ClientSize = new System.Drawing.Size(702, 486);
+            this.Controls.Add(this.tsUcCustomer31);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tsUcCustomerSearch11);
             this.Controls.Add(this.cmbAprobadoPor);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.grp1);
@@ -595,7 +599,6 @@
         private System.Windows.Forms.TextBox txtNumeroLoteRecepcion;
         private System.Windows.Forms.Label label28;
         private TSControls.CtlSemaforo cSemLoteRecibidoOk;
-        private _0TSUserControls.TsUcCustomerSearch1 tsUcCustomerSearch11;
         private TSControls.CtlFechaTs cFechaRececpcion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -604,5 +607,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbSloc;
         private System.Windows.Forms.Label label7;
+        private _0TSUserControls.TsUcCustomer3 tsUcCustomer31;
     }
 }

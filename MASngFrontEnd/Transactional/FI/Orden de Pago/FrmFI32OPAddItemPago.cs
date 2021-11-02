@@ -59,27 +59,29 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
 
             if (rbCheque.Checked || rbEcheque.Checked)
             {
+                //Validaciones para cheques/e-cheques
                 if (string.IsNullOrEmpty(txtNumeroCheque.Text))
                 {
                     MessageBox.Show(@"Debe completar el numero de Cheque/E-Cheque", @"Datos Incompletos",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
                 if (cFechaAcreditacion.Value == null)
                 {
                     MessageBox.Show(@"Debe completar la Fecha de Acreditacion del Cheque/E-Cheque", @"Datos Incompletos",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
                 //utlilizo -5 como indicador de cheque propio emitido por tecser
                 if (rbEcheque.Checked)
                     transferencia = true;
+
                 new OrdenPagoManageDatos(_numeroOP).AddItemPago(cmbCuenta.SelectedValue.ToString(),
                     txtImporteOrigen.GetValueDecimal, fechaAcreditacionEmitido: cFechaAcreditacion.Value,
                     numeroChequeEmitido: txtNumeroCheque.Text, esTransferenciaDesdeCuenta: transferencia, idCheque: -5);
 
-                //aca esta la emision de cheques
+              
 
             }
             else
