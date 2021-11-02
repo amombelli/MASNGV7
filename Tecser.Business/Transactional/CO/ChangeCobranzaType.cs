@@ -35,17 +35,28 @@ namespace Tecser.Business.Transactional.CO
                 string moneda = cob.MON;
                 string numeroRecibo = cob.NRECIBO;
                 decimal TC = cob.TC;
+
                 //Update tipo en T0201
                 var t201 = db.T0201_CTACTE.SingleOrDefault(c => c.IDT2 == idCobranza && c.TDOC == "CO");
                 t201.TIPO = tipoNuevo;
-
+                db.SaveChanges();
+                //
+                var t208 = db.T0208_COB_NO_APLICADA.SingleOrDefault(c => c.IDRECIBO == idCobranza);
+                t208.TIPOCUENTA = tipoNuevo;
+                db.SaveChanges();
+                //
+                var register = db.XREGISTER.Where(c => c.PC == "C" && c.PCID == t201.IDCLI && c.Tdoc == "RC" && c.Ref == t201.NUMDOC).ToList();
+                foreach (var r in register)
+                {
+                    r.TIPO = tipoNuevo;
+                }
                 db.SaveChanges();
 
                 if (ChangeSaldoCtaCteFromLaToLb(idCliente, moneda, importeCobranza, tipoOriginal, tipoNuevo, TC))
                 {
                     ChangeChequeTypeFromLaToLb(idCobranza, tipoNuevo);
                     new AsientoContableManager().ChangeAsientoCobranzaType(numeroRecibo, tipoNuevo);
-                    UpdateCobranzaSinImputarType(idCobranza, tipoNuevo);
+                    //UpdateCobranzaSinImputarType(idCobranza, tipoNuevo);
                 }
             }
             return true;
@@ -142,8 +153,8 @@ namespace Tecser.Business.Transactional.CO
                     //registroL2.UpdateImporteCtaCte(moneda, importeCobranza, exchangeRate);
                     //registroL1.UpdateImporteCtaCte(moneda, importeCobranza*-1, exchangeRate);
                 }
+                return true;
 
-                return db.SaveChanges() > 1;
             }
         }
 

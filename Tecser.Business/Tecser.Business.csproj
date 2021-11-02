@@ -131,6 +131,7 @@
     <Compile Include="MasterData\CuentasManager.cs" />
     <Compile Include="MasterData\CustomerManager.cs" />
     <Compile Include="MasterData\CustomerSelectedManager.cs" />
+    <Compile Include="MasterData\Customer\CustomerMng2.cs" />
     <Compile Include="MasterData\Material Master\AbmCustomerMaster.cs" />
     <Compile Include="MasterData\Material Master\AkaManager.cs" />
     <Compile Include="MasterData\Material Master\ContainerManager.cs" />
@@ -202,6 +203,7 @@
     <Compile Include="Transactional\Cierre\ConciliacionSaldos203_204.cs" />
     <Compile Include="Transactional\Cierre\ConciliaGeneral.cs" />
     <Compile Include="Transactional\Cierre\VendorConcil.cs" />
+    <Compile Include="Transactional\Cierre\VendorEgresosConcilia.cs" />
     <Compile Include="Transactional\CO\AsientoContable\ACustomerL2_T400.cs" />
     <Compile Include="Transactional\CO\AsientoContable\AsientoCopia.cs" />
     <Compile Include="Transactional\CO\AsientoContable\AsientoMateriales.cs" />

@@ -48,7 +48,7 @@ namespace MASngFE.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6.17.0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("6.20.0.1")]
         public string AppVersion {
             get {
                 return ((string)(this["AppVersion"]));
@@ -60,7 +60,7 @@ namespace MASngFE.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D")]
+        [global::System.Configuration.DefaultSettingValueAttribute("P")]
         public char AppMode {
             get {
                 return ((char)(this["AppMode"]));

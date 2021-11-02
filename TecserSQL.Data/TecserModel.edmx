@@ -2578,21 +2578,21 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene
             <PropertyRef Name="IDCTACTE" />
           </Key>
           <Property Name="IDCTACTE" Type="int" Nullable="false" />
-          <Property Name="TDOC" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DOC_INTERNO" Type="nvarchar" MaxLength="50" />
-          <Property Name="NUMDOC" Type="nvarchar" MaxLength="50" />
-          <Property Name="Fecha" Type="datetime" />
+          <Property Name="TDOC" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="DOC_INTERNO" Type="nvarchar" MaxLength="20" />
+          <Property Name="NUMDOC" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="ZTERM" Type="int" />
           <Property Name="IDPROV" Type="int" Nullable="false" />
-          <Property Name="MONEDA" Type="nchar" MaxLength="3" />
-          <Property Name="TC" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="IMPORTE_ORI" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="IMPORTE_ARS" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="SALDOFACTURA" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="LogDate" Type="datetime" />
-          <Property Name="LogUsuario" Type="nvarchar" MaxLength="50" />
-          <Property Name="TIPO" Type="nchar" MaxLength="2" />
-          <Property Name="ZOP" Type="bit" />
+          <Property Name="MONEDA" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="TC" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IMPORTE_ORI" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IMPORTE_ARS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDOFACTURA" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LogDate" Type="datetime" Nullable="false" />
+          <Property Name="LogUsuario" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="TIPO" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="ZOP" Type="bit" Nullable="false" />
           <Property Name="IdFacturaX" Type="int" />
           <Property Name="IDDOC" Type="int" />
         </EntityType>
@@ -8876,21 +8876,21 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             <PropertyRef Name="IDCTACTE" />
           </Key>
           <Property Name="IDCTACTE" Type="Int32" Nullable="false" />
-          <Property Name="TDOC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DOC_INTERNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NUMDOC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="TDOC" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DOC_INTERNO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NUMDOC" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="ZTERM" Type="Int32" />
           <Property Name="IDPROV" Type="Int32" Nullable="false" />
-          <Property Name="MONEDA" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="TC" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="IMPORTE_ORI" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="IMPORTE_ARS" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="SALDOFACTURA" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="LogDate" Type="DateTime" Precision="3" />
-          <Property Name="LogUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TIPO" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
-          <Property Name="ZOP" Type="Boolean" />
+          <Property Name="MONEDA" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TC" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IMPORTE_ORI" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IMPORTE_ARS" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDOFACTURA" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LogDate" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="LogUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ZOP" Type="Boolean" Nullable="false" />
           <Property Name="IdFacturaX" Type="Int32" />
           <Property Name="IDDOC" Type="Int32" />
           <NavigationProperty Name="T0005_MPROVEEDORES" Relationship="Self.FK_T0203_CTACTE_PROV_T0005_MPROVEEDORES" FromRole="T0203_CTACTE_PROV" ToRole="T0005_MPROVEEDORES" />

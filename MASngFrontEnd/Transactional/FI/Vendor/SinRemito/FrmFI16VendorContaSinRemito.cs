@@ -437,8 +437,8 @@ namespace MASngFE.Transactional.FI.Vendor.SinRemito
             var ctacte = new CtaCteVendor(_vendorId);
             var data = MapFormDataToCtaCte203Structure();
 
-            var idCtaCte = ctacte.AddCtaCteDetalleRecord(data.TDOC, data.TIPO, data.Fecha.Value, data.NUMDOC,
-                data.DOC_INTERNO, data.MONEDA, data.IMPORTE_ORI.Value, data.TC.Value, data.SALDOFACTURA.Value, data.IMPORTE_ARS.Value,
+            var idCtaCte = ctacte.AddCtaCteDetalleRecord(data.TDOC, data.TIPO, data.Fecha, data.NUMDOC,
+                data.DOC_INTERNO, data.MONEDA, data.IMPORTE_ORI, data.TC, data.SALDOFACTURA, data.IMPORTE_ARS,
                 data.IdFacturaX.Value, data.IdFacturaX.Value);
 
             if (idCtaCte > 0)
@@ -446,7 +446,7 @@ namespace MASngFE.Transactional.FI.Vendor.SinRemito
                 txtidCtaCte.Text = idCtaCte.ToString();
                 ckUpdate203.Checked = true;
                 ckUpdate203.BackColor = _colorCkOk;
-                ctacte.UpdateSaldoCtaCteResumen(data.TIPO, data.IMPORTE_ORI.Value, data.MONEDA, data.TC);
+                ctacte.UpdateSaldoCtaCteResumen(data.TIPO, data.IMPORTE_ORI, data.MONEDA, data.TC);
                 var result = ctacte.GetResultadoCtaCte(data.TIPO);
                 ckSaldosVendorOK.Checked = result.SaldoOK;
                 ckSaldosVendorOK.BackColor = result.SaldoOK ? _colorCkOk : _colorCkError;

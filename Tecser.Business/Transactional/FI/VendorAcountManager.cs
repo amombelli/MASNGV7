@@ -37,7 +37,7 @@ namespace Tecser.Business.Transactional.FI
                              {
                                  Saldo = grp.Sum(x => x.SALDOFACTURA)
                              };
-                return result.FirstOrDefault() == null ? 0 : result.FirstOrDefault().Saldo.Value;
+                return result.FirstOrDefault() == null ? 0 : result.FirstOrDefault().Saldo;
             }
         }
         public decimal GetSaldoL2FromT0203(int idVendor)
@@ -58,7 +58,7 @@ namespace Tecser.Business.Transactional.FI
                 }
                 else
                 {
-                    return result.FirstOrDefault().Saldo.Value;
+                    return result.FirstOrDefault().Saldo;
                 }
             }
         }

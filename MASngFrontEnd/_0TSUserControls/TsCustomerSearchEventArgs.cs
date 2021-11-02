@@ -7,5 +7,6 @@ namespace MASngFE._0TSUserControls
         public int? ClienteId;
         public string RazonSocial;
         public string Fantasia;
+
     }
 }

@@ -69,7 +69,7 @@ namespace Tecser.Business.Transactional.Cierre
 
                     rtn.SAldo203Final =
                         db.T0203_CTACTE_PROV.Where(c => c.TIPO == tipoLx && c.SALDOFACTURA != 0)
-                            .Sum(c => c.SALDOFACTURA.Value);
+                            .Sum(c => c.SALDOFACTURA);
 
                     if (rtn.SAldo203Final == rtn.Saldo204Final)
                         rtn.SaldoVendorOK = true;
@@ -102,7 +102,7 @@ namespace Tecser.Business.Transactional.Cierre
                     rtn.ImporteIngresosDocumentos403 = importe;
 
                     l203 = GetListaFacturasIngresadasT203(periodo, tipoLx);
-                    rtn.ImporteIngresosDocumentos203 = l203.Sum(c => c.IMPORTE_ARS.Value);
+                    rtn.ImporteIngresosDocumentos203 = l203.Sum(c => c.IMPORTE_ARS);
 
 
                     //Egresos de Fondos ->REG
@@ -110,7 +110,7 @@ namespace Tecser.Business.Transactional.Cierre
                     rtn.ImporteEgresosREG = x.Sum(c => c.Monto_E.Value) - x.Sum(c => c.Monto_I.Value);
 
                     var listadoPagos = GetListaPagosPD_OP(periodo, _tipoLx);
-                    rtn.ImportePagosPdOpx = listadoPagos.Sum(c => c.IMPORTE_ARS.Value) * -1;
+                    rtn.ImportePagosPdOpx = listadoPagos.Sum(c => c.IMPORTE_ARS) * -1;
                 }
             }
 
@@ -217,7 +217,6 @@ namespace Tecser.Business.Transactional.Cierre
                 return data.Where(c => c.DeudaTotalARS != 0).ToList();
             }
         }
-
         public List<EstructuraSaldosProveedores> GetMovimientosPeriodoSeleccionado(string periodo, string tipoLx, bool showAll = false,
             bool cambiarSigno = false)
         {
@@ -241,7 +240,7 @@ namespace Tecser.Business.Transactional.Cierre
                                 TipoDoc = t.TDOC,
                                 VendorId = t.IDPROV,
                                 VendorType = t.T0005_MPROVEEDORES.TIPO,
-                                DeudaTotalARS = t.IMPORTE_ARS.Value * multiplicador
+                                DeudaTotalARS = t.IMPORTE_ARS * multiplicador
                             };
                 if (showAll)
                     return data2.ToList();

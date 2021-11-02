@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnExecute = new System.Windows.Forms.Button();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
@@ -108,6 +108,10 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtSaldoL1Cliente = new System.Windows.Forms.TextBox();
             this.txtidCliente0 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCobranzas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t0205COBRANZAHBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -116,6 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemsCobranza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t0206COBRANZAIBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -146,7 +151,7 @@
             this.cmbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCliente.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(89, 11);
+            this.cmbCliente.Location = new System.Drawing.Point(78, 5);
             this.cmbCliente.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(250, 21);
@@ -156,10 +161,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 14);
+            this.label1.Location = new System.Drawing.Point(8, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "CLIENTE ";
             // 
@@ -203,9 +208,9 @@
             // fECHADataGridViewTextBoxColumn
             // 
             this.fECHADataGridViewTextBoxColumn.DataPropertyName = "FECHA";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.fECHADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Format = "d";
+            dataGridViewCellStyle10.NullValue = null;
+            this.fECHADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.fECHADataGridViewTextBoxColumn.HeaderText = "FECHA";
             this.fECHADataGridViewTextBoxColumn.Name = "fECHADataGridViewTextBoxColumn";
             this.fECHADataGridViewTextBoxColumn.ReadOnly = true;
@@ -245,11 +250,11 @@
             // montoDataGridViewTextBoxColumn
             // 
             this.montoDataGridViewTextBoxColumn.DataPropertyName = "Monto";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.montoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = "0";
+            this.montoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.montoDataGridViewTextBoxColumn.HeaderText = "IMPORTE";
             this.montoDataGridViewTextBoxColumn.Name = "montoDataGridViewTextBoxColumn";
             this.montoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -275,7 +280,7 @@
             this.txtIdCobranza.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdCobranza.Name = "txtIdCobranza";
             this.txtIdCobranza.ReadOnly = true;
-            this.txtIdCobranza.Size = new System.Drawing.Size(59, 20);
+            this.txtIdCobranza.Size = new System.Drawing.Size(59, 22);
             this.txtIdCobranza.TabIndex = 5;
             this.txtIdCobranza.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -285,7 +290,7 @@
             this.label2.Location = new System.Drawing.Point(8, 417);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "ID-COBRANZA";
             // 
@@ -295,7 +300,7 @@
             this.label3.Location = new System.Drawing.Point(6, 11);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "TIPO ORIGINAL";
             // 
@@ -305,7 +310,7 @@
             this.txtCuentaOriginal.Margin = new System.Windows.Forms.Padding(2);
             this.txtCuentaOriginal.Name = "txtCuentaOriginal";
             this.txtCuentaOriginal.ReadOnly = true;
-            this.txtCuentaOriginal.Size = new System.Drawing.Size(44, 20);
+            this.txtCuentaOriginal.Size = new System.Drawing.Size(44, 22);
             this.txtCuentaOriginal.TabIndex = 7;
             // 
             // label4
@@ -314,7 +319,7 @@
             this.label4.Location = new System.Drawing.Point(6, 36);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
+            this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "NUEVO TIPO";
             // 
@@ -324,7 +329,7 @@
             this.txtNuevoTipo.Margin = new System.Windows.Forms.Padding(2);
             this.txtNuevoTipo.Name = "txtNuevoTipo";
             this.txtNuevoTipo.ReadOnly = true;
-            this.txtNuevoTipo.Size = new System.Drawing.Size(44, 20);
+            this.txtNuevoTipo.Size = new System.Drawing.Size(44, 22);
             this.txtNuevoTipo.TabIndex = 9;
             // 
             // ckChequesDisponibles
@@ -334,7 +339,7 @@
             this.ckChequesDisponibles.Location = new System.Drawing.Point(207, 32);
             this.ckChequesDisponibles.Margin = new System.Windows.Forms.Padding(2);
             this.ckChequesDisponibles.Name = "ckChequesDisponibles";
-            this.ckChequesDisponibles.Size = new System.Drawing.Size(152, 17);
+            this.ckChequesDisponibles.Size = new System.Drawing.Size(144, 17);
             this.ckChequesDisponibles.TabIndex = 11;
             this.ckChequesDisponibles.Text = "CHEQUES DISPONIBLES";
             this.ckChequesDisponibles.UseVisualStyleBackColor = true;
@@ -343,7 +348,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(89, 86);
+            this.label5.Location = new System.Drawing.Point(1321, 428);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(373, 15);
@@ -391,7 +396,7 @@
             this.label19.Location = new System.Drawing.Point(11, 82);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(64, 13);
+            this.label19.Size = new System.Drawing.Size(70, 13);
             this.label19.TabIndex = 29;
             this.label19.Text = "MOTIVO >>";
             // 
@@ -411,7 +416,7 @@
             this.txtMotivo.Location = new System.Drawing.Point(107, 79);
             this.txtMotivo.Margin = new System.Windows.Forms.Padding(2);
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(296, 20);
+            this.txtMotivo.Size = new System.Drawing.Size(296, 22);
             this.txtMotivo.TabIndex = 28;
             this.txtMotivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -422,7 +427,7 @@
             this.ckEstadoCorrecto.Location = new System.Drawing.Point(207, 6);
             this.ckEstadoCorrecto.Margin = new System.Windows.Forms.Padding(2);
             this.ckEstadoCorrecto.Name = "ckEstadoCorrecto";
-            this.ckEstadoCorrecto.Size = new System.Drawing.Size(152, 17);
+            this.ckEstadoCorrecto.Size = new System.Drawing.Size(145, 17);
             this.ckEstadoCorrecto.TabIndex = 17;
             this.ckEstadoCorrecto.Text = "IMPORTES CORRECTOS";
             this.ckEstadoCorrecto.UseVisualStyleBackColor = true;
@@ -444,7 +449,7 @@
             this.label9.Location = new System.Drawing.Point(11, 58);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 13);
+            this.label9.Size = new System.Drawing.Size(72, 13);
             this.label9.TabIndex = 16;
             this.label9.Text = "IMPUTADO $";
             // 
@@ -454,7 +459,7 @@
             this.txtMontoImputado.Margin = new System.Windows.Forms.Padding(2);
             this.txtMontoImputado.Name = "txtMontoImputado";
             this.txtMontoImputado.ReadOnly = true;
-            this.txtMontoImputado.Size = new System.Drawing.Size(82, 20);
+            this.txtMontoImputado.Size = new System.Drawing.Size(82, 22);
             this.txtMontoImputado.TabIndex = 15;
             // 
             // label8
@@ -463,7 +468,7 @@
             this.label8.Location = new System.Drawing.Point(11, 34);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 13);
+            this.label8.Size = new System.Drawing.Size(82, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "SIN IMPUTAR $";
             // 
@@ -473,7 +478,7 @@
             this.txtMontoSinImputar.Margin = new System.Windows.Forms.Padding(2);
             this.txtMontoSinImputar.Name = "txtMontoSinImputar";
             this.txtMontoSinImputar.ReadOnly = true;
-            this.txtMontoSinImputar.Size = new System.Drawing.Size(82, 20);
+            this.txtMontoSinImputar.Size = new System.Drawing.Size(82, 22);
             this.txtMontoSinImputar.TabIndex = 13;
             // 
             // label7
@@ -482,7 +487,7 @@
             this.label7.Location = new System.Drawing.Point(11, 10);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 13);
+            this.label7.Size = new System.Drawing.Size(89, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "MONTO RECIBO";
             // 
@@ -492,7 +497,7 @@
             this.txtMontoRecibo.Margin = new System.Windows.Forms.Padding(2);
             this.txtMontoRecibo.Name = "txtMontoRecibo";
             this.txtMontoRecibo.ReadOnly = true;
-            this.txtMontoRecibo.Size = new System.Drawing.Size(82, 20);
+            this.txtMontoRecibo.Size = new System.Drawing.Size(82, 22);
             this.txtMontoRecibo.TabIndex = 11;
             // 
             // ckCobranzaImputada
@@ -502,7 +507,7 @@
             this.ckCobranzaImputada.Location = new System.Drawing.Point(207, 57);
             this.ckCobranzaImputada.Margin = new System.Windows.Forms.Padding(2);
             this.ckCobranzaImputada.Name = "ckCobranzaImputada";
-            this.ckCobranzaImputada.Size = new System.Drawing.Size(144, 17);
+            this.ckCobranzaImputada.Size = new System.Drawing.Size(140, 17);
             this.ckCobranzaImputada.TabIndex = 12;
             this.ckCobranzaImputada.Text = "COBRANZA IMPUTADA";
             this.ckCobranzaImputada.UseVisualStyleBackColor = true;
@@ -543,7 +548,7 @@
             this.label14.Location = new System.Drawing.Point(6, 90);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(56, 13);
             this.label14.TabIndex = 22;
             this.label14.Text = "SALDO L2";
             // 
@@ -553,7 +558,7 @@
             this.txtSaldoL2.Margin = new System.Windows.Forms.Padding(2);
             this.txtSaldoL2.Name = "txtSaldoL2";
             this.txtSaldoL2.ReadOnly = true;
-            this.txtSaldoL2.Size = new System.Drawing.Size(103, 20);
+            this.txtSaldoL2.Size = new System.Drawing.Size(103, 22);
             this.txtSaldoL2.TabIndex = 21;
             // 
             // label13
@@ -562,7 +567,7 @@
             this.label13.Location = new System.Drawing.Point(6, 67);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 13);
+            this.label13.Size = new System.Drawing.Size(56, 13);
             this.label13.TabIndex = 20;
             this.label13.Text = "SALDO L1";
             // 
@@ -572,7 +577,7 @@
             this.txtSaldoL1.Margin = new System.Windows.Forms.Padding(2);
             this.txtSaldoL1.Name = "txtSaldoL1";
             this.txtSaldoL1.ReadOnly = true;
-            this.txtSaldoL1.Size = new System.Drawing.Size(103, 20);
+            this.txtSaldoL1.Size = new System.Drawing.Size(103, 22);
             this.txtSaldoL1.TabIndex = 19;
             // 
             // txtIdNuevoCliente
@@ -581,7 +586,7 @@
             this.txtIdNuevoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdNuevoCliente.Name = "txtIdNuevoCliente";
             this.txtIdNuevoCliente.ReadOnly = true;
-            this.txtIdNuevoCliente.Size = new System.Drawing.Size(54, 20);
+            this.txtIdNuevoCliente.Size = new System.Drawing.Size(54, 22);
             this.txtIdNuevoCliente.TabIndex = 18;
             // 
             // txtIdCliente
@@ -590,7 +595,7 @@
             this.txtIdCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.ReadOnly = true;
-            this.txtIdCliente.Size = new System.Drawing.Size(54, 20);
+            this.txtIdCliente.Size = new System.Drawing.Size(54, 22);
             this.txtIdCliente.TabIndex = 11;
             // 
             // cmbNuevoCliente
@@ -611,7 +616,7 @@
             this.label10.Location = new System.Drawing.Point(6, 11);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 13);
+            this.label10.Size = new System.Drawing.Size(101, 13);
             this.label10.TabIndex = 8;
             this.label10.Text = "CLIENTE ORIGINAL";
             // 
@@ -632,7 +637,7 @@
             this.txtClienteOriginal.Margin = new System.Windows.Forms.Padding(2);
             this.txtClienteOriginal.Name = "txtClienteOriginal";
             this.txtClienteOriginal.ReadOnly = true;
-            this.txtClienteOriginal.Size = new System.Drawing.Size(202, 20);
+            this.txtClienteOriginal.Size = new System.Drawing.Size(202, 22);
             this.txtClienteOriginal.TabIndex = 7;
             // 
             // label11
@@ -641,7 +646,7 @@
             this.label11.Location = new System.Drawing.Point(6, 36);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 13);
+            this.label11.Size = new System.Drawing.Size(89, 13);
             this.label11.TabIndex = 10;
             this.label11.Text = "NUEVO CLIENTE";
             // 
@@ -736,11 +741,11 @@
             // iMPITEMDataGridViewTextBoxColumn
             // 
             this.iMPITEMDataGridViewTextBoxColumn.DataPropertyName = "IMP_ITEM";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.iMPITEMDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.iMPITEMDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.iMPITEMDataGridViewTextBoxColumn.HeaderText = "IMPORTE";
             this.iMPITEMDataGridViewTextBoxColumn.Name = "iMPITEMDataGridViewTextBoxColumn";
             this.iMPITEMDataGridViewTextBoxColumn.ReadOnly = true;
@@ -816,7 +821,7 @@
             this.label16.Location = new System.Drawing.Point(189, 417);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(57, 13);
+            this.label16.Size = new System.Drawing.Size(55, 13);
             this.label16.TabIndex = 23;
             this.label16.Text = "RECIBO #";
             // 
@@ -826,7 +831,7 @@
             this.txtNumeroRecibo.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumeroRecibo.Name = "txtNumeroRecibo";
             this.txtNumeroRecibo.ReadOnly = true;
-            this.txtNumeroRecibo.Size = new System.Drawing.Size(99, 20);
+            this.txtNumeroRecibo.Size = new System.Drawing.Size(99, 22);
             this.txtNumeroRecibo.TabIndex = 22;
             this.txtNumeroRecibo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -835,7 +840,7 @@
             this.panel4.BackColor = System.Drawing.Color.LightBlue;
             this.panel4.Controls.Add(this.rbFantasia);
             this.panel4.Controls.Add(this.rbRazonSocial);
-            this.panel4.Location = new System.Drawing.Point(528, 3);
+            this.panel4.Location = new System.Drawing.Point(1285, 251);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(117, 53);
             this.panel4.TabIndex = 24;
@@ -845,7 +850,7 @@
             this.rbFantasia.AutoSize = true;
             this.rbFantasia.Location = new System.Drawing.Point(4, 32);
             this.rbFantasia.Name = "rbFantasia";
-            this.rbFantasia.Size = new System.Drawing.Size(77, 17);
+            this.rbFantasia.Size = new System.Drawing.Size(73, 17);
             this.rbFantasia.TabIndex = 1;
             this.rbFantasia.TabStop = true;
             this.rbFantasia.Text = "FANTASIA";
@@ -856,7 +861,7 @@
             this.rbRazonSocial.AutoSize = true;
             this.rbRazonSocial.Location = new System.Drawing.Point(4, 9);
             this.rbRazonSocial.Name = "rbRazonSocial";
-            this.rbRazonSocial.Size = new System.Drawing.Size(104, 17);
+            this.rbRazonSocial.Size = new System.Drawing.Size(102, 17);
             this.rbRazonSocial.TabIndex = 0;
             this.rbRazonSocial.TabStop = true;
             this.rbRazonSocial.Text = "RAZON SOCIAL";
@@ -866,56 +871,94 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 58);
+            this.label17.Location = new System.Drawing.Point(1251, 400);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 13);
+            this.label17.Size = new System.Drawing.Size(56, 13);
             this.label17.TabIndex = 26;
             this.label17.Text = "SALDO L2";
             // 
             // txtSaldoL2Cliente
             // 
-            this.txtSaldoL2Cliente.Location = new System.Drawing.Point(89, 55);
+            this.txtSaldoL2Cliente.Location = new System.Drawing.Point(1321, 397);
             this.txtSaldoL2Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtSaldoL2Cliente.Name = "txtSaldoL2Cliente";
             this.txtSaldoL2Cliente.ReadOnly = true;
-            this.txtSaldoL2Cliente.Size = new System.Drawing.Size(102, 20);
+            this.txtSaldoL2Cliente.Size = new System.Drawing.Size(102, 22);
             this.txtSaldoL2Cliente.TabIndex = 25;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(19, 36);
+            this.label18.Location = new System.Drawing.Point(1251, 378);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(58, 13);
+            this.label18.Size = new System.Drawing.Size(56, 13);
             this.label18.TabIndex = 24;
             this.label18.Text = "SALDO L1";
             // 
             // txtSaldoL1Cliente
             // 
-            this.txtSaldoL1Cliente.Location = new System.Drawing.Point(89, 33);
+            this.txtSaldoL1Cliente.Location = new System.Drawing.Point(1321, 375);
             this.txtSaldoL1Cliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtSaldoL1Cliente.Name = "txtSaldoL1Cliente";
             this.txtSaldoL1Cliente.ReadOnly = true;
-            this.txtSaldoL1Cliente.Size = new System.Drawing.Size(102, 20);
+            this.txtSaldoL1Cliente.Size = new System.Drawing.Size(102, 22);
             this.txtSaldoL1Cliente.TabIndex = 23;
             // 
             // txtidCliente0
             // 
-            this.txtidCliente0.Location = new System.Drawing.Point(343, 11);
+            this.txtidCliente0.Location = new System.Drawing.Point(332, 5);
             this.txtidCliente0.Margin = new System.Windows.Forms.Padding(2);
             this.txtidCliente0.Name = "txtidCliente0";
             this.txtidCliente0.ReadOnly = true;
-            this.txtidCliente0.Size = new System.Drawing.Size(63, 20);
+            this.txtidCliente0.Size = new System.Drawing.Size(63, 22);
             this.txtidCliente0.TabIndex = 27;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.Tomato;
+            this.label20.Location = new System.Drawing.Point(1207, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(2, 813);
+            this.label20.TabIndex = 98;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.Tomato;
+            this.label21.Location = new System.Drawing.Point(2, 3);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(2, 813);
+            this.label21.TabIndex = 97;
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.Color.Tomato;
+            this.label22.Location = new System.Drawing.Point(2, 3);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(1207, 2);
+            this.label22.TabIndex = 96;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.cmbCliente);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.txtidCliente0);
+            this.panel5.Location = new System.Drawing.Point(711, 260);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(470, 100);
+            this.panel5.TabIndex = 99;
             // 
             // FrmFI47ChangeCobranzaType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1529, 754);
-            this.Controls.Add(this.txtidCliente0);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.txtSaldoL2Cliente);
@@ -935,9 +978,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIdCobranza);
             this.Controls.Add(this.dgvListaCobranzas);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.btnSalir);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmFI47ChangeCobranzaType";
             this.Text = "FI47 - Modificacion de Cobranzas Ingresadas";
@@ -954,6 +996,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.t0206COBRANZAIBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1037,5 +1081,9 @@
         private System.Windows.Forms.TextBox txtidCliente0;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtMotivo;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panel5;
     }
 }

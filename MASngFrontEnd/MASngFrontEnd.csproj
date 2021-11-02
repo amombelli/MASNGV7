@@ -79,6 +79,9 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="MASng">
+      <HintPath>obj\Release\MASng.exe</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -218,6 +221,12 @@
     </Compile>
     <Compile Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.Designer.cs">
       <DependentUpon>FrmMDC00CustomerSearchBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerSearchBase\frmTestCustomerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerSearchBase\frmTestCustomerSearch.Designer.cs">
+      <DependentUpon>frmTestCustomerSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -735,11 +744,11 @@
     <Compile Include="Transactional\CO\Asiento\FrmAsientoContableDetalle.Designer.cs">
       <DependentUpon>FrmAsientoContableDetalle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transactional\CO\CierreRaf\FrmCierreProveedores.cs">
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo31VendorClosing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transactional\CO\CierreRaf\FrmCierreProveedores.Designer.cs">
-      <DependentUpon>FrmCierreProveedores.cs</DependentUpon>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo31VendorClosing.Designer.cs">
+      <DependentUpon>FrmCo31VendorClosing.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactional\CO\CierreRaf\FrmCO13Conciliacion203204.cs">
       <SubType>Form</SubType>
@@ -753,6 +762,12 @@
     <Compile Include="Transactional\CO\CierreRaf\FrmCO14SaldosAP.Designer.cs">
       <DependentUpon>FrmCO14SaldosAP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo36ConciliaDiferenciasEgresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo36ConciliaDiferenciasEgresos.Designer.cs">
+      <DependentUpon>FrmCo36ConciliaDiferenciasEgresos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactional\CO\CierreRaf\FrmDetalle203.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -765,17 +780,17 @@
     <Compile Include="Transactional\CO\CierreRaf\FrmDetalle403.Designer.cs">
       <DependentUpon>FrmDetalle403.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transactional\CO\CierreRaf\FrmDetalleEgresosREG.cs">
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo34DetallesEgresosReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transactional\CO\CierreRaf\FrmDetalleEgresosREG.Designer.cs">
-      <DependentUpon>FrmDetalleEgresosREG.cs</DependentUpon>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo34DetallesEgresosReg.Designer.cs">
+      <DependentUpon>FrmCo34DetallesEgresosReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transactional\CO\CierreRaf\FrmDetallesPagosPDOPx.cs">
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo35ResumenPagosCtaCte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transactional\CO\CierreRaf\FrmDetallesPagosPDOPx.Designer.cs">
-      <DependentUpon>FrmDetallesPagosPDOPx.cs</DependentUpon>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo35ResumenPagosCtaCte.Designer.cs">
+      <DependentUpon>FrmCo35ResumenPagosCtaCte.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactional\CO\Cost\FrmC016ViewChangeCostoMop.cs">
       <SubType>Form</SubType>
@@ -2158,6 +2173,18 @@
     <Compile Include="UnitTesting\TesteoStock.Designer.cs">
       <DependentUpon>TesteoStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="_0TSUserControls\TsUcCustomer3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_0TSUserControls\TsUcCustomer3.Designer.cs">
+      <DependentUpon>TsUcCustomer3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_0TSUserControls\TsUc_CustomerSearch2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_0TSUserControls\TsUc_CustomerSearch2.Designer.cs">
+      <DependentUpon>TsUc_CustomerSearch2.cs</DependentUpon>
+    </Compile>
     <Compile Include="_0TSUserControls\TsCustomerSearchEventArgs.cs" />
     <Compile Include="_UserControls\AwsTextBoxBase.cs">
       <SubType>Component</SubType>
@@ -2313,6 +2340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.resx">
       <DependentUpon>FrmMDC00CustomerSearchBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerSearchBase\frmTestCustomerSearch.resx">
+      <DependentUpon>frmTestCustomerSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -2568,8 +2598,8 @@
     <EmbeddedResource Include="Transactional\CO\Asiento\FrmAsientoContableDetalle.resx">
       <DependentUpon>FrmAsientoContableDetalle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCierreProveedores.resx">
-      <DependentUpon>FrmCierreProveedores.cs</DependentUpon>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCo31VendorClosing.resx">
+      <DependentUpon>FrmCo31VendorClosing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO13Conciliacion203204.resx">
       <DependentUpon>FrmCO13Conciliacion203204.cs</DependentUpon>
@@ -2577,17 +2607,20 @@
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO14SaldosAP.resx">
       <DependentUpon>FrmCO14SaldosAP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCo36ConciliaDiferenciasEgresos.resx">
+      <DependentUpon>FrmCo36ConciliaDiferenciasEgresos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetalle203.resx">
       <DependentUpon>FrmDetalle203.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetalle403.resx">
       <DependentUpon>FrmDetalle403.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetalleEgresosREG.resx">
-      <DependentUpon>FrmDetalleEgresosREG.cs</DependentUpon>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCo34DetallesEgresosReg.resx">
+      <DependentUpon>FrmCo34DetallesEgresosReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetallesPagosPDOPx.resx">
-      <DependentUpon>FrmDetallesPagosPDOPx.cs</DependentUpon>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCo35ResumenPagosCtaCte.resx">
+      <DependentUpon>FrmCo35ResumenPagosCtaCte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\Cost\FrmC016ViewChangeCostoMop.resx">
       <DependentUpon>FrmC016ViewChangeCostoMop.cs</DependentUpon>
@@ -3268,6 +3301,12 @@
     <EmbeddedResource Include="UnitTesting\TesteoStock.resx">
       <DependentUpon>TesteoStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_0TSUserControls\TsUcCustomer3.resx">
+      <DependentUpon>TsUcCustomer3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_0TSUserControls\TsUc_CustomerSearch2.resx">
+      <DependentUpon>TsUc_CustomerSearch2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_UserControls\AwsTextBoxBase.resx">
       <DependentUpon>AwsTextBoxBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -3313,10 +3352,12 @@
     <EmbeddedResource Include="_UserControls\UVendorSearch.resx">
       <DependentUpon>UVendorSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Tecser.Business.MasterData.Customer.StxCustomerSimple.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.ConciliacionSaldoVendor203Vs204.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.EstructuraSaldosProveedores.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.RetornaConciliacion.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.StructureConcil203.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.Stx1.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.CO.Costos.CostItems.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.CRM.CrmCustomerDataList.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.CRM.PendientesDespacho+EstructuraPendientes.datasource" />
@@ -3368,6 +3409,7 @@
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.SD_CRM.CRMSalesOrder.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.SD_CRM.MaterialRequestedInSO.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.StockLoteEstadoUbicacion.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.StxCustomerSimple.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.StxDocumentosNotInOperaciones.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.TsCheques1.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.TsChequesRechazados.datasource" />

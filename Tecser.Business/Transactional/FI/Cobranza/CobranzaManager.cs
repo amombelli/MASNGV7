@@ -252,66 +252,66 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 db.SaveChanges();
             }
         }
-        public void DesimputaCobranza()
-        {
-            string nRecibo = IdCobranza.ToString().Trim();
-            using (var db = new TecserData(GlobalApp.CnnApp))
-            {
-                var montoImputado = CheckMontoImputadoPorRecibo(IdCobranza);
-                if (montoImputado > 0)
-                {
-                    var lst207 = db.T0207_SPLITFACTURAS.Where(c => c.NRECIBO == nRecibo).ToList();
-                    decimal importeDesimputado = 0;
-                    foreach (var it in lst207)
-                    {
-                        DesimputaFacturaCobranza(it.IDCTACTE, it.MontoImputado);
-                        importeDesimputado += it.MontoImputado;
-                        it.MontoImputado = 0;
-                        it.NRECIBO = null;
-                        it.PFECHA = null;
-                        db.SaveChanges();
-                    }
+        //public void DesimputaCobranza()
+        //{
+        //    string nRecibo = IdCobranza.ToString().Trim();
+        //    using (var db = new TecserData(GlobalApp.CnnApp))
+        //    {
+        //        var montoImputado = CheckMontoImputadoPorRecibo(IdCobranza);
+        //        if (montoImputado > 0)
+        //        {
+        //            var lst207 = db.T0207_SPLITFACTURAS.Where(c => c.NRECIBO == nRecibo).ToList();
+        //            decimal importeDesimputado = 0;
+        //            foreach (var it in lst207)
+        //            {
+        //                DesimputaFacturaCobranza(it.IDCTACTE, it.MontoImputado);
+        //                importeDesimputado += it.MontoImputado;
+        //                it.MontoImputado = 0;
+        //                it.NRECIBO = null;
+        //                it.PFECHA = null;
+        //                db.SaveChanges();
+        //            }
 
-                    string sIdCob = IdCobranza.ToString();
-                    var cobi = db.T0205_COBRANZA_H.SingleOrDefault(c => c.IDCOB == IdCobranza);
+        //            string sIdCob = IdCobranza.ToString();
+        //            var cobi = db.T0205_COBRANZA_H.SingleOrDefault(c => c.IDCOB == IdCobranza);
 
-                    var desimputaCobranza =
-                        db.T0201_CTACTE.SingleOrDefault(c => c.IDT2 == IdCobranza && c.TDOC == "CO");
-                    desimputaCobranza.SALDOFACTURA = cobi.Monto * -1;
+        //            var desimputaCobranza =
+        //                db.T0201_CTACTE.SingleOrDefault(c => c.IDT2 == IdCobranza && c.TDOC == "CO");
+        //            desimputaCobranza.SALDOFACTURA = cobi.Monto * -1;
 
 
-                    var data208 = db.T0208_COB_NO_APLICADA.FirstOrDefault(c => c.IDRECIBO == IdCobranza);
-                    if (data208 != null)
-                    {
-                        data208.MONTO += montoImputado; //Actualiza registro T208
-                    }
-                    else
-                    {
-                        //Toda la cobranza estaba imputada x lo que no habia registro en T0208.-
-                        var maxId = db.T0208_COB_NO_APLICADA.Max(c => c.ID);
-                        var t208 = new T0208_COB_NO_APLICADA
-                        {
-                            CLIENTE = cobi.IdCliente,
-                            FECHA = cobi.FECHA,
-                            ID = maxId + 1,
-                            IDRECIBO = IdCobranza,
-                            MONEDA = cobi.MON,
-                            MONTO = cobi.Monto,
-                            TIPOCUENTA = cobi.CUENTA,
-                            TIPODOC = "COB",
-                            IDCTACTE = desimputaCobranza.IDCTACTE,
-                            NRECIBO = cobi.NRECIBO,
-                        };
-                        db.T0208_COB_NO_APLICADA.Add(t208); //Crea registro T208
-                    }
-                    db.SaveChanges();
-                }
-                else
-                {
-                    //Toda la cobranza esta sin imputar.-
-                }
-            }
-        }
+        //            var data208 = db.T0208_COB_NO_APLICADA.FirstOrDefault(c => c.IDRECIBO == IdCobranza);
+        //            if (data208 != null)
+        //            {
+        //                data208.MONTO += montoImputado; //Actualiza registro T208
+        //            }
+        //            else
+        //            {
+        //                //Toda la cobranza estaba imputada x lo que no habia registro en T0208.-
+        //                var maxId = db.T0208_COB_NO_APLICADA.Max(c => c.ID);
+        //                var t208 = new T0208_COB_NO_APLICADA
+        //                {
+        //                    CLIENTE = cobi.IdCliente,
+        //                    FECHA = cobi.FECHA,
+        //                    ID = maxId + 1,
+        //                    IDRECIBO = IdCobranza,
+        //                    MONEDA = cobi.MON,
+        //                    MONTO = cobi.Monto,
+        //                    TIPOCUENTA = cobi.CUENTA,
+        //                    TIPODOC = "COB",
+        //                    IDCTACTE = desimputaCobranza.IDCTACTE,
+        //                    NRECIBO = cobi.NRECIBO,
+        //                };
+        //                db.T0208_COB_NO_APLICADA.Add(t208); //Crea registro T208
+        //            }
+        //            db.SaveChanges();
+        //        }
+        //        else
+        //        {
+        //            //Toda la cobranza esta sin imputar.-
+        //        }
+        //    }
+        //}
 
     }
 }
