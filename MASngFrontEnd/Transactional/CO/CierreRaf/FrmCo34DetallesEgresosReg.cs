@@ -25,7 +25,7 @@ namespace MASngFE.Transactional.CO.CierreRaf
             txtFechaDesde.Text = new PeriodoConversion().GetFechaPrimerDiaPeriodo(_periodo).ToString("d");
             txtFechaHasta.Text = new PeriodoConversion().GetFechaUltimoDiaPeriodo(_periodo).ToString("d");
             txtLx.Text = _tipoLx;
-            var dataList = new VendorConcil().GetListsaEgresosReg(_periodo, _tipoLx);
+            var dataList = new VendorConcil(_periodo,_tipoLx).GetListsaEgresosRegister();
             regBs.DataSource = dataList;
             txtMontoIn.Text = dataList.Sum(c => c.Monto_I.Value).ToString("C2");
             txtMontoOut.Text = dataList.Sum(c => c.Monto_E.Value).ToString("C2");
@@ -34,6 +34,12 @@ namespace MASngFE.Transactional.CO.CierreRaf
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnConciliacionEgresos_Click(object sender, EventArgs e)
+        {
+            var f = new FrmCo37ConciliaEgresos(_periodo,_tipoLx);
+            f.Show();
         }
     }
 }

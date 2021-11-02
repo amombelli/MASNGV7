@@ -354,10 +354,7 @@ namespace MASngFE.Transactional.SD.Remito
                 item.KGDESPACHADOS_R = item.KGINI;
                 item.KG_PENDIENTES = new StockList().GetKgStockDisponibleDespacho(item.MATERIAL, "CERR");
                 item.MATERIAL = data.materialPrimario;
-
-                if (data.KGStockDespachados == null)
-                    data.KGStockDespachados = 0;
-
+                
                 if (data.MODO == "L5")
                 {
                     item.L5 = true;
@@ -455,7 +452,7 @@ namespace MASngFE.Transactional.SD.Remito
                     int idStockSeleccionado =
                         Convert.ToInt32(dgvRemitos[dgvRemitos.Columns[idStockComprometido.Name].Index, e.RowIndex].Value);
                     RemoveLineaTotal();
-                    using (var f1 = new FrmSeleccionBatchDespacho(materialX, kg))
+                    using (var f1 = new FrmSD12SeleccionBatchDespacho(materialX, kg))
                     {
                         DialogResult dr = f1.ShowDialog();
                         switch (dr)

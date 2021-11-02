@@ -7,6 +7,7 @@ using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
 using Tecser.Business.Tools;
 using TecserEF.Entity.DataStructure;
+using TSControls;
 
 namespace MASngFE.Transactional.SD.SalesOrder
 {
@@ -23,96 +24,43 @@ namespace MASngFE.Transactional.SD.SalesOrder
             InitializeComponent();
         }
 
-        //-------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
         private readonly int _modo;
         private int? _idClienteSelect;
-        private List<DsSalesOrderList> _soList = new List<DsSalesOrderList>();
-        //-------------------------------------------------------------------------------
+        private List<DsSalesOrderList> _soCompleteList = new List<DsSalesOrderList>();
+        private int maxValue;
+        //-----------------------------------------------------------------------------------------------------
         private void FrmSalesOrderSearch_Load(object sender, EventArgs e)
         {
+            maxValue = 1000;
+            cmax.SetValue = maxValue;
+            _soCompleteList = new DsSalesOrderList().GetAllData(GlobalApp.CnnApp,maxValue); //GetComplete List
+            dgvListadoSO.DataSource = _soCompleteList;
+            dgvListadoSO.ClearSelection();
             if (System.ComponentModel.LicenseManager.UsageMode != System.ComponentModel.LicenseUsageMode.Designtime)
             {
-                //Cuando Activo la linea de abajo da error al cargar el componente
-                //T0006Bs.DataSource = new CustomerManager().GetCompleteListofBillTo(tsckSoloActivo.Value);
-                //BlanqueaSeleccion();
                 ConfiguraDefaultValues();
             }
-
         }
-
         private void ConfiguraDefaultValues()
         {
-            //UnBindCombobox();
-            //cmbClienteT6.ValueMember = "IDCLIENTE";
-            //cmbClienteT6.DisplayMember = "CLI_RSOCIAL";
-            //cmbClienteT6.DataSource = new CustomerManager().GetCompleteListofBillTo(ckClienteActivo.Checked).ToList();
-            //cmbClienteT6.Text = "";
-
-            //txtIDT6.ValueMember = "IDCLIENTE";
-            //txtIDT6.DisplayMember = "IDCLIENTE";
-            //txtIDT6.DataSource= new CustomerManager().GetCompleteListofBillTo(ckClienteActivo.Checked).ToList();
-            //txtIDT6.Text = "";
-
-            //txtSalesOrderNumberSearch.Text = null;
-
-            ////default values
-            //rbRazon.Checked = true;
-            //ckClienteActivo.Checked = true;
-            //dgvListadoSO.DataSource = null;
-            //btnClose.Enabled = true;
-            //btnNuevaSO.Enabled = false;
-            //btnVerCliente.Enabled = false;
-            //ckClienteActivo.Enabled = false;
-            //SalesOrderBs.DataSource = _soList;
-            //dgvListadoSO.DataSource = SalesOrderBs;
-
-            //BindCombobox();
-
             switch (_modo)
             {
                 case 1:
+                    dgvListadoSO.Enabled = true; //por simplicidad permitimos editar el dgv en modo1
                     btnNuevaSO.Enabled = true;
                     break;
-
                 case 2:
                     dgvListadoSO.Enabled = true;
+                    btnNuevaSO.Enabled = true;
                     break;
                 case 3:
+                    btnNuevaSO.Enabled = false;
                     break;
                 default:
 
                     break;
-
             }
-
-        }
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-        private void btnViewAll_Click(object sender, EventArgs e)
-        {
-            tsUcCustomerSearch11.ClienteId = null;
-            _soList = new DsSalesOrderList().GetAllData(GlobalApp.CnnApp);
-            SalesOrderBs.DataSource = _soList;
-        }
-        private void txtSalesOrderNumberSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            FormatAndConversions.SoloEnteroKeyPress(sender, e);
-        }
-        private void txtSalesOrderNumberSearch_Leave(object sender, EventArgs e)
-        {
-            //if (string.IsNullOrEmpty(txtSalesOrderNumberSearch.Text))
-            //{
-            //    SalesOrderBs.DataSource = _soList;
-            //}
-            //else
-            //{
-            //    var salesSearch = Convert.ToInt32(txtSalesOrderNumberSearch.Text);
-            //    SalesOrderBs.DataSource = _soList.Where(c => c.SO == salesSearch).ToList();
-            //}
         }
         private void dgvListadoSO_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -120,7 +68,6 @@ namespace MASngFE.Transactional.SD.SalesOrder
             if (!(senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn) || e.RowIndex < 0) return;
 
             var idSalesOrder = Convert.ToInt32(dgvListadoSO[dgvListadoSO.Columns[0].Index, e.RowIndex].Value);
-
             switch (senderGrid.CurrentCell.Value.ToString())
             {
                 case "View":
@@ -128,7 +75,6 @@ namespace MASngFE.Transactional.SD.SalesOrder
                     f0.Show();
                     this.Close();
                     break;
-
                 case "Edit":
                     if (_modo == 3)
                     {
@@ -146,17 +92,6 @@ namespace MASngFE.Transactional.SD.SalesOrder
                     break;
             }
         }
-        private void btnNewSalesOrder_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void btnNuevaSO_Click(object sender, EventArgs e)
         {
@@ -173,32 +108,15 @@ namespace MASngFE.Transactional.SD.SalesOrder
                     @"Cliente Inactivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             var f0 = new FrmSD02SalesOrderMain(_idClienteSelect.Value);
             f0.Show();
-            this.Close();
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void tsUcCustomerSearch11_ClienteModificado(object source, _0TSUserControls.TsCustomerSearchEventArgs args)
-        {
-            _idClienteSelect = tsUcCustomerSearch11.ClienteId;
-            if (tsUcCustomerSearch11.ClienteId == null)
-            {
-                SalesOrderBs.DataSource = new DsSalesOrderList().GetAllData(GlobalApp.CnnApp).OrderByDescending(c => c.SO).ToList();
-            }
-            else
-            {
-                SalesOrderBs.DataSource = new DsSalesOrderList().GetByCustomer(_idClienteSelect.Value, GlobalApp.CnnApp)
-                    .OrderByDescending(c => c.SO).ToList();
-            }
-        }
-
+        
         private void btnVerCliente_Click(object sender, EventArgs e)
         {
             if (_idClienteSelect == null)
@@ -211,6 +129,58 @@ namespace MASngFE.Transactional.SD.SalesOrder
             using (var f = new FrmMdc02BillTo(3, _idClienteSelect.Value, "MD"))
             {
                 f.ShowDialog();
+            }
+        }
+        private void CustomerFilter_ClienteModificado(object source, _0TSUserControls.CustomerSearchUcV3Args args)
+        {
+            if (CustomerFilter.ClienteId < 1 || CustomerFilter.ClienteId==null)
+            {
+                //select all
+                _idClienteSelect = -1;
+                dgvListadoSO.DataSource = _soCompleteList.OrderByDescending(c=>c.SO).ToList();
+                btnNuevaSO.Enabled = false;
+            }
+            else
+            {
+                _idClienteSelect = CustomerFilter.ClienteId;
+                dgvListadoSO.DataSource = new DsSalesOrderList().GetByCustomer(_idClienteSelect.Value, GlobalApp.CnnApp)
+                        .OrderByDescending(c => c.SO).ToList();
+                dgvListadoSO.ClearSelection();
+                if (_modo < 2)
+                {
+                    btnNuevaSO.Enabled = true;
+                }
+            }
+            txtNumeroOv.Text = null;
+        }
+        private void cmax_Validated(object sender, EventArgs e)
+        {
+            maxValue = (int) cmax.GetValueDecimal;
+            cmax.SetValue = maxValue;
+            _soCompleteList = new DsSalesOrderList().GetAllData(GlobalApp.CnnApp, maxValue); //GetComplete List
+            CustomerFilter.ClienteId = 0;
+            dgvListadoSO.DataSource = _soCompleteList;
+            dgvListadoSO.ClearSelection();
+        }
+        private void txtNumeroOv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormatAndConversions.SoloEnteroKeyPress(sender,e);
+        }
+        private void txtNumeroOv_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNumeroOv.Text))
+            {
+                dgvListadoSO.DataSource = _soCompleteList.OrderByDescending(c => c.SO).ToList();
+                return;
+            }
+            int numero = Convert.ToInt32(txtNumeroOv.Text);
+            if (numero >1)
+            {
+                dgvListadoSO.DataSource = _soCompleteList.Where(c => c.SO == numero).OrderByDescending(c => c.SO).ToList();
+            }
+            else
+            {
+                dgvListadoSO.DataSource = _soCompleteList.OrderByDescending(c => c.SO).ToList();
             }
         }
     }

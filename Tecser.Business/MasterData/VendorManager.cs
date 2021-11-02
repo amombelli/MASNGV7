@@ -20,7 +20,13 @@ namespace Tecser.Business.MasterData
             }
         }
 
-
+        public static string  GetVendorRazonSocial(int idVendor)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                return db.T0005_MPROVEEDORES.SingleOrDefault(c => c.id_prov == idVendor).prov_rsocial;
+            }
+        }
 
 
         public List<T0014_TIPO_PROVEEDOR> GetVendorTypeList(bool soloActivo = false)

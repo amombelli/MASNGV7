@@ -33,7 +33,7 @@ namespace MASngFE.Transactional.CO.CierreRaf
             _fechaD = new PeriodoConversion().GetFechaPrimerDiaPeriodo(_periodo);
             _fechaH = new PeriodoConversion().GetFechaUltimoDiaPeriodo(_periodo).AddDays(1); //traia problemas con el ultimo dia + horas
 
-            var lista = new VendorConcil().GetListadoSaldosFinales(_tipoLx);
+            var lista = new VendorConcil(_periodo,_tipoLx).GetListadoSaldosFinales(_tipoLx);
             dgvStructuraBs.DataSource = lista;
             txtSaldoAPHoy.Text = lista.Sum(c => c.DeudaTotalARS).ToString("C2");
             lperiodo.Text = txtPeriodo.Text;
@@ -41,7 +41,7 @@ namespace MASngFE.Transactional.CO.CierreRaf
 
         private void btnDetalleAP_Click(object sender, EventArgs e)
         {
-            var lista = new VendorConcil().GetListadoSaldosFinales(_tipoLx);
+            var lista = new VendorConcil(_periodo,_tipoLx).GetListadoSaldosFinales(_tipoLx);
             dgvStructuraBs.DataSource = lista;
             txtSaldoAPHoy.Text = lista.Sum(c => c.DeudaTotalARS).ToString("C2");
 
@@ -54,7 +54,7 @@ namespace MASngFE.Transactional.CO.CierreRaf
                 MessageBox.Show(@"Complete el Periodo");
                 return;
             }
-            var lista = new VendorConcil().GetListadoDetalladoComposicionSaldos(_tipoLx,
+            var lista = new VendorConcil(_periodo,_tipoLx).GetListadoDetalladoComposicionSaldos(_tipoLx,
                 txtPeriodo.Text);
             txtSaldoAPeriodoAP.Text = lista.Sum(c => c.DeudaTotalARS).ToString("C2");
             lperiodo.Text = txtPeriodo.Text;
@@ -65,13 +65,13 @@ namespace MASngFE.Transactional.CO.CierreRaf
             }
             else
             {
-                dgvStructuraBs.DataSource = new VendorConcil().GetListadoSumarizadoComposicionSaldos(lista);
+                dgvStructuraBs.DataSource = new VendorConcil(_periodo,_tipoLx).GetListadoSumarizadoComposicionSaldos(lista);
             }
         }
 
         private void btnSaldosFinales_Click(object sender, EventArgs e)
         {
-            dgvStructuraBs.DataSource = new VendorConcil().Accion(_tipoLx, _periodo);
+            dgvStructuraBs.DataSource = new VendorConcil(_periodo,_tipoLx).Accion(_tipoLx, _periodo);
         }
     }
 }

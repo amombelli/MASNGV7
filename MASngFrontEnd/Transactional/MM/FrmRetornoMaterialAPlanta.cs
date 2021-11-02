@@ -205,23 +205,7 @@ namespace MASngFE.Transactional.MM
         {
             this.Close();
         }
-        private void tsUcCustomerSearch11_ClienteModificado(object source, _0TSUserControls.TsCustomerSearchEventArgs args)
-        {
-            if (tsUcCustomerSearch11.ClienteId == null)
-            {
-                grp1.Enabled = false;
-                btnIngresar.Enabled = false;
-                _rtnSimple = null;
-                _rtnInfo = null;
-                _id6 = null;
-                return;
-            }
-            _id6 = tsUcCustomerSearch11.ClienteId;
-            _rtnInfo = new RtnIdentificacionMaterial(_id6.Value);
-            _rtnSimple = new RtnMaterialSimpleValidation(_id6.Value);
-            btnIngresar.Enabled = true;
-            grp1.Enabled = true;
-        }
+
 
         private void txtMaterialRecibido_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -266,6 +250,24 @@ namespace MASngFE.Transactional.MM
             var combo = (ComboBox)sender;
             if (combo.SelectedItem == null && !string.IsNullOrEmpty(combo.Text))
                 e.Cancel = true;
+        }
+
+        private void tsUcCustomer31_ClienteModificado(object source, _0TSUserControls.CustomerSearchUcV3Args args)
+        {
+            if (tsUcCustomer31.ClienteId == null)
+            {
+                grp1.Enabled = false;
+                btnIngresar.Enabled = false;
+                _rtnSimple = null;
+                _rtnInfo = null;
+                _id6 = null;
+                return;
+            }
+            _id6 = tsUcCustomer31.ClienteId;
+            _rtnInfo = new RtnIdentificacionMaterial(_id6.Value);
+            _rtnSimple = new RtnMaterialSimpleValidation(_id6.Value);
+            btnIngresar.Enabled = true;
+            grp1.Enabled = true;
         }
 
 

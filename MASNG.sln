@@ -81,8 +81,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAS3", "MAS3\MAS3.csproj", "{16DBEE05-962F-420F-8500-6FB8F6CA29B7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,10 +122,6 @@ Global
 		{FACC8F94-85EA-475D-95BA-2F3FB5E035C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EFF0DA86-C2A2-4D07-8087-DFF1B47D7BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EFF0DA86-C2A2-4D07-8087-DFF1B47D7BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16DBEE05-962F-420F-8500-6FB8F6CA29B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16DBEE05-962F-420F-8500-6FB8F6CA29B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16DBEE05-962F-420F-8500-6FB8F6CA29B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16DBEE05-962F-420F-8500-6FB8F6CA29B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,7 +135,6 @@ Global
 		{DC16DC07-FD05-4E1A-9BBF-6127E69719CE} = {48CDE9AF-E519-42C6-B01C-624817DC2658}
 		{DFBDB39C-DAFE-4417-B555-718633ED5691} = {48CDE9AF-E519-42C6-B01C-624817DC2658}
 		{8B36C303-745D-4372-91A1-26A8FFA8E7DD} = {A79122F2-3B4C-480F-8881-5A90F7BCC261}
-		{16DBEE05-962F-420F-8500-6FB8F6CA29B7} = {A79122F2-3B4C-480F-8881-5A90F7BCC261}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD29C458-8A0B-4D06-9373-D934055A9969}

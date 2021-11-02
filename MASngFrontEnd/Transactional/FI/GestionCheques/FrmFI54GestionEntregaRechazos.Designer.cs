@@ -58,7 +58,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tsUcCustomerSearch11 = new MASngFE._0TSUserControls.TsUcCustomerSearch1();
             this.ckNoEntregados = new TSControls.CtlCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChequesRech)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsChequesRech)).BeginInit();
@@ -294,15 +293,6 @@
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn1.Width = 60;
             // 
-            // tsUcCustomerSearch11
-            // 
-            this.tsUcCustomerSearch11.ClienteId = null;
-            this.tsUcCustomerSearch11.Location = new System.Drawing.Point(4, 3);
-            this.tsUcCustomerSearch11.Name = "tsUcCustomerSearch11";
-            this.tsUcCustomerSearch11.Size = new System.Drawing.Size(537, 89);
-            this.tsUcCustomerSearch11.TabIndex = 14;
-            this.tsUcCustomerSearch11.ClienteModificado += new MASngFE._0TSUserControls.TsUcCustomerSearch1.ClienteModificadoEventHandler(this.tsUcCustomerSearch11_ClienteModificado);
-            // 
             // ckNoEntregados
             // 
             this.ckNoEntregados.ColorChecked = System.Drawing.Color.LimeGreen;
@@ -321,7 +311,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1308, 529);
-            this.Controls.Add(this.tsUcCustomerSearch11);
             this.Controls.Add(this.ckNoEntregados);
             this.Controls.Add(this.dgvChequesRech);
             this.Controls.Add(this.btnSalir);
@@ -342,7 +331,6 @@
         private System.Windows.Forms.DataGridView dgvChequesRech;
         private TSControls.CtlCheckBox ckNoEntregados;
         private System.Windows.Forms.BindingSource bsClientes;
-        private _0TSUserControls.TsUcCustomerSearch1 tsUcCustomerSearch11;
         private System.Windows.Forms.DataGridViewTextBoxColumn idchequeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clienteRsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAcreditacionDataGridViewTextBoxColumn;

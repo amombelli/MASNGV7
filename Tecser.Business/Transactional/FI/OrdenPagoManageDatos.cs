@@ -202,7 +202,7 @@ namespace Tecser.Business.Transactional.FI
         }
 
 
-        public void RegistraChequesEmitidos()
+        public void RegistraChequesEmitidos(int numeroAsiento)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -211,7 +211,7 @@ namespace Tecser.Business.Transactional.FI
                 {
                     var obj = new GestionChequesEmitidos().SetNewRecord(it.CH_NUM, it.T0210_OP_H.OPFECHA.Value,
                         it.ChequeFecha.Value, it.IMPORTE.Value, it.CUENTA_O, it.IDOP, it.PROVEEDOR.Value,
-                        it.CK_FIN.Value);
+                        it.CK_FIN.Value,numeroAsiento,Header.TIPO);
                     if (obj < 1)
                         MessageBox.Show(@"Error al Registrar el Cheque Emitido!", @"Atencion!", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
@@ -409,6 +409,7 @@ namespace Tecser.Business.Transactional.FI
         /// <summary>
         /// Agrega un item de pago a una orden de pago - NO USAR para OPCRED Directamente
         /// Si se provee fechaAcreditacionEmitido - Se trata de un cheque emitido desde cuentas (GAL,SAN,ICBC)
+        /// Si Idcheque =-5 (cheque emitido) -- si es transferencia=true => e-cheque
         /// Se utliliza CK_FIN para indicar que es transferencia desde banco
         /// </summary>
         public bool AddItemPago(string cuenta, decimal importe, int idCheque = -1, decimal tc = 0, DateTime? fechaAcreditacionEmitido = null, string numeroChequeEmitido = null, bool esTransferenciaDesdeCuenta = false)
@@ -426,14 +427,14 @@ namespace Tecser.Business.Transactional.FI
                 CH_ID = null,
                 CH_NUM = null,
                 CK_CANCEL = false,
-                CK_FIN = esTransferenciaDesdeCuenta, //lo vamos a usar como indicador de transferencia desde cuenta
+                CK_FIN = esTransferenciaDesdeCuenta,//Indicador Transferencia/e-cheque
                 CUENTA_O = cuenta,
                 PROVEEDOR = Header.PROV_ID,
                 TC = Header.TC,
                 MON_OP = Header.MON_OP,
                 IMPORTE = importe,
                 MON = infoCuentaPago.CUENTA_MONEDA,
-                ChequeFecha = null,
+                ChequeFecha = null
             };
 
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -445,12 +446,16 @@ namespace Tecser.Business.Transactional.FI
                     var bancos = new BankManager().GetBankDataNombreCuenta(bankValue);
                     if (bancos == null)
                     {
-                        bancos.ID_BANCO = "000";
+                        bancos = new T0160_BANCOS()
+                        {
+                            ID_BANCO = "000"
+                        };
                     }
+
                     itemPago.CH_CK = true;
                     itemPago.CH_NUM = numeroChequeEmitido;
                     itemPago.CH_BCO = bancos.ID_BANCO;
-                    itemPago.CH_ID = idCheque; //debiera venir -5
+                    itemPago.CH_ID = idCheque; //debiera venir -5 (cheque o e-cheque emitido propio)
                     itemPago.ChequeFecha = fechaAcreditacionEmitido;
                 }
                 else

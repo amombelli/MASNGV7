@@ -41,10 +41,11 @@
             this.myTextBox.Location = new System.Drawing.Point(0, 0);
             this.myTextBox.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.myTextBox.Name = "myTextBox";
-            this.myTextBox.Size = new System.Drawing.Size(74, 21);
+            this.myTextBox.Size = new System.Drawing.Size(76, 21);
             this.myTextBox.TabIndex = 0;
             this.myTextBox.DoubleClick += new System.EventHandler(this.myTextBox_DoubleClick);
             this.myTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.myTextBox_KeyPress);
+            this.myTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.myTextBox_KeyUp);
             this.myTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.myTextBox_Validating);
             // 
             // CtlTextBox
@@ -59,6 +60,7 @@
             this.Size = new System.Drawing.Size(76, 21);
             this.Load += new System.EventHandler(this.CtlTextBox_Load);
             this.SizeChanged += new System.EventHandler(this.CtlTextBox_SizeChanged);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CtlTextBox_KeyUp);
             this.Resize += new System.EventHandler(this.CtlTextBox_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();

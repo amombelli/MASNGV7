@@ -55,7 +55,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>TecserAppIcon.ico</ApplicationIcon>
+    <ApplicationIcon>letra_m_azul_fondo_transp_UR5_3.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>MASngFE.Program</StartupObject>
@@ -78,9 +78,6 @@
     </Reference>
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="MASng">
-      <HintPath>obj\Release\MASng.exe</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -216,17 +213,23 @@
     <Compile Include="FIX\FrmMergeCustomersData.Designer.cs">
       <DependentUpon>FrmMergeCustomersData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CustomerSearchBase\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerSearchBase\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerSearchBase\FrmCustomerSearchTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerSearchBase\FrmCustomerSearchTest.Designer.cs">
+      <DependentUpon>FrmCustomerSearchTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.Designer.cs">
       <DependentUpon>FrmMDC00CustomerSearchBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomerSearchBase\frmTestCustomerSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomerSearchBase\frmTestCustomerSearch.Designer.cs">
-      <DependentUpon>frmTestCustomerSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -239,12 +242,6 @@
     </Compile>
     <Compile Include="Forms\FrmAPP04_DatosPadron.Designer.cs">
       <DependentUpon>FrmAPP04_DatosPadron.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmMdc01CustomerSearchL1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmMdc01CustomerSearchL1.Designer.cs">
-      <DependentUpon>FrmMdc01CustomerSearchL1.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmMdc00CustomerSearchSaldos.cs">
       <SubType>Form</SubType>
@@ -767,6 +764,12 @@
     </Compile>
     <Compile Include="Transactional\CO\CierreRaf\FrmCo36ConciliaDiferenciasEgresos.Designer.cs">
       <DependentUpon>FrmCo36ConciliaDiferenciasEgresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo37ConciliaEgresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCo37ConciliaEgresos.Designer.cs">
+      <DependentUpon>FrmCo37ConciliaEgresos.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactional\CO\CierreRaf\FrmDetalle203.cs">
       <SubType>Form</SubType>
@@ -2179,13 +2182,25 @@
     <Compile Include="_0TSUserControls\TsUcCustomer3.Designer.cs">
       <DependentUpon>TsUcCustomer3.cs</DependentUpon>
     </Compile>
-    <Compile Include="_0TSUserControls\TsUc_CustomerSearch2.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="_0TSUserControls\TsUcCustomerFreeSearch.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_0TSUserControls\TsUc_CustomerSearch2.Designer.cs">
-      <DependentUpon>TsUc_CustomerSearch2.cs</DependentUpon>
+    <Compile Include="_0TSUserControls\TsUcCustomerFreeSearch.Designer.cs">
+      <DependentUpon>TsUcCustomerFreeSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="_0TSUserControls\TsCustomerSearchEventArgs.cs" />
+    <Compile Include="_0TSUserControls\TsUcVendorFreeSearchScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_0TSUserControls\TsUcVendorFreeSearchScreen.Designer.cs">
+      <DependentUpon>TsUcVendorFreeSearchScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_0TSUserControls\TsUcVendorSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_0TSUserControls\TsUcVendorSelector.Designer.cs">
+      <DependentUpon>TsUcVendorSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="_UserControls\AwsTextBoxBase.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2234,12 +2249,6 @@
     </Compile>
     <Compile Include="_UserControls\PorcentajeTextBox.Designer.cs">
       <DependentUpon>PorcentajeTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="_0TSUserControls\TsUcCustomerSearch1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="_0TSUserControls\TsUcCustomerSearch1.Designer.cs">
-      <DependentUpon>TsUcCustomerSearch1.cs</DependentUpon>
     </Compile>
     <Compile Include="_UserControls\UCurrencyTextBox.cs">
       <SubType>UserControl</SubType>
@@ -2338,20 +2347,20 @@
     <EmbeddedResource Include="FIX\FrmMergeCustomersData.resx">
       <DependentUpon>FrmMergeCustomersData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerSearchBase\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerSearchBase\FrmCustomerSearchTest.resx">
+      <DependentUpon>FrmCustomerSearchTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.resx">
       <DependentUpon>FrmMDC00CustomerSearchBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomerSearchBase\frmTestCustomerSearch.resx">
-      <DependentUpon>frmTestCustomerSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAPP04_DatosPadron.resx">
       <DependentUpon>FrmAPP04_DatosPadron.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmMdc01CustomerSearchL1.resx">
-      <DependentUpon>FrmMdc01CustomerSearchL1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMdc00CustomerSearchSaldos.resx">
       <DependentUpon>FrmMdc00CustomerSearchSaldos.cs</DependentUpon>
@@ -2609,6 +2618,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCo36ConciliaDiferenciasEgresos.resx">
       <DependentUpon>FrmCo36ConciliaDiferenciasEgresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCo37ConciliaEgresos.resx">
+      <DependentUpon>FrmCo37ConciliaEgresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetalle203.resx">
       <DependentUpon>FrmDetalle203.cs</DependentUpon>
@@ -3304,8 +3316,14 @@
     <EmbeddedResource Include="_0TSUserControls\TsUcCustomer3.resx">
       <DependentUpon>TsUcCustomer3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_0TSUserControls\TsUc_CustomerSearch2.resx">
-      <DependentUpon>TsUc_CustomerSearch2.cs</DependentUpon>
+    <EmbeddedResource Include="_0TSUserControls\TsUcCustomerFreeSearch.resx">
+      <DependentUpon>TsUcCustomerFreeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_0TSUserControls\TsUcVendorFreeSearchScreen.resx">
+      <DependentUpon>TsUcVendorFreeSearchScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_0TSUserControls\TsUcVendorSelector.resx">
+      <DependentUpon>TsUcVendorSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_UserControls\AwsTextBoxBase.resx">
       <DependentUpon>AwsTextBoxBase.cs</DependentUpon>
@@ -3324,9 +3342,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_UserControls\otroTextbox.resx">
       <DependentUpon>otroTextbox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="_0TSUserControls\TsUcCustomerSearch1.resx">
-      <DependentUpon>TsUcCustomerSearch1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_UserControls\UCurrencyTextBox.resx">
       <DependentUpon>UCurrencyTextBox.cs</DependentUpon>
@@ -3353,7 +3368,9 @@
       <DependentUpon>UVendorSearch.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Tecser.Business.MasterData.Customer.StxCustomerSimple.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.MasterData.Vendor_Master.StxVendnorSimple.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.ConciliacionSaldoVendor203Vs204.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.ConciliaEgresos2.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.EstructuraSaldosProveedores.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.RetornaConciliacion.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.Cierre.StructureConcil203.datasource" />
@@ -3786,6 +3803,7 @@
     <None Include="Resources\Letra M Azul.jpg" />
     <None Include="Resources\Letra M Azul fondo Transp.png" />
     <None Include="Resources\Contabilizar.png" />
+    <Content Include="letra_m_azul_fondo_transp_UR5_3.ico" />
     <Content Include="TecserAppIcon.ico" />
   </ItemGroup>
   <ItemGroup>
