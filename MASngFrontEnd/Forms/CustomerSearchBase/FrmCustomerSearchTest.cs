@@ -7,20 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MASngFE._0TSUserControls;
 
 namespace MASngFE.Forms.CustomerSearchBase
 {
-    public partial class frmTestCustomerSearch : Form
+    public partial class FrmCustomerSearchTest : Form
     {
-        public frmTestCustomerSearch()
+        public FrmCustomerSearchTest()
         {
             InitializeComponent();
-        }
-
-        private void frmTestCustomerSearch_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

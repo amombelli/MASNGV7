@@ -1,6 +1,6 @@
 ﻿namespace MASngFE.Forms.CustomerSearchBase
 {
-    partial class frmTestCustomerSearch
+    partial class FrmCustomerSearchTest
     {
         /// <summary>
         /// Required designer variable.
@@ -34,21 +34,21 @@
             // tsUcCustomer31
             // 
             this.tsUcCustomer31.BackColor = System.Drawing.Color.White;
+            this.tsUcCustomer31.ClienteId = null;
             this.tsUcCustomer31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsUcCustomer31.Location = new System.Drawing.Point(6, 5);
+            this.tsUcCustomer31.Location = new System.Drawing.Point(55, 58);
             this.tsUcCustomer31.Name = "tsUcCustomer31";
             this.tsUcCustomer31.Size = new System.Drawing.Size(604, 99);
             this.tsUcCustomer31.TabIndex = 0;
             // 
-            // frmTestCustomerSearch
+            // FrmCustomerSearchTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 497);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tsUcCustomer31);
-            this.Name = "frmTestCustomerSearch";
-            this.Text = "ts";
-            this.Load += new System.EventHandler(this.frmTestCustomerSearch_Load);
+            this.Name = "FrmCustomerSearchTest";
+            this.Text = "FrmCustomerSearchTest";
             this.ResumeLayout(false);
 
         }

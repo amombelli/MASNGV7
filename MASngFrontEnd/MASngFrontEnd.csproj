@@ -216,17 +216,17 @@
     <Compile Include="FIX\FrmMergeCustomersData.Designer.cs">
       <DependentUpon>FrmMergeCustomersData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CustomerSearchBase\FrmCustomerSearchTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerSearchBase\FrmCustomerSearchTest.Designer.cs">
+      <DependentUpon>FrmCustomerSearchTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.Designer.cs">
       <DependentUpon>FrmMDC00CustomerSearchBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomerSearchBase\frmTestCustomerSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomerSearchBase\frmTestCustomerSearch.Designer.cs">
-      <DependentUpon>frmTestCustomerSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -2338,11 +2338,11 @@
     <EmbeddedResource Include="FIX\FrmMergeCustomersData.resx">
       <DependentUpon>FrmMergeCustomersData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerSearchBase\FrmCustomerSearchTest.resx">
+      <DependentUpon>FrmCustomerSearchTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerSearchBase\FrmMDC00CustomerSearchBase.resx">
       <DependentUpon>FrmMDC00CustomerSearchBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomerSearchBase\frmTestCustomerSearch.resx">
-      <DependentUpon>frmTestCustomerSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

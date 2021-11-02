@@ -967,7 +967,7 @@ namespace MASngFE.Application
 
         private void btnTestCustomerSearchControl_Click(object sender, EventArgs e)
         {
-            var f = new frmTestCustomerSearch();
+            var f = new FrmCustomerSearchTest();
             f.Show();
 
         }
