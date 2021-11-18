@@ -213,7 +213,6 @@
     <Compile Include="FIX\FrmMergeCustomersData.Designer.cs">
       <DependentUpon>FrmMergeCustomersData.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Forms\CustomerSearchBase\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2351,7 +2350,6 @@
     <EmbeddedResource Include="Forms\CustomerSearchBase\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-er
     <EmbeddedResource Include="Forms\CustomerSearchBase\FrmCustomerSearchTest.resx">
       <DependentUpon>FrmCustomerSearchTest.cs</DependentUpon>
     </EmbeddedResource>
