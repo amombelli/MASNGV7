@@ -73,6 +73,10 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtFechaComprobante = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -164,7 +168,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(47, 52);
+            this.label10.Location = new System.Drawing.Point(47, 53);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 15);
             this.label10.TabIndex = 47;
@@ -365,6 +369,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel3.Controls.Add(this.txtRazonSocial);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.txtFechaComprobante);
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.btnConsultaCae);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.txtSuc);
@@ -380,7 +388,7 @@
             this.panel3.Controls.Add(this.label12);
             this.panel3.Location = new System.Drawing.Point(4, 94);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(521, 143);
+            this.panel3.Size = new System.Drawing.Size(521, 197);
             this.panel3.TabIndex = 67;
             // 
             // panel4
@@ -395,7 +403,7 @@
             this.panel4.Controls.Add(this.txtRetencion);
             this.panel4.Controls.Add(this.txtPercepcion);
             this.panel4.Controls.Add(this.btnConsultaIIBB);
-            this.panel4.Location = new System.Drawing.Point(4, 240);
+            this.panel4.Location = new System.Drawing.Point(4, 297);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(521, 143);
             this.panel4.TabIndex = 68;
@@ -587,6 +595,48 @@
             this.label1.Text = "COMPONENTE WSAA";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtFechaComprobante
+            // 
+            this.txtFechaComprobante.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtFechaComprobante.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaComprobante.Location = new System.Drawing.Point(335, 50);
+            this.txtFechaComprobante.Name = "txtFechaComprobante";
+            this.txtFechaComprobante.ReadOnly = true;
+            this.txtFechaComprobante.Size = new System.Drawing.Size(126, 21);
+            this.txtFechaComprobante.TabIndex = 55;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(216, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 15);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "Fecha Comprobante\r\n";
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtRazonSocial.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazonSocial.Location = new System.Drawing.Point(128, 143);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.ReadOnly = true;
+            this.txtRazonSocial.Size = new System.Drawing.Size(333, 21);
+            this.txtRazonSocial.TabIndex = 57;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(39, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 15);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Razon Social";
+            // 
             // FrmApp13CheckWebServicesConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,5 +714,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtRazonSocial;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFechaComprobante;
+        private System.Windows.Forms.Label label2;
     }
 }

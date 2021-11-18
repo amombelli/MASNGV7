@@ -51,7 +51,7 @@ namespace MASngFE.Transactional.FI.VendorPRM
                     txtAsiento.Text = invoiceD.NASIENTO.Value.ToString();
                     txtIdCtaCte.Text = invoiceD.IDCTACTE.Value.ToString();
                     txtSaldoImpago.Text = db.T0203_CTACTE_PROV
-                        .SingleOrDefault(c => c.IDCTACTE == invoiceD.IDCTACTE.Value).SALDOFACTURA.Value.ToString("C2");
+                        .SingleOrDefault(c => c.IDCTACTE == invoiceD.IDCTACTE.Value).SALDOFACTURA.ToString("C2");
 
                     dgvItems.DataSource = new VendorDocuments().GetDocumentItems(_idFactura403);
                     dgvImputacion.DataSource = new VendorDocuments().GetImputacionDocumento(invoiceD.IDCTACTE.Value);

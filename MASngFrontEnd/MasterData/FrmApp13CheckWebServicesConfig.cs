@@ -184,8 +184,15 @@ namespace MASngFE.MasterData
 
             txtCae.Text = r.CAE;
             txtCuit1.Text = r.DocNumero;
+            txtFechaComprobante.Text = r.FechaComprobante.ToString("d");
+
             //txtVto.Text = r.VencimientoCAE.ToString("d");
             txtImporte.Text = r.ImporteTotal.ToString("N2");
+            var cn = new PadronAfipWsA5(_entorno).ObtieneDatosPadronA5(txtCuit1.Text);
+            txtRazonSocial.Text = cn.Denominacion;
+            //var cn = new PadronAfipWsA5(ModoEjecucion.Produccion).ObtenerDatosPadron(cuitConsultar);
+            //txtRazonSocial1.Text = cn.Denominacion;
+
             //var padron = new PadronAfipWs(ModoEjecucion.Produccion).ObtenerDatosPadron(r.DocNumero);
             //txtRazonSocial.Text = padron.Denominacion;
             ////txtFechaComprobante.Text = r.FechaComprobante.ToString("d");

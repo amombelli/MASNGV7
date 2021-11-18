@@ -370,13 +370,13 @@ namespace MASngFE.Transactional.FI.Vendor.SinRemito
             //1 Add Factura 203 + Update deuda 204  >>retorno idctacte
             var ctacte = new CtaCteVendor(_idVendor);
             var data = MapFormDataToCtaCte203Structure();
-            var idCtaCte = ctacte.AddCtaCteDetalleRecord(data.TDOC, data.TIPO, data.Fecha.Value, data.NUMDOC,
-                data.DOC_INTERNO, data.MONEDA, data.IMPORTE_ORI.Value, data.TC.Value, data.SALDOFACTURA.Value, data.IMPORTE_ARS.Value,
+            var idCtaCte = ctacte.AddCtaCteDetalleRecord(data.TDOC, data.TIPO, data.Fecha, data.NUMDOC,
+                data.DOC_INTERNO, data.MONEDA, data.IMPORTE_ORI, data.TC, data.SALDOFACTURA, data.IMPORTE_ARS,
                 data.IdFacturaX.Value, data.IdFacturaX.Value);
 
             if (idCtaCte > 0)
             {
-                ctacte.UpdateSaldoCtaCteResumen(data.TIPO, data.IMPORTE_ORI.Value, data.MONEDA, data.TC);
+                ctacte.UpdateSaldoCtaCteResumen(data.TIPO, data.IMPORTE_ORI, data.MONEDA, data.TC);
                 var result = ctacte.GetResultadoCtaCte(data.TIPO);
                 txtidCtaCte.Text = idCtaCte.ToString();
             }

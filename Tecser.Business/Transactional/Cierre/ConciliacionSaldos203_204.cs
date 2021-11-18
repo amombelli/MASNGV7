@@ -13,7 +13,7 @@ namespace Tecser.Business.Transactional.Cierre
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var dataFrom203 = from s203 in db.T0203_CTACTE_PROV
-                                  where s203.SALDOFACTURA.Value != 0
+                                  where s203.SALDOFACTURA != 0
                                   group s203 by new
                                   {
                                       IdProv = s203.IDPROV,
@@ -24,7 +24,7 @@ namespace Tecser.Business.Transactional.Cierre
                                   select new StructureConcil203()
                                   {
                                       RazonSocial = grp203.Key.Rsocial,
-                                      Saldo203 = grp203.Sum(c => c.SALDOFACTURA.Value),
+                                      Saldo203 = grp203.Sum(c => c.SALDOFACTURA),
                                       Saldo204 = 0,
                                       TipoLX = grp203.Key.TipoLx,
                                       VendorId = grp203.Key.IdProv,
@@ -77,7 +77,7 @@ namespace Tecser.Business.Transactional.Cierre
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var dataFrom203 = from s203 in db.T0203_CTACTE_PROV
-                                  where s203.SALDOFACTURA.Value != 0
+                                  where s203.SALDOFACTURA != 0
                                   group s203 by new
                                   {
                                       IdProv = s203.IDPROV,
@@ -88,7 +88,7 @@ namespace Tecser.Business.Transactional.Cierre
                                   select new StructureConcil203()
                                   {
                                       RazonSocial = grp203.Key.Rsocial,
-                                      Saldo203 = grp203.Sum(c => c.SALDOFACTURA.Value),
+                                      Saldo203 = grp203.Sum(c => c.SALDOFACTURA),
                                       Saldo204 = 0,
                                       TipoLX = grp203.Key.TipoLx,
                                       VendorId = grp203.Key.IdProv,

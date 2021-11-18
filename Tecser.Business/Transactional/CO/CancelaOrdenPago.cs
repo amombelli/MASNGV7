@@ -43,10 +43,10 @@ namespace Tecser.Business.Transactional.CO
 
                 var idCtaCteOPZ = CtaCte.AddCtaCteDetalleRecord("OPZ", idCtaCte.TIPO, DateTime.Today,
                     idCtaCte.NUMDOC,
-                    "ASN" + resultadoNewAsiento.IdDocu, opH.MON_OP, idCtaCte.IMPORTE_ORI.Value * -1, opH.TC.Value,
-                    (decimal)idCtaCte.SALDOFACTURA * -1, idCtaCte.IMPORTE_ARS.Value * -1);
+                    "ASN" + resultadoNewAsiento.IdDocu, opH.MON_OP, idCtaCte.IMPORTE_ORI * -1, opH.TC.Value,
+                    (decimal)idCtaCte.SALDOFACTURA * -1, idCtaCte.IMPORTE_ARS * -1);
 
-                var z1 = CtaCte.UpdateSaldoCtaCteResumen(idCtaCte.TIPO, idCtaCte.IMPORTE_ORI.Value * -1);
+                var z1 = CtaCte.UpdateSaldoCtaCteResumen(idCtaCte.TIPO, idCtaCte.IMPORTE_ORI * -1);
                 var resultado = CtaCte.GetResultadoCtaCte(idCtaCte.TIPO);
                 idCtaCte.ZOP = false;
                 db.SaveChanges();

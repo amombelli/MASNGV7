@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using MASngFE.Forms;
+using MASngFE.Forms.CustomerSearchBase;
 using MASngFE.Forms.VendorSearchBase;
 using MASngFE.MasterData;
 using MASngFE.MasterData.BOM;
@@ -39,7 +40,7 @@ using TecserEF.Entity;
 
 namespace MASngFE.Application
 {
-    public partial class Frm00MainAppStart : Form
+    public partial class Frm00MainAppStart : RibbonForm
     {
         public Frm00MainAppStart()
         {
@@ -962,6 +963,13 @@ namespace MASngFE.Application
         {
             var f = new FrmFI13TaxConfig();
             f.Show();
+        }
+
+        private void btnTestCustomerSearchControl_Click(object sender, EventArgs e)
+        {
+            var f = new FrmCustomerSearchTest();
+            f.Show();
+
         }
     }
 }

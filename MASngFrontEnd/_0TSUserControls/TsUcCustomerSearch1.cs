@@ -124,7 +124,6 @@ namespace MASngFE._0TSUserControls
                 txtCustomerId6.BackColor = Color.PaleGreen;
             }
         }
-
         private void TsCustomerSearchSimple_Load(object sender, EventArgs e)
         {
             if (!this.DesignMode)

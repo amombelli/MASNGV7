@@ -44,7 +44,7 @@ namespace Tecser.Business.Transactional.FI
                            select new DsOrdenPagoFacturasIncluidas()
                            {
                                Tdoc = facturas.TDOC,
-                               FechaDoc = facturas.Fecha.Value,
+                               FechaDoc = facturas.Fecha,
                                FACT_TIPO = opfactu.FACT_TIPO,
                                FACT_NUM = opfactu.FACT_NUM,
                                FACT_MON = opfactu.FACT_MON,
@@ -157,7 +157,7 @@ namespace Tecser.Business.Transactional.FI
                 foreach (var ix in fop)
                 {
                     var saldoFacturaCtaCte =
-                        db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == ix.IdCtaCte.Value).SALDOFACTURA.Value;
+                        db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == ix.IdCtaCte.Value).SALDOFACTURA;
                     if (saldoFacturaCtaCte != ix.FACT_SALDO_IMPUTAR.Value)
                         return false;
                 }
@@ -316,7 +316,7 @@ namespace Tecser.Business.Transactional.FI
                     ifactu.CK_FIN = true;
                     var totalImputado = ifactu.FACT_IMPUTADO + ifactu.RetencionGS + ifactu.RetencionIIBB;
 
-                    ctacte.SALDOFACTURA = ctacte.SALDOFACTURA - totalImputado;
+                    ctacte.SALDOFACTURA = ctacte.SALDOFACTURA - (decimal) totalImputado;
                     db.SaveChanges();
 
                 }
@@ -337,7 +337,7 @@ namespace Tecser.Business.Transactional.FI
                 if (ctacteOpCred == null)
                     return;
 
-                AddItemPago("OPCRED", Math.Abs(ctacteOpCred.SALDOFACTURA.Value), idCtaCteOPCred);
+                AddItemPago("OPCRED", Math.Abs(ctacteOpCred.SALDOFACTURA), idCtaCteOPCred);
                 ctacteOpCred.SALDOFACTURA = 0;
 
                 Int32 numOP = Convert.ToInt32(ctacteOpCred.NUMDOC);
@@ -357,7 +357,7 @@ namespace Tecser.Business.Transactional.FI
                 var ctacteOpCred = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == idCtaCteOPCred);
                 if (ctacteOpCred == null)
                     return;
-                AddItemPago("NC", Math.Abs(ctacteOpCred.SALDOFACTURA.Value), idCtaCteOPCred);
+                AddItemPago("NC", Math.Abs(ctacteOpCred.SALDOFACTURA), idCtaCteOPCred);
                 ctacteOpCred.SALDOFACTURA = 0;
 
                 //Int32 numOP = Convert.ToInt32(ctacteOpCred.NUMDOC);
@@ -472,7 +472,7 @@ namespace Tecser.Business.Transactional.FI
                             itemPago.CH_NUM = "OP@" + datosCtaCte.NUMDOC;
                             itemPago.CH_ID = idCheque;
                             itemPago.ChequeFecha = datosCtaCte.Fecha;
-                            itemPago.IMPORTE = Math.Abs(datosCtaCte.SALDOFACTURA.Value);
+                            itemPago.IMPORTE = Math.Abs(datosCtaCte.SALDOFACTURA);
                             itemPago.MON = datosCtaCte.MONEDA;
                             break;
                         case "NC":
@@ -480,7 +480,7 @@ namespace Tecser.Business.Transactional.FI
                             itemPago.CH_NUM = "NC@" + datosCtaCteX.NUMDOC;
                             itemPago.CH_ID = idCheque;
                             itemPago.ChequeFecha = datosCtaCteX.Fecha;
-                            itemPago.IMPORTE = Math.Abs(datosCtaCteX.SALDOFACTURA.Value);
+                            itemPago.IMPORTE = Math.Abs(datosCtaCteX.SALDOFACTURA);
                             itemPago.MON = datosCtaCteX.MONEDA;
                             break;
                         case "NC2":
@@ -488,7 +488,7 @@ namespace Tecser.Business.Transactional.FI
                             itemPago.CH_NUM = "NC@" + datosCtaCteY.NUMDOC;
                             itemPago.CH_ID = idCheque;
                             itemPago.ChequeFecha = datosCtaCteY.Fecha;
-                            itemPago.IMPORTE = Math.Abs(datosCtaCteY.SALDOFACTURA.Value);
+                            itemPago.IMPORTE = Math.Abs(datosCtaCteY.SALDOFACTURA);
                             itemPago.MON = datosCtaCteY.MONEDA;
                             break;
                         default:

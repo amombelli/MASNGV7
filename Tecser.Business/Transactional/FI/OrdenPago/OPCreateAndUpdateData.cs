@@ -153,7 +153,7 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
                 if (dataCtaCte.TDOC != "OP")
                     throw new InvalidDataException("El Tipo esperado era OP");
 
-                return AddNewItemPago("OPCRED", Math.Abs(dataCtaCte.SALDOFACTURA.Value),
+                return AddNewItemPago("OPCRED", Math.Abs(dataCtaCte.SALDOFACTURA),
                     Convert.ToInt32(dataCtaCte.DOC_INTERNO));
             }
         }

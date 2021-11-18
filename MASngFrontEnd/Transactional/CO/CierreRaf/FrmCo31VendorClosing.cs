@@ -10,9 +10,9 @@ using TSControls;
 
 namespace MASngFE.Transactional.CO.CierreRaf
 {
-    public partial class FrmCierreProveedores : Form
+    public partial class FrmCo31VendorClosing : Form
     {
-        public FrmCierreProveedores(int modo = 0)
+        public FrmCo31VendorClosing(int modo = 0)
         {
             InitializeComponent();
         }
@@ -31,13 +31,7 @@ namespace MASngFE.Transactional.CO.CierreRaf
             ckL1.Checked = true;
             ckL2.Checked = false;
 
-            //leds
-            pConciliacionGreen.Visible = false;
-            pConciliacionRed.Visible = false;
-            p203_204green.Visible = false;
-            p203_204red.Visible = false;
-            p403_203green.Visible = false;
-            p403_203red.Visible = false;
+ 
         }
         private void txtPeriodo_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
         {
@@ -103,18 +97,17 @@ namespace MASngFE.Transactional.CO.CierreRaf
                     MessageBoxIcon.Error);
                 return;
             }
-            pConciliacionGreen.Visible = false;
-            pConciliacionRed.Visible = false;
+           
 
             var rtn = new VendorConcil().ConciliacionGeneralResumen(txtPeriodo.Text, _tipoLx);
 
             if (rtn.SaldoVendorOK)
             {
-                pConciliacionGreen.Visible = true;
+               // pConciliacionGreen.Visible = true;
             }
             else
             {
-                pConciliacionRed.Visible = true;
+                //pConciliacionRed.Visible = true;
             }
 
             txtConcilSaldoT203.Text = rtn.SAldo203Final.ToString("C2");
@@ -179,7 +172,7 @@ namespace MASngFE.Transactional.CO.CierreRaf
 
         private void txtEgresosReg_DoubleClick(object sender, EventArgs e)
         {
-            var f = new FrmDetalleEgresosREG(txtPeriodo.Text, _tipoLx);
+            var f = new FrmCo34DetallesEgresosReg(txtPeriodo.Text, _tipoLx);
             f.Show();
         }
 
@@ -190,13 +183,20 @@ namespace MASngFE.Transactional.CO.CierreRaf
 
         private void txtTotalesOPXPD_DoubleClick(object sender, EventArgs e)
         {
-            var f = new FrmDetallesPagosPDOPx(txtPeriodo.Text, _tipoLx);
+            var f = new FrmCo35ResumenPagosCtaCte(txtPeriodo.Text, _tipoLx);
             f.Show();
         }
 
         private void btnDetalles_Click(object sender, EventArgs e)
         {
             var f = new FrmCO13Conciliacion203204();
+            f.Show();
+        }
+
+
+        private void btnConciliaDiferencias_Click(object sender, EventArgs e)
+        {
+            var f = new FrmCo36ConciliaDiferenciasEgresos(txtPeriodo.Text,_tipoLx);
             f.Show();
         }
     }

@@ -43,7 +43,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
         private int _modo;
         public readonly List<ItemFactura> Items = new List<ItemFactura>();
         public T0403_VENDOR_FACT_H HeaderData;
-        private DateTime? _fechaDocumento = null;
+        private DateTime _fechaDocumento;
         private bool _cuitValidado;
         private string _numeroDoc;
         private string _tipoDocumento;
@@ -345,7 +345,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
                 {
                     TIPO = rbL1.Checked ? "L1" : "L2",
                     IDPROV = IdVendor.Value,
-                    FECHA = _fechaDocumento.Value,
+                    FECHA = _fechaDocumento,
                     NFACTURA = _numeroDoc,
                     GLAP = txtGLAp.Text,
                     MON = MonedaFactura,
@@ -617,7 +617,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
         {
             var h = new T0403_VENDOR_FACT_H
             {
-                FECHA = _fechaDocumento.Value,
+                FECHA = _fechaDocumento,
                 IDPROV = IdVendor.Value,
                 IDINT = 0,
                 TC = TipoCampio,
@@ -665,15 +665,15 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
             // Retorono IDCTACTE + Saldos Actualizados
             var ctacte = new CtaCteVendor(IdVendor.Value);
             var data = MapFormDataToCtaCte203Structure();
-            var idCtaCte = ctacte.AddCtaCteDetalleRecord(data.TDOC, _tipoLx, data.Fecha.Value, data.NUMDOC,
+            var idCtaCte = ctacte.AddCtaCteDetalleRecord(data.TDOC, _tipoLx, data.Fecha, data.NUMDOC,
                 data.DOC_INTERNO,
-                data.MONEDA, data.IMPORTE_ORI.Value, data.TC.Value, data.SALDOFACTURA.Value, data.IMPORTE_ARS.Value,
+                data.MONEDA, data.IMPORTE_ORI, data.TC, data.SALDOFACTURA, data.IMPORTE_ARS,
                 data.IdFacturaX.Value, data.IdFacturaX.Value);
 
             if (idCtaCte > 0)
             {
                 txtIdCtaCte.Text = idCtaCte.ToString();
-                ctacte.UpdateSaldoCtaCteResumen(_tipoLx, data.IMPORTE_ORI.Value, data.MONEDA, data.TC);
+                ctacte.UpdateSaldoCtaCteResumen(_tipoLx, data.IMPORTE_ORI, data.MONEDA, data.TC);
             }
             else
             {
@@ -709,7 +709,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
                 if (ix.UpdatePrecioUc)
                 {
                     var costoRepo = new ACostoRepo(ix.Material, ix.TC);
-                    costoRepo.SaveCost(IdVendor.Value, ix.CantidadFacturar, Monedas.GetMonedaType(ix.MonedaPrecioUc), ix.PrecioUnitarioUc, _fechaDocumento.Value);
+                    costoRepo.SaveCost(IdVendor.Value, ix.CantidadFacturar, Monedas.GetMonedaType(ix.MonedaPrecioUc), ix.PrecioUnitarioUc, _fechaDocumento);
                 }
                 else
                 {
@@ -861,14 +861,14 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
                     mskFechaFactura.Location, 5000);
 
                 txtFechaValidada.BackColor = Color.OrangeRed;
-                _fechaDocumento = null;
+                _fechaDocumento = DateTime.Today.AddYears(-50);
             }
         }
 
         private void mskFechaFactura_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             txtFechaValidada.BackColor = Color.OrangeRed;
-            _fechaDocumento = null;
+            _fechaDocumento = _fechaDocumento = DateTime.Today.AddYears(-50);
 
             toolTip1.ToolTipTitle = "Ingreso de Datos Incorrectos";
             toolTip1.Show("Los datos ingresados no son correctos!(verifique que sea exacto una fecha DD/MM/AAAA",
@@ -904,7 +904,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
             MessageBox.Show(
                 @"Se ha colocado un tipo de cambio automatico de acuerdo a la fecha de la factura ingresda",
                 @"AutoComplete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txtTipoCambio.Text = new ExchangeRateManager().GetExchangeRate(_fechaDocumento.Value).ToString("N2");
+            txtTipoCambio.Text = new ExchangeRateManager().GetExchangeRate(_fechaDocumento).ToString("N2");
         }
 
         private void txtImporteNetoFactura_DoubleClick(object sender, EventArgs e)
@@ -1066,7 +1066,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
         {
             if (mskFechaFactura.MaskCompleted)
             {
-                var pOpen = new PeriodoAvailability().CheckPeriodoOpenFI(_fechaDocumento.Value);
+                var pOpen = new PeriodoAvailability().CheckPeriodoOpenFI(_fechaDocumento);
                 if (!pOpen)
                 {
                     MessageBox.Show(
@@ -1394,7 +1394,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
         }
         private void ValidaPeriodoOpen()
         {
-            var pOpen = new PeriodoAvailability().CheckPeriodoOpenFI(_fechaDocumento.Value);
+            var pOpen = new PeriodoAvailability().CheckPeriodoOpenFI(_fechaDocumento);
             if (!pOpen)
             {
                 MessageBox.Show(
@@ -1420,7 +1420,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
         private void FechaMaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             txtFechaValidada.BackColor = _colorValidacionFail;
-            _fechaDocumento = null;
+            _fechaDocumento = _fechaDocumento = DateTime.Today.AddYears(-50);
             txtPeriodoFI.Text = null;
             txtPeriodoFI.BackColor = _colorValidacionFail;
             _periodoOK = false;
@@ -1453,7 +1453,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
 
                 txtFechaValidada.BackColor = _colorValidacionFail;
                 txtFechaValidada.Text = @"!";
-                _fechaDocumento = null;
+                _fechaDocumento = DateTime.Today.AddYears(-50); ;
             }
         }
         private void FechaValidating(object sender, System.ComponentModel.CancelEventArgs e)
