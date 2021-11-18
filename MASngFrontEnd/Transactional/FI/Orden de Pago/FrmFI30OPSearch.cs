@@ -46,75 +46,9 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
                     break;
             }
 
-            cmbRazonSocial.ValueMember = "id_prov";
-            cmbRazonSocial.DisplayMember = "prov_rsocial";
-
-            cmbFantasia.ValueMember = "id_prov";
-            cmbFantasia.DisplayMember = "PROV_FANTASIA";
-
-            cmbIdVendor.ValueMember = "id_prov";
-            cmbIdVendor.DisplayMember = "ID_PROV";
-
-            cmbRazonSocial.DataSource = new VendorManager().GetCompleteListVendors(true);
-            cmbFantasia.DataSource = new VendorManager().GetCompleteListVendors(true);
-            cmbIdVendor.DataSource = new VendorManager().GetCompleteListVendors(true);
-            cmbRazonSocial.SelectedValue = -1;
-            cmbFantasia.SelectedValue = -1;
-            cmbIdVendor.SelectedValue = -1;
             dgvOPLista.DataSource = new OrdenPagoFilter().GetOrdenPagoList(null);
         }
-        private void cmbRazonSocial_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbRazonSocial.SelectedIndex == -1)
-            {
-                btnNuevo.Enabled = false;
-                btnDetalleDeuda.Enabled = false;
-                return;
-            }
-            btnNuevo.Enabled = true;
-            btnDetalleDeuda.Enabled = true;
-            cmbFantasia.SelectedValue = cmbRazonSocial.SelectedValue;
-            cmbIdVendor.SelectedValue = cmbRazonSocial.SelectedValue;
-
-            if (string.IsNullOrEmpty(cmbEstadoOP.Text))
-            {
-                dgvOPLista.DataSource =
-                    new OrdenPagoFilter().GetOrdenPagoList(Convert.ToInt32(cmbRazonSocial.SelectedValue), null);
-            }
-            else
-            {
-                dgvOPLista.DataSource =
-                    new OrdenPagoFilter().GetOrdenPagoList(Convert.ToInt32(cmbRazonSocial.SelectedValue),
-                        cmbEstadoOP.Text);
-            }
-            this.txtNumeroOP.TextChanged -= new System.EventHandler(this.txtNumeroOP_TextChanged);
-            txtNumeroOP.Text = null;
-            this.txtNumeroOP.TextChanged += new System.EventHandler(this.txtNumeroOP_TextChanged);
-            var vendor = new VendorAccountManager();
-            txtSaldoL1.Text = vendor.GetSaldoL1(Convert.ToInt32(cmbIdVendor.SelectedValue)).ToString("C2");
-            txtSaldoL2.Text = vendor.GetSaldoL2(Convert.ToInt32(cmbIdVendor.SelectedValue)).ToString("C2");
-            txtSaldoL1.BackColor = vendor.ColorSaldoL1;
-            txtSaldoL2.BackColor = vendor.ColorSaldoL2;
-
-            txtSaldoTotalL1.Text = vendor.GetSaldoL1FromT0203(Convert.ToInt32(cmbIdVendor.SelectedValue)).ToString("C2");
-            txtSaldoTotalL2.Text = vendor.GetSaldoL2FromT0203(Convert.ToInt32(cmbIdVendor.SelectedValue)).ToString("C2");
-        }
-        private void cmbFantasia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbFantasia.SelectedIndex == -1)
-                return;
-
-            cmbRazonSocial.SelectedValue = cmbFantasia.SelectedValue;
-            cmbIdVendor.SelectedValue = cmbFantasia.SelectedValue;
-        }
-        private void cmbIdVendor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbIdVendor.SelectedIndex == -1)
-                return;
-
-            cmbRazonSocial.SelectedValue = cmbIdVendor.SelectedValue;
-            cmbFantasia.SelectedValue = cmbIdVendor.SelectedValue;
-        }
+ 
         private void cmbEstadoOP_SelectedIndexChanged(object sender, EventArgs e)
         {
             string estado = null;
@@ -123,15 +57,14 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             {
                 estado = cmbEstadoOP.Text;
             }
-
-            if (cmbRazonSocial.SelectedIndex == -1)
+            if (tsUcVendorSelector1.VendorId == null || tsUcVendorSelector1.VendorId.Value < 1)
             {
                 dgvOPLista.DataSource = new OrdenPagoFilter().GetOrdenPagoList(null, estado);
             }
             else
             {
                 dgvOPLista.DataSource =
-                    new OrdenPagoFilter().GetOrdenPagoList(Convert.ToInt32(cmbRazonSocial.SelectedValue), estado);
+                    new OrdenPagoFilter().GetOrdenPagoList(tsUcVendorSelector1.VendorId.Value, estado);
             }
             this.txtNumeroOP.TextChanged -= new System.EventHandler(this.txtNumeroOP_TextChanged);
             txtNumeroOP.Text = null;
@@ -143,24 +76,11 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
                 dgvOPLista.DataSource = new OrdenPagoFilter().GetOrdenPagoByNumber(Convert.ToInt32(txtNumeroOP.Text));
 
             this.txtNumeroOP.TextChanged -= new System.EventHandler(this.txtNumeroOP_TextChanged);
-            this.cmbRazonSocial.SelectedIndexChanged -= new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
-
-
-            cmbRazonSocial.Text = null;
-            cmbFantasia.Text = null;
-            cmbEstadoOP.Text = null;
-            cmbIdVendor.Text = null;
-            cmbEstadoOP.Text = null;
-
-            this.txtNumeroOP.TextChanged += new System.EventHandler(this.txtNumeroOP_TextChanged);
-            this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.cmbRazonSocial_SelectedIndexChanged);
+            tsUcVendorSelector1.VendorId = -1;
 
         }
         private void btnLimpiaDatos_Click(object sender, EventArgs e)
         {
-            cmbRazonSocial.Text = null;
-            cmbIdVendor.Text = null;
-            cmbFantasia.Text = null;
             txtNumeroOP.Text = null;
             cmbEstadoOP.Text = null;
             txtSaldoL1.Text = null;
@@ -190,14 +110,14 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            if (cmbRazonSocial.SelectedIndex == -1)
+            if (tsUcVendorSelector1.VendorId ==null || tsUcVendorSelector1.VendorId.Value<1)
             {
                 MessageBox.Show(@"Seleccione un Proveedor para generar Orden de Pago", @"Validacion de Datos",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
-            var f2 = new FrmFI31OPMainScreen((int)cmbRazonSocial.SelectedValue, 1);
+            var f2 = new FrmFI31OPMainScreen(tsUcVendorSelector1.VendorId.Value, 1);
             f2.Show();
 
         }
@@ -205,7 +125,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
         {
             if (string.IsNullOrEmpty(cmbEstadoOP.Text))
             {
-                if (cmbRazonSocial.SelectedIndex == -1)
+                if (tsUcVendorSelector1.VendorId==null || tsUcVendorSelector1.VendorId.Value<1)
                 {
                     dgvOPLista.DataSource =
                    new OrdenPagoFilter().GetOrdenPagoList(null, null);
@@ -214,7 +134,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
                 else
                 {
                     dgvOPLista.DataSource =
-                   new OrdenPagoFilter().GetOrdenPagoList(Convert.ToInt32(cmbRazonSocial.SelectedValue), null);
+                   new OrdenPagoFilter().GetOrdenPagoList(tsUcVendorSelector1.VendorId.Value, null);
 
                 }
             }
@@ -222,13 +142,13 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
         }
         private void ckSoloActivos_CheckedChanged(object sender, EventArgs e)
         {
-            cmbRazonSocial.DataSource = new VendorManager().GetCompleteListVendors(ckSoloActivos.Checked);
-            cmbFantasia.DataSource = new VendorManager().GetCompleteListVendors(ckSoloActivos.Checked);
-            cmbIdVendor.DataSource = new VendorManager().GetCompleteListVendors(ckSoloActivos.Checked);
-            cmbRazonSocial.SelectedValue = -1;
-            cmbFantasia.SelectedValue = -1;
-            cmbIdVendor.SelectedValue = -1;
-            dgvOPLista.DataSource = new OrdenPagoFilter().GetOrdenPagoList(null);
+            //cmbRazonSocial.DataSource = new VendorManager().GetCompleteListVendors(ckSoloActivos.Checked);
+            //cmbFantasia.DataSource = new VendorManager().GetCompleteListVendors(ckSoloActivos.Checked);
+            //cmbIdVendor.DataSource = new VendorManager().GetCompleteListVendors(ckSoloActivos.Checked);
+            //cmbRazonSocial.SelectedValue = -1;
+            //cmbFantasia.SelectedValue = -1;
+            //cmbIdVendor.SelectedValue = -1;
+            //dgvOPLista.DataSource = new OrdenPagoFilter().GetOrdenPagoList(null);
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -236,9 +156,9 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
         }
         private void btnDetalleDeuda_Click_1(object sender, EventArgs e)
         {
-            if (cmbRazonSocial.SelectedValue != null)
+            if (tsUcVendorSelector1.VendorId.HasValue && tsUcVendorSelector1.VendorId.Value>1)
             {
-                var f = new FrmDetalleDeudaProveedeor(Convert.ToInt32(cmbRazonSocial.SelectedValue));
+                var f = new FrmDetalleDeudaProveedeor(tsUcVendorSelector1.VendorId.Value);
                 f.Show();
             }
         }
@@ -257,6 +177,31 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             }
 
             MessageBox.Show(@"FIX DiasPP Finalizado");
+        }
+
+        private void tsUcVendorSelector1_VendorUpdated(object source, _0TSUserControls.VendorSearchUcArgs args)
+        {
+            if (args.VendorId == null)
+            {
+                btnNuevo.Enabled = false;
+                btnDetalleDeuda.Enabled = false;
+                return;
+            }
+            btnNuevo.Enabled = true;
+            btnDetalleDeuda.Enabled = true;
+            dgvOPLista.DataSource = new OrdenPagoFilter().GetOrdenPagoList(args.VendorId.Value,
+                string.IsNullOrEmpty(cmbEstadoOP.Text) ? null : cmbEstadoOP.Text);
+
+            this.txtNumeroOP.TextChanged -= new System.EventHandler(this.txtNumeroOP_TextChanged);
+            txtNumeroOP.Text = null;
+            this.txtNumeroOP.TextChanged += new System.EventHandler(this.txtNumeroOP_TextChanged);
+            var vendor = new VendorAccountManager();
+            txtSaldoL1.Text = vendor.GetSaldoL1(args.VendorId.Value).ToString("C2");
+            txtSaldoL2.Text = vendor.GetSaldoL2(args.VendorId.Value).ToString("C2");
+            txtSaldoL1.BackColor = vendor.ColorSaldoL1;
+            txtSaldoL2.BackColor = vendor.ColorSaldoL2;
+            txtSaldoTotalL1.Text = vendor.GetSaldoL1FromT0203(args.VendorId.Value).ToString("C2");
+            txtSaldoTotalL2.Text = vendor.GetSaldoL2FromT0203(args.VendorId.Value).ToString("C2");
         }
     }
 }
