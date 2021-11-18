@@ -360,9 +360,6 @@ namespace MASngFE.Transactional.PP
             var dataOF = PlanProduccionListManager.GetOFData(_numeroOF);
             txtNumeroOF.Text = _numeroOF.ToString();
             txtEstadoOF.Text = dataOF.STATUS;
-            if (dataOF.KG_Fabricados == null)
-                dataOF.KG_Fabricados = 0;
-
             txtCantidadKgIngresados.Text = dataOF.KG_Fabricados.ToString("N2");
             txtMaterialFabricado.Text = dataOF.MATERIAL;
 

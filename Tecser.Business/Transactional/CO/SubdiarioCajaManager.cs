@@ -21,10 +21,10 @@ namespace Tecser.Business.Transactional.CO
             Proveedor,
             Empleado,
         };
-        public bool WriteToDb(string cuentaOrigen, DateTime fechaOperacion, PC clienteProveedor, int numeroPC,
+        public int WriteToDb(string cuentaOrigen, DateTime fechaOperacion, PC clienteProveedor, int numeroPC,
             string tipoDocumento, string numeroDocumento, string descripcion, string moneda, decimal importeIngreso,
             decimal importeEgreso, string tipoLX, string tCode, int numeroAsiento, string centroCosto = null,
-            string cuentaDestinoTransferencia = null, string status = null, int idCheque = -1)
+            string cuentaDestinoTransferencia = null, string status = null, int idCheque = -1, bool chequeEmitidoPropio=false)
         {
             var data = new XREGISTER
             {
@@ -48,7 +48,6 @@ namespace Tecser.Business.Transactional.CO
                 CC = centroCosto,
                 NAS = numeroAsiento,
                 TCODE = tCode,
-
             };
 
             switch (clienteProveedor)
@@ -73,10 +72,21 @@ namespace Tecser.Business.Transactional.CO
 
             if (idCheque > 0)
             {
-                var cheque = new ChequesManager().GetCheque(idCheque);
-                data.CH_BCO = cheque.CHE_BANCO;
-                data.CH_FEC = cheque.CHE_FECHA;
                 data.CH_ID = idCheque;
+                if (chequeEmitidoPropio)
+                {
+                    var cheque = new GestionChequesEmitidos().GetChequeEmitido(idCheque);
+                    data.CH_BCO = cheque.BancoChequeShort;
+                    data.CH_FEC = cheque.FechaAcreditacion;
+                    data.ST = "ACX";
+                }
+                else
+                {
+                    var cheque = new ChequesManager().GetCheque(idCheque);
+                    data.CH_BCO = cheque.CHE_BANCO;
+                    data.CH_FEC = cheque.CHE_FECHA;
+                }
+
             }
 
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -86,9 +96,9 @@ namespace Tecser.Business.Transactional.CO
                 if (db.SaveChanges() > 0)
                 {
                     UpdateSaldoCuenta(cuentaOrigen, importeIngreso, importeEgreso);
-                    return true;
+                    return data.IDT;
                 }
-                return false;
+                return -1;
             }
         }
 

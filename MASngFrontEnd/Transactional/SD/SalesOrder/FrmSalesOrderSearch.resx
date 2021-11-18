@@ -117,28 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnViewAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAK6SURBVFhHvZdLbxJRHMWniY9WbV0o04U7F3Zh/Aya
-        uNFEt34MGxMj2prG9iOYGl8LV1ZjbDWUogsTN11W4wIQLVACVCAFDFNTWsUe77m3EBhg6DzkJGd4hPv7
-        n3DnzIAmdODUTCg4OvMe+vQ7T0wWmWRzQC8Nc8HTL2U8+lzEE5cmgywyyVYjrOU7cS+EhZiB0/fDODMb
-        xphDcy0ZZJFJthphLf341BI+pqq4PJfClRcpXH3pzFxLBllkkq1GWEs/cncJXuuYYJKtRlhLH5xUAaKR
-        CGJfo0itxrCe+IZc0r7zyZhkDU/JLbAXIJFI4Ec6hWvPlqH5FzFw24kDOHgnILfg5HRoX60QAYIywHom
-        A2MjB+3WImZXiniwsoGHn5z5sWgDvZ9WNAIUCwXsVEoiQACvopW+tUIfnFABKj/LwJYB7eZbfFjr0Ao+
-        t2HZiue9W6Ef3gtQ/WUAf6rQbryRr73UUYtWNALUfm/zCG18Qb5ubkUxs4ZS1r7L2aRkWbWiEQDYlUdt
-        fF4+mluh+QMYcOBerWgKoKRdVwH61Qp9aK8FddW/gX61Qh8R+9Os+knYsxU23e1e4RudfB1miCFxReR9
-        gftG/c9WcE49wIjwOeELwheFLx2aWJQfMrciEgkjLJoRiUYdWa4VDIqXfzFLBuCZyBDcD74x1q0V8Xgc
-        3xNJrDo015JBNQcwq2srMuk00pmsK5NB8fLPWWpkq7q2Ip/PI5cvuDIZlGWAbq0ol0oolsquTAbF+w9n
-        qZGt8un+ueVOrdjcNFAx3JkMitssZnUMwKvTWeHzwi2t2NmuYqvqzmRQVgHYCoZob8XuX9RqNVcmg7IK
-        YFZbK7yQrQDmVnghMslWI6zV1govRCbZaoS1mloRlF+dG5NBFplkqxHWMrfCC5NFZsdfyWaZW+GFySKz
-        4/+EPkrT/gFw+EZRKjjQDAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="SalesOrderBs.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnNuevaSO.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m

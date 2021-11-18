@@ -16,13 +16,10 @@ namespace TecserEF.Entity.DataStructure
         public DateTime? FechaCompromiso { get; set; }
         public string StatusSalesOrder { get; set; }
         public string StatusEntrega { get; set; }
-
-
-        public List<DsSalesOrderList> GetAllData(string globalAppCnn)
+        public List<DsSalesOrderList> GetAllData(string globalAppCnn, int maxRecords=500)
         {
             using (var db = new TecserData(globalAppCnn))
             {
-
                 var data = (from salesH in db.T0045_OV_HEADER
                             select new DsSalesOrderList()
                             {
@@ -34,31 +31,32 @@ namespace TecserEF.Entity.DataStructure
                                 FechaSalesOrder = salesH.FECHA_OV,
                                 IdC6 = (Int32)salesH.T0007_CLI_ENTREGA.IDCLIENTE,
                                 IdC7 = salesH.CLIENTE.Value,
-                                StatusEntrega = "NO DISP",
+                                StatusEntrega = "No Disponible",
                                 StatusSalesOrder = salesH.StatusOV
-                            }).OrderByDescending(c => c.SO).ToList();
+                            }).OrderByDescending(c => c.SO).Take(maxRecords).ToList();
                 return data;
             }
         }
-        public List<DsSalesOrderList> GetByCustomer(int idCliente6, string globalAppCnn)
+
+        public List<DsSalesOrderList> GetByCustomer(int idCliente6, string globalAppCnn, int maxRecords = 50)
         {
             using (var db = new TecserData(globalAppCnn))
             {
                 var data = (from salesH in db.T0045_OV_HEADER
-                            where salesH.T0007_CLI_ENTREGA.IDCLIENTE == idCliente6
-                            select new DsSalesOrderList()
-                            {
-                                SO = salesH.IDOV,
-                                ClienteFantasia = salesH.T0007_CLI_ENTREGA.T0006_MCLIENTES.cli_fantasia,
-                                ClienteRazonSocial = salesH.T0007_CLI_ENTREGA.T0006_MCLIENTES.cli_rsocial,
-                                ClienteDescripcionT7 = salesH.T0007_CLI_ENTREGA.ClienteEntregaDesc,
-                                FechaCompromiso = salesH.FechaEntrega,
-                                FechaSalesOrder = salesH.FECHA_OV,
-                                IdC6 = (Int32)salesH.T0007_CLI_ENTREGA.IDCLIENTE,
-                                IdC7 = salesH.CLIENTE.Value,
-                                StatusEntrega = "NO DISP",
-                                StatusSalesOrder = salesH.StatusOV
-                            }).OrderByDescending(c => c.SO).ToList();
+                    where salesH.T0007_CLI_ENTREGA.IDCLIENTE == idCliente6
+                    select new DsSalesOrderList()
+                    {
+                        SO = salesH.IDOV,
+                        ClienteFantasia = salesH.T0007_CLI_ENTREGA.T0006_MCLIENTES.cli_fantasia,
+                        ClienteRazonSocial = salesH.T0007_CLI_ENTREGA.T0006_MCLIENTES.cli_rsocial,
+                        ClienteDescripcionT7 = salesH.T0007_CLI_ENTREGA.ClienteEntregaDesc,
+                        FechaCompromiso = salesH.FechaEntrega,
+                        FechaSalesOrder = salesH.FECHA_OV,
+                        IdC6 = (Int32) salesH.T0007_CLI_ENTREGA.IDCLIENTE,
+                        IdC7 = salesH.CLIENTE.Value,
+                        StatusEntrega = "No Disponible",
+                        StatusSalesOrder = salesH.StatusOV
+                    }).OrderByDescending(c => c.SO).Take(maxRecords).ToList();
                 return data;
             }
         }

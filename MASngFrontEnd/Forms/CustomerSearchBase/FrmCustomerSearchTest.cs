@@ -16,5 +16,18 @@ namespace MASngFE.Forms.CustomerSearchBase
         {
             InitializeComponent();
         }
+
+        private void tsUcCustomer31_ClienteModificado(object source, _0TSUserControls.CustomerSearchUcV3Args args)
+        {
+            if (args.ClienteId > 0)
+            {
+                MessageBox.Show($@"Se selecciono el cliente {args.RazonSocial}");
+            }
+        }
+
+        private void FrmCustomerSearchTest_Load(object sender, EventArgs e)
+        {
+            tsUcCustomer31.ClienteId = 364;
+        }
     }
 }

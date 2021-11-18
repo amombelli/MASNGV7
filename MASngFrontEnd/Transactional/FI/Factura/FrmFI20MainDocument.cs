@@ -509,13 +509,7 @@ namespace MASngFE.Transactional.FI.Factura
                 cmbTipoDocumento.SelectedItem = "Presupuesto X";
                 txtNumeroDocumento.Text = headerData.Remito;
             }
-
-            {
-
-            }
-
-            if (headerData.Impreso == null)
-                headerData.Impreso = false;
+            
             if (headerData.NAS != null)
                 txtNAS.Text = headerData.NAS.ToString();
 

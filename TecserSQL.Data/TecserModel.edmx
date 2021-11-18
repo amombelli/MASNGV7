@@ -2476,8 +2476,6 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene
           <Property Name="FechaEmision" Type="datetime" Nullable="false" />
           <Property Name="FechaAcreditacion" Type="datetime" Nullable="false" />
           <Property Name="PendienteAcreditacion" Type="bit" Nullable="false" />
-          <Property Name="LogEmisor" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="LogFechaEmison" Type="datetime" Nullable="false" />
           <Property Name="ImporteCheque" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="BancoChequeShort" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="OrdenPagoNumero" Type="int" Nullable="false" />
@@ -2485,6 +2483,12 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene
           <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="ECheque" Type="bit" Nullable="false" />
           <Property Name="FechaAcreditacionReal" Type="datetime" />
+          <Property Name="LX" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="IdRegister" Type="int" Nullable="false" />
+          <Property Name="NasEmision" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="NasAcreditacion" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="LogEmisor" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LogFechaEmison" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="T0160_BANCOS">
           <Key>
@@ -13507,6 +13511,10 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="ECheque" Type="Boolean" Nullable="false" />
           <Property Name="FechaAcreditacionReal" Type="DateTime" Precision="3" />
+          <Property Name="LX" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="IdRegister" Type="Int32" Nullable="false" />
+          <Property Name="NasEmision" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="NasAcreditacion" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="T0400_FACTURA_H">
           <Key>
@@ -18183,6 +18191,10 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <EntitySetMapping Name="T0159_CHEQUES_EMITIDOS">
             <EntityTypeMapping TypeName="MADBModel.T0159_CHEQUES_EMITIDOS">
               <MappingFragment StoreEntitySet="T0159_CHEQUES_EMITIDOS">
+                <ScalarProperty Name="NasAcreditacion" ColumnName="NasAcreditacion" />
+                <ScalarProperty Name="NasEmision" ColumnName="NasEmision" />
+                <ScalarProperty Name="IdRegister" ColumnName="IdRegister" />
+                <ScalarProperty Name="LX" ColumnName="LX" />
                 <ScalarProperty Name="FechaAcreditacionReal" ColumnName="FechaAcreditacionReal" />
                 <ScalarProperty Name="ECheque" ColumnName="ECheque" />
                 <ScalarProperty Name="Status" ColumnName="Status" />

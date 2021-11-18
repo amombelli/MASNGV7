@@ -280,8 +280,7 @@ namespace MASngFE.Application
             DateTime fechaI = new PeriodoConversion().GetFechaPrimerDiaPeriodo(periodo);
             DateTime fechaD = new PeriodoConversion().GetFechaUltimoDiaPeriodo(periodo).AddDays(1);
             //traia problemas con el ultimo dia + horas
-            t403Bs.DataSource = new VendorConcil().GetListaFacturasIngresadasT403(periodo, "L1")
-                .OrderBy(c => c.FECHA).ToList();
+            t403Bs.DataSource = new VendorConcil(periodo,"L1").GetListaFacturasIngresadasT403().OrderBy(c => c.FECHA).ToList();
 
             foreach (DataGridViewRow row in dgvT0403.Rows)
             {

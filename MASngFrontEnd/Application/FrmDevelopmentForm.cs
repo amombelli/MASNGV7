@@ -246,10 +246,6 @@ namespace MASngFE.Application
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var f = new FrmMdc01CustomerSearchL1();
-            f.Show();
-
-
         }
 
         private void button19_Click(object sender, EventArgs e)

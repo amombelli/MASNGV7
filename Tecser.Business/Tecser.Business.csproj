@@ -140,6 +140,7 @@
     <Compile Include="MasterData\MaterialMasterManager.cs" />
     <Compile Include="MasterData\MaterialOrigenDataType.OrigenDataType.cs" />
     <Compile Include="MasterData\NelManager.cs" />
+    <Compile Include="MasterData\Vendor Master\VendorMng2.cs" />
     <Compile Include="MasterData\Vendor Master\VendorValidation.cs" />
     <Compile Include="MasterData\VendorInforRecordManager.cs" />
     <Compile Include="MasterData\VendorManager.cs" />
@@ -346,6 +347,7 @@
     <Compile Include="Transactional\FI\GestionPercepciones.cs" />
     <Compile Include="Transactional\FI\Imputacion\ManageVendorImputacionDocumentos.cs" />
     <Compile Include="Transactional\FI\OrdenPago\OPImputacionFactura.cs" />
+    <Compile Include="Transactional\FI\PeriodoManager.cs" />
     <Compile Include="Transactional\FI\RegisterManager.cs" />
     <Compile Include="Transactional\FI\TaxModule\TaxModuleManager.cs" />
     <Compile Include="Transactional\FI\TaxModule\TaxModuleVendorManager.cs" />

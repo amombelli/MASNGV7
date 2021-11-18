@@ -160,6 +160,7 @@
             this.button62 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnTestCustomerSearchControl = new System.Windows.Forms.Button();
             this.button63 = new System.Windows.Forms.Button();
             this.button54 = new System.Windows.Forms.Button();
             this.button51 = new System.Windows.Forms.Button();
@@ -172,20 +173,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvTcodeList = new System.Windows.Forms.DataGridView();
-            this.visibleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.t0001TRANSACTIONSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rbMainApplication = new System.Windows.Forms.Ribbon();
             this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.rbTaxModuleConfig = new System.Windows.Forms.RibbonButton();
             this.rbTaxAssign = new System.Windows.Forms.RibbonButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stbarTcode = new System.Windows.Forms.ToolStripStatusLabel();
             this.stbarUsername = new System.Windows.Forms.ToolStripStatusLabel();
             this.stbarComputer = new System.Windows.Forms.ToolStripStatusLabel();
@@ -218,162 +211,131 @@
             this.btnRemisionCliente = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
             this.panelBoton1 = new System.Windows.Forms.Panel();
-            this.btnTestCustomerSearchControl = new System.Windows.Forms.Button();
+            this.visibleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.t0001TRANSACTIONSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
+            this.rbExitMAS = new System.Windows.Forms.RibbonButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTcodeList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t0001TRANSACTIONSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.stBar1.SuspendLayout();
             this.panelBoton1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.t0001TRANSACTIONSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // aplicacionToolStripMenuItem
             // 
             this.aplicacionToolStripMenuItem.Name = "aplicacionToolStripMenuItem";
-            this.aplicacionToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            resources.ApplyResources(this.aplicacionToolStripMenuItem, "aplicacionToolStripMenuItem");
             // 
             // masterDataToolStripMenuItem
             // 
             this.masterDataToolStripMenuItem.Name = "masterDataToolStripMenuItem";
-            this.masterDataToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            resources.ApplyResources(this.masterDataToolStripMenuItem, "masterDataToolStripMenuItem");
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            resources.ApplyResources(this.clientesToolStripMenuItem, "clientesToolStripMenuItem");
             // 
             // materialesToolStripMenuItem
             // 
             this.materialesToolStripMenuItem.Name = "materialesToolStripMenuItem";
-            this.materialesToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            resources.ApplyResources(this.materialesToolStripMenuItem, "materialesToolStripMenuItem");
             // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            resources.ApplyResources(this.proveedoresToolStripMenuItem, "proveedoresToolStripMenuItem");
             // 
             // salesDistributionToolStripMenuItem
             // 
             this.salesDistributionToolStripMenuItem.Name = "salesDistributionToolStripMenuItem";
-            this.salesDistributionToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            resources.ApplyResources(this.salesDistributionToolStripMenuItem, "salesDistributionToolStripMenuItem");
             // 
             // controllingFinanceToolStripMenuItem
             // 
             this.controllingFinanceToolStripMenuItem.Name = "controllingFinanceToolStripMenuItem";
-            this.controllingFinanceToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            resources.ApplyResources(this.controllingFinanceToolStripMenuItem, "controllingFinanceToolStripMenuItem");
             // 
             // qualityManagmentToolStripMenuItem
             // 
             this.qualityManagmentToolStripMenuItem.Name = "qualityManagmentToolStripMenuItem";
-            this.qualityManagmentToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            resources.ApplyResources(this.qualityManagmentToolStripMenuItem, "qualityManagmentToolStripMenuItem");
             // 
             // superMDToolStripMenuItem
             // 
             this.superMDToolStripMenuItem.Name = "superMDToolStripMenuItem";
-            this.superMDToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            resources.ApplyResources(this.superMDToolStripMenuItem, "superMDToolStripMenuItem");
             // 
             // txtServiceStatus
             // 
             this.txtServiceStatus.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtServiceStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtServiceStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServiceStatus.Location = new System.Drawing.Point(1122, 144);
-            this.txtServiceStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.txtServiceStatus, "txtServiceStatus");
             this.txtServiceStatus.Name = "txtServiceStatus";
             this.txtServiceStatus.ReadOnly = true;
-            this.txtServiceStatus.Size = new System.Drawing.Size(104, 21);
-            this.txtServiceStatus.TabIndex = 23;
-            this.txtServiceStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button27
             // 
-            this.button27.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.Location = new System.Drawing.Point(27, 221);
-            this.button27.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button27, "button27");
             this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(87, 39);
-            this.button27.TabIndex = 74;
-            this.button27.Text = "IMPUTACION FF";
             this.button27.UseVisualStyleBackColor = true;
             this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // button28
             // 
-            this.button28.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Location = new System.Drawing.Point(27, 260);
-            this.button28.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button28, "button28");
             this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(87, 39);
-            this.button28.TabIndex = 75;
-            this.button28.Text = "IMPUTACION FF";
             this.button28.UseVisualStyleBackColor = true;
             this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
             // btnDevelopmentForm
             // 
-            this.btnDevelopmentForm.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevelopmentForm.Location = new System.Drawing.Point(26, 108);
+            resources.ApplyResources(this.btnDevelopmentForm, "btnDevelopmentForm");
             this.btnDevelopmentForm.Name = "btnDevelopmentForm";
-            this.btnDevelopmentForm.Size = new System.Drawing.Size(87, 39);
-            this.btnDevelopmentForm.TabIndex = 80;
-            this.btnDevelopmentForm.Text = "Development Forms";
             this.btnDevelopmentForm.UseVisualStyleBackColor = true;
             this.btnDevelopmentForm.Click += new System.EventHandler(this.btnDevelopmentForm_Click);
             // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            resources.ApplyResources(this.imageList1, "imageList1");
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(27, 299);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 39);
-            this.button1.TabIndex = 84;
-            this.button1.Text = "COBCONV";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(131, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 39);
-            this.button2.TabIndex = 85;
-            this.button2.Text = "COBCONV";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(131, 45);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button4, "button4");
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 39);
-            this.button4.TabIndex = 86;
-            this.button4.Text = "COBCONV";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button6
             // 
-            this.button6.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(27, 193);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button6, "button6");
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 39);
-            this.button6.TabIndex = 89;
-            this.button6.Text = "WS\r\nConfig";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -381,302 +343,153 @@
             // 
             this.label1.BackColor = System.Drawing.Color.MediumVioletRed;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.SeaShell;
-            this.label1.Location = new System.Drawing.Point(3, 145);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 21);
-            this.label1.TabIndex = 90;
-            this.label1.Text = "TCODE #";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button7
             // 
-            this.button7.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(131, 85);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button7, "button7");
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(87, 39);
-            this.button7.TabIndex = 92;
-            this.button7.Text = "File\r\nImport";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(131, 125);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button8, "button8");
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(87, 43);
-            this.button8.TabIndex = 93;
-            this.button8.Text = "Presentar\r\nARBA";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button10
             // 
-            this.button10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(7, 363);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button10, "button10");
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(119, 43);
-            this.button10.TabIndex = 95;
-            this.button10.Text = "QM";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
             // button11
             // 
-            this.button11.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(127, 278);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button11, "button11");
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(119, 43);
-            this.button11.TabIndex = 96;
-            this.button11.Text = "QM21";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.Button11_Click);
             // 
             // button17
             // 
-            this.button17.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.Location = new System.Drawing.Point(250, 159);
-            this.button17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button17, "button17");
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(119, 43);
-            this.button17.TabIndex = 105;
-            this.button17.Text = "Reclass";
-            this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click_1);
             // 
             // button20
             // 
-            this.button20.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(250, 203);
-            this.button20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button20, "button20");
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(119, 43);
-            this.button20.TabIndex = 108;
-            this.button20.Text = "zfix1";
-            this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button21
             // 
-            this.button21.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button21.Location = new System.Drawing.Point(127, 71);
-            this.button21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button21, "button21");
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(119, 43);
-            this.button21.TabIndex = 110;
-            this.button21.Text = "SYJ\r\n";
-            this.button21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button21.UseVisualStyleBackColor = true;
             this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // button22
             // 
-            this.button22.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.Location = new System.Drawing.Point(127, 115);
-            this.button22.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button22, "button22");
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(119, 43);
-            this.button22.TabIndex = 111;
-            this.button22.Text = "Solicita\r\nAdelanto";
-            this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // button23
             // 
-            this.button23.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.Location = new System.Drawing.Point(127, 149);
-            this.button23.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button23, "button23");
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(119, 43);
-            this.button23.TabIndex = 112;
-            this.button23.Text = "Pago\r\nAdelanto";
-            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button23.UseVisualStyleBackColor = true;
             this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button25
             // 
-            this.button25.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button25.Location = new System.Drawing.Point(250, 115);
-            this.button25.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button25, "button25");
             this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(119, 43);
-            this.button25.TabIndex = 113;
-            this.button25.Text = "Conta Cancel";
-            this.button25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button25.UseVisualStyleBackColor = true;
             this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // button26
             // 
-            this.button26.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button26.Location = new System.Drawing.Point(127, 192);
-            this.button26.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button26, "button26");
             this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(119, 43);
-            this.button26.TabIndex = 114;
-            this.button26.Text = "GLS TEST";
-            this.button26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button26.UseVisualStyleBackColor = true;
             this.button26.Click += new System.EventHandler(this.button26_Click_1);
             // 
             // button30
             // 
-            this.button30.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button30.Location = new System.Drawing.Point(250, 71);
-            this.button30.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button30, "button30");
             this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(119, 43);
-            this.button30.TabIndex = 115;
-            this.button30.Text = "GLS TEST";
-            this.button30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button30.UseVisualStyleBackColor = true;
             this.button30.Click += new System.EventHandler(this.button30_Click_1);
             // 
             // button42
             // 
-            this.button42.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button42.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button42.Location = new System.Drawing.Point(127, 27);
-            this.button42.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button42, "button42");
             this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(119, 43);
-            this.button42.TabIndex = 128;
-            this.button42.Text = "FSR";
-            this.button42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button42.UseVisualStyleBackColor = true;
             this.button42.Click += new System.EventHandler(this.button42_Click);
             // 
             // button43
             // 
-            this.button43.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button43.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button43.Location = new System.Drawing.Point(7, 278);
-            this.button43.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button43, "button43");
             this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(119, 43);
-            this.button43.TabIndex = 129;
-            this.button43.Text = "Fason Externo";
-            this.button43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button43.UseVisualStyleBackColor = true;
             this.button43.Click += new System.EventHandler(this.button43_Click);
             // 
             // button45
             // 
-            this.button45.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button45.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button45.Location = new System.Drawing.Point(226, 2);
-            this.button45.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button45, "button45");
             this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(119, 43);
-            this.button45.TabIndex = 131;
-            this.button45.Text = "SYJIN";
-            this.button45.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button45.UseVisualStyleBackColor = true;
             this.button45.Click += new System.EventHandler(this.button45_Click);
             // 
             // button46
             // 
-            this.button46.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button46.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button46.Location = new System.Drawing.Point(226, 31);
-            this.button46.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button46, "button46");
             this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(119, 43);
-            this.button46.TabIndex = 132;
-            this.button46.Text = "SYJp";
-            this.button46.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button46.UseVisualStyleBackColor = true;
             // 
             // button47
             // 
-            this.button47.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button47.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button47.Location = new System.Drawing.Point(226, 74);
-            this.button47.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button47, "button47");
             this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(119, 43);
-            this.button47.TabIndex = 133;
-            this.button47.Text = "HRMain";
-            this.button47.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button47.UseVisualStyleBackColor = true;
             this.button47.Click += new System.EventHandler(this.button47_Click);
             // 
             // button48
             // 
-            this.button48.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button48.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button48.Location = new System.Drawing.Point(127, 235);
-            this.button48.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button48, "button48");
             this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(119, 43);
-            this.button48.TabIndex = 134;
-            this.button48.Text = "SYJ LIST";
-            this.button48.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button48.UseVisualStyleBackColor = true;
             this.button48.Click += new System.EventHandler(this.button48_Click);
             // 
             // button52
             // 
-            this.button52.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button52.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button52.Location = new System.Drawing.Point(127, 322);
-            this.button52.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button52, "button52");
             this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(119, 43);
-            this.button52.TabIndex = 143;
-            this.button52.Text = "SYJ LIST";
-            this.button52.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button52.UseVisualStyleBackColor = true;
             this.button52.Click += new System.EventHandler(this.button52_Click);
             // 
             // button53
             // 
-            this.button53.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button53.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button53.Location = new System.Drawing.Point(250, 28);
-            this.button53.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button53, "button53");
             this.button53.Name = "button53";
-            this.button53.Size = new System.Drawing.Size(119, 43);
-            this.button53.TabIndex = 144;
-            this.button53.Text = "Cheques\r\nEmitidos";
-            this.button53.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button53.UseVisualStyleBackColor = true;
             this.button53.Click += new System.EventHandler(this.button53_Click);
             // 
             // btnDesimputarCtaCte
             // 
-            this.btnDesimputarCtaCte.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesimputarCtaCte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesimputarCtaCte.Location = new System.Drawing.Point(6, 5);
-            this.btnDesimputarCtaCte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.btnDesimputarCtaCte, "btnDesimputarCtaCte");
             this.btnDesimputarCtaCte.Name = "btnDesimputarCtaCte";
-            this.btnDesimputarCtaCte.Size = new System.Drawing.Size(119, 43);
-            this.btnDesimputarCtaCte.TabIndex = 146;
-            this.btnDesimputarCtaCte.Text = "Desimputa IDCtaCte";
-            this.btnDesimputarCtaCte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDesimputarCtaCte.UseVisualStyleBackColor = true;
             this.btnDesimputarCtaCte.Click += new System.EventHandler(this.btnDesimputarCtaCte_Click);
             // 
@@ -684,21 +497,17 @@
             // 
             this.txtid1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.txtid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.txtid1, "txtid1");
             this.txtid1.ForeColor = System.Drawing.Color.Crimson;
-            this.txtid1.Location = new System.Drawing.Point(26, 69);
-            this.txtid1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtid1.Name = "txtid1";
-            this.txtid1.Size = new System.Drawing.Size(58, 21);
-            this.txtid1.TabIndex = 91;
-            this.txtid1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // rbTabMain
             // 
             this.rbTabMain.Name = "rbTabMain";
             this.rbTabMain.Panels.Add(this.rPanelMain);
             this.rbTabMain.Panels.Add(this.ribbonPanel1);
-            this.rbTabMain.Text = "Aplicacion Principal";
+            this.rbTabMain.Panels.Add(this.ribbonPanel7);
+            resources.ApplyResources(this.rbTabMain, "rbTabMain");
             // 
             // rPanelMain
             // 
@@ -708,7 +517,7 @@
             this.rPanelMain.Items.Add(this.btnHideListaTcode);
             this.rPanelMain.Items.Add(this.btnSeleccionEspecial);
             this.rPanelMain.Name = "rPanelMain";
-            this.rPanelMain.Text = "Lista de Transaccionens";
+            resources.ApplyResources(this.rPanelMain, "rPanelMain");
             // 
             // btnViewListaTcode
             // 
@@ -716,7 +525,7 @@
             this.btnViewListaTcode.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnViewListaTcode.LargeImage")));
             this.btnViewListaTcode.Name = "btnViewListaTcode";
             this.btnViewListaTcode.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnViewListaTcode.SmallImage")));
-            this.btnViewListaTcode.Text = "Visualizar Lista";
+            resources.ApplyResources(this.btnViewListaTcode, "btnViewListaTcode");
             this.btnViewListaTcode.Click += new System.EventHandler(this.btnViewListaTcode_Click);
             // 
             // btnHideListaTcode
@@ -725,7 +534,7 @@
             this.btnHideListaTcode.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHideListaTcode.LargeImage")));
             this.btnHideListaTcode.Name = "btnHideListaTcode";
             this.btnHideListaTcode.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHideListaTcode.SmallImage")));
-            this.btnHideListaTcode.Text = "Ocultar Lista";
+            resources.ApplyResources(this.btnHideListaTcode, "btnHideListaTcode");
             this.btnHideListaTcode.Click += new System.EventHandler(this.btnHideListaTcode_Click);
             // 
             // btnSeleccionEspecial
@@ -734,7 +543,7 @@
             this.btnSeleccionEspecial.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionEspecial.LargeImage")));
             this.btnSeleccionEspecial.Name = "btnSeleccionEspecial";
             this.btnSeleccionEspecial.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionEspecial.SmallImage")));
-            this.btnSeleccionEspecial.Text = "Desarrollo TMP";
+            resources.ApplyResources(this.btnSeleccionEspecial, "btnSeleccionEspecial");
             this.btnSeleccionEspecial.Click += new System.EventHandler(this.btnSeleccionEspecial_Click);
             // 
             // ribbonPanel1
@@ -745,20 +554,20 @@
             this.ribbonPanel1.Items.Add(this.ribbonSeparator2);
             this.ribbonPanel1.Items.Add(this.rbtnLogNew);
             this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Text = "Cambiar Usuario";
+            resources.ApplyResources(this.ribbonPanel1, "ribbonPanel1");
             // 
             // rtxtNewUser
             // 
             this.rtxtNewUser.LabelWidth = 60;
             this.rtxtNewUser.Name = "rtxtNewUser";
-            this.rtxtNewUser.Text = "Usuario";
+            resources.ApplyResources(this.rtxtNewUser, "rtxtNewUser");
             this.rtxtNewUser.TextBoxText = "";
             // 
             // rtxtNewPassword
             // 
             this.rtxtNewPassword.LabelWidth = 60;
             this.rtxtNewPassword.Name = "rtxtNewPassword";
-            this.rtxtNewPassword.Text = "Password";
+            resources.ApplyResources(this.rtxtNewPassword, "rtxtNewPassword");
             this.rtxtNewPassword.TextBoxText = "";
             // 
             // ribbonSeparator2
@@ -773,7 +582,7 @@
             this.rbtnLogNew.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.DropDown;
             this.rbtnLogNew.Name = "rbtnLogNew";
             this.rbtnLogNew.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnLogNew.SmallImage")));
-            this.rbtnLogNew.Text = "LOG";
+            resources.ApplyResources(this.rbtnLogNew, "rbtnLogNew");
             this.rbtnLogNew.Click += new System.EventHandler(this.rbtnLogNew_Click);
             // 
             // ribbonTab1
@@ -782,14 +591,14 @@
             this.ribbonTab1.Panels.Add(this.ribbonPanel2);
             this.ribbonTab1.Panels.Add(this.ribbonPanel3);
             this.ribbonTab1.Panels.Add(this.ribbonPanel12);
-            this.ribbonTab1.Text = "SD";
+            resources.ApplyResources(this.ribbonTab1, "ribbonTab1");
             // 
             // ribbonPanel2
             // 
             this.ribbonPanel2.Items.Add(this.rbtnCrearNP);
             this.ribbonPanel2.Items.Add(this.rbtnPreparaPedido);
             this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Text = "Pedido";
+            resources.ApplyResources(this.ribbonPanel2, "ribbonPanel2");
             // 
             // rbtnCrearNP
             // 
@@ -802,7 +611,7 @@
             this.rbtnCrearNP.Name = "rbtnCrearNP";
             this.rbtnCrearNP.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCrearNP.SmallImage")));
             this.rbtnCrearNP.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
-            this.rbtnCrearNP.Text = "Nota Pedido";
+            resources.ApplyResources(this.rbtnCrearNP, "rbtnCrearNP");
             this.rbtnCrearNP.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             this.rbtnCrearNP.Click += new System.EventHandler(this.rbtnCrearNP_Click);
             // 
@@ -821,7 +630,7 @@
             this.ribbonButton8.Name = "ribbonButton8";
             this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
             this.ribbonButton8.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
-            this.ribbonButton8.Text = "Crear NP";
+            resources.ApplyResources(this.ribbonButton8, "ribbonButton8");
             // 
             // ribbonButton9
             // 
@@ -830,7 +639,7 @@
             this.ribbonButton9.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.LargeImage")));
             this.ribbonButton9.Name = "ribbonButton9";
             this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
-            this.ribbonButton9.Text = "Editar NP";
+            resources.ApplyResources(this.ribbonButton9, "ribbonButton9");
             // 
             // ribbonButton10
             // 
@@ -839,7 +648,7 @@
             this.ribbonButton10.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.LargeImage")));
             this.ribbonButton10.Name = "ribbonButton10";
             this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
-            this.ribbonButton10.Text = "Ver NP";
+            resources.ApplyResources(this.ribbonButton10, "ribbonButton10");
             // 
             // rbtnPreparaPedido
             // 
@@ -847,14 +656,14 @@
             this.rbtnPreparaPedido.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnPreparaPedido.LargeImage")));
             this.rbtnPreparaPedido.Name = "rbtnPreparaPedido";
             this.rbtnPreparaPedido.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnPreparaPedido.SmallImage")));
-            this.rbtnPreparaPedido.Text = "Prepara Pedido";
+            resources.ApplyResources(this.rbtnPreparaPedido, "rbtnPreparaPedido");
             // 
             // ribbonPanel3
             // 
             this.ribbonPanel3.Items.Add(this.rbtnCD);
             this.ribbonPanel3.Items.Add(this.rbtnCentroEntrega);
             this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Text = "Despacho";
+            resources.ApplyResources(this.ribbonPanel3, "ribbonPanel3");
             // 
             // rbtnCD
             // 
@@ -862,7 +671,7 @@
             this.rbtnCD.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnCD.LargeImage")));
             this.rbtnCD.Name = "rbtnCD";
             this.rbtnCD.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCD.SmallImage")));
-            this.rbtnCD.Text = "Centro Despacho";
+            resources.ApplyResources(this.rbtnCD, "rbtnCD");
             // 
             // rbtnCentroEntrega
             // 
@@ -870,12 +679,12 @@
             this.rbtnCentroEntrega.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnCentroEntrega.LargeImage")));
             this.rbtnCentroEntrega.Name = "rbtnCentroEntrega";
             this.rbtnCentroEntrega.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCentroEntrega.SmallImage")));
-            this.rbtnCentroEntrega.Text = "Centro Remitos";
+            resources.ApplyResources(this.rbtnCentroEntrega, "rbtnCentroEntrega");
             // 
             // ribbonPanel12
             // 
             this.ribbonPanel12.Name = "ribbonPanel12";
-            this.ribbonPanel12.Text = "ribbonPanel12";
+            resources.ApplyResources(this.ribbonPanel12, "ribbonPanel12");
             // 
             // ribbonTab2
             // 
@@ -883,7 +692,7 @@
             this.ribbonTab2.Panels.Add(this.rpFIFacturacion);
             this.ribbonTab2.Panels.Add(this.rpFiOtrosDocumentos);
             this.ribbonTab2.Panels.Add(this.rpFiCheques);
-            this.ribbonTab2.Text = "FI";
+            resources.ApplyResources(this.ribbonTab2, "ribbonTab2");
             // 
             // rpFIFacturacion
             // 
@@ -891,7 +700,7 @@
             this.rpFIFacturacion.Items.Add(this.rbtnFactuSearch);
             this.rpFIFacturacion.Items.Add(this.rbtnFacturacion);
             this.rpFIFacturacion.Name = "rpFIFacturacion";
-            this.rpFIFacturacion.Text = "Facturacion a Clientes";
+            resources.ApplyResources(this.rpFIFacturacion, "rpFIFacturacion");
             // 
             // rbtnXRate
             // 
@@ -899,7 +708,7 @@
             this.rbtnXRate.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnXRate.LargeImage")));
             this.rbtnXRate.Name = "rbtnXRate";
             this.rbtnXRate.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnXRate.SmallImage")));
-            this.rbtnXRate.Text = "Tipo Cambio";
+            resources.ApplyResources(this.rbtnXRate, "rbtnXRate");
             this.rbtnXRate.Click += new System.EventHandler(this.rbtnXRate_Click);
             // 
             // rbtnFactuSearch
@@ -908,7 +717,7 @@
             this.rbtnFactuSearch.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnFactuSearch.LargeImage")));
             this.rbtnFactuSearch.Name = "rbtnFactuSearch";
             this.rbtnFactuSearch.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnFactuSearch.SmallImage")));
-            this.rbtnFactuSearch.Text = "Factu Search";
+            resources.ApplyResources(this.rbtnFactuSearch, "rbtnFactuSearch");
             this.rbtnFactuSearch.Click += new System.EventHandler(this.rbtnFactuSearch_Click);
             // 
             // rbtnFacturacion
@@ -918,14 +727,14 @@
             this.rbtnFacturacion.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnFacturacion.LargeImage")));
             this.rbtnFacturacion.Name = "rbtnFacturacion";
             this.rbtnFacturacion.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnFacturacion.SmallImage")));
-            this.rbtnFacturacion.Text = "Facturacion Clientes";
+            resources.ApplyResources(this.rbtnFacturacion, "rbtnFacturacion");
             this.rbtnFacturacion.Click += new System.EventHandler(this.rbtnFacturacion_Click);
             // 
             // rpFiOtrosDocumentos
             // 
             this.rpFiOtrosDocumentos.Items.Add(this.rbOtrosDocumentos);
             this.rpFiOtrosDocumentos.Name = "rpFiOtrosDocumentos";
-            this.rpFiOtrosDocumentos.Text = "Documentos Clientes";
+            resources.ApplyResources(this.rpFiOtrosDocumentos, "rpFiOtrosDocumentos");
             // 
             // rbOtrosDocumentos
             // 
@@ -939,7 +748,7 @@
             this.rbOtrosDocumentos.Name = "rbOtrosDocumentos";
             this.rbOtrosDocumentos.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbOtrosDocumentos.SmallImage")));
             this.rbOtrosDocumentos.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
-            this.rbOtrosDocumentos.Text = "Otros Documentos";
+            resources.ApplyResources(this.rbOtrosDocumentos, "rbOtrosDocumentos");
             // 
             // rbtnNotaCreditoCliente
             // 
@@ -950,7 +759,7 @@
             this.rbtnNotaCreditoCliente.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Overflow;
             this.rbtnNotaCreditoCliente.Name = "rbtnNotaCreditoCliente";
             this.rbtnNotaCreditoCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnNotaCreditoCliente.SmallImage")));
-            this.rbtnNotaCreditoCliente.Text = "Nota Credito";
+            resources.ApplyResources(this.rbtnNotaCreditoCliente, "rbtnNotaCreditoCliente");
             this.rbtnNotaCreditoCliente.Click += new System.EventHandler(this.rbtnNotaCreditoCliente_Click);
             // 
             // rbtNotaDebitoCliente
@@ -960,7 +769,7 @@
             this.rbtNotaDebitoCliente.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtNotaDebitoCliente.LargeImage")));
             this.rbtNotaDebitoCliente.Name = "rbtNotaDebitoCliente";
             this.rbtNotaDebitoCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtNotaDebitoCliente.SmallImage")));
-            this.rbtNotaDebitoCliente.Text = "Nota Debito";
+            resources.ApplyResources(this.rbtNotaDebitoCliente, "rbtNotaDebitoCliente");
             this.rbtNotaDebitoCliente.Click += new System.EventHandler(this.rbtNotaDebitoCliente_Click);
             // 
             // rbtnAjusteCliente
@@ -970,7 +779,7 @@
             this.rbtnAjusteCliente.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAjusteCliente.LargeImage")));
             this.rbtnAjusteCliente.Name = "rbtnAjusteCliente";
             this.rbtnAjusteCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAjusteCliente.SmallImage")));
-            this.rbtnAjusteCliente.Text = "Ajustes";
+            resources.ApplyResources(this.rbtnAjusteCliente, "rbtnAjusteCliente");
             this.rbtnAjusteCliente.Click += new System.EventHandler(this.rbtnAjusteCliente_Click);
             // 
             // rpFiCheques
@@ -978,7 +787,7 @@
             this.rpFiCheques.Items.Add(this.rbChequeRechazadoBanco);
             this.rpFiCheques.Items.Add(this.rbGestionRechazo);
             this.rpFiCheques.Name = "rpFiCheques";
-            this.rpFiCheques.Text = "Cheques";
+            resources.ApplyResources(this.rpFiCheques, "rpFiCheques");
             // 
             // rbChequeRechazadoBanco
             // 
@@ -986,7 +795,7 @@
             this.rbChequeRechazadoBanco.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbChequeRechazadoBanco.LargeImage")));
             this.rbChequeRechazadoBanco.Name = "rbChequeRechazadoBanco";
             this.rbChequeRechazadoBanco.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbChequeRechazadoBanco.SmallImage")));
-            this.rbChequeRechazadoBanco.Text = "Rechazar [Banco]";
+            resources.ApplyResources(this.rbChequeRechazadoBanco, "rbChequeRechazadoBanco");
             this.rbChequeRechazadoBanco.Click += new System.EventHandler(this.rbChequeRechazadoBanco_Click);
             // 
             // rbGestionRechazo
@@ -995,7 +804,7 @@
             this.rbGestionRechazo.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbGestionRechazo.LargeImage")));
             this.rbGestionRechazo.Name = "rbGestionRechazo";
             this.rbGestionRechazo.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbGestionRechazo.SmallImage")));
-            this.rbGestionRechazo.Text = "Gestion Rechazos";
+            resources.ApplyResources(this.rbGestionRechazo, "rbGestionRechazo");
             this.rbGestionRechazo.Click += new System.EventHandler(this.rbGestionRechazo_Click);
             // 
             // ribbonTab3
@@ -1003,7 +812,7 @@
             this.ribbonTab3.Name = "ribbonTab3";
             this.ribbonTab3.Panels.Add(this.ribbonPanel8);
             this.ribbonTab3.Panels.Add(this.ribbonPanel9);
-            this.ribbonTab3.Text = "MM";
+            resources.ApplyResources(this.ribbonTab3, "ribbonTab3");
             // 
             // ribbonPanel8
             // 
@@ -1011,7 +820,7 @@
             this.ribbonPanel8.Items.Add(this.rbtnOCMain);
             this.ribbonPanel8.Items.Add(this.rbtnIC);
             this.ribbonPanel8.Name = "ribbonPanel8";
-            this.ribbonPanel8.Text = "Compras Directos";
+            resources.ApplyResources(this.ribbonPanel8, "ribbonPanel8");
             // 
             // rbtnRequisicionCompra
             // 
@@ -1019,7 +828,7 @@
             this.rbtnRequisicionCompra.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnRequisicionCompra.LargeImage")));
             this.rbtnRequisicionCompra.Name = "rbtnRequisicionCompra";
             this.rbtnRequisicionCompra.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRequisicionCompra.SmallImage")));
-            this.rbtnRequisicionCompra.Text = "Requisicion Compra";
+            resources.ApplyResources(this.rbtnRequisicionCompra, "rbtnRequisicionCompra");
             this.rbtnRequisicionCompra.Click += new System.EventHandler(this.rbtnRequisicionCompra_Click);
             // 
             // rbtnOCMain
@@ -1031,7 +840,7 @@
             this.rbtnOCMain.Name = "rbtnOCMain";
             this.rbtnOCMain.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnOCMain.SmallImage")));
             this.rbtnOCMain.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
-            this.rbtnOCMain.Text = "Orden Compra";
+            resources.ApplyResources(this.rbtnOCMain, "rbtnOCMain");
             // 
             // rbtnNuevaOC
             // 
@@ -1040,7 +849,7 @@
             this.rbtnNuevaOC.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnNuevaOC.LargeImage")));
             this.rbtnNuevaOC.Name = "rbtnNuevaOC";
             this.rbtnNuevaOC.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnNuevaOC.SmallImage")));
-            this.rbtnNuevaOC.Text = "Nueva OC";
+            resources.ApplyResources(this.rbtnNuevaOC, "rbtnNuevaOC");
             this.rbtnNuevaOC.Click += new System.EventHandler(this.rbtnNuevaOC_Click);
             // 
             // rbtnVerOrdenCompra
@@ -1050,7 +859,7 @@
             this.rbtnVerOrdenCompra.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnVerOrdenCompra.LargeImage")));
             this.rbtnVerOrdenCompra.Name = "rbtnVerOrdenCompra";
             this.rbtnVerOrdenCompra.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnVerOrdenCompra.SmallImage")));
-            this.rbtnVerOrdenCompra.Text = "Ver OC";
+            resources.ApplyResources(this.rbtnVerOrdenCompra, "rbtnVerOrdenCompra");
             this.rbtnVerOrdenCompra.Click += new System.EventHandler(this.rbtnVerOrdenCompra_Click);
             // 
             // rbtnIC
@@ -1059,14 +868,14 @@
             this.rbtnIC.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnIC.LargeImage")));
             this.rbtnIC.Name = "rbtnIC";
             this.rbtnIC.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnIC.SmallImage")));
-            this.rbtnIC.Text = "Ingreso Materiales";
+            resources.ApplyResources(this.rbtnIC, "rbtnIC");
             this.rbtnIC.Click += new System.EventHandler(this.rbtnIC_Click);
             // 
             // ribbonPanel9
             // 
             this.ribbonPanel9.Items.Add(this.rbtnDevoluciones);
             this.ribbonPanel9.Name = "ribbonPanel9";
-            this.ribbonPanel9.Text = "Devoluciones";
+            resources.ApplyResources(this.ribbonPanel9, "ribbonPanel9");
             // 
             // rbtnDevoluciones
             // 
@@ -1074,14 +883,14 @@
             this.rbtnDevoluciones.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnDevoluciones.LargeImage")));
             this.rbtnDevoluciones.Name = "rbtnDevoluciones";
             this.rbtnDevoluciones.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDevoluciones.SmallImage")));
-            this.rbtnDevoluciones.Text = "Retorno Material";
+            resources.ApplyResources(this.rbtnDevoluciones, "rbtnDevoluciones");
             this.rbtnDevoluciones.Click += new System.EventHandler(this.rbtnDevoluciones_Click);
             // 
             // rTabCo
             // 
             this.rTabCo.Name = "rTabCo";
             this.rTabCo.Panels.Add(this.ribbonPanel6);
-            this.rTabCo.Text = "CO";
+            resources.ApplyResources(this.rTabCo, "rTabCo");
             // 
             // ribbonPanel6
             // 
@@ -1090,7 +899,7 @@
             this.ribbonPanel6.Items.Add(this.ribbonButton7);
             this.ribbonPanel6.Items.Add(this.ribbonButton12);
             this.ribbonPanel6.Name = "ribbonPanel6";
-            this.ribbonPanel6.Text = "Control de Costos";
+            resources.ApplyResources(this.ribbonPanel6, "ribbonPanel6");
             // 
             // ribbonButton4
             // 
@@ -1098,7 +907,7 @@
             this.ribbonButton4.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.LargeImage")));
             this.ribbonButton4.Name = "ribbonButton4";
             this.ribbonButton4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.SmallImage")));
-            this.ribbonButton4.Text = "Costo REPO";
+            resources.ApplyResources(this.ribbonButton4, "ribbonButton4");
             // 
             // ribbonButton6
             // 
@@ -1106,7 +915,7 @@
             this.ribbonButton6.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.LargeImage")));
             this.ribbonButton6.Name = "ribbonButton6";
             this.ribbonButton6.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.SmallImage")));
-            this.ribbonButton6.Text = "Costo MFG";
+            resources.ApplyResources(this.ribbonButton6, "ribbonButton6");
             // 
             // ribbonButton7
             // 
@@ -1115,7 +924,7 @@
             this.ribbonButton7.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.LargeImage")));
             this.ribbonButton7.Name = "ribbonButton7";
             this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
-            this.ribbonButton7.Text = "Costo Standard";
+            resources.ApplyResources(this.ribbonButton7, "ribbonButton7");
             // 
             // ribbonButton11
             // 
@@ -1123,7 +932,7 @@
             this.ribbonButton11.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.LargeImage")));
             this.ribbonButton11.Name = "ribbonButton11";
             this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
-            this.ribbonButton11.Text = "ribbonButton11";
+            resources.ApplyResources(this.ribbonButton11, "ribbonButton11");
             // 
             // ribbonButton12
             // 
@@ -1131,19 +940,19 @@
             this.ribbonButton12.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.LargeImage")));
             this.ribbonButton12.Name = "ribbonButton12";
             this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
-            this.ribbonButton12.Text = "Cost Roll";
+            resources.ApplyResources(this.ribbonButton12, "ribbonButton12");
             // 
             // ribbonTab4
             // 
             this.ribbonTab4.Name = "ribbonTab4";
             this.ribbonTab4.Panels.Add(this.rpPPPlanificacion);
-            this.ribbonTab4.Text = "PP";
+            resources.ApplyResources(this.ribbonTab4, "ribbonTab4");
             // 
             // rpPPPlanificacion
             // 
             this.rpPPPlanificacion.Items.Add(this.rbtnPF);
             this.rpPPPlanificacion.Name = "rpPPPlanificacion";
-            this.rpPPPlanificacion.Text = "Planificacion";
+            resources.ApplyResources(this.rpPPPlanificacion, "rpPPPlanificacion");
             // 
             // rbtnPF
             // 
@@ -1151,24 +960,24 @@
             this.rbtnPF.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnPF.LargeImage")));
             this.rbtnPF.Name = "rbtnPF";
             this.rbtnPF.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnPF.SmallImage")));
-            this.rbtnPF.Text = "Plan Produccion";
+            resources.ApplyResources(this.rbtnPF, "rbtnPF");
             this.rbtnPF.Click += new System.EventHandler(this.rbtnPF_Click);
             // 
             // ribbonTab5
             // 
             this.ribbonTab5.Name = "ribbonTab5";
-            this.ribbonTab5.Text = "QM";
+            resources.ApplyResources(this.ribbonTab5, "ribbonTab5");
             // 
             // ribbonTab6
             // 
             this.ribbonTab6.Name = "ribbonTab6";
-            this.ribbonTab6.Text = "HR";
+            resources.ApplyResources(this.ribbonTab6, "ribbonTab6");
             // 
             // rTabSS
             // 
             this.rTabSS.Name = "rTabSS";
             this.rTabSS.Panels.Add(this.rPanSS_Disponibilidad);
-            this.rTabSS.Text = "SS";
+            resources.ApplyResources(this.rTabSS, "rTabSS");
             // 
             // rPanSS_Disponibilidad
             // 
@@ -1177,7 +986,7 @@
             this.rPanSS_Disponibilidad.Items.Add(this.rbAddComboFunction);
             this.rPanSS_Disponibilidad.Items.Add(this.rbAssignPersonalCombo);
             this.rPanSS_Disponibilidad.Name = "rPanSS_Disponibilidad";
-            this.rPanSS_Disponibilidad.Text = "Disponibilidades ComboBox";
+            resources.ApplyResources(this.rPanSS_Disponibilidad, "rPanSS_Disponibilidad");
             // 
             // rbAddComboFunction
             // 
@@ -1185,7 +994,7 @@
             this.rbAddComboFunction.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbAddComboFunction.LargeImage")));
             this.rbAddComboFunction.Name = "rbAddComboFunction";
             this.rbAddComboFunction.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbAddComboFunction.SmallImage")));
-            this.rbAddComboFunction.Text = "Combo Function";
+            resources.ApplyResources(this.rbAddComboFunction, "rbAddComboFunction");
             this.rbAddComboFunction.Click += new System.EventHandler(this.rbAddComboFunction_Click);
             // 
             // rbAssignPersonalCombo
@@ -1194,29 +1003,29 @@
             this.rbAssignPersonalCombo.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbAssignPersonalCombo.LargeImage")));
             this.rbAssignPersonalCombo.Name = "rbAssignPersonalCombo";
             this.rbAssignPersonalCombo.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbAssignPersonalCombo.SmallImage")));
-            this.rbAssignPersonalCombo.Text = "Asingar Personal";
+            resources.ApplyResources(this.rbAssignPersonalCombo, "rbAssignPersonalCombo");
             this.rbAssignPersonalCombo.Click += new System.EventHandler(this.rbAssignPersonalCombo_Click);
             // 
             // ribbonTab8
             // 
             this.ribbonTab8.Name = "ribbonTab8";
-            this.ribbonTab8.Text = "Tools";
+            resources.ApplyResources(this.ribbonTab8, "ribbonTab8");
             // 
             // ribbonTab9
             // 
             this.ribbonTab9.Name = "ribbonTab9";
-            this.ribbonTab9.Text = "Development";
+            resources.ApplyResources(this.ribbonTab9, "ribbonTab9");
             // 
             // ribbonTab10
             // 
             this.ribbonTab10.Name = "ribbonTab10";
-            this.ribbonTab10.Text = "Experimental Functions";
+            resources.ApplyResources(this.ribbonTab10, "ribbonTab10");
             // 
             // rTabMasterData
             // 
             this.rTabMasterData.Name = "rTabMasterData";
             this.rTabMasterData.Panels.Add(this.ribbonPanel4);
-            this.rTabMasterData.Text = "Master Data";
+            resources.ApplyResources(this.rTabMasterData, "rTabMasterData");
             // 
             // ribbonPanel4
             // 
@@ -1225,7 +1034,7 @@
             this.ribbonPanel4.Items.Add(this.ribbonButton2);
             this.ribbonPanel4.Items.Add(this.rbMateriales);
             this.ribbonPanel4.Name = "ribbonPanel4";
-            this.ribbonPanel4.Text = "Dato Maestros Principales";
+            resources.ApplyResources(this.ribbonPanel4, "ribbonPanel4");
             // 
             // ribbonSeparator1
             // 
@@ -1242,7 +1051,7 @@
             this.rbCliente.Name = "rbCliente";
             this.rbCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbCliente.SmallImage")));
             this.rbCliente.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
-            this.rbCliente.Text = "Clientes";
+            resources.ApplyResources(this.rbCliente, "rbCliente");
             // 
             // rbNuevoCliennte
             // 
@@ -1251,7 +1060,7 @@
             this.rbNuevoCliennte.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbNuevoCliennte.LargeImage")));
             this.rbNuevoCliennte.Name = "rbNuevoCliennte";
             this.rbNuevoCliennte.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbNuevoCliennte.SmallImage")));
-            this.rbNuevoCliennte.Text = "Nuevo";
+            resources.ApplyResources(this.rbNuevoCliennte, "rbNuevoCliennte");
             this.rbNuevoCliennte.Click += new System.EventHandler(this.rbNuevoCliennte_Click);
             // 
             // rbEditarClientne
@@ -1261,7 +1070,7 @@
             this.rbEditarClientne.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbEditarClientne.LargeImage")));
             this.rbEditarClientne.Name = "rbEditarClientne";
             this.rbEditarClientne.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbEditarClientne.SmallImage")));
-            this.rbEditarClientne.Text = "Editar";
+            resources.ApplyResources(this.rbEditarClientne, "rbEditarClientne");
             this.rbEditarClientne.Click += new System.EventHandler(this.rbEditarClientne_Click);
             // 
             // rbVerCliente
@@ -1271,7 +1080,7 @@
             this.rbVerCliente.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbVerCliente.LargeImage")));
             this.rbVerCliente.Name = "rbVerCliente";
             this.rbVerCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbVerCliente.SmallImage")));
-            this.rbVerCliente.Text = "Ver";
+            resources.ApplyResources(this.rbVerCliente, "rbVerCliente");
             this.rbVerCliente.Click += new System.EventHandler(this.rbVerCliente_Click);
             // 
             // ribbonButton2
@@ -1280,7 +1089,7 @@
             this.ribbonButton2.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.LargeImage")));
             this.ribbonButton2.Name = "ribbonButton2";
             this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
-            this.ribbonButton2.Text = "Proveedores";
+            resources.ApplyResources(this.ribbonButton2, "ribbonButton2");
             // 
             // rbMateriales
             // 
@@ -1292,7 +1101,7 @@
             this.rbMateriales.Name = "rbMateriales";
             this.rbMateriales.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbMateriales.SmallImage")));
             this.rbMateriales.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
-            this.rbMateriales.Text = "Materiales";
+            resources.ApplyResources(this.rbMateriales, "rbMateriales");
             // 
             // rbCrearMaterial
             // 
@@ -1301,7 +1110,7 @@
             this.rbCrearMaterial.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbCrearMaterial.LargeImage")));
             this.rbCrearMaterial.Name = "rbCrearMaterial";
             this.rbCrearMaterial.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbCrearMaterial.SmallImage")));
-            this.rbCrearMaterial.Text = "Crear";
+            resources.ApplyResources(this.rbCrearMaterial, "rbCrearMaterial");
             this.rbCrearMaterial.Click += new System.EventHandler(this.rbCrearMaterial_Click);
             // 
             // rbEditarMaterial
@@ -1311,7 +1120,7 @@
             this.rbEditarMaterial.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbEditarMaterial.LargeImage")));
             this.rbEditarMaterial.Name = "rbEditarMaterial";
             this.rbEditarMaterial.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbEditarMaterial.SmallImage")));
-            this.rbEditarMaterial.Text = "Editar";
+            resources.ApplyResources(this.rbEditarMaterial, "rbEditarMaterial");
             // 
             // rbVisualizarMaterial
             // 
@@ -1320,51 +1129,35 @@
             this.rbVisualizarMaterial.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbVisualizarMaterial.LargeImage")));
             this.rbVisualizarMaterial.Name = "rbVisualizarMaterial";
             this.rbVisualizarMaterial.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbVisualizarMaterial.SmallImage")));
-            this.rbVisualizarMaterial.Text = "Visualizar";
+            resources.ApplyResources(this.rbVisualizarMaterial, "rbVisualizarMaterial");
             // 
             // label18
             // 
             this.label18.BackColor = System.Drawing.Color.DarkMagenta;
-            this.label18.Location = new System.Drawing.Point(-4, 170);
+            resources.ApplyResources(this.label18, "label18");
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(1264, 3);
-            this.label18.TabIndex = 294;
             // 
             // txtNTcode
             // 
             this.txtNTcode.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtNTcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNTcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNTcode.Location = new System.Drawing.Point(88, 145);
-            this.txtNTcode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.txtNTcode, "txtNTcode");
             this.txtNTcode.Name = "txtNTcode";
-            this.txtNTcode.Size = new System.Drawing.Size(109, 21);
-            this.txtNTcode.TabIndex = 295;
-            this.txtNTcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.SlateGray;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.Color.SeaShell;
-            this.label2.Location = new System.Drawing.Point(1036, 144);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 21);
-            this.label2.TabIndex = 296;
-            this.label2.Text = "Service Status";
             // 
             // btnConfirmTCode
             // 
             this.btnConfirmTCode.BackColor = System.Drawing.Color.Tan;
             this.btnConfirmTCode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmTCode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConfirmTCode.Location = new System.Drawing.Point(196, 145);
+            resources.ApplyResources(this.btnConfirmTCode, "btnConfirmTCode");
             this.btnConfirmTCode.Name = "btnConfirmTCode";
-            this.btnConfirmTCode.Size = new System.Drawing.Size(49, 21);
-            this.btnConfirmTCode.TabIndex = 297;
-            this.btnConfirmTCode.Text = "OK";
             this.btnConfirmTCode.UseVisualStyleBackColor = false;
             this.btnConfirmTCode.Click += new System.EventHandler(this.btnConfirmTCode_Click);
             // 
@@ -1372,107 +1165,73 @@
             // 
             this.button55.BackColor = System.Drawing.Color.Tan;
             this.button55.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button55.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button55.Location = new System.Drawing.Point(3, 176);
+            resources.ApplyResources(this.button55, "button55");
             this.button55.Name = "button55";
-            this.button55.Size = new System.Drawing.Size(229, 21);
-            this.button55.TabIndex = 298;
-            this.button55.Text = "SD - Ventas y Distribucion";
             this.button55.UseVisualStyleBackColor = false;
             // 
             // button58
             // 
             this.button58.BackColor = System.Drawing.Color.Wheat;
             this.button58.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button58.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button58.Location = new System.Drawing.Point(467, 176);
+            resources.ApplyResources(this.button58, "button58");
             this.button58.Name = "button58";
-            this.button58.Size = new System.Drawing.Size(229, 21);
-            this.button58.TabIndex = 300;
-            this.button58.Text = "FI -Administracion y Finanzas";
             this.button58.UseVisualStyleBackColor = false;
             // 
             // button56
             // 
             this.button56.BackColor = System.Drawing.Color.Wheat;
             this.button56.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button56.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button56.Location = new System.Drawing.Point(3, 199);
+            resources.ApplyResources(this.button56, "button56");
             this.button56.Name = "button56";
-            this.button56.Size = new System.Drawing.Size(229, 21);
-            this.button56.TabIndex = 302;
-            this.button56.Text = "CO - Controlling FI-CO";
             this.button56.UseVisualStyleBackColor = false;
             // 
             // button57
             // 
             this.button57.BackColor = System.Drawing.Color.Tan;
             this.button57.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button57.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button57.Location = new System.Drawing.Point(929, 176);
+            resources.ApplyResources(this.button57, "button57");
             this.button57.Name = "button57";
-            this.button57.Size = new System.Drawing.Size(229, 21);
-            this.button57.TabIndex = 301;
-            this.button57.Text = "MM - Admin Materiales/Compras";
             this.button57.UseVisualStyleBackColor = false;
             // 
             // button59
             // 
             this.button59.BackColor = System.Drawing.Color.Wheat;
             this.button59.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button59.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button59.Location = new System.Drawing.Point(467, 199);
+            resources.ApplyResources(this.button59, "button59");
             this.button59.Name = "button59";
-            this.button59.Size = new System.Drawing.Size(229, 21);
-            this.button59.TabIndex = 306;
-            this.button59.Text = "MD - Master Data/Config";
             this.button59.UseVisualStyleBackColor = false;
             // 
             // button60
             // 
             this.button60.BackColor = System.Drawing.Color.Tan;
             this.button60.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button60.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button60.Location = new System.Drawing.Point(929, 199);
+            resources.ApplyResources(this.button60, "button60");
             this.button60.Name = "button60";
-            this.button60.Size = new System.Drawing.Size(229, 21);
-            this.button60.TabIndex = 305;
-            this.button60.Text = "HR - Recursos Humanos";
             this.button60.UseVisualStyleBackColor = false;
             // 
             // button61
             // 
             this.button61.BackColor = System.Drawing.Color.Wheat;
             this.button61.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button61.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button61.Location = new System.Drawing.Point(698, 176);
+            resources.ApplyResources(this.button61, "button61");
             this.button61.Name = "button61";
-            this.button61.Size = new System.Drawing.Size(229, 21);
-            this.button61.TabIndex = 304;
-            this.button61.Text = "QM - Control de Calidad";
             this.button61.UseVisualStyleBackColor = false;
             // 
             // button62
             // 
             this.button62.BackColor = System.Drawing.Color.Tan;
             this.button62.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button62.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button62.Location = new System.Drawing.Point(234, 176);
+            resources.ApplyResources(this.button62, "button62");
             this.button62.Name = "button62";
-            this.button62.Size = new System.Drawing.Size(229, 21);
-            this.button62.TabIndex = 303;
-            this.button62.Text = "PP - Planeamiento de Produccion";
             this.button62.UseVisualStyleBackColor = false;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(819, 225);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(429, 483);
-            this.tabControl1.TabIndex = 307;
             // 
             // tabPage1
             // 
@@ -1500,123 +1259,70 @@
             this.tabPage1.Controls.Add(this.button22);
             this.tabPage1.Controls.Add(this.button23);
             this.tabPage1.Controls.Add(this.button26);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(421, 455);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnTestCustomerSearchControl
+            // 
+            resources.ApplyResources(this.btnTestCustomerSearchControl, "btnTestCustomerSearchControl");
+            this.btnTestCustomerSearchControl.Name = "btnTestCustomerSearchControl";
+            this.btnTestCustomerSearchControl.UseVisualStyleBackColor = true;
+            this.btnTestCustomerSearchControl.Click += new System.EventHandler(this.btnTestCustomerSearchControl_Click);
             // 
             // button63
             // 
-            this.button63.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button63.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button63.Location = new System.Drawing.Point(251, 278);
-            this.button63.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button63, "button63");
             this.button63.Name = "button63";
-            this.button63.Size = new System.Drawing.Size(119, 43);
-            this.button63.TabIndex = 150;
-            this.button63.Text = "Vendor NEW";
-            this.button63.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button63.UseVisualStyleBackColor = true;
             this.button63.Click += new System.EventHandler(this.button63_Click);
             // 
             // button54
             // 
-            this.button54.Location = new System.Drawing.Point(102, 145);
-            this.button54.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            resources.ApplyResources(this.button54, "button54");
             this.button54.Name = "button54";
-            this.button54.Size = new System.Drawing.Size(119, 43);
-            this.button54.TabIndex = 128;
-            this.button54.Text = "CtaCte\r\nGesCO";
-            this.button54.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button54.UseVisualStyleBackColor = true;
             this.button54.Click += new System.EventHandler(this.button54_Click_2);
             // 
             // button51
             // 
-            this.button51.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button51.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button51.Location = new System.Drawing.Point(7, 235);
-            this.button51.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button51, "button51");
             this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(119, 43);
-            this.button51.TabIndex = 149;
-            this.button51.Text = "ximputacion de compb";
-            this.button51.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button51.UseVisualStyleBackColor = true;
             this.button51.Click += new System.EventHandler(this.button51_Click_2);
             // 
             // button50
             // 
-            this.button50.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button50.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button50.Location = new System.Drawing.Point(7, 27);
-            this.button50.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button50, "button50");
             this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(119, 43);
-            this.button50.TabIndex = 136;
-            this.button50.Text = "TESTchr";
-            this.button50.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button50.UseVisualStyleBackColor = true;
             this.button50.Click += new System.EventHandler(this.button50_Click);
             // 
             // button36
             // 
-            this.button36.Enabled = false;
-            this.button36.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button36.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button36.Location = new System.Drawing.Point(7, 156);
-            this.button36.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button36, "button36");
             this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(119, 43);
-            this.button36.TabIndex = 123;
-            this.button36.Text = "TEST\r\nControls";
-            this.button36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button36.UseVisualStyleBackColor = true;
             this.button36.Click += new System.EventHandler(this.button36_Click_1);
             // 
             // button49
             // 
-            this.button49.Enabled = false;
-            this.button49.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button49.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button49.Location = new System.Drawing.Point(7, 71);
-            this.button49.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button49, "button49");
             this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(119, 43);
-            this.button49.TabIndex = 135;
-            this.button49.Text = "TEST";
-            this.button49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button49.UseVisualStyleBackColor = true;
             this.button49.Click += new System.EventHandler(this.button49_Click);
             // 
             // btnXRemito
             // 
-            this.btnXRemito.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXRemito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXRemito.Location = new System.Drawing.Point(7, 193);
-            this.btnXRemito.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.btnXRemito, "btnXRemito");
             this.btnXRemito.Name = "btnXRemito";
-            this.btnXRemito.Size = new System.Drawing.Size(119, 43);
-            this.btnXRemito.TabIndex = 148;
-            this.btnXRemito.Text = "Remito XX";
-            this.btnXRemito.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXRemito.UseVisualStyleBackColor = true;
             this.btnXRemito.Click += new System.EventHandler(this.btnXRemito_Click);
             // 
             // button33
             // 
-            this.button33.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button33.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button33.Location = new System.Drawing.Point(7, 321);
-            this.button33.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button33, "button33");
             this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(119, 43);
-            this.button33.TabIndex = 118;
-            this.button33.Text = "Re\r\nFacturacion";
-            this.button33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button33.UseVisualStyleBackColor = true;
             this.button33.Click += new System.EventHandler(this.button33_Click);
             // 
@@ -1637,33 +1343,22 @@
             this.tabPage2.Controls.Add(this.btnDevelopmentForm);
             this.tabPage2.Controls.Add(this.txtid1);
             this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(421, 455);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(26, 149);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button5, "button5");
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 39);
-            this.button5.TabIndex = 87;
-            this.button5.Text = "IMPORTAR";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(0, 730);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1261, 4);
-            this.label4.TabIndex = 309;
             // 
             // dgvTcodeList
             // 
@@ -1679,79 +1374,27 @@
             this.moduleDataGridViewTextBoxColumn});
             this.dgvTcodeList.DataSource = this.t0001TRANSACTIONSBindingSource;
             this.dgvTcodeList.GridColor = System.Drawing.Color.Crimson;
-            this.dgvTcodeList.Location = new System.Drawing.Point(3, 221);
+            resources.ApplyResources(this.dgvTcodeList, "dgvTcodeList");
             this.dgvTcodeList.Name = "dgvTcodeList";
             this.dgvTcodeList.ReadOnly = true;
-            this.dgvTcodeList.RowHeadersWidth = 10;
-            this.dgvTcodeList.Size = new System.Drawing.Size(402, 483);
-            this.dgvTcodeList.TabIndex = 310;
-            this.dgvTcodeList.Visible = false;
-            // 
-            // visibleDataGridViewCheckBoxColumn
-            // 
-            this.visibleDataGridViewCheckBoxColumn.DataPropertyName = "Visible";
-            this.visibleDataGridViewCheckBoxColumn.HeaderText = "V";
-            this.visibleDataGridViewCheckBoxColumn.MinimumWidth = 12;
-            this.visibleDataGridViewCheckBoxColumn.Name = "visibleDataGridViewCheckBoxColumn";
-            this.visibleDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.visibleDataGridViewCheckBoxColumn.Visible = false;
-            this.visibleDataGridViewCheckBoxColumn.Width = 250;
-            // 
-            // tCodeDataGridViewTextBoxColumn
-            // 
-            this.tCodeDataGridViewTextBoxColumn.DataPropertyName = "TCode";
-            this.tCodeDataGridViewTextBoxColumn.HeaderText = "TCode";
-            this.tCodeDataGridViewTextBoxColumn.MinimumWidth = 12;
-            this.tCodeDataGridViewTextBoxColumn.Name = "tCodeDataGridViewTextBoxColumn";
-            this.tCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tCodeDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 12;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // moduleDataGridViewTextBoxColumn
-            // 
-            this.moduleDataGridViewTextBoxColumn.DataPropertyName = "Module";
-            this.moduleDataGridViewTextBoxColumn.HeaderText = "Mod";
-            this.moduleDataGridViewTextBoxColumn.MinimumWidth = 12;
-            this.moduleDataGridViewTextBoxColumn.Name = "moduleDataGridViewTextBoxColumn";
-            this.moduleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.moduleDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // t0001TRANSACTIONSBindingSource
-            // 
-            this.t0001TRANSACTIONSBindingSource.DataSource = typeof(TecserEF.Entity.T0001_TRANSACTIONS);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.ErrorImage = null;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Image = global::MASngFE.Properties.Resources.mombelli_01;
-            this.pictureBox1.Location = new System.Drawing.Point(735, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(495, 81);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
             // rbMainApplication
             // 
             this.rbMainApplication.BackColor = System.Drawing.Color.Black;
-            this.rbMainApplication.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.rbMainApplication, "rbMainApplication");
             this.rbMainApplication.BorderMode = System.Windows.Forms.RibbonWindowMode.InsideWindow;
             this.rbMainApplication.CaptionBarVisible = false;
             this.rbMainApplication.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbMainApplication.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.rbMainApplication.ForeColor = System.Drawing.Color.Crimson;
             this.rbMainApplication.HideSingleTabIfTextEmpty = false;
-            this.rbMainApplication.Location = new System.Drawing.Point(0, 0);
             this.rbMainApplication.Minimized = false;
             this.rbMainApplication.Name = "rbMainApplication";
             // 
@@ -1759,16 +1402,14 @@
             // 
             this.rbMainApplication.OrbDropDown.BackColor = System.Drawing.Color.Maroon;
             this.rbMainApplication.OrbDropDown.BorderRoundness = 2;
-            this.rbMainApplication.OrbDropDown.Location = new System.Drawing.Point(0, 0);
+            this.rbMainApplication.OrbDropDown.Location = ((System.Drawing.Point)(resources.GetObject("rbMainApplication.OrbDropDown.Location")));
             this.rbMainApplication.OrbDropDown.Name = "";
-            this.rbMainApplication.OrbDropDown.Size = new System.Drawing.Size(527, 72);
-            this.rbMainApplication.OrbDropDown.TabIndex = 0;
+            this.rbMainApplication.OrbDropDown.Size = ((System.Drawing.Size)(resources.GetObject("rbMainApplication.OrbDropDown.Size")));
+            this.rbMainApplication.OrbDropDown.TabIndex = ((int)(resources.GetObject("rbMainApplication.OrbDropDown.TabIndex")));
             this.rbMainApplication.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.rbMainApplication.OrbText = "App Config";
             this.rbMainApplication.PanelCaptionHeight = 10;
             this.rbMainApplication.RibbonTabFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMainApplication.Size = new System.Drawing.Size(1234, 123);
-            this.rbMainApplication.TabIndex = 1;
             this.rbMainApplication.Tabs.Add(this.rbTabMain);
             this.rbMainApplication.Tabs.Add(this.ribbonTab1);
             this.rbMainApplication.Tabs.Add(this.ribbonTab2);
@@ -1784,7 +1425,6 @@
             this.rbMainApplication.Tabs.Add(this.rTabMasterData);
             this.rbMainApplication.Tabs.Add(this.ribbonTab7);
             this.rbMainApplication.TabSpacing = 4;
-            this.rbMainApplication.Text = "MAS";
             this.rbMainApplication.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
             this.rbMainApplication.UseAlwaysStandardTheme = true;
             // 
@@ -1792,14 +1432,14 @@
             // 
             this.ribbonTab7.Name = "ribbonTab7";
             this.ribbonTab7.Panels.Add(this.ribbonPanel5);
-            this.ribbonTab7.Text = "Module Config";
+            resources.ApplyResources(this.ribbonTab7, "ribbonTab7");
             // 
             // ribbonPanel5
             // 
             this.ribbonPanel5.Items.Add(this.rbTaxModuleConfig);
             this.ribbonPanel5.Items.Add(this.rbTaxAssign);
             this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Text = "TAX Module";
+            resources.ApplyResources(this.ribbonPanel5, "ribbonPanel5");
             // 
             // rbTaxModuleConfig
             // 
@@ -1807,7 +1447,7 @@
             this.rbTaxModuleConfig.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.LargeImage")));
             this.rbTaxModuleConfig.Name = "rbTaxModuleConfig";
             this.rbTaxModuleConfig.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxModuleConfig.SmallImage")));
-            this.rbTaxModuleConfig.Text = "TAX Config";
+            resources.ApplyResources(this.rbTaxModuleConfig, "rbTaxModuleConfig");
             this.rbTaxModuleConfig.Click += new System.EventHandler(this.rbTaxModuleConfig_Click);
             // 
             // rbTaxAssign
@@ -1816,84 +1456,48 @@
             this.rbTaxAssign.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.LargeImage")));
             this.rbTaxAssign.Name = "rbTaxAssign";
             this.rbTaxAssign.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbTaxAssign.SmallImage")));
-            this.rbTaxAssign.Text = "TAX Assign";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "TCode";
-            this.dataGridViewTextBoxColumn1.HeaderText = "TCode";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 12;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 12;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Module";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Mod";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 12;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 50;
+            resources.ApplyResources(this.rbTaxAssign, "rbTaxAssign");
             // 
             // stbarTcode
             // 
-            this.stbarTcode.AutoSize = false;
-            this.stbarTcode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            resources.ApplyResources(this.stbarTcode, "stbarTcode");
             this.stbarTcode.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.stbarTcode.ForeColor = System.Drawing.Color.DarkGreen;
-            this.stbarTcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stbarTcode.Name = "stbarTcode";
-            this.stbarTcode.Size = new System.Drawing.Size(100, 19);
-            this.stbarTcode.Text = "TCODE";
             // 
             // stbarUsername
             // 
-            this.stbarUsername.AutoSize = false;
+            resources.ApplyResources(this.stbarUsername, "stbarUsername");
             this.stbarUsername.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.stbarUsername.Name = "stbarUsername";
-            this.stbarUsername.Size = new System.Drawing.Size(230, 19);
-            this.stbarUsername.Text = "USERNAME";
             // 
             // stbarComputer
             // 
             this.stbarComputer.Name = "stbarComputer";
-            this.stbarComputer.Size = new System.Drawing.Size(106, 19);
-            this.stbarComputer.Text = "COMPUTER NAME";
+            resources.ApplyResources(this.stbarComputer, "stbarComputer");
             // 
             // stbarAppVersion
             // 
             this.stbarAppVersion.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.stbarAppVersion.ForeColor = System.Drawing.Color.MidnightBlue;
             this.stbarAppVersion.Name = "stbarAppVersion";
-            this.stbarAppVersion.Size = new System.Drawing.Size(83, 19);
-            this.stbarAppVersion.Text = "APP VERSION";
+            resources.ApplyResources(this.stbarAppVersion, "stbarAppVersion");
             // 
             // stbarModo
             // 
-            this.stbarModo.AutoSize = false;
+            resources.ApplyResources(this.stbarModo, "stbarModo");
             this.stbarModo.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.stbarModo.Name = "stbarModo";
-            this.stbarModo.Size = new System.Drawing.Size(100, 19);
-            this.stbarModo.Text = "MODO";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.AutoSize = false;
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(400, 19);
-            this.toolStripStatusLabel1.Text = "** TECSER MASTERBATCH MOMBELLI E HIJOS SRL **";
             // 
             // stBar1
             // 
             this.stBar1.BackColor = System.Drawing.Color.Gainsboro;
-            this.stBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            resources.ApplyResources(this.stBar1, "stBar1");
             this.stBar1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.stBar1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stbarTcode,
@@ -1902,342 +1506,174 @@
             this.stbarAppVersion,
             this.stbarModo,
             this.toolStripStatusLabel1});
-            this.stBar1.Location = new System.Drawing.Point(0, 735);
             this.stBar1.Name = "stBar1";
-            this.stBar1.Size = new System.Drawing.Size(1234, 24);
-            this.stBar1.TabIndex = 83;
-            this.stBar1.Text = "statusStrip1";
             // 
             // button39
             // 
-            this.button39.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button39.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button39.Location = new System.Drawing.Point(252, 188);
-            this.button39.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button39, "button39");
             this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(119, 43);
-            this.button39.TabIndex = 125;
-            this.button39.Text = "Operacion";
-            this.button39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button39.UseVisualStyleBackColor = true;
             this.button39.Click += new System.EventHandler(this.button39_Click);
             // 
             // button31
             // 
-            this.button31.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button31.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button31.Location = new System.Drawing.Point(131, 230);
-            this.button31.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button31, "button31");
             this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(119, 43);
-            this.button31.TabIndex = 116;
-            this.button31.Text = "Nueva\r\nRC";
-            this.button31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button31.UseVisualStyleBackColor = true;
             this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
             // button40
             // 
             this.button40.BackColor = System.Drawing.Color.Violet;
-            this.button40.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button40.Image = ((System.Drawing.Image)(resources.GetObject("button40.Image")));
-            this.button40.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button40.Location = new System.Drawing.Point(9, 403);
-            this.button40.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button40, "button40");
             this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(119, 43);
-            this.button40.TabIndex = 126;
-            this.button40.Text = "Nuevo\r\nXRATE!";
-            this.button40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button40.UseVisualStyleBackColor = false;
             this.button40.Click += new System.EventHandler(this.button40_Click);
             // 
             // button38
             // 
-            this.button38.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button38.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button38.Location = new System.Drawing.Point(252, 145);
-            this.button38.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button38, "button38");
             this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(119, 43);
-            this.button38.TabIndex = 124;
-            this.button38.Text = "Cost Roll\r\nManager";
-            this.button38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button38.UseVisualStyleBackColor = true;
             this.button38.Click += new System.EventHandler(this.button38_Click);
             // 
             // button37
             // 
-            this.button37.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button37.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button37.Location = new System.Drawing.Point(131, 403);
-            this.button37.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button37, "button37");
             this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(119, 43);
-            this.button37.TabIndex = 122;
-            this.button37.Text = "CtaCte\r\nGesCO";
-            this.button37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button37.UseVisualStyleBackColor = true;
             this.button37.Click += new System.EventHandler(this.button37_Click);
             // 
             // button35
             // 
-            this.button35.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button35.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button35.Location = new System.Drawing.Point(131, 360);
-            this.button35.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button35, "button35");
             this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(119, 43);
-            this.button35.TabIndex = 120;
-            this.button35.Text = "Resumen\r\nGesCO";
-            this.button35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button35.UseVisualStyleBackColor = true;
             this.button35.Click += new System.EventHandler(this.button35_Click);
             // 
             // button34
             // 
-            this.button34.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button34.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button34.Location = new System.Drawing.Point(131, 317);
-            this.button34.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button34, "button34");
             this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(119, 43);
-            this.button34.TabIndex = 119;
-            this.button34.Text = "Nuevo\r\nGesCO";
-            this.button34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button34.UseVisualStyleBackColor = true;
             this.button34.Click += new System.EventHandler(this.button34_Click);
             // 
             // button32
             // 
-            this.button32.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button32.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button32.Location = new System.Drawing.Point(131, 274);
-            this.button32.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button32, "button32");
             this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(119, 43);
-            this.button32.TabIndex = 117;
-            this.button32.Text = "Listado\r\nRC";
-            this.button32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button32.UseVisualStyleBackColor = true;
             this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // button19
             // 
-            this.button19.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button19.Location = new System.Drawing.Point(9, 274);
-            this.button19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button19, "button19");
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(119, 43);
-            this.button19.TabIndex = 107;
-            this.button19.Text = "Gestion\r\nRechazo";
-            this.button19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button18
             // 
-            this.button18.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.Location = new System.Drawing.Point(9, 360);
-            this.button18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button18, "button18");
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(119, 43);
-            this.button18.TabIndex = 106;
-            this.button18.Text = "Gestion CH\r\nRechazo";
-            this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button16
             // 
-            this.button16.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button16.Location = new System.Drawing.Point(131, 145);
-            this.button16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button16, "button16");
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(119, 43);
-            this.button16.TabIndex = 104;
-            this.button16.Text = "Mass Activate";
-            this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.Button16_Click);
             // 
             // button15
             // 
-            this.button15.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button15.Location = new System.Drawing.Point(131, 102);
-            this.button15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button15, "button15");
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(119, 43);
-            this.button15.TabIndex = 103;
-            this.button15.Text = "MP List \r\nin-Forms";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.Button15_Click);
             // 
             // button14
             // 
-            this.button14.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(252, 102);
-            this.button14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button14, "button14");
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(119, 43);
-            this.button14.TabIndex = 102;
-            this.button14.Text = "Standard\r\nCost";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.Button14_Click);
             // 
             // button13
             // 
-            this.button13.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(252, 59);
-            this.button13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button13, "button13");
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(119, 43);
-            this.button13.TabIndex = 101;
-            this.button13.Text = "Manufactura\r\nCost";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.Button13_Click);
             // 
             // button12
             // 
-            this.button12.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(252, 16);
-            this.button12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button12, "button12");
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(119, 43);
-            this.button12.TabIndex = 100;
-            this.button12.Text = "Repo\r\nCost";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.Button12_Click);
             // 
             // btnMRPTest
             // 
-            this.btnMRPTest.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMRPTest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMRPTest.Location = new System.Drawing.Point(131, 16);
-            this.btnMRPTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.btnMRPTest, "btnMRPTest");
             this.btnMRPTest.Name = "btnMRPTest";
-            this.btnMRPTest.Size = new System.Drawing.Size(119, 43);
-            this.btnMRPTest.TabIndex = 97;
-            this.btnMRPTest.Text = "M.R.P";
-            this.btnMRPTest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMRPTest.UseVisualStyleBackColor = true;
             this.btnMRPTest.Click += new System.EventHandler(this.BtnMRPTest_Click);
             // 
             // button9
             // 
-            this.button9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(131, 59);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button9, "button9");
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(119, 43);
-            this.button9.TabIndex = 94;
-            this.button9.Text = "P.R.M\r\nProveedor";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // button29
             // 
-            this.button29.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button29.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button29.Location = new System.Drawing.Point(9, 317);
-            this.button29.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.button29, "button29");
             this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(119, 43);
-            this.button29.TabIndex = 77;
-            this.button29.Text = "COBCONV";
-            this.button29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button29.UseVisualStyleBackColor = true;
             this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
             // btnIngresoCobranzaTemporal
             // 
-            this.btnIngresoCobranzaTemporal.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresoCobranzaTemporal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresoCobranzaTemporal.Location = new System.Drawing.Point(9, 231);
-            this.btnIngresoCobranzaTemporal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            resources.ApplyResources(this.btnIngresoCobranzaTemporal, "btnIngresoCobranzaTemporal");
             this.btnIngresoCobranzaTemporal.Name = "btnIngresoCobranzaTemporal";
-            this.btnIngresoCobranzaTemporal.Size = new System.Drawing.Size(119, 43);
-            this.btnIngresoCobranzaTemporal.TabIndex = 76;
-            this.btnIngresoCobranzaTemporal.Text = "Ingreso\r\nPago Prov";
-            this.btnIngresoCobranzaTemporal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIngresoCobranzaTemporal.UseVisualStyleBackColor = true;
             this.btnIngresoCobranzaTemporal.Click += new System.EventHandler(this.button30_Click);
             // 
             // button24
             // 
-            this.button24.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.Location = new System.Drawing.Point(9, 145);
+            resources.ApplyResources(this.button24, "button24");
             this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(119, 43);
-            this.button24.TabIndex = 65;
-            this.button24.Text = "Factu\r\nSearch!";
-            this.button24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button24.UseVisualStyleBackColor = true;
             this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // btnCentroEntregas
             // 
-            this.btnCentroEntregas.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCentroEntregas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCentroEntregas.Location = new System.Drawing.Point(9, 188);
+            resources.ApplyResources(this.btnCentroEntregas, "btnCentroEntregas");
             this.btnCentroEntregas.Name = "btnCentroEntregas";
-            this.btnCentroEntregas.Size = new System.Drawing.Size(119, 43);
-            this.btnCentroEntregas.TabIndex = 30;
-            this.btnCentroEntregas.Text = "Centro\r\nEntregas";
-            this.btnCentroEntregas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCentroEntregas.UseVisualStyleBackColor = true;
             this.btnCentroEntregas.Click += new System.EventHandler(this.btnCentroEntregas_Click);
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(9, 102);
+            resources.ApplyResources(this.button3, "button3");
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 43);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Prepara\r\nRemito";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnRemisionCliente
             // 
-            this.btnRemisionCliente.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemisionCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemisionCliente.Location = new System.Drawing.Point(9, 59);
+            resources.ApplyResources(this.btnRemisionCliente, "btnRemisionCliente");
             this.btnRemisionCliente.Name = "btnRemisionCliente";
-            this.btnRemisionCliente.Size = new System.Drawing.Size(119, 43);
-            this.btnRemisionCliente.TabIndex = 15;
-            this.btnRemisionCliente.Text = "Prepara\r\nCliente";
-            this.btnRemisionCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRemisionCliente.UseVisualStyleBackColor = true;
             this.btnRemisionCliente.Click += new System.EventHandler(this.btnRemisionCliente_Click);
             // 
             // button41
             // 
-            this.button41.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button41.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button41.Location = new System.Drawing.Point(9, 16);
+            resources.ApplyResources(this.button41, "button41");
             this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(119, 43);
-            this.button41.TabIndex = 127;
-            this.button41.Text = "CD";
-            this.button41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button41.UseVisualStyleBackColor = true;
             this.button41.Click += new System.EventHandler(this.button41_Click);
             // 
@@ -2267,34 +1703,81 @@
             this.panelBoton1.Controls.Add(this.button40);
             this.panelBoton1.Controls.Add(this.button31);
             this.panelBoton1.Controls.Add(this.button39);
-            this.panelBoton1.Location = new System.Drawing.Point(411, 224);
+            resources.ApplyResources(this.panelBoton1, "panelBoton1");
             this.panelBoton1.Name = "panelBoton1";
-            this.panelBoton1.Size = new System.Drawing.Size(402, 483);
-            this.panelBoton1.TabIndex = 311;
             // 
-            // btnTestCustomerSearchControl
+            // visibleDataGridViewCheckBoxColumn
             // 
-            this.btnTestCustomerSearchControl.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTestCustomerSearchControl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTestCustomerSearchControl.Location = new System.Drawing.Point(250, 395);
-            this.btnTestCustomerSearchControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnTestCustomerSearchControl.Name = "btnTestCustomerSearchControl";
-            this.btnTestCustomerSearchControl.Size = new System.Drawing.Size(119, 43);
-            this.btnTestCustomerSearchControl.TabIndex = 151;
-            this.btnTestCustomerSearchControl.Text = "CustomerSeatch";
-            this.btnTestCustomerSearchControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTestCustomerSearchControl.UseVisualStyleBackColor = true;
-            this.btnTestCustomerSearchControl.Click += new System.EventHandler(this.btnTestCustomerSearchControl_Click);
+            this.visibleDataGridViewCheckBoxColumn.DataPropertyName = "Visible";
+            resources.ApplyResources(this.visibleDataGridViewCheckBoxColumn, "visibleDataGridViewCheckBoxColumn");
+            this.visibleDataGridViewCheckBoxColumn.Name = "visibleDataGridViewCheckBoxColumn";
+            this.visibleDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // tCodeDataGridViewTextBoxColumn
+            // 
+            this.tCodeDataGridViewTextBoxColumn.DataPropertyName = "TCode";
+            resources.ApplyResources(this.tCodeDataGridViewTextBoxColumn, "tCodeDataGridViewTextBoxColumn");
+            this.tCodeDataGridViewTextBoxColumn.Name = "tCodeDataGridViewTextBoxColumn";
+            this.tCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            resources.ApplyResources(this.descriptionDataGridViewTextBoxColumn, "descriptionDataGridViewTextBoxColumn");
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // moduleDataGridViewTextBoxColumn
+            // 
+            this.moduleDataGridViewTextBoxColumn.DataPropertyName = "Module";
+            resources.ApplyResources(this.moduleDataGridViewTextBoxColumn, "moduleDataGridViewTextBoxColumn");
+            this.moduleDataGridViewTextBoxColumn.Name = "moduleDataGridViewTextBoxColumn";
+            this.moduleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // t0001TRANSACTIONSBindingSource
+            // 
+            this.t0001TRANSACTIONSBindingSource.DataSource = typeof(TecserEF.Entity.T0001_TRANSACTIONS);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TCode";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Description";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Module";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // ribbonPanel7
+            // 
+            this.ribbonPanel7.Items.Add(this.rbExitMAS);
+            this.ribbonPanel7.Name = "ribbonPanel7";
+            resources.ApplyResources(this.ribbonPanel7, "ribbonPanel7");
+            // 
+            // rbExitMAS
+            // 
+            this.rbExitMAS.Image = ((System.Drawing.Image)(resources.GetObject("rbExitMAS.Image")));
+            this.rbExitMAS.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbExitMAS.LargeImage")));
+            this.rbExitMAS.Name = "rbExitMAS";
+            this.rbExitMAS.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbExitMAS.SmallImage")));
+            resources.ApplyResources(this.rbExitMAS, "rbExitMAS");
+            this.rbExitMAS.Click += new System.EventHandler(this.rbExitMAS_Click);
             // 
             // Frm00MainAppStart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1234, 759);
+            this.ControlBox = false;
             this.Controls.Add(this.panelBoton1);
             this.Controls.Add(this.dgvTcodeList);
             this.Controls.Add(this.label4);
@@ -2316,15 +1799,11 @@
             this.Controls.Add(this.rbMainApplication);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.stBar1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.HelpButton = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Frm00MainAppStart";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MOMBELLI Application System - Sistema de Gestion Empresarial";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMainAppStart_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.tabControl1.ResumeLayout(false);
@@ -2332,11 +1811,11 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTcodeList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t0001TRANSACTIONSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.stBar1.ResumeLayout(false);
             this.stBar1.PerformLayout();
             this.panelBoton1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.t0001TRANSACTIONSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2532,5 +2011,7 @@
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Panel panelBoton1;
         private System.Windows.Forms.Button btnTestCustomerSearchControl;
+        private System.Windows.Forms.RibbonPanel ribbonPanel7;
+        private System.Windows.Forms.RibbonButton rbExitMAS;
     }
 }

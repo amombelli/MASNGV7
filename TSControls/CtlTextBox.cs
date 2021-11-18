@@ -285,5 +285,23 @@ namespace TSControls
                 myTextBox.Text = null;
             }
         }
+
+
+        public delegate void tsKeyUp(object source, KeyEventArgs args);
+        public event tsKeyUp KeyUP;
+        private void CtlTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        protected virtual void OnKeyUp(object sender, KeyEventArgs e)
+        {
+            KeyUP?.Invoke(sender, e);
+        }
+
+        private void myTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            OnKeyUp(sender, e);
+        }
     }
 }
