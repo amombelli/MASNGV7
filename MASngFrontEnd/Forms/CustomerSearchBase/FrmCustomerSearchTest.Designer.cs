@@ -30,6 +30,7 @@
         {
             this.tsUcCustomer31 = new MASngFE._0TSUserControls.TsUcCustomer3();
             this.tsUcVendorSelector1 = new MASngFE._0TSUserControls.TsUcVendorSelector();
+
             this.SuspendLayout();
             // 
             // tsUcCustomer31
@@ -54,17 +55,20 @@
             this.tsUcVendorSelector1.Size = new System.Drawing.Size(577, 91);
             this.tsUcVendorSelector1.TabIndex = 1;
             this.tsUcVendorSelector1.VendorId = null;
+
             // 
             // FrmCustomerSearchTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+
             this.Controls.Add(this.tsUcVendorSelector1);
             this.Controls.Add(this.tsUcCustomer31);
             this.Name = "FrmCustomerSearchTest";
             this.Text = "FrmCustomerSearchTest";
             this.Load += new System.EventHandler(this.FrmCustomerSearchTest_Load);
+
             this.ResumeLayout(false);
 
         }
@@ -73,5 +77,6 @@
 
         private _0TSUserControls.TsUcCustomer3 tsUcCustomer31;
         private _0TSUserControls.TsUcVendorSelector tsUcVendorSelector1;
+
     }
 }
