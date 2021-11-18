@@ -49,7 +49,6 @@
             // 
             this.tsUcVendorSelector1.BackColor = System.Drawing.Color.White;
             this.tsUcVendorSelector1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsUcVendorSelector1.Location = new System.Drawing.Point(13, 122);
             this.tsUcVendorSelector1.Name = "tsUcVendorSelector1";
             this.tsUcVendorSelector1.Size = new System.Drawing.Size(577, 91);
             this.tsUcVendorSelector1.TabIndex = 1;
@@ -59,19 +58,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 230);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tsUcVendorSelector1);
             this.Controls.Add(this.tsUcCustomer31);
             this.Name = "FrmCustomerSearchTest";
             this.Text = "FrmCustomerSearchTest";
             this.Load += new System.EventHandler(this.FrmCustomerSearchTest_Load);
-            this.ResumeLayout(false);
+           this.ResumeLayout(false);
 
         }
-
         #endregion
-
         private _0TSUserControls.TsUcCustomer3 tsUcCustomer31;
         private _0TSUserControls.TsUcVendorSelector tsUcVendorSelector1;
+
     }
 }
