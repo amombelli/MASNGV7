@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
 using Tecser.Business.Transactional.FI;
-using CheckBox = System.Windows.Forms.CheckBox;
 
 namespace MASngFE.Transactional.FI.CustomerNCD
 {
@@ -72,7 +66,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         }
         private void dgvChequesRechazados_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridView dgv = (DataGridView) sender;
+            DataGridView dgv = (DataGridView)sender;
             IdChequeSeleccionado = null;
             if (e.RowIndex < 0) return;
 
@@ -83,7 +77,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         }
         private void dgvChequesCartera_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridView dgv = (DataGridView) sender;
+            DataGridView dgv = (DataGridView)sender;
             IdChequeSeleccionado = null;
             if (e.RowIndex < 0) return;
 
@@ -100,7 +94,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 cFechaChequeAcreditacion.Value = x.CHE_FECHA;
                 txtIdCheque.Text = idCheque.ToString();
                 txtChBanco.Text = x.T0160_BANCOS.BCO_SHORTDESC;
-                txtChCliente.Text= x.CLIENTE;
+                txtChCliente.Text = x.CLIENTE;
                 cFechaChequeRecibido.Value = x.FECHA_RECIBIDO;
                 txtChLxRecibido.Text = x.TIPO_REC;
                 cChImporte.SetValue = x.IMPORTE.Value;
@@ -124,7 +118,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             //blanquea gastos del Rechazo
             btnRechazar.Text = @"Devolver";
             pRechazo.Enabled = false;
-            dtpFechaRechazo.Value=DateTime.Today;
+            dtpFechaRechazo.Value = DateTime.Today;
             txtMotivoRechazo.Text = null;
             cGastoRechazo.SetValue = 0;
             cIvaGastoRechazo.SetValue = 0;
@@ -132,16 +126,16 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             //
             //Datos a Facturar-Cliente >> Copia del Rechazo
             txtAClientesMotivo.Text = null;
-            txtAClientesMotivo.BackColor=Color.LightBlue;
+            txtAClientesMotivo.BackColor = Color.LightBlue;
             cAClientesGastos.SetValue = 0;
             txtAClientesGastosDescripcion.Text = null;
             cAClienteGastoFinanciero.SetValue = 0;
             txtAClienteDescripcionGsFinanciero.Text = null;
-            
+
             cAClientesImporteTotal.SetValue = cAClientesIva.GetValueDecimal + cChImporte.GetValueDecimal +
                                               cAClientesGastos.GetValueDecimal +
                                               cAClienteGastoFinanciero.GetValueDecimal;
-            
+
         }
 
         private void PopulaDatosDelRechazo(int idCheque)
@@ -184,7 +178,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
         private void btnRechazar_Click(object sender, EventArgs e)
         {
-            if (ValidaOkRechzar()==false)return;
+            if (ValidaOkRechzar() == false) return;
 
             _nd.AddItems("CHRECH", txtAClientesMotivo.Text, cChImporte.GetValueDecimal, "1.0.0.8", false);
             if (_documentoAdicional)
@@ -192,7 +186,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 var datand = _nd.GetHeader();
                 ND2 = new CustomerNd(CustomerNd.MotivoNotaDebito.ChequeRechazado);
                 ND2.CreaHeader(ManageDocumentType.TipoDocumento.NotaDebitoVentaA, _idCliente, "L1",
-                    datand.FECHA, datand.TC, "0E", datand.GLAR, true,"X");
+                    datand.FECHA, datand.TC, "0E", datand.GLAR, true, "X");
                 if (cAClientesGastos.GetValueDecimal > 0)
                 {
                     ND2.AddItems("GSBAN", txtAClientesGastosDescripcion.Text, cAClientesGastos.GetValueDecimal,
@@ -213,7 +207,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     }
                 }
                 ND2.SetTotalesInHeaderFromItems();
-                ND2.SetPeriodoAsociado(dtpFechaRechazo.Value,dtpFechaRechazo.Value);
+                ND2.SetPeriodoAsociado(dtpFechaRechazo.Value, dtpFechaRechazo.Value);
             }
             else
             {
@@ -228,7 +222,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             _nd.SetPeriodoAsociado(cFechaChequeAcreditacion.Value.Value, cFechaChequeAcreditacion.Value.Value);
             GastoRechazo = cAClientesGastos.GetValueDecimal + cAClienteGastoFinanciero.GetValueDecimal;
             IvaGastoRechazo = cAClientesIva.GetValueDecimal;
-            
+
             this.Close();
             this.DialogResult = DialogResult.OK;
             return;
@@ -259,9 +253,9 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
             if (_lx == "L1")
             {
-                if (cAClientesIva.GetValueDecimal >0)
+                if (cAClientesIva.GetValueDecimal > 0)
                 {
-                    var r =MessageBox.Show(@"Se va a Generar un Documento Interno por el Cheque Rechazado y una Nota de Debito 'A' por los Gastos+IVA", @"Confirmacion de Documento Adicional",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    var r = MessageBox.Show(@"Se va a Generar un Documento Interno por el Cheque Rechazado y una Nota de Debito 'A' por los Gastos+IVA", @"Confirmacion de Documento Adicional", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (r == DialogResult.No)
                         return false;
                     _documentoAdicional = true;
@@ -270,7 +264,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             else
             {
                 //en L2 
-                if (ckIva1.Checked==true || ckIva2.Checked == true || cAClientesIva.GetValueDecimal>0)
+                if (ckIva1.Checked == true || ckIva2.Checked == true || cAClientesIva.GetValueDecimal > 0)
                 {
                     MessageBox.Show(@"En un Documento L2 - No puede existir IVA", @"Error en Impuestos",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -283,13 +277,13 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             decimal valorIva = 0;
             if (ckIva1.Checked)
-                valorIva = cAClientesGastos.GetValueDecimal * (decimal) 0.21;
+                valorIva = cAClientesGastos.GetValueDecimal * (decimal)0.21;
 
             if (ckIva2.Checked)
-                valorIva += cAClienteGastoFinanciero.GetValueDecimal * (decimal) 0.21;
+                valorIva += cAClienteGastoFinanciero.GetValueDecimal * (decimal)0.21;
             cAClientesIva.SetValue = valorIva;
             cAClientesIva.XReadOnly = true;
-            
+
             cAClientesImporteTotal.SetValue = cAClientesIva.GetValueDecimal + cChImporte.GetValueDecimal +
                                               cAClientesGastos.GetValueDecimal +
                                               cAClienteGastoFinanciero.GetValueDecimal;

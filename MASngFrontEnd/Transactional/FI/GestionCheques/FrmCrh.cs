@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.CO;
@@ -32,7 +29,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
         };
 
-        
+
         //Listado propiedades 
         private AccionUbicacionCheque _ubicacionCheque;
         private List<T0154_CHEQUES> _listaCheques = new List<T0154_CHEQUES>();
@@ -48,7 +45,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
         }
 
         #region MyRegion
-        
+
         private void btnOrigenBanco_Click(object sender, EventArgs e)
         {
             rb1Banco.Checked = true;
@@ -72,7 +69,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
         }
         private void rb1Origen_CheckedChanged(object sender, EventArgs e)
         {
-            var rb = (RadioButton) sender;
+            var rb = (RadioButton)sender;
             if (!rb.Checked) return; //deseleccion
             if (rb1Banco.Checked)
             {
@@ -135,7 +132,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 txtChCliente.Text = _chequeSeleccionado.CLIENTE;
                 txtChLxRecibido.Text = _chequeSeleccionado.TIPO;
                 cChImporte.SetValue = _chequeSeleccionado.IMPORTE.Value;
-               
+
                 if (_chequeSeleccionado.DISPONIBLE)
                 {
                     //cheque en Cartera
@@ -227,7 +224,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
         private void cmbFiltroOrigen_SelectedIndexChanged(object sender, EventArgs e)
         {
             const int diasCh = 365;
-            
+
             if (_runSelectedIndex == false) return;
             if (cmbFiltroOrigen.SelectedIndex == -1)
             {
@@ -262,7 +259,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 case AccionUbicacionCheque.EnBanco:
                     _listaCheques = new ChequesManager().GetListChequesNoDisponibles(cmbFiltroOrigen.SelectedValue.ToString()).ToList();
                     txtGL1.Text = new CuentasManager().GetGL(cmbFiltroOrigen.SelectedValue.ToString());
-                    
+
                     break;
                 case AccionUbicacionCheque.NoSeleccionado:
                     MessageBox.Show(@"No se ha seleccionado ninguna opcion de ubicacion de cheque",
@@ -285,7 +282,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             }
 
             var g = (DataGridView)sender;
-            if (g.SelectedCells.Count != 0 && _listaCheques.Count>0)
+            if (g.SelectedCells.Count != 0 && _listaCheques.Count > 0)
             {
                 _idChequeSeleccionado = Convert.ToInt32(dgvListaCheques[dgvListaCheques.Columns["iDCHEQUEDataGridViewTextBoxColumn"].Index,
                         e.RowIndex].Value);
@@ -295,13 +292,13 @@ namespace MASngFE.Transactional.FI.GestionCheques
         }
         private void cmbFiltroOrigen_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cmbFiltroOrigen.Text) || _runSelectedIndex==false)
+            if (!string.IsNullOrEmpty(cmbFiltroOrigen.Text) || _runSelectedIndex == false)
                 return;
             this.dgvListaCheques.CellEnter -= new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaCheques_CellEnter);
             _idClienteSeleccionado = null;
             _idProveedorSeleccionado = null;
             txtGL1.Text = null;
-           switch (_ubicacionCheque)
+            switch (_ubicacionCheque)
             {
                 case AccionUbicacionCheque.EnCartera:
                     //opcion de todos los cheques
@@ -337,7 +334,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
         }
         private void btnRegresarACliente_Click(object sender, EventArgs e)
         {
-            var f = new FrmChr2(_idChequeSeleccionado.Value,AccionCheque.RetornoAClienteSr);
+            var f = new FrmChr2(_idChequeSeleccionado.Value, AccionCheque.RetornoAClienteSr);
             f.ShowDialog();
         }
         private void btnAccion_Click(object sender, EventArgs e)

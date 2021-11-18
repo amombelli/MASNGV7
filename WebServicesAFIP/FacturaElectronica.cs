@@ -386,7 +386,7 @@ namespace WebServicesAFIP
                     fechaServHasta, monedaId, monedaCtz);
 
                 //RG Para notas de credito o debito se debe informar o comprobante que modifica o periodo al que modifica
-                if (dataStructure.CompAsociadoTipo !=TipoComprobante.NoDefinido)
+                if (dataStructure.CompAsociadoTipo != TipoComprobante.NoDefinido)
                 {
                     //tiene un comprobante asociado y lo agrega
                     tipo_cbte_asoc = GetIdTipoComprobanteAfip(dataStructure.CompAsociadoTipo);
@@ -422,7 +422,7 @@ namespace WebServicesAFIP
                     importe = item.Importe;
                     ok = _wsfev1.AgregarTributo(id, desc, baseImp, alic, importe);
                 }
-                
+
                 // Habilito reprocesamiento automático (predeterminado):
                 _wsfev1.Reprocesar = true;
 

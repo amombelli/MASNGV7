@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
-using System.Text.RegularExpressions;
 using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.SD;
@@ -141,20 +139,20 @@ namespace Tecser.Business.Transactional.PP
             {
                 var fecha1 = DateTime.Today.AddDays(-periodoDias);
                 var p = from mov in db.T0040_MAT_MOVIMIENTOS
-                    where
-                        (mov.TIPOMOVIMIENTO == 50 || mov.TIPOMOVIMIENTO == 51 || mov.TIPOMOVIMIENTO == 5 ||
-                         mov.TIPOMOVIMIENTO == 6 || mov.TIPOMOVIMIENTO == 7 || mov.TIPOMOVIMIENTO == 10 ||
-                         mov.TIPOMOVIMIENTO == 11) && (mov.FECHAMOV >= fecha1) &&
-                        mov.IDMATERIAL.ToUpper().Equals(primario.ToUpper())
-                    group mov by new
-                    {
-                        mov.TIPOMOVIMIENTO
-                    }
+                        where
+                            (mov.TIPOMOVIMIENTO == 50 || mov.TIPOMOVIMIENTO == 51 || mov.TIPOMOVIMIENTO == 5 ||
+                             mov.TIPOMOVIMIENTO == 6 || mov.TIPOMOVIMIENTO == 7 || mov.TIPOMOVIMIENTO == 10 ||
+                             mov.TIPOMOVIMIENTO == 11) && (mov.FECHAMOV >= fecha1) &&
+                            mov.IDMATERIAL.ToUpper().Equals(primario.ToUpper())
+                        group mov by new
+                        {
+                            mov.TIPOMOVIMIENTO
+                        }
                     into grp
-                    select new
-                    {
-                        SumKG = grp.Sum(x => x.CANTIDAD.Value)
-                    };
+                        select new
+                        {
+                            SumKG = grp.Sum(x => x.CANTIDAD.Value)
+                        };
                 return p.Sum(c => c.SumKG);
             }
         }

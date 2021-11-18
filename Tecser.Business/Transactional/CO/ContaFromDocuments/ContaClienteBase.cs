@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.CO.AsientoContable;
-using Tecser.Business.Transactional.FI;
 using Tecser.Business.Transactional.FI.CtaCte;
 using TecserEF.Entity;
 
@@ -40,9 +34,9 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
                 documentoInterno, MonedaConta, importeConSigno, TC, importeConSigno, 0, idDocAlternativo2,
                 idDocAlternativo1);
         }
-        protected void AddData202(decimal importeConSigno, DateTime? fechaUltimaFacturaEmitida=null)
+        protected void AddData202(decimal importeConSigno, DateTime? fechaUltimaFacturaEmitida = null)
         {
-            CtaCteMng.UpdateSaldoCtaCteResumen(LX.ToString(), importeConSigno, MonedaConta, TC,fechaUltimaFacturaEmitida);
+            CtaCteMng.UpdateSaldoCtaCteResumen(LX.ToString(), importeConSigno, MonedaConta, TC, fechaUltimaFacturaEmitida);
         }
         public virtual int AddData208()
         {

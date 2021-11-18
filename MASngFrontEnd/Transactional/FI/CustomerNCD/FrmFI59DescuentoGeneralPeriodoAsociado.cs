@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.CO;
 using Tecser.Business.Transactional.FI;
-using TecserEF.Entity;
 
 namespace MASngFE.Transactional.FI.CustomerNCD
 {
@@ -21,7 +19,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             fechaDoc = h.FECHA;
             InitializeComponent();
         }
-        
+
         //----------------------------------------------------------------------------------------
         private CustomerNc _nc;
         private readonly int _idCliente;
@@ -31,7 +29,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         private readonly DateTime fechaDoc;
         public DateTime? FechaAplicaDesde { get; private set; }
         public DateTime? FechaAplicaHasta { get; private set; }
-        
+
 
         //----------------------------------------------------------------------------------------
         private void FrmSeleccionMaterialNcd_Load(object sender, EventArgs e)
@@ -45,7 +43,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             txtMotivo.Text = _motivo.ToString();
             cFechaDocumento.Value = fechaDoc;
         }
-       
+
         //Botones
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -67,7 +65,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     MessageBoxIcon.Error);
                 return;
             }
-            
+
             if (cTc.GetValueDecimal == 0)
             {
                 MessageBox.Show(@"Error en Tipo de Cambio", @"Sin Datos", MessageBoxButtons.OK,
@@ -92,14 +90,14 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             //Alta del Item
             //Opcion1 - Cantidad Positiva - Importe U negativo
             var xiva = Math.Abs(cIva.GetValueDecimal) > 0;
-            _nc.AddItems("DESCGRAL", txtDescripcionItemNC.Text, Math.Abs(c1DescuentoPeso.GetValueDecimal)*-1, "4.1.3", xiva, 1, "ARS");
+            _nc.AddItems("DESCGRAL", txtDescripcionItemNC.Text, Math.Abs(c1DescuentoPeso.GetValueDecimal) * -1, "4.1.3", xiva, 1, "ARS");
             _nc.SetTotalesInHeaderFromItems();
-            _nc.SetPeriodoAsociado(cFechaDesde.Value.Value,cFechaHasta.Value.Value);
+            _nc.SetPeriodoAsociado(cFechaDesde.Value.Value, cFechaHasta.Value.Value);
             this.Close();
             this.DialogResult = DialogResult.OK;
         }
 
-        
+
         private void cFechaDesde_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (cFechaHasta.Value != null)
@@ -145,14 +143,14 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         }
         private void c1DescuentoPeso_Validated(object sender, EventArgs e)
         {
-            cBruto.SetValue = c1DescuentoPeso.GetValueDecimal *-1;
+            cBruto.SetValue = c1DescuentoPeso.GetValueDecimal * -1;
             cDescuento.SetValue = 0;
             cSubtotal.SetValue = cBruto.GetValueDecimal;
 
             if (txtLx.Text == @"L1")
             {
                 cImponible.SetValue = cBruto.GetValueDecimal;
-                cIva.SetValue = Math.Round(cBruto.GetValueDecimal * (decimal)0.21,2);
+                cIva.SetValue = Math.Round(cBruto.GetValueDecimal * (decimal)0.21, 2);
                 cPercepcionIIBB.SetValue = 0; //todo: reemplaar por ARBA().getAlicuota
             }
             else
@@ -169,7 +167,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             caImporteDescuentoNeto.SetValue = cAImporteNetoBase.GetValueDecimal * cAPorcentaje.GetValueDecimal;
             if (_tipoLx == "L1")
             {
-                cAImporteDescuentoBruto.SetValue = caImporteDescuentoNeto.GetValueDecimal / (decimal) 1.21;
+                cAImporteDescuentoBruto.SetValue = caImporteDescuentoNeto.GetValueDecimal / (decimal)1.21;
             }
             else
             {

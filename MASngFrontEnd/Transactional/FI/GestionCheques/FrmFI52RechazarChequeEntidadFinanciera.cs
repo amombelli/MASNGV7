@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.CO.AsientoContable;
@@ -100,7 +97,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 return;
             }
 
-            var g = (DataGridView) sender;
+            var g = (DataGridView)sender;
             if (g.SelectedCells.Count != 0)
             {
                 _idChequeSeleccionado = Convert.ToInt32(g[__idChequeSeleccionado.Name, e.RowIndex].Value);
@@ -152,7 +149,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             {
                 if (cGastoRechazo.GetValueDecimal > 0)
                 {
-                    cIvaGastoRechazo.SetValue = cGastoRechazo.GetValueDecimal * (decimal) 0.21;
+                    cIvaGastoRechazo.SetValue = cGastoRechazo.GetValueDecimal * (decimal)0.21;
                     cIvaGastoRechazo.XReadOnly = false;
                 }
             }
@@ -175,7 +172,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             {
                 cIvaGastoRechazo.SetValue = cGastoRechazo.GetValueDecimal * (decimal)0.21;
             }
-            
+
             cImporteTotalRechazo.SetValue = cChImporte.GetValueDecimal + cGastoRechazo.GetValueDecimal +
                                             cIvaGastoRechazo.GetValueDecimal;
         }
@@ -246,11 +243,11 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
             if (resp == DialogResult.No)
                 return;
-            
+
             var tipoRechazo = rbL1Rechazo.Checked ? "L1" : "L2";
 
-        var chrmng = new ChequeRechazadoManager();
-            chrmng.AddChequeRechazado(_idChequeSeleccionado.Value, dtpFechaRechazo.Value, txtMotivoRechazo.Text.ToUpper(),tipoRechazo,cGastoRechazo.GetValueDecimal,cIvaGastoRechazo.GetValueDecimal,$"Banco-{cmbFiltroOrigen.SelectedValue.ToString()}");
+            var chrmng = new ChequeRechazadoManager();
+            chrmng.AddChequeRechazado(_idChequeSeleccionado.Value, dtpFechaRechazo.Value, txtMotivoRechazo.Text.ToUpper(), tipoRechazo, cGastoRechazo.GetValueDecimal, cIvaGastoRechazo.GetValueDecimal, $"Banco-{cmbFiltroOrigen.SelectedValue.ToString()}");
             chrmng.SetChequeRechazadoTablaCheque(_idChequeSeleccionado.Value, txtMotivoRechazo.Text.ToUpper());
             var asiento = new AsientoGenerico("CHR").CreaAsientoChequeRechazado(_idChequeSeleccionado.Value, txtMotivoRechazo.Text, txtGL.Text, dtpFechaRechazo.Value, cGastoRechazo.GetValueDecimal, cIvaGastoRechazo.GetValueDecimal);
             chrmng.CompleteNumeroAsientoRechazo(_idChequeSeleccionado.Value, asiento.IdDocu);
@@ -265,7 +262,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 MessageBox.Show(@"Ha ocurrido un error en el asiento de rechazo.... ", @"Ups...", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-            
+
             //limpieza datos
             dgvListaCheques.ClearSelection();
             _idChequeSeleccionado = null;

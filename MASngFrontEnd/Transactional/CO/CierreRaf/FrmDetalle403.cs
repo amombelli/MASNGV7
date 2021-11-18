@@ -20,10 +20,10 @@ namespace MASngFE.Transactional.CO.CierreRaf
 
         private void FrmDetalle403_Load(object sender, EventArgs e)
         {
-            t403Bs.DataSource = new VendorConcil().GetListaFacturasIngresadasT403(_periodo, _tipoLx);
-            t203Bs.DataSource = new VendorConcil().GetLista203NotIn403(_periodo, _tipoLx);
+            t403Bs.DataSource = new VendorConcil(_periodo,_tipoLx).GetListaFacturasIngresadasT403();
+            t203Bs.DataSource = new VendorConcil(_periodo, _tipoLx).GetLista203NotIn403(_periodo, _tipoLx);
 
-            var lista203 = new VendorConcil().GetListaFacturasIngresadasT203(_periodo, _tipoLx);
+            var lista203 = new VendorConcil(_periodo, _tipoLx).GetListaFacturasIngresadasT203();
             foreach (DataGridViewRow row in dgvT403.Rows)
             {
                 int idCtaCte = Convert.ToInt32(row.Cells[idCtaCte1dgv.Name].Value);

@@ -83,7 +83,7 @@ namespace MASngFE.MasterData.BOM
         private void DgvListaFormulas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            
+
             if (e.ColumnIndex == 0)
             {
                 DataGridViewCheckBoxCell ch1 = new DataGridViewCheckBoxCell();

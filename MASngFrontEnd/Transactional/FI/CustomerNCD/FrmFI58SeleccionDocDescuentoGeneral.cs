@@ -22,15 +22,15 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         private readonly int _idCliente;
         private readonly string _tipoLx;
         private readonly CustomerNc.MotivoNotaCredito _motivo;
-        
+
         private T0400_FACTURA_H _recordSelected;
         private int _idFacturaSeleccionada;
         private decimal _importeAcumulado = 0;
-        
+
         //para aplicar los imtes
         public List<T0401_FACTURA_I> ItemList = new List<T0401_FACTURA_I>();
-        public List<int> FacturaAplica { get; private set; } 
-        public List<string>NumeroDocumentoAplica { get; private set; } //En caso de un solo documento - numero para descripcion
+        public List<int> FacturaAplica { get; private set; }
+        public List<string> NumeroDocumentoAplica { get; private set; } //En caso de un solo documento - numero para descripcion
         public DateTime? FechaAplicaDesde { get; private set; } //En caso de Periodo: Fecha Desde
         public DateTime? FechaAplicaHasta { get; private set; } //En caso de Periodo: Fecha Hasta
         //----------------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     return;
                 }
             }
-            
+
             dgvFactuHeader.DataSource = CustomerDoc.GetListaDocumentosSeleccionar(_idCliente, _tipoLx, true, false, false, false, false, false);
 
             if (_tipoLx == "L2")
@@ -89,7 +89,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             DataGridView dgv = (DataGridView)sender;
             if (e.RowIndex < 0) return;
-            
+
             _idFacturaSeleccionada = Convert.ToInt32(dgv[__idDocumento.Name, e.RowIndex].Value);
             _recordSelected = CustomerNc.Get400Header(_idFacturaSeleccionada);
             if (_recordSelected == null) return;
@@ -114,7 +114,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     $@"Descuento Cond. Especial S/Doc# {_recordSelected.TIPO_DOC}|{txtNumeroDocumento.Text}";
             }
         }
-       
+
         //Botones
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -147,7 +147,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
 
             //Alta del Item
-            _nc.AddItems("DESCGRAL",txtDescripcionItemNC.Text,Math.Abs(c1DescuentoPeso.GetValueDecimal)*-1 ,"4.1.3",ckIVA.Checked,1,"ARS");
+            _nc.AddItems("DESCGRAL", txtDescripcionItemNC.Text, Math.Abs(c1DescuentoPeso.GetValueDecimal) * -1, "4.1.3", ckIVA.Checked, 1, "ARS");
             _nc.SetTotalesInHeaderFromItems();
             _nc.SetDocumentoAsociado(_idFacturaSeleccionada);
             if (FechaAplicaDesde == null)
@@ -195,8 +195,8 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             if (FacturaAplica == null || FacturaAplica.Count == 0)
             {
-                var r = MessageBox.Show(@"No Ha Seleccionado Ningun Documento ni Agregado Ningun Importe para Bonificar" + Environment.NewLine +"Desea Regresar de todas formas a la pantalla anterior?",
-                    @"Sin Documentos Seleccionados",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                var r = MessageBox.Show(@"No Ha Seleccionado Ningun Documento ni Agregado Ningun Importe para Bonificar" + Environment.NewLine + "Desea Regresar de todas formas a la pantalla anterior?",
+                    @"Sin Documentos Seleccionados", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (r == DialogResult.Yes)
                 {
                     this.Close();
@@ -235,6 +235,6 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 $"Descuento Cond. Especial {c1DescuentoPorcentaje.GetValueDecimal.ToString("P2")} S/Doc# {_recordSelected.TIPO_DOC}|{txtNumeroDocumento.Text}";
         }
 
- 
+
     }
 }

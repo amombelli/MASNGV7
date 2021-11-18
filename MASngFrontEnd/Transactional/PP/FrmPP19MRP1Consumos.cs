@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.Transactional.CRM;
-using Tecser.Business.Transactional.PP;
 using Tecser.Business.Transactional.PP.MRP;
 
 namespace MASngFE.Transactional.PP
@@ -83,16 +75,16 @@ namespace MASngFE.Transactional.PP
             cRetorno30.SetValue = r.KgRetornados;
             //
             r.CalculoDeConsumo(60);
-            cconsumo60.SetValue = r.KgConsumidos/2;
-            cFabricacion60.SetValue = r.KgFabricados/2;
-            cDespacho60.SetValue = r.KgDespachados/2;
-            cRetorno60.SetValue = r.KgRetornados/2;
+            cconsumo60.SetValue = r.KgConsumidos / 2;
+            cFabricacion60.SetValue = r.KgFabricados / 2;
+            cDespacho60.SetValue = r.KgDespachados / 2;
+            cRetorno60.SetValue = r.KgRetornados / 2;
             //
             r.CalculoDeConsumo(180);
-            cconsumo180.SetValue = r.KgConsumidos/6;
-            cFabricacion180.SetValue = r.KgFabricados/6;
-            cDespacho180.SetValue = r.KgDespachados/6;
-            cRetorno180.SetValue = r.KgRetornados/6;
+            cconsumo180.SetValue = r.KgConsumidos / 6;
+            cFabricacion180.SetValue = r.KgFabricados / 6;
+            cDespacho180.SetValue = r.KgDespachados / 6;
+            cRetorno180.SetValue = r.KgRetornados / 6;
             //
 
             //CRM - Despachos y Pedidos

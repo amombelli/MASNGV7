@@ -37,7 +37,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             DocumentoX,
             Ambos
         };
-        
+
         public FrmChr2(int idCheque, FrmCrh.AccionCheque accion)
         {
             _idCheque = idCheque;
@@ -62,8 +62,8 @@ namespace MASngFE.Transactional.FI.GestionCheques
             cFechaTransaccion.ObtieneTCAuto = true;
             cFechaTransaccion.Value = DateTime.Today;
             cTc.SetValue = new ExchangeRateManager().GetExchangeRate(DateTime.Today);
-            lconta.BackColor =Color.White;
-            lcae.BackColor=Color.White;
+            lconta.BackColor = Color.White;
+            lcae.BackColor = Color.White;
             limprimir.BackColor = Color.White;
             switch (_accion)
             {
@@ -96,7 +96,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             {
                 btnNotaDebito.Enabled = false;
                 btnDocumentoX.Enabled = false;
-                panelGasto.BackColor= Color.White;
+                panelGasto.BackColor = Color.White;
                 btnAddGastos.Enabled = true;
                 panelGasto.Enabled = true;
                 icono1Documento.Set = CIconos.Tilde;
@@ -259,7 +259,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 if (_zdoc2 == null)
                 {
                     _zdoc2 = new NotaCreditoDebitoCustomer();
-                    _zdoc2.CreaHeaderMemory(NotaCreditoDebitoCustomer.TipoDoc.NotaDebito,_zdoc2.MapLxFromString(txtLx.Text), _idCliente,cFechaTransaccion.Value.Value,txtMotivoDevolucion.Text);
+                    _zdoc2.CreaHeaderMemory(NotaCreditoDebitoCustomer.TipoDoc.NotaDebito, _zdoc2.MapLxFromString(txtLx.Text), _idCliente, cFechaTransaccion.Value.Value, txtMotivoDevolucion.Text);
                 }
                 _zdoc2.AddItemMemory(1, txtItemAdd.Text, txtDescripcionAdd.Text, cImporteAdd.GetValueDecimal, true,
                         txtGlAdd.Text, null);
@@ -274,8 +274,8 @@ namespace MASngFE.Transactional.FI.GestionCheques
         }
         private void rb1GastoBancario_CheckedChanged(object sender, EventArgs e)
         {
-            var rb = (RadioButton) sender;
-            if (rb.Checked==false)return;
+            var rb = (RadioButton)sender;
+            if (rb.Checked == false) return;
 
             if (rb1GastoBancario.Checked)
             {
@@ -301,7 +301,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 _zdoc2.AddPeriodoComprobanteAsociado(Convert.ToDateTime(cChFechaRecibido.Value.Value), Convert.ToDateTime(cChFechaRecibido.Value.Value));
                 txtidncd1.Text = _zdoc1.SaveNewData().ToString();
                 txtidncd2.Text = _zdoc2.SaveNewData().ToString();
-                 var idF =_zdoc2.GenerateDocumentModuloFIRetornoCheque(); //solo si afecta a facturacion agrega documento en T400
+                var idF = _zdoc2.GenerateDocumentModuloFIRetornoCheque(); //solo si afecta a facturacion agrega documento en T400
                 var idCtaCte1 = new CustomerNcdAjustes().UpdateCtaCteDesdeNCD(_zdoc1.GetHeader().IDH);
                 var AsientoRtn1 = new AsientoGenerico("CHR").AsientoDevolucionChequeAClienteSr(_zdoc1.GetHeader().IDH);
                 //
@@ -332,11 +332,11 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 {
                     _zdoc2.AddPeriodoComprobanteAsociado(Convert.ToDateTime(cChFechaRecibido.Value.Value), Convert.ToDateTime(cChFechaRecibido.Value.Value));
                     txtidncd2.Text = _zdoc2.SaveNewData().ToString();
-                    var idF=_zdoc2.GenerateDocumentModuloFIRetornoCheque(); //solo si afecta a facturacion agrega documento en T400
+                    var idF = _zdoc2.GenerateDocumentModuloFIRetornoCheque(); //solo si afecta a facturacion agrega documento en T400
 
                     var idCtaCte2 = new CustomerNcdAjustes().UpdateCtaCteDesdeNCD(_zdoc2.GetHeader().IDH);
                     var AsientoRtn2 = new AsientoGenerico("CHR").AsientoDevolucionChequeAClienteSr(_zdoc2.GetHeader().IDH);
-                    
+
                     txtidctacte2.Text = idCtaCte2.ToString();
                     txtAsn2.Text = AsientoRtn2.IdDocu.ToString();
                     txtIdFactura.Text = idF.ToString();
@@ -365,14 +365,14 @@ namespace MASngFE.Transactional.FI.GestionCheques
                     btnImprimir.Enabled = true;
                     lconta.BackColor = Color.White;
                     lcae.BackColor = Color.White;
-                    limprimir.BackColor= Color.GreenYellow;
+                    limprimir.BackColor = Color.GreenYellow;
                 }
             }
         }
         private void RegistraOperacionTracker()
         {
             string cuentaDestino = null;
-            _idTracker = new ChequeRechazadoManager().AddChrTracker(_idCheque,_datosCheque.T0160_BANCOS.BCO_SHORTDESC
+            _idTracker = new ChequeRechazadoManager().AddChrTracker(_idCheque, _datosCheque.T0160_BANCOS.BCO_SHORTDESC
                 , _datosCheque.IMPORTE.Value, "EnCartera", _datosCheque.IdClienteRecibido.ToString(), "RetornoCliente", cuentaDestino,
                 "RetornoCliente", txtMotivoDevolucion.Text, "ND#");
             if (_idTracker < 1)
@@ -427,14 +427,14 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
             if (_tipoDocumentoGenerar == TipoDoc.Ambos)
             {
-                if (_zdoc1 ==null || _zdoc2 == null)
+                if (_zdoc1 == null || _zdoc2 == null)
                 {
                     MessageBox.Show(@"Se ha Seleccionado Contabilizacion Mixta (ND+AX) pero una de las listas esta vacia o los importes son $0.00", @"Error en Listas", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     return false;
                 }
-                
-                if (cImporteTotal1.GetValueDecimal == 0 || cImporteTotal2.GetValueDecimal==0)
+
+                if (cImporteTotal1.GetValueDecimal == 0 || cImporteTotal2.GetValueDecimal == 0)
                 {
                     MessageBox.Show(@"Se ha Seleccionado Contabilizacion Mixta (ND+AX) pero una de las listas esta vacia o los importes son $0.00", @"Error en Listas", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -444,7 +444,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
             if (_tipoDocumentoGenerar == TipoDoc.DocumentoX)
             {
-                if (_zdoc1 ==null)
+                if (_zdoc1 == null)
                 {
                     MessageBox.Show(@"La lista de Items Documento AX esta vacia", @"Error en Listas", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -460,7 +460,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
             if (_tipoDocumentoGenerar == TipoDoc.NotaDebito)
             {
-                if (_zdoc2 ==null)
+                if (_zdoc2 == null)
                 {
                     MessageBox.Show(@"La lista de Items Documento ND esta vacia", @"Error en Listas", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -477,11 +477,11 @@ namespace MASngFE.Transactional.FI.GestionCheques
             {
                 MessageBox.Show(@"Debe escribir el motivo de la devolucion del cheque al cliente", @"Faltan Datos",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                errorProvider1.SetError(txtMotivoDevolucion,"Complete la Informacion");
+                errorProvider1.SetError(txtMotivoDevolucion, "Complete la Informacion");
                 return false;
             }
             errorProvider1.SetError(txtMotivoDevolucion, "");
-            
+
             if (_tipoDocumentoGenerar == TipoDoc.Ambos)
             {
                 var r = MessageBox.Show(@"Se van a Generar 2 Documentos" + Environment.NewLine +
@@ -577,7 +577,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                     @"Fallo de Condiciones para Pedir CAE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var resultado = fe.SolicitudCAEFromT0400(idFactura, null,cChFechaRecibido.Value.Value,null);
+            var resultado = fe.SolicitudCAEFromT0400(idFactura, null, cChFechaRecibido.Value.Value, null);
             if (resultado.Resultado == "A")
             {
                 txtCaeNumero.Text = resultado.CAE;
@@ -594,7 +594,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                 _zdoc2.UpdateNumeroDocumentoAfterCAE(txtNumDoc2.Text);
                 dgvDoc2.DataSource = _zdoc2.GetItemList();
                 btnImprimir.Enabled = true;
-                
+
             }
             else
             {
@@ -604,7 +604,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtStatusDoc2.Text = DocumentFIStatusManager.StatusHeader.PendienteCAE.ToString().ToUpper();
             }
-            
+
         }
         private void cFechaTransaccion_Validated(object sender, EventArgs e)
         {

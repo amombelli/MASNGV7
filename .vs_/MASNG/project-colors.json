@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "8b36c303-745d-4372-91a1-26a8ffa8e7dd": {
+      "ProjectGuid": "8b36c303-745d-4372-91a1-26a8ffa8e7dd",
+      "DisplayName": "MASngFrontEnd",
+      "ColorIndex": 0
+    },
+    "0378b1f9-0ef6-4cbd-afc7-60adf8e4b4fb": {
+      "ProjectGuid": "0378b1f9-0ef6-4cbd-afc7-60adf8e4b4fb",
+      "DisplayName": "Tecser.Business",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

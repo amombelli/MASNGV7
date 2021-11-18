@@ -17,7 +17,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Vendor
                 var ctacte = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == idctacte);
 
                 var xctacte = new CtaCteVendor(fact.IDPROV).UpdateSaldoCtaCteResumen(ctacte.TIPO,
-                      ctacte.IMPORTE_ORI.Value * -1, ctacte.MONEDA, ctacte.TC);
+                      ctacte.IMPORTE_ORI * -1, ctacte.MONEDA, ctacte.TC);
 
                 db.T0203_CTACTE_PROV.Remove(ctacte);
                 int asiento;
@@ -57,11 +57,11 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Vendor
 
                 var idctacte = fact.IDCTACTE.Value;
                 var ctacte = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == idctacte);
-                if (ctacte.SALDOFACTURA.Value != ctacte.IMPORTE_ORI.Value)
+                if (ctacte.SALDOFACTURA != ctacte.IMPORTE_ORI)
                     return false;
 
                 var xctacte = new CtaCteVendor(fact.IDPROV).UpdateSaldoCtaCteResumen(ctacte.TIPO,
-                    ctacte.IMPORTE_ORI.Value * -1, ctacte.MONEDA, ctacte.TC);
+                    ctacte.IMPORTE_ORI * -1, ctacte.MONEDA, ctacte.TC);
 
                 db.T0203_CTACTE_PROV.Remove(ctacte);
                 int asiento;

@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using Tecser.Business.Transactional.CO.AsientoContable;
-using Tecser.Business.Transactional.FI;
 using TecserEF.Entity;
 
 namespace Tecser.Business.Transactional.CO.ContaFromDocuments
 {
-    public abstract class ContaClienteT400L1:ContaClienteBase
+    public abstract class ContaClienteT400L1 : ContaClienteBase
     {
 
         protected readonly int IdFactura;
         protected T0400_FACTURA_H T4H;
-        
+
         protected ContaClienteT400L1(int idCliente, int idFactura) : base(idCliente)
         {
             IdFactura = idFactura;
@@ -77,9 +73,9 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
         {
             base.AddData201(T4H.TotalFacturaN, IdFactura.ToString(), IdFactura, idT2, true);
         }
-        protected void UpdateData202(DateTime? fechaUltimaFacturaEmitida=null)
+        protected void UpdateData202(DateTime? fechaUltimaFacturaEmitida = null)
         {
-            base.AddData202(T4H.TotalFacturaN,fechaUltimaFacturaEmitida);
+            base.AddData202(T4H.TotalFacturaN, fechaUltimaFacturaEmitida);
         }
     }
 }

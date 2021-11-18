@@ -65,12 +65,12 @@ namespace Tecser.Business.Transactional.CO.Costos
         public string Moneda { get; protected set; }
         public bool Encontrado { get; protected set; }
         //-----------------------------------------------------------------------------------------------
-        
+
         public virtual void SaveCost(decimal costo)
         {
             //en clase abstracta solo la firma
             throw new NotImplementedException();
-        } 
+        }
         public abstract void GetCost();
         protected void SetMoneda(Monedas.SMonedas moneda)
         {

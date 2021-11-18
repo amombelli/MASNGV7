@@ -37,14 +37,14 @@ namespace Tecser.Business.Transactional.CO.Costos
                              FechaCostoRepo = mCR.CostRepoDate == null ? fechaCostoNull : mCR.CostRepoDate.Value,
                              FechaCostoStdA = mStd.FechaCosto == null ? fechaCostoNull : mStd.FechaCosto,
                              ManualUpd = mCR.ManualUpdated,
-                             RepoArs = mRepo.CostoUCArs==null? 9999999: mRepo.CostoUCArs,
+                             RepoArs = mRepo.CostoUCArs == null ? 9999999 : mRepo.CostoUCArs,
                              RepoUsd = mRepo.CostoUCUsd == null ? 9999999 : mRepo.CostoUCUsd,
-                             StdArs = mCR.CostoCR==null?9999999:mCR.CostoCR * tc,
-                             StdUsd = mCR.CostoCR==null?9999999:mCR.CostoCR,
-                             StdArsA = mStd.CostoArs==null?999999: mStd.CostoArs,
-                             StdUsdA = mCR.CostoStandardOld==null?9999999:mCR.CostoStandardOld,
-                             VarRepoStdArs = (mCR.CostoRepoUsd * tc) - (mCR.CostoStandardOld * tc)==null?10000: (mCR.CostoRepoUsd * tc) - (mCR.CostoStandardOld * tc),
-                             VarRepoStdUsd = mCR.CostoRepoUsd - mCR.CostoStandardOld==null? 100000:mCR.CostoRepoUsd - mCR.CostoStandardOld,
+                             StdArs = mCR.CostoCR == null ? 9999999 : mCR.CostoCR * tc,
+                             StdUsd = mCR.CostoCR == null ? 9999999 : mCR.CostoCR,
+                             StdArsA = mStd.CostoArs == null ? 999999 : mStd.CostoArs,
+                             StdUsdA = mCR.CostoStandardOld == null ? 9999999 : mCR.CostoStandardOld,
+                             VarRepoStdArs = (mCR.CostoRepoUsd * tc) - (mCR.CostoStandardOld * tc) == null ? 10000 : (mCR.CostoRepoUsd * tc) - (mCR.CostoStandardOld * tc),
+                             VarRepoStdUsd = mCR.CostoRepoUsd - mCR.CostoStandardOld == null ? 100000 : mCR.CostoRepoUsd - mCR.CostoStandardOld,
                              MaterialActivo = true
                          };
                 if (onlyActive)

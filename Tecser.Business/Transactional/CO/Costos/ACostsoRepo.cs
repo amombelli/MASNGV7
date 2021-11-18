@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Tecser.Business.MainApp;
-using Tecser.Business.MasterData;
 using Tecser.Business.SuperMD;
 using TecserEF.Entity;
-using TecserEF.Entity.DataStructure;
 
 namespace Tecser.Business.Transactional.CO.Costos
 {
@@ -25,12 +22,12 @@ namespace Tecser.Business.Transactional.CO.Costos
 
         public AStructureReposicionRtn DatosUc;
         public T0036_CostoReposicion RecordT0036 { get; protected set; }
-        
+
 
         //public DateTime FechaUltimaCompra { get; protected set; }
         //public int VendorUc { get; protected set; }
         //public decimal KgUltimaCompra { get; protected set; }
-         
+
         public decimal VariacionARS { get; protected set; }
         public decimal VariacionUSD { get; protected set; }
         private bool _autoFix;
@@ -76,7 +73,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                 }
             }
         }
-        
+
         /// <summary>
         /// Guarda el Registro de Costo en Tabla
         /// </summary>
@@ -230,7 +227,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                     {
                         costRollHeader.UpdCompras = true;
                     }
-                    return db.SaveChanges()>0;
+                    return db.SaveChanges() > 0;
                 }
             }
         }
@@ -242,7 +239,7 @@ namespace Tecser.Business.Transactional.CO.Costos
         {
             _autoFix = valor;
         }
-        
+
         /// <summary>
         /// Funcion usada como FIX para obtener datos almancenados historicamente en T404
         /// </summary>

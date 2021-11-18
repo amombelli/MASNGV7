@@ -3,9 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Tecser.Business.Tools;
 using Tecser.Business.Transactional.FI;
-using Tecser.Business.Transactional.FI.MainDocumentData;
 using Tecser.Business.Transactional.MM;
-using TecserEF.Entity;
 using TSControls;
 
 namespace MASngFE.Transactional.FI.CustomerNCD
@@ -43,13 +41,13 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         public int? IdFacturaSeleccionada { get; private set; }
         public int IdRetornoSeleccionado { get; private set; }
         public decimal KgNotaCredito { get; private set; }
-        
-    
+
+
 
         private void FrmSeleccionMaterialNcd_Load(object sender, EventArgs e)
         {
             this.dgvSeleccionDevolucion.CellEnter -= new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSeleccionDevolucion_CellEnter);
-            t0360RTNBindingSource.DataSource = new ManageRetornoMaterial().GetDevolucionesFromCustomer(_idCliente,true).OrderByDescending(c=>c.IDX).ToList();
+            t0360RTNBindingSource.DataSource = new ManageRetornoMaterial().GetDevolucionesFromCustomer(_idCliente, true).OrderByDescending(c => c.IDX).ToList();
             dgvSeleccionDevolucion.DataSource = t0360RTNBindingSource;
             dgvSeleccionDevolucion.ClearSelection();
             this.dgvSeleccionDevolucion.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSeleccionDevolucion_CellEnter);
@@ -111,16 +109,16 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
             return true;
         }
-        
+
         private void dgvSeleccionItem_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             //aca seleccion de item - var algun encabezado de la factura como fecha , etc
             if (e.RowIndex >= 0)
             {
-                IdFacturaSeleccionada= Convert.ToInt32(dgvSeleccionItem[__idFacturaSeleccionada.Name, e.RowIndex].Value);
+                IdFacturaSeleccionada = Convert.ToInt32(dgvSeleccionItem[__idFacturaSeleccionada.Name, e.RowIndex].Value);
                 csemFacturaEncontrada.SetLights = CtlSemaforo.ColoresSemaforo.Verde;
-                var h =new GestionT400(IdFacturaSeleccionada.Value).H4;
-                txtNumeroFactura.Text = h.TIPO_DOC+"#"+h.NumeroDoc;
+                var h = new GestionT400(IdFacturaSeleccionada.Value).H4;
+                txtNumeroFactura.Text = h.TIPO_DOC + "#" + h.NumeroDoc;
                 txtFechaFactura.Text = h.FECHA.ToString("g");
                 txtTc.Text = h.TC.ToString();
                 txtLx.Text = h.TIPOFACT;
@@ -143,7 +141,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 txtGLI.Text = null;
             }
         }
-        
+
 
         private void dgvSeleccionDevolucion_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -201,7 +199,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             IdFacturaSeleccionada = null;
             IdRetornoSeleccionado = -1;
-            KgNotaCredito =0;
+            KgNotaCredito = 0;
             this.Close();
             this.DialogResult = DialogResult.Cancel;
             return;
@@ -214,7 +212,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
             //Alta del Item
 
-            _nc.AddItems(txtMaterialRtn.Text, @"Devolucion Material", cUnitarioSugerido.GetValueDecimal,txtGLV.Text , ckAplicaIVA.Checked, cKgNc.GetValueDecimal*-1, "ARS",txtGLI.Text);
+            _nc.AddItems(txtMaterialRtn.Text, @"Devolucion Material", cUnitarioSugerido.GetValueDecimal, txtGLV.Text, ckAplicaIVA.Checked, cKgNc.GetValueDecimal * -1, "ARS", txtGLI.Text);
             _nc.SetTotalesInHeaderFromItems();
             _nc.SetDocumentoAsociado(IdRetornoSeleccionado); //en documento asociado paso el IDRTN
             KgNotaCredito = cKgNc.GetValueDecimal;

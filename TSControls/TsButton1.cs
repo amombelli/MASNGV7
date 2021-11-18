@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TSControls
@@ -84,7 +78,7 @@ namespace TSControls
 
         private void TsButton1_Load(object sender, EventArgs e)
         {
-            var x = (TsButton1) sender;
+            var x = (TsButton1)sender;
             Enabled = x.Enabled;
         }
 
@@ -116,13 +110,13 @@ namespace TSControls
 
         private void TsButton1_SizeChanged(object sender, EventArgs e)
         {
-            panel.Size = new Size(base.Width, base.Height-28);
+            panel.Size = new Size(base.Width, base.Height - 28);
             panel.Location = new Point(0, 0);
-            panel2.Size = new Size(base.Width, base.Height - miBoton.Height-1);
-            panel2.Location = new Point(0,panel.Height);
+            panel2.Size = new Size(base.Width, base.Height - miBoton.Height - 1);
+            panel2.Location = new Point(0, panel.Height);
             miBoton.Size = new Size(base.Width - 8, base.Height - 34);
-            miBoton.Location = new Point(4,3);
-            miLabel.Size = new Size(this.Width-5, 24);
+            miBoton.Location = new Point(4, 3);
+            miLabel.Size = new Size(this.Width - 5, 24);
             miLabel.Location = new Point(1, 1);
             panel2.BackColor = panel.BackColor;
         }

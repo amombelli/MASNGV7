@@ -59,7 +59,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
             var ctaCte = new CtaCteCustomer(CobH.IdCliente.Value);
             var idCtaCte = ctaCte.AddCtaCteDetalleRecord(TipoDocumentoSistema, CobH.CUENTA,
                 CobH.FECHA, CobH.NRECIBO, CobH.NRECIBO, CobH.MON, importeOri, CobH.TC, importeARS,
-                importeARS, IdCobranza,CobH.IDCOB);
+                importeARS, IdCobranza, CobH.IDCOB);
             ctaCte.UpdateSaldoCtaCteResumen(CobH.CUENTA, importeOri, CobH.MON, CobH.TC);
             return idCtaCte;
         }
@@ -76,8 +76,8 @@ namespace Tecser.Business.Transactional.FI.Cobranza
             string nRecibo = IdCobranza.ToString().Trim();
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                var data = db.T0207_SPLITFACTURAS.Where(c => c.NRECIBO == nRecibo).ToList();
-                if (data.Count  ==0)
+                var data = db.T0207_SPLITFACTURAS.Where(c => c.IDCOB == IdCobranza).ToList();
+                if (data.Count == 0)
                     return 0;
                 return data.Sum(c => c.MontoImputado);
             }

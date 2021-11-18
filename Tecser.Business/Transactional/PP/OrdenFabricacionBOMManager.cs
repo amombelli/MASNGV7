@@ -41,7 +41,7 @@ namespace Tecser.Business.Transactional.PP
                 db.SaveChanges();
             }
         }
-        
+
         public void RecalculaPorcentajeRealUtilizado(int numeroOF, decimal kgMPFinal)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -56,7 +56,7 @@ namespace Tecser.Business.Transactional.PP
             }
         }
 
-        
+
         /// <summary>
         /// 20170716 Agrega item para reproceso / material fusion
         /// </summary>

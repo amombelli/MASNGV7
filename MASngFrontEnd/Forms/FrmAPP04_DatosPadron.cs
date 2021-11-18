@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebServicesAFIP;
 
@@ -17,7 +11,7 @@ namespace MASngFE.Forms
         private readonly string _tipodocumento;
         public EstructuraPadronAfipA5 cn { get; private set; }
         public int IdLocalidad { get; private set; }
-        public FrmAPP04_DatosPadron(string numeroDocumento, string tipodocumento="80")
+        public FrmAPP04_DatosPadron(string numeroDocumento, string tipodocumento = "80")
         {
             _numeroDocumento = numeroDocumento;
             _tipodocumento = tipodocumento;
@@ -45,7 +39,7 @@ namespace MASngFE.Forms
         {
             mtxtNumeroDocumento.Text = _numeroDocumento;
             txtTipoDocumento.Text = _tipodocumento;
-            
+
             if (string.IsNullOrEmpty(mtxtNumeroDocumento.Text))
             {
                 MessageBox.Show(@"Debe completar el numero de CUIT para poder obtener la info desde el WebServices",
@@ -82,7 +76,7 @@ namespace MASngFE.Forms
 
             txtRazonSocial.Text = cn.Denominacion;
             txtRazonSocial.ForeColor = Color.Red;
-            
+
             txtDireccion.Text = cn.Direccion;
             txtDireccion.ForeColor = Color.Red;
             txtCodigoPostal.Text = cn.CodPostal;

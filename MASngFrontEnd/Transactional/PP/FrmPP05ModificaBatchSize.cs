@@ -302,21 +302,7 @@ namespace MASngFE.Transactional.PP
                     item.CantidadBase = 0;
                 totalBase += item.CantidadBase.Value;
             }
-
-            ////*** Calculo de Sumarizacion
-            //decimal kgFormula = 0;
-            //decimal kgFabricar = 0;
-            //decimal porFormula = 0;
-            //int i = 1;
-            //foreach (var item in _lst.Where(c => c.idItemFormula != 999))
-            //{
-            //    kgFabricar += item.CantidadKG.Value;
-            //    kgFormula += item.CantidadBase.Value;
-            //    porFormula += item.CantidadPor.Value;
-            //    item.idItemFormula = i; //Fix ID CostItems
-            //    i++;
-            //}
-
+            
             //Actualizacion de Datos Sumarizados '999'
             var lineaTotales = _lst.Where(c => c.idItemFormula == 999).ToList();
             if (lineaTotales.Any() == false)

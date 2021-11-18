@@ -121,9 +121,9 @@ namespace MASngFE.Transactional.FI.Cobranza
             if (p == DialogResult.No)
                 return;
 
-            var x  = new CobranzaDesimputa();
+            var x = new CobranzaDesimputa();
             x.DesimputarCobranzaCompleta(_idCob);
-           
+
         }
     }
 }

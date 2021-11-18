@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -28,7 +24,8 @@ namespace Tecser.Business.Transactional.MM
                 var x = db.T0056_REMITO_I.Where(c =>
                     c.MATERIALAKA.ToUpper().Equals(material.ToUpper()) &&
                     c.T0055_REMITO_H.T0007_CLI_ENTREGA.IDCLIENTE == _idCliente).ToList();
-                if (x.Any()) { 
+                if (x.Any())
+                {
                     MaterialOk = true;
                     MaterialCode = material;
                 }

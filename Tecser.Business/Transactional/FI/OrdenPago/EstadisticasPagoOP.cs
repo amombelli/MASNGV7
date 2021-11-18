@@ -26,11 +26,11 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
                 foreach (var fact in opF)
                 {
                     var dataCtaCte = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == fact.IdCtaCte.Value);
-                    var fechaFactura = dataCtaCte.Fecha.Value;
+                    var fechaFactura = dataCtaCte.Fecha;
                     var ts = fechaOP - fechaFactura;
                     var diasFactura = (int)ts.TotalDays;
-                    importeAcum += dataCtaCte.IMPORTE_ARS.Value;
-                    importePonde += (diasFactura * dataCtaCte.IMPORTE_ARS.Value);
+                    importeAcum += dataCtaCte.IMPORTE_ARS;
+                    importePonde += (diasFactura * dataCtaCte.IMPORTE_ARS);
                 }
 
                 if (importeAcum == 0)

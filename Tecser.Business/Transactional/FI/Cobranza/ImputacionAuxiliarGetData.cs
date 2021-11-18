@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -39,7 +36,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
             _idCliente = idCliente;
             _lx = tipoLx;
         }
-        public void SetCliente(int? idCliente,bool getData=true)
+        public void SetCliente(int? idCliente, bool getData = true)
         {
             _idCliente = idCliente;
             if (getData)
@@ -49,7 +46,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 GetImporteFacturaSinImputar();
             }
         }
-        public void SetLx(string tipoLX,bool getData=true)
+        public void SetLx(string tipoLX, bool getData = true)
         {
             switch (tipoLX)
             {
@@ -132,14 +129,14 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 {
                     if (_lx == LX.SinSeleccion)
                     {
-                        var x= db.T0207_SPLITFACTURAS.Where(c => c.MontoImputado == 0 && c.ImporteAImputar >0).ToList();
+                        var x = db.T0207_SPLITFACTURAS.Where(c => c.MontoImputado == 0 && c.ImporteAImputar > 0).ToList();
                         FacturaSinImputarSeleccion = x.Any() ? x.Sum(c => c.ImporteAImputar) : 0;
                         return x;
                     }
                     else
                     {
                         string tipo = _lx.ToString();
-                        var x= db.T0207_SPLITFACTURAS.Where(c => c.MontoImputado == 0 && c.ImporteAImputar > 0 && c.TIPO == tipo).ToList();
+                        var x = db.T0207_SPLITFACTURAS.Where(c => c.MontoImputado == 0 && c.ImporteAImputar > 0 && c.TIPO == tipo).ToList();
                         FacturaSinImputarSeleccion = x.Any() ? x.Sum(c => c.ImporteAImputar) : 0;
                         return x;
                     }
@@ -148,7 +145,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 {
                     if (_lx == LX.SinSeleccion)
                     {
-                        var x= db.T0207_SPLITFACTURAS.Where(c => c.MontoImputado == 0 && c.ImporteAImputar > 0 && c.CLIENTE == _idCliente)
+                        var x = db.T0207_SPLITFACTURAS.Where(c => c.MontoImputado == 0 && c.ImporteAImputar > 0 && c.CLIENTE == _idCliente)
                             .ToList();
                         FacturaSinImputarSeleccion = x.Any() ? x.Sum(c => c.ImporteAImputar) : 0;
                         return x;
@@ -156,7 +153,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                     else
                     {
                         string tipo = _lx.ToString();
-                        var x= db.T0207_SPLITFACTURAS
+                        var x = db.T0207_SPLITFACTURAS
                             .Where(c => c.MontoImputado == 0 && c.ImporteAImputar > 0 && c.TIPO == tipo && c.CLIENTE == _idCliente).ToList();
                         FacturaSinImputarSeleccion = x.Any() ? x.Sum(c => c.ImporteAImputar) : 0;
                         return x;

@@ -39,7 +39,7 @@ namespace Tecser.Business.Transactional.FI
 
             try
             {
-                return (StatusHeader) Enum.Parse(typeof(StatusHeader), status, true);
+                return (StatusHeader)Enum.Parse(typeof(StatusHeader), status, true);
             }
             catch (Exception)
             {

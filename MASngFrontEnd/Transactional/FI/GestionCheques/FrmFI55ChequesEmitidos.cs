@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.MasterData;
 using Tecser.Business.Tools;
@@ -44,7 +39,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             dgvData.ClearSelection();
             ImportesSumarizados();
         }
-        
+
         private void ckSoloPendientes_CheckedChanged(object sender, EventArgs e)
         {
             if (ckSoloPendientes.Checked)
@@ -71,8 +66,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
         {
             DateTime fechaHoy = DateTime.Today;
             DateTime fecha5Dias = DateTime.Today.AddDays(5);
-            
-            decimal x;
+
             var i1 = _lista.Where(c => c.FechaAcreditacion < fechaHoy && c.PendienteAcreditacion).ToList();
             txtImporteAcreditacionVencida.Text = i1.Any() ? i1.Sum(c => c.ImporteCheque).ToString("C2") : 0.ToString("C2");
 
@@ -83,13 +77,12 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
             i1 = _lista.Where(c => c.PendienteAcreditacion).ToList();
             txtImporteEmitidoPendiente.Text = i1.Any() ? i1.Sum(c => c.ImporteCheque).ToString("C2") : 0.ToString("C2");
-
         }
 
 
         private void rbAcreditacionVencida_CheckedChanged(object sender, EventArgs e)
         {
-            var r = (RadioButton) sender;
+            var r = (RadioButton)sender;
             if (r.Checked == false)
                 return;
 
@@ -105,7 +98,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             {
                 if (rbProximos5Dias.Checked)
                 {
-                    dgvData.DataSource = _lista.Where(c => c.PendienteAcreditacion && c.FechaAcreditacion >= fechaHoy && c.FechaAcreditacion<=fecha5Dias).OrderBy(c => c.FechaAcreditacion).ToList();
+                    dgvData.DataSource = _lista.Where(c => c.PendienteAcreditacion && c.FechaAcreditacion >= fechaHoy && c.FechaAcreditacion <= fecha5Dias).OrderBy(c => c.FechaAcreditacion).ToList();
                 }
                 else
                 {
@@ -206,18 +199,30 @@ namespace MASngFE.Transactional.FI.GestionCheques
 
         private void btnAcreditar_Click(object sender, EventArgs e)
         {
-            new GestionChequesEmitidos().SetChequeAcreditado(Convert.ToInt32(txtIdRegistro.Text),dtpFechaAcreditacionConfirmada.Value);
-            dgvData.Refresh();
-            MapDataChequeSeleccionado(Convert.ToInt32(txtIdRegistro.Text));
+            if (dtpFechaAcreditacionConfirmada.Value < Convert.ToDateTime(txtFechaAcreditacion.Text))
+            {
+                MessageBox.Show(
+                    @"La fecha de Acreditacion real es Incorrecta porque el cheque aun no esta en Fecha de acreditacion",
+                    @"Revise la Fecha de Acreditacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            var numeroAsiento = new AsientoOrdenPago(Convert.ToInt32(txtNumeroOp.Text),"ACH").AsientoAcreditacionCheque(txtBanco.Text,FormatAndConversions.CCurrencyADecimal(txtImporte.Text),
+            int idRegistro = Convert.ToInt32(txtIdRegistro.Text);
+
+            new GestionChequesEmitidos().SetChequeAcreditado(Convert.ToInt32(txtIdRegistro.Text), dtpFechaAcreditacionConfirmada.Value);
+            dgvData.Refresh();
+            MapDataChequeSeleccionado(idRegistro);
+
+            var numeroAsiento = new AsientoOrdenPago(Convert.ToInt32(txtNumeroOp.Text), "ACH").AsientoAcreditacionCheque(txtBanco.Text, FormatAndConversions.CCurrencyADecimal(txtImporte.Text),
                 dtpFechaAcreditacionConfirmada.Value, Convert.ToInt32(txtIdRegistro.Text));
 
             //Se Registra en REG el debito en el banco
-            new SubdiarioCajaManager().WriteToDb(txtBanco.Text, dtpFechaAcreditacionConfirmada.Value,
+            var idXreg=new SubdiarioCajaManager().WriteToDb(txtBanco.Text, dtpFechaAcreditacionConfirmada.Value,
                 SubdiarioCajaManager.PC.Proveedor, Convert.ToInt32(txtVendorId.Text), "OP", txtNumeroOp.Text,
                 @"Acreditacion Cheque", "ARS", 0, FormatAndConversions.CCurrencyADecimal(txtImporte.Text), "L1", "ACH", numeroAsiento.IdDocu,
-                new CuentasManager().GetGL(txtBanco.Text));
+                new CuentasManager().GetGL(txtBanco.Text),idCheque:idRegistro,chequeEmitidoPropio:true);
+            //Update T159 con datos post-Acreditacion
+            GestionChequesEmitidos.Update159AfterAcreditacion(idRegistro,idXreg,numeroAsiento.IdDocu);
         }
 
         private void btnCancelarAcreditacion_Click(object sender, EventArgs e)
@@ -232,7 +237,7 @@ namespace MASngFE.Transactional.FI.GestionCheques
             //Se Registra en REG el credito en el banco
             new SubdiarioCajaManager().WriteToDb(txtBanco.Text, dtpFechaAcreditacionConfirmada.Value,
                 SubdiarioCajaManager.PC.Proveedor, Convert.ToInt32(txtVendorId.Text), "OP", txtNumeroOp.Text,
-                @"Reversal - Acreditacion Cheque", "ARS", FormatAndConversions.CCurrencyADecimal(txtImporte.Text), 0,"L1", "ACH", numeroAsiento.IdDocu,
+                @"Reversal - Acreditacion Cheque", "ARS", FormatAndConversions.CCurrencyADecimal(txtImporte.Text), 0, "L1", "ACH", numeroAsiento.IdDocu,
                 new CuentasManager().GetGL(txtBanco.Text));
         }
     }

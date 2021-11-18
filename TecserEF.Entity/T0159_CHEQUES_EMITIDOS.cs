@@ -28,5 +28,9 @@ namespace TecserEF.Entity
         public string Status { get; set; }
         public bool ECheque { get; set; }
         public Nullable<System.DateTime> FechaAcreditacionReal { get; set; }
+        public string LX { get; set; }
+        public int IdRegister { get; set; }
+        public Nullable<decimal> NasEmision { get; set; }
+        public Nullable<decimal> NasAcreditacion { get; set; }
     }
 }

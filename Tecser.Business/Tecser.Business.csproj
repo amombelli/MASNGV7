@@ -131,6 +131,7 @@
     <Compile Include="MasterData\CuentasManager.cs" />
     <Compile Include="MasterData\CustomerManager.cs" />
     <Compile Include="MasterData\CustomerSelectedManager.cs" />
+    <Compile Include="MasterData\Customer\CustomerMng2.cs" />
     <Compile Include="MasterData\Material Master\AbmCustomerMaster.cs" />
     <Compile Include="MasterData\Material Master\AkaManager.cs" />
     <Compile Include="MasterData\Material Master\ContainerManager.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="MasterData\MaterialMasterManager.cs" />
     <Compile Include="MasterData\MaterialOrigenDataType.OrigenDataType.cs" />
     <Compile Include="MasterData\NelManager.cs" />
+    <Compile Include="MasterData\Vendor Master\VendorMng2.cs" />
     <Compile Include="MasterData\Vendor Master\VendorValidation.cs" />
     <Compile Include="MasterData\VendorInforRecordManager.cs" />
     <Compile Include="MasterData\VendorManager.cs" />
@@ -202,6 +204,7 @@
     <Compile Include="Transactional\Cierre\ConciliacionSaldos203_204.cs" />
     <Compile Include="Transactional\Cierre\ConciliaGeneral.cs" />
     <Compile Include="Transactional\Cierre\VendorConcil.cs" />
+    <Compile Include="Transactional\Cierre\VendorEgresosConcilia.cs" />
     <Compile Include="Transactional\CO\AsientoContable\ACustomerL2_T400.cs" />
     <Compile Include="Transactional\CO\AsientoContable\AsientoCopia.cs" />
     <Compile Include="Transactional\CO\AsientoContable\AsientoMateriales.cs" />
@@ -344,6 +347,7 @@
     <Compile Include="Transactional\FI\GestionPercepciones.cs" />
     <Compile Include="Transactional\FI\Imputacion\ManageVendorImputacionDocumentos.cs" />
     <Compile Include="Transactional\FI\OrdenPago\OPImputacionFactura.cs" />
+    <Compile Include="Transactional\FI\PeriodoManager.cs" />
     <Compile Include="Transactional\FI\RegisterManager.cs" />
     <Compile Include="Transactional\FI\TaxModule\TaxModuleManager.cs" />
     <Compile Include="Transactional\FI\TaxModule\TaxModuleVendorManager.cs" />

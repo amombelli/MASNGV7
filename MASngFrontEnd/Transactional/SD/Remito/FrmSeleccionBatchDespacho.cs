@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Windows.Forms;
+using Tecser.Business.MasterData;
 using Tecser.Business.Tools;
 using Tecser.Business.Transactional.MM;
+using TecserSQL.Data.MasterData;
 
 namespace MASngFE.Transactional.SD.Remito
 {
-    public partial class FrmSeleccionBatchDespacho : Form
+    public partial class FrmSD12SeleccionBatchDespacho : Form
     {
-        public FrmSeleccionBatchDespacho(string material, decimal kgRequeridos)
+        private readonly string _material;
+        private readonly decimal _kgRequeridos;
+        private decimal _kgSeleccion;
+
+
+        public FrmSD12SeleccionBatchDespacho(string material, decimal kgRequeridos)
         {
+            _material = material;
+            _kgRequeridos = kgRequeridos;
             InitializeComponent();
-            txtKGRequerido.Text = kgRequeridos.ToString("N2");
-            txtPrimario.Text = material;
         }
 
         public int? IdStockSeleccionado = null;
@@ -21,13 +28,21 @@ namespace MASngFE.Transactional.SD.Remito
 
         private void FrmSeleccionBatchDespacho_Load(object sender, EventArgs e)
         {
-            SetDataSource();
-        }
-        private void SetDataSource()
-        {
+            txtCantidad.Text = _kgRequeridos.ToString("N2");
+            txtMaterialRequerido.Text = _material;
+            var mat = MaterialMasterManager.GetPrimario(_material);
+            if (mat == "@")
+            {
+                MessageBox.Show(@"No se ha podido encontrar el codigo primario del material seleccionado",
+                    @"Error en Material", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+            txtPrimario.Text = mat == _material ? _material : mat;
             dgvStock.DataSource = new StockList().GetAllByMaterial_DisponibleDespacho(txtPrimario.Text, "CERR");
             dgvStock.ClearSelection();
-            txtKgADespachar.Text = 0.ToString("N2");
+            ctlKgDespachar.SetValue = 0;
+            txtKGSeleccion.Text = @"0";
+            txtKgMaximo.Text = @"0";
             txtIdStockSeleccionado.Text = null;
         }
         private void dgvStock_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -35,25 +50,23 @@ namespace MASngFE.Transactional.SD.Remito
             //si hace click en cualquier celda (menos en batch)
             if (e.RowIndex >= 0)
             {
-                txtKGSeleccion.Text =
-                    Convert.ToDecimal(dgvStock[dgvStock.Columns["kg_dgv"].Index, e.RowIndex].Value).ToString("N2");
-                txtIdStockSeleccionado.Text =
-                    dgvStock[dgvStock.Columns["idstock_dgv"].Index, e.RowIndex].Value.ToString();
-
-                IdStockSeleccionado = Convert.ToInt32(dgvStock[dgvStock.Columns[idstock_dgv.Name].Index, e.RowIndex].Value);
-                SlocSeleccionado =
-                    dgvStock[dgvStock.Columns[sLOCDataGridViewTextBoxColumn.Name].Index, e.RowIndex].Value.ToString();
-                txtLote.Text = dgvStock[dgvStock.Columns["lote_dgv"].Index, e.RowIndex].Value.ToString();
-
-                if (Convert.ToDecimal(dgvStock[dgvStock.Columns["kg_dgv"].Index, e.RowIndex].Value) >
-                    Convert.ToDecimal(txtKGRequerido.Text))
+                _kgSeleccion = Convert.ToDecimal(dgvStock[__kg.Name, e.RowIndex].Value);
+                IdStockSeleccionado = Convert.ToInt32(dgvStock[__idstock.Name, e.RowIndex].Value);
+                txtIdStockSeleccionado.Text = IdStockSeleccionado.ToString();
+                SlocSeleccionado = dgvStock[__sloc.Name, e.RowIndex].Value.ToString();
+                txtLote.Text = dgvStock[__lote.Name, e.RowIndex].Value.ToString();
+                txtKGSeleccion.Text = _kgSeleccion.ToString("N2");
+                if (_kgSeleccion > _kgRequeridos)
                 {
-                    txtKgADespachar.Text = txtKGRequerido.Text;
+                    txtKgMaximo.Text = _kgRequeridos.ToString("N2");
+                    ctlKgDespachar.ValorMaximo = _kgRequeridos;
+                    ctlKgDespachar.SetValue = _kgRequeridos;
                 }
                 else
                 {
-                    txtKgADespachar.Text =
-                        Convert.ToDecimal(dgvStock[dgvStock.Columns["kg_dgv"].Index, e.RowIndex].Value).ToString("N2");
+                    txtKgMaximo.Text = _kgSeleccion.ToString("N2");
+                    ctlKgDespachar.ValorMaximo = _kgSeleccion;
+                    ctlKgDespachar.SetValue = _kgSeleccion;
                 }
             }
         }
@@ -61,14 +74,14 @@ namespace MASngFE.Transactional.SD.Remito
         {
             if (ckVerTodoStock.Checked == false)
             {
-                btnSeleccion.Enabled = true;
+                btnSelect.Enabled = true;
                 dgvStock.DataSource = new StockList().GetAllByMaterial_DisponibleDespacho(txtPrimario.Text, "CERR");
                 dgvStock.ClearSelection();
 
             }
             else
             {
-                btnSeleccion.Enabled = false;
+                btnSelect.Enabled = false;
                 dgvStock.DataSource = new StockList().GetAllByMaterial(txtPrimario.Text);
                 dgvStock.ClearSelection();
 
@@ -76,52 +89,35 @@ namespace MASngFE.Transactional.SD.Remito
         }
         private void dgvStock_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //esto es por si agregamos algun boton en el DGV
         }
-        private void txtKgADespachar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            FormatAndConversions.SoloDecimalKeyPress(sender, e);
-        }
-        private void txtKgADespachar_Leave(object sender, EventArgs e)
-        {
-            if (Convert.ToDecimal(txtKgADespachar.Text) > Convert.ToDecimal(txtKGRequerido.Text) * (decimal)(1.20))
-            {
-                MessageBox.Show(@"La Cantidad seleccionada supera a la cantidad requerida segun la Orden de Venta y Excede la tolerancia [20%] Permitida" + Environment.NewLine + "En caso de ser correcta esta nueva cantidad modifique primero la Orden de Venta", @"Kg Seleccionados",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                txtKgADespachar.Text = txtKGRequerido.Text;
-            }
-        }
-        private void btnSeleccion_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtIdStockSeleccionado.Text))
-            {
-                MessageBox.Show(@"Debe Seleccionar una linea de Stock para Asignar Lote", @"Seleccion de Lote",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                txtKGSeleccion.Text = 0.ToString("N2");
-                txtKgADespachar.Text = 0.ToString("N2");
-
-                return;
-            }
-
-            if (Convert.ToDecimal(txtKgADespachar.Text) > 0)
-            {
-                KgSeleccionados = decimal.Round(Convert.ToDecimal(txtKgADespachar.Text), 2);
-                IdStockSeleccionado = Convert.ToInt32(txtIdStockSeleccionado.Text);
-                BatchSeleccionado = txtLote.Text;
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show(@"La cantidad de Kg seleccionada debe ser mayor a cero y menor o igual a los Kg Requeridos por el cliente ",
-                    @"Seleccion de Kg", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-        private void btnSalir_Click(object sender, EventArgs e)
+        
+        private void btnClose_Click(object sender, EventArgs e)
         {
             IdStockSeleccionado = null;
             this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            if (IdStockSeleccionado == null)
+            {
+                MessageBox.Show(@"Debe Seleccionar una linea de Stock para Asignar Lote", @"Seleccion de Lote",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (ctlKgDespachar.GetValueDecimal == 0 || ctlKgDespachar.GetValueDecimal > _kgRequeridos)
+            {
+                MessageBox.Show(@"Los Kg Seleccionandos no se corresponden al requerimiento de KG",
+                    @"Error en Seleccion de KG", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            KgSeleccionados = ctlKgDespachar.GetValueDecimal;
+            BatchSeleccionado = txtLote.Text;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }

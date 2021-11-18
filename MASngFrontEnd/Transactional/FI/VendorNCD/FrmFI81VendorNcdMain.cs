@@ -270,7 +270,7 @@ namespace MASngFE.Transactional.FI.VendorNCD
                 txtCuitValidado.BackColor = Color.Red;
             }
 
-            var ncdH = new ZContaNotaCreditoConT400(_idNcd,_id403).GetDocumentoHeader();
+            var ncdH = new ZContaNotaCreditoConT400(_idNcd, _id403).GetDocumentoHeader();
             //   txtNumeroDocumento.Text = ncdH.NDOC;
             txtEstadoDocumento.Text = _estado.ToString();
 
@@ -367,7 +367,7 @@ namespace MASngFE.Transactional.FI.VendorNCD
                     {
                         ix.GastosOrigen = f0.GastosCheque;
                         ix.IVAGastosOrigen = f0.IVAGastosCheque;
-                        ix.OrigenRechazo = "NCDP@" +txtRazonSocial.Text +"@ND#" + txtNumeroDocumento.Text;
+                        ix.OrigenRechazo = "NCDP@" + txtRazonSocial.Text + "@ND#" + txtNumeroDocumento.Text;
                     }
                     AsignaNumeroItem();
                     t0311NCDPIBindingSource.DataSource = _listaItems.ToList();
@@ -572,7 +572,7 @@ namespace MASngFE.Transactional.FI.VendorNCD
             _kgSeleccionados += cantidad;
             txtKgTotalFacturados.Text = _kgSeleccionados.ToString("N2");
         }
-        
+
         private int AsignaNumeroItem()
         {
             if (_listaItems.Count == 0)
@@ -941,7 +941,7 @@ namespace MASngFE.Transactional.FI.VendorNCD
         {
             //al validar descuento recalcula!
         }
-        
+
         #region Botones
 
         private void btnSetRegistrado_Click(object sender, EventArgs e)
@@ -969,19 +969,19 @@ namespace MASngFE.Transactional.FI.VendorNCD
             txtEstadoDocumento.BackColor = Color.GreenYellow;
             _estado = DocumentFIStatusManager.StatusHeader.Registrada;
             AccionEstadoDocumento();
-            
+
             //Comienza Contabilizacion de Factura Proveedor
-            
+
             //1 Add Factura 203 + Update deuda 204  >>retorno idctacte
             var ctacte = new CtaCteVendor(_idVendor);
             var data = MapFormDataToCtaCte203Structure();
-            var idCtaCte = ctacte.AddCtaCteDetalleRecord(data.TDOC, data.TIPO, data.Fecha.Value, data.NUMDOC, data.DOC_INTERNO,
-                data.MONEDA, data.IMPORTE_ORI.Value, data.TC.Value, data.SALDOFACTURA.Value, data.IMPORTE_ARS.Value, data.IdFacturaX.Value, data.IdFacturaX.Value);
+            var idCtaCte = ctacte.AddCtaCteDetalleRecord(data.TDOC, data.TIPO, data.Fecha, data.NUMDOC, data.DOC_INTERNO,
+                data.MONEDA, data.IMPORTE_ORI, data.TC, data.SALDOFACTURA, data.IMPORTE_ARS, data.IdFacturaX.Value, data.IdFacturaX.Value);
 
             if (idCtaCte > 0)
             {
                 txtIdCtaCte.Text = idCtaCte.ToString();
-                ctacte.UpdateSaldoCtaCteResumen(data.TIPO, data.IMPORTE_ORI.Value, data.MONEDA, data.TC);
+                ctacte.UpdateSaldoCtaCteResumen(data.TIPO, data.IMPORTE_ORI, data.MONEDA, data.TC);
                 var result = ctacte.GetResultadoCtaCte(data.TIPO);
             }
             else
@@ -1016,7 +1016,7 @@ namespace MASngFE.Transactional.FI.VendorNCD
             txtEstadoDocumento.Text = _estado.ToString();
             AccionEstadoDocumento();
         }
-        
+
         #endregion
 
         private void label17_Click(object sender, EventArgs e)
@@ -1027,7 +1027,7 @@ namespace MASngFE.Transactional.FI.VendorNCD
         {
 
         }
-        
+
         private void MonedaValidating(object sender, CancelEventArgs e)
         {
             var txt = (TextBox)sender;

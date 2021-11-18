@@ -68,7 +68,7 @@ namespace MASngFE.Transactional.SD.Remito
                         new CompromisoManager().FreeStockComprometidoByIdstock(idStockSeleccionado, false);
                     }
 
-                    using (var f1 = new FrmSeleccionBatchDespacho(materialPrimario, kg))
+                    using (var f1 = new FrmSD12SeleccionBatchDespacho(materialPrimario, kg))
                     {
                         DialogResult dr = f1.ShowDialog();
                         switch (dr)

@@ -85,7 +85,7 @@ namespace MASngFE.Reports.ReportManager
                 Value = dataItems
             };
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSourceI);
-            
+
             //Descripcion ZTerm
             string zterm;
             if (string.IsNullOrEmpty(dataHeader[0].ZTERM))

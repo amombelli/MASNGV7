@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Windows.Forms;
 using Tecser.Business.MainApp;
 using Tecser.Business.Tools;
 using TecserEF.Entity;
@@ -17,7 +16,7 @@ namespace Tecser.Business.Transactional.FI
         }
         //------------------------------------------------------------------------------------------------
         private readonly ModoEjecucion _modoEjecucion;
-        private FESetDataStructure _dataFE = new FESetDataStructure(); 
+        private FESetDataStructure _dataFE = new FESetDataStructure();
         //------------------------------------------------------------------------------------------------
         public struct CheckNumeroComprobantes
         {
@@ -32,7 +31,7 @@ namespace Tecser.Business.Transactional.FI
                 case "FA":
                     return TipoComprobante.Factura;
                 case "NC":
-                   return TipoComprobante.NotaCredito;
+                    return TipoComprobante.NotaCredito;
                 case "ND":
                     return TipoComprobante.NotaDebito;
                 case "FM":
@@ -79,7 +78,7 @@ namespace Tecser.Business.Transactional.FI
                 return true;
             }
         }
-        private  void AddComprobanteAsociado(int idFacturaAsociadaNC)
+        private void AddComprobanteAsociado(int idFacturaAsociadaNC)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -210,7 +209,7 @@ namespace Tecser.Business.Transactional.FI
                 }
             }
         }
-        
+
         /// <summary>
         /// Solicita CAE Mapeando desde T400
         /// Incluye para NC/ND IdFacturaAnula o Fecha Asociada - Si se provee ambos tiene prioridad Periodo Asociado
@@ -306,7 +305,7 @@ namespace Tecser.Business.Transactional.FI
                 t400.CAE = numeroCAE;
                 t400.CAE_VTO = vencimientoCAE;
                 t400.StatusFactura = DocumentFIStatusManager.StatusHeader.Aprobada.ToString().ToUpper();
-                t400.NumeroDoc = pv1 +"-"+nd1;
+                t400.NumeroDoc = pv1 + "-" + nd1;
                 var items = db.T0401_FACTURA_I.Where(c => c.IDFactura == idFactura).ToList();
                 foreach (var i in items)
                 {

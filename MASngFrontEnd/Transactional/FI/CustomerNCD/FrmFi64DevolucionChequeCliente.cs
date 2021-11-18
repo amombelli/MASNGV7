@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.Transactional.FI;
 
@@ -67,7 +60,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         }
         private void PopulaDatosChequeSeleccionado()
         {
-            if (IdChequeSeleccionado== null)
+            if (IdChequeSeleccionado == null)
             {
                 BlanqueaDatosCheque();
                 return;
@@ -88,7 +81,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
             else
             {
-               BlanqueaDatosCheque();
+                BlanqueaDatosCheque();
             }
         }
 

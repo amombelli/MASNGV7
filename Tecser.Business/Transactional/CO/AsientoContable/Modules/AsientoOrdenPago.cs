@@ -82,13 +82,13 @@ namespace Tecser.Business.Transactional.CO.AsientoContable.Modules
                     }
                     else
                     {
-                        AddGenericCompleteSegment(TipoDocumento, NumeroDocumento, _h.TIPO, glAccountItemPago, descripcion1, descripcion2, _h.MON_OP, DebeHaber.Haber, (decimal) i.IMPORTE_OP, Tcode, 0, IdVendor, "T0212_OP_ITEM", i.IDITEM);
+                        AddGenericCompleteSegment(TipoDocumento, NumeroDocumento, _h.TIPO, glAccountItemPago, descripcion1, descripcion2, _h.MON_OP, DebeHaber.Haber, (decimal)i.IMPORTE_OP, Tcode, 0, IdVendor, "T0212_OP_ITEM", i.IDITEM);
                     }
                 }
             }
         }
 
-        
+
 
         public IdentificacionAsiento GeneraAsientoFromOrdenPago()
         {
@@ -119,7 +119,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable.Modules
             return GrabaAsiento();
         }
 
-        
+
         ///Acreditacion de Cheques Emitidos
         public IdentificacionAsiento AsientoAcreditacionCheque(string cuentaBanco, decimal importe, DateTime fechaAcred, int idRegistro)
         {

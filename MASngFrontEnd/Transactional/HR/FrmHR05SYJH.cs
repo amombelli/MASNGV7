@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
-using Tecser.Business.MainApp;
-using Tecser.Business.SuperMD;
 using Tecser.Business.Tools;
 using Tecser.Business.Transactional.HR;
 using TecserEF.Entity;
@@ -33,7 +30,7 @@ namespace MASngFE.Transactional.HR
             }
         }
 
-   
+
         private void FrmHR05SYJH_Load(object sender, EventArgs e)
         {
             cmbConceptos.DataSource = new SyjDataManager().GetConceptos();

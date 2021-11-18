@@ -155,7 +155,7 @@ namespace MASngFE.Transactional.CO.Cost
             }
         }
 
-        
+
         /// <summary>
         /// Revision 2021.06.01
         /// </summary>

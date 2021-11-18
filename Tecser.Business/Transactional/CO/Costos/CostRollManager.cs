@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
@@ -366,7 +365,7 @@ namespace Tecser.Business.Transactional.CO.Costos
 
         //DE ACA A ABAJO NO REVISE
 
-        
+
         /// <summary>
         /// Actualiza CR Cost despues de haber ejecutad un CR
         /// </summary>
@@ -444,7 +443,7 @@ namespace Tecser.Business.Transactional.CO.Costos
             }
         }
 
-        
+
 
     }
 }

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using MASngFE.Forms;
+using MASngFE.Forms.CustomerSearchBase;
 using MASngFE.Forms.VendorSearchBase;
 using MASngFE.MasterData;
 using MASngFE.MasterData.BOM;
@@ -20,7 +21,6 @@ using MASngFE.Transactional.FI.FondoFijo;
 using MASngFE.Transactional.FI.GestionCheques;
 using MASngFE.Transactional.FI.TaxModule;
 using MASngFE.Transactional.FI.Vendor.SinRemito;
-using MASngFE.Transactional.FI.VendorNCD;
 using MASngFE.Transactional.FI.VendorPRM;
 using MASngFE.Transactional.HR;
 using MASngFE.Transactional.MM;
@@ -40,7 +40,7 @@ using TecserEF.Entity;
 
 namespace MASngFE.Application
 {
-    public partial class Frm00MainAppStart : Form
+    public partial class Frm00MainAppStart : RibbonForm
     {
         public Frm00MainAppStart()
         {
@@ -119,7 +119,7 @@ namespace MASngFE.Application
                     break;
             }
         }
-    
+
 
 
         private void RunTransaction()
@@ -185,28 +185,13 @@ namespace MASngFE.Application
             var f = new FrmCentroPreparacionRemitos();
             f.Show();
         }
-
-        private void btnChangeCobraznaType_Click(object sender, EventArgs e)
-        {
-            var f = new FrmFI47ChangeCobranzaType();
-            f.Show();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-        }
-
+        
         private void btnCentroEntregas_Click(object sender, EventArgs e)
         {
             var f0 = new FrmCentroPreparacionHojaRuta();
             f0.Show();
         }
-
-        private void tcode2_Click(object sender, EventArgs e)
-        {
-        }
-
-
+        
         private void button24_Click(object sender, EventArgs e)
         {
             if (!TsSecurityMng.CheckifRoleIsGrantedToRun("FACT3", "FACTUSEARCH", true, true))
@@ -217,22 +202,14 @@ namespace MASngFE.Application
             var f0 = new FrmCustomerDocumentSearch();
             f0.Show();
         }
-
-
-        private void button13_Click_1(object sender, EventArgs e)
-        {
-            var x = new CobranzaUtils().FixCobranzaDiasPp();
-            MessageBox.Show($@"Se actualizaron {x} registros");
-        }
+        
 
         private void button15_Click_1(object sender, EventArgs e)
         {
             new Email2().SendEmail();
         }
 
-
-
-
+        
         private void button27_Click(object sender, EventArgs e)
         {
             var f0 = new FrmImputacionFF();
@@ -268,29 +245,7 @@ namespace MASngFE.Application
             var f = new FrmDevelopmentForm();
             f.Show();
         }
-
-
-        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-
-        private void aboutApplicationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(@"MOMBELLI APPLICATION SYSTEM NEXT-GENERATION", @"APP", MessageBoxButtons.OK,
-                MessageBoxIcon.Asterisk);
-        }
-
-        private void MICustomerCreation_Click(object sender, EventArgs e)
-        {
-            GlobalApp.Tcode = "CL1";
-            RunTransaction();
-        }
-
-        private void stbarModo_Click(object sender, EventArgs e)
-        {
-        }
-
+        
         private void FrmMainAppStart_FormClosing(object sender, FormClosingEventArgs e)
         {
             var resp = MessageBox.Show(@"Confirma el cierre de MASNg V2",
@@ -323,8 +278,7 @@ namespace MASngFE.Application
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            var f0 = new Form1();
-            f0.Show();
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -377,16 +331,7 @@ namespace MASngFE.Application
             var f = new FrmMRP02();
             f.Show();
         }
-
-        private void BtnCODET_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnCROLL_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Button12_Click(object sender, EventArgs e)
         {
@@ -412,12 +357,7 @@ namespace MASngFE.Application
         {
             new FrmMDB06MassFormActivate().Show();
         }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button17_Click_1(object sender, EventArgs e)
         {
 
@@ -526,12 +466,7 @@ namespace MASngFE.Application
             var f = new FrmCRM02GescoSelect();
             f.Show();
         }
-
-        private void button36_Click(object sender, EventArgs e)
-        {
-            //new GescoMigrateOldData().FixMigrateDate();
-            //new GescoMigrateOldData().MigraData();
-        }
+        
 
         private void button37_Click(object sender, EventArgs e)
         {
@@ -627,11 +562,6 @@ namespace MASngFE.Application
             f.Show();
         }
 
-        private void button44_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void button45_Click(object sender, EventArgs e)
         {
             var f = new FrmHr10CargaSyj();
@@ -665,17 +595,7 @@ namespace MASngFE.Application
             f.Show();
         }
 
-        private void button51_Click(object sender, EventArgs e)
-        {
-            var y = new AfipQrCodeManager().GeneraCodigoQrFacturas(33491);
-        }
-
-        private void button51_Click_1(object sender, EventArgs e)
-        {
-            var f = new FrmFI51GenerarNotaCredito(919);
-            f.Show();
-        }
-
+ 
         private void button52_Click(object sender, EventArgs e)
         {
             var p = new AcostoMfgCr();
@@ -700,17 +620,13 @@ namespace MASngFE.Application
                 foreach (var it in listaOP)
                 {
                     var op = new OrdenPagoManageDatos(it.IDOP);
-                    op.RegistraChequesEmitidos();
+                    op.RegistraChequesEmitidos(it.NAS.Value);
                 }
 
                 MessageBox.Show(@"Termine");
             }
         }
-
-        private void button54_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnDesimputarCtaCte_Click(object sender, EventArgs e)
         {
@@ -720,35 +636,13 @@ namespace MASngFE.Application
             var f = new CobranzaDesimputa().DesimputaDocumento(52965);
         }
 
-        private void btnXAjuste_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnXRemito_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void rbTcode_TextBoxValidated(object sender, EventArgs e)
-        {
-            //GlobalApp.Tcode = rbTcode.TextBoxText.ToUpper();
-            //SecurityLog.LogTransactionIn(GlobalApp.Tcode); //Loguea transaccion ingresada.-
-            //RunTransaction();
-        }
-
-        private void rbtnGoTcode_Click(object sender, EventArgs e)
-        {
-            //GlobalApp.Tcode = rbTcode.TextBoxText.ToUpper();
-            //SecurityLog.LogTransactionIn(GlobalApp.Tcode); //Loguea transaccion ingresada.-
-            //RunTransaction();
-        }
-
-        private void rbtnCancelTcode_Click(object sender, EventArgs e)
-        {
-            //rbTcode.TextBoxText = null;
-        }
-
+     
         private void btnConfirmTCode_Click(object sender, EventArgs e)
         {
             GlobalApp.Tcode = txtNTcode.Text.ToUpper();
@@ -861,13 +755,13 @@ namespace MASngFE.Application
                 return;
             }
         }
-           
+
 
         private void btnViewListaTcode_Click(object sender, EventArgs e)
         {
             panelBoton1.Location = new Point(411, 221);
             dgvTcodeList.Visible = true;
-            
+
         }
 
         private void btnHideListaTcode_Click(object sender, EventArgs e)
@@ -888,12 +782,7 @@ namespace MASngFE.Application
                 tabControl1.Visible = true;
             }
         }
-
-        private void rbRechazarCheque_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void rbtnXRate_Click(object sender, EventArgs e)
         {
             var f = new FrmFI60ExchangeRage();
@@ -963,6 +852,18 @@ namespace MASngFE.Application
         {
             var f = new FrmFI13TaxConfig();
             f.Show();
+        }
+
+        private void btnTestCustomerSearchControl_Click(object sender, EventArgs e)
+        {
+            var f = new FrmCustomerSearchTest();
+            f.Show();
+
+        }
+
+        private void rbExitMAS_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

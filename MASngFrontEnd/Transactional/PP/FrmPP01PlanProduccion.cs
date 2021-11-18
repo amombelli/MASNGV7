@@ -74,7 +74,7 @@ namespace MASngFE.Transactional.PP
             _permiteModificarKg = TsSecurityMng.CheckToEnableButton("PPCAMBIAKG");
             _permiteAutorizar = TsSecurityMng.CheckToEnableButton("PPAPRUEBA");
         }
-        
+
         //Manejo de Click en Botones Dgv
         private void dgvPF_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -107,11 +107,11 @@ namespace MASngFE.Transactional.PP
                 return;
             }
             var cell = dgvPF.Columns[e.ColumnIndex].Name;
-            
+
             if (e.RowIndex >= 0)
             {
                 var statOF = PlanProduccionStatusManager.MapStatusOfFromText2(dgvPF[__status.Name, e.RowIndex].Value.ToString());
-                _numeroOfSeleccion= Convert.ToInt32(dgvPF[__idplan.Name, e.RowIndex].Value);
+                _numeroOfSeleccion = Convert.ToInt32(dgvPF[__idplan.Name, e.RowIndex].Value);
                 string material = dgvPF[__material.Name, e.RowIndex].Value.ToString();
                 switch (cell)
                 {
@@ -143,7 +143,7 @@ namespace MASngFE.Transactional.PP
                             txtStockDisponible.ForeColor = Color.Black;
                             txtStockDisponible.BackColor = Color.LightGray;
                         }
-                        
+
                         //Asignacion de Valores
                         txtStockTotal.Text = stockTotal.ToString("N2");
                         txtStockDisponible.Text = stockDisponible.ToString("N2");
@@ -199,7 +199,7 @@ namespace MASngFE.Transactional.PP
             }
             AplicaFiltros();
         }
-        
+
         //Modificacion de observaciones!
         //Al hacer click en DGV - Si columna es Observaciones - Acitva el evento cellvalue change
         private void dgvPF_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -213,7 +213,7 @@ namespace MASngFE.Transactional.PP
             switch (cell)
             {
                 case nameof(__observaciones):
-                    if (_evento1==false)
+                    if (_evento1 == false)
                     {
                         this.dgvPF.CellValueChanged +=
                             new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPF_CellValueChanged);
@@ -679,7 +679,7 @@ namespace MASngFE.Transactional.PP
                 return;
             }
             _numeroOfSeleccion = Convert.ToInt32(dgv[__idplan.Name, e.RowIndex].Value);
-            txtMaterialSeleccionado.Text = dgv[__material.Name,e.RowIndex].Value.ToString();
+            txtMaterialSeleccionado.Text = dgv[__material.Name, e.RowIndex].Value.ToString();
             txtOFSeleccionada.Text = dgv[__idplan.Name, e.RowIndex].Value.ToString();
             txtClienteSeleccionado.Text = dgv[__cliente.Name, e.RowIndex].Value == null ? @"No Disponinble" : dgv[__cliente.Name, e.RowIndex].Value.ToString();
             txtOvSeleccionado.Text = dgv[__ov.Name, e.RowIndex].Value == null ? null : dgv[__ov.Name, e.RowIndex].Value.ToString();
@@ -711,7 +711,7 @@ namespace MASngFE.Transactional.PP
                 txtClientesLlevanMaterial.BackColor = Color.LightGray;
                 txtMrpPendienteEntrega.BackColor = Color.LightGray;
                 txtMrpNumeroClientes.BackColor = Color.LightGray;
-                txtUltimaFabricacion.BackColor= Color.LightGray;
+                txtUltimaFabricacion.BackColor = Color.LightGray;
             }
             else
             {
@@ -776,12 +776,12 @@ namespace MASngFE.Transactional.PP
                 {
                     txtMrpNumeroClientes.BackColor = br;
                 }
-                
+
                 var z = new MrpCrmStats(txtMaterialSeleccionado.Text);
                 z.EstadisticasDespachoMaterial(1, 90);
                 txtClientesLlevanMaterial.Text = z.CantidadClientes.ToString("N0");
 
-                if (z.CantidadClientes !=0)
+                if (z.CantidadClientes != 0)
                 {
                     txtClientesLlevanMaterial.ForeColor = f1;
                     txtClientesLlevanMaterial.BackColor = b1;
@@ -951,7 +951,7 @@ namespace MASngFE.Transactional.PP
             new AprobacionPlanificar().DesaprobarOF(_numeroOfSeleccion.Value, "PF1");
             MessageBox.Show(@"Se a DESAPROBADO la autorizacion para Fabricar esta Orden", @"Aprobacion de Planeacion",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-           AplicaFiltros();
+            AplicaFiltros();
         }
     }
 }

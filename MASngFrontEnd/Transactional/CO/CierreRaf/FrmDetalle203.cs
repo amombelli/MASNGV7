@@ -21,7 +21,7 @@ namespace MASngFE.Transactional.CO.CierreRaf
 
         private void FrmDetalle203_Load(object sender, EventArgs e)
         {
-            t203Bs.DataSource = new VendorConcil().GetListaFacturasIngresadasT203(_periodo, _tipoLx);
+            t203Bs.DataSource = new VendorConcil(_periodo,_tipoLx).GetListaFacturasIngresadasT203();
         }
     }
 }

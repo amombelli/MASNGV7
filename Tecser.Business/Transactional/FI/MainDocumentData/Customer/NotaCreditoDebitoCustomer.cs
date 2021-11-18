@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
-using Tecser.Business.MasterData.BOM;
 using Tecser.Business.Transactional.CO;
 using TecserEF.Entity;
 
@@ -54,14 +51,14 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                     throw new ArgumentOutOfRangeException(nameof(tipoDoc), tipoDoc, null);
             }
         }
-        public decimal ImporteIVA { get; private set;}
+        public decimal ImporteIVA { get; private set; }
         public decimal ImporteARS { get; private set; }
         public decimal ImporteUSD { get; private set; }
         public decimal BaseImponible { get; private set; }
         public void CreaHeaderMemory(TipoDoc tdoc, TipoLx lx, int idCliente, DateTime fecha, string comentario, string moneda = "ARS")
         {
-             _h = new T0300_NCD_H();
-             _h = new T0300_NCD_H()
+            _h = new T0300_NCD_H();
+            _h = new T0300_NCD_H()
             {
                 IDH = -1,
                 IdCliente = idCliente,
@@ -103,7 +100,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                 IDCHE = idChFacturaAplica,
                 GL = gl
             };
-            l1.PIVA = iva ? Math.Round(l1.PTOTAL * (decimal) 0.21, 2) : 0;
+            l1.PIVA = iva ? Math.Round(l1.PTOTAL * (decimal)0.21, 2) : 0;
             _i.Add(l1);
             RecalculaTotalesSegunItem();
             return _i.Count;
@@ -143,8 +140,8 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
         /// </summary>
         public int GenerateDocumentModuloFIRetornoCheque()
         {
-           using (var db = new TecserData(GlobalApp.CnnApp))
-           {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
                 var cliente = new CustomerManager().GetCustomerBillToData(_h.IdCliente);
                 var h = new T0400_FACTURA_H()
                 {
@@ -152,7 +149,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                     IDFACTURA = db.T0400_FACTURA_H.Max(c => c.IDFACTURA) + 1,
                     PV_AFIP = "0000",
                     ND_AFIP = "00000000",
-                    TIPO_DOC =  _h.TDOC,
+                    TIPO_DOC = _h.TDOC,
                     TIPOFACT = _h.LX,
                     FECHA = _h.FECHA,
                     Cliente = _h.IdCliente,
@@ -164,7 +161,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                     Impreso = false,
                     FacturaMoneda = "ARS",
                     TC = _h.TC,
-                    TotalFacturaB = ImporteARS- ImporteIVA,
+                    TotalFacturaB = ImporteARS - ImporteIVA,
                     Descuento = 0,
                     DescuentoPorc = 0,
                     TotalImpo = 0,
@@ -197,7 +194,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                 }
                 else
                 {
-                    h.TotalImpo = Math.Round(ImporteIVA / (decimal) 0.21,2);
+                    h.TotalImpo = Math.Round(ImporteIVA / (decimal)0.21, 2);
                 }
                 db.T0400_FACTURA_H.Add(h);
                 db.SaveChanges();
@@ -252,7 +249,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                 ncd.idFacturaX = _h.idFacturaX;
                 db.SaveChanges();
                 return h.IDFACTURA;
-           }
+            }
         }
         private int GetNextIdFacturaX(string lx)
         {
@@ -303,7 +300,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                 var hmax = db.T0300_NCD_H.Max(c => c.IDH);
                 var iz = db.T0300_NCD_H.Where(c => c.TDOC == _h.TDOC && c.LX == _h.LX).ToList();
                 _h.IDH = hmax + 1;
-                _h.NDOC = CreateNumeroDocumento(hmax+1,iz.Count+1);
+                _h.NDOC = CreateNumeroDocumento(hmax + 1, iz.Count + 1);
                 _h.LOGUSER = GlobalApp.AppUsername;
                 _h.LOGDATE = DateTime.Now;
                 _h.TEMP = false;
@@ -311,7 +308,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                 var rtnh = db.SaveChanges();
                 if (rtnh > 0)
                 {
-                    SaveItemList(_h.IDH,_h.NDOC);
+                    SaveItemList(_h.IDH, _h.NDOC);
                     return _h.IDH;
                 }
                 return -1;
@@ -339,11 +336,11 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                 if (ii.Any())
                 {
                     db.T0301_NCD_I.RemoveRange(ii);
-                    z=db.SaveChanges();
+                    z = db.SaveChanges();
 
                 }
                 var ix = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == _h.IDH);
-                if (ix !=null)
+                if (ix != null)
                 {
                     db.T0300_NCD_H.Remove(ix);
                     return db.SaveChanges() + z;
@@ -351,7 +348,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                 return 0;
             }
         }
-        private int SaveItemList(int idh,string numeroDoc)
+        private int SaveItemList(int idh, string numeroDoc)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -384,14 +381,14 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
             }
         }
 
-        private string CreateNumeroDocumento(int idh,int idcount)
+        private string CreateNumeroDocumento(int idh, int idcount)
         {
             if (_h.LX == "L1")
             {
                 if (_h.TDOC == "NC" || _h.TDOC == "ND")
                 {
                     //Numero Documento generado por AFIP
-                    return  "AFIP-" + idh.ToString("00000000");
+                    return "AFIP-" + idh.ToString("00000000");
                 }
                 else
                 {
@@ -416,7 +413,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var h = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == _h.IDH);
-                if (h==null)
+                if (h == null)
                     return;
                 h.idFacturaAsociada = _h.idFacturaAsociada;
                 h.PeriodoAjusteDesde = null;
@@ -424,7 +421,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
                 db.SaveChanges();
             }
         }
-       
+
         /// <summary>
         /// Metodo SaveData incluye update desde el objeto de este campo
         /// </summary>

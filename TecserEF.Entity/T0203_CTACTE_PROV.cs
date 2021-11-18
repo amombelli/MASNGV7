@@ -24,18 +24,18 @@ namespace TecserEF.Entity
         public string TDOC { get; set; }
         public string DOC_INTERNO { get; set; }
         public string NUMDOC { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
+        public System.DateTime Fecha { get; set; }
         public Nullable<int> ZTERM { get; set; }
         public int IDPROV { get; set; }
         public string MONEDA { get; set; }
-        public Nullable<decimal> TC { get; set; }
-        public Nullable<decimal> IMPORTE_ORI { get; set; }
-        public Nullable<decimal> IMPORTE_ARS { get; set; }
-        public Nullable<decimal> SALDOFACTURA { get; set; }
-        public Nullable<System.DateTime> LogDate { get; set; }
+        public decimal TC { get; set; }
+        public decimal IMPORTE_ORI { get; set; }
+        public decimal IMPORTE_ARS { get; set; }
+        public decimal SALDOFACTURA { get; set; }
+        public System.DateTime LogDate { get; set; }
         public string LogUsuario { get; set; }
         public string TIPO { get; set; }
-        public Nullable<bool> ZOP { get; set; }
+        public bool ZOP { get; set; }
         public Nullable<int> IdFacturaX { get; set; }
         public Nullable<int> IDDOC { get; set; }
     

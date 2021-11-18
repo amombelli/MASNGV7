@@ -19,6 +19,9 @@ namespace MASngFE.Transactional.FI.Cobranza
             InitializeComponent();
         }
 
+        private int _idCobranzaSeleccion;
+
+
         private List<T0006_MCLIENTES> _customerList = new List<T0006_MCLIENTES>();
         private void FrmChangeCobranzaType_Load(object sender, EventArgs e)
         {
@@ -50,13 +53,13 @@ namespace MASngFE.Transactional.FI.Cobranza
             txtIdCobranza.Text = dgvListaCobranzas[0, e.RowIndex].Value.ToString();
             txtNumeroRecibo.Text = dgvListaCobranzas[3, e.RowIndex].Value.ToString();
             txtCuentaOriginal.Text = dgvListaCobranzas[4, e.RowIndex].Value.ToString();
-            var idCobranza = Convert.ToInt32(dgvListaCobranzas[0, e.RowIndex].Value);
+            _idCobranzaSeleccion = Convert.ToInt32(dgvListaCobranzas[0, e.RowIndex].Value);
 
-            var dataCobranza = new CobranzaManagerExt2(idCobranza);
+            var dataCobranza = new CobranzaManagerExt2(_idCobranzaSeleccion);
 
             var dataCobranzaSeleccionado = dataCobranza.GetCobranza();
             var importeCobranza = (decimal)dataCobranzaSeleccionado.Monto;
-            var importeSinImputar = dataCobranza.CheckMontoSinImputarPorRecibo(idCobranza);
+            var importeSinImputar = dataCobranza.CheckMontoSinImputarPorRecibo(_idCobranzaSeleccion);
             var importeImputado = dataCobranza.CheckMontoImputadoPorRecibo();
             txtIdCliente.Text = cmbCliente.SelectedValue.ToString();
             txtClienteOriginal.Text = cmbCliente.Text;
@@ -217,64 +220,77 @@ namespace MASngFE.Transactional.FI.Cobranza
         }
         private void btnDesimputar_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show(@"Confirma que quiere desimputar esta cobranza?",
-                @"Desimputacion de Cobranzas", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                new CobranzaManagerExt2(Convert.ToInt32(txtIdCobranza.Text)).DesimputaCobranza();
-                MessageBox.Show(@"Cobranza Desimputada Correctamente", @"Desimputacion de Cobranzas",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                //do something else
-            }
+            var p = MessageBox.Show(
+                @"Confirma la Desimputacion Completa de este recibo/Cobranza?",
+                @"Consulta de Desimputacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (p == DialogResult.No) return;
+          
+            var x = new CobranzaDesimputa();
+            x.DesimputarCobranzaCompleta(_idCobranzaSeleccion);
+
+            MessageBox.Show(@"La Cobranza se ha desimputado correctamente", @"Desimputacion de Cobranza",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            //DialogResult dialogResult = MessageBox.Show(@"Confirma que quiere desimputar esta cobranza?",
+            //    @"Desimputacion de Cobranzas", MessageBoxButtons.YesNo);
+            //if (dialogResult == DialogResult.Yes)
+            //{
+            //    new CobranzaManagerExt2(Convert.ToInt32(txtIdCobranza.Text)).DesimputaCobranza();
+            //    MessageBox.Show(@"Cobranza Desimputada Correctamente", @"Desimputacion de Cobranzas",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Information);
+            //}
+            //else if (dialogResult == DialogResult.No)
+            //{
+            //    //do something else
+            //}
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void btnExecute_Click(object sender, EventArgs e)
         {
             if (ChangeCobranzaType.CheckCobranzaSinImputar(Convert.ToInt32(txtIdCobranza.Text)) == false)
             {
                 MessageBox.Show(@"La Cobranza se encuentra IMPUTADA a facturas", @"Validacion", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-
                 return;
             }
 
             if (ChangeCobranzaType.CheckIfAllChequesAreAvailable(Convert.ToInt32(txtIdCobranza.Text)) == false)
             {
-                DialogResult dialogResult = MessageBox.Show(@"La Cobranza contiene cheques que ya no estan disponibles. Desea Continuar? (Hacer un cambio manual)",
-               @"Cambio de Tipo de Cobranzas", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show(
+                    @"La Cobranza contiene cheques que ya no estan disponibles. Desea Continuar? (Hacer un cambio manual)",
+                    @"Cambio de Tipo de Cobranzas", MessageBoxButtons.YesNo);
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (new ChangeCobranzaType().ChangeCobranza(Convert.ToInt32(txtIdCobranza.Text), txtCuentaOriginal.Text,
-               txtNuevoTipo.Text))
+                    if (new ChangeCobranzaType().ChangeCobranza(Convert.ToInt32(txtIdCobranza.Text),
+                        txtCuentaOriginal.Text,
+                        txtNuevoTipo.Text))
                     {
-                        MessageBox.Show(@"La Cobranza se ha cambiado SATISFACTORIAMENTE", @"Validacion", MessageBoxButtons.OK,
+                        MessageBox.Show(@"La Cobranza se ha cambiado SATISFACTORIAMENTE", @"Validacion",
+                            MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
                 }
                 else if (dialogResult == DialogResult.No)
                 {
-
                 }
             }
             else
             {
                 if (new ChangeCobranzaType().ChangeCobranza(Convert.ToInt32(txtIdCobranza.Text), txtCuentaOriginal.Text,
-               txtNuevoTipo.Text))
+                    txtNuevoTipo.Text))
                 {
-                    MessageBox.Show(@"La Cobranza se ha cambiado SATISFACTORIAMENTE", @"Validacion", MessageBoxButtons.OK,
+                    MessageBox.Show(@"La Cobranza se ha cambiado SATISFACTORIAMENTE", @"Validacion",
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }
-
-
         }
 
         private void rbRazonSocial_CheckedChanged(object sender, EventArgs e)

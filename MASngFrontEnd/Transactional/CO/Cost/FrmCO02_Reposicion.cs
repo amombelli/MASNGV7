@@ -303,7 +303,7 @@ namespace MASngFE.Transactional.CO.Cost
         {
 
             //todo: Hay que hacer una funcion para setear el STD en la clase nueva ACostoSTD
-            
+
             var resp = MessageBox.Show(@"Desea definir este costo como Costo Standard para calculos de Margen?",
                 @"Definicion de Costo Standard", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 

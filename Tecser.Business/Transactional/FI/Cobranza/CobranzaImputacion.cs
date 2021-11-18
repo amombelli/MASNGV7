@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using System.Xml;
 using Tecser.Business.MainApp;
-using Tecser.Business.Transactional.FI.CtaCte;
 using Tecser.Business.Transactional.FI.Customers;
 using TecserEF.Entity;
 
@@ -62,9 +60,9 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 }
             }
         }
-        
-        
-        
+
+
+
         public bool ImputaCobranzaAutomatica(int idCobranza, ModoImputacion modo)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -195,9 +193,9 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                     return false;
                 }
 
-                if (t201.TDOC !="AJ" && t201.TIPO =="L1")
+                if (t201.TDOC != "AJ" && t201.TIPO == "L1")
                     if (new PercepcionesManager().ValidaImputacionFacturaPermitida(idCtaCteImputar, t208.IDCTACTE.Value) == false)
-                    return false; //new valida de nuevo la percepcion esta ok para imputar
+                        return false; //new valida de nuevo la percepcion esta ok para imputar
             }
             return true;
         }
@@ -231,10 +229,10 @@ namespace Tecser.Business.Transactional.FI.Cobranza
             return true;
         }
 
-        
+
         public bool ImputarCobranza(int idCtaCteImputar, int split207, int id208, decimal importeImputar)
         {
-            if (ValidacionOKImputar(idCtaCteImputar,split207,id208) == false)
+            if (ValidacionOKImputar(idCtaCteImputar, split207, id208) == false)
                 return false;
 
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -275,7 +273,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                     t208.MONTO = t208.MONTO.Value - importeAImputarFactura;
                     importeRestanteCobranzaNc = t208.MONTO.Value;
                 }
-                
+
                 //Completa en T0207 Datos Recibo/Fecha Pago
                 switch (t208.TIPODOC)
                 {
@@ -286,10 +284,10 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                         t207.IDNC = null;
                         t207.NRECIBO = t208.NRECIBO; //numero de Recibo o Numero de Nota de Credito
                         t207.TipoDocCancel = "COB"; //cobranza o Nota de Credito
-                        t207.NumeroDoc = string.IsNullOrEmpty(cobData.NRECIBOOFI) ? cobData.NRECIBO:cobData.NRECIBOOFI;
+                        t207.NumeroDoc = string.IsNullOrEmpty(cobData.NRECIBOOFI) ? cobData.NRECIBO : cobData.NRECIBOOFI;
                         t207.DiasPPCob = cobData.DIAS_PP.Value; //dias promedio de pago en la cobranza
                         t207.DiasImpu = (t208.FECHA.Value - t207.FECHA_FACT).Days;
-                        t207.USDImpu = Math.Round(importeAImputarFactura/cobData.TC,2);
+                        t207.USDImpu = Math.Round(importeAImputarFactura / cobData.TC, 2);
                         break;
                     case "NCD":
                     case "NC":
@@ -363,7 +361,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 t201.SALDOFACTURA = t201.SALDOFACTURA - importeAImputarFactura;
                 db.SaveChanges();
 
-                if (t201.TIPO == "L1" && t201.TDOC !="AJ")
+                if (t201.TIPO == "L1" && t201.TDOC != "AJ")
                 {
                     if (new PercepcionesManager().ImputaPagoUpdatePercepcion(idCtaCteImputar, t208.IDCTACTE.Value) ==
                         false)
@@ -375,7 +373,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
                 return true;
             }
         }
-        
+
         public decimal GetSaldoImpago(int idCtaCte)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -394,7 +392,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
         /// <summary>
         /// Funcion Chequea que una cuenta corriente imputacion este correcta
         /// </summary>
-        public bool CheckFacturaSaldosImputacionOK(int idCtaCteDocumento, bool AutoConsolida=true)
+        public bool CheckFacturaSaldosImputacionOK(int idCtaCteDocumento, bool AutoConsolida = true)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -438,7 +436,7 @@ namespace Tecser.Business.Transactional.FI.Cobranza
             }
             return true;
         }
-        
+
         /// <summary>
         /// Tool - Consolida Montos T0207 (usado despues de desimputar)
         /// </summary>

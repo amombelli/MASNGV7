@@ -104,7 +104,7 @@ namespace TSControls
         }
         private void myMsk_TextChanged(object sender, EventArgs e)
         {
-            var m = (MaskedTextBox) sender;
+            var m = (MaskedTextBox)sender;
             Value = m.Text;
         }
         public override Font Font
@@ -118,7 +118,7 @@ namespace TSControls
                 myMsk.Location = new Point(1, 1);
                 if (myMsk.Height < 20)
                 {
-                    base.Size = new Size(base.Width,24);
+                    base.Size = new Size(base.Width, 24);
                 }
                 else
                 {
@@ -128,7 +128,7 @@ namespace TSControls
                 int locsem = altmedia - 12;
                 if (locsem < 0)
                 {
-                    ctlSemaforo.Location = new Point( myMsk.Width + 3,0);
+                    ctlSemaforo.Location = new Point(myMsk.Width + 3, 0);
                 }
                 else
                 {
@@ -155,7 +155,7 @@ namespace TSControls
                 {
                     tt.ToolTipTitle = @"Se ha ingresado un CUIT Generico";
                     tt.ToolTipIcon = ToolTipIcon.Info;
-                    tt.Show(@"No se pudo validar el CUIT Ingresado", this, base.Width,0, 1200);
+                    tt.Show(@"No se pudo validar el CUIT Ingresado", this, base.Width, 0, 1200);
                     e.Cancel = false;
                 }
                 else
@@ -168,7 +168,7 @@ namespace TSControls
                     {
                         tt.ToolTipIcon = ToolTipIcon.Error;
                         tt.ToolTipTitle = @"El Numero de CUIT es Invalido";
-                        tt.Show(@"No se pudo validar el CUIT Ingresado", this, base.Width,0, 1200);
+                        tt.Show(@"No se pudo validar el CUIT Ingresado", this, base.Width, 0, 1200);
                         e.Cancel = true;
                     }
                 }

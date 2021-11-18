@@ -39,6 +39,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFi103DetalleImpuXRecibo));
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.@__split = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.@__tdoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.@__NumeroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.@__FechaDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.@__MonedaDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.@__Lx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.@__ImporteDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.@__MontoImputado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.@__aplicadoPorcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.@__idCtaCte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiasPPCob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiasImpu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDocCancel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.t0207SPLITFACTURASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +60,8 @@
             this.txtId6 = new System.Windows.Forms.TextBox();
             this.txtFantasia = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtUSDRecibo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTCRecibo = new System.Windows.Forms.TextBox();
             this.txtMoneda2 = new System.Windows.Forms.TextBox();
@@ -70,21 +85,6 @@
             this.txtMoneda = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtReciboInterno = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtUSDRecibo = new System.Windows.Forms.TextBox();
-            this.@__split = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.@__tdoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.@__NumeroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.@__FechaDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.@__MonedaDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.@__Lx = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.@__ImporteDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.@__MontoImputado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.@__aplicadoPorcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.@__idCtaCte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiasPPCob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiasImpu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDocCancel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDesimputar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -92,12 +92,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtAFecha = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtAImporteTotal = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtATotalImputado = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtATotalImpago = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtATotalImputado = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtAImporteTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t0207SPLITFACTURASBindingSource)).BeginInit();
             this.panel5.SuspendLayout();
@@ -142,6 +142,141 @@
             this.dgvLista.RowHeadersWidth = 20;
             this.dgvLista.Size = new System.Drawing.Size(729, 214);
             this.dgvLista.TabIndex = 1;
+            // 
+            // __split
+            // 
+            this.@__split.DataPropertyName = "FACTSPLIT";
+            this.@__split.HeaderText = "#";
+            this.@__split.Name = "__split";
+            this.@__split.ReadOnly = true;
+            this.@__split.ToolTipText = "Numero Interno de Split";
+            this.@__split.Width = 30;
+            // 
+            // __tdoc
+            // 
+            this.@__tdoc.DataPropertyName = "TDOC";
+            this.@__tdoc.HeaderText = "TDoc";
+            this.@__tdoc.Name = "__tdoc";
+            this.@__tdoc.ReadOnly = true;
+            this.@__tdoc.ToolTipText = "Tipo de Documento";
+            this.@__tdoc.Width = 40;
+            // 
+            // __NumeroDoc
+            // 
+            this.@__NumeroDoc.DataPropertyName = "NDOC";
+            this.@__NumeroDoc.HeaderText = "Documento #";
+            this.@__NumeroDoc.Name = "__NumeroDoc";
+            this.@__NumeroDoc.ReadOnly = true;
+            // 
+            // __FechaDoc
+            // 
+            this.@__FechaDoc.DataPropertyName = "FECHA_FACT";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.@__FechaDoc.DefaultCellStyle = dataGridViewCellStyle1;
+            this.@__FechaDoc.HeaderText = "Fecha";
+            this.@__FechaDoc.Name = "__FechaDoc";
+            this.@__FechaDoc.ReadOnly = true;
+            this.@__FechaDoc.ToolTipText = "Fecha del Documento";
+            // 
+            // __MonedaDoc
+            // 
+            this.@__MonedaDoc.DataPropertyName = "FACT_MONEDA";
+            this.@__MonedaDoc.HeaderText = "Mon";
+            this.@__MonedaDoc.Name = "__MonedaDoc";
+            this.@__MonedaDoc.ReadOnly = true;
+            this.@__MonedaDoc.Width = 40;
+            // 
+            // __Lx
+            // 
+            this.@__Lx.DataPropertyName = "TIPO";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.@__Lx.DefaultCellStyle = dataGridViewCellStyle2;
+            this.@__Lx.HeaderText = "LX";
+            this.@__Lx.Name = "__Lx";
+            this.@__Lx.ReadOnly = true;
+            this.@__Lx.ToolTipText = "Tipo";
+            this.@__Lx.Width = 30;
+            // 
+            // __ImporteDocumento
+            // 
+            this.@__ImporteDocumento.DataPropertyName = "ImporteDocumento";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Format = "C2";
+            this.@__ImporteDocumento.DefaultCellStyle = dataGridViewCellStyle3;
+            this.@__ImporteDocumento.HeaderText = "Importe";
+            this.@__ImporteDocumento.Name = "__ImporteDocumento";
+            this.@__ImporteDocumento.ReadOnly = true;
+            this.@__ImporteDocumento.ToolTipText = "Importe Completo del Documento a Imputar";
+            this.@__ImporteDocumento.Width = 80;
+            // 
+            // __MontoImputado
+            // 
+            this.@__MontoImputado.DataPropertyName = "MontoImputado";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle4.Format = "C2";
+            this.@__MontoImputado.DefaultCellStyle = dataGridViewCellStyle4;
+            this.@__MontoImputado.HeaderText = "Imputado";
+            this.@__MontoImputado.Name = "__MontoImputado";
+            this.@__MontoImputado.ReadOnly = true;
+            this.@__MontoImputado.ToolTipText = "Importe Imputado a este documento";
+            this.@__MontoImputado.Width = 80;
+            // 
+            // __aplicadoPorcentaje
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.Format = "P2";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.@__aplicadoPorcentaje.DefaultCellStyle = dataGridViewCellStyle5;
+            this.@__aplicadoPorcentaje.HeaderText = "Apli%";
+            this.@__aplicadoPorcentaje.Name = "__aplicadoPorcentaje";
+            this.@__aplicadoPorcentaje.ReadOnly = true;
+            this.@__aplicadoPorcentaje.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.@__aplicadoPorcentaje.ToolTipText = "Porcentaje del Total Aplicado";
+            this.@__aplicadoPorcentaje.Width = 75;
+            // 
+            // __idCtaCte
+            // 
+            this.@__idCtaCte.DataPropertyName = "IDCTACTE";
+            this.@__idCtaCte.HeaderText = "IDCTACTE";
+            this.@__idCtaCte.Name = "__idCtaCte";
+            this.@__idCtaCte.ReadOnly = true;
+            this.@__idCtaCte.Visible = false;
+            this.@__idCtaCte.Width = 70;
+            // 
+            // DiasPPCob
+            // 
+            this.DiasPPCob.DataPropertyName = "DiasPPCob";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DiasPPCob.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DiasPPCob.HeaderText = "DPP";
+            this.DiasPPCob.Name = "DiasPPCob";
+            this.DiasPPCob.ReadOnly = true;
+            this.DiasPPCob.Width = 40;
+            // 
+            // DiasImpu
+            // 
+            this.DiasImpu.DataPropertyName = "DiasImpu";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DiasImpu.DefaultCellStyle = dataGridViewCellStyle7;
+            this.DiasImpu.HeaderText = "DIMP";
+            this.DiasImpu.Name = "DiasImpu";
+            this.DiasImpu.ReadOnly = true;
+            this.DiasImpu.Width = 40;
+            // 
+            // TipoDocCancel
+            // 
+            this.TipoDocCancel.DataPropertyName = "TipoDocCancel";
+            this.TipoDocCancel.HeaderText = "TDoc";
+            this.TipoDocCancel.Name = "TipoDocCancel";
+            this.TipoDocCancel.ReadOnly = true;
+            this.TipoDocCancel.ToolTipText = "Tipo Documento Cancelatorio";
+            this.TipoDocCancel.Width = 45;
             // 
             // t0207SPLITFACTURASBindingSource
             // 
@@ -250,6 +385,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(420, 146);
             this.panel1.TabIndex = 78;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(235, 51);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 15);
+            this.label13.TabIndex = 90;
+            this.label13.Text = "TC Recibo";
+            // 
+            // txtUSDRecibo
+            // 
+            this.txtUSDRecibo.BackColor = System.Drawing.Color.LightGreen;
+            this.txtUSDRecibo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUSDRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUSDRecibo.Location = new System.Drawing.Point(316, 70);
+            this.txtUSDRecibo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUSDRecibo.Name = "txtUSDRecibo";
+            this.txtUSDRecibo.ReadOnly = true;
+            this.txtUSDRecibo.Size = new System.Drawing.Size(89, 21);
+            this.txtUSDRecibo.TabIndex = 89;
+            this.txtUSDRecibo.TabStop = false;
             // 
             // label11
             // 
@@ -548,167 +709,6 @@
             this.txtReciboInterno.TabIndex = 14;
             this.txtReciboInterno.TabStop = false;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(235, 51);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 15);
-            this.label13.TabIndex = 90;
-            this.label13.Text = "TC Recibo";
-            // 
-            // txtUSDRecibo
-            // 
-            this.txtUSDRecibo.BackColor = System.Drawing.Color.LightGreen;
-            this.txtUSDRecibo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUSDRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUSDRecibo.Location = new System.Drawing.Point(316, 70);
-            this.txtUSDRecibo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUSDRecibo.Name = "txtUSDRecibo";
-            this.txtUSDRecibo.ReadOnly = true;
-            this.txtUSDRecibo.Size = new System.Drawing.Size(89, 21);
-            this.txtUSDRecibo.TabIndex = 89;
-            this.txtUSDRecibo.TabStop = false;
-            // 
-            // __split
-            // 
-            this.@__split.DataPropertyName = "FACTSPLIT";
-            this.@__split.HeaderText = "#";
-            this.@__split.Name = "__split";
-            this.@__split.ReadOnly = true;
-            this.@__split.ToolTipText = "Numero Interno de Split";
-            this.@__split.Width = 30;
-            // 
-            // __tdoc
-            // 
-            this.@__tdoc.DataPropertyName = "TDOC";
-            this.@__tdoc.HeaderText = "TDoc";
-            this.@__tdoc.Name = "__tdoc";
-            this.@__tdoc.ReadOnly = true;
-            this.@__tdoc.ToolTipText = "Tipo de Documento";
-            this.@__tdoc.Width = 40;
-            // 
-            // __NumeroDoc
-            // 
-            this.@__NumeroDoc.DataPropertyName = "NDOC";
-            this.@__NumeroDoc.HeaderText = "Documento #";
-            this.@__NumeroDoc.Name = "__NumeroDoc";
-            this.@__NumeroDoc.ReadOnly = true;
-            // 
-            // __FechaDoc
-            // 
-            this.@__FechaDoc.DataPropertyName = "FECHA_FACT";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.@__FechaDoc.DefaultCellStyle = dataGridViewCellStyle1;
-            this.@__FechaDoc.HeaderText = "Fecha";
-            this.@__FechaDoc.Name = "__FechaDoc";
-            this.@__FechaDoc.ReadOnly = true;
-            this.@__FechaDoc.ToolTipText = "Fecha del Documento";
-            // 
-            // __MonedaDoc
-            // 
-            this.@__MonedaDoc.DataPropertyName = "FACT_MONEDA";
-            this.@__MonedaDoc.HeaderText = "Mon";
-            this.@__MonedaDoc.Name = "__MonedaDoc";
-            this.@__MonedaDoc.ReadOnly = true;
-            this.@__MonedaDoc.Width = 40;
-            // 
-            // __Lx
-            // 
-            this.@__Lx.DataPropertyName = "TIPO";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.@__Lx.DefaultCellStyle = dataGridViewCellStyle2;
-            this.@__Lx.HeaderText = "LX";
-            this.@__Lx.Name = "__Lx";
-            this.@__Lx.ReadOnly = true;
-            this.@__Lx.ToolTipText = "Tipo";
-            this.@__Lx.Width = 30;
-            // 
-            // __ImporteDocumento
-            // 
-            this.@__ImporteDocumento.DataPropertyName = "ImporteDocumento";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Format = "C2";
-            this.@__ImporteDocumento.DefaultCellStyle = dataGridViewCellStyle3;
-            this.@__ImporteDocumento.HeaderText = "Importe";
-            this.@__ImporteDocumento.Name = "__ImporteDocumento";
-            this.@__ImporteDocumento.ReadOnly = true;
-            this.@__ImporteDocumento.ToolTipText = "Importe Completo del Documento a Imputar";
-            this.@__ImporteDocumento.Width = 80;
-            // 
-            // __MontoImputado
-            // 
-            this.@__MontoImputado.DataPropertyName = "MontoImputado";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle4.Format = "C2";
-            this.@__MontoImputado.DefaultCellStyle = dataGridViewCellStyle4;
-            this.@__MontoImputado.HeaderText = "Imputado";
-            this.@__MontoImputado.Name = "__MontoImputado";
-            this.@__MontoImputado.ReadOnly = true;
-            this.@__MontoImputado.ToolTipText = "Importe Imputado a este documento";
-            this.@__MontoImputado.Width = 80;
-            // 
-            // __aplicadoPorcentaje
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.Format = "P2";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.@__aplicadoPorcentaje.DefaultCellStyle = dataGridViewCellStyle5;
-            this.@__aplicadoPorcentaje.HeaderText = "Apli%";
-            this.@__aplicadoPorcentaje.Name = "__aplicadoPorcentaje";
-            this.@__aplicadoPorcentaje.ReadOnly = true;
-            this.@__aplicadoPorcentaje.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.@__aplicadoPorcentaje.ToolTipText = "Porcentaje del Total Aplicado";
-            this.@__aplicadoPorcentaje.Width = 75;
-            // 
-            // __idCtaCte
-            // 
-            this.@__idCtaCte.DataPropertyName = "IDCTACTE";
-            this.@__idCtaCte.HeaderText = "IDCTACTE";
-            this.@__idCtaCte.Name = "__idCtaCte";
-            this.@__idCtaCte.ReadOnly = true;
-            this.@__idCtaCte.Visible = false;
-            this.@__idCtaCte.Width = 70;
-            // 
-            // DiasPPCob
-            // 
-            this.DiasPPCob.DataPropertyName = "DiasPPCob";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DiasPPCob.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DiasPPCob.HeaderText = "DPP";
-            this.DiasPPCob.Name = "DiasPPCob";
-            this.DiasPPCob.ReadOnly = true;
-            this.DiasPPCob.Width = 40;
-            // 
-            // DiasImpu
-            // 
-            this.DiasImpu.DataPropertyName = "DiasImpu";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DiasImpu.DefaultCellStyle = dataGridViewCellStyle7;
-            this.DiasImpu.HeaderText = "DIMP";
-            this.DiasImpu.Name = "DiasImpu";
-            this.DiasImpu.ReadOnly = true;
-            this.DiasImpu.Width = 40;
-            // 
-            // TipoDocCancel
-            // 
-            this.TipoDocCancel.DataPropertyName = "TipoDocCancel";
-            this.TipoDocCancel.HeaderText = "TDoc";
-            this.TipoDocCancel.Name = "TipoDocCancel";
-            this.TipoDocCancel.ReadOnly = true;
-            this.TipoDocCancel.ToolTipText = "Tipo Documento Cancelatorio";
-            this.TipoDocCancel.Width = 45;
-            // 
             // btnDesimputar
             // 
             this.btnDesimputar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -716,7 +716,7 @@
             this.btnDesimputar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDesimputar.Location = new System.Drawing.Point(602, 46);
             this.btnDesimputar.Name = "btnDesimputar";
-            this.btnDesimputar.Size = new System.Drawing.Size(124, 39);
+            this.btnDesimputar.Size = new System.Drawing.Size(124, 40);
             this.btnDesimputar.TabIndex = 80;
             this.btnDesimputar.Text = "Desimputar\r\nCobranza";
             this.btnDesimputar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -805,30 +805,30 @@
             this.panel2.Size = new System.Drawing.Size(431, 101);
             this.panel2.TabIndex = 95;
             // 
-            // label17
+            // label19
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(22, 30);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(79, 15);
-            this.label17.TabIndex = 96;
-            this.label17.Text = "Importe Total";
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(6, 75);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(95, 15);
+            this.label19.TabIndex = 100;
+            this.label19.Text = "Pendiente Pago";
             // 
-            // txtAImporteTotal
+            // txtATotalImpago
             // 
-            this.txtAImporteTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAImporteTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAImporteTotal.Location = new System.Drawing.Point(105, 27);
-            this.txtAImporteTotal.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAImporteTotal.Name = "txtAImporteTotal";
-            this.txtAImporteTotal.ReadOnly = true;
-            this.txtAImporteTotal.Size = new System.Drawing.Size(127, 21);
-            this.txtAImporteTotal.TabIndex = 95;
-            this.txtAImporteTotal.TabStop = false;
+            this.txtATotalImpago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtATotalImpago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtATotalImpago.Location = new System.Drawing.Point(105, 72);
+            this.txtATotalImpago.Margin = new System.Windows.Forms.Padding(2);
+            this.txtATotalImpago.Name = "txtATotalImpago";
+            this.txtATotalImpago.ReadOnly = true;
+            this.txtATotalImpago.Size = new System.Drawing.Size(127, 21);
+            this.txtATotalImpago.TabIndex = 99;
+            this.txtATotalImpago.TabStop = false;
             // 
             // label18
             // 
@@ -855,30 +855,30 @@
             this.txtATotalImputado.TabIndex = 97;
             this.txtATotalImputado.TabStop = false;
             // 
-            // label19
+            // label17
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(6, 75);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(95, 15);
-            this.label19.TabIndex = 100;
-            this.label19.Text = "Pendiente Pago";
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(22, 30);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(79, 15);
+            this.label17.TabIndex = 96;
+            this.label17.Text = "Importe Total";
             // 
-            // txtATotalImpago
+            // txtAImporteTotal
             // 
-            this.txtATotalImpago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtATotalImpago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtATotalImpago.Location = new System.Drawing.Point(105, 72);
-            this.txtATotalImpago.Margin = new System.Windows.Forms.Padding(2);
-            this.txtATotalImpago.Name = "txtATotalImpago";
-            this.txtATotalImpago.ReadOnly = true;
-            this.txtATotalImpago.Size = new System.Drawing.Size(127, 21);
-            this.txtATotalImpago.TabIndex = 99;
-            this.txtATotalImpago.TabStop = false;
+            this.txtAImporteTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAImporteTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAImporteTotal.Location = new System.Drawing.Point(105, 27);
+            this.txtAImporteTotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAImporteTotal.Name = "txtAImporteTotal";
+            this.txtAImporteTotal.ReadOnly = true;
+            this.txtAImporteTotal.Size = new System.Drawing.Size(127, 21);
+            this.txtAImporteTotal.TabIndex = 95;
+            this.txtAImporteTotal.TabStop = false;
             // 
             // FrmFi103DetalleImpuXRecibo
             // 

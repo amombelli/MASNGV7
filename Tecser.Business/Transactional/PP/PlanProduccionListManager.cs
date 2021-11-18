@@ -292,7 +292,7 @@ namespace Tecser.Business.Transactional.PP
                 }
             }
         }
-        
+
         public static T0070_PLANPRODUCCION GetOFData(int idplan)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TecserEF.Entity;
 
 namespace Tecser.Business.Transactional.FI
@@ -133,7 +130,7 @@ namespace Tecser.Business.Transactional.FI
                 TotalFinal = Subtotal + TotalImpuestos;
             }
 
-            
+
             OK = true;
         }
     }

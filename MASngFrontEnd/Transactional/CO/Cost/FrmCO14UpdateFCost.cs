@@ -64,7 +64,7 @@ namespace MASngFE.Transactional.CO.Cost
             this.ckSoloFormulasActivas.CheckedChanged += new System.EventHandler(this.ckSoloFormulasActivas_CheckedChanged);
             this.ckRecalculoCosto.CheckedChanged += new System.EventHandler(this.ckRecalculoCosto_CheckedChanged);
             SeleccionayColoreaDgv();
-            if (_fCostAlmacenada != null) 
+            if (_fCostAlmacenada != null)
                 CalculoCostoMemoria(_fCostAlmacenada.Value);
 
         }
@@ -138,7 +138,7 @@ namespace MASngFE.Transactional.CO.Cost
         {
             this.Close();
         }
-        
+
         private void CalculoCostoMemoria(int formulaCalculo)
         {
             if (formulaCalculo < 0)

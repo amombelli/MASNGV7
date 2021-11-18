@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.FI.MainDocumentData;
@@ -28,7 +23,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         public int? Id400Selected { private set; get; }
         public string TDOC { private set; get; }
         //--------------------------------------------------------------------------------------
-        
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -55,13 +50,13 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             this.dgvListadoFacturas.CellEnter -= new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoNc_CellEnter);
             CompletaHeaderData();
             t0400FACTURAHBindingSource.DataSource = GetTabla400401.GetListaDocumentos(_idCliente, _tipoLx).Where(c => c.TIPO_DOC == "NC").ToList();
-              
+
             dgvListadoFacturas.ClearSelection();
             this.dgvListadoFacturas.CellEnter +=
                 new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoNc_CellEnter);
             Id400Selected = null;
         }
-        
+
         private void CompletaHeaderData()
         {
             var clidata = new CustomerManager().GetCustomerBillToData(_idCliente);
@@ -74,7 +69,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             if (e.RowIndex >= 0)
             {
-                Id400Selected = Convert.ToInt32(dgvListadoFacturas[_idFactura_.Name,e.RowIndex].Value);
+                Id400Selected = Convert.ToInt32(dgvListadoFacturas[_idFactura_.Name, e.RowIndex].Value);
                 txtNumeroDocumento.Text = dgvListadoFacturas[__numeroDocumento.Name, e.RowIndex].Value.ToString();
                 TDOC = dgvListadoFacturas[__tipoDoc.Name, e.RowIndex].Value.ToString();
             }

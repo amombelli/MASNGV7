@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using MASngFE.MasterData;
 using Tecser.Business.MasterData;
 using Tecser.Business.SuperMD;
-using Tecser.Business.Tools;
 using Tecser.Business.Transactional.HR;
 using Tecser.Business.Transactional.MM;
-using Tecser.Business.VBTools;
 using TecserEF.Entity;
 using TSControls;
 
@@ -40,7 +35,7 @@ namespace MASngFE.Transactional.MM
         private T0360_RTN _data = new T0360_RTN();
 
         //-------------------------    Funcionalidad de Combos ------------------------------------
-        
+
         private void FrmRetornoMaterialAPlanta_Load(object sender, EventArgs e)
         {
             cmbRecibidoPor.Items.AddRange(HRComboManager.GetListaEmployee("RTNRECIBE").ToArray());
@@ -108,7 +103,7 @@ namespace MASngFE.Transactional.MM
                 new StockABM().AltaNewStockLine(_data.MATERIAL, _data.LOTE, _data.KG,
                     StockStatusManager.EstadoLote.Restringido, cmbSloc.SelectedValue.ToString(), "RTN1", false,
                     txtMotivoDevolucion.Text);
-                var id40 = new MmLog().LogMMAltaNewStockDevolucion(_motivoIngreso, _idh,StockStatusManager.EstadoLote.Restringido);
+                var id40 = new MmLog().LogMMAltaNewStockDevolucion(_motivoIngreso, _idh, StockStatusManager.EstadoLote.Restringido);
                 new ManageRetornoMaterial().UpdateId40(_idh, id40);
                 MessageBox.Show(@"Se ha ingresado el Stock en Forma Correcta!", @"Re-Ingreso de Stock",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -139,14 +134,14 @@ namespace MASngFE.Transactional.MM
                     MessageBoxIcon.Error);
                 return false;
             }
-            
+
             if (cCantidadRtn.GetValueDecimal <= 0)
             {
                 MessageBox.Show(@"La Cantidad a Reingresar en Kg es Incorrecta", @"Error en Validacion", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return false;
             }
-            
+
             var ckMotivoSeleccionado = grpMotivo.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
             if (ckMotivoSeleccionado == null)
             {
@@ -182,7 +177,7 @@ namespace MASngFE.Transactional.MM
             {
                 return;
             }
-               
+
             switch (checkedButton.Name)
             {
                 case "rbFE":
@@ -210,24 +205,8 @@ namespace MASngFE.Transactional.MM
         {
             this.Close();
         }
-        private void tsUcCustomerSearch11_ClienteModificado(object source, _0TSUserControls.TsCustomerSearchEventArgs args)
-        {
-            if (tsUcCustomerSearch11.ClienteId == null)
-            {
-                grp1.Enabled = false;
-                btnIngresar.Enabled = false;
-                _rtnSimple = null;
-                _rtnInfo = null;
-                _id6 = null;
-                return;
-            }
-            _id6 = tsUcCustomerSearch11.ClienteId;
-            _rtnInfo = new RtnIdentificacionMaterial(_id6.Value);
-            _rtnSimple=new RtnMaterialSimpleValidation(_id6.Value);
-            btnIngresar.Enabled = true;
-            grp1.Enabled = true;
-        }
-      
+
+
         private void txtMaterialRecibido_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             cSemMaterialOk.SetLights = CtlSemaforo.ColoresSemaforo.Rojo;
@@ -271,6 +250,24 @@ namespace MASngFE.Transactional.MM
             var combo = (ComboBox)sender;
             if (combo.SelectedItem == null && !string.IsNullOrEmpty(combo.Text))
                 e.Cancel = true;
+        }
+
+        private void tsUcCustomer31_ClienteModificado(object source, _0TSUserControls.CustomerSearchUcV3Args args)
+        {
+            if (tsUcCustomer31.ClienteId == null)
+            {
+                grp1.Enabled = false;
+                btnIngresar.Enabled = false;
+                _rtnSimple = null;
+                _rtnInfo = null;
+                _id6 = null;
+                return;
+            }
+            _id6 = tsUcCustomer31.ClienteId;
+            _rtnInfo = new RtnIdentificacionMaterial(_id6.Value);
+            _rtnSimple = new RtnMaterialSimpleValidation(_id6.Value);
+            btnIngresar.Enabled = true;
+            grp1.Enabled = true;
         }
 
 

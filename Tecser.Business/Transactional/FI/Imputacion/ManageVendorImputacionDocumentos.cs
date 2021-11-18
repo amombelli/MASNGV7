@@ -34,7 +34,7 @@ namespace Tecser.Business.Transactional.FI.Imputacion
                     return false;
 
                 //if (docDePago.IMPORTE_ORI <0)
-                var importe = Math.Abs(docDePago.IMPORTE_ORI.Value);
+                var importe = Math.Abs(docDePago.IMPORTE_ORI);
 
                 var x = new T0203_CTACTE_PROV_IMPU()
                 {

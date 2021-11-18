@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.SuperMD;
 using Tecser.Business.Tools;
@@ -35,7 +31,7 @@ namespace MASngFE.NewUserControls
             iconProvincia.Set = CIconos.Equis;
             iconPartido.Set = CIconos.Equis;
             iconLocalidad.Set = CIconos.Equis;
-            
+
             var rx = _c.CheckDataExiste(pais, provincia, partido, localidad);
             if (rx.ExistePais)
                 iconPais.Set = CIconos.Tilde;
@@ -57,8 +53,8 @@ namespace MASngFE.NewUserControls
                 if (rx.ExisteLocalidad)
                 {
                     iconLocalidad.Set = CIconos.LamparitaGreen;
-                    tt.SetToolTip(cmbLocalidad,"");
-                    tt.Show("La Localidad Existe pero el Partido es Incorrecto/Incompleto",cmbLocalidad,cmbLocalidad.Width,0,1200);
+                    tt.SetToolTip(cmbLocalidad, "");
+                    tt.Show("La Localidad Existe pero el Partido es Incorrecto/Incompleto", cmbLocalidad, cmbLocalidad.Width, 0, 1200);
                 }
             }
             return rx;
@@ -78,11 +74,11 @@ namespace MASngFE.NewUserControls
         public bool AllowLocalidadProvincia { get; set; } = true;
         private string _pais;
         private List<T0008_REGION> _provincias = new List<T0008_REGION>();
-        private List<T0010_PARTIDO> _partidos =new List<T0010_PARTIDO>();
-        private List<T0010_LOCALIDAD> _localidades =new List<T0010_LOCALIDAD>();
+        private List<T0010_PARTIDO> _partidos = new List<T0010_PARTIDO>();
+        private List<T0010_LOCALIDAD> _localidades = new List<T0010_LOCALIDAD>();
         private ControlAddressManager _c = new ControlAddressManager();
         private int _idLocalidad = -1;
-        
+
         private bool siprov = false;
         private bool sipart = false;
         private bool siloca = false;
@@ -99,7 +95,7 @@ namespace MASngFE.NewUserControls
                 return;
             //valor por defecto
             //al ingresar si o si se deebe completar la provincia.
-            if (_idLocalidad!=-1)
+            if (_idLocalidad != -1)
                 CargaDesdeLocaldiad();
 
             txtPais.Text = @"AR";
@@ -189,7 +185,7 @@ namespace MASngFE.NewUserControls
                 //No hay partidos en la lista. - Esto no debiera haber pasado.
                 return;
             }
-            var localidad = (T0010_LOCALIDAD) cmbLocalidad.SelectedItem;
+            var localidad = (T0010_LOCALIDAD)cmbLocalidad.SelectedItem;
             sipart = true;
             cmbPartido.SelectedValue = localidad.IdPartido;
             cmbLocalidad.SelectedValue = localidad.Id;
@@ -204,7 +200,7 @@ namespace MASngFE.NewUserControls
             {
                 _localidades = _c.GetLocalidad(Convert.ToInt32(cmbPartido.SelectedValue));
             }
-            
+
             if (!_localidades.Any())
             {
                 //no tengo ninguna localidad en la lista
@@ -218,7 +214,7 @@ namespace MASngFE.NewUserControls
                 iconLocalidad.Set = CIconos.LamparitaGreen;
                 cmbLocalidad.Enabled = true;
                 siloca = false;
-                cmbLocalidad.DataSource =_localidades;
+                cmbLocalidad.DataSource = _localidades;
                 cmbLocalidad.SelectedIndex = -1;
             }
             siloca = true;
@@ -261,8 +257,8 @@ namespace MASngFE.NewUserControls
             if (siprov == false)
                 return;
 
-            
-            if (cmbProvincia.SelectedIndex == -1 || cmbProvincia.Text==null)
+
+            if (cmbProvincia.SelectedIndex == -1 || cmbProvincia.Text == null)
             {
                 //al no tener provincia seleccionada no permite seleccionar
                 //nada mas

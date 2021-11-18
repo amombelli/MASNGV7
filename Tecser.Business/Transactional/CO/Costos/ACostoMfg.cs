@@ -199,7 +199,7 @@ namespace Tecser.Business.Transactional.CO.Costos
             FCost = fcost;
             SetBomExplosionAccordingToFcost();
         }
-        
+
         /// <summary>
         /// Revision --- 
         /// </summary>

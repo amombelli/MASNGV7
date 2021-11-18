@@ -27,12 +27,12 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
 
         protected XCustomerDocumentBase()
         {
-            
+
         }
 
         //-------------------------------------------------------------------------------
         protected int _idCliente;
-        protected  string _tcode;
+        protected string _tcode;
         protected string _tipoLx;
         private T0400_FACTURA_H H = new T0400_FACTURA_H();
         private List<T0401_FACTURA_I> I = new List<T0401_FACTURA_I>();
@@ -136,7 +136,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData
             //UserLog =,
             // FechaLog =,
             this.H = header400;
-            
+
             //mantiene H NCD
             var ncdh = new T0300_NCD_H()
             {

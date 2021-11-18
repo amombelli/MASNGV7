@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using Tecser.Business.TOOLS;
 using TecserEF.Entity;
@@ -20,7 +17,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
         ///  tipoDocumentoXX = "ND"
         /// </summary>
         public AsientoNumeracion.ReturnNumeracion GeneraAsientoInverso(int numeroAsiento, DateTime fechaAsiento, string tipoDocumentoXx,
-            string numeroDocumento, string observacionAsiento,string tcode, string prefijoSegText="*")
+            string numeroDocumento, string observacionAsiento, string tcode, string prefijoSegText = "*")
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -90,11 +87,11 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                         DEBE = i.HABER,
                         HABER = i.DEBE,
                         GL = i.GL,
-                        CK=true,
+                        CK = true,
                         PERIODO = new PeriodoConversion().GetPeriodo(fechaAsiento),
                         TIPO = i.TIPO,
-                        TCODE =tcode,
-                        GLL3 =i.GLL3,
+                        TCODE = tcode,
+                        GLL3 = i.GLL3,
                         ALINK = numeroAsiento,
                         CLIPROV_DESC = i.CLIPROV_DESC,
                         MATERIAL = i.MATERIAL,

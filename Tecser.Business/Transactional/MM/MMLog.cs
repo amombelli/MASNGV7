@@ -253,7 +253,7 @@ namespace Tecser.Business.Transactional.MM
 
             }
         }
-        public int LogMMAltaNewStockDevolucion(MotivoDevolucion.Motivo motivo, int idHeaderDev,StockStatusManager.EstadoLote estado)
+        public int LogMMAltaNewStockDevolucion(MotivoDevolucion.Motivo motivo, int idHeaderDev, StockStatusManager.EstadoLote estado)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -281,7 +281,7 @@ namespace Tecser.Business.Transactional.MM
                 }
 
                 var logOut = LogMovimientoT40(x.MATERIAL, x.FECHA, Convert.ToInt32(tipoMovimiento), "RTN",
-                    idHeaderDev.ToString(), x.KG, "RTN1", "LAB1",estado.ToString(), "I", "LX", x.LOTE, idCli: x.IDCLI,
+                    idHeaderDev.ToString(), x.KG, "RTN1", "LAB1", estado.ToString(), "I", "LX", x.LOTE, idCli: x.IDCLI,
                     comentarioMovimiento: x.COMENTARIO, refTableName: "T0360_RTN", refIdnum: idHeaderDev);
                 return logOut;
             }

@@ -13,7 +13,6 @@ using Tecser.Business.Transactional.CRM;
 using Tecser.Business.Transactional.HR;
 using Tecser.Business.Transactional.MM;
 using Tecser.Business.Transactional.PP;
-using Tecser.Business.Transactional.PP.MRP;
 using TecserEF.Entity;
 using TSControls;
 
@@ -21,7 +20,7 @@ namespace MASngFE.Transactional.PP
 {
     public partial class FrmPP02PlanificacionOF : Form
     {
-        public FrmPP02PlanificacionOF(int numeroOF, bool autoformulacion,bool verCrmData=true)
+        public FrmPP02PlanificacionOF(int numeroOF, bool autoformulacion, bool verCrmData = true)
         {
             _numeroOF = numeroOF;
             _autoformulacion = autoformulacion;

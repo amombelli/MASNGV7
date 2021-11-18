@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -54,7 +52,7 @@ namespace Tecser.Business.Transactional.FI
             if (h.TotalFacturaN == (Subtotal + Iva21 + IIBB))
                 OK = true;
         }
-        
+
 
 
         /// <summary>
@@ -107,16 +105,16 @@ namespace Tecser.Business.Transactional.FI
             }
 
             Subtotal = Bruto - Descuento;
-                decimal porcentajeImponibleAntesDescuento = Math.Round(baseImpo / Bruto, 4);
-                BaseImponible = Math.Round(Subtotal * porcentajeImponibleAntesDescuento, 2);
-                NoImponible = Subtotal - BaseImponible;
-                Iva21 = Math.Round(BaseImponible * (decimal) 0.21, 2);
-                AlicuotaIIBB = Math.Round(alicuotaIIBB, 4);
-                IIBB = Math.Round(baseImpo * AlicuotaIIBB, 2);
-                TotalImpuestos = Iva21 + IIBB;
-                TotalFinal = Subtotal + TotalImpuestos;
-                OK = true;
-  
+            decimal porcentajeImponibleAntesDescuento = Math.Round(baseImpo / Bruto, 4);
+            BaseImponible = Math.Round(Subtotal * porcentajeImponibleAntesDescuento, 2);
+            NoImponible = Subtotal - BaseImponible;
+            Iva21 = Math.Round(BaseImponible * (decimal)0.21, 2);
+            AlicuotaIIBB = Math.Round(alicuotaIIBB, 4);
+            IIBB = Math.Round(baseImpo * AlicuotaIIBB, 2);
+            TotalImpuestos = Iva21 + IIBB;
+            TotalFinal = Subtotal + TotalImpuestos;
+            OK = true;
+
         }
 
 
@@ -124,7 +122,7 @@ namespace Tecser.Business.Transactional.FI
         /// <summary>
         /// Funcion que mapea todos los importes en ARS
         /// </summary>
-        public void MapImportesFromItems301_PlusImpuestos(List<T0301_NCD_I> items, decimal tc,decimal alicuotaIIBB = 0,
+        public void MapImportesFromItems301_PlusImpuestos(List<T0301_NCD_I> items, decimal tc, decimal alicuotaIIBB = 0,
             decimal descuentoImporte = 0, decimal descuentoPorcentaje = 0)
         {
             decimal baseImpoArs = 0;
@@ -144,9 +142,9 @@ namespace Tecser.Business.Transactional.FI
                     //calculo en moneda de facturacion USD
                     if (i.IVA21)
                     {
-                        baseImpoArs += i.PTOTAL*tc;
+                        baseImpoArs += i.PTOTAL * tc;
                     }
-                    importeBruto += i.PTOTAL*tc;
+                    importeBruto += i.PTOTAL * tc;
                 }
             }
             Bruto = importeBruto;
@@ -179,16 +177,16 @@ namespace Tecser.Business.Transactional.FI
             OK = true;
         }
     }
-    
+
     /// <summary>
     /// Nueva Clase de Gestion de Notas de Debito 2021.07.10
     /// </summary>
 
-    public class CustomerNc:CustomerDoc
+    public class CustomerNc : CustomerDoc
     {
         public CustomerNc(MotivoNotaCredito xmotivo)
         {
-            T400= new GestionT400(GestionT400.SignoRegistracion.Negativo);
+            T400 = new GestionT400(GestionT400.SignoRegistracion.Negativo);
             _motivoDocumento = xmotivo;
             motivoDocumentoString = xmotivo.ToString();
         }
@@ -204,7 +202,7 @@ namespace Tecser.Business.Transactional.FI
             //todo: hacer en conjunto con customernd
         }
 
-        
+
         public enum MotivoNotaCredito
         {
             AnulaDocumento,
@@ -231,7 +229,7 @@ namespace Tecser.Business.Transactional.FI
             }
         }
         private MotivoNotaCredito _motivoDocumento;
-        
+
         /// <summary>
         /// De acuerdo a <ITEM> se puede manejar la descripción que va a salir
         /// 
@@ -246,7 +244,7 @@ namespace Tecser.Business.Transactional.FI
 
                 SetDocumentoAsociado(idDocumentoOrigen);
                 T300.H3.IdMotivoAsociado = IdFacturaAsociada;
-                
+
                 foreach (var it in itemOri)
                 {
                     //Una anulacion de NC con ND se toma como si la cotizacion hubiese sido en pesos y se recalcula el valor USD segun el TC del día de la fecha de emision de ND
@@ -290,7 +288,7 @@ namespace Tecser.Business.Transactional.FI
                     decimal cantidadI = it.KGDESPACHADOS_R.Value;
                     if (cantidadI == 0) cantidadI = 1;
                     cantidadI = cantidadI * -1;
-                    
+
                     T400.AddItemsMemory(item, newDescription, cantidadI, "ARS", it.PRECIOU_FACT_ARS, it.GLV, it.GLI,
                         it.IVA21, it.CostoStd, null, null, null);
 
@@ -313,7 +311,7 @@ namespace Tecser.Business.Transactional.FI
             }
         }
 
-       
+
 
 
 
@@ -325,10 +323,10 @@ namespace Tecser.Business.Transactional.FI
         public T0300_NCD_H H3 = new T0300_NCD_H();
         public List<T0301_NCD_I> I3 = new List<T0301_NCD_I>();
         private Totales _total = new Totales();
-       
+
         private DocumentFIStatusManager.StatusHeader _status400;
-        
-        
+
+
         /// <summary>
         /// Copia datos basicos de la factura enviada
         /// Blanquea Importes a 0.- + ID a 0
@@ -413,7 +411,7 @@ namespace Tecser.Business.Transactional.FI
         /// <summary>
         /// Inicializa un Header T400 con los datos basicos del Cliente - LX
         /// </summary>
-        private void InicializaHeaderT400_BasicCustomer(int idCliente, string tdocAGenerar, string lx, DateTime fechaDocumento,decimal tc, string facturaMoneda="ARS")
+        private void InicializaHeaderT400_BasicCustomer(int idCliente, string tdocAGenerar, string lx, DateTime fechaDocumento, decimal tc, string facturaMoneda = "ARS")
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -451,7 +449,7 @@ namespace Tecser.Business.Transactional.FI
                     FechaLog = DateTime.Now,
                     UserLog = GlobalApp.AppUsername,
                 };
-  //              _asignacionNumerosDocumentosFI.AsignaNumeroDocumentoTemporal();
+                //              _asignacionNumerosDocumentosFI.AsignaNumeroDocumentoTemporal();
             }
         }
 
@@ -464,8 +462,8 @@ namespace Tecser.Business.Transactional.FI
             {
                 //Carga Header de factura original y blanquea datos nuevos
                 _status400 = DocumentFIStatusManager.StatusHeader.Pendiente;
-                CreaT400HeaderBasadoEnDocumentoExistente(idFacturaAnula,"NC");
-               
+                CreaT400HeaderBasadoEnDocumentoExistente(idFacturaAnula, "NC");
+
                 var items = db.T0401_FACTURA_I.Where(c => c.IDFactura == idFacturaAnula).ToList();
                 int numeroItem = 1;
                 I4.Clear();
@@ -486,7 +484,7 @@ namespace Tecser.Business.Transactional.FI
                             PRECIOT_COTIZ = i.PRECIOT_COTIZ, //es en USD
                             PRECIOU_FACT_USD = i.PRECIOU_FACT_USD,
                             PRECIOT_FACT_USD = i.PRECIOT_FACT_USD,
-                            PRECIOU_FACT_ARS = Math.Abs(i.PRECIOU_FACT_ARS - Math.Round(i.PRECIOU_COTIZ * nuevoTc,2)),
+                            PRECIOU_FACT_ARS = Math.Abs(i.PRECIOU_FACT_ARS - Math.Round(i.PRECIOU_COTIZ * nuevoTc, 2)),
                             PRECIOT_FACT_ARS = Math.Abs(i.PRECIOT_FACT_ARS - Math.Round(i.PRECIOT_COTIZ * nuevoTc, 2)),
                             GLV = i.GLV,
                             GLI = i.GLI,
@@ -504,7 +502,7 @@ namespace Tecser.Business.Transactional.FI
                         I4.Add(t);
                     }
                 }
-                _total.MapImportesFromItems400(I4,H4.IIBB_PORC.Value,H4.DescuentoPorc.Value);
+                _total.MapImportesFromItems400(I4, H4.IIBB_PORC.Value, H4.DescuentoPorc.Value);
                 H4.TotalFacturaB = _total.Bruto;
                 H4.Descuento = _total.Descuento;
                 H4.TotalImpo = _total.BaseImponible;
@@ -716,7 +714,7 @@ namespace Tecser.Business.Transactional.FI
                     IDCHE = null,
                 };
                 if (t.IVA21)
-                    t.PIVA = decimal.Round(t.PTOTAL * (decimal) 0.21, 2);
+                    t.PIVA = decimal.Round(t.PTOTAL * (decimal)0.21, 2);
                 I3.Add(t);
             }
         }
@@ -776,7 +774,7 @@ namespace Tecser.Business.Transactional.FI
                 }
                 db.T0401_FACTURA_I.AddRange(I4);
                 db.SaveChanges();
-                _status400 =DocumentFIStatusManager.StatusHeader.Registrada;
+                _status400 = DocumentFIStatusManager.StatusHeader.Registrada;
             }
         }
         public bool DesRegistraT400()
@@ -820,7 +818,7 @@ namespace Tecser.Business.Transactional.FI
             }
             return true;
         }
-        
+
         /// <summary>
         /// Registra 300/301 despues de haber registrado T400/401 
         /// </summary>
@@ -884,7 +882,7 @@ namespace Tecser.Business.Transactional.FI
             {
                 var max = db.T0400_FACTURA_H.Where(c => c.TIPOFACT == tipoLx).Max(c => c.IDFACTURAX);
                 if (max != null)
-                    return (int) max + 1;
+                    return (int)max + 1;
                 return 1;
             }
         }
@@ -918,14 +916,14 @@ namespace Tecser.Business.Transactional.FI
                 return db.T0401_FACTURA_I.Where(c => c.IDFactura == idFactura).ToList();
             }
         }
-        public static T0401_FACTURA_I Get401Item(int idFactura,int idItem)
+        public static T0401_FACTURA_I Get401Item(int idFactura, int idItem)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 return db.T0401_FACTURA_I.SingleOrDefault(c => c.IDFactura == idFactura && c.IDITEM == idItem);
             }
         }
-     
+
 
         public void AddIdComprobanteAsociado(int idComprobante, bool updatedTablaSql = false)
         {
@@ -950,7 +948,7 @@ namespace Tecser.Business.Transactional.FI
         /// <summary>
         /// Metodo SaveData incluye update desde el objeto de este campo
         /// </summary>
-      
+
 
         public T0300_NCD_H GetT0300HeaderFromIDFactura400(int idFactura)
         {

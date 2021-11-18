@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
@@ -12,7 +8,7 @@ using TecserEF.Entity.DataStructure.PP;
 namespace Tecser.Business.Transactional.PP
 {
 
-    
+
     public class OFPrintData
     {
         private readonly int _numeroOF;
@@ -64,6 +60,6 @@ namespace Tecser.Business.Transactional.PP
                 return rtn;
             }
         }
-        
+
     }
 }

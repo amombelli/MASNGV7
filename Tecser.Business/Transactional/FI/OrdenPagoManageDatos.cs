@@ -44,7 +44,7 @@ namespace Tecser.Business.Transactional.FI
                            select new DsOrdenPagoFacturasIncluidas()
                            {
                                Tdoc = facturas.TDOC,
-                               FechaDoc = facturas.Fecha.Value,
+                               FechaDoc = facturas.Fecha,
                                FACT_TIPO = opfactu.FACT_TIPO,
                                FACT_NUM = opfactu.FACT_NUM,
                                FACT_MON = opfactu.FACT_MON,
@@ -157,7 +157,7 @@ namespace Tecser.Business.Transactional.FI
                 foreach (var ix in fop)
                 {
                     var saldoFacturaCtaCte =
-                        db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == ix.IdCtaCte.Value).SALDOFACTURA.Value;
+                        db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == ix.IdCtaCte.Value).SALDOFACTURA;
                     if (saldoFacturaCtaCte != ix.FACT_SALDO_IMPUTAR.Value)
                         return false;
                 }
@@ -202,7 +202,7 @@ namespace Tecser.Business.Transactional.FI
         }
 
 
-        public void RegistraChequesEmitidos()
+        public void RegistraChequesEmitidos(int numeroAsiento)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -211,7 +211,7 @@ namespace Tecser.Business.Transactional.FI
                 {
                     var obj = new GestionChequesEmitidos().SetNewRecord(it.CH_NUM, it.T0210_OP_H.OPFECHA.Value,
                         it.ChequeFecha.Value, it.IMPORTE.Value, it.CUENTA_O, it.IDOP, it.PROVEEDOR.Value,
-                        it.CK_FIN.Value);
+                        it.CK_FIN.Value,numeroAsiento,Header.TIPO);
                     if (obj < 1)
                         MessageBox.Show(@"Error al Registrar el Cheque Emitido!", @"Atencion!", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
@@ -316,7 +316,7 @@ namespace Tecser.Business.Transactional.FI
                     ifactu.CK_FIN = true;
                     var totalImputado = ifactu.FACT_IMPUTADO + ifactu.RetencionGS + ifactu.RetencionIIBB;
 
-                    ctacte.SALDOFACTURA = ctacte.SALDOFACTURA - totalImputado;
+                    ctacte.SALDOFACTURA = ctacte.SALDOFACTURA - (decimal) totalImputado;
                     db.SaveChanges();
 
                 }
@@ -337,7 +337,7 @@ namespace Tecser.Business.Transactional.FI
                 if (ctacteOpCred == null)
                     return;
 
-                AddItemPago("OPCRED", Math.Abs(ctacteOpCred.SALDOFACTURA.Value), idCtaCteOPCred);
+                AddItemPago("OPCRED", Math.Abs(ctacteOpCred.SALDOFACTURA), idCtaCteOPCred);
                 ctacteOpCred.SALDOFACTURA = 0;
 
                 Int32 numOP = Convert.ToInt32(ctacteOpCred.NUMDOC);
@@ -357,7 +357,7 @@ namespace Tecser.Business.Transactional.FI
                 var ctacteOpCred = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == idCtaCteOPCred);
                 if (ctacteOpCred == null)
                     return;
-                AddItemPago("NC", Math.Abs(ctacteOpCred.SALDOFACTURA.Value), idCtaCteOPCred);
+                AddItemPago("NC", Math.Abs(ctacteOpCred.SALDOFACTURA), idCtaCteOPCred);
                 ctacteOpCred.SALDOFACTURA = 0;
 
                 //Int32 numOP = Convert.ToInt32(ctacteOpCred.NUMDOC);
@@ -409,6 +409,7 @@ namespace Tecser.Business.Transactional.FI
         /// <summary>
         /// Agrega un item de pago a una orden de pago - NO USAR para OPCRED Directamente
         /// Si se provee fechaAcreditacionEmitido - Se trata de un cheque emitido desde cuentas (GAL,SAN,ICBC)
+        /// Si Idcheque =-5 (cheque emitido) -- si es transferencia=true => e-cheque
         /// Se utliliza CK_FIN para indicar que es transferencia desde banco
         /// </summary>
         public bool AddItemPago(string cuenta, decimal importe, int idCheque = -1, decimal tc = 0, DateTime? fechaAcreditacionEmitido = null, string numeroChequeEmitido = null, bool esTransferenciaDesdeCuenta = false)
@@ -426,14 +427,14 @@ namespace Tecser.Business.Transactional.FI
                 CH_ID = null,
                 CH_NUM = null,
                 CK_CANCEL = false,
-                CK_FIN = esTransferenciaDesdeCuenta, //lo vamos a usar como indicador de transferencia desde cuenta
+                CK_FIN = esTransferenciaDesdeCuenta,//Indicador Transferencia/e-cheque
                 CUENTA_O = cuenta,
                 PROVEEDOR = Header.PROV_ID,
                 TC = Header.TC,
                 MON_OP = Header.MON_OP,
                 IMPORTE = importe,
                 MON = infoCuentaPago.CUENTA_MONEDA,
-                ChequeFecha = null,
+                ChequeFecha = null
             };
 
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -445,12 +446,16 @@ namespace Tecser.Business.Transactional.FI
                     var bancos = new BankManager().GetBankDataNombreCuenta(bankValue);
                     if (bancos == null)
                     {
-                        bancos.ID_BANCO = "000";
+                        bancos = new T0160_BANCOS()
+                        {
+                            ID_BANCO = "000"
+                        };
                     }
+
                     itemPago.CH_CK = true;
                     itemPago.CH_NUM = numeroChequeEmitido;
                     itemPago.CH_BCO = bancos.ID_BANCO;
-                    itemPago.CH_ID = idCheque; //debiera venir -5
+                    itemPago.CH_ID = idCheque; //debiera venir -5 (cheque o e-cheque emitido propio)
                     itemPago.ChequeFecha = fechaAcreditacionEmitido;
                 }
                 else
@@ -472,7 +477,7 @@ namespace Tecser.Business.Transactional.FI
                             itemPago.CH_NUM = "OP@" + datosCtaCte.NUMDOC;
                             itemPago.CH_ID = idCheque;
                             itemPago.ChequeFecha = datosCtaCte.Fecha;
-                            itemPago.IMPORTE = Math.Abs(datosCtaCte.SALDOFACTURA.Value);
+                            itemPago.IMPORTE = Math.Abs(datosCtaCte.SALDOFACTURA);
                             itemPago.MON = datosCtaCte.MONEDA;
                             break;
                         case "NC":
@@ -480,7 +485,7 @@ namespace Tecser.Business.Transactional.FI
                             itemPago.CH_NUM = "NC@" + datosCtaCteX.NUMDOC;
                             itemPago.CH_ID = idCheque;
                             itemPago.ChequeFecha = datosCtaCteX.Fecha;
-                            itemPago.IMPORTE = Math.Abs(datosCtaCteX.SALDOFACTURA.Value);
+                            itemPago.IMPORTE = Math.Abs(datosCtaCteX.SALDOFACTURA);
                             itemPago.MON = datosCtaCteX.MONEDA;
                             break;
                         case "NC2":
@@ -488,7 +493,7 @@ namespace Tecser.Business.Transactional.FI
                             itemPago.CH_NUM = "NC@" + datosCtaCteY.NUMDOC;
                             itemPago.CH_ID = idCheque;
                             itemPago.ChequeFecha = datosCtaCteY.Fecha;
-                            itemPago.IMPORTE = Math.Abs(datosCtaCteY.SALDOFACTURA.Value);
+                            itemPago.IMPORTE = Math.Abs(datosCtaCteY.SALDOFACTURA);
                             itemPago.MON = datosCtaCteY.MONEDA;
                             break;
                         default:

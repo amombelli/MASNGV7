@@ -11,7 +11,6 @@ using Tecser.Business.Transactional.FI;
 using Tecser.Business.Transactional.FI.Cobranza;
 using Tecser.Business.Transactional.FI.Customers;
 using Tecser.Business.Transactional.FI.MainDocumentData;
-using Tecser.Business.Transactional.FI.MainDocumentData.Customer;
 using Tecser.Business.Transactional.SD;
 using WebServicesAFIP;
 
@@ -426,7 +425,7 @@ namespace MASngFE.Transactional.FI.Factura
             {
                 resultado = fe.SolicitudCAEFromT0400(_idFactura, null, null, null);
             }
-            
+
             if (resultado.Resultado == "A")
             {
                 txtCAE.Text = resultado.CAE;

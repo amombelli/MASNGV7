@@ -36,7 +36,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                     c.IdRemito == idRemito && c.IdItem == idRemitoItem);
             }
         }
-        
+
 
         public void AddMargenDocumentNcAnulacion()
         {
@@ -69,7 +69,7 @@ namespace Tecser.Business.Transactional.CO.Costos
             return true;
         }
 
-        
+
         public void AddItemNotaCredito(int idNcHeader)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -77,7 +77,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                 var ncd = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == idNcHeader);
                 if (ncd == null) return;
                 NcRemoveExistingData(idNcHeader);
-                
+
                 var nc400 = db.T0400_FACTURA_H.SingleOrDefault(c => c.IDFACTURA == ncd.idFacturaT0400.Value);
                 if (nc400 == null) return;
                 var it400 = db.T0401_FACTURA_I.Where(c => c.IDFactura == nc400.IDFACTURA).ToList();
@@ -86,7 +86,7 @@ namespace Tecser.Business.Transactional.CO.Costos
 
                 if (ncd.ImporteARS > 0)
                 {
-                   //debito
+                    //debito
                     var motivo = new CustomerNd(-1).MapMotivoFromTextoToType(ncd.Motivo);
                     switch (motivo)
                     {
@@ -180,7 +180,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                                 NcAddSingleItemToTable140_Complete(i.ITEM, ncd.IDH, i.IDITEM, 0, p1, p2,
                                     (p1 + p2) * i.KGDESPACHADOS_R.Value, 0, ncd.idFacturaAsociada.Value, ncd.NDOC);
 
-                            } 
+                            }
                             break;
                         case CustomerNc.MotivoNotaCredito.DesGeneralDocumentos:
                             foreach (var i in it400)
@@ -314,14 +314,14 @@ namespace Tecser.Business.Transactional.CO.Costos
         }
 
 
-        private bool NcAddSingleItemToTable140(string item, int ncHeader,int idItem,decimal cantidad,decimal precio1, decimal precio2,int idDocumentoT400,string numeroDocumento,string numeroRemito=null)
+        private bool NcAddSingleItemToTable140(string item, int ncHeader, int idItem, decimal cantidad, decimal precio1, decimal precio2, int idDocumentoT400, string numeroDocumento, string numeroRemito = null)
         {
             decimal costoTotalOperacionProporcional = 0;
             decimal costoEstadistico = 0;
             decimal costoAdicionalTotal = 0;
             decimal costoUnitarioAdicional = 0;
             decimal costoMfg;
-            
+
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var std = new ACostoStandard(item);
@@ -364,8 +364,8 @@ namespace Tecser.Business.Transactional.CO.Costos
                     TipoLX = nc.LX,
                     PrecioU1 = precio1,
                     PrecioU2 = precio2,
-                    PrecioU = precio1+precio2,
-                    PrecioTotal = (precio1+precio2)*cantidad,
+                    PrecioU = precio1 + precio2,
+                    PrecioTotal = (precio1 + precio2) * cantidad,
                     PorcentajeCobrado = 0,
                     PrecioCobradoTotal = 0,
                     MargenOperacionFinal = 0,
@@ -544,7 +544,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                         decimal costoMfg;
                         var std = new ACostoStandard(remitoItem.MATERIAL);
                         std.GetCost();
-                        if (std.Encontrado == false || std.ValorUSD >9999)
+                        if (std.Encontrado == false || std.ValorUSD > 9999)
                         {
                             //obtener costo STD nuevo 
                             Debug.Print($"Obteniendo costo MFG-STD {remitoItem.MATERIAL}");
@@ -699,7 +699,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                             @"Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         return false;
                     }
-                    
+
                     //Reparte Informacion en las diferentes lineas de la Factura 
                     decimal importeTotalFactura = f140.Select(c => c.PrecioTotal).Sum();
                     int cantidadLineas = f140.Select(c => c.IdFactura == f.Value).Count();
@@ -710,11 +710,11 @@ namespace Tecser.Business.Transactional.CO.Costos
                         decimal porcentajePonderadoLinea = 0;
                         if (importeTotalFactura != 0)
                         {
-                            porcentajePonderadoLinea = Math.Round(f2.PrecioTotal / importeTotalFactura,3);
+                            porcentajePonderadoLinea = Math.Round(f2.PrecioTotal / importeTotalFactura, 3);
                         }
                         else
                         {
-                            porcentajePonderadoLinea = Math.Round((decimal)(1/cantidadLineas),5);
+                            porcentajePonderadoLinea = Math.Round((decimal)(1 / cantidadLineas), 5);
                         }
 
                         if (f2.MonCosto == "ARS")
@@ -723,7 +723,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                         }
                         else
                         {
-                            f2.PrecioCobradoTotal = Math.Round(rx.UsdCobradoProductos * porcentajePonderadoLinea,3);
+                            f2.PrecioCobradoTotal = Math.Round(rx.UsdCobradoProductos * porcentajePonderadoLinea, 3);
                         }
                         f2.MargenOperacionFinal = f2.PrecioCobradoTotal - (f2.Cantidad * f2.CostoTotal);
                         f2.MargenOperaconVentaUnitario = f2.PrecioU - f2.CostoTotal;
@@ -817,7 +817,7 @@ namespace Tecser.Business.Transactional.CO.Costos
                         //    //no se cuenta en T0140 con informacion de linkeo IDRemito o IDNcd
                         //}
                     }
-                   
+
                 }
             }
         }

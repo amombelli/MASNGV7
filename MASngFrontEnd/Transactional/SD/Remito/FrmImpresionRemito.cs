@@ -140,7 +140,7 @@ namespace MASngFE.Transactional.SD.Remito
                 groupBox1.Enabled = false;
 
             dtpFechaRemito.Value = dataH.FECHA;
-            ckRemitoImpreso.Checked = dataH.Impreso != null && dataH.Impreso;
+            ckRemitoImpreso.Checked = dataH.Impreso;
             ckRemitoImpreso1.Checked = ckRemitoImpreso.Checked;
 
             txtNumeroRemito1.Text = ckRemitoImpreso1.Checked ? dataH.NUMREMITO : @"NO ASIGNADO";

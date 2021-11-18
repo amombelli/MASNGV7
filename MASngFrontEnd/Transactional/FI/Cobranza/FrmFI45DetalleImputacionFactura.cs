@@ -61,7 +61,7 @@ namespace MASngFE.Transactional.FI.Cobranza
             txtDocumentoUSD.Text = (dataF.TotalFacturaN / dataF.TC).ToString("C2");
             txtCobradoUSD.Text = new1.UsdTotalCobrado.ToString("C2");
             if (new1.UsdTotalCobrado != 0)
-                txtTcCobranza.Text = ((dataF.TotalFacturaN- new1.ArsSaldoImpago) / new1.UsdTotalCobrado).ToString("N2");
+                txtTcCobranza.Text = ((dataF.TotalFacturaN - new1.ArsSaldoImpago) / new1.UsdTotalCobrado).ToString("N2");
         }
         private void CalculaPorcentajeApplicacion()
         {

@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.FI.Cobranza;
 using Tecser.Business.Transactional.FI.CtaCte;
@@ -33,7 +26,7 @@ namespace MASngFE.Transactional.FI.Cobranza
         private int _idSplitSeleccion;
         private bool _dgv1Leave;
         private bool _dgv2Leave;
-        
+
 
         private void FrmFI48ImputacionCobranza_Load(object sender, EventArgs e)
         {
@@ -66,7 +59,7 @@ namespace MASngFE.Transactional.FI.Cobranza
 
         private void cmbRazonSocial_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var cmb = (ComboBox) sender;
+            var cmb = (ComboBox)sender;
             if (cmb.SelectedValue == null)
             {
                 _idCliente = null;
@@ -99,7 +92,7 @@ namespace MASngFE.Transactional.FI.Cobranza
             txtCreditoL1.Text = _impuD.CreditoSinImputarL1.ToString("C2");
             txtCreditoL2.Text = _impuD.CreditoSinImputarL2.ToString("C2");
             txtSaldoPendienteImputacion.Text = _impuD.FacturaSinImputarSeleccion.ToString("C2");
-            txtCreditoL1.BackColor= Color.LightSteelBlue;
+            txtCreditoL1.BackColor = Color.LightSteelBlue;
             txtCreditoL2.BackColor = Color.LightSteelBlue;
             dgvDocumentosAImputar.ClearSelection();
             dgvCobranzas.ClearSelection();
@@ -118,17 +111,17 @@ namespace MASngFE.Transactional.FI.Cobranza
                 return;
             }
 
-            var dgv = (DataGridView) sender;
+            var dgv = (DataGridView)sender;
             this.dgvCobranzas.CellEnter -= new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCobranzas_CellEnter);
             //reset de iconos 
 
 
             //Seleccionar una cobranza
             if (e.RowIndex >= 0)
-            { 
+            {
                 var z = Convert.ToInt32(dgv[__1IdCob.Name, e.RowIndex].Value);
                 _idCobranzaSeleccionada = Convert.ToInt32(dgv[__1IdCob.Name, e.RowIndex].Value);
-               var dataCob = _impuD.SetSeleccionRegistro208(_idCobranzaSeleccionada);
+                var dataCob = _impuD.SetSeleccionRegistro208(_idCobranzaSeleccionada);
                 if (_modoClienteSeleccionado == false)
                 {
                     cmodoSeleccionCliente.Set = CIconos.Rojo;
@@ -140,7 +133,7 @@ namespace MASngFE.Transactional.FI.Cobranza
                     txtIdCliente.Text = _idCliente.ToString();
                     ResetInfo();
                     _impuD.SetCliente(_idCliente);
-                    
+
                     var cli = new CustomerManager().GetCustomerBillToData(_idCliente.Value);
                     var ctacte = new CtaCteCustomer(_idCliente.Value);
                     txtDeudaL1.Text = ctacte.GetResultadoCtaCte("L1").SaldoResumen.ToString("C2");
@@ -158,7 +151,7 @@ namespace MASngFE.Transactional.FI.Cobranza
                     //modo cobranza por cliente 
                     cmodoSeleccionCliente.Set = CIconos.Verde;
                 }
-                
+
                 this.dgvDocumentosAImputar.CellEnter -= new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentosAImputar_CellEnter);
                 dgvDocumentosAImputar.DataSource = _impuD.GetListaDocumentosSinImputar();
                 dgvDocumentosAImputar.ClearSelection();
@@ -212,7 +205,7 @@ namespace MASngFE.Transactional.FI.Cobranza
                 ResetInfoImputacion();
                 return;
             }
-            var dgv = (DataGridView) sender;
+            var dgv = (DataGridView)sender;
             this.dgvDocumentosAImputar.CellEnter -= new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentosAImputar_CellEnter);
             if (e.RowIndex >= 0)
             {
@@ -272,7 +265,7 @@ namespace MASngFE.Transactional.FI.Cobranza
         private void cImporteMaximoImputar_Validating(object sender, CancelEventArgs e)
         {
             var valorNew = cImporteMaximoImputar.GetValueDecimal;
-            if (valorNew==0 && _idCobranzaSeleccionada == null)
+            if (valorNew == 0 && _idCobranzaSeleccionada == null)
             {
                 cImporteMaximoImputar.SetValue = -_impuD.SaldoImputarMax * -1;
                 cImporteSobrante.SetValue = 0;
@@ -285,7 +278,7 @@ namespace MASngFE.Transactional.FI.Cobranza
             {
                 MessageBox.Show(@"Para modificar el valor a Imputar debe primero seleccionar una factura",
                     @"Imputacion de Facturas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cImporteMaximoImputar.SetValue = -_impuD.SaldoImputarMax*-1;
+                cImporteMaximoImputar.SetValue = -_impuD.SaldoImputarMax * -1;
                 cImporteSobrante.SetValue = 0;
                 cIconOk208.Set = CIconos.Equis;
                 return;
@@ -334,7 +327,7 @@ namespace MASngFE.Transactional.FI.Cobranza
             {
                 c3IconResultadoImputacion.Set = CIconos.ExclamacionRed;
                 btnImputar.Enabled = false;
-                c3IconSeImputoPercepcion.Set =  CIconos.Rojo;
+                c3IconSeImputoPercepcion.Set = CIconos.Rojo;
                 c3DiasPPValorCobranza.SetValue = 0;
                 c3DiasPPCobranzaFactura.SetValue = 0;
                 c3ImporteImputado.SetValue = 0;
@@ -392,7 +385,7 @@ namespace MASngFE.Transactional.FI.Cobranza
             cIconOk207.Set = _impu.OK207 ? CIconos.Verde : CIconos.TrianguloNaranja;
             cIconOk207_400.Set = _impu.OK207_400 ? CIconos.Verde : CIconos.TrianguloNaranja;
             //
-            cIconOkImpuIIBB.Set= _impu.OKImpuIIBB ? CIconos.Verde : CIconos.TrianguloNaranja;
+            cIconOkImpuIIBB.Set = _impu.OKImpuIIBB ? CIconos.Verde : CIconos.TrianguloNaranja;
             cIconErrorDataIibbNoRegistrada.Set = !_impu.ErrorDataIIBBnoRegistrada ? CIconos.Verde : CIconos.TrianguloNaranja;
             if (_impu.ErrorDataIIBBnoRegistrada)
             {
@@ -426,19 +419,19 @@ namespace MASngFE.Transactional.FI.Cobranza
             {
                 //Cliente Seleccionado
                 _impuD.SetCliente(_idCliente, false);
-                _impuD.SetLx(null,true);
+                _impuD.SetLx(null, true);
                 dgvCobranzas.DataSource = _impuD.GetListaCobranzasSinImputar();
                 dgvCobranzas.ClearSelection();
                 txtCreditoL1.Text = _impuD.CreditoSinImputarL1.ToString("C2");
                 txtCreditoL2.Text = _impuD.CreditoSinImputarL2.ToString("C2");
-                txtCreditoL1.BackColor= Color.LightSteelBlue;
+                txtCreditoL1.BackColor = Color.LightSteelBlue;
                 txtCreditoL2.BackColor = Color.LightSteelBlue;
             }
             else
             {
                 //obtiene cobranzas de nuevo
-                _impuD.SetCliente(null,false);
-                _impuD.SetLx(null,true);
+                _impuD.SetCliente(null, false);
+                _impuD.SetLx(null, true);
                 dgvCobranzas.DataSource = _impuD.GetListaCobranzasSinImputar();
                 dgvCobranzas.ClearSelection();
                 txtCreditoL1.Text = 0.ToString("C2");
@@ -463,7 +456,7 @@ namespace MASngFE.Transactional.FI.Cobranza
             this.dgvCobranzas.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCobranzas_CellEnter);
             this.dgvDocumentosAImputar.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentosAImputar_CellEnter);
         }
-        
+
         private void dgvCobranzas_Leave(object sender, EventArgs e)
         {
             _dgv1Leave = false;

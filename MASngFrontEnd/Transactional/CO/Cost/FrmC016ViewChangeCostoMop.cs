@@ -163,7 +163,7 @@ namespace MASngFE.Transactional.CO.Cost
                 ckManualUpd.Checked, ckUpdAfterCR.Checked);
             foreach (var itemz in data)
             {
-                new MargenDocument().UpdateMfgCr(itemz, (decimal) ctlNuevoCostRoll.GetValueDecimal);
+                new MargenDocument().UpdateMfgCr(itemz, (decimal)ctlNuevoCostRoll.GetValueDecimal);
             }
         }
 

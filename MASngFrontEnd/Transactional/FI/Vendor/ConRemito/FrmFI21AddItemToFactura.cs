@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using MASngFE.Transactional.MM.Orden_de_Compra;
-using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
 using Tecser.Business.Tools;
 using Tecser.Business.Transactional.CO;
@@ -183,7 +182,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
         {
             var aCosto1 = new ACostoRepo(txtMaterialTS.Text, FormatAndConversions.CCurrencyADecimal(txtTCFactura.Text));
             aCosto1.GetCost();
-            if (aCosto1.DatosUc.VendorId <1)
+            if (aCosto1.DatosUc.VendorId < 1)
             {
                 //no encontro la data
                 txtUCFecha.Text = aCosto1.DatosUc.FechaUCompra.ToString("d");
@@ -195,7 +194,7 @@ namespace MASngFE.Transactional.FI.Vendor.ConRemito
             {
                 txtUCFecha.Text = aCosto1.DatosUc.FechaUCompra.ToString("d");
                 txtUCARS.Text = aCosto1.ValorARS.ToString("C2");
-                txtUCUSD.Text =aCosto1.ValorUSD.ToString("C2");
+                txtUCUSD.Text = aCosto1.ValorUSD.ToString("C2");
                 txtUCProveedor.Text = aCosto1.DatosUc.Proveedor;
             }
         }

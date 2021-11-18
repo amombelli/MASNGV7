@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Tecser.Business.MainApp;
 using Tecser.Business.Transactional.CO.AsientoContable;
 using Tecser.Business.Transactional.FI;
@@ -27,12 +26,12 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
         private int _idNcd; //idNCD;
 
         //Nuevo constructor
-        public ZContaNotaCreditoConT400(int idfactur400, int signo) :base (idfactur400)
+        public ZContaNotaCreditoConT400(int idfactur400, int signo) : base(idfactur400)
         {
             base.Signo = signo;
             LoadExistingDocument();
         }
-        
+
         /// <summary>
         /// Carga Info Submodulo T300
         /// </summary>
@@ -53,21 +52,21 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
                 }
             }
         }
-        
-        
+
+
         public override ReturnContaCustomerDocument ContabilizacionCompleta()
         {
             base.AddRecordCtaCteDetalle201();
             base.UpdateSaldoCtaCte202();
             new GestionT300(_idNcd).UpdateDatosAfterConta(); //Actualiza Importes y NAS#
-           
+
             var asiento = new AsCustomerDocument(VariablesProgreso.IdFactura, "NCD");
-            
+
             var asientoResultado = asiento.AsientoFromCustomerNotaCreditoFromT400();
             VariablesProgreso.NumeroAsientoIdDocu = asientoResultado.IdDocu;
             VariablesProgreso.NumeroAsientoX1X2 = asientoResultado.NasX1;
             UpdateT0400AfterContabilizacion();
-           
+
             new CobranzaNoImputada().AddSinImputarRecord(VariablesProgreso.IdCtaCte);
             return VariablesProgreso;
         }
@@ -81,6 +80,6 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
             }
         }
 
-      
+
     }
 }

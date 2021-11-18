@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -15,23 +12,23 @@ namespace Tecser.Business.Transactional.MM
         public bool RemitoHeaderFound { get; private set; }
         private int _idRemito;
         public T0055_REMITO_H Header { get; private set; }
-        public List<T0056_REMITO_I> ListRemitos { get; private set;}
+        public List<T0056_REMITO_I> ListRemitos { get; private set; }
         public bool SingleItemFound { get; private set; }
         public bool ItemFound { get; private set; }
         private int _idItem;
-        public bool CantidadOk { get; private set;}
-        public string LoteFound { get; private set;}
+        public bool CantidadOk { get; private set; }
+        public string LoteFound { get; private set; }
 
         public RtnIdentificacionMaterial(int idCliente)
         {
             _idCliente = idCliente;
         }
 
-        
+
         /// <summary>
         /// Obtiene data de si un remito determinado # para un cliente existe
         /// </summary>
-        public  void SetRemito(string numeroRemito)
+        public void SetRemito(string numeroRemito)
         {
             RemitoHeaderFound = false;
             SingleRemitoFound = false;

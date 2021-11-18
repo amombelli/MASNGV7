@@ -108,7 +108,7 @@ namespace Tecser.Business.Transactional.FI.Customers
                 return true;
             }
         }
-        
+
         /// <summary>
         /// Cuando una factura es anulada completamente por una NC se elmina la info de la percepcion de la tabla
         /// </summary>
@@ -138,7 +138,7 @@ namespace Tecser.Business.Transactional.FI.Customers
                         @"Error Grave -- MSG020A", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
-                    
+
                 if (dataF.TotalIIBB == 0) return true;
 
                 var idFacturaX = dataF.IDFACTURAX;
@@ -156,12 +156,12 @@ namespace Tecser.Business.Transactional.FI.Customers
                         return false;
 
                 }
-                
+
                 if (data.IIBB_Perc_ARS_Saldo == 0) return false;
 
                 var documentoPago = db.T0201_CTACTE.SingleOrDefault(c => c.IDCTACTE == idCtaCtePago);
                 if (documentoPago == null) return false;
-                
+
                 data.IDCtaCte = idCtaCteFactura;
                 data.FechaImputacion = DateTime.Today;
                 data.IIBB_Perc_ARS_Saldo = 0;

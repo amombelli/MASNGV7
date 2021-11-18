@@ -64,7 +64,7 @@ namespace Tecser.Business.Transactional.FI.CtaCte
         /// Actualiza el resuemen CtaCte sumando o restando (signo) el valor indicado.-
         /// </summary>
         public abstract bool UpdateSaldoCtaCteResumen(string tipoLx, decimal importeConSigno, string moneda = "ARS",
-            decimal? exchangeRate = null, DateTime? fechaUltimaFacturacionEmitida=null);
+            decimal? exchangeRate = null, DateTime? fechaUltimaFacturacionEmitida = null);
     }
 }
 

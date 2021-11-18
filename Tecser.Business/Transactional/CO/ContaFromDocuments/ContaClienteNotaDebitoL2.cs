@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tecser.Business.Transactional.CO.AsientoContable;
+﻿using Tecser.Business.Transactional.CO.AsientoContable;
 using Tecser.Business.Transactional.FI;
 
 namespace Tecser.Business.Transactional.CO.ContaFromDocuments
 {
-    public class ContaClienteNotaDebitoL2:ContaClienteT400L1
+    public class ContaClienteNotaDebitoL2 : ContaClienteT400L1
     {
-        public ContaClienteNotaDebitoL2(int idFactura, int idCliente, string tDocXx="ND") : base(idCliente, idFactura)
+        public ContaClienteNotaDebitoL2(int idFactura, int idCliente, string tDocXx = "ND") : base(idCliente, idFactura)
         {
             Signo = 1;
             TipoDocumentoXX = tDocXx;
@@ -45,7 +40,7 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
             UpdateData202();
             AddData207AltaDocumentoNuevo(10); //dias de vencimiento
             var as1 = new AsCustomerL2T400(IdFactura, "NCDX");
-            var z =as1.AsNotaDebitoCreditoFromT400("Emision ND");
+            var z = as1.AsNotaDebitoCreditoFromT400("Emision ND");
             RtnAsiento.IdDocu = z.IdDocu;
             RtnAsiento.Nasx1 = z.Nasx1;
             RtnAsiento.Nasx2 = z.Nasx2;

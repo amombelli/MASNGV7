@@ -28,7 +28,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
         private T0400_FACTURA_H _h400;
         private List<T0401_FACTURA_I> _i401 = new List<T0401_FACTURA_I>();
 
-        protected  void LoadHeaderData()
+        protected void LoadHeaderData()
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
@@ -77,7 +77,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             return GrabaAsiento();
         }
 
-        
+
         public IdentificacionAsiento AsientoFromCustomerNotaDebito()
         {
             //Crea Header Asiento NotaDebito
@@ -124,7 +124,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             NumeroDocumento = _h400.NumeroDoc;
 
             //NumeroDocumento = new CustomerInvoice(base.Tcode, _idFactura).GetNumeroDocumentoCompleto();
-            
+
             base.CreaHeaderMemoria(_h400.TIPOFACT, _h400.FECHA, _h400.TIPO_DOC, NumeroDocumento,
                 headerDescription, _h400.FacturaMoneda, _h400.TotalFacturaN, _h400.TC);
 
@@ -147,7 +147,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                 _h400.TotalFacturaN, "T0400_FACTURA_H", _idFactura);
             return GrabaAsiento();
         }
-        
+
         #region Segmentos
 
         private void GeneraSegmentoCMV_BajaInventario()
@@ -224,7 +224,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                     var descripcion2 = "";
                     decimal importeDH = 0;
                     importeDH = _h400.FacturaMoneda == "ARS" ? item.PRECIOT_FACT_ARS : item.PRECIOT_FACT_USD;
-                    
+
                     AddGenericCompleteSegment(_h400.TIPO_DOC, Header.REFE, _h400.TIPOFACT, item.GLV, descripcion1,
                         descripcion2, _h400.FacturaMoneda, DebeHaber.Haber, importeDH, base.Tcode, _h400.Cliente,
                         0, "T0400_FACTURA_H", _idFactura, null, item.KGDESPACHADOS_R, item.ITEM);
@@ -242,7 +242,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                     var descripcion2 = "Iditem@" + item.IDITEM;
                     decimal importeDH = 0;
                     importeDH = _h400.FacturaMoneda == "ARS" ? item.PRECIOT_FACT_ARS : item.PRECIOT_FACT_USD;
-                    
+
                     var rtn = AddGenericCompleteSegment(_h400.TIPO_DOC, Header.REFE, _h400.TIPOFACT, item.GLV, descripcion1,
                         descripcion2, _h400.FacturaMoneda, DebeHaber.Haber, importeDH, base.Tcode, _h400.Cliente,
                         0, "T0400_FACTURA_H", _idFactura, null, item.KGDESPACHADOS_R, item.ITEM);
@@ -274,7 +274,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             AddGenericCompleteSegment(_h400.TIPO_DOC, Header.REFE, _h400.TIPOFACT,
                 GLAccountManagement.GetGLAccount(GLAccountManagement.GLAccount.DescuentoVentas),
                 "Descuento en Ventas", null, _h400.FacturaMoneda, DebeHaber.Debe, _h400.Descuento.Value, base.Tcode,
-                _h400.Cliente,0, "T0400_FACTURA_H", _idFactura);
+                _h400.Cliente, 0, "T0400_FACTURA_H", _idFactura);
         }
 
         #endregion

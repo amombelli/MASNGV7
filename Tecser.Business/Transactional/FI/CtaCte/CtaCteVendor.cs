@@ -77,7 +77,7 @@ namespace Tecser.Business.Transactional.FI.CtaCte
                 return x;
             }
         }
-        public override bool UpdateSaldoCtaCteResumen(string tipoLx, decimal importeConSigno, string moneda = "ARS", decimal? exchangeRate = null,DateTime? fechaUltimaFactura=null)
+        public override bool UpdateSaldoCtaCteResumen(string tipoLx, decimal importeConSigno, string moneda = "ARS", decimal? exchangeRate = null, DateTime? fechaUltimaFactura = null)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {

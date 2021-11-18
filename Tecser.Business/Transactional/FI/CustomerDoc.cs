@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tecser.Business.MainApp;
 using TecserEF.Entity;
 
@@ -22,7 +19,7 @@ namespace Tecser.Business.Transactional.FI
         //        xxsigno = GestionT400.SignoRegistracion.Negativo;
         //    }
         //}
-        protected string DocumentoAutorizadoPor="Sin Asignar";
+        protected string DocumentoAutorizadoPor = "Sin Asignar";
         protected ManageDocumentType.TipoDocumento TipoDocumento;
         protected string motivoDocumentoString;
         protected int? IdAlternativo = null; //id1 Pasado como parametro por ejemplo IdCheque [Rechazo]
@@ -98,7 +95,7 @@ namespace Tecser.Business.Transactional.FI
                 return TipoLx.L1;
             return TipoLx.L2;
         }
-        
+
         public int GetId400()
         {
             return T400.H4.IDFACTURA;
@@ -129,7 +126,7 @@ namespace Tecser.Business.Transactional.FI
             return T400.MapH4ImportesToImportes();
         }
         public void AddItems(string item, string itemDescripcion, decimal importe, string gl,
-            bool aplicaIva21, decimal cantidad = 1, string moneda = "ARS",string gli=null)
+            bool aplicaIva21, decimal cantidad = 1, string moneda = "ARS", string gli = null)
         {
             T400.AddItemsMemory(item, itemDescripcion, cantidad, moneda, importe, gl, gli, aplicaIva21, 0, null, null);
         }
@@ -137,7 +134,7 @@ namespace Tecser.Business.Transactional.FI
         {
             T300.UpdateAutorizacionDocumento(autorizacion);
         }
-        public DocumentFIStatusManager.StatusHeader Registrar(string comentario,bool usarValorAbusoluto=false)
+        public DocumentFIStatusManager.StatusHeader Registrar(string comentario, bool usarValorAbusoluto = false)
         {
             Id400 = T400.Registrar(usarValorAbusoluto);
             T300.CreaHeaderMemoria(T400.H4, comentario, motivoDocumentoString, IdFacturaAsociada, PeriodoDesde, PeriodoHasta, IdAlternativo, DocumentoAutorizadoPor);

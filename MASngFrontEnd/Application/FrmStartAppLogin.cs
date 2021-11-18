@@ -40,7 +40,7 @@ namespace MASngFE.Application
 
             var modo = Settings.Default.AppMode;
             switch (modo)
-            { 
+            {
                 case 'D':
                     GlobalApp.Modo = Tecser.Business.MainApp.ModoApp.Desarrollo;
                     break;

@@ -60,7 +60,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                 monedaRegistracion, dh, Math.Abs(importeRegistracion), Tcode, idCliente);
             return GrabaAsiento();
         }
-        
+
         /// <summary>
         /// Traspaso de Saldos entre cuentas
         /// Opcion de traspaso entre clientes (mismo LX) o Traspaso en mismo cliente (LX1 -> LX2)
@@ -127,7 +127,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
 
             return GrabaAsiento();
         }
-        
+
         /// <summary>
         /// Asiento de Reingreso de Cheque a Cartera SIN ND
         /// </summary>
@@ -136,14 +136,14 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
         {
 
             var dataCheque = new ChequesManager().GetCheque(idCheque);
-            var importeTotal =  dataCheque.IMPORTE.Value + importeGastos + importeIva;
+            var importeTotal = dataCheque.IMPORTE.Value + importeGastos + importeIva;
             var xrate = new ExchangeRateManager().GetExchangeRate(DateTime.Today);
             var glGasto = "5.6.6";
             var glIVA = GLAccountManagement.GetGLAccount(GLAccountManagement.GLAccount.IvaCompra21);
             var gl1 = "0.0.0.0"; //GLAP o GLCYB
             var gl2 = new CuentasManager().GetGL("CHE"); //Gl cuenta destino (reingreso a CHE)
             var trackerInfo = new ChequeRechazadoManager().GetTracker(idTracker);
-            
+
             if (trackerInfo.Origen == "EnBanco")
             {
                 //Cheque estaba en entidad financiera -- GL es de cuenta de Entidad Bancaria **C21
@@ -194,7 +194,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                     idNumerico: idCheque);
             }
 
- 
+
             base.AddGenericCompleteSegment("CHR", trackerInfo.DocumentoRef, tipoLx, gl2,
                 "Reingreso Cartera  @" + idCheque, motivoReingreso, dataCheque.MONEDA, DebeHaber.Debe,
                 dataCheque.IMPORTE.Value, "CHR", dataCheque.IdClienteRecibido.Value, nombreTabla: "T0154_CHEQUES",
@@ -232,7 +232,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
                 var h = db.T0300_NCD_H.SingleOrDefault(c => c.IDH == idNcdH);
                 var i = db.T0301_NCD_I.Where(c => c.IDH == idNcdH).ToList();
                 decimal ImporteIVA = 0;
-                string dataCheque=null;
+                string dataCheque = null;
                 base.CreaHeaderMemoria(h.LX, h.FECHA, "CHR", h.NDOC, @"RTNCH-" + h.COMENTARIO, "ARS", h.ImporteARS,
                     h.TC);
                 foreach (var ix in i)
@@ -270,7 +270,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
         /// Caso Proveedor -> GLAP - Caso Entidad es GLCuenta
         /// </summary>
         public IdentificacionAsiento CreaAsientoChequeRechazado(int idCheque, string motivoRechazo, string glAP_glCuentaCyB,
-            DateTime fechaRechazo, decimal importeGastos, decimal importeIva,string tipoLx=null)
+            DateTime fechaRechazo, decimal importeGastos, decimal importeIva, string tipoLx = null)
         {
             //Importe Cheque 'Banco o AP' D
             //Importe Gastos 'Banco o AP' D
@@ -288,12 +288,12 @@ namespace Tecser.Business.Transactional.CO.AsientoContable
             {
                 tipoLx = dataCheque.TIPOSAL;
             }
-            
+
             base.CreaHeaderMemoria(tipoLx, fechaRechazo, "CHR", numeroDocumento,
                 "CH.Rech-" + motivoRechazo, dataCheque.MONEDA, importeTotal, xrate);
-           
+
             //Agrupa en Haber Importe de Cheque + Importe Gastos 
-            
+
             base.AddGenericCompleteSegment("CHR", numeroDocumento, tipoLx, glAP_glCuentaCyB,
                 "Debito x Cheque Rechazado@" + idCheque, motivoRechazo, dataCheque.MONEDA, DebeHaber.Haber,
                 importeTotal, "CHR", dataCheque.IdClienteRecibido.Value, nombreTabla: "T0154_CHEQUES",

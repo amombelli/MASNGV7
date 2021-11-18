@@ -64,7 +64,7 @@ namespace Tecser.Business.Transactional.SD
             {
                 var h = db.T0045_OV_HEADER.SingleOrDefault(c => c.IDOV == idSO);
                 var i = db.T0046_OV_ITEM.Where(c => c.IDOV == idSO).ToList();
-                
+
                 //Si la SO esta cancelada no actualiza status
                 var statusHeader = MapStatusHeaderFromText(h.StatusOV);
                 switch (statusHeader)
@@ -149,7 +149,7 @@ namespace Tecser.Business.Transactional.SD
 
                 if (lineaSO == null)
                     return;
-                
+
                 var kgPendientesDespacho = lineaSO.Cantidad - lineaSO.KGStockDespachados;
                 var statusActual = MapStatusItemFromText(lineaSO.StatusItem);
                 switch (statusActual)

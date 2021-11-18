@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.SuperMD;
 using TSControls;
@@ -30,7 +24,7 @@ namespace MASngFE.NewUserControls
         private int _partidoFound;
         private int _localidadFound;
 
-        
+
 
         private void _frmABMAdressControl_Load(object sender, EventArgs e)
         {
@@ -54,15 +48,15 @@ namespace MASngFE.NewUserControls
 
             //Add Level PAIS
             var lPais = add.GetListaPaises();
-            for (var i=0; i<lPais.Count;i++)
+            for (var i = 0; i < lPais.Count; i++)
             {
                 var node = new TreeNode()
                 {
                     BackColor = nodeBackColor,
                     Name = lPais[i],
-                    Text = @"Pais - "+lPais[i],
+                    Text = @"Pais - " + lPais[i],
                     ForeColor = Color.Blue,
-                    NodeFont = new Font(base.Font,FontStyle.Bold)
+                    NodeFont = new Font(base.Font, FontStyle.Bold)
                 };
                 tvAddress.Nodes.Add(node);
                 //Add Level Provincia para Pais
@@ -72,7 +66,7 @@ namespace MASngFE.NewUserControls
                     var index0 = tvAddress.Nodes.Find(lProvincia[i].Pais, true)[0].Index;
                     var node1 = new TreeNode()
                     {
-                        Name = "A-"+lProvincia[i1].Id.ToString(),
+                        Name = "A-" + lProvincia[i1].Id.ToString(),
                         Text = lProvincia[i1].Region.ToString(),
                     };
                     tvAddress.Nodes[index0].Nodes.Add(node1);
@@ -80,10 +74,10 @@ namespace MASngFE.NewUserControls
                     var lPartido = add.GetPartido(lProvincia[i1].Id);
                     for (var i2 = 0; i2 < lPartido.Count; i2++)
                     {
-                        var indexPr = tvAddress.Nodes.Find("A-"+lPartido[i2].IdProvincia.ToString(),true)[0].Index;
+                        var indexPr = tvAddress.Nodes.Find("A-" + lPartido[i2].IdProvincia.ToString(), true)[0].Index;
                         var node2 = new TreeNode()
                         {
-                            Name = "B-"+lPartido[i2].Id.ToString(),
+                            Name = "B-" + lPartido[i2].Id.ToString(),
                             Text = lPartido[i2].Partido
                         };
                         tvAddress.Nodes[index0].Nodes[indexPr].Nodes.Add(node2);
@@ -106,7 +100,7 @@ namespace MASngFE.NewUserControls
             tvAddress.EndUpdate();
             tvAddress.Refresh();
         }
-        
+
         private void txtPais_TextChanged(object sender, EventArgs e)
         {
             if (txtPais.Text.Length == 2)
@@ -131,9 +125,9 @@ namespace MASngFE.NewUserControls
         {
             ep1.SetError(txtProvincia, string.Empty);
             if (txtProvincia.Text.Length >= 4 && ckAutoValidar.Checked)
-            { 
+            {
                 _provinciaFound = ControlAddressManager.CheckExisteProvincia(txtPais.Text, txtProvincia.Text);
-                if (_provinciaFound>0)
+                if (_provinciaFound > 0)
                 {
                     iconProvincia.Set = CIconos.TrianguloNaranja;
                     _altaProvincia = false;
@@ -145,7 +139,7 @@ namespace MASngFE.NewUserControls
                         //Aparecieron varios registros
                         iconProvincia.Set = CIconos.Equis;
                         _altaProvincia = false;
-                        ep1.SetError(txtProvincia,"Mas de un Resultado");
+                        ep1.SetError(txtProvincia, "Mas de un Resultado");
                     }
                     else
                     {
@@ -168,7 +162,7 @@ namespace MASngFE.NewUserControls
             if (txtPartido.Text.Length > 4 && ckAutoValidar.Checked)
             {
                 _partidoFound = ControlAddressManager.CheckExistePartido(_provinciaFound, txtPartido.Text);
-                if (_partidoFound>0)
+                if (_partidoFound > 0)
                 {
                     iconPartido.Set = CIconos.TrianguloNaranja;
                     _altaPartido = false;
@@ -214,7 +208,7 @@ namespace MASngFE.NewUserControls
         {
             _localidadFound = -1;
             _altaLocalidad = false;
-            ep1.SetError(txtLocalidad,string.Empty);
+            ep1.SetError(txtLocalidad, string.Empty);
 
             if (txtLocalidad.Text.Length > 4 && ckAutoValidar.Checked)
             {
@@ -327,7 +321,7 @@ namespace MASngFE.NewUserControls
             //            //no hay provincia
             //            var add = new ControlAddressManager();
             //            var listaProv = add.GetListaProvincias(txtPais.Text);
-   
+
             //            foreach (var pr in listaProv)
             //            {
             //                var nodoProvincia = BuscaRama(tvAddress.Nodes[0], pr);
@@ -340,7 +334,7 @@ namespace MASngFE.NewUserControls
             //                    }
             //                }
             //            }
-                        
+
             //        }
             //        else
             //        {
@@ -361,7 +355,7 @@ namespace MASngFE.NewUserControls
         /// <summary>
         /// Funcion que busca un elemento en una unica Rama 
         /// </summary>
-        private TreeNode BuscaRama(TreeNode root, string texto,bool buscaHijos=true)
+        private TreeNode BuscaRama(TreeNode root, string texto, bool buscaHijos = true)
         {
             foreach (TreeNode node in root.Nodes)
             {
@@ -372,7 +366,7 @@ namespace MASngFE.NewUserControls
                 }
 
                 if (node.Nodes.Count > 0 && buscaHijos)
-                    return BuscaRama(node, texto,buscaHijos);
+                    return BuscaRama(node, texto, buscaHijos);
             }
             return null;
         }
@@ -444,8 +438,8 @@ namespace MASngFE.NewUserControls
             }
             return null;
         }
-        
-        private TreeNode SearchLocalidadConPartido(IEnumerable nodePartido,string localidad)
+
+        private TreeNode SearchLocalidadConPartido(IEnumerable nodePartido, string localidad)
         {
             if (nodePartido == null)
                 return null;
@@ -501,7 +495,7 @@ namespace MASngFE.NewUserControls
 
 
 
-        private bool SearchRecursive(IEnumerable nodes, string text, bool buscaHijos=true, int? levelSearch=null)
+        private bool SearchRecursive(IEnumerable nodes, string text, bool buscaHijos = true, int? levelSearch = null)
         {
             foreach (TreeNode node in nodes)
             {
@@ -532,7 +526,7 @@ namespace MASngFE.NewUserControls
 
                 if (buscaHijos)
                 {
-                    if (SearchRecursive(node.Nodes, text,buscaHijos,levelSearch))
+                    if (SearchRecursive(node.Nodes, text, buscaHijos, levelSearch))
                         return true;
                 }
             }
@@ -561,7 +555,7 @@ namespace MASngFE.NewUserControls
 
             if (string.IsNullOrEmpty(txtProvincia.Text))
             {
-                ep1.SetError(txtProvincia,"Provincia es Requerido");
+                ep1.SetError(txtProvincia, "Provincia es Requerido");
                 return;
             }
             else
@@ -573,23 +567,23 @@ namespace MASngFE.NewUserControls
             {
                 //Localidad es != nulo pero el partido es nulo .-
                 //No se puede dar de alta una localidad sin un partido.
-                ep1.SetError(txtLocalidad,"Si se provee Localidad - Se debe proveer Partido");
+                ep1.SetError(txtLocalidad, "Si se provee Localidad - Se debe proveer Partido");
                 return;
             }
-            
+
 
             if (string.IsNullOrEmpty(txtPartido.Text))
             {
                 //No hay Partido - Esta intentando dar de alta Provincia
                 //Chequea si provincia existe
-                if (_provinciaFound>0)
+                if (_provinciaFound > 0)
                 {
-                    ep1.SetError(txtProvincia,"La Provincia Ya Existe");
+                    ep1.SetError(txtProvincia, "La Provincia Ya Existe");
                     return;
                 }
                 else
                 {
-                    ep1.SetError(txtProvincia,string.Empty);
+                    ep1.SetError(txtProvincia, string.Empty);
                     //Dar de alta Provincia....--->
                 }
             }

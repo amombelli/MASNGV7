@@ -54,7 +54,7 @@ namespace Tecser.Business.Transactional.FI.MainDocumentData.Customer
             }
         }
 
-        public void CreateFromNcdId(int idh, decimal importeIIBB=0)
+        public void CreateFromNcdId(int idh, decimal importeIIBB = 0)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {

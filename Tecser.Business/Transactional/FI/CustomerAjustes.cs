@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tecser.Business.Transactional.FI.MainDocumentData.Customer;
 
 namespace Tecser.Business.Transactional.FI
 {
-    public class CustomerAjustes:CustomerDoc
+    public class CustomerAjustes : CustomerDoc
     {
         private MotivoAjustes _motivoDocumento;
 

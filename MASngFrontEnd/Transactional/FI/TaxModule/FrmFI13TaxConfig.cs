@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tecser.Business.Transactional.FI.TaxModule;
 using TecserEF.Entity;
@@ -44,9 +37,9 @@ namespace MASngFE.Transactional.FI.TaxModule
                 btnGrabar.Enabled = false;
                 btnEdit.Enabled = false;
                 btnNuevo.Enabled = true;
-               return;
+                return;
             }
-            txtIdTax.Text = dgv[__idtax.Name,e.RowIndex].Value.ToString();
+            txtIdTax.Text = dgv[__idtax.Name, e.RowIndex].Value.ToString();
             txtDescripcion.Text = dgv[__descripcion.Name, e.RowIndex].Value.ToString();
             cAlicuota.SetValue = Convert.ToDecimal(dgv[__alicuota.Name, e.RowIndex].Value);
             var x = dgv[__modulo.Name, e.RowIndex].Value.ToString();
@@ -54,7 +47,7 @@ namespace MASngFE.Transactional.FI.TaxModule
                 ckProveedor.Checked = true;
             if (x.Contains("C"))
                 ckCliente.Checked = true;
-            
+
             btnEdit.Enabled = true;
             btnGrabar.Enabled = false;
             btnNuevo.Enabled = true;
@@ -128,7 +121,7 @@ namespace MASngFE.Transactional.FI.TaxModule
             btnGrabar.Enabled = false;
             btnEdit.Enabled = false;
             dgv1.DataSource = new TaxModuleManager().GetListaTax();
-              
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -145,14 +138,14 @@ namespace MASngFE.Transactional.FI.TaxModule
             xep(cAlicuota);
 
             if (string.IsNullOrEmpty(txtIdTax.Text))
-                xep(txtIdTax,"Debe proveer un identificador de TAX [20]");
+                xep(txtIdTax, "Debe proveer un identificador de TAX [20]");
 
             if (string.IsNullOrEmpty(txtDescripcion.Text))
                 xep(txtDescripcion, "Debe proveer una Descripcion para el Impuesto");
 
             if (ckProveedor.Checked == false && ckCliente.Checked == false)
             {
-                xep(ckCliente,"Debe Seleccionar algun modulo para asignar este impuesto");
+                xep(ckCliente, "Debe Seleccionar algun modulo para asignar este impuesto");
                 xep(ckProveedor, "Debe Seleccionar algun modulo para asignar este impuesto");
             }
 
@@ -168,7 +161,7 @@ namespace MASngFE.Transactional.FI.TaxModule
         }
 
 
-        private void xep(Control ob, string error=null,bool consideraError=true)
+        private void xep(Control ob, string error = null, bool consideraError = true)
         {
             ep.SetError(ob, string.IsNullOrEmpty(error) ? "" : error);
             if (consideraError)
