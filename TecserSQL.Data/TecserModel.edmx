@@ -2583,19 +2583,19 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene
           </Key>
           <Property Name="IDCTACTE" Type="int" Nullable="false" />
           <Property Name="TDOC" Type="nvarchar" MaxLength="3" Nullable="false" />
-          <Property Name="DOC_INTERNO" Type="nvarchar" MaxLength="20" />
-          <Property Name="NUMDOC" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="DOC_INTERNO" Type="nvarchar" MaxLength="15" />
+          <Property Name="NUMDOC" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="ZTERM" Type="int" />
           <Property Name="IDPROV" Type="int" Nullable="false" />
-          <Property Name="MONEDA" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="MONEDA" Type="nvarchar" MaxLength="3" Nullable="false" />
           <Property Name="TC" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="IMPORTE_ORI" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="IMPORTE_ARS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="SALDOFACTURA" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="LogDate" Type="datetime" Nullable="false" />
-          <Property Name="LogUsuario" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="TIPO" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="LogUsuario" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIPO" Type="nchar" MaxLength="2" Nullable="false" />
           <Property Name="ZOP" Type="bit" Nullable="false" />
           <Property Name="IdFacturaX" Type="int" />
           <Property Name="IDDOC" Type="int" />
@@ -2607,15 +2607,16 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene
           </Key>
           <Property Name="CTACTE1" Type="int" Nullable="false" />
           <Property Name="CTACTE2" Type="int" Nullable="false" />
-          <Property Name="MONTO_IMPU" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="LogDate" Type="datetime" />
-          <Property Name="LogUser" Type="nvarchar" MaxLength="255" />
-          <Property Name="TCODE" Type="nvarchar" MaxLength="255" />
-          <Property Name="GLPAGO" Type="nvarchar" MaxLength="255" />
+          <Property Name="MONTO_IMPU" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LogDate" Type="datetime" Nullable="false" />
+          <Property Name="LogUser" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TCODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="GLPAGO" Type="nvarchar" MaxLength="20" />
           <Property Name="NAS_PAGO" Type="int" />
-          <Property Name="IDPROV" Type="int" />
-          <Property Name="NUMDOC" Type="nvarchar" MaxLength="255" />
-          <Property Name="TDOC" Type="nvarchar" MaxLength="255" />
+          <Property Name="IDPROV" Type="int" Nullable="false" />
+          <Property Name="NUMDOC" Type="nvarchar" MaxLength="15" />
+          <Property Name="TDOC" Type="nvarchar" MaxLength="3" />
+          <Property Name="Temp" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="T0204_CTACTESALDOS_PROV">
           <Key>
@@ -2749,13 +2750,13 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene
             <PropertyRef Name="IDOP" />
           </Key>
           <Property Name="IDOP" Type="int" Nullable="false" />
-          <Property Name="OPFECHA" Type="datetime" />
+          <Property Name="OPFECHA" Type="datetime" Nullable="false" />
           <Property Name="PROV_ID" Type="int" Nullable="false" />
-          <Property Name="PROV_RS" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROV_RS" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PROV_TAXID" Type="nvarchar" MaxLength="2" />
           <Property Name="PROV_TAXNUM" Type="nvarchar" MaxLength="255" />
           <Property Name="PROV_CUIT" Type="nvarchar" MaxLength="50" />
-          <Property Name="MON_OP" Type="nvarchar" MaxLength="50" />
+          <Property Name="MON_OP" Type="nvarchar" MaxLength="3" Nullable="false" />
           <Property Name="IMP_OP" Type="decimal" Precision="18" Scale="2" />
           <Property Name="OP_TEMP" Type="bit" Nullable="false" />
           <Property Name="OP_STATUS" Type="nvarchar" MaxLength="255" />
@@ -2777,6 +2778,60 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene
           <Property Name="DiasPPFacturas" Type="int" />
           <Property Name="DiasPPItemsPago" Type="int" />
         </EntityType>
+        <EntityType Name="T0210_OrdenPagoHeader">
+          <Key>
+            <PropertyRef Name="IdOP" />
+          </Key>
+          <Property Name="IdOP" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="IdProveedor" Type="int" Nullable="false" />
+          <Property Name="Moneda" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Temp" Type="bit" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Lx" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Observacion" Type="nvarchar(max)" />
+          <Property Name="LogUser" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LogDate" Type="datetime" Nullable="false" />
+          <Property Name="Finalizado" Type="bit" Nullable="false" />
+          <Property Name="IdCtaCte" Type="int" Nullable="false" />
+          <Property Name="Nas" Type="int" />
+          <Property Name="DiasPPFactura" Type="int" />
+          <Property Name="DiasPPItemsPago" Type="int" />
+          <Property Name="TC" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Periodo" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="LogPreparo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LogGenero" Type="nvarchar" MaxLength="20" />
+          <Property Name="AplicaCredito" Type="bit" Nullable="false" />
+          <Property Name="ImporteOP" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImporteCheques" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImporteEfectivo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImporteOtros" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImporteCreditosAplicados" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImporteFacturas" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SaldoSinAplicarOP" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TipoOPDoc" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="ImporteRetencionens" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T0211_OrdenPagoItems">
+          <Key>
+            <PropertyRef Name="IdOP" />
+            <PropertyRef Name="IdItem" />
+          </Key>
+          <Property Name="IdOP" Type="int" Nullable="false" />
+          <Property Name="IdItem" Type="int" Nullable="false" />
+          <Property Name="CuentaItem" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="MonedaItem" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="ImporteItem" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImporteOP" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="GLCuenta" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TextoAlterno" Type="nvarchar" MaxLength="50" />
+          <Property Name="EsCheque" Type="bit" Nullable="false" />
+          <Property Name="ECheque" Type="bit" Nullable="false" />
+          <Property Name="ChNumero" Type="nvarchar" MaxLength="10" />
+          <Property Name="ChFecha" Type="datetime" />
+          <Property Name="ChBanco" Type="nvarchar" MaxLength="20" />
+          <Property Name="ChIdCartera" Type="int" />
+        </EntityType>
         <EntityType Name="T0212_OP_ITEM">
           <Key>
             <PropertyRef Name="IDOP" />
@@ -2785,19 +2840,38 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene
           <Property Name="IDOP" Type="int" Nullable="false" />
           <Property Name="IDITEM" Type="int" Nullable="false" />
           <Property Name="PROVEEDOR" Type="int" />
-          <Property Name="MON" Type="nvarchar" MaxLength="50" />
-          <Property Name="IMPORTE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MON" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="IMPORTE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="TC" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="MON_OP" Type="nvarchar" MaxLength="50" />
-          <Property Name="IMPORTE_OP" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MON_OP" Type="nvarchar" MaxLength="3" />
+          <Property Name="IMPORTE_OP" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="CUENTA_O" Type="nvarchar" MaxLength="15" />
           <Property Name="CH_CK" Type="bit" Nullable="false" />
           <Property Name="CH_NUM" Type="nvarchar" MaxLength="50" />
           <Property Name="CH_BCO" Type="nvarchar" MaxLength="3" />
           <Property Name="CH_ID" Type="int" />
-          <Property Name="CK_FIN" Type="bit" />
-          <Property Name="CK_CANCEL" Type="bit" />
+          <Property Name="CK_FIN" Type="bit" Nullable="false" />
+          <Property Name="CK_CANCEL" Type="bit" Nullable="false" />
           <Property Name="ChequeFecha" Type="date" />
+          <Property Name="GL" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IsEcheque" Type="bit" Nullable="false" />
+          <Property Name="TextoAlterno" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="T0212_OrdenPagoDocumentos">
+          <Key>
+            <PropertyRef Name="IdOP" />
+            <PropertyRef Name="IdFactura" />
+          </Key>
+          <Property Name="IdOP" Type="int" Nullable="false" />
+          <Property Name="IdFactura" Type="int" Nullable="false" />
+          <Property Name="IdCtaCte" Type="int" Nullable="false" />
+          <Property Name="MonedaDoc" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="ImporteOri" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImporteOP" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TCDoc" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SaldoAdeudado" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImputadoOP" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LX" Type="nvarchar" MaxLength="2" Nullable="false" />
         </EntityType>
         <EntityType Name="T0213_OP_FACT">
           <Key>
@@ -2807,21 +2881,34 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene
           <Property Name="IDOP" Type="int" Nullable="false" />
           <Property Name="IDITEM" Type="int" Nullable="false" />
           <Property Name="PROVEEDOR" Type="int" Nullable="false" />
-          <Property Name="MON_OP" Type="nvarchar" MaxLength="3" />
-          <Property Name="TC" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="FACT_ID" Type="int" />
-          <Property Name="FACT_NUM" Type="nvarchar" MaxLength="50" />
-          <Property Name="FACT_MON" Type="nvarchar" MaxLength="3" />
-          <Property Name="FACT_SALDO_O" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="FACT_SALDO_IMPUTAR" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="FACT_IMPUTADO" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="FACT_TIPO" Type="nvarchar" MaxLength="2" />
+          <Property Name="MON_OP" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="TC" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FACT_ID" Type="int" Nullable="false" />
+          <Property Name="FACT_NUM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FACT_MON" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FACT_SALDO_O" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FACT_SALDO_IMPUTAR" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FACT_IMPUTADO" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FACT_TIPO" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="CK_FIN" Type="bit" Nullable="false" />
           <Property Name="NASIENTO" Type="int" />
-          <Property Name="RetencionIIBB" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="RetencionGS" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RetencionIIBB" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RetencionGS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="IdFacturaX" Type="int" />
-          <Property Name="IdCtaCte" Type="int" />
+          <Property Name="IdCtaCte" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T0213_OrdenPagoRetenciones">
+          <Key>
+            <PropertyRef Name="IdOP" />
+            <PropertyRef Name="IdItemRetencion" />
+          </Key>
+          <Property Name="IdOP" Type="int" Nullable="false" />
+          <Property Name="IdItemRetencion" Type="int" Nullable="false" />
+          <Property Name="RetencionTipo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BaseImponibleCalculo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="GL" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Alicuota" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="ImporteRetencion" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="T0230_GescoHeader">
           <Key>
@@ -5357,6 +5444,30 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES">
+          <End Role="T0005_MPROVEEDORES" Type="Self.T0005_MPROVEEDORES" Multiplicity="1" />
+          <End Role="T0210_OrdenPagoHeader" Type="Self.T0210_OrdenPagoHeader" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0005_MPROVEEDORES">
+              <PropertyRef Name="id_prov" />
+            </Principal>
+            <Dependent Role="T0210_OrdenPagoHeader">
+              <PropertyRef Name="IdProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T0211_OrdenPagoItems_T0210_OrdenPagoHeader">
+          <End Role="T0210_OrdenPagoHeader" Type="Self.T0210_OrdenPagoHeader" Multiplicity="1" />
+          <End Role="T0211_OrdenPagoItems" Type="Self.T0211_OrdenPagoItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0210_OrdenPagoHeader">
+              <PropertyRef Name="IdOP" />
+            </Principal>
+            <Dependent Role="T0211_OrdenPagoItems">
+              <PropertyRef Name="IdOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_T0212_OP_ITEM_T0150_CUENTAS">
           <End Role="T0150_CUENTAS" Type="Self.T0150_CUENTAS" Multiplicity="0..1" />
           <End Role="T0212_OP_ITEM" Type="Self.T0212_OP_ITEM" Multiplicity="*" />
@@ -5383,6 +5494,42 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_T0212_OrdenPagoDocumentos_T0203_CTACTE_PROV">
+          <End Role="T0203_CTACTE_PROV" Type="Self.T0203_CTACTE_PROV" Multiplicity="1" />
+          <End Role="T0212_OrdenPagoDocumentos" Type="Self.T0212_OrdenPagoDocumentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0203_CTACTE_PROV">
+              <PropertyRef Name="IDCTACTE" />
+            </Principal>
+            <Dependent Role="T0212_OrdenPagoDocumentos">
+              <PropertyRef Name="IdCtaCte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T0212_OrdenPagoDocumentos_T0210_OrdenPagoHeader">
+          <End Role="T0210_OrdenPagoHeader" Type="Self.T0210_OrdenPagoHeader" Multiplicity="1" />
+          <End Role="T0212_OrdenPagoDocumentos" Type="Self.T0212_OrdenPagoDocumentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0210_OrdenPagoHeader">
+              <PropertyRef Name="IdOP" />
+            </Principal>
+            <Dependent Role="T0212_OrdenPagoDocumentos">
+              <PropertyRef Name="IdOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T0212_OrdenPagoDocumentos_T0403_VENDOR_FACT_H">
+          <End Role="T0403_VENDOR_FACT_H" Type="Self.T0403_VENDOR_FACT_H" Multiplicity="1" />
+          <End Role="T0212_OrdenPagoDocumentos" Type="Self.T0212_OrdenPagoDocumentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0403_VENDOR_FACT_H">
+              <PropertyRef Name="IDINT" />
+            </Principal>
+            <Dependent Role="T0212_OrdenPagoDocumentos">
+              <PropertyRef Name="IdFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_T0213_OP_FACT_T0210_OP_H">
           <End Role="T0210_OP_H" Type="Self.T0210_OP_H" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -5394,6 +5541,18 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             </Principal>
             <Dependent Role="T0213_OP_FACT">
               <PropertyRef Name="IDOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T0213_OrdenPagoRetenciones_T0210_OrdenPagoHeader">
+          <End Role="T0210_OrdenPagoHeader" Type="Self.T0210_OrdenPagoHeader" Multiplicity="1" />
+          <End Role="T0213_OrdenPagoRetenciones" Type="Self.T0213_OrdenPagoRetenciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0210_OrdenPagoHeader">
+              <PropertyRef Name="IdOP" />
+            </Principal>
+            <Dependent Role="T0213_OrdenPagoRetenciones">
+              <PropertyRef Name="IdOP" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5879,8 +6038,12 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <EntitySet Name="T0207_SPLITFACTURAS" EntityType="Self.T0207_SPLITFACTURAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0208_COB_NO_APLICADA" EntityType="Self.T0208_COB_NO_APLICADA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0210_OP_H" EntityType="Self.T0210_OP_H" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T0210_OrdenPagoHeader" EntityType="Self.T0210_OrdenPagoHeader" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T0211_OrdenPagoItems" EntityType="Self.T0211_OrdenPagoItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0212_OP_ITEM" EntityType="Self.T0212_OP_ITEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T0212_OrdenPagoDocumentos" EntityType="Self.T0212_OrdenPagoDocumentos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0213_OP_FACT" EntityType="Self.T0213_OP_FACT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T0213_OrdenPagoRetenciones" EntityType="Self.T0213_OrdenPagoRetenciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0230_GescoHeader" EntityType="Self.T0230_GescoHeader" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0231_GescoDetail" EntityType="Self.T0231_GescoDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0232_GescoPagosListos" EntityType="Self.T0232_GescoPagosListos" Schema="dbo" store:Type="Tables" />
@@ -6794,6 +6957,14 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             <End Role="T0005_MPROVEEDORES" EntitySet="T0005_MPROVEEDORES" />
             <End Role="T0210_OP_H" EntitySet="T0210_OP_H" />
           </AssociationSet>
+          <AssociationSet Name="FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES" Association="Self.FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES">
+            <End Role="T0005_MPROVEEDORES" EntitySet="T0005_MPROVEEDORES" />
+            <End Role="T0210_OrdenPagoHeader" EntitySet="T0210_OrdenPagoHeader" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T0211_OrdenPagoItems_T0210_OrdenPagoHeader" Association="Self.FK_T0211_OrdenPagoItems_T0210_OrdenPagoHeader">
+            <End Role="T0210_OrdenPagoHeader" EntitySet="T0210_OrdenPagoHeader" />
+            <End Role="T0211_OrdenPagoItems" EntitySet="T0211_OrdenPagoItems" />
+          </AssociationSet>
           <AssociationSet Name="FK_T0212_OP_ITEM_T0150_CUENTAS" Association="Self.FK_T0212_OP_ITEM_T0150_CUENTAS">
             <End Role="T0150_CUENTAS" EntitySet="T0150_CUENTAS" />
             <End Role="T0212_OP_ITEM" EntitySet="T0212_OP_ITEM" />
@@ -6802,9 +6973,25 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             <End Role="T0210_OP_H" EntitySet="T0210_OP_H" />
             <End Role="T0212_OP_ITEM" EntitySet="T0212_OP_ITEM" />
           </AssociationSet>
+          <AssociationSet Name="FK_T0212_OrdenPagoDocumentos_T0203_CTACTE_PROV" Association="Self.FK_T0212_OrdenPagoDocumentos_T0203_CTACTE_PROV">
+            <End Role="T0203_CTACTE_PROV" EntitySet="T0203_CTACTE_PROV" />
+            <End Role="T0212_OrdenPagoDocumentos" EntitySet="T0212_OrdenPagoDocumentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T0212_OrdenPagoDocumentos_T0210_OrdenPagoHeader" Association="Self.FK_T0212_OrdenPagoDocumentos_T0210_OrdenPagoHeader">
+            <End Role="T0210_OrdenPagoHeader" EntitySet="T0210_OrdenPagoHeader" />
+            <End Role="T0212_OrdenPagoDocumentos" EntitySet="T0212_OrdenPagoDocumentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T0212_OrdenPagoDocumentos_T0403_VENDOR_FACT_H" Association="Self.FK_T0212_OrdenPagoDocumentos_T0403_VENDOR_FACT_H">
+            <End Role="T0403_VENDOR_FACT_H" EntitySet="T0403_VENDOR_FACT_H" />
+            <End Role="T0212_OrdenPagoDocumentos" EntitySet="T0212_OrdenPagoDocumentos" />
+          </AssociationSet>
           <AssociationSet Name="FK_T0213_OP_FACT_T0210_OP_H" Association="Self.FK_T0213_OP_FACT_T0210_OP_H">
             <End Role="T0210_OP_H" EntitySet="T0210_OP_H" />
             <End Role="T0213_OP_FACT" EntitySet="T0213_OP_FACT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T0213_OrdenPagoRetenciones_T0210_OrdenPagoHeader" Association="Self.FK_T0213_OrdenPagoRetenciones_T0210_OrdenPagoHeader">
+            <End Role="T0210_OrdenPagoHeader" EntitySet="T0210_OrdenPagoHeader" />
+            <End Role="T0213_OrdenPagoRetenciones" EntitySet="T0213_OrdenPagoRetenciones" />
           </AssociationSet>
           <AssociationSet Name="FK_T0230_GescoHeader_T0006_MCLIENTES" Association="Self.FK_T0230_GescoHeader_T0006_MCLIENTES">
             <End Role="T0006_MCLIENTES" EntitySet="T0006_MCLIENTES" />
@@ -7083,6 +7270,7 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <NavigationProperty Name="T0204_CTACTESALDOS_PROV" Relationship="Self.FK_T0204_CTACTESALDOS_PROV_T0005_MPROVEEDORES" FromRole="T0005_MPROVEEDORES" ToRole="T0204_CTACTESALDOS_PROV" />
           <NavigationProperty Name="T0210_OP_H" Relationship="Self.FK_T0210_OP_H_T0005_MPROVEEDORES" FromRole="T0005_MPROVEEDORES" ToRole="T0210_OP_H" />
           <NavigationProperty Name="T0406_RendicionFF_H" Relationship="Self.FK_T0406_RendicionFF_H_T0005_MPROVEEDORES" FromRole="T0005_MPROVEEDORES" ToRole="T0406_RendicionFF_H" />
+          <NavigationProperty Name="T0210_OrdenPagoHeader" Relationship="MADBModel.FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES" FromRole="T0005_MPROVEEDORES" ToRole="T0210_OrdenPagoHeader" />
         </EntityType>
         <EntityType Name="T0006_MCLIENTES">
           <Key>
@@ -8881,24 +9069,25 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           </Key>
           <Property Name="IDCTACTE" Type="Int32" Nullable="false" />
           <Property Name="TDOC" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DOC_INTERNO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="NUMDOC" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DOC_INTERNO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="NUMDOC" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="ZTERM" Type="Int32" />
           <Property Name="IDPROV" Type="Int32" Nullable="false" />
-          <Property Name="MONEDA" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MONEDA" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TC" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="IMPORTE_ORI" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="IMPORTE_ARS" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="SALDOFACTURA" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="LogDate" Type="DateTime" Precision="3" Nullable="false" />
-          <Property Name="LogUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TIPO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LogUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIPO" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="ZOP" Type="Boolean" Nullable="false" />
           <Property Name="IdFacturaX" Type="Int32" />
           <Property Name="IDDOC" Type="Int32" />
           <NavigationProperty Name="T0005_MPROVEEDORES" Relationship="Self.FK_T0203_CTACTE_PROV_T0005_MPROVEEDORES" FromRole="T0203_CTACTE_PROV" ToRole="T0005_MPROVEEDORES" />
           <NavigationProperty Name="T0203_CTACTE_PROV_IMPU" Relationship="Self.FK_T0203_CTACTE_PROV_IMPU_T0203_CTACTE_PROV2" FromRole="T0203_CTACTE_PROV" ToRole="T0203_CTACTE_PROV_IMPU" />
+          <NavigationProperty Name="T0212_OrdenPagoDocumentos" Relationship="MADBModel.FK_T0212_OrdenPagoDocumentos_T0203_CTACTE_PROV" FromRole="T0203_CTACTE_PROV" ToRole="T0212_OrdenPagoDocumentos" />
         </EntityType>
         <EntityType Name="T0203_CTACTE_PROV_IMPU">
           <Key>
@@ -8907,16 +9096,17 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           </Key>
           <Property Name="CTACTE1" Type="Int32" Nullable="false" />
           <Property Name="CTACTE2" Type="Int32" Nullable="false" />
-          <Property Name="MONTO_IMPU" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="LogDate" Type="DateTime" Precision="3" />
-          <Property Name="LogUser" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="TCODE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="GLPAGO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MONTO_IMPU" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LogDate" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="LogUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GLPAGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="NAS_PAGO" Type="Int32" />
-          <Property Name="IDPROV" Type="Int32" />
-          <Property Name="NUMDOC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="TDOC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IDPROV" Type="Int32" Nullable="false" />
+          <Property Name="NUMDOC" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TDOC" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="T0203_CTACTE_PROV" Relationship="Self.FK_T0203_CTACTE_PROV_IMPU_T0203_CTACTE_PROV2" FromRole="T0203_CTACTE_PROV_IMPU" ToRole="T0203_CTACTE_PROV" />
+          <Property Name="Temp" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="T0204_CTACTESALDOS_PROV">
           <Key>
@@ -8990,13 +9180,13 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             <PropertyRef Name="IDOP" />
           </Key>
           <Property Name="IDOP" Type="Int32" Nullable="false" />
-          <Property Name="OPFECHA" Type="DateTime" Precision="3" />
+          <Property Name="OPFECHA" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="PROV_ID" Type="Int32" Nullable="false" />
-          <Property Name="PROV_RS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PROV_RS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PROV_TAXID" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="PROV_TAXNUM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="PROV_CUIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MON_OP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MON_OP" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IMP_OP" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="OP_TEMP" Type="Boolean" Nullable="false" />
           <Property Name="OP_STATUS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -9018,32 +9208,8 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <Property Name="DiasPPFacturas" Type="Int32" />
           <Property Name="DiasPPItemsPago" Type="Int32" />
           <NavigationProperty Name="T0005_MPROVEEDORES" Relationship="Self.FK_T0210_OP_H_T0005_MPROVEEDORES" FromRole="T0210_OP_H" ToRole="T0005_MPROVEEDORES" />
-          <NavigationProperty Name="T0212_OP_ITEM" Relationship="Self.FK_T0212_OP_ITEM_T0210_OP_H" FromRole="T0210_OP_H" ToRole="T0212_OP_ITEM" />
           <NavigationProperty Name="T0213_OP_FACT" Relationship="Self.FK_T0213_OP_FACT_T0210_OP_H" FromRole="T0210_OP_H" ToRole="T0213_OP_FACT" />
-        </EntityType>
-        <EntityType Name="T0212_OP_ITEM">
-          <Key>
-            <PropertyRef Name="IDOP" />
-            <PropertyRef Name="IDITEM" />
-          </Key>
-          <Property Name="IDOP" Type="Int32" Nullable="false" />
-          <Property Name="IDITEM" Type="Int32" Nullable="false" />
-          <Property Name="PROVEEDOR" Type="Int32" />
-          <Property Name="MON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IMPORTE" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="TC" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="MON_OP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IMPORTE_OP" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="CUENTA_O" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="CH_CK" Type="Boolean" Nullable="false" />
-          <Property Name="CH_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CH_BCO" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="CH_ID" Type="Int32" />
-          <Property Name="CK_FIN" Type="Boolean" />
-          <Property Name="CK_CANCEL" Type="Boolean" />
-          <Property Name="ChequeFecha" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="T0210_OP_H" Relationship="Self.FK_T0212_OP_ITEM_T0210_OP_H" FromRole="T0212_OP_ITEM" ToRole="T0210_OP_H" />
-          <NavigationProperty Name="T0150_CUENTAS" Relationship="MADBModel.FK_T0212_OP_ITEM_T0150_CUENTAS" FromRole="T0212_OP_ITEM" ToRole="T0150_CUENTAS" />
+          <NavigationProperty Name="T0212_OP_ITEM" Relationship="MADBModel.FK_T0212_OP_ITEM_T0210_OP_H" FromRole="T0210_OP_H" ToRole="T0212_OP_ITEM" />
         </EntityType>
         <EntityType Name="T0213_OP_FACT">
           <Key>
@@ -9053,21 +9219,21 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <Property Name="IDOP" Type="Int32" Nullable="false" />
           <Property Name="IDITEM" Type="Int32" Nullable="false" />
           <Property Name="PROVEEDOR" Type="Int32" Nullable="false" />
-          <Property Name="MON_OP" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="TC" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FACT_ID" Type="Int32" />
-          <Property Name="FACT_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FACT_MON" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="FACT_SALDO_O" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FACT_SALDO_IMPUTAR" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FACT_IMPUTADO" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FACT_TIPO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="MON_OP" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TC" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FACT_ID" Type="Int32" Nullable="false" />
+          <Property Name="FACT_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FACT_MON" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FACT_SALDO_O" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FACT_SALDO_IMPUTAR" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FACT_IMPUTADO" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FACT_TIPO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CK_FIN" Type="Boolean" Nullable="false" />
           <Property Name="NASIENTO" Type="Int32" />
-          <Property Name="RetencionIIBB" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RetencionGS" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RetencionIIBB" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RetencionGS" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="IdFacturaX" Type="Int32" />
-          <Property Name="IdCtaCte" Type="Int32" />
+          <Property Name="IdCtaCte" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T0210_OP_H" Relationship="Self.FK_T0213_OP_FACT_T0210_OP_H" FromRole="T0213_OP_FACT" ToRole="T0210_OP_H" />
         </EntityType>
         <EntityType Name="T0230_GescoHeader">
@@ -9299,6 +9465,7 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <Property Name="StatusDocumento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RedondeoFinal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <NavigationProperty Name="T0404_VENDOR_FACT_I" Relationship="Self.FK_T0404_VENDOR_FACT_I_T0403_VENDOR_FACT_H" FromRole="T0403_VENDOR_FACT_H" ToRole="T0404_VENDOR_FACT_I" />
+          <NavigationProperty Name="T0212_OrdenPagoDocumentos" Relationship="MADBModel.FK_T0212_OrdenPagoDocumentos_T0403_VENDOR_FACT_H" FromRole="T0403_VENDOR_FACT_H" ToRole="T0212_OrdenPagoDocumentos" />
         </EntityType>
         <EntityType Name="T0404_VENDOR_FACT_I">
           <Key>
@@ -11502,20 +11669,6 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_T0212_OP_ITEM_T0210_OP_H">
-          <End Role="T0210_OP_H" Type="Self.T0210_OP_H" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="T0212_OP_ITEM" Type="Self.T0212_OP_ITEM" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="T0210_OP_H">
-              <PropertyRef Name="IDOP" />
-            </Principal>
-            <Dependent Role="T0212_OP_ITEM">
-              <PropertyRef Name="IDOP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_T0213_OP_FACT_T0210_OP_H">
           <End Role="T0210_OP_H" Type="Self.T0210_OP_H" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -11859,7 +12012,6 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <EntitySet Name="T0206_COBRANZA_I" EntityType="Self.T0206_COBRANZA_I" />
           <EntitySet Name="T0208_COB_NO_APLICADA" EntityType="Self.T0208_COB_NO_APLICADA" />
           <EntitySet Name="T0210_OP_H" EntityType="Self.T0210_OP_H" />
-          <EntitySet Name="T0212_OP_ITEM" EntityType="Self.T0212_OP_ITEM" />
           <EntitySet Name="T0213_OP_FACT" EntityType="Self.T0213_OP_FACT" />
           <EntitySet Name="T0230_GescoHeader" EntityType="Self.T0230_GescoHeader" />
           <EntitySet Name="T0231_GescoDetail" EntityType="Self.T0231_GescoDetail" />
@@ -12188,10 +12340,6 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             <End Role="T0203_CTACTE_PROV" EntitySet="T0203_CTACTE_PROV" />
             <End Role="T0203_CTACTE_PROV_IMPU" EntitySet="T0203_CTACTE_PROV_IMPU" />
           </AssociationSet>
-          <AssociationSet Name="FK_T0212_OP_ITEM_T0210_OP_H" Association="Self.FK_T0212_OP_ITEM_T0210_OP_H">
-            <End Role="T0210_OP_H" EntitySet="T0210_OP_H" />
-            <End Role="T0212_OP_ITEM" EntitySet="T0212_OP_ITEM" />
-          </AssociationSet>
           <AssociationSet Name="FK_T0213_OP_FACT_T0210_OP_H" Association="Self.FK_T0213_OP_FACT_T0210_OP_H">
             <End Role="T0210_OP_H" EntitySet="T0210_OP_H" />
             <End Role="T0213_OP_FACT" EntitySet="T0213_OP_FACT" />
@@ -12333,10 +12481,6 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             <End Role="T0150_CUENTAS" EntitySet="T0150_CUENTAS" />
             <End Role="T0206_COBRANZA_I" EntitySet="T0206_COBRANZA_I" />
           </AssociationSet>
-          <AssociationSet Name="FK_T0212_OP_ITEM_T0150_CUENTAS" Association="MADBModel.FK_T0212_OP_ITEM_T0150_CUENTAS">
-            <End Role="T0150_CUENTAS" EntitySet="T0150_CUENTAS" />
-            <End Role="T0212_OP_ITEM" EntitySet="T0212_OP_ITEM" />
-          </AssociationSet>
           <AssociationSet Name="FK_T0154_CHEQUES_T0160_BANCOS" Association="MADBModel.FK_T0154_CHEQUES_T0160_BANCOS">
             <End Role="T0160_BANCOS" EntitySet="T0160_BANCOS" />
             <End Role="T0154_CHEQUES" EntitySet="T0154_CHEQUES" />
@@ -12458,6 +12602,43 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <AssociationSet Name="FK_T0017_TaxModuleAssign_T0016_TaxModuleDefinition" Association="MADBModel.FK_T0017_TaxModuleAssign_T0016_TaxModuleDefinition">
             <End Role="T0016_TaxModuleDefinition" EntitySet="T0016_TaxModuleDefinition" />
             <End Role="T0017_TaxModuleAssign" EntitySet="T0017_TaxModuleAssign" />
+          </AssociationSet>
+          <EntitySet Name="T0211_OrdenPagoItems" EntityType="MADBModel.T0211_OrdenPagoItems" />
+          <EntitySet Name="T0212_OrdenPagoDocumentos" EntityType="MADBModel.T0212_OrdenPagoDocumentos" />
+          <EntitySet Name="T0213_OrdenPagoRetenciones" EntityType="MADBModel.T0213_OrdenPagoRetenciones" />
+          <AssociationSet Name="FK_T0212_OrdenPagoDocumentos_T0203_CTACTE_PROV" Association="MADBModel.FK_T0212_OrdenPagoDocumentos_T0203_CTACTE_PROV">
+            <End Role="T0203_CTACTE_PROV" EntitySet="T0203_CTACTE_PROV" />
+            <End Role="T0212_OrdenPagoDocumentos" EntitySet="T0212_OrdenPagoDocumentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T0212_OrdenPagoDocumentos_T0403_VENDOR_FACT_H" Association="MADBModel.FK_T0212_OrdenPagoDocumentos_T0403_VENDOR_FACT_H">
+            <End Role="T0403_VENDOR_FACT_H" EntitySet="T0403_VENDOR_FACT_H" />
+            <End Role="T0212_OrdenPagoDocumentos" EntitySet="T0212_OrdenPagoDocumentos" />
+          </AssociationSet>
+          <EntitySet Name="T0212_OP_ITEM" EntityType="MADBModel.T0212_OP_ITEM" />
+          <AssociationSet Name="FK_T0212_OP_ITEM_T0150_CUENTAS" Association="MADBModel.FK_T0212_OP_ITEM_T0150_CUENTAS">
+            <End Role="T0150_CUENTAS" EntitySet="T0150_CUENTAS" />
+            <End Role="T0212_OP_ITEM" EntitySet="T0212_OP_ITEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T0212_OP_ITEM_T0210_OP_H" Association="MADBModel.FK_T0212_OP_ITEM_T0210_OP_H">
+            <End Role="T0210_OP_H" EntitySet="T0210_OP_H" />
+            <End Role="T0212_OP_ITEM" EntitySet="T0212_OP_ITEM" />
+          </AssociationSet>
+          <EntitySet Name="T0210_OrdenPagoHeader" EntityType="MADBModel.T0210_OrdenPagoHeader" />
+          <AssociationSet Name="FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES" Association="MADBModel.FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES">
+            <End Role="T0005_MPROVEEDORES" EntitySet="T0005_MPROVEEDORES" />
+            <End Role="T0210_OrdenPagoHeader" EntitySet="T0210_OrdenPagoHeader" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T0211_OrdenPagoItems_T0210_OrdenPagoHeader" Association="MADBModel.FK_T0211_OrdenPagoItems_T0210_OrdenPagoHeader">
+            <End Role="T0210_OrdenPagoHeader" EntitySet="T0210_OrdenPagoHeader" />
+            <End Role="T0211_OrdenPagoItems" EntitySet="T0211_OrdenPagoItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T0212_OrdenPagoDocumentos_T0210_OrdenPagoHeader" Association="MADBModel.FK_T0212_OrdenPagoDocumentos_T0210_OrdenPagoHeader">
+            <End Role="T0210_OrdenPagoHeader" EntitySet="T0210_OrdenPagoHeader" />
+            <End Role="T0212_OrdenPagoDocumentos" EntitySet="T0212_OrdenPagoDocumentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T0213_OrdenPagoRetenciones_T0210_OrdenPagoHeader" Association="MADBModel.FK_T0213_OrdenPagoRetenciones_T0210_OrdenPagoHeader">
+            <End Role="T0210_OrdenPagoHeader" EntitySet="T0210_OrdenPagoHeader" />
+            <End Role="T0213_OrdenPagoRetenciones" EntitySet="T0213_OrdenPagoRetenciones" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="GetDataOrdenCompra_byOCNum_Result">
@@ -12752,18 +12933,6 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             </Principal>
             <Dependent Role="T0206_COBRANZA_I">
               <PropertyRef Name="CUENTA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_T0212_OP_ITEM_T0150_CUENTAS">
-          <End Type="MADBModel.T0150_CUENTAS" Role="T0150_CUENTAS" Multiplicity="0..1" />
-          <End Type="MADBModel.T0212_OP_ITEM" Role="T0212_OP_ITEM" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="T0150_CUENTAS">
-              <PropertyRef Name="ID_CUENTA" />
-            </Principal>
-            <Dependent Role="T0212_OP_ITEM">
-              <PropertyRef Name="CUENTA_O" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -13672,6 +13841,223 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             </Principal>
             <Dependent Role="T0017_TaxModuleAssign">
               <PropertyRef Name="IdTax" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="T0211_OrdenPagoItems">
+          <Key>
+            <PropertyRef Name="IdOP" />
+            <PropertyRef Name="IdItem" />
+          </Key>
+          <Property Name="IdOP" Type="Int32" Nullable="false" />
+          <Property Name="IdItem" Type="Int32" Nullable="false" />
+          <Property Name="CuentaItem" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="MonedaItem" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ImporteItem" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ImporteOP" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="GLCuenta" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TextoAlterno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EsCheque" Type="Boolean" Nullable="false" />
+          <Property Name="ECheque" Type="Boolean" Nullable="false" />
+          <Property Name="ChNumero" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ChFecha" Type="DateTime" Precision="3" />
+          <Property Name="ChBanco" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ChIdCartera" Type="Int32" />
+          <NavigationProperty Name="T0210_OrdenPagoHeader" Relationship="MADBModel.FK_T0211_OrdenPagoItems_T0210_OrdenPagoHeader" FromRole="T0211_OrdenPagoItems" ToRole="T0210_OrdenPagoHeader" />
+        </EntityType>
+        <EntityType Name="T0212_OrdenPagoDocumentos">
+          <Key>
+            <PropertyRef Name="IdOP" />
+            <PropertyRef Name="IdFactura" />
+          </Key>
+          <Property Name="IdOP" Type="Int32" Nullable="false" />
+          <Property Name="IdFactura" Type="Int32" Nullable="false" />
+          <Property Name="IdCtaCte" Type="Int32" Nullable="false" />
+          <Property Name="MonedaDoc" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ImporteOri" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ImporteOP" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TCDoc" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SaldoAdeudado" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ImputadoOP" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="LX" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T0203_CTACTE_PROV" Relationship="MADBModel.FK_T0212_OrdenPagoDocumentos_T0203_CTACTE_PROV" FromRole="T0212_OrdenPagoDocumentos" ToRole="T0203_CTACTE_PROV" />
+          <NavigationProperty Name="T0403_VENDOR_FACT_H" Relationship="MADBModel.FK_T0212_OrdenPagoDocumentos_T0403_VENDOR_FACT_H" FromRole="T0212_OrdenPagoDocumentos" ToRole="T0403_VENDOR_FACT_H" />
+          <NavigationProperty Name="T0210_OrdenPagoHeader" Relationship="MADBModel.FK_T0212_OrdenPagoDocumentos_T0210_OrdenPagoHeader" FromRole="T0212_OrdenPagoDocumentos" ToRole="T0210_OrdenPagoHeader" />
+        </EntityType>
+        <EntityType Name="T0213_OrdenPagoRetenciones">
+          <Key>
+            <PropertyRef Name="IdOP" />
+            <PropertyRef Name="IdItemRetencion" />
+          </Key>
+          <Property Name="IdOP" Type="Int32" Nullable="false" />
+          <Property Name="IdItemRetencion" Type="Int32" Nullable="false" />
+          <Property Name="RetencionTipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BaseImponibleCalculo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="GL" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Alicuota" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="ImporteRetencion" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="T0210_OrdenPagoHeader" Relationship="MADBModel.FK_T0213_OrdenPagoRetenciones_T0210_OrdenPagoHeader" FromRole="T0213_OrdenPagoRetenciones" ToRole="T0210_OrdenPagoHeader" />
+        </EntityType>
+        <Association Name="FK_T0212_OrdenPagoDocumentos_T0203_CTACTE_PROV">
+          <End Type="MADBModel.T0203_CTACTE_PROV" Role="T0203_CTACTE_PROV" Multiplicity="1" />
+          <End Type="MADBModel.T0212_OrdenPagoDocumentos" Role="T0212_OrdenPagoDocumentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0203_CTACTE_PROV">
+              <PropertyRef Name="IDCTACTE" />
+            </Principal>
+            <Dependent Role="T0212_OrdenPagoDocumentos">
+              <PropertyRef Name="IdCtaCte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T0212_OrdenPagoDocumentos_T0403_VENDOR_FACT_H">
+          <End Type="MADBModel.T0403_VENDOR_FACT_H" Role="T0403_VENDOR_FACT_H" Multiplicity="1" />
+          <End Type="MADBModel.T0212_OrdenPagoDocumentos" Role="T0212_OrdenPagoDocumentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0403_VENDOR_FACT_H">
+              <PropertyRef Name="IDINT" />
+            </Principal>
+            <Dependent Role="T0212_OrdenPagoDocumentos">
+              <PropertyRef Name="IdFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="T0212_OP_ITEM">
+          <Key>
+            <PropertyRef Name="IDOP" />
+            <PropertyRef Name="IDITEM" />
+          </Key>
+          <Property Name="IDOP" Type="Int32" Nullable="false" />
+          <Property Name="IDITEM" Type="Int32" Nullable="false" />
+          <Property Name="PROVEEDOR" Type="Int32" />
+          <Property Name="MON" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="IMPORTE" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TC" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MON_OP" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="IMPORTE_OP" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CUENTA_O" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CH_CK" Type="Boolean" Nullable="false" />
+          <Property Name="CH_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CH_BCO" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="CH_ID" Type="Int32" />
+          <Property Name="CK_FIN" Type="Boolean" Nullable="false" />
+          <Property Name="CK_CANCEL" Type="Boolean" Nullable="false" />
+          <Property Name="ChequeFecha" Type="DateTime" Precision="0" />
+          <Property Name="GL" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsEcheque" Type="Boolean" Nullable="false" />
+          <Property Name="TextoAlterno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T0150_CUENTAS" Relationship="MADBModel.FK_T0212_OP_ITEM_T0150_CUENTAS" FromRole="T0212_OP_ITEM" ToRole="T0150_CUENTAS" />
+          <NavigationProperty Name="T0210_OP_H" Relationship="MADBModel.FK_T0212_OP_ITEM_T0210_OP_H" FromRole="T0212_OP_ITEM" ToRole="T0210_OP_H" />
+        </EntityType>
+        <Association Name="FK_T0212_OP_ITEM_T0150_CUENTAS">
+          <End Type="MADBModel.T0150_CUENTAS" Role="T0150_CUENTAS" Multiplicity="0..1" />
+          <End Type="MADBModel.T0212_OP_ITEM" Role="T0212_OP_ITEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0150_CUENTAS">
+              <PropertyRef Name="ID_CUENTA" />
+            </Principal>
+            <Dependent Role="T0212_OP_ITEM">
+              <PropertyRef Name="CUENTA_O" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T0212_OP_ITEM_T0210_OP_H">
+          <End Type="MADBModel.T0210_OP_H" Role="T0210_OP_H" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MADBModel.T0212_OP_ITEM" Role="T0212_OP_ITEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0210_OP_H">
+              <PropertyRef Name="IDOP" />
+            </Principal>
+            <Dependent Role="T0212_OP_ITEM">
+              <PropertyRef Name="IDOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="T0210_OrdenPagoHeader">
+          <Key>
+            <PropertyRef Name="IdOP" />
+          </Key>
+          <Property Name="IdOP" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IdProveedor" Type="Int32" Nullable="false" />
+          <Property Name="Moneda" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Temp" Type="Boolean" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Lx" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogUser" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Finalizado" Type="Boolean" Nullable="false" />
+          <Property Name="IdCtaCte" Type="Int32" Nullable="false" />
+          <Property Name="Nas" Type="Int32" />
+          <Property Name="DiasPPFactura" Type="Int32" />
+          <Property Name="DiasPPItemsPago" Type="Int32" />
+          <Property Name="TC" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Periodo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="LogPreparo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LogGenero" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AplicaCredito" Type="Boolean" Nullable="false" />
+          <Property Name="ImporteOP" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ImporteCheques" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ImporteEfectivo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ImporteOtros" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ImporteCreditosAplicados" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ImporteFacturas" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SaldoSinAplicarOP" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TipoOPDoc" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T0005_MPROVEEDORES" Relationship="MADBModel.FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES" FromRole="T0210_OrdenPagoHeader" ToRole="T0005_MPROVEEDORES" />
+          <NavigationProperty Name="T0211_OrdenPagoItems" Relationship="MADBModel.FK_T0211_OrdenPagoItems_T0210_OrdenPagoHeader" FromRole="T0210_OrdenPagoHeader" ToRole="T0211_OrdenPagoItems" />
+          <NavigationProperty Name="T0212_OrdenPagoDocumentos" Relationship="MADBModel.FK_T0212_OrdenPagoDocumentos_T0210_OrdenPagoHeader" FromRole="T0210_OrdenPagoHeader" ToRole="T0212_OrdenPagoDocumentos" />
+          <NavigationProperty Name="T0213_OrdenPagoRetenciones" Relationship="MADBModel.FK_T0213_OrdenPagoRetenciones_T0210_OrdenPagoHeader" FromRole="T0210_OrdenPagoHeader" ToRole="T0213_OrdenPagoRetenciones" />
+          <Property Name="ImporteRetencionens" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <Association Name="FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES">
+          <End Type="MADBModel.T0005_MPROVEEDORES" Role="T0005_MPROVEEDORES" Multiplicity="1" />
+          <End Type="MADBModel.T0210_OrdenPagoHeader" Role="T0210_OrdenPagoHeader" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0005_MPROVEEDORES">
+              <PropertyRef Name="id_prov" />
+            </Principal>
+            <Dependent Role="T0210_OrdenPagoHeader">
+              <PropertyRef Name="IdProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T0211_OrdenPagoItems_T0210_OrdenPagoHeader">
+          <End Type="MADBModel.T0210_OrdenPagoHeader" Role="T0210_OrdenPagoHeader" Multiplicity="1" />
+          <End Type="MADBModel.T0211_OrdenPagoItems" Role="T0211_OrdenPagoItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0210_OrdenPagoHeader">
+              <PropertyRef Name="IdOP" />
+            </Principal>
+            <Dependent Role="T0211_OrdenPagoItems">
+              <PropertyRef Name="IdOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T0212_OrdenPagoDocumentos_T0210_OrdenPagoHeader">
+          <End Type="MADBModel.T0210_OrdenPagoHeader" Role="T0210_OrdenPagoHeader" Multiplicity="1" />
+          <End Type="MADBModel.T0212_OrdenPagoDocumentos" Role="T0212_OrdenPagoDocumentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0210_OrdenPagoHeader">
+              <PropertyRef Name="IdOP" />
+            </Principal>
+            <Dependent Role="T0212_OrdenPagoDocumentos">
+              <PropertyRef Name="IdOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T0213_OrdenPagoRetenciones_T0210_OrdenPagoHeader">
+          <End Type="MADBModel.T0210_OrdenPagoHeader" Role="T0210_OrdenPagoHeader" Multiplicity="1" />
+          <End Type="MADBModel.T0213_OrdenPagoRetenciones" Role="T0213_OrdenPagoRetenciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T0210_OrdenPagoHeader">
+              <PropertyRef Name="IdOP" />
+            </Principal>
+            <Dependent Role="T0213_OrdenPagoRetenciones">
+              <PropertyRef Name="IdOP" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -15611,6 +15997,7 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <EntitySetMapping Name="T0203_CTACTE_PROV_IMPU">
             <EntityTypeMapping TypeName="MADBModel.T0203_CTACTE_PROV_IMPU">
               <MappingFragment StoreEntitySet="T0203_CTACTE_PROV_IMPU">
+                <ScalarProperty Name="Temp" ColumnName="Temp" />
                 <ScalarProperty Name="CTACTE1" ColumnName="CTACTE1" />
                 <ScalarProperty Name="CTACTE2" ColumnName="CTACTE2" />
                 <ScalarProperty Name="MONTO_IMPU" ColumnName="MONTO_IMPU" />
@@ -15721,28 +16108,6 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
                 <ScalarProperty Name="BaseCalculoPagoRetGS" ColumnName="BaseCalculoPagoRetGS" />
                 <ScalarProperty Name="DiasPPFacturas" ColumnName="DiasPPFacturas" />
                 <ScalarProperty Name="DiasPPItemsPago" ColumnName="DiasPPItemsPago" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T0212_OP_ITEM">
-            <EntityTypeMapping TypeName="MADBModel.T0212_OP_ITEM">
-              <MappingFragment StoreEntitySet="T0212_OP_ITEM">
-                <ScalarProperty Name="IDOP" ColumnName="IDOP" />
-                <ScalarProperty Name="IDITEM" ColumnName="IDITEM" />
-                <ScalarProperty Name="PROVEEDOR" ColumnName="PROVEEDOR" />
-                <ScalarProperty Name="MON" ColumnName="MON" />
-                <ScalarProperty Name="IMPORTE" ColumnName="IMPORTE" />
-                <ScalarProperty Name="TC" ColumnName="TC" />
-                <ScalarProperty Name="MON_OP" ColumnName="MON_OP" />
-                <ScalarProperty Name="IMPORTE_OP" ColumnName="IMPORTE_OP" />
-                <ScalarProperty Name="CUENTA_O" ColumnName="CUENTA_O" />
-                <ScalarProperty Name="CH_CK" ColumnName="CH_CK" />
-                <ScalarProperty Name="CH_NUM" ColumnName="CH_NUM" />
-                <ScalarProperty Name="CH_BCO" ColumnName="CH_BCO" />
-                <ScalarProperty Name="CH_ID" ColumnName="CH_ID" />
-                <ScalarProperty Name="CK_FIN" ColumnName="CK_FIN" />
-                <ScalarProperty Name="CK_CANCEL" ColumnName="CK_CANCEL" />
-                <ScalarProperty Name="ChequeFecha" ColumnName="ChequeFecha" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -18346,6 +18711,115 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
                 <ScalarProperty Name="IdTax" ColumnName="IdTax" />
                 <ScalarProperty Name="IdNumero" ColumnName="IdNumero" />
                 <ScalarProperty Name="CP" ColumnName="CP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T0211_OrdenPagoItems">
+            <EntityTypeMapping TypeName="MADBModel.T0211_OrdenPagoItems">
+              <MappingFragment StoreEntitySet="T0211_OrdenPagoItems">
+                <ScalarProperty Name="ChIdCartera" ColumnName="ChIdCartera" />
+                <ScalarProperty Name="ChBanco" ColumnName="ChBanco" />
+                <ScalarProperty Name="ChFecha" ColumnName="ChFecha" />
+                <ScalarProperty Name="ChNumero" ColumnName="ChNumero" />
+                <ScalarProperty Name="ECheque" ColumnName="ECheque" />
+                <ScalarProperty Name="EsCheque" ColumnName="EsCheque" />
+                <ScalarProperty Name="TextoAlterno" ColumnName="TextoAlterno" />
+                <ScalarProperty Name="GLCuenta" ColumnName="GLCuenta" />
+                <ScalarProperty Name="ImporteOP" ColumnName="ImporteOP" />
+                <ScalarProperty Name="ImporteItem" ColumnName="ImporteItem" />
+                <ScalarProperty Name="MonedaItem" ColumnName="MonedaItem" />
+                <ScalarProperty Name="CuentaItem" ColumnName="CuentaItem" />
+                <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+                <ScalarProperty Name="IdOP" ColumnName="IdOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T0212_OrdenPagoDocumentos">
+            <EntityTypeMapping TypeName="MADBModel.T0212_OrdenPagoDocumentos">
+              <MappingFragment StoreEntitySet="T0212_OrdenPagoDocumentos">
+                <ScalarProperty Name="LX" ColumnName="LX" />
+                <ScalarProperty Name="ImputadoOP" ColumnName="ImputadoOP" />
+                <ScalarProperty Name="SaldoAdeudado" ColumnName="SaldoAdeudado" />
+                <ScalarProperty Name="TCDoc" ColumnName="TCDoc" />
+                <ScalarProperty Name="ImporteOP" ColumnName="ImporteOP" />
+                <ScalarProperty Name="ImporteOri" ColumnName="ImporteOri" />
+                <ScalarProperty Name="MonedaDoc" ColumnName="MonedaDoc" />
+                <ScalarProperty Name="IdCtaCte" ColumnName="IdCtaCte" />
+                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+                <ScalarProperty Name="IdOP" ColumnName="IdOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T0213_OrdenPagoRetenciones">
+            <EntityTypeMapping TypeName="MADBModel.T0213_OrdenPagoRetenciones">
+              <MappingFragment StoreEntitySet="T0213_OrdenPagoRetenciones">
+                <ScalarProperty Name="ImporteRetencion" ColumnName="ImporteRetencion" />
+                <ScalarProperty Name="Alicuota" ColumnName="Alicuota" />
+                <ScalarProperty Name="GL" ColumnName="GL" />
+                <ScalarProperty Name="BaseImponibleCalculo" ColumnName="BaseImponibleCalculo" />
+                <ScalarProperty Name="RetencionTipo" ColumnName="RetencionTipo" />
+                <ScalarProperty Name="IdItemRetencion" ColumnName="IdItemRetencion" />
+                <ScalarProperty Name="IdOP" ColumnName="IdOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T0212_OP_ITEM">
+            <EntityTypeMapping TypeName="MADBModel.T0212_OP_ITEM">
+              <MappingFragment StoreEntitySet="T0212_OP_ITEM">
+                <ScalarProperty Name="TextoAlterno" ColumnName="TextoAlterno" />
+                <ScalarProperty Name="IsEcheque" ColumnName="IsEcheque" />
+                <ScalarProperty Name="GL" ColumnName="GL" />
+                <ScalarProperty Name="ChequeFecha" ColumnName="ChequeFecha" />
+                <ScalarProperty Name="CK_CANCEL" ColumnName="CK_CANCEL" />
+                <ScalarProperty Name="CK_FIN" ColumnName="CK_FIN" />
+                <ScalarProperty Name="CH_ID" ColumnName="CH_ID" />
+                <ScalarProperty Name="CH_BCO" ColumnName="CH_BCO" />
+                <ScalarProperty Name="CH_NUM" ColumnName="CH_NUM" />
+                <ScalarProperty Name="CH_CK" ColumnName="CH_CK" />
+                <ScalarProperty Name="CUENTA_O" ColumnName="CUENTA_O" />
+                <ScalarProperty Name="IMPORTE_OP" ColumnName="IMPORTE_OP" />
+                <ScalarProperty Name="MON_OP" ColumnName="MON_OP" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="IMPORTE" ColumnName="IMPORTE" />
+                <ScalarProperty Name="MON" ColumnName="MON" />
+                <ScalarProperty Name="PROVEEDOR" ColumnName="PROVEEDOR" />
+                <ScalarProperty Name="IDITEM" ColumnName="IDITEM" />
+                <ScalarProperty Name="IDOP" ColumnName="IDOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T0210_OrdenPagoHeader">
+            <EntityTypeMapping TypeName="MADBModel.T0210_OrdenPagoHeader">
+              <MappingFragment StoreEntitySet="T0210_OrdenPagoHeader">
+                <ScalarProperty Name="ImporteRetencionens" ColumnName="ImporteRetencionens" />
+                <ScalarProperty Name="TipoOPDoc" ColumnName="TipoOPDoc" />
+                <ScalarProperty Name="SaldoSinAplicarOP" ColumnName="SaldoSinAplicarOP" />
+                <ScalarProperty Name="ImporteFacturas" ColumnName="ImporteFacturas" />
+                <ScalarProperty Name="ImporteCreditosAplicados" ColumnName="ImporteCreditosAplicados" />
+                <ScalarProperty Name="ImporteOtros" ColumnName="ImporteOtros" />
+                <ScalarProperty Name="ImporteEfectivo" ColumnName="ImporteEfectivo" />
+                <ScalarProperty Name="ImporteCheques" ColumnName="ImporteCheques" />
+                <ScalarProperty Name="ImporteOP" ColumnName="ImporteOP" />
+                <ScalarProperty Name="AplicaCredito" ColumnName="AplicaCredito" />
+                <ScalarProperty Name="LogGenero" ColumnName="LogGenero" />
+                <ScalarProperty Name="LogPreparo" ColumnName="LogPreparo" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="DiasPPItemsPago" ColumnName="DiasPPItemsPago" />
+                <ScalarProperty Name="DiasPPFactura" ColumnName="DiasPPFactura" />
+                <ScalarProperty Name="Nas" ColumnName="Nas" />
+                <ScalarProperty Name="IdCtaCte" ColumnName="IdCtaCte" />
+                <ScalarProperty Name="Finalizado" ColumnName="Finalizado" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="Lx" ColumnName="Lx" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Temp" ColumnName="Temp" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdOP" ColumnName="IdOP" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

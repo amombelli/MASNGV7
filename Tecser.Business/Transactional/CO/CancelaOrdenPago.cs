@@ -77,7 +77,7 @@ namespace Tecser.Business.Transactional.CO
                 foreach (var i in op)
                 {
                     var cta = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == i.IdCtaCte);
-                    cta.SALDOFACTURA = cta.SALDOFACTURA + i.FACT_IMPUTADO.Value;
+                    cta.SALDOFACTURA = cta.SALDOFACTURA + i.FACT_IMPUTADO;
                     i.CK_FIN = false;
                 }
                 db.SaveChanges();
@@ -104,13 +104,13 @@ namespace Tecser.Business.Transactional.CO
                         ch.COMENTARIO += "Rev.OP#" + _idOP;
                         db.SaveChanges();
                         new RegisterManager().AddRegisterRecord(i.CUENTA_O, DateTime.Today, "ROP", _idOP.ToString(),
-                            TipoEntidad.Proveedor, i.PROVEEDOR.Value, "OP Reversal", i.MON, i.IMPORTE.Value, 0, i.CH_ID.Value,
+                            TipoEntidad.Proveedor, i.PROVEEDOR.Value, "OP Reversal", i.MON, i.IMPORTE, 0, i.CH_ID.Value,
                             tipoLx, new CuentasManager().GetGL(i.CUENTA_O), nas, "OPX");
                     }
                     else
                     {
                         new RegisterManager().AddRegisterRecord(i.CUENTA_O, DateTime.Today, "ROP", _idOP.ToString(),
-                            TipoEntidad.Proveedor, i.PROVEEDOR.Value, "OP Reversal", i.MON, i.IMPORTE.Value, 0, 0,
+                            TipoEntidad.Proveedor, i.PROVEEDOR.Value, "OP Reversal", i.MON, i.IMPORTE, 0, 0,
                             tipoLx, new CuentasManager().GetGL(i.CUENTA_O), nas, "OPX");
                     }
                 }

@@ -48,7 +48,7 @@ namespace MASngFE.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6.11.18A")]
+        [global::System.Configuration.DefaultSettingValueAttribute("6.220118a")]
         public string AppVersion {
             get {
                 return ((string)(this["AppVersion"]));

@@ -9,7 +9,7 @@ namespace Tecser.Business.Transactional.FI
         public CustomerAjustes(MotivoAjustes xmotivo)
         {
             _motivoDocumento = xmotivo;
-            motivoDocumentoString = xmotivo.ToString();
+            MotivoDocumentoString = xmotivo.ToString();
         }
 
         public enum MotivoAjustes

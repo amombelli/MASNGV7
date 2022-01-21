@@ -43,7 +43,7 @@ namespace Tecser.Business.Transactional.CO.ContaFromDocuments
         protected override void AddRecordCtaCteDetalle201207()
         {
             var ctaCte = new CtaCteVendor(IdEntidad);
-            var idCtaCte = ctaCte.AddCtaCteDetalleRecord(TipoDocSystem, TipoLx, _h.OPFECHA.Value,
+            var idCtaCte = ctaCte.AddCtaCteDetalleRecord(TipoDocSystem, TipoLx, _h.OPFECHA,
                 _h.IDOP.ToString(), null,
                 _h.MON_OP, _h.IMP_OP.Value, _h.TC.Value, _h.SaldoSinImputar.Value * -1);
 

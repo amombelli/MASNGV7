@@ -8,23 +8,44 @@ using TecserEF.Entity;
 
 namespace MASngFE.Transactional.FI.CustomerNCD
 {
+    //modificacion 2021.12.22 manejo para NC y ND
     public partial class FrmFi57SeleccionDocModificacionPrecio : Form
     {
+        public FrmFi57SeleccionDocModificacionPrecio(CustomerNd znd, CustomerNd.MotivoNotaDebito motivoDeb)
+        {
+            var h = znd.GetHeader();
+            _nd = znd;
+            _motivoDeb = motivoDeb;
+            _idCliente = h.Cliente;
+            _tipoLx = h.TIPOFACT;
+            TipoDocx = TipoDocumento.Debito;
+            InitializeComponent();
+        }
 
-        public FrmFi57SeleccionDocModificacionPrecio(CustomerNc znc, CustomerNc.MotivoNotaCredito motivo)
+        public FrmFi57SeleccionDocModificacionPrecio(CustomerNc znc, CustomerNc.MotivoNotaCredito motivoCred)
         {
             var h = znc.GetHeader();
             _nc = znc;
-            _motivo = motivo;
+            _motivoCred = motivoCred;
             _idCliente = h.Cliente;
             _tipoLx = h.TIPOFACT;
+            TipoDocx = TipoDocumento.Credito;
             InitializeComponent();
         }
         //----------------------------------------------------------------------------------------
-        private CustomerNc _nc;
-        private readonly int _idCliente;
+        private enum TipoDocumento
+        {
+            Credito,
+            Debito,
+        };
+
+        private TipoDocumento TipoDocx;
+        private CustomerNc _nc; //para nota de credito
+        private CustomerNd _nd; //para nota de debito
+        private readonly int _idCliente; 
         private readonly string _tipoLx;
-        private readonly CustomerNc.MotivoNotaCredito _motivo;
+        private readonly CustomerNc.MotivoNotaCredito _motivoCred;
+        private readonly CustomerNd.MotivoNotaDebito _motivoDeb;
         private T0400_FACTURA_H _headerSelected;
         private T0401_FACTURA_I itemSelected;
         private int _idFacturaSeleccionada;
@@ -36,13 +57,10 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         public List<string> NumeroDocumentoAplica { get; private set; } //En caso de un solo documento - numero para descripcion
         public DateTime? FechaAplicaDesde { get; private set; } //En caso de Periodo: Fecha Desde
         public DateTime? FechaAplicaHasta { get; private set; } //En caso de Periodo: Fecha Hasta
-
-
-
+        
         //----------------------------------------------------------------------------------------
         //ver si eliminar algo ?
-
-
+        
         public decimal KgNotaCredito;
         public int IdFactura;
         public int IdFacturaItem;
@@ -58,12 +76,28 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         //----------------------------------------------------------------------------------------
         private void FrmSeleccionMaterialNcd_Load(object sender, EventArgs e)
         {
-            txtRazonSocial.Text = _nc.H4.RAZONSOC;
-            txtMotivoNc.Text = _motivo.ToString();
-            txtId6.Text = _nc.H4.Cliente.ToString();
-            txtLx.Text = _nc.H4.TIPOFACT;
+            var x = _nd.GetHeader();
+            txtRazonSocial.Text = x.RAZONSOC;
+            txtMotivoNc.Text = _motivoCred.ToString();
+            
+            txtId6.Text = x.Cliente.ToString();
+            txtLx.Text = x.TIPOFACT;
             this.dgvFactuHeader.CellEnter -= new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactuHeader_CellEnter);
-            dgvFactuHeader.DataSource = CustomerDoc.GetListaDocumentosSeleccionar(_idCliente, _tipoLx, true, false, false, false, false, false);
+            if (TipoDocx == TipoDocumento.Credito)
+            {
+                //NOTAS DE CREDITO
+                dgvFactuHeader.DataSource =
+                    CustomerDoc.GetListaDocumentosSeleccionar(_idCliente, _tipoLx, true, false, true, false, false,
+                        true);
+            }
+            else
+            {
+                //NOTAS DE DEBITO
+                dgvFactuHeader.DataSource =
+                    CustomerDoc.GetListaDocumentosSeleccionar(_idCliente, _tipoLx, true, true, false, false, true,
+                        false);
+            }
+
             ConfiguraSegunMotivo();
             dgvFactuHeader.ClearSelection();
             this.dgvFactuHeader.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactuHeader_CellEnter);
@@ -75,21 +109,38 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             c2Tc.XReadOnly = true;
             c2Cantidad.XReadOnly = true;
             ckReingresoKg.AutoCheck = false;
-            switch (_motivo)
+            if (TipoDocx == TipoDocumento.Credito)
             {
-                case CustomerNc.MotivoNotaCredito.DiferenciaPrecio:
-                    c2PrecioUnitCot.XReadOnly = false;
-                    cmbMonedaPrecioActualizado.Enabled = true;
-                    break;
-                case CustomerNc.MotivoNotaCredito.DiferenciaCambio:
-                    c2Tc.XReadOnly = false;
-                    break;
-                case CustomerNc.MotivoNotaCredito.DiferenciaKg:
-                    c2Cantidad.XReadOnly = false;
-                    ckReingresoKg.AutoCheck = true;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                switch (_motivoCred)
+                {
+                    case CustomerNc.MotivoNotaCredito.DiferenciaPrecio:
+                        c2PrecioUnitCot.XReadOnly = false;
+                        cmbMonedaPrecioActualizado.Enabled = true;
+                        break;
+                    case CustomerNc.MotivoNotaCredito.DiferenciaCambio:
+                        c2Tc.XReadOnly = false;
+                        break;
+                    case CustomerNc.MotivoNotaCredito.DiferenciaKg:
+                        c2Cantidad.XReadOnly = false;
+                        ckReingresoKg.AutoCheck = true;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+            else
+            {
+                switch (_motivoDeb)
+                {
+                    case CustomerNd.MotivoNotaDebito.DiferenciaPrecio:
+                        c2PrecioUnitCot.XReadOnly = false;
+                        cmbMonedaPrecioActualizado.Enabled = true;
+                        break;
+                    case CustomerNd.MotivoNotaDebito.DiferenciaKg:
+                        c2Cantidad.XReadOnly = false;
+                        c2PrecioUnitCot.XReadOnly = true;
+                        break;
+                }
             }
         }
         private void dgvFactuHeader_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -133,15 +184,12 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             c3PrecioTotalNC.SetValue = 0;
             cCantidadNc.SetValue = 0;
             txtDescripcionItemNC.Text = null;
-
-
         }
         private void BlanqueaDatosItem()
         {
             txtMaterial.Text = null;
             txtIdItem.Text = null;
             txtItemDescripcion.Text = null;
-            //
             txt1Cantidad.Text = 0.ToString();
             txt1Tc.Text = 1.ToString("N2");
             txt1MonCotizacion.Text = @"ARS";
@@ -152,7 +200,6 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             BlanqueaItemsAModificar();
             return;
         }
-
         private void dgvSeleccionItem_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -221,15 +268,13 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 ckReingresoKg.AutoCheck = false;
             }
         }
-
-
-
+        
         //modificaciones
 
         private void c2Cantidad_Validated(object sender, EventArgs e)
         {
             //se cambio cantidad
-            CalculaModificacionPrecio();
+            CalculaModificacionKg();
         }
         private void txt2MonCot_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -251,19 +296,48 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         }
         private void c2PrecioUnitCot_Validated(object sender, EventArgs e)
         {
+            if (TipoDocx == TipoDocumento.Credito)
+            {
+
+            }
+
+            if (TipoDocx == TipoDocumento.Debito)
+            {
+                if (_motivoDeb == CustomerNd.MotivoNotaDebito.DiferenciaKg)
+                {
+                    return;
+                }
+            }
+
             //se cambio precio unitario del item
             //actualizar precio total
             CalculaModificacionPrecio();
         }
 
+        private void CalculaModificacionKg()
+        {
+            if (TipoDocx == TipoDocumento.Debito)
+            {
+                if (_motivoDeb != CustomerNd.MotivoNotaDebito.DiferenciaKg)
+                {
+                    return;
+                }
+            }
+
+            c3VarCantidad.SetValue = c2Cantidad.GetValueDecimal - Convert.ToDecimal(txt1Cantidad.Text);
+            c3PrecioUNC.SetValue = c2PrecioUnitFactu.GetValueDecimal;
+            c3PrecioTotalNC.SetValue = c2PrecioUnitFactu.GetValueDecimal * c3VarCantidad.GetValueDecimal;
+            cCantidadNc.SetValue = c3VarCantidad.GetValueDecimal;
+            txtDescripcionItemNC.Text = txtItemDescripcion.Text;
+        }
 
         private void CalculaModificacionPrecio()
         {
-            if (_motivo == CustomerNc.MotivoNotaCredito.DiferenciaPrecio)
+            if (_motivoCred == CustomerNc.MotivoNotaCredito.DiferenciaPrecio)
             {
                 cCantidadNc.SetValue = c2Cantidad.GetValueDecimal;
             }
-
+            
             decimal vUnitArs;
             decimal vUnitUsd;
             if (c2Tc.GetValueDecimal <= (decimal)0.1)
@@ -293,6 +367,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             //    vUnitUsd = c2PrecioUnitCot.GetValueDecimal;
             //}
 
+
             if (txt2MonFactu.Text == @"ARS")
             {
                 c2PrecioUnitFactu.SetValue = vUnitArs;
@@ -304,33 +379,72 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 c2PrecioTotFactu.SetValue = vUnitUsd * c2Cantidad.GetValueDecimal;
             }
 
-            c3PrecioUNC.SetValue = Math.Round((c2PrecioUnitFactu.GetValueDecimal -
-                                              FormatAndConversions.CCurrencyADecimal(txt1PrecioUFact.Text)), 2);
-            c3PrecioTotalNC.SetValue = Math.Round(c2PrecioTotFactu.GetValueDecimal - FormatAndConversions.CCurrencyADecimal(txt1PrecioTotFactu.Text), 2);
-
-            c3VarCantidad.SetValue = c2Cantidad.GetValueDecimal - Convert.ToDecimal(txt1Cantidad.Text);
-            switch (_motivo)
+            if (TipoDocx == TipoDocumento.Debito)
             {
-                case CustomerNc.MotivoNotaCredito.DiferenciaPrecio:
-                    cCantidadNc.SetValue = c2Cantidad.GetValueDecimal;
-                    if (string.IsNullOrEmpty(txtDescripcionItemNC.Text))
-                    {
-                        txtDescripcionItemNC.Text = $@"Dif. Precio  {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
-                    }
-                    break;
-                case CustomerNc.MotivoNotaCredito.DiferenciaCambio:
-                    txtDescripcionItemNC.Text = $@"Dif. Precio por Dif TC {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
-                    break;
-                case CustomerNc.MotivoNotaCredito.DiferenciaKg:
-                    cCantidadNc.SetValue = c3VarCantidad.GetValueDecimal;
-                    if (string.IsNullOrEmpty(txtDescripcionItemNC.Text))
-                    {
-                        txtDescripcionItemNC.Text = $@"Diferencia KG {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
-                    }
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                if (_motivoDeb == CustomerNd.MotivoNotaDebito.DiferenciaKg)
+                {
+                    c3PrecioUNC.SetValue = c2PrecioUnitFactu.GetValueDecimal;
+                    c3PrecioTotalNC.SetValue = c3PrecioUNC.GetValueDecimal * c3VarCantidad.GetValueDecimal;
+                }
             }
+            else
+            {
+                c3PrecioUNC.SetValue = Math.Round((c2PrecioUnitFactu.GetValueDecimal -
+                                                   FormatAndConversions.CCurrencyADecimal(txt1PrecioUFact.Text)), 2);
+                c3PrecioTotalNC.SetValue =
+                    Math.Round(
+                        c2PrecioTotFactu.GetValueDecimal -
+                        FormatAndConversions.CCurrencyADecimal(txt1PrecioTotFactu.Text), 2);
+
+                c3VarCantidad.SetValue = c2Cantidad.GetValueDecimal - Convert.ToDecimal(txt1Cantidad.Text);
+            }
+            
+            if (TipoDocx == TipoDocumento.Credito)
+            {
+                switch (_motivoCred)
+                {
+                    case CustomerNc.MotivoNotaCredito.DiferenciaPrecio:
+                        cCantidadNc.SetValue = c2Cantidad.GetValueDecimal;
+                        if (string.IsNullOrEmpty(txtDescripcionItemNC.Text))
+                        {
+                            txtDescripcionItemNC.Text =
+                                $@"Dif. Precio  {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
+                        }
+
+                        break;
+                    case CustomerNc.MotivoNotaCredito.DiferenciaCambio:
+                        txtDescripcionItemNC.Text =
+                            $@"Dif. Precio por Dif TC {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
+                        break;
+                    case CustomerNc.MotivoNotaCredito.DiferenciaKg:
+                        cCantidadNc.SetValue = c3VarCantidad.GetValueDecimal;
+                        if (string.IsNullOrEmpty(txtDescripcionItemNC.Text))
+                        {
+                            txtDescripcionItemNC.Text =
+                                $@"Diferencia KG {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
+                        }
+
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+            else
+            {
+                switch (_motivoDeb)
+                {
+                    case CustomerNd.MotivoNotaDebito.DiferenciaPrecio:
+                        cCantidadNc.SetValue = c2Cantidad.GetValueDecimal;
+                        if (string.IsNullOrEmpty(txtDescripcionItemNC.Text))
+                        {
+                            txtDescripcionItemNC.Text =
+                                $@"Dif. Precio  {txtMaterial.Text} Doc# {txtNumeroDocumento.Text}";
+                        }
+                        break;
+
+                }
+            }
+
         }
 
 
@@ -345,10 +459,23 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         {
             dgvFactuHeader.ReadOnly = true;
 
-            //Alta del Item
-            _nc.AddItems(txtMaterial.Text, txtDescripcionItemNC.Text, c3PrecioUNC.GetValueDecimal, itemSelected.GLV, itemSelected.IVA21, cCantidadNc.GetValueDecimal);
-            _nc.SetTotalesInHeaderFromItems();
-            _nc.SetDocumentoAsociado(_idFacturaSeleccionada);
+            if (TipoDocx == TipoDocumento.Credito)
+            {
+                //Alta del Item
+                _nc.AddItems(txtMaterial.Text, txtDescripcionItemNC.Text, c3PrecioUNC.GetValueDecimal, itemSelected.GLV,
+                    itemSelected.IVA21, cCantidadNc.GetValueDecimal);
+                _nc.SetTotalesInHeaderFromItems();
+                _nc.SetDocumentoAsociado(_idFacturaSeleccionada);
+            }
+            else
+            {
+                //Alta del Item
+                _nd.AddItems(txtMaterial.Text, txtDescripcionItemNC.Text, c3PrecioUNC.GetValueDecimal, itemSelected.GLV,
+                    itemSelected.IVA21, cCantidadNc.GetValueDecimal);
+                _nd.SetTotalesInHeaderFromItems();
+                _nd.SetDocumentoAsociado(_idFacturaSeleccionada);
+            }
+
             dgvSeleccionItem.ClearSelection();
             BlanqueaDatosItem();
         }

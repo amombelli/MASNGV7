@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -37,6 +38,8 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         private int IdRemitoAsociado = 0; //retorno
         private int? _idRetornoAlternativo = null;
         private decimal KgNotaCredito;
+        private string LoteReingresoKg;
+        public List<FrmFI52DiferenciaKg.DataRetornonStock> ListaRetornoDevolucion;
         private enum Lx
         {
             L1,
@@ -202,7 +205,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     //NcAjusteTCDocumentoCompleto();
                     break;
                 case CustomerNc.MotivoNotaCredito.DiferenciaKg:
-                    //Todo: Falta Construir Funcion
+                    FxDiferenciaKg(); //Todo: Falta Construir Funcion
                     break;
                 case CustomerNc.MotivoNotaCredito.DevolucionMaterial:
                     FxDevolucionItem();
@@ -218,6 +221,46 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     throw new ArgumentOutOfRangeException();
             }
         }
+
+        /// <summary>
+        /// Devolucion de Kg con reingreso a Stock por errores 
+        /// </summary>
+        private void FxDiferenciaKg()
+        {
+            if (_lx == Lx.L1)
+            {
+                cmbTipoDocumento.Items.Clear();
+                cmbTipoDocumento.Items.Add("Nota Credito 'A'");
+                cmbTipoDocumento.SelectedItem = "Nota Credito 'A'";
+            }
+            else
+            {
+                cmbTipoDocumento.Items.Clear();
+                cmbTipoDocumento.Items.Add("Nota Credito 'X'");
+                cmbTipoDocumento.SelectedItem = "Nota Credito 'X'";
+            }
+            var autorizado = "NO-Autorizado";
+            if (cmbAutorizadoPor.SelectedItem != null) autorizado = cmbAutorizadoPor.SelectedItem.Text;
+            _nc = new CustomerNc(CustomerNc.MotivoNotaCredito.DiferenciaKg);
+            _nc.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", true, autorizado);
+            using (var f0 = new FrmFI52DiferenciaKg(_nc,CustomerNc.MotivoNotaCredito.DiferenciaKg))
+            {
+                DialogResult dr = f0.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    dgv400.DataSource = _nc.GetItems();
+                    MapTotalesFactura400(_nc.GetTotalesFromHeader());
+                    MapHeaderDocumento1();
+                    ListaRetornoDevolucion = f0.ListaRetornoDevolucion;
+                }
+                else
+                {
+                    MessageBox.Show(@"Se Cancelo la seleccion del documento", @"Seleccion Cancelada",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void FxDevolucionItem()
         {
             if (_lx == Lx.L1)
@@ -267,37 +310,6 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            //using (var f0 = new FrmFI58SeleccionDocDescuentoGeneral(_nc, _motivoCredito))
-            //{
-            //    DialogResult dr = f0.ShowDialog();
-            //    if (dr == DialogResult.OK)
-            //    {
-            //        dgv400.DataSource = _nc.GetItems();
-            //        MapTotalesFactura400(_nc.GetTotalesFromHeader());
-            //        MapHeaderDocumento1();
-
-            //        //var listaDocBonifica = f0.FacturaAplica;            //array de documentos y/o fechas
-            //        //var listaNumerosDocu = f0.NumeroDocumentoAplica; //array de numeros documento aplica
-            //        ////_nc.CargaDatosNcDescuentoGeneral(_idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "ARS", f0.ItemList);
-            //        //if (listaNumerosDocu.Count == 1)
-            //        //{
-            //        //    _nc.AddIdComprobanteAsociado(listaDocBonifica[0]);
-            //        //    _iddocumentoAnula = listaDocBonifica[0];
-            //        //}
-            //        //else
-            //        //{
-            //        //    _nc.AddPeriodoComprobanteAsociado(f0.FechaAplicaDesde.Value, f0.FechaAplicaHasta.Value);
-            //        //    _periodoAnulaDesde = f0.FechaAplicaDesde;
-            //        //    _periodoAnulaHasta = f0.FechaAplicaHasta;
-            //        //}
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show(@"Se Cancelo la seleccion del documento", @"Seleccion Cancelada",
-            //            MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
         }
 
         /// <summary>
@@ -963,6 +975,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 case CustomerNc.MotivoNotaCredito.DiferenciaCambio:
                     break;
                 case CustomerNc.MotivoNotaCredito.DiferenciaKg:
+                    zz.ContabilizaCompletoHeaderND();
                     break;
                 case CustomerNc.MotivoNotaCredito.DevolucionMaterial:
                     zz.ContabilizaCompletoHeaderND();
@@ -996,6 +1009,21 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             }
 
             //****** Acciones POST-Conta Asociadas al motivo ******
+
+            if (_motivoCredito == CustomerNc.MotivoNotaCredito.DiferenciaKg)
+            {
+                foreach (var i in ListaRetornoDevolucion)
+                {
+                    if (i.Reingreso)
+                    {
+                        var rtn = new ManageRetornoMaterial().GestionDevolucion(dtpFechaDocumento.Value, _idCliente,
+                            MotivoDevolucion.Motivo.ErrorAdmnistrativo, i.Item, i.Lote, Math.Abs(i.Cantidad),
+                            "STBY", GlobalApp.AppUsername,
+                            txtMotivoGeneralDocumento.Text, txtLx.Text, GlobalApp.AppUsername,
+                            StockStatusManager.EstadoLote.Liberado);
+                    }
+                }
+            }
 
             if (_motivoCredito == CustomerNc.MotivoNotaCredito.AnulaDocumento)
             {

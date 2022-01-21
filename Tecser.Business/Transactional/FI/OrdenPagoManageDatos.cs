@@ -82,7 +82,7 @@ namespace Tecser.Business.Transactional.FI
                     IDITEM = db.T0213_OP_FACT.Max(c => c.IDITEM) + 1,
                     PROVEEDOR = Header.PROV_ID,
                     MON_OP = Header.MON_OP,
-                    TC = Header.TC,
+                    TC = Header.TC.Value,
                     FACT_ID = data403.IDINT,
                     FACT_NUM = dataFactura.NUMDOC,
                     FACT_MON = dataFactura.MONEDA,
@@ -157,8 +157,8 @@ namespace Tecser.Business.Transactional.FI
                 foreach (var ix in fop)
                 {
                     var saldoFacturaCtaCte =
-                        db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == ix.IdCtaCte.Value).SALDOFACTURA;
-                    if (saldoFacturaCtaCte != ix.FACT_SALDO_IMPUTAR.Value)
+                        db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == ix.IdCtaCte).SALDOFACTURA;
+                    if (saldoFacturaCtaCte != ix.FACT_SALDO_IMPUTAR)
                         return false;
                 }
             }
@@ -209,9 +209,9 @@ namespace Tecser.Business.Transactional.FI
                 var listaItems = db.T0212_OP_ITEM.Where(c => c.IDOP == _numeroOP && c.CH_ID == -5).ToList();
                 foreach (var it in listaItems)
                 {
-                    var obj = new GestionChequesEmitidos().SetNewRecord(it.CH_NUM, it.T0210_OP_H.OPFECHA.Value,
-                        it.ChequeFecha.Value, it.IMPORTE.Value, it.CUENTA_O, it.IDOP, it.PROVEEDOR.Value,
-                        it.CK_FIN.Value,numeroAsiento,Header.TIPO);
+                    var obj = new GestionChequesEmitidos().SetNewRecord(it.CH_NUM, it.T0210_OP_H.OPFECHA,
+                        it.ChequeFecha.Value, it.IMPORTE, it.CUENTA_O, it.IDOP, it.PROVEEDOR.Value,
+                        it.CK_FIN,numeroAsiento,Header.TIPO);
                     if (obj < 1)
                         MessageBox.Show(@"Error al Registrar el Cheque Emitido!", @"Atencion!", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
@@ -297,7 +297,7 @@ namespace Tecser.Business.Transactional.FI
                                       Header.ImporteRetGS; //Es el importe que se pasas a T0203
 
                 var cta = new CtaCteVendor(Header.PROV_ID);
-                var idCtaCte = cta.AddCtaCteDetalleRecord("OP", Header.TIPO, Header.OPFECHA.Value,
+                var idCtaCte = cta.AddCtaCteDetalleRecord("OP", Header.TIPO, Header.OPFECHA,
                     Header.IDOP.ToString(), Header.IDOP.ToString(), Header.MON_OP, importeOPCtaCte.Value * -1,
                     Header.TC.Value, Header.SaldoSinImputar.Value * -1, idDocumentoPrincipal: Header.IDOP);
 
@@ -306,7 +306,7 @@ namespace Tecser.Business.Transactional.FI
                 var datosFacturas = db.T0213_OP_FACT.Where(c => c.IDOP == _numeroOP).ToList();
                 foreach (var ifactu in datosFacturas)
                 {
-                    var ctacte = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == ifactu.IdCtaCte.Value);
+                    var ctacte = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == ifactu.IdCtaCte);
                     if (ifactu.RetencionGS == null)
                         ifactu.RetencionGS = 0;
 
@@ -434,7 +434,9 @@ namespace Tecser.Business.Transactional.FI
                 MON_OP = Header.MON_OP,
                 IMPORTE = importe,
                 MON = infoCuentaPago.CUENTA_MONEDA,
-                ChequeFecha = null
+                ChequeFecha = null,
+                GL = infoCuentaPago.GLMAP,
+                IMPORTE_OP = importe
             };
 
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -457,6 +459,7 @@ namespace Tecser.Business.Transactional.FI
                     itemPago.CH_BCO = bancos.ID_BANCO;
                     itemPago.CH_ID = idCheque; //debiera venir -5 (cheque o e-cheque emitido propio)
                     itemPago.ChequeFecha = fechaAcreditacionEmitido;
+                    itemPago.IsEcheque = esTransferenciaDesdeCuenta; //si es transferencia es e-chequepropio
                 }
                 else
                 {
@@ -470,7 +473,8 @@ namespace Tecser.Business.Transactional.FI
                             itemPago.CH_ID = datosCheque.IDCHEQUE;
                             itemPago.ChequeFecha = datosCheque.CHE_FECHA;
                             itemPago.MON = datosCheque.MONEDA;
-                            itemPago.IMPORTE = datosCheque.IMPORTE;
+                            itemPago.IMPORTE = datosCheque.IMPORTE.Value;
+                            itemPago.IsEcheque = datosCheque.Echeque;
                             break;
                         case "OPCRED":
                             var datosCtaCte = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == idCheque);
@@ -527,7 +531,7 @@ namespace Tecser.Business.Transactional.FI
                 var dataOP = db.T0213_OP_FACT.SingleOrDefault(c => c.IDITEM == idItem);
                 if (dataOP.T0210_OP_H.TIPO == "L1")
                 {
-                    new MngRetencionesFacturasProv().RemoveRetencionFromT0405(dataOP.IdCtaCte.Value, dataOP.IDOP);
+                    new MngRetencionesFacturasProv().RemoveRetencionFromT0405(dataOP.IdCtaCte, dataOP.IDOP);
                 }
                 db.T0213_OP_FACT.Remove(dataOP);
                 return db.SaveChanges() > 0;
@@ -550,17 +554,17 @@ namespace Tecser.Business.Transactional.FI
                 {
                     if (item.CUENTA_O == "OPCRED")
                     {
-                        RemoveOPCred(item.CH_ID.Value, item.IMPORTE.Value);
+                        RemoveOPCred(item.CH_ID.Value, item.IMPORTE);
                     }
 
                     if (item.CUENTA_O == "NCA")
                     {
-                        RemoveNotaCredito(item.CH_ID.Value, item.IMPORTE.Value);
+                        RemoveNotaCredito(item.CH_ID.Value, item.IMPORTE);
                     }
 
                     if (item.CUENTA_O == "NC2")
                     {
-                        RemoveNotaCredito(item.CH_ID.Value, item.IMPORTE.Value);
+                        RemoveNotaCredito(item.CH_ID.Value, item.IMPORTE);
                     }
 
 

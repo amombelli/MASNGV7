@@ -85,6 +85,11 @@
     <Compile Include="DataStructure\CompleteMaterialList.cs" />
     <Compile Include="DataStructure\Costos\StxCRManufactura.cs" />
     <Compile Include="DataStructure\Costos\StxCRReposicion.cs" />
+    <Compile Include="DataStructure\dsFacturasOP.cs" />
+    <Compile Include="DataStructure\DsCreditosOP.cs" />
+    <Compile Include="DataStructure\DsOpDetalleImputacionPorFactura.cs" />
+    <Compile Include="DataStructure\DsOpEstructuraCreditosAplicados.cs" />
+    <Compile Include="DataStructure\DsOpFacturasAplicadas.cs" />
     <Compile Include="DataStructure\dsOrdenPagoFacturasIncluidas.cs" />
     <Compile Include="DataStructure\MargenOperacionR2Structure.cs" />
     <Compile Include="DataStructure\OrdenCompraDgvCompleteo.cs" />
@@ -544,10 +549,22 @@
     <Compile Include="T0210_OP_H.cs">
       <DependentUpon>TecserModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="T0210_OrdenPagoHeader.cs">
+      <DependentUpon>TecserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T0211_OrdenPagoItems.cs">
+      <DependentUpon>TecserModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="T0212_OP_ITEM.cs">
       <DependentUpon>TecserModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="T0212_OrdenPagoDocumentos.cs">
+      <DependentUpon>TecserModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="T0213_OP_FACT.cs">
+      <DependentUpon>TecserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T0213_OrdenPagoRetenciones.cs">
       <DependentUpon>TecserModel.tt</DependentUpon>
     </Compile>
     <Compile Include="T0230_GescoHeader.cs">

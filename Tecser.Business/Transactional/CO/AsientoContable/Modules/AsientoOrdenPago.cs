@@ -94,7 +94,7 @@ namespace Tecser.Business.Transactional.CO.AsientoContable.Modules
         {
             var descripcionHeader = "OP - " + RazonSocial;
 
-            CreaHeaderMemoria(_h.TIPO, _h.OPFECHA.Value, TipoDocumento, _idOP.ToString(), descripcionHeader, _h.MON_OP,
+            CreaHeaderMemoria(_h.TIPO, _h.OPFECHA, TipoDocumento, _idOP.ToString(), descripcionHeader, _h.MON_OP,
                 _h.IMP_OP.Value, _h.TC.Value);
 
             AddSegmentoItemsPago();

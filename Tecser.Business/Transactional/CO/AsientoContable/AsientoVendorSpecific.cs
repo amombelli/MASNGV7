@@ -20,7 +20,6 @@
             var GLAP = new GLAccountManagement().GetApVendorGl(IdVendor);
             var descripcion1 = "A/P" + RazonSocial;
             string descripcion2;
-
             switch (tipoDocumento)
             {
                 case "OP":
@@ -39,7 +38,6 @@
                     descripcion2 = "???????? " + RazonSocial;
                     break;
             }
-
             AddGenericCompleteSegment(tipoDocumento, numeroDocumento, tipoLx, GLAP, descripcion1, descripcion2, moneda,
                 DH, importe, Tcode, 0, IdVendor, tableName, idTableName);
         }

@@ -141,8 +141,8 @@ namespace Tecser.Business.Transactional.FI
                 foreach (var item in dataT405)
                 {
                     var dataFact = db.T0213_OP_FACT.SingleOrDefault(c => c.IDOP == numeroOP && c.IdCtaCte == item.ID);
-                    dataFact.RetencionGS = item.RetGSARetener;
-                    dataFact.RetencionIIBB = item.RetIIBBARetener;
+                    dataFact.RetencionGS = item.RetGSARetener.Value;
+                    dataFact.RetencionIIBB = item.RetIIBBARetener.Value;
                     totalGS = (decimal)(totalGS + item.RetGSARetener);
                     totalIIBB = (decimal)(totalIIBB + item.RetIIBBARetener);
                     db.SaveChanges();

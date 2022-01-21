@@ -8,20 +8,9 @@ namespace Tecser.Business.Transactional.FI
 {
     public abstract class CustomerDoc
     {
-        //public CustomerDoc(int signo)
-        //{
-        //    if (signo == 1)
-        //    {
-        //        xxsigno = GestionT400.SignoRegistracion.Positivo;
-        //    }
-        //    else
-        //    {
-        //        xxsigno = GestionT400.SignoRegistracion.Negativo;
-        //    }
-        //}
         protected string DocumentoAutorizadoPor = "Sin Asignar";
         protected ManageDocumentType.TipoDocumento TipoDocumento;
-        protected string motivoDocumentoString;
+        protected string MotivoDocumentoString;
         protected int? IdAlternativo = null; //id1 Pasado como parametro por ejemplo IdCheque [Rechazo]
         protected GestionT400 T400;
         protected GestionT300 T300 = new GestionT300();
@@ -137,7 +126,7 @@ namespace Tecser.Business.Transactional.FI
         public DocumentFIStatusManager.StatusHeader Registrar(string comentario, bool usarValorAbusoluto = false)
         {
             Id400 = T400.Registrar(usarValorAbusoluto);
-            T300.CreaHeaderMemoria(T400.H4, comentario, motivoDocumentoString, IdFacturaAsociada, PeriodoDesde, PeriodoHasta, IdAlternativo, DocumentoAutorizadoPor);
+            T300.CreaHeaderMemoria(T400.H4, comentario, MotivoDocumentoString, IdFacturaAsociada, PeriodoDesde, PeriodoHasta, IdAlternativo, DocumentoAutorizadoPor);
             Id300 = T300.Registra();
             T400.UpdateIdNcd(Id300);
             return new DocumentFIStatusManager().MapStatusHeaderFromText(T400.H4.StatusFactura);

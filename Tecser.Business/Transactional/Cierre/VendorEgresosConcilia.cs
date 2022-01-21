@@ -244,10 +244,6 @@ public class VendorEgresosConcilia
                 var cs = ListaRegCc.FirstOrDefault(c => c.Td == ireg.Tdoc && c.NumeroDoc == ireg.Ref);
                 if (cs == null)
                 {
-                    if (ireg.Ref == "400000983")
-                    {
-                        var c = 1;
-                    }
                     var itemcc = db.T0203_CTACTE_PROV.SingleOrDefault(c =>
                         c.TDOC == ireg.Tdoc && c.NUMDOC == ireg.Ref && c.Fecha.Month == ireg.Fecha.Value.Month && c.Fecha.Year == ireg.Fecha.Value.Year &
                         c.IDPROV == ireg.PCID.Value);

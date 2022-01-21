@@ -123,7 +123,6 @@ namespace TecserEF.Entity
         public virtual DbSet<T0206_COBRANZA_I> T0206_COBRANZA_I { get; set; }
         public virtual DbSet<T0208_COB_NO_APLICADA> T0208_COB_NO_APLICADA { get; set; }
         public virtual DbSet<T0210_OP_H> T0210_OP_H { get; set; }
-        public virtual DbSet<T0212_OP_ITEM> T0212_OP_ITEM { get; set; }
         public virtual DbSet<T0213_OP_FACT> T0213_OP_FACT { get; set; }
         public virtual DbSet<T0230_GescoHeader> T0230_GescoHeader { get; set; }
         public virtual DbSet<T0231_GescoDetail> T0231_GescoDetail { get; set; }
@@ -246,6 +245,11 @@ namespace TecserEF.Entity
         public virtual DbSet<T0092_HHRR_COMBOASSIGN> T0092_HHRR_COMBOASSIGN { get; set; }
         public virtual DbSet<T0016_TaxModuleDefinition> T0016_TaxModuleDefinition { get; set; }
         public virtual DbSet<T0017_TaxModuleAssign> T0017_TaxModuleAssign { get; set; }
+        public virtual DbSet<T0211_OrdenPagoItems> T0211_OrdenPagoItems { get; set; }
+        public virtual DbSet<T0212_OrdenPagoDocumentos> T0212_OrdenPagoDocumentos { get; set; }
+        public virtual DbSet<T0213_OrdenPagoRetenciones> T0213_OrdenPagoRetenciones { get; set; }
+        public virtual DbSet<T0212_OP_ITEM> T0212_OP_ITEM { get; set; }
+        public virtual DbSet<T0210_OrdenPagoHeader> T0210_OrdenPagoHeader { get; set; }
     
         public virtual ObjectResult<GetDataOrdenCompra_byOCNum_Result> GetDataOrdenCompra_byOCNum(Nullable<int> numeroOC)
         {

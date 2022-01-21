@@ -65,6 +65,12 @@
     <Compile Include="CtlControlCuit.Designer.cs">
       <DependentUpon>CtlControlCuit.cs</DependentUpon>
     </Compile>
+    <Compile Include="CtlDisplayNumbers2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlDisplayNumbers2.Designer.cs">
+      <DependentUpon>CtlDisplayNumbers2.cs</DependentUpon>
+    </Compile>
     <Compile Include="CtlFechaTs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CtlControlCuit.resx">
       <DependentUpon>CtlControlCuit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlDisplayNumbers2.resx">
+      <DependentUpon>CtlDisplayNumbers2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CtlFechaTs.resx">
       <DependentUpon>CtlFechaTs.cs</DependentUpon>

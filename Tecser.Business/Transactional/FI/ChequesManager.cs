@@ -306,6 +306,30 @@ namespace Tecser.Business.Transactional.FI
             }
         }
 
+        public bool SetNoDisponible_OP(int idcheque, int numeroOP, int numeroAsiento = 0)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var data = db.T0154_CHEQUES.SingleOrDefault(c => c.IDCHEQUE == idcheque);
+                if (data == null) return false;
+
+                var opHeader = db.T0210_OrdenPagoHeader.SingleOrDefault(c => c.IdOP == numeroOP);
+                if (opHeader == null) return false;
+                //
+                data.DISPONIBLE = false;
+                data.FECHA_ENTREGADO = opHeader.Fecha;
+                data.OP = "OP@" + numeroOP;
+                data.TIPOSAL = opHeader.Lx;
+                data.PROVEEDOR = opHeader.T0005_MPROVEEDORES.prov_rsocial;
+                data.IdProveedorSalida = opHeader.IdProveedor;
+                if (numeroAsiento != 0)
+                    data.ASSAL = numeroAsiento;
+                return db.SaveChanges() > 0;
+                //
+            }
+        }
+
+
         public void UpdateNumeroAsientoSalidaCheque(int idCheque, int numeroAsiento)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -785,82 +809,128 @@ namespace Tecser.Business.Transactional.FI
         public List<TsCheques1> GetListaChequesFiltrada(string lx, bool verDisponible = true, bool verNoDisponible = false,
             string numeroCheque = "", int idCheque = -1, DateTime? menorIgualaFecha = null, bool verInterior = true, bool verNoInterior = true)
         {
-
             var idCh = idCheque;
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                if (verDisponible == verNoDisponible)
+                if (idCh > 0)
                 {
-                    if (verDisponible == false)
-                    {
-                        //es seleccion de no ver ninguno
-                        return null;
-                    }
-                }
-
-                var result = db.T0154_CHEQUES.Join(db.T0160_BANCOS, che => che.CHE_BANCO, ban => ban.ID_BANCO,
-                    (che, ban) => new TsCheques1()
-                    {
-                        Idcheque = che.IDCHEQUE,
-                        Importe = che.IMPORTE.Value,
-                        Numero = che.CHE_NUMERO,
-                        BancoShort = ban.BCO_SHORTDESC,
-                        ClienteRs = che.CLIENTE,
-                        Disponible = che.DISPONIBLE,
-                        Tipo = che.TIPO,
-                        FechaAcreditacion = che.CHE_FECHA,
-                        FechaRecibido = che.FECHA_RECIBIDO,
-                        Comentario = che.COMENTARIO,
-                        BancoId = che.CHE_BANCO,
-                        Interior = che.CHE_INTERIOR.Value,
-                        TipoSalida = che.TIPOSAL,
-                        Rechazado = che.CH_RECH,
-                        FechaEntregado = che.FECHA_ENTREGADO,
-                        EntregadoA = che.PROVEEDOR,
-                        DocumentoSalida = che.OP,
-                        IsEcheque = che.Echeque
-                    });
-
-                var r1 = result;
-                var r2 = result;
-                var r3 = result;
-                var r4 = result;
-
-                if (verDisponible == true && verNoDisponible == true)
-                {
-                    r1 = result; //Retorna listado completo sin ningun filtrado
+                    //como se provee un IDCheque - Se sobreescribe cualquier filtrado
                 }
                 else
                 {
-                    if (verDisponible == true)
+                    if (verDisponible == verNoDisponible)
                     {
-                        //Listado filtrado1 = Solo Disponible
-                        r1 = result.Where(c => c.Disponible == true);
+                        if (verDisponible == false)
+                        {
+                            return null; //es seleccion de no ver ninguno
+                        }
+                    }
+
+                    if (lx == "L0")
+                        return null;
+                }
+
+                List<TsCheques1> result = new List<TsCheques1>();
+                if (verDisponible && verNoDisponible)
+                {
+                    result = db.T0154_CHEQUES.Join(db.T0160_BANCOS, che => che.CHE_BANCO, ban => ban.ID_BANCO,
+                        (che, ban) => new TsCheques1()
+                        {
+                            Idcheque = che.IDCHEQUE,
+                            Importe = che.IMPORTE.Value,
+                            Numero = che.CHE_NUMERO,
+                            BancoShort = ban.BCO_SHORTDESC,
+                            ClienteRs = che.CLIENTE,
+                            Disponible = che.DISPONIBLE,
+                            Tipo = che.TIPO,
+                            FechaAcreditacion = che.CHE_FECHA,
+                            FechaRecibido = che.FECHA_RECIBIDO,
+                            Comentario = che.COMENTARIO,
+                            BancoId = che.CHE_BANCO,
+                            Interior = che.CHE_INTERIOR.Value,
+                            TipoSalida = che.TIPOSAL,
+                            Rechazado = che.CH_RECH,
+                            FechaEntregado = che.FECHA_ENTREGADO,
+                            EntregadoA = che.PROVEEDOR,
+                            DocumentoSalida = che.OP,
+                            IsEcheque = che.Echeque
+                        }).ToList();
+                }
+                else
+                {
+                    if (verDisponible)
+                    {
+                        result = db.T0154_CHEQUES.Where(c => c.DISPONIBLE).Join(db.T0160_BANCOS, che => che.CHE_BANCO,
+                            ban => ban.ID_BANCO,
+                            (che, ban) => new TsCheques1()
+                            {
+                                Idcheque = che.IDCHEQUE,
+                                Importe = che.IMPORTE.Value,
+                                Numero = che.CHE_NUMERO,
+                                BancoShort = ban.BCO_SHORTDESC,
+                                ClienteRs = che.CLIENTE,
+                                Disponible = che.DISPONIBLE,
+                                Tipo = che.TIPO,
+                                FechaAcreditacion = che.CHE_FECHA,
+                                FechaRecibido = che.FECHA_RECIBIDO,
+                                Comentario = che.COMENTARIO,
+                                BancoId = che.CHE_BANCO,
+                                Interior = che.CHE_INTERIOR.Value,
+                                TipoSalida = che.TIPOSAL,
+                                Rechazado = che.CH_RECH,
+                                FechaEntregado = che.FECHA_ENTREGADO,
+                                EntregadoA = che.PROVEEDOR,
+                                DocumentoSalida = che.OP,
+                                IsEcheque = che.Echeque
+                            }).ToList();
                     }
                     else
                     {
-                        //Listado filtrado1 = Solo NO Disponible
-                        r1 = result.Where(c => c.Disponible == false);
+                        result = db.T0154_CHEQUES.Where(c => c.DISPONIBLE == false).Join(db.T0160_BANCOS,
+                            che => che.CHE_BANCO, ban => ban.ID_BANCO,
+                            (che, ban) => new TsCheques1()
+                            {
+                                Idcheque = che.IDCHEQUE,
+                                Importe = che.IMPORTE.Value,
+                                Numero = che.CHE_NUMERO,
+                                BancoShort = ban.BCO_SHORTDESC,
+                                ClienteRs = che.CLIENTE,
+                                Disponible = che.DISPONIBLE,
+                                Tipo = che.TIPO,
+                                FechaAcreditacion = che.CHE_FECHA,
+                                FechaRecibido = che.FECHA_RECIBIDO,
+                                Comentario = che.COMENTARIO,
+                                BancoId = che.CHE_BANCO,
+                                Interior = che.CHE_INTERIOR.Value,
+                                TipoSalida = che.TIPOSAL,
+                                Rechazado = che.CH_RECH,
+                                FechaEntregado = che.FECHA_ENTREGADO,
+                                EntregadoA = che.PROVEEDOR,
+                                DocumentoSalida = che.OP,
+                                IsEcheque = che.Echeque
+                            }).ToList();
                     }
                 }
-
-                if (numeroCheque != "")
-                {
-                    r2 = r1.Where(c => c.Numero.Contains(numeroCheque));
-                }
-                else
-                {
-                    r2 = r1;
-                }
-
+                
                 if (idCh > 0)
                 {
-                    r3 = r2.Where(c => c.Idcheque == idCh);
+                    return result.Where(c => c.Idcheque == idCh).ToList();
+                }
+      
+                //Se empiezan a aplicar todos los filtrados
+                
+                var r2 = result; //Filtrado x Numero de Cheque (contains)
+                var r3 = result; //Filtrado Interior-NoInterior
+                
+                if (string.IsNullOrEmpty(numeroCheque))
+                {
+                    r2 = result.ToList();
                 }
                 else
                 {
-                    r3 = r2;
+                    r2 = result.Where(c => c.Numero.Contains(numeroCheque)).ToList();
                 }
+                
 
                 if (verInterior == verNoInterior)
                 {
@@ -871,27 +941,27 @@ namespace Tecser.Business.Transactional.FI
                     }
                     else
                     {
-                        r4 = r3;
+                        r3 = r2.ToList();
                     }
                 }
                 else
                 {
                     if (verInterior)
                     {
-                        r4 = r3.Where(c => c.Interior == true);
+                        r3 = r2.Where(c => c.Interior == true).ToList();
                     }
                     else
                     {
                         //es verNOINTERIOR
-                        r4 = r3.Where(c => c.Interior == false);
+                        r3 = r2.Where(c => c.Interior == false).ToList();
                     }
                 }
 
                 if (lx == "L1")
                 {
                     if (menorIgualaFecha == null)
-                        return r4.Where(c => c.Tipo == "L1").OrderBy(c => c.FechaAcreditacion).ToList();
-                    return r4.Where(c => c.Tipo == "L1" && c.FechaAcreditacion <= menorIgualaFecha)
+                        return r3.Where(c => c.Tipo == "L1").OrderBy(c => c.FechaAcreditacion).ToList();
+                    return r3.Where(c => c.Tipo == "L1" && c.FechaAcreditacion <= menorIgualaFecha)
                         .OrderBy(c => c.FechaAcreditacion).ToList();
                 }
                 else
@@ -899,15 +969,15 @@ namespace Tecser.Business.Transactional.FI
                     if (lx == "L2")
                     {
                         if (menorIgualaFecha == null)
-                            return r4.Where(c => c.Tipo == "L2").OrderBy(c => c.FechaAcreditacion).ToList();
-                        return r4.Where(c => c.Tipo == "L2" && c.FechaAcreditacion <= menorIgualaFecha)
+                            return r3.Where(c => c.Tipo == "L2").OrderBy(c => c.FechaAcreditacion).ToList();
+                        return r3.Where(c => c.Tipo == "L2" && c.FechaAcreditacion <= menorIgualaFecha)
                             .OrderBy(c => c.FechaAcreditacion).ToList();
                     }
                     else
                     {
                         if (menorIgualaFecha == null)
-                            return r4.OrderBy(c => c.FechaAcreditacion).ToList();
-                        return r4.Where(c => c.FechaAcreditacion <= menorIgualaFecha).OrderBy(c => c.FechaAcreditacion)
+                            return r3.OrderBy(c => c.FechaAcreditacion).ToList();
+                        return r3.Where(c => c.FechaAcreditacion <= menorIgualaFecha).OrderBy(c => c.FechaAcreditacion)
                             .ToList();
                     }
                 }

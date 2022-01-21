@@ -12,6 +12,13 @@ namespace Tecser.Business.Transactional.SD
         public decimal KgConLote { get; set; }
         public decimal KgTotales { get; set; }
     }
+    public struct RemitoLote
+    {
+        public bool InfoFound { get;  set; }
+        public bool UnicoRecordFound { get;  set; }
+        public string Lote1 { get;  set; }
+    }
+
     public class RemitoItemManager
     {
 
@@ -22,12 +29,52 @@ namespace Tecser.Business.Transactional.SD
                 return db.T0056_REMITO_I.Where(c => c.IDREMITO == idRemito).ToList();
             }
         }
-
-        public int AddRemitoItem(T0056_REMITO_I item)
+        public static T0056_REMITO_I GetRemitoItem(int idRemito, int idItem)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                item.IDITEM = GetNextIdRemitoItem();
+                return db.T0056_REMITO_I.SingleOrDefault(c => c.IDREMITO == idRemito && c.IDITEM== idItem);
+            }
+        }
+        /// <summary>
+        /// Es para hacer un reingreso de material desde una factura donde no se conoce el lote.
+        /// Ver NC devolucion de item- 
+        /// </summary>
+        public RemitoLote GetLoteFromFactura(int idRemito, string item)
+        {
+            var rtn = new RemitoLote();
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var remItems = db.T0056_REMITO_I.Where(c => c.IDREMITO == idRemito && c.MATERIALAKA == item).ToList();
+                if (remItems.Any() == false)
+                {
+                    rtn.InfoFound = false;
+                    rtn.UnicoRecordFound = false;
+                    rtn.Lote1 = null;
+                    return rtn;
+                }
+
+                if (remItems.Count > 1)
+                {
+                   
+                    rtn.UnicoRecordFound = false;
+                    
+                }
+                else
+                {
+                    rtn.UnicoRecordFound = true;
+                }
+                rtn.InfoFound = true;
+                rtn.Lote1 = remItems[0].BATCH;
+            }
+            return rtn;
+        }
+
+        public int AddRemitoItem(T0056_REMITO_I item)
+        {
+        using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                    item.IDITEM = GetNextIdRemitoItem();
                 db.T0056_REMITO_I.Add(item);
                 if (db.SaveChanges() > 0)
                 {
@@ -42,7 +89,6 @@ namespace Tecser.Business.Transactional.SD
                 return 0;
             }
         }
-
         public void UpdateItemRemitoReservaLote(int idRemito, int idRemitoItem, int idStock, decimal kg, bool setGenerarAsFalse = false)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -250,7 +296,6 @@ namespace Tecser.Business.Transactional.SD
                 db.SaveChanges();
             }
         }
-
         public RetornoKgRemito CalculaKgRemito(int idRemito)
         {
             var retorno = new RetornoKgRemito() { KgConLote = 0, KgTotales = 0 };

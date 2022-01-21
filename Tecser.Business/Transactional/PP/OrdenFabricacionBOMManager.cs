@@ -373,7 +373,7 @@ namespace Tecser.Business.Transactional.PP
                         {
                             iPrint.DISP_VALUE = 0;
                             iPrint.DISP_UNIT = "GR";
-                            iPrint.DISP_VALUE2 = Decimal.Round((decimal)iPrint.CantidadGR, 0).ToString("D0");
+                            iPrint.DISP_VALUE2 = Decimal.Round((decimal)iPrint.CantidadGR, 0).ToString("N0");
                             iPrint.DISP_UNIT2 = "GR";
                         }
                         else
@@ -460,7 +460,7 @@ namespace Tecser.Business.Transactional.PP
                         {
                             iPrint.DISP_VALUE = 0;
                             iPrint.DISP_UNIT = "GR";
-                            iPrint.DISP_VALUE2 = Decimal.Round((decimal)iPrint.CantidadGR, 0).ToString("D0");
+                            iPrint.DISP_VALUE2 = Decimal.Round((decimal)iPrint.CantidadGR, 0).ToString("N0");
                             iPrint.DISP_UNIT2 = "GR";
                         }
                         else

@@ -17,12 +17,12 @@ namespace TecserEF.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public T0210_OP_H()
         {
-            this.T0212_OP_ITEM = new HashSet<T0212_OP_ITEM>();
             this.T0213_OP_FACT = new HashSet<T0213_OP_FACT>();
+            this.T0212_OP_ITEM = new HashSet<T0212_OP_ITEM>();
         }
     
         public int IDOP { get; set; }
-        public Nullable<System.DateTime> OPFECHA { get; set; }
+        public System.DateTime OPFECHA { get; set; }
         public int PROV_ID { get; set; }
         public string PROV_RS { get; set; }
         public string PROV_TAXID { get; set; }
@@ -52,8 +52,8 @@ namespace TecserEF.Entity
     
         public virtual T0005_MPROVEEDORES T0005_MPROVEEDORES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<T0212_OP_ITEM> T0212_OP_ITEM { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T0213_OP_FACT> T0213_OP_FACT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T0212_OP_ITEM> T0212_OP_ITEM { get; set; }
     }
 }

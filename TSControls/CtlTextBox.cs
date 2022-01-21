@@ -76,10 +76,12 @@ namespace TSControls
                         myTextBox.Text = value.ToString("C" + _cantidadDecimales);
                         break;
                     case TextBoxType.Decimal:
-                        myTextBox.Text = value.ToString("N" + _cantidadDecimales);
+                        //myTextBox.Text = value.ToString("N" + _cantidadDecimales);
+                        myTextBox.Text = value.ToString(_separadorDecimal ? "N" + _cantidadDecimales : "F" + _cantidadDecimales);
                         break;
                     case TextBoxType.Entero:
-                        myTextBox.Text = value.ToString("N0");
+                        //myTextBox.Text = value.ToString("N0");
+                        myTextBox.Text = value.ToString(_separadorDecimal ? "N0" : "F0");
                         break;
                     case TextBoxType.Porcentaje:
                         myTextBox.Text = value.ToString("P" + _cantidadDecimales);
@@ -97,6 +99,7 @@ namespace TSControls
         private int _cantidadDecimales = 0;
         private bool _allowBackspace;
         private bool _allowNegativo;
+        private bool _separadorDecimal = true;
         private bool _locked;
         private Alineacion _textAlign = Alineacion.Centro;
         public decimal GetValueDecimal => _valor;
@@ -177,6 +180,15 @@ namespace TSControls
                 myTextBox.ReadOnly = value;
             }
         }
+        public bool SeparadorDecimal
+        {
+            get => _separadorDecimal;
+            set
+            {
+                _separadorDecimal = value;
+
+            }
+        }
         private void ConfiguraTipo()
         {
             switch (_tipo)
@@ -238,11 +250,12 @@ namespace TSControls
                     break;
                 case TextBoxType.Decimal:
                     _valor = Convert.ToDecimal(txt.Text);
-                    txt.Text = _valor.ToString("N" + _cantidadDecimales);
+                    //txt.Text = _valor.ToString("N" + _cantidadDecimales);
+                    txt.Text = _valor.ToString(_separadorDecimal ? "N" + _cantidadDecimales : "F" + _cantidadDecimales);
                     break;
                 case TextBoxType.Entero:
                     _valor = Convert.ToDecimal(txt.Text);
-                    txt.Text = _valor.ToString("N0");
+                    txt.Text = _valor.ToString(_separadorDecimal ? "N0" : "F0");
                     break;
                 case TextBoxType.Porcentaje:
                     _valor = FormatAndConversions.CPorcentajeADecimal(txt.Text);
@@ -275,30 +288,30 @@ namespace TSControls
         }
         private void myTextBox_DoubleClick(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(myTextBox.Text))
+            //si es readonly al hace doble click no hace nada. *new 2022-01
+            if (XReadOnly == false)
             {
-                //si esta vacio al hacer doble click no hace nada
-            }
-            else
-            {
-                //si esta completo al hacer doble click vacia
-                myTextBox.Text = null;
+                if (string.IsNullOrEmpty(myTextBox.Text))
+                {
+                    //si esta vacio al hacer doble click no hace nada
+                }
+                else
+                {
+                    //si esta completo al hacer doble click vacia
+                    myTextBox.Text = null;
+                }
             }
         }
-
-
         public delegate void tsKeyUp(object source, KeyEventArgs args);
         public event tsKeyUp KeyUP;
         private void CtlTextBox_KeyUp(object sender, KeyEventArgs e)
         {
             
         }
-
         protected virtual void OnKeyUp(object sender, KeyEventArgs e)
         {
             KeyUP?.Invoke(sender, e);
         }
-
         private void myTextBox_KeyUp(object sender, KeyEventArgs e)
         {
             OnKeyUp(sender, e);

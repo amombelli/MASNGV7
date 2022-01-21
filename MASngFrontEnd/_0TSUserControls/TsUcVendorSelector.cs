@@ -237,7 +237,6 @@ namespace MASngFE._0TSUserControls
                 }
             }
         }
-
         private void TsUcVendorSelector_Resize(object sender, EventArgs e)
         {
             if (this.Height != 91)
@@ -254,7 +253,6 @@ namespace MASngFE._0TSUserControls
             lineD.Location = new Point(this.Width - 2, 0);
         }
     }
-
     public class VendorSearchUcArgs : EventArgs
     {
         public int? VendorId;

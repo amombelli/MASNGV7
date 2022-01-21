@@ -30,6 +30,7 @@ using MASngFE.Transactional.QM;
 using MASngFE.Transactional.SD;
 using MASngFE.Transactional.SD.Hoja_de_Ruta;
 using MASngFE.Transactional.SD.Remito;
+using Tecser.Business.DataFix;
 using Tecser.Business.MainApp;
 using Tecser.Business.Network;
 using Tecser.Business.Security;
@@ -864,6 +865,13 @@ namespace MASngFE.Application
         private void rbExitMAS_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            int A = 55247;
+            //new FixAddFacturaT400InT201().AddRecordFacturaIn201(A);
+            new FixAddFacturaT400InT201().AddCobranzaIn201(19136,55246);
         }
     }
 }

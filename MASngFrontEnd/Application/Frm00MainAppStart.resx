@@ -556,7 +556,7 @@ ARBA</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button10.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="button11.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -595,7 +595,7 @@ ARBA</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button11.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="button17.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -634,7 +634,7 @@ ARBA</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="button20.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -673,7 +673,7 @@ ARBA</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button20.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="button21.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -713,7 +713,7 @@ ARBA</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button21.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="button22.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -753,7 +753,7 @@ Adelanto</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button22.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="button23.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -793,7 +793,7 @@ Adelanto</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button23.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="button25.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -832,7 +832,7 @@ Adelanto</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button25.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="button26.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -871,7 +871,7 @@ Adelanto</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button26.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="button30.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -910,7 +910,7 @@ Adelanto</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button30.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="button42.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -949,7 +949,7 @@ Adelanto</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button42.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="button43.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -988,7 +988,7 @@ Adelanto</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button43.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="button45.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -1144,7 +1144,7 @@ Adelanto</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button48.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="button52.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -1183,7 +1183,7 @@ Adelanto</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button52.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="button53.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -1223,7 +1223,7 @@ Emitidos</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button53.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnDesimputarCtaCte.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -1436,57 +1436,56 @@ Emitidos</value>
   </data>
   <data name="rbExitMAS.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAEEklEQVRYR8WXa0xbZRzGG+N0
-        kDimCIQPxsTMTEMMFHBmhAFtKZeVjvt9gzFgIBXCvISEWwcY4mANwiqMAfOyxSVeEjNGwUvCWNw07kIn
-        mwOHGOfi5jrQaERjxMf3eYud246funZP8ss5vH35/57Tcz70qADcVf7NiuC20WtBraMI/D9alAmQ2P7D
-        rZ85eZi0jgk+RFDLyAfCea9T7ZQ7qoZnMGhfwH77PIbI5DwGJdcxcMbJvmX6yenr2LtM3ymHpFce+fm8
-        YAF9p+exV5z3ifPuMz9h99lFWKZ+R+mROQSZDw8Ltyyxmlf4/vQvUL10HKqGz6Bq/gL3tJ7EypdPYdUr
-        k/DvsCPYchaPvjqFx/ecQ8hr56Hun8a6gRlEv/41tG9+g6SDczAe+hbZ732PkO4T8Gs/BtOYA+F7Ppfn
-        gzN/4lBOEbDuIQzNLsFffBPC/QALBPrvtOGjuUUEdE7ika4v8Vj3FNb0TGGt9RyeFLKnes8jtO8rhPdf
-        QOS+C3hmYBrrh4R8/wxiRAHNGxehe+si9Adm0X7cIYW+9YdhPfmzPL+vfhjvXAKWfFT4y1eFdy8DD7aM
-        sUCALODXPIKJ7/5A3SdX0TLx4w2OOtm5jPkWmsdv0DR+FY2CJnFuPuqQNI9fcx4FdRMLqD2xiMpjv+Hj
-        y39jldnGAoGygG/jiHggvRs6XQVWNhyRi0+sWYvQUDXUYREICw0XR4E6AuHqyDtCmJhNB0PnbQWejohE
-        XJwWsbEaREVFIzo6BhqNDjqdHvHxCW7DWXQwigWi1kdBr0+UG5mODgtiYuKQkJCE5GQDNm5McYvExGTp
-        YBQLxIgrpoglOjstcm3Xrt3QauPlAKMx1S04gw5GsYAmToOUFOfGDRti0dbWLtet1l6xvglpaRluwRJ0
-        MIoF9Lp4pKamw2AwoqurW65ZLF1ISjLIAZmZ2W7BGXQwNxeodxZIEvc6IyNLNmV6eqyyDP85OzsXOTl5
-        bsE5dDB0ugrcv1zAIO4/N1LGtunpmfLv/LwC5OcXug1n0cHQeVsBo3ET8sTGgsItyC/YLI+Fm4vuGJxN
-        B6NYID0tXW4sKi7xCJxNB6NYICsrW24s2VbmETibDkaxQG5untxYVl7hETibDkaxQIG472XbK1FRWeUR
-        OJsORrFA0ZZiVD5rQpWp2iNwNh2MYoGS4m0wmWpQXV3rETibDkaxQHlpOWpqdqC29gWPwNl0MMoFxINS
-        XfM8ane86BE4mw5GscDWraXYXsEH5jmPwNl0MDcV8Gnw/k8yOl0FfJtscFyahd1u9wp00ekq4GceFZ2W
-        8MOVK16BLjpdBYJbbb9yga18Gj0LHXQF1r39qXDL94LVArVAK9B5iVhBiEC+Ga0QsAS/Dm/BK6fc9YJ6
-        l6JS/QPGmrXeaLt5cAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAQSSURBVFhHxZdrTFtlHMYb43SQOKYIhA/GxMxMQwwU
+        cGaEAW0pl5WO+32DMWAgFcK8hIRbBxjiYA3CKowB87LFJV4SM0bBS8JY3DTuQiebA4cY5+LmOtBoRGPE
+        x/d5i53bjp+6dk/yyzm8ffn/ntNzPvSoANxV/s2K4LbRa0Gtowj8P1qUCZDY/sOtnzl5mLSOCT5EUMvI
+        B8J5r1PtlDuqhmcwaF/Afvs8hsjkPAYl1zFwxsm+ZfrJ6evYu0zfKYekVx75+bxgAX2n57FXnPeJ8+4z
+        P2H32UVYpn5H6ZE5BJkPDwu3LLGaV/j+9C9QvXQcqobPoGr+Ave0nsTKl09h1SuT8O+wI9hyFo++OoXH
+        95xDyGvnoe6fxrqBGUS//jW0b36DpINzMB76FtnvfY+Q7hPwaz8G05gD4Xs+l+eDM3/iUE4RsO4hDM0u
+        wV98E8L9AAsE+u+04aO5RQR0TuKRri/xWPcU1vRMYa31HJ4Usqd6zyO07yuE919A5L4LeGZgGuuHhHz/
+        DGJEAc0bF6F76yL0B2bRftwhhb71h2E9+bM8v69+GO9cApZ8VPjLV4V3LwMPtoyxQIAs4Nc8gonv/kDd
+        J1fRMvHjDY462bmM+Raax2/QNH4VjYImcW4+6pA0j19zHgV1EwuoPbGIymO/4ePLf2OV2cYCgbKAb+OI
+        eCC9GzpdBVY2HJGLT6xZi9BQNdRhEQgLDRdHgToC4erIO0KYmE0HQ+dtBZ6OiERcnBaxsRpERUUjOjoG
+        Go0OOp0e8fEJbsNZdDCKBaLWR0GvT5QbmY4OC2Ji4pCQkITkZAM2bkxxi8TEZOlgFAvEiCumiCU6Oy1y
+        bdeu3dBq4+UAozHVLTiDDkaxgCZOg5QU58YNG2LR1tYu163WXrG+CWlpGW7BEnQwigX0unikpqbDYDCi
+        q6tbrlksXUhKMsgBmZnZbsEZdDA3F6h3FkgS9zojI0s2ZXp6rLIM/zk7Oxc5OXluwTl0MHS6Cty/XMAg
+        7j83Usa26emZ8u/8vALk5xe6DWfRwdB5WwGjcRPyxMaCwi3IL9gsj4Wbi+4YnE0Ho1ggPS1dbiwqLvEI
+        nE0Ho1ggKytbbizZVuYROJsORrFAbm6e3FhWXuEROJsORrFAgbjvZdsrUVFZ5RE4mw5GsUDRlmJUPmtC
+        lanaI3A2HYxigZLibTCZalBdXesROJsORrFAeWk5amp2oLb2BY/A2XQwygXEg1Jd8zxqd7zoETibDkax
+        wNatpdhewQfmOY/A2XQwNxXwafD+TzI6XQV8m2xwXJqF3W73CnTR6SrgZx4VnZbww5UrXoEuOl0Fgltt
+        v3KBrXwaPQsddAXWvf2pcMv3gtUCtUAr0HmJWEGIQL4ZrRCwBL8Ob8Erp9z1gnqXolL9A8aatd5ou3lw
+        AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="rbExitMAS.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAEEklEQVRYR8WXa0xbZRzGG+N0
-        kDimCIQPxsTMTEMMFHBmhAFtKZeVjvt9gzFgIBXCvISEWwcY4mANwiqMAfOyxSVeEjNGwUvCWNw07kIn
-        mwOHGOfi5jrQaERjxMf3eYud246funZP8ss5vH35/57Tcz70qADcVf7NiuC20WtBraMI/D9alAmQ2P7D
-        rZ85eZi0jgk+RFDLyAfCea9T7ZQ7qoZnMGhfwH77PIbI5DwGJdcxcMbJvmX6yenr2LtM3ymHpFce+fm8
-        YAF9p+exV5z3ifPuMz9h99lFWKZ+R+mROQSZDw8Ltyyxmlf4/vQvUL10HKqGz6Bq/gL3tJ7EypdPYdUr
-        k/DvsCPYchaPvjqFx/ecQ8hr56Hun8a6gRlEv/41tG9+g6SDczAe+hbZ732PkO4T8Gs/BtOYA+F7Ppfn
-        gzN/4lBOEbDuIQzNLsFffBPC/QALBPrvtOGjuUUEdE7ika4v8Vj3FNb0TGGt9RyeFLKnes8jtO8rhPdf
-        QOS+C3hmYBrrh4R8/wxiRAHNGxehe+si9Adm0X7cIYW+9YdhPfmzPL+vfhjvXAKWfFT4y1eFdy8DD7aM
-        sUCALODXPIKJ7/5A3SdX0TLx4w2OOtm5jPkWmsdv0DR+FY2CJnFuPuqQNI9fcx4FdRMLqD2xiMpjv+Hj
-        y39jldnGAoGygG/jiHggvRs6XQVWNhyRi0+sWYvQUDXUYREICw0XR4E6AuHqyDtCmJhNB0PnbQWejohE
-        XJwWsbEaREVFIzo6BhqNDjqdHvHxCW7DWXQwigWi1kdBr0+UG5mODgtiYuKQkJCE5GQDNm5McYvExGTp
-        YBQLxIgrpoglOjstcm3Xrt3QauPlAKMx1S04gw5GsYAmToOUFOfGDRti0dbWLtet1l6xvglpaRluwRJ0
-        MIoF9Lp4pKamw2AwoqurW65ZLF1ISjLIAZmZ2W7BGXQwNxeodxZIEvc6IyNLNmV6eqyyDP85OzsXOTl5
-        bsE5dDB0ugrcv1zAIO4/N1LGtunpmfLv/LwC5OcXug1n0cHQeVsBo3ET8sTGgsItyC/YLI+Fm4vuGJxN
-        B6NYID0tXW4sKi7xCJxNB6NYICsrW24s2VbmETibDkaxQG5untxYVl7hETibDkaxQIG472XbK1FRWeUR
-        OJsORrFA0ZZiVD5rQpWp2iNwNh2MYoGS4m0wmWpQXV3rETibDkaxQHlpOWpqdqC29gWPwNl0MMoFxINS
-        XfM8ane86BE4mw5GscDWraXYXsEH5jmPwNl0MDcV8Gnw/k8yOl0FfJtscFyahd1u9wp00ekq4GceFZ2W
-        8MOVK16BLjpdBYJbbb9yga18Gj0LHXQF1r39qXDL94LVArVAK9B5iVhBiEC+Ga0QsAS/Dm/BK6fc9YJ6
-        l6JS/QPGmrXeaLt5cAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAQSSURBVFhHxZdrTFtlHMYb43SQOKYIhA/GxMxMQwwU
+        cGaEAW0pl5WO+32DMWAgFcK8hIRbBxjiYA3CKowB87LFJV4SM0bBS8JY3DTuQiebA4cY5+LmOtBoRGPE
+        x/d5i53bjp+6dk/yyzm8ffn/ntNzPvSoANxV/s2K4LbRa0Gtowj8P1qUCZDY/sOtnzl5mLSOCT5EUMvI
+        B8J5r1PtlDuqhmcwaF/Afvs8hsjkPAYl1zFwxsm+ZfrJ6evYu0zfKYekVx75+bxgAX2n57FXnPeJ8+4z
+        P2H32UVYpn5H6ZE5BJkPDwu3LLGaV/j+9C9QvXQcqobPoGr+Ave0nsTKl09h1SuT8O+wI9hyFo++OoXH
+        95xDyGvnoe6fxrqBGUS//jW0b36DpINzMB76FtnvfY+Q7hPwaz8G05gD4Xs+l+eDM3/iUE4RsO4hDM0u
+        wV98E8L9AAsE+u+04aO5RQR0TuKRri/xWPcU1vRMYa31HJ4Usqd6zyO07yuE919A5L4LeGZgGuuHhHz/
+        DGJEAc0bF6F76yL0B2bRftwhhb71h2E9+bM8v69+GO9cApZ8VPjLV4V3LwMPtoyxQIAs4Nc8gonv/kDd
+        J1fRMvHjDY462bmM+Raax2/QNH4VjYImcW4+6pA0j19zHgV1EwuoPbGIymO/4ePLf2OV2cYCgbKAb+OI
+        eCC9GzpdBVY2HJGLT6xZi9BQNdRhEQgLDRdHgToC4erIO0KYmE0HQ+dtBZ6OiERcnBaxsRpERUUjOjoG
+        Go0OOp0e8fEJbsNZdDCKBaLWR0GvT5QbmY4OC2Ji4pCQkITkZAM2bkxxi8TEZOlgFAvEiCumiCU6Oy1y
+        bdeu3dBq4+UAozHVLTiDDkaxgCZOg5QU58YNG2LR1tYu163WXrG+CWlpGW7BEnQwigX0unikpqbDYDCi
+        q6tbrlksXUhKMsgBmZnZbsEZdDA3F6h3FkgS9zojI0s2ZXp6rLIM/zk7Oxc5OXluwTl0MHS6Cty/XMAg
+        7j83Usa26emZ8u/8vALk5xe6DWfRwdB5WwGjcRPyxMaCwi3IL9gsj4Wbi+4YnE0Ho1ggPS1dbiwqLvEI
+        nE0Ho1ggKytbbizZVuYROJsORrFAbm6e3FhWXuEROJsORrFAgbjvZdsrUVFZ5RE4mw5GsUDRlmJUPmtC
+        lanaI3A2HYxigZLibTCZalBdXesROJsORrFAeWk5amp2oLb2BY/A2XQwygXEg1Jd8zxqd7zoETibDkax
+        wNatpdhewQfmOY/A2XQwNxXwafD+TzI6XQV8m2xwXJqF3W73CnTR6SrgZx4VnZbww5UrXoEuOl0Fgltt
+        v3KBrXwaPQsddAXWvf2pcMv3gtUCtUAr0HmJWEGIQL4ZrRCwBL8Ob8Erp9z1gnqXolL9A8aatd5ou3lw
+        AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="rbExitMAS.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
-        TkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABNJREFUOE9jGAWjYBSMAjBgYAAABBAAAadEfGMAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="rbExitMAS.Text" xml:space="preserve">
@@ -3356,6 +3355,45 @@ Emitidos</value>
   <data name="&gt;&gt;button62.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="button44.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 9.75pt</value>
+  </data>
+  <data name="button44.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button44.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button44.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 407</value>
+  </data>
+  <data name="button44.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="button44.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 43</value>
+  </data>
+  <data name="button44.TabIndex" type="System.Int32, mscorlib">
+    <value>152</value>
+  </data>
+  <data name="button44.Text" xml:space="preserve">
+    <value>FIX FA</value>
+  </data>
+  <data name="button44.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;button44.Name" xml:space="preserve">
+    <value>button44</value>
+  </data>
+  <data name="&gt;&gt;button44.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button44.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;button44.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnTestCustomerSearchControl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
   </data>
@@ -3393,7 +3431,7 @@ Emitidos</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;btnTestCustomerSearchControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button63.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -3432,13 +3470,13 @@ Emitidos</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button63.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button54.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button54.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 145</value>
+    <value>7, 115</value>
   </data>
   <data name="button54.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -3466,7 +3504,7 @@ GesCO</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button54.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="button51.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -3505,7 +3543,7 @@ GesCO</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button51.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="button50.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -3544,7 +3582,7 @@ GesCO</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button50.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="button36.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3587,7 +3625,7 @@ Controls</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button36.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="button49.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3629,7 +3667,7 @@ Controls</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button49.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnXRemito.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -3668,7 +3706,7 @@ Controls</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;btnXRemito.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="button33.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 9.75pt</value>
@@ -3708,7 +3746,7 @@ Facturacion</value>
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button33.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -3822,7 +3860,7 @@ Facturacion</value>
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 730</value>
+    <value>0, 708</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>1261, 4</value>
@@ -4092,7 +4130,7 @@ Facturacion</value>
     <value>Center</value>
   </data>
   <data name="stBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 737</value>
+    <value>0, 657</value>
   </data>
   <data name="stBar1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1234, 24</value>
@@ -5143,9 +5181,6 @@ Cliente</value>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
-  </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5153,7 +5188,7 @@ Cliente</value>
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 761</value>
+    <value>1234, 681</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -5584,6 +5619,18 @@ Cliente</value>
   <data name="&gt;&gt;rbtnLogNew.Type" xml:space="preserve">
     <value>System.Windows.Forms.RibbonButton, System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9</value>
   </data>
+  <data name="&gt;&gt;ribbonPanel7.Name" xml:space="preserve">
+    <value>ribbonPanel7</value>
+  </data>
+  <data name="&gt;&gt;ribbonPanel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RibbonPanel, System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9</value>
+  </data>
+  <data name="&gt;&gt;rbExitMAS.Name" xml:space="preserve">
+    <value>rbExitMAS</value>
+  </data>
+  <data name="&gt;&gt;rbExitMAS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RibbonButton, System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9</value>
+  </data>
   <data name="&gt;&gt;ribbonTab1.Name" xml:space="preserve">
     <value>ribbonTab1</value>
   </data>
@@ -5974,6 +6021,36 @@ Cliente</value>
   <data name="&gt;&gt;rbVisualizarMaterial.Type" xml:space="preserve">
     <value>System.Windows.Forms.RibbonButton, System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9</value>
   </data>
+  <data name="&gt;&gt;visibleDataGridViewCheckBoxColumn.Name" xml:space="preserve">
+    <value>visibleDataGridViewCheckBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;visibleDataGridViewCheckBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tCodeDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>tCodeDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;tCodeDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>descriptionDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;moduleDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>moduleDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;moduleDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t0001TRANSACTIONSBindingSource.Name" xml:space="preserve">
+    <value>t0001TRANSACTIONSBindingSource</value>
+  </data>
+  <data name="&gt;&gt;t0001TRANSACTIONSBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ribbonTab7.Name" xml:space="preserve">
     <value>ribbonTab7</value>
   </data>
@@ -6034,36 +6111,6 @@ Cliente</value>
   <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;visibleDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>visibleDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;visibleDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tCodeDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>tCodeDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;tCodeDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>descriptionDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;descriptionDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;moduleDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>moduleDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;moduleDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;t0001TRANSACTIONSBindingSource.Name" xml:space="preserve">
-    <value>t0001TRANSACTIONSBindingSource</value>
-  </data>
-  <data name="&gt;&gt;t0001TRANSACTIONSBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn1</value>
   </data>
@@ -6081,18 +6128,6 @@ Cliente</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ribbonPanel7.Name" xml:space="preserve">
-    <value>ribbonPanel7</value>
-  </data>
-  <data name="&gt;&gt;ribbonPanel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RibbonPanel, System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9</value>
-  </data>
-  <data name="&gt;&gt;rbExitMAS.Name" xml:space="preserve">
-    <value>rbExitMAS</value>
-  </data>
-  <data name="&gt;&gt;rbExitMAS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RibbonButton, System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm00MainAppStart</value>

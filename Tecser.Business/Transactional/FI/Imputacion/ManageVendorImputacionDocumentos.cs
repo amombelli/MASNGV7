@@ -16,7 +16,7 @@ namespace Tecser.Business.Transactional.FI.Imputacion
                 var opH = db.T0210_OP_H.SingleOrDefault(c => c.IDOP == numeroOP);
                 foreach (var i in ip)
                 {
-                    GeneraMovimientoImputacion(i.IdCtaCte.Value, IdctacteOP, null, "OPX", opH.NAS.Value);
+                    GeneraMovimientoImputacion(i.IdCtaCte, IdctacteOP, null, "OPX", opH.NAS.Value);
                 }
             }
         }

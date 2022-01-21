@@ -131,7 +131,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             {
                 foreach (var i in _op.GetDatosFacturasPagandoFromDb())
                 {
-                    var ls = _listaFacturasPendientePago.Find(c => c.IDCTACTE == i.IdCtaCte.Value);
+                    var ls = _listaFacturasPendientePago.Find(c => c.IDCTACTE == i.IdCtaCte);
                     _listaFacturasPendientePago.Remove(ls);
                 }
             }
@@ -436,7 +436,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             var headerData = _op.Header;
             _vendorId = headerData.PROV_ID;
 
-            dtpFechaOP.Value = headerData.OPFECHA.Value;
+            dtpFechaOP.Value = headerData.OPFECHA;
             txtTipoCambio.Text = headerData.TC.Value.ToString("n2");
             cmbMoneda.SelectedValue = headerData.MON_OP;
             if (headerData.MON_OP == null)
@@ -471,7 +471,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
 
                     if (dialogResult == DialogResult.Yes)
                     {
-                        if (_op.RemoveItemOrdenPago(Convert.ToInt32(dgvItemsPago[7, e.RowIndex].Value)) == true)
+                        if (_op.RemoveItemOrdenPago(Convert.ToInt32(dgvItemsPago[_3IDItem.Name, e.RowIndex].Value)) == true)
                         {
                             RefreshDgvItemsdePago();
                             new OPImputaFacturas(_numeroOP).ImputaFacturasOP();
@@ -718,12 +718,12 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
                     @"Oppps... Debe remover los Cheques y volver a Agregarlos porque algun Cheque ya no se encuentre disponible",
                     @"Diferencia de Saldos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             return true;
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            
             _op = new OrdenPagoManageDatos(_numeroOP);
 
             if (_op.CheckIfOPCredAvailable(_vendorId, _tipoLx) &&
@@ -786,7 +786,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
                 new ManageVendorImputacionDocumentos().GeneraImputacionDesdeOP(_numeroOP);
                 MessageBox.Show($@"Se ha generado correctamente la orden de pago # {_numeroOP}", @"Orden de Pago",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                //todo: en funcion nueva me falta de acá para abajo
                 var stat = new EstadisticasPagoOP();
                 txtDiasPPDoc.Text = stat.DiasPagoFactura(_numeroOP, true).ToString("N");
                 txtDiasPPItems.Text = stat.DiasPPItemsPagoDesdeFechaOP(_numeroOP, true).ToString("N");

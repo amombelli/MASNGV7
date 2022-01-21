@@ -17,7 +17,7 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 var opH = db.T0210_OP_H.SingleOrDefault(c => c.IDOP == idOP);
-                var fechaOP = opH.OPFECHA.Value;
+                var fechaOP = opH.OPFECHA;
                 var opF = db.T0213_OP_FACT.Where(c => c.IDOP == idOP).ToList();
                 decimal importeAcum = 0;
                 decimal importePonde = 0;
@@ -25,7 +25,7 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
 
                 foreach (var fact in opF)
                 {
-                    var dataCtaCte = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == fact.IdCtaCte.Value);
+                    var dataCtaCte = db.T0203_CTACTE_PROV.SingleOrDefault(c => c.IDCTACTE == fact.IdCtaCte);
                     var fechaFactura = dataCtaCte.Fecha;
                     var ts = fechaOP - fechaFactura;
                     var diasFactura = (int)ts.TotalDays;
@@ -64,7 +64,7 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
                     return 99999999;
 
                 var opH = db.T0210_OP_H.SingleOrDefault(c => c.IDOP == idOP);
-                var fechaOP = opH.OPFECHA.Value;
+                var fechaOP = opH.OPFECHA;
                 decimal importeAcum = 0;
                 decimal importePonde = 0;
                 int resultado = 0;
@@ -82,20 +82,20 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
                             if (diasPago < 0)
                                 diasPago = 0;
 
-                            importeAcum += ipi.IMPORTE_OP.Value;
-                            importePonde += (ipi.IMPORTE_OP.Value * diasPago);
+                            importeAcum += ipi.IMPORTE_OP;
+                            importePonde += (ipi.IMPORTE_OP * diasPago);
                             break;
                         case "OPCRED":
                             string x = ipi.CH_NUM;
                             var z = x.Substring(3);
                             var numeroOPCred = (Convert.ToInt32(z));
-                            var fechaOpCred = db.T0210_OP_H.SingleOrDefault(c => c.IDOP == numeroOPCred).OPFECHA.Value;
+                            var fechaOpCred = db.T0210_OP_H.SingleOrDefault(c => c.IDOP == numeroOPCred).OPFECHA;
 
                             ts = (fechaOP - fechaOpCred);
                             diasPago = (int)ts.TotalDays;  //aca si tiene sentido que sea negativo
 
-                            importeAcum += ipi.IMPORTE_OP.Value;
-                            importePonde += (ipi.IMPORTE_OP.Value * diasPago);
+                            importeAcum += ipi.IMPORTE_OP;
+                            importePonde += (ipi.IMPORTE_OP * diasPago);
                             break;
                         default:
                             //ahora se contempla que desde cuentas de banco se emitan cheques y echeques
@@ -110,8 +110,8 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
                                 if (diasPago < 0)
                                     diasPago = 0;
                             }
-                            importeAcum += ipi.IMPORTE_OP.Value;
-                            importePonde += (ipi.IMPORTE_OP.Value * diasPago);
+                            importeAcum += ipi.IMPORTE_OP;
+                            importePonde += (ipi.IMPORTE_OP * diasPago);
                             break;
 
 

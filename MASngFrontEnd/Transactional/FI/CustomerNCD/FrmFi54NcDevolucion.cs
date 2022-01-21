@@ -212,7 +212,7 @@ namespace MASngFE.Transactional.FI.CustomerNCD
 
             //Alta del Item
 
-            _nc.AddItems(txtMaterialRtn.Text, @"Devolucion Material", cUnitarioSugerido.GetValueDecimal, txtGLV.Text, ckAplicaIVA.Checked, cKgNc.GetValueDecimal * -1, "ARS", txtGLI.Text);
+            _nc.AddItems(txtMaterialRtn.Text, txtComentarioNc.Text, cUnitarioSugerido.GetValueDecimal, txtGLV.Text, ckAplicaIVA.Checked, cKgNc.GetValueDecimal * -1, "ARS", txtGLI.Text);
             _nc.SetTotalesInHeaderFromItems();
             _nc.SetDocumentoAsociado(IdRetornoSeleccionado); //en documento asociado paso el IDRTN
             KgNotaCredito = cKgNc.GetValueDecimal;

@@ -16,15 +16,16 @@ namespace TecserEF.Entity
     {
         public int CTACTE1 { get; set; }
         public int CTACTE2 { get; set; }
-        public Nullable<decimal> MONTO_IMPU { get; set; }
-        public Nullable<System.DateTime> LogDate { get; set; }
+        public decimal MONTO_IMPU { get; set; }
+        public System.DateTime LogDate { get; set; }
         public string LogUser { get; set; }
         public string TCODE { get; set; }
         public string GLPAGO { get; set; }
         public Nullable<int> NAS_PAGO { get; set; }
-        public Nullable<int> IDPROV { get; set; }
+        public int IDPROV { get; set; }
         public string NUMDOC { get; set; }
         public string TDOC { get; set; }
+        public bool Temp { get; set; }
     
         public virtual T0203_CTACTE_PROV T0203_CTACTE_PROV { get; set; }
     }

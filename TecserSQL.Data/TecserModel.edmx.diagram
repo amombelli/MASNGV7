@@ -101,7 +101,6 @@
         <EntityTypeShape EntityType="MADBModel.T0206_COBRANZA_I" Width="1.5" PointX="18.625" PointY="39.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MADBModel.T0208_COB_NO_APLICADA" Width="1.5" PointX="16" PointY="44" IsExpanded="true" />
         <EntityTypeShape EntityType="MADBModel.T0210_OP_H" Width="1.5" PointX="8.25" PointY="82.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MADBModel.T0212_OP_ITEM" Width="1.5" PointX="21.25" PointY="43.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MADBModel.T0213_OP_FACT" Width="1.5" PointX="10.5" PointY="88.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MADBModel.T0230_GescoHeader" Width="1.5" PointX="16" PointY="48.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MADBModel.T0231_GescoDetail" Width="1.5" PointX="18.25" PointY="48.125" IsExpanded="true" />
@@ -253,7 +252,6 @@
         <AssociationConnector Association="MADBModel.FK_T0134_GLL4_T0133_GLL3" ManuallyRouted="false" />
         <AssociationConnector Association="MADBModel.FK_T0407_RendicionFF_I_T0135_GLX_FF" ManuallyRouted="false" />
         <AssociationConnector Association="MADBModel.FK_T0203_CTACTE_PROV_IMPU_T0203_CTACTE_PROV2" ManuallyRouted="false" />
-        <AssociationConnector Association="MADBModel.FK_T0212_OP_ITEM_T0210_OP_H" ManuallyRouted="false" />
         <AssociationConnector Association="MADBModel.FK_T0213_OP_FACT_T0210_OP_H" ManuallyRouted="false" />
         <AssociationConnector Association="MADBModel.FK_T0231_GescoDetail_T0230_GescoHeader" ManuallyRouted="false" />
         <AssociationConnector Association="MADBModel.FK_T0232_GescoPagosListos_T0231_GescoDetail" ManuallyRouted="false" />
@@ -281,7 +279,6 @@
         <AssociationConnector Association="MADBModel.FK_T0155_SALDOS_T0150_CUENTAS" />
         <AssociationConnector Association="MADBModel.FK_T0155_SALDOS_T0150_CUENTAS1" />
         <AssociationConnector Association="MADBModel.FK_T0206_COBRANZA_I_T0150_CUENTAS" />
-        <AssociationConnector Association="MADBModel.FK_T0212_OP_ITEM_T0150_CUENTAS" />
         <AssociationConnector Association="MADBModel.FK_T0154_CHEQUES_T0160_BANCOS" />
         <EntityTypeShape EntityType="MADBModel.T0061_OCOMPRA_I" Width="1.5" PointX="13.25" PointY="54.375" />
         <EntityTypeShape EntityType="MADBModel.T0068RequisicionCompra" Width="1.5" PointX="15.375" PointY="7.75" />
@@ -320,6 +317,11 @@
         <AssociationConnector Association="MADBModel.FK_T0300_NCD_H_T0006_MCLIENTES" />
         <AssociationConnector Association="MADBModel.FK_T0301_NCD_I_T0300_NCD_H" />
         <EntityTypeShape EntityType="MADBModel.T0401_FACTURA_I" Width="1.5" PointX="18.25" PointY="63.75" />
+        <EntityTypeShape EntityType="MADBModel.T0212_OP_ITEM" Width="1.5" PointX="13.25" PointY="94.125" />
+        <AssociationConnector Association="MADBModel.FK_T0212_OP_ITEM_T0150_CUENTAS" />
+        <AssociationConnector Association="MADBModel.FK_T0212_OP_ITEM_T0210_OP_H" />
+        <EntityTypeShape EntityType="MADBModel.T0210_OrdenPagoHeader" Width="1.5" PointX="8.25" PointY="118.125" />
+        <AssociationConnector Association="MADBModel.FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES" />
       </Diagram>
       <Diagram DiagramId="500e54f8af1d4dc4b48895dea01dede3" Name="FI" >
         <EntityTypeShape EntityType="MADBModel.T0017_CONDIVA" Width="1.5" PointX="2" PointY="1.375" FillColor="255, 128, 0" />
@@ -329,7 +331,10 @@
         <EntityTypeShape EntityType="MADBModel.T0016_TaxModuleDefinition" Width="1.5" PointX="8.375" PointY="1.375" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="MADBModel.T0017_TaxModuleAssign" Width="1.5" PointX="10.625" PointY="1" FillColor="255, 128, 0" />
         <AssociationConnector Association="MADBModel.FK_T0017_TaxModuleAssign_T0016_TaxModuleDefinition" />
-      </Diagram>
+        <EntityTypeShape EntityType="MADBModel.T0211_OrdenPagoItems" Width="1.5" PointX="13.625" PointY="8.75" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="MADBModel.T0212_OrdenPagoDocumentos" Width="1.5" PointX="13.625" PointY="4.5" IsExpanded="true" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="MADBModel.T0213_OrdenPagoRetenciones" Width="1.5" PointX="13.625" PointY="13.5" FillColor="255, 128, 0" />
+        </Diagram>
       <Diagram DiagramId="a9754978394f465fa2430d9ee7d2f239" Name="HR" >
         <EntityTypeShape EntityType="MADBModel.T0091_HHRR_COMBOCODE" Width="1.5" PointX="0.75" PointY="1.125" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="MADBModel.T0092_HHRR_COMBOASSIGN" Width="1.5" PointX="3" PointY="0.875" FillColor="255, 128, 0" />

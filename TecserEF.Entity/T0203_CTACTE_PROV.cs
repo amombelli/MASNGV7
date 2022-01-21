@@ -18,6 +18,7 @@ namespace TecserEF.Entity
         public T0203_CTACTE_PROV()
         {
             this.T0203_CTACTE_PROV_IMPU = new HashSet<T0203_CTACTE_PROV_IMPU>();
+            this.T0212_OrdenPagoDocumentos = new HashSet<T0212_OrdenPagoDocumentos>();
         }
     
         public int IDCTACTE { get; set; }
@@ -42,5 +43,7 @@ namespace TecserEF.Entity
         public virtual T0005_MPROVEEDORES T0005_MPROVEEDORES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T0203_CTACTE_PROV_IMPU> T0203_CTACTE_PROV_IMPU { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T0212_OrdenPagoDocumentos> T0212_OrdenPagoDocumentos { get; set; }
     }
 }

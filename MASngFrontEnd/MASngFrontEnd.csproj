@@ -542,6 +542,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsOrdenPago.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenPagoNew.cs">
+      <DependentUpon>dsOrdenPagoNew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSource\dsOrdenPagoNew.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOrdenPagoNew.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ReportDataSource\dsPreparacionPedido.Designer.cs" />
     <Compile Include="Reports\ReportDataSource\dsPreparacionPedido1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -667,6 +675,12 @@
     </Compile>
     <Compile Include="Reports\ReportManager\RpvWmStandBy.Designer.cs">
       <DependentUpon>RpvWmStandBy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RvpOrdenPagoPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportManager\RvpOrdenPagoPrint.Designer.cs">
+      <DependentUpon>RvpOrdenPagoPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="SecurityConfig\FrmSec04RoleManagement.cs">
       <SubType>Form</SubType>
@@ -1077,6 +1091,12 @@
     <Compile Include="Transactional\FI\CustomerNCD\FrmFI51GenerarNotaCredito.Designer.cs">
       <DependentUpon>FrmFI51GenerarNotaCredito.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI52DiferenciaKg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\CustomerNCD\FrmFI52DiferenciaKg.Designer.cs">
+      <DependentUpon>FrmFI52DiferenciaKg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactional\FI\CustomerNCD\FrmFi57SeleccionDocModificacionPrecio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1220,6 +1240,48 @@
     </Compile>
     <Compile Include="Transactional\FI\GestionCheques\FrmFI55GestionChequeDetalle.Designer.cs">
       <DependentUpon>FrmFI55GestionChequeDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FI31OrdenPagoMainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FI31OrdenPagoMainScreen.Designer.cs">
+      <DependentUpon>FI31OrdenPagoMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI33DocumentosPendientesPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI33DocumentosPendientesPago.Designer.cs">
+      <DependentUpon>FrmFI33DocumentosPendientesPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI34AddDocumentsToOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI34AddDocumentsToOP.Designer.cs">
+      <DependentUpon>FrmFI34AddDocumentsToOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI35AddCashToOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI35AddCashToOP.Designer.cs">
+      <DependentUpon>FrmFI35AddCashToOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI36Retenciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI36Retenciones.Designer.cs">
+      <DependentUpon>FrmFI36Retenciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI37AddChequesToOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI37AddChequesToOP.Designer.cs">
+      <DependentUpon>FrmFI37AddChequesToOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI38DetalleImputacionPorDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI38DetalleImputacionPorDocumento.Designer.cs">
+      <DependentUpon>FrmFI38DetalleImputacionPorDocumento.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactional\FI\TaxModule\FrmFI13TaxConfig.cs">
       <SubType>Form</SubType>
@@ -1538,12 +1600,6 @@
     </Compile>
     <Compile Include="Transactional\FI\VendorPRM\FrmFI51VendorInvoiceView.Designer.cs">
       <DependentUpon>FrmFI51VendorInvoiceView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Transactional\FrmDetalleDeudaProveedeor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Transactional\FrmDetalleDeudaProveedeor.Designer.cs">
-      <DependentUpon>FrmDetalleDeudaProveedeor.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactional\FrmMM0Accion.cs">
       <SubType>Form</SubType>
@@ -2511,6 +2567,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportDesign\ReciboTemporalProvisorio.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDesign\Report1.rdlc" />
     <EmbeddedResource Include="Reports\ReportDesign\RptImpresionOF_New.rdlc" />
     <EmbeddedResource Include="Reports\ReportDesign\RptRemitoL1.rdlc" />
     <EmbeddedResource Include="Reports\ReportDesign\RptRemitoL2.rdlc" />
@@ -2570,6 +2627,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportManager\RpvWmStandBy.resx">
       <DependentUpon>RpvWmStandBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportManager\RvpOrdenPagoPrint.resx">
+      <DependentUpon>RvpOrdenPagoPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SecurityConfig\FrmSec04RoleManagement.resx">
       <DependentUpon>FrmSec04RoleManagement.cs</DependentUpon>
@@ -2775,6 +2835,9 @@
     <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI51GenerarNotaCredito.resx">
       <DependentUpon>FrmFI51GenerarNotaCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFI52DiferenciaKg.resx">
+      <DependentUpon>FrmFI52DiferenciaKg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FI\CustomerNCD\FrmFi57SeleccionDocModificacionPrecio.resx">
       <DependentUpon>FrmFi57SeleccionDocModificacionPrecio.cs</DependentUpon>
     </EmbeddedResource>
@@ -2846,6 +2909,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FI\GestionCheques\FrmFI55GestionChequeDetalle.resx">
       <DependentUpon>FrmFI55GestionChequeDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FI31OrdenPagoMainScreen.resx">
+      <DependentUpon>FI31OrdenPagoMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI33DocumentosPendientesPago.resx">
+      <DependentUpon>FrmFI33DocumentosPendientesPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI34AddDocumentsToOP.resx">
+      <DependentUpon>FrmFI34AddDocumentsToOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI35AddCashToOP.resx">
+      <DependentUpon>FrmFI35AddCashToOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI36Retenciones.resx">
+      <DependentUpon>FrmFI36Retenciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI37AddChequesToOP.resx">
+      <DependentUpon>FrmFI37AddChequesToOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI38DetalleImputacionPorDocumento.resx">
+      <DependentUpon>FrmFI38DetalleImputacionPorDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FI\TaxModule\FrmFI13TaxConfig.resx">
       <DependentUpon>FrmFI13TaxConfig.cs</DependentUpon>
@@ -3002,9 +3086,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FI\VendorPRM\FrmFI51VendorInvoiceView.resx">
       <DependentUpon>FrmFI51VendorInvoiceView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Transactional\FrmDetalleDeudaProveedeor.resx">
-      <DependentUpon>FrmDetalleDeudaProveedeor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FrmMM0Accion.resx">
       <DependentUpon>FrmMM0Accion.cs</DependentUpon>
@@ -3379,6 +3460,7 @@
     <None Include="Properties\DataSources\Tecser.Business.Transactional.CRM.CrmCustomerDataList.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.CRM.PendientesDespacho+EstructuraPendientes.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.CRM.PendientesDespacho.datasource" />
+    <None Include="Properties\DataSources\Tecser.Business.Transactional.FI.ContabilizacionProveedores.DetalleDocumentosPP+StxVendorDocPP.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.PP.HeaderOF.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.PP.ItemsOF.datasource" />
     <None Include="Properties\DataSources\Tecser.Business.Transactional.SD.SalesOrderDataList.datasource" />
@@ -3401,7 +3483,12 @@
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CtaCteCliSaldoAcumuladoStx.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CtaCteEstiloClienteStructure.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DatosXReg.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsCreditosOP.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsFacturasOP.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsGescoPagoListo.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsOpDetalleImputacionPorFactura.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsOpEstructuraCreditosAplicados.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsOpFacturasAplicadas.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsOrdenPagoFacturasIncluidas.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsOrdenPagoValoresList.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsSalesOrderList.datasource" />
@@ -3517,8 +3604,12 @@
     <None Include="Properties\DataSources\TecserEF.Entity.T0207_SPLITFACTURAS.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.T0208_COB_NO_APLICADA.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.T0210_OP_H.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0210_OrdenPagoHeader.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0211_OrdenPagoItems.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.T0212_OP_ITEM.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0212_OrdenPagoDocumentos.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.T0213_OP_FACT.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.T0213_OrdenPagoRetenciones.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.T0231_GescoDetail.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.T0232_GescoPagosListos.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.T0300_NCD_H.datasource" />
@@ -3689,6 +3780,17 @@
     <None Include="Reports\ReportDataSource\dsOrdenPago.xss">
       <DependentUpon>dsOrdenPago.xsd</DependentUpon>
     </None>
+    <None Include="Reports\ReportDataSource\dsOrdenPagoNew.xsc">
+      <DependentUpon>dsOrdenPagoNew.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenPagoNew.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOrdenPagoNew.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ReportDataSource\dsOrdenPagoNew.xss">
+      <DependentUpon>dsOrdenPagoNew.xsd</DependentUpon>
+    </None>
     <None Include="Reports\ReportDataSource\dsPreparacionPedido.xsc">
       <DependentUpon>dsPreparacionPedido.xsd</DependentUpon>
     </None>
@@ -3733,6 +3835,7 @@
     <None Include="Reports\ReportDataSource\dsTransferenciaReg.xss">
       <DependentUpon>dsTransferenciaReg.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="Reports\ReportDesign\RptOrdenPagoNew.rdlc" />
     <None Include="Resources\Tecser horizontal.jpg" />
   </ItemGroup>
   <ItemGroup>

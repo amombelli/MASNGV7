@@ -46,7 +46,7 @@ namespace Tecser.Business.Transactional.CO
                         case "ARS":
                             //1. Agrega item al asiento
                             _datosAsiento.AddItemInMemoria(gl, _datosOP.Header.MON_OP, "OP", _numeroOP.ToString(), 0,
-                                item.IMPORTE.Value,
+                                item.IMPORTE,
                                 "Pago Caja ARS", null, "OPX", _datosOP.Header.PROV_ID, status: "C");
                             //2. Subdiario
                             subdiario.WriteToDb("ARS", Convert.ToDateTime(_datosOP.Header.OPFECHA),
@@ -61,7 +61,7 @@ namespace Tecser.Business.Transactional.CO
 
                             //1. Agrega item al asiento
                             _datosAsiento.AddItemInMemoria(gl, _datosOP.Header.MON_OP, "OP", _numeroOP.ToString(), 0,
-                                item.IMPORTE.Value,
+                                item.IMPORTE,
                                 "Pago Caja SAN", null, "OPX", _datosOP.Header.PROV_ID, status: "C");
                             //2. Subdiario
                             subdiario.WriteToDb("SAN", Convert.ToDateTime(_datosOP.Header.OPFECHA),
@@ -79,7 +79,7 @@ namespace Tecser.Business.Transactional.CO
 
                             //1. Agrega item al asiento
                             _datosAsiento.AddItemInMemoria(gl, _datosOP.Header.MON_OP, "OP", _numeroOP.ToString(), 0,
-                                item.IMPORTE.Value,
+                                item.IMPORTE,
                                 "Pago Caja Cheque " + datoCheque.T0160_BANCOS.BCO_SHORTDESC + " #" +
                                 datoCheque.CHE_NUMERO, null, "OPX", _datosOP.Header.PROV_ID, status: "C",
                                 referenciaTableName: "T0154_CHEQUES", referenciaIdNumerico: Convert.ToInt32(item.CH_ID));
@@ -102,7 +102,7 @@ namespace Tecser.Business.Transactional.CO
 
                             //1. Agrega item al asiento
                             _datosAsiento.AddItemInMemoria(gl, _datosOP.Header.MON_OP, "OP", _numeroOP.ToString(), 0,
-                                item.IMPORTE.Value,
+                                item.IMPORTE,
                                 "Pago con Credito a FAavor OP#" + item.CH_NUM, null, "OPX", _datosOP.Header.PROV_ID,
                                 status: "C");
 

@@ -188,7 +188,7 @@ namespace Tecser.Business.Transactional.FI
         {
             T400 = new GestionT400(GestionT400.SignoRegistracion.Negativo);
             _motivoDocumento = xmotivo;
-            motivoDocumentoString = xmotivo.ToString();
+            MotivoDocumentoString = xmotivo.ToString();
         }
 
         public CustomerNc()
@@ -253,7 +253,7 @@ namespace Tecser.Business.Transactional.FI
                     string item = it.ITEM;
                     if (it.ITEM == "DESCGRAL")
                     {
-                        newDescription = "Anulacion #" + itemDescOri + $"# NC {docOri.NumeroDoc}";
+                        newDescription = "Anulacion " + itemDescOri + " " + docOri.TIPO_DOC + "#" + docOri.NumeroDoc;
                     }
                     else
                     {

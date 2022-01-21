@@ -29,30 +29,46 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFI61GenerarNotaDebito));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFI61GenerarNotaDebito));
             this.tt = new System.Windows.Forms.ToolTip(this.components);
             this.zStatusDocumento = new System.Windows.Forms.ToolStripStatusLabel();
             this.status1 = new System.Windows.Forms.StatusStrip();
             this.ribbonNotaDebito = new System.Windows.Forms.Ribbon();
             this.rTabCliente = new System.Windows.Forms.RibbonTab();
             this.rbPanelCliente = new System.Windows.Forms.RibbonPanel();
+            this.rbtnChooseCustomer = new System.Windows.Forms.RibbonButton();
+            this.rbtnDetalleCliente = new System.Windows.Forms.RibbonButton();
             this.rTabDocumento = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
+            this.zLX = new System.Windows.Forms.RibbonButton();
+            this.rL1 = new System.Windows.Forms.RibbonButton();
+            this.rL2 = new System.Windows.Forms.RibbonButton();
             this.PanelTipoND = new System.Windows.Forms.RibbonPanel();
+            this.btnAnulaDocumento = new System.Windows.Forms.RibbonButton();
+            this.btnGastosFinancieros = new System.Windows.Forms.RibbonButton();
             this.PanelTipoDI = new System.Windows.Forms.RibbonPanel();
+            this.btnChequeRechazado = new System.Windows.Forms.RibbonButton();
+            this.btnDevChSR = new System.Windows.Forms.RibbonButton();
             this.rbAutorizacionDocumento = new System.Windows.Forms.RibbonPanel();
             this.cmbAutorizadoPor = new System.Windows.Forms.RibbonComboBox();
             this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
             this.ribbonLabel2 = new System.Windows.Forms.RibbonLabel();
             this.ribbonLabel3 = new System.Windows.Forms.RibbonLabel();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ckRevisionOk = new System.Windows.Forms.RibbonCheckBox();
+            this.rbOtrosDocumentos = new System.Windows.Forms.RibbonPanel();
+            this.rbtnDiferenciaPrecio = new System.Windows.Forms.RibbonButton();
             this.rTabContabilizacion = new System.Windows.Forms.RibbonTab();
             this.rPanelRegistracion = new System.Windows.Forms.RibbonPanel();
+            this.btnRegistrar = new System.Windows.Forms.RibbonButton();
+            this.btnUnregistrar = new System.Windows.Forms.RibbonButton();
             this.rPanelContabilizacion = new System.Windows.Forms.RibbonPanel();
+            this.btnContabilizar = new System.Windows.Forms.RibbonButton();
+            this.btnSolicitarCae = new System.Windows.Forms.RibbonButton();
             this.rTabImpresion = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
@@ -64,6 +80,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtIva = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.cCuitOk = new TSControls.CtlSemaforo();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
@@ -73,6 +90,7 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTipoNotaDebito = new System.Windows.Forms.TextBox();
+            this.cTc = new TSControls.CtlTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFechaDocumento = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -107,14 +125,31 @@
             this.label29 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cTotalFinal = new TSControls.CtlTextBox();
             this.label28 = new System.Windows.Forms.Label();
+            this.cPercepcionIIBB = new TSControls.CtlTextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.cIva = new TSControls.CtlTextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.cImponible = new TSControls.CtlTextBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.cSubtotal = new TSControls.CtlTextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.cDescuento = new TSControls.CtlTextBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.cBruto = new TSControls.CtlTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgv400 = new System.Windows.Forms.DataGridView();
+            this.iDITEMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kGDESPACHADOSRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iTEMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dESCREMITODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mONEDAFACTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRECIOUFACTARSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRECIOTFACTARSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gLVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iVA21DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.t401Bs = new System.Windows.Forms.BindingSource(this.components);
             this.tabNc = new System.Windows.Forms.TabPage();
             this.txtIdCtaCte2 = new System.Windows.Forms.TextBox();
             this.label71 = new System.Windows.Forms.Label();
@@ -194,25 +229,21 @@
             this.label46 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.cNetoGasto = new TSControls.CtlTextBox();
             this.label47 = new System.Windows.Forms.Label();
+            this.cIibbGasto = new TSControls.CtlTextBox();
             this.label48 = new System.Windows.Forms.Label();
+            this.cIvaGasto = new TSControls.CtlTextBox();
             this.label49 = new System.Windows.Forms.Label();
+            this.cImponibleGasto = new TSControls.CtlTextBox();
             this.label50 = new System.Windows.Forms.Label();
+            this.cSubtotalGasto = new TSControls.CtlTextBox();
             this.label51 = new System.Windows.Forms.Label();
+            this.cDescuentoGasto = new TSControls.CtlTextBox();
             this.label52 = new System.Windows.Forms.Label();
+            this.cBrutoGastos = new TSControls.CtlTextBox();
             this.label53 = new System.Windows.Forms.Label();
             this.dgvNotaDebitoGastos = new System.Windows.Forms.DataGridView();
-            this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
-            this.iDITEMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kGDESPACHADOSRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iTEMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dESCREMITODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mONEDAFACTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRECIOUFACTARSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRECIOTFACTARSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gLVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iVA21DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.t401Bs = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -222,20 +253,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.rbtnChooseCustomer = new System.Windows.Forms.RibbonButton();
-            this.rbtnDetalleCliente = new System.Windows.Forms.RibbonButton();
-            this.zLX = new System.Windows.Forms.RibbonButton();
-            this.rL1 = new System.Windows.Forms.RibbonButton();
-            this.rL2 = new System.Windows.Forms.RibbonButton();
-            this.btnAnulaDocumento = new System.Windows.Forms.RibbonButton();
-            this.btnGastosFinancieros = new System.Windows.Forms.RibbonButton();
-            this.btnChequeRechazado = new System.Windows.Forms.RibbonButton();
-            this.btnDevChSR = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
-            this.btnRegistrar = new System.Windows.Forms.RibbonButton();
-            this.btnUnregistrar = new System.Windows.Forms.RibbonButton();
-            this.btnContabilizar = new System.Windows.Forms.RibbonButton();
-            this.btnSolicitarCae = new System.Windows.Forms.RibbonButton();
+            this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
             this.t301Bs = new System.Windows.Forms.BindingSource(this.components);
             this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbRecentItem1 = new System.Windows.Forms.RibbonOrbRecentItem();
@@ -243,22 +261,8 @@
             this.ribbonOrbMenuItem2 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbOptionButton1 = new System.Windows.Forms.RibbonOrbOptionButton();
             this.rbtnAjuste = new System.Windows.Forms.RibbonButton();
-            this.cTotalFinal = new TSControls.CtlTextBox();
-            this.cPercepcionIIBB = new TSControls.CtlTextBox();
-            this.cIva = new TSControls.CtlTextBox();
-            this.cImponible = new TSControls.CtlTextBox();
-            this.cSubtotal = new TSControls.CtlTextBox();
-            this.cDescuento = new TSControls.CtlTextBox();
-            this.cBruto = new TSControls.CtlTextBox();
-            this.cNetoGasto = new TSControls.CtlTextBox();
-            this.cIibbGasto = new TSControls.CtlTextBox();
-            this.cIvaGasto = new TSControls.CtlTextBox();
-            this.cImponibleGasto = new TSControls.CtlTextBox();
-            this.cSubtotalGasto = new TSControls.CtlTextBox();
-            this.cDescuentoGasto = new TSControls.CtlTextBox();
-            this.cBrutoGastos = new TSControls.CtlTextBox();
-            this.cCuitOk = new TSControls.CtlSemaforo();
-            this.cTc = new TSControls.CtlTextBox();
+            this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
+            this.rbtnDiferenciaKg = new System.Windows.Forms.RibbonButton();
             this.status1.SuspendLayout();
             this.grpCliente.SuspendLayout();
             this.grpComprobante.SuspendLayout();
@@ -268,6 +272,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv400)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t401Bs)).BeginInit();
             this.tabNc.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -280,7 +285,6 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotaDebitoGastos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t401Bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t301Bs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -311,7 +315,7 @@
             // 
             // 
             // 
-            this.ribbonNotaDebito.OrbDropDown.BorderRoundness = 8;
+            this.ribbonNotaDebito.OrbDropDown.BorderRoundness = 2;
             this.ribbonNotaDebito.OrbDropDown.Location = new System.Drawing.Point(0, 0);
             this.ribbonNotaDebito.OrbDropDown.Name = "";
             this.ribbonNotaDebito.OrbDropDown.Size = new System.Drawing.Size(527, 72);
@@ -341,6 +345,24 @@
             this.rbPanelCliente.Name = "rbPanelCliente";
             this.rbPanelCliente.Text = "Cliente";
             // 
+            // rbtnChooseCustomer
+            // 
+            this.rbtnChooseCustomer.Image = ((System.Drawing.Image)(resources.GetObject("rbtnChooseCustomer.Image")));
+            this.rbtnChooseCustomer.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnChooseCustomer.LargeImage")));
+            this.rbtnChooseCustomer.Name = "rbtnChooseCustomer";
+            this.rbtnChooseCustomer.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnChooseCustomer.SmallImage")));
+            this.rbtnChooseCustomer.Text = "Elegir Cliente";
+            this.rbtnChooseCustomer.Click += new System.EventHandler(this.rbtnChooseCustomer_Click);
+            // 
+            // rbtnDetalleCliente
+            // 
+            this.rbtnDetalleCliente.Image = ((System.Drawing.Image)(resources.GetObject("rbtnDetalleCliente.Image")));
+            this.rbtnDetalleCliente.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnDetalleCliente.LargeImage")));
+            this.rbtnDetalleCliente.Name = "rbtnDetalleCliente";
+            this.rbtnDetalleCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDetalleCliente.SmallImage")));
+            this.rbtnDetalleCliente.Text = "Detalle";
+            this.rbtnDetalleCliente.Click += new System.EventHandler(this.rbtnDetalleCliente_Click);
+            // 
             // rTabDocumento
             // 
             this.rTabDocumento.Name = "rTabDocumento";
@@ -348,6 +370,7 @@
             this.rTabDocumento.Panels.Add(this.PanelTipoND);
             this.rTabDocumento.Panels.Add(this.PanelTipoDI);
             this.rTabDocumento.Panels.Add(this.rbAutorizacionDocumento);
+            this.rTabDocumento.Panels.Add(this.rbOtrosDocumentos);
             this.rTabDocumento.Text = "Documento A Generar";
             // 
             // ribbonPanel1
@@ -356,6 +379,40 @@
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Text = "Tipo LX";
             // 
+            // zLX
+            // 
+            this.zLX.DropDownItems.Add(this.rL1);
+            this.zLX.DropDownItems.Add(this.rL2);
+            this.zLX.Image = ((System.Drawing.Image)(resources.GetObject("zLX.Image")));
+            this.zLX.LargeImage = ((System.Drawing.Image)(resources.GetObject("zLX.LargeImage")));
+            this.zLX.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Overflow;
+            this.zLX.Name = "zLX";
+            this.zLX.SmallImage = ((System.Drawing.Image)(resources.GetObject("zLX.SmallImage")));
+            this.zLX.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
+            this.zLX.Text = "Tipo OP";
+            this.zLX.ToolTip = "Seleccione el Tipo de Operacion";
+            // 
+            // rL1
+            // 
+            this.rL1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.rL1.Image = ((System.Drawing.Image)(resources.GetObject("rL1.Image")));
+            this.rL1.LargeImage = ((System.Drawing.Image)(resources.GetObject("rL1.LargeImage")));
+            this.rL1.Name = "rL1";
+            this.rL1.SmallImage = ((System.Drawing.Image)(resources.GetObject("rL1.SmallImage")));
+            this.rL1.Text = "L1";
+            this.rL1.ToolTip = "Operacion L1";
+            this.rL1.Click += new System.EventHandler(this.rL1_Click);
+            // 
+            // rL2
+            // 
+            this.rL2.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.rL2.Image = ((System.Drawing.Image)(resources.GetObject("rL2.Image")));
+            this.rL2.LargeImage = ((System.Drawing.Image)(resources.GetObject("rL2.LargeImage")));
+            this.rL2.Name = "rL2";
+            this.rL2.SmallImage = ((System.Drawing.Image)(resources.GetObject("rL2.SmallImage")));
+            this.rL2.Text = "L2";
+            this.rL2.Click += new System.EventHandler(this.rL2_Click);
+            // 
             // PanelTipoND
             // 
             this.PanelTipoND.Items.Add(this.btnAnulaDocumento);
@@ -363,12 +420,48 @@
             this.PanelTipoND.Name = "PanelTipoND";
             this.PanelTipoND.Text = "Nota Debito";
             // 
+            // btnAnulaDocumento
+            // 
+            this.btnAnulaDocumento.Image = ((System.Drawing.Image)(resources.GetObject("btnAnulaDocumento.Image")));
+            this.btnAnulaDocumento.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAnulaDocumento.LargeImage")));
+            this.btnAnulaDocumento.Name = "btnAnulaDocumento";
+            this.btnAnulaDocumento.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAnulaDocumento.SmallImage")));
+            this.btnAnulaDocumento.Text = "Anula NC";
+            this.btnAnulaDocumento.Click += new System.EventHandler(this.btnAnulaDocumento_Click);
+            // 
+            // btnGastosFinancieros
+            // 
+            this.btnGastosFinancieros.Image = ((System.Drawing.Image)(resources.GetObject("btnGastosFinancieros.Image")));
+            this.btnGastosFinancieros.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGastosFinancieros.LargeImage")));
+            this.btnGastosFinancieros.Name = "btnGastosFinancieros";
+            this.btnGastosFinancieros.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnGastosFinancieros.SmallImage")));
+            this.btnGastosFinancieros.Text = "Gastos";
+            this.btnGastosFinancieros.Click += new System.EventHandler(this.btnGastosFinancieros_Click);
+            // 
             // PanelTipoDI
             // 
             this.PanelTipoDI.Items.Add(this.btnChequeRechazado);
             this.PanelTipoDI.Items.Add(this.btnDevChSR);
             this.PanelTipoDI.Name = "PanelTipoDI";
             this.PanelTipoDI.Text = "Documento Interno";
+            // 
+            // btnChequeRechazado
+            // 
+            this.btnChequeRechazado.Image = ((System.Drawing.Image)(resources.GetObject("btnChequeRechazado.Image")));
+            this.btnChequeRechazado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChequeRechazado.LargeImage")));
+            this.btnChequeRechazado.Name = "btnChequeRechazado";
+            this.btnChequeRechazado.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnChequeRechazado.SmallImage")));
+            this.btnChequeRechazado.Text = "Cheque Rechazado";
+            this.btnChequeRechazado.Click += new System.EventHandler(this.btnChequeRechazado_Click);
+            // 
+            // btnDevChSR
+            // 
+            this.btnDevChSR.Image = ((System.Drawing.Image)(resources.GetObject("btnDevChSR.Image")));
+            this.btnDevChSR.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDevChSR.LargeImage")));
+            this.btnDevChSR.Name = "btnDevChSR";
+            this.btnDevChSR.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDevChSR.SmallImage")));
+            this.btnDevChSR.Text = "Devolucion Sin RECH";
+            this.btnDevChSR.Click += new System.EventHandler(this.btnDevChSR_Click);
             // 
             // rbAutorizacionDocumento
             // 
@@ -408,6 +501,14 @@
             this.ribbonLabel3.Name = "ribbonLabel3";
             this.ribbonLabel3.Text = "NMOMBELLI";
             // 
+            // ribbonButton1
+            // 
+            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
+            this.ribbonButton1.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.LargeImage")));
+            this.ribbonButton1.Name = "ribbonButton1";
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+            this.ribbonButton1.Text = "USER";
+            // 
             // ckRevisionOk
             // 
             this.ckRevisionOk.CheckBoxOrientation = System.Windows.Forms.RibbonCheckBox.CheckBoxOrientationEnum.Right;
@@ -416,6 +517,23 @@
             this.ckRevisionOk.Text = "Revision OK";
             this.ckRevisionOk.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             this.ckRevisionOk.ToolTip = "El Documento se ha Revisado Antes del Cierre";
+            // 
+            // rbOtrosDocumentos
+            // 
+            this.rbOtrosDocumentos.Items.Add(this.rbtnDiferenciaPrecio);
+            this.rbOtrosDocumentos.Items.Add(this.rbtnDiferenciaKg);
+            this.rbOtrosDocumentos.Name = "rbOtrosDocumentos";
+            this.rbOtrosDocumentos.Text = "Otros";
+            // 
+            // rbtnDiferenciaPrecio
+            // 
+            this.rbtnDiferenciaPrecio.DropDownItems.Add(this.ribbonButton2);
+            this.rbtnDiferenciaPrecio.Image = ((System.Drawing.Image)(resources.GetObject("rbtnDiferenciaPrecio.Image")));
+            this.rbtnDiferenciaPrecio.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnDiferenciaPrecio.LargeImage")));
+            this.rbtnDiferenciaPrecio.Name = "rbtnDiferenciaPrecio";
+            this.rbtnDiferenciaPrecio.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDiferenciaPrecio.SmallImage")));
+            this.rbtnDiferenciaPrecio.Text = "Diferencia Precio";
+            this.rbtnDiferenciaPrecio.Click += new System.EventHandler(this.rbtnDiferenciaPrecio_Click);
             // 
             // rTabContabilizacion
             // 
@@ -431,12 +549,47 @@
             this.rPanelRegistracion.Name = "rPanelRegistracion";
             this.rPanelRegistracion.Text = "Registracion T400";
             // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
+            this.btnRegistrar.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.LargeImage")));
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.SmallImage")));
+            this.btnRegistrar.Text = "Registrar T400";
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // btnUnregistrar
+            // 
+            this.btnUnregistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnUnregistrar.Image")));
+            this.btnUnregistrar.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUnregistrar.LargeImage")));
+            this.btnUnregistrar.Name = "btnUnregistrar";
+            this.btnUnregistrar.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnUnregistrar.SmallImage")));
+            this.btnUnregistrar.Text = "Sacar Registro";
+            // 
             // rPanelContabilizacion
             // 
             this.rPanelContabilizacion.Items.Add(this.btnContabilizar);
             this.rPanelContabilizacion.Items.Add(this.btnSolicitarCae);
             this.rPanelContabilizacion.Name = "rPanelContabilizacion";
             this.rPanelContabilizacion.Text = "Contabilizacion";
+            // 
+            // btnContabilizar
+            // 
+            this.btnContabilizar.Image = global::MASngFE.Properties.Resources.Contabilizar;
+            this.btnContabilizar.LargeImage = global::MASngFE.Properties.Resources.Contabilizar;
+            this.btnContabilizar.Name = "btnContabilizar";
+            this.btnContabilizar.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnContabilizar.SmallImage")));
+            this.btnContabilizar.Text = "Contabilizar";
+            this.btnContabilizar.Click += new System.EventHandler(this.btnContabilizar_Click);
+            // 
+            // btnSolicitarCae
+            // 
+            this.btnSolicitarCae.Image = ((System.Drawing.Image)(resources.GetObject("btnSolicitarCae.Image")));
+            this.btnSolicitarCae.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSolicitarCae.LargeImage")));
+            this.btnSolicitarCae.Name = "btnSolicitarCae";
+            this.btnSolicitarCae.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSolicitarCae.SmallImage")));
+            this.btnSolicitarCae.Text = "Solicitar CAE";
+            this.btnSolicitarCae.Click += new System.EventHandler(this.btnSolicitarCae_Click);
             // 
             // rTabImpresion
             // 
@@ -545,6 +698,15 @@
             this.label4.Size = new System.Drawing.Size(24, 15);
             this.label4.TabIndex = 19;
             this.label4.Text = "IVA";
+            // 
+            // cCuitOk
+            // 
+            this.cCuitOk.Location = new System.Drawing.Point(190, 38);
+            this.cCuitOk.Margin = new System.Windows.Forms.Padding(4);
+            this.cCuitOk.Name = "cCuitOk";
+            this.cCuitOk.SetLights = TSControls.CtlSemaforo.ColoresSemaforo.Amarillo;
+            this.cCuitOk.Size = new System.Drawing.Size(23, 23);
+            this.cCuitOk.TabIndex = 18;
             // 
             // label1
             // 
@@ -655,6 +817,32 @@
             this.txtTipoNotaDebito.ReadOnly = true;
             this.txtTipoNotaDebito.Size = new System.Drawing.Size(259, 21);
             this.txtTipoNotaDebito.TabIndex = 98;
+            // 
+            // cTc
+            // 
+            this.cTc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cTc.BackColor = System.Drawing.SystemColors.Control;
+            this.cTc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cTc.Location = new System.Drawing.Point(404, 63);
+            this.cTc.Margin = new System.Windows.Forms.Padding(0);
+            this.cTc.Name = "cTc";
+            this.cTc.SeparadorDecimal = true;
+            this.cTc.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cTc.SetDecimales = 2;
+            this.cTc.SetType = TSControls.CtlTextBox.TextBoxType.Decimal;
+            this.cTc.Size = new System.Drawing.Size(52, 21);
+            this.cTc.TabIndex = 97;
+            this.cTc.ValorMaximo = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.cTc.ValorMinimo = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.cTc.XReadOnly = false;
             // 
             // label2
             // 
@@ -1037,6 +1225,33 @@
             this.panel2.Size = new System.Drawing.Size(657, 54);
             this.panel2.TabIndex = 0;
             // 
+            // cTotalFinal
+            // 
+            this.cTotalFinal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cTotalFinal.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cTotalFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cTotalFinal.ForeColor = System.Drawing.Color.Navy;
+            this.cTotalFinal.Location = new System.Drawing.Point(551, 27);
+            this.cTotalFinal.Margin = new System.Windows.Forms.Padding(0);
+            this.cTotalFinal.Name = "cTotalFinal";
+            this.cTotalFinal.SeparadorDecimal = true;
+            this.cTotalFinal.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cTotalFinal.SetDecimales = 2;
+            this.cTotalFinal.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cTotalFinal.Size = new System.Drawing.Size(101, 21);
+            this.cTotalFinal.TabIndex = 292;
+            this.cTotalFinal.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cTotalFinal.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cTotalFinal.XReadOnly = false;
+            // 
             // label28
             // 
             this.label28.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -1049,6 +1264,32 @@
             this.label28.TabIndex = 293;
             this.label28.Text = "TOTAL NETO";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cPercepcionIIBB
+            // 
+            this.cPercepcionIIBB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cPercepcionIIBB.BackColor = System.Drawing.SystemColors.Control;
+            this.cPercepcionIIBB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cPercepcionIIBB.Location = new System.Drawing.Point(460, 27);
+            this.cPercepcionIIBB.Margin = new System.Windows.Forms.Padding(0);
+            this.cPercepcionIIBB.Name = "cPercepcionIIBB";
+            this.cPercepcionIIBB.SeparadorDecimal = true;
+            this.cPercepcionIIBB.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cPercepcionIIBB.SetDecimales = 2;
+            this.cPercepcionIIBB.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cPercepcionIIBB.Size = new System.Drawing.Size(91, 21);
+            this.cPercepcionIIBB.TabIndex = 290;
+            this.cPercepcionIIBB.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cPercepcionIIBB.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cPercepcionIIBB.XReadOnly = false;
             // 
             // label27
             // 
@@ -1063,6 +1304,32 @@
             this.label27.Text = "PERC. IIBB";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cIva
+            // 
+            this.cIva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cIva.BackColor = System.Drawing.SystemColors.Control;
+            this.cIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cIva.Location = new System.Drawing.Point(369, 27);
+            this.cIva.Margin = new System.Windows.Forms.Padding(0);
+            this.cIva.Name = "cIva";
+            this.cIva.SeparadorDecimal = true;
+            this.cIva.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cIva.SetDecimales = 2;
+            this.cIva.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cIva.Size = new System.Drawing.Size(91, 21);
+            this.cIva.TabIndex = 288;
+            this.cIva.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cIva.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cIva.XReadOnly = false;
+            // 
             // label26
             // 
             this.label26.BackColor = System.Drawing.Color.Lavender;
@@ -1075,6 +1342,32 @@
             this.label26.TabIndex = 289;
             this.label26.Text = "IVA 21%";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cImponible
+            // 
+            this.cImponible.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cImponible.BackColor = System.Drawing.SystemColors.Control;
+            this.cImponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cImponible.Location = new System.Drawing.Point(278, 27);
+            this.cImponible.Margin = new System.Windows.Forms.Padding(0);
+            this.cImponible.Name = "cImponible";
+            this.cImponible.SeparadorDecimal = true;
+            this.cImponible.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cImponible.SetDecimales = 2;
+            this.cImponible.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cImponible.Size = new System.Drawing.Size(91, 21);
+            this.cImponible.TabIndex = 286;
+            this.cImponible.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cImponible.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cImponible.XReadOnly = false;
             // 
             // label25
             // 
@@ -1089,6 +1382,32 @@
             this.label25.Text = "IMPONIBLE";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cSubtotal
+            // 
+            this.cSubtotal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cSubtotal.BackColor = System.Drawing.SystemColors.Control;
+            this.cSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cSubtotal.Location = new System.Drawing.Point(187, 27);
+            this.cSubtotal.Margin = new System.Windows.Forms.Padding(0);
+            this.cSubtotal.Name = "cSubtotal";
+            this.cSubtotal.SeparadorDecimal = true;
+            this.cSubtotal.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cSubtotal.SetDecimales = 2;
+            this.cSubtotal.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cSubtotal.Size = new System.Drawing.Size(91, 21);
+            this.cSubtotal.TabIndex = 284;
+            this.cSubtotal.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cSubtotal.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cSubtotal.XReadOnly = false;
+            // 
             // label24
             // 
             this.label24.BackColor = System.Drawing.Color.Gainsboro;
@@ -1102,6 +1421,32 @@
             this.label24.Text = "SUBTOTAL";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cDescuento
+            // 
+            this.cDescuento.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cDescuento.BackColor = System.Drawing.SystemColors.Control;
+            this.cDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cDescuento.Location = new System.Drawing.Point(96, 27);
+            this.cDescuento.Margin = new System.Windows.Forms.Padding(0);
+            this.cDescuento.Name = "cDescuento";
+            this.cDescuento.SeparadorDecimal = true;
+            this.cDescuento.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cDescuento.SetDecimales = 2;
+            this.cDescuento.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cDescuento.Size = new System.Drawing.Size(91, 21);
+            this.cDescuento.TabIndex = 282;
+            this.cDescuento.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cDescuento.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cDescuento.XReadOnly = false;
+            // 
             // label23
             // 
             this.label23.BackColor = System.Drawing.Color.Gainsboro;
@@ -1114,6 +1459,32 @@
             this.label23.TabIndex = 283;
             this.label23.Text = "DESCUENTO";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cBruto
+            // 
+            this.cBruto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cBruto.BackColor = System.Drawing.SystemColors.Control;
+            this.cBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBruto.Location = new System.Drawing.Point(5, 27);
+            this.cBruto.Margin = new System.Windows.Forms.Padding(0);
+            this.cBruto.Name = "cBruto";
+            this.cBruto.SeparadorDecimal = true;
+            this.cBruto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cBruto.SetDecimales = 2;
+            this.cBruto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cBruto.Size = new System.Drawing.Size(91, 21);
+            this.cBruto.TabIndex = 281;
+            this.cBruto.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cBruto.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cBruto.XReadOnly = false;
             // 
             // label7
             // 
@@ -1152,6 +1523,94 @@
             this.dgv400.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv400.Size = new System.Drawing.Size(702, 180);
             this.dgv400.TabIndex = 0;
+            // 
+            // iDITEMDataGridViewTextBoxColumn
+            // 
+            this.iDITEMDataGridViewTextBoxColumn.DataPropertyName = "IDITEM";
+            this.iDITEMDataGridViewTextBoxColumn.HeaderText = "#";
+            this.iDITEMDataGridViewTextBoxColumn.Name = "iDITEMDataGridViewTextBoxColumn";
+            this.iDITEMDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDITEMDataGridViewTextBoxColumn.Width = 20;
+            // 
+            // kGDESPACHADOSRDataGridViewTextBoxColumn
+            // 
+            this.kGDESPACHADOSRDataGridViewTextBoxColumn.DataPropertyName = "KGDESPACHADOS_R";
+            this.kGDESPACHADOSRDataGridViewTextBoxColumn.HeaderText = "Cant";
+            this.kGDESPACHADOSRDataGridViewTextBoxColumn.Name = "kGDESPACHADOSRDataGridViewTextBoxColumn";
+            this.kGDESPACHADOSRDataGridViewTextBoxColumn.ReadOnly = true;
+            this.kGDESPACHADOSRDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // iTEMDataGridViewTextBoxColumn
+            // 
+            this.iTEMDataGridViewTextBoxColumn.DataPropertyName = "ITEM";
+            this.iTEMDataGridViewTextBoxColumn.HeaderText = "Item";
+            this.iTEMDataGridViewTextBoxColumn.Name = "iTEMDataGridViewTextBoxColumn";
+            this.iTEMDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iTEMDataGridViewTextBoxColumn.ToolTipText = "Item Interno";
+            this.iTEMDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // dESCREMITODataGridViewTextBoxColumn
+            // 
+            this.dESCREMITODataGridViewTextBoxColumn.DataPropertyName = "DESC_REMITO";
+            this.dESCREMITODataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.dESCREMITODataGridViewTextBoxColumn.Name = "dESCREMITODataGridViewTextBoxColumn";
+            this.dESCREMITODataGridViewTextBoxColumn.ReadOnly = true;
+            this.dESCREMITODataGridViewTextBoxColumn.ToolTipText = "Descripcion del Item";
+            this.dESCREMITODataGridViewTextBoxColumn.Width = 220;
+            // 
+            // mONEDAFACTDataGridViewTextBoxColumn
+            // 
+            this.mONEDAFACTDataGridViewTextBoxColumn.DataPropertyName = "MONEDA_FACT";
+            this.mONEDAFACTDataGridViewTextBoxColumn.HeaderText = "Mon";
+            this.mONEDAFACTDataGridViewTextBoxColumn.Name = "mONEDAFACTDataGridViewTextBoxColumn";
+            this.mONEDAFACTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mONEDAFACTDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // pRECIOUFACTARSDataGridViewTextBoxColumn
+            // 
+            this.pRECIOUFACTARSDataGridViewTextBoxColumn.DataPropertyName = "PRECIOU_FACT_ARS";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            this.pRECIOUFACTARSDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.pRECIOUFACTARSDataGridViewTextBoxColumn.HeaderText = "PrecioU";
+            this.pRECIOUFACTARSDataGridViewTextBoxColumn.Name = "pRECIOUFACTARSDataGridViewTextBoxColumn";
+            this.pRECIOUFACTARSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pRECIOUFACTARSDataGridViewTextBoxColumn.ToolTipText = "Precio Unitario";
+            this.pRECIOUFACTARSDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // pRECIOTFACTARSDataGridViewTextBoxColumn
+            // 
+            this.pRECIOTFACTARSDataGridViewTextBoxColumn.DataPropertyName = "PRECIOT_FACT_ARS";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.Format = "C2";
+            this.pRECIOTFACTARSDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.pRECIOTFACTARSDataGridViewTextBoxColumn.HeaderText = "PrecioT";
+            this.pRECIOTFACTARSDataGridViewTextBoxColumn.Name = "pRECIOTFACTARSDataGridViewTextBoxColumn";
+            this.pRECIOTFACTARSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pRECIOTFACTARSDataGridViewTextBoxColumn.ToolTipText = "Precio Total";
+            this.pRECIOTFACTARSDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // gLVDataGridViewTextBoxColumn
+            // 
+            this.gLVDataGridViewTextBoxColumn.DataPropertyName = "GLV";
+            this.gLVDataGridViewTextBoxColumn.HeaderText = "GLV";
+            this.gLVDataGridViewTextBoxColumn.Name = "gLVDataGridViewTextBoxColumn";
+            this.gLVDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gLVDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // iVA21DataGridViewCheckBoxColumn
+            // 
+            this.iVA21DataGridViewCheckBoxColumn.DataPropertyName = "IVA21";
+            this.iVA21DataGridViewCheckBoxColumn.HeaderText = "Iva";
+            this.iVA21DataGridViewCheckBoxColumn.Name = "iVA21DataGridViewCheckBoxColumn";
+            this.iVA21DataGridViewCheckBoxColumn.ReadOnly = true;
+            this.iVA21DataGridViewCheckBoxColumn.ToolTipText = "Aplica IVA 21%";
+            this.iVA21DataGridViewCheckBoxColumn.Width = 30;
+            // 
+            // t401Bs
+            // 
+            this.t401Bs.DataSource = typeof(TecserEF.Entity.T0401_FACTURA_I);
             // 
             // tabNc
             // 
@@ -2055,6 +2514,33 @@
             this.panel9.Size = new System.Drawing.Size(657, 54);
             this.panel9.TabIndex = 0;
             // 
+            // cNetoGasto
+            // 
+            this.cNetoGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cNetoGasto.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cNetoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cNetoGasto.ForeColor = System.Drawing.Color.Navy;
+            this.cNetoGasto.Location = new System.Drawing.Point(551, 27);
+            this.cNetoGasto.Margin = new System.Windows.Forms.Padding(0);
+            this.cNetoGasto.Name = "cNetoGasto";
+            this.cNetoGasto.SeparadorDecimal = true;
+            this.cNetoGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cNetoGasto.SetDecimales = 2;
+            this.cNetoGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cNetoGasto.Size = new System.Drawing.Size(101, 21);
+            this.cNetoGasto.TabIndex = 292;
+            this.cNetoGasto.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cNetoGasto.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cNetoGasto.XReadOnly = false;
+            // 
             // label47
             // 
             this.label47.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -2067,6 +2553,32 @@
             this.label47.TabIndex = 293;
             this.label47.Text = "TOTAL NETO";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cIibbGasto
+            // 
+            this.cIibbGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cIibbGasto.BackColor = System.Drawing.SystemColors.Control;
+            this.cIibbGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cIibbGasto.Location = new System.Drawing.Point(460, 27);
+            this.cIibbGasto.Margin = new System.Windows.Forms.Padding(0);
+            this.cIibbGasto.Name = "cIibbGasto";
+            this.cIibbGasto.SeparadorDecimal = true;
+            this.cIibbGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cIibbGasto.SetDecimales = 2;
+            this.cIibbGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cIibbGasto.Size = new System.Drawing.Size(91, 21);
+            this.cIibbGasto.TabIndex = 290;
+            this.cIibbGasto.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cIibbGasto.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cIibbGasto.XReadOnly = false;
             // 
             // label48
             // 
@@ -2081,6 +2593,32 @@
             this.label48.Text = "PERC. IIBB";
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cIvaGasto
+            // 
+            this.cIvaGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cIvaGasto.BackColor = System.Drawing.SystemColors.Control;
+            this.cIvaGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cIvaGasto.Location = new System.Drawing.Point(369, 27);
+            this.cIvaGasto.Margin = new System.Windows.Forms.Padding(0);
+            this.cIvaGasto.Name = "cIvaGasto";
+            this.cIvaGasto.SeparadorDecimal = true;
+            this.cIvaGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cIvaGasto.SetDecimales = 2;
+            this.cIvaGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cIvaGasto.Size = new System.Drawing.Size(91, 21);
+            this.cIvaGasto.TabIndex = 288;
+            this.cIvaGasto.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cIvaGasto.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cIvaGasto.XReadOnly = false;
+            // 
             // label49
             // 
             this.label49.BackColor = System.Drawing.Color.Lavender;
@@ -2093,6 +2631,32 @@
             this.label49.TabIndex = 289;
             this.label49.Text = "IVA 21%";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cImponibleGasto
+            // 
+            this.cImponibleGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cImponibleGasto.BackColor = System.Drawing.SystemColors.Control;
+            this.cImponibleGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cImponibleGasto.Location = new System.Drawing.Point(278, 27);
+            this.cImponibleGasto.Margin = new System.Windows.Forms.Padding(0);
+            this.cImponibleGasto.Name = "cImponibleGasto";
+            this.cImponibleGasto.SeparadorDecimal = true;
+            this.cImponibleGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cImponibleGasto.SetDecimales = 2;
+            this.cImponibleGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cImponibleGasto.Size = new System.Drawing.Size(91, 21);
+            this.cImponibleGasto.TabIndex = 286;
+            this.cImponibleGasto.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cImponibleGasto.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cImponibleGasto.XReadOnly = false;
             // 
             // label50
             // 
@@ -2107,6 +2671,32 @@
             this.label50.Text = "IMPONIBLE";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cSubtotalGasto
+            // 
+            this.cSubtotalGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cSubtotalGasto.BackColor = System.Drawing.SystemColors.Control;
+            this.cSubtotalGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cSubtotalGasto.Location = new System.Drawing.Point(187, 27);
+            this.cSubtotalGasto.Margin = new System.Windows.Forms.Padding(0);
+            this.cSubtotalGasto.Name = "cSubtotalGasto";
+            this.cSubtotalGasto.SeparadorDecimal = true;
+            this.cSubtotalGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cSubtotalGasto.SetDecimales = 2;
+            this.cSubtotalGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cSubtotalGasto.Size = new System.Drawing.Size(91, 21);
+            this.cSubtotalGasto.TabIndex = 284;
+            this.cSubtotalGasto.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cSubtotalGasto.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cSubtotalGasto.XReadOnly = false;
+            // 
             // label51
             // 
             this.label51.BackColor = System.Drawing.Color.Gainsboro;
@@ -2120,6 +2710,32 @@
             this.label51.Text = "SUBTOTAL";
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cDescuentoGasto
+            // 
+            this.cDescuentoGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cDescuentoGasto.BackColor = System.Drawing.SystemColors.Control;
+            this.cDescuentoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cDescuentoGasto.Location = new System.Drawing.Point(96, 27);
+            this.cDescuentoGasto.Margin = new System.Windows.Forms.Padding(0);
+            this.cDescuentoGasto.Name = "cDescuentoGasto";
+            this.cDescuentoGasto.SeparadorDecimal = true;
+            this.cDescuentoGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cDescuentoGasto.SetDecimales = 2;
+            this.cDescuentoGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cDescuentoGasto.Size = new System.Drawing.Size(91, 21);
+            this.cDescuentoGasto.TabIndex = 282;
+            this.cDescuentoGasto.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cDescuentoGasto.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cDescuentoGasto.XReadOnly = false;
+            // 
             // label52
             // 
             this.label52.BackColor = System.Drawing.Color.Gainsboro;
@@ -2132,6 +2748,32 @@
             this.label52.TabIndex = 283;
             this.label52.Text = "DESCUENTO";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cBrutoGastos
+            // 
+            this.cBrutoGastos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cBrutoGastos.BackColor = System.Drawing.SystemColors.Control;
+            this.cBrutoGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBrutoGastos.Location = new System.Drawing.Point(5, 27);
+            this.cBrutoGastos.Margin = new System.Windows.Forms.Padding(0);
+            this.cBrutoGastos.Name = "cBrutoGastos";
+            this.cBrutoGastos.SeparadorDecimal = true;
+            this.cBrutoGastos.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cBrutoGastos.SetDecimales = 2;
+            this.cBrutoGastos.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cBrutoGastos.Size = new System.Drawing.Size(91, 21);
+            this.cBrutoGastos.TabIndex = 281;
+            this.cBrutoGastos.ValorMaximo = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.cBrutoGastos.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cBrutoGastos.XReadOnly = false;
             // 
             // label53
             // 
@@ -2170,98 +2812,6 @@
             this.dgvNotaDebitoGastos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotaDebitoGastos.Size = new System.Drawing.Size(702, 180);
             this.dgvNotaDebitoGastos.TabIndex = 283;
-            // 
-            // ribbonSeparator1
-            // 
-            this.ribbonSeparator1.Name = "ribbonSeparator1";
-            // 
-            // iDITEMDataGridViewTextBoxColumn
-            // 
-            this.iDITEMDataGridViewTextBoxColumn.DataPropertyName = "IDITEM";
-            this.iDITEMDataGridViewTextBoxColumn.HeaderText = "#";
-            this.iDITEMDataGridViewTextBoxColumn.Name = "iDITEMDataGridViewTextBoxColumn";
-            this.iDITEMDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDITEMDataGridViewTextBoxColumn.Width = 20;
-            // 
-            // kGDESPACHADOSRDataGridViewTextBoxColumn
-            // 
-            this.kGDESPACHADOSRDataGridViewTextBoxColumn.DataPropertyName = "KGDESPACHADOS_R";
-            this.kGDESPACHADOSRDataGridViewTextBoxColumn.HeaderText = "Cant";
-            this.kGDESPACHADOSRDataGridViewTextBoxColumn.Name = "kGDESPACHADOSRDataGridViewTextBoxColumn";
-            this.kGDESPACHADOSRDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kGDESPACHADOSRDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // iTEMDataGridViewTextBoxColumn
-            // 
-            this.iTEMDataGridViewTextBoxColumn.DataPropertyName = "ITEM";
-            this.iTEMDataGridViewTextBoxColumn.HeaderText = "Item";
-            this.iTEMDataGridViewTextBoxColumn.Name = "iTEMDataGridViewTextBoxColumn";
-            this.iTEMDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iTEMDataGridViewTextBoxColumn.ToolTipText = "Item Interno";
-            this.iTEMDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // dESCREMITODataGridViewTextBoxColumn
-            // 
-            this.dESCREMITODataGridViewTextBoxColumn.DataPropertyName = "DESC_REMITO";
-            this.dESCREMITODataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.dESCREMITODataGridViewTextBoxColumn.Name = "dESCREMITODataGridViewTextBoxColumn";
-            this.dESCREMITODataGridViewTextBoxColumn.ReadOnly = true;
-            this.dESCREMITODataGridViewTextBoxColumn.ToolTipText = "Descripcion del Item";
-            this.dESCREMITODataGridViewTextBoxColumn.Width = 220;
-            // 
-            // mONEDAFACTDataGridViewTextBoxColumn
-            // 
-            this.mONEDAFACTDataGridViewTextBoxColumn.DataPropertyName = "MONEDA_FACT";
-            this.mONEDAFACTDataGridViewTextBoxColumn.HeaderText = "Mon";
-            this.mONEDAFACTDataGridViewTextBoxColumn.Name = "mONEDAFACTDataGridViewTextBoxColumn";
-            this.mONEDAFACTDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mONEDAFACTDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // pRECIOUFACTARSDataGridViewTextBoxColumn
-            // 
-            this.pRECIOUFACTARSDataGridViewTextBoxColumn.DataPropertyName = "PRECIOU_FACT_ARS";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            this.pRECIOUFACTARSDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.pRECIOUFACTARSDataGridViewTextBoxColumn.HeaderText = "PrecioU";
-            this.pRECIOUFACTARSDataGridViewTextBoxColumn.Name = "pRECIOUFACTARSDataGridViewTextBoxColumn";
-            this.pRECIOUFACTARSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pRECIOUFACTARSDataGridViewTextBoxColumn.ToolTipText = "Precio Unitario";
-            this.pRECIOUFACTARSDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // pRECIOTFACTARSDataGridViewTextBoxColumn
-            // 
-            this.pRECIOTFACTARSDataGridViewTextBoxColumn.DataPropertyName = "PRECIOT_FACT_ARS";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.Format = "C2";
-            this.pRECIOTFACTARSDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.pRECIOTFACTARSDataGridViewTextBoxColumn.HeaderText = "PrecioT";
-            this.pRECIOTFACTARSDataGridViewTextBoxColumn.Name = "pRECIOTFACTARSDataGridViewTextBoxColumn";
-            this.pRECIOTFACTARSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pRECIOTFACTARSDataGridViewTextBoxColumn.ToolTipText = "Precio Total";
-            this.pRECIOTFACTARSDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // gLVDataGridViewTextBoxColumn
-            // 
-            this.gLVDataGridViewTextBoxColumn.DataPropertyName = "GLV";
-            this.gLVDataGridViewTextBoxColumn.HeaderText = "GLV";
-            this.gLVDataGridViewTextBoxColumn.Name = "gLVDataGridViewTextBoxColumn";
-            this.gLVDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gLVDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // iVA21DataGridViewCheckBoxColumn
-            // 
-            this.iVA21DataGridViewCheckBoxColumn.DataPropertyName = "IVA21";
-            this.iVA21DataGridViewCheckBoxColumn.HeaderText = "Iva";
-            this.iVA21DataGridViewCheckBoxColumn.Name = "iVA21DataGridViewCheckBoxColumn";
-            this.iVA21DataGridViewCheckBoxColumn.ReadOnly = true;
-            this.iVA21DataGridViewCheckBoxColumn.ToolTipText = "Aplica IVA 21%";
-            this.iVA21DataGridViewCheckBoxColumn.Width = 30;
-            // 
-            // t401Bs
-            // 
-            this.t401Bs.DataSource = typeof(TecserEF.Entity.T0401_FACTURA_I);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -2347,136 +2897,9 @@
             this.dataGridViewCheckBoxColumn1.ToolTipText = "Aplica IVA 21%";
             this.dataGridViewCheckBoxColumn1.Width = 30;
             // 
-            // rbtnChooseCustomer
+            // ribbonSeparator1
             // 
-            this.rbtnChooseCustomer.Image = ((System.Drawing.Image)(resources.GetObject("rbtnChooseCustomer.Image")));
-            this.rbtnChooseCustomer.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnChooseCustomer.LargeImage")));
-            this.rbtnChooseCustomer.Name = "rbtnChooseCustomer";
-            this.rbtnChooseCustomer.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnChooseCustomer.SmallImage")));
-            this.rbtnChooseCustomer.Text = "Elegir Cliente";
-            this.rbtnChooseCustomer.Click += new System.EventHandler(this.rbtnChooseCustomer_Click);
-            // 
-            // rbtnDetalleCliente
-            // 
-            this.rbtnDetalleCliente.Image = ((System.Drawing.Image)(resources.GetObject("rbtnDetalleCliente.Image")));
-            this.rbtnDetalleCliente.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnDetalleCliente.LargeImage")));
-            this.rbtnDetalleCliente.Name = "rbtnDetalleCliente";
-            this.rbtnDetalleCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDetalleCliente.SmallImage")));
-            this.rbtnDetalleCliente.Text = "Detalle";
-            this.rbtnDetalleCliente.Click += new System.EventHandler(this.rbtnDetalleCliente_Click);
-            // 
-            // zLX
-            // 
-            this.zLX.DropDownItems.Add(this.rL1);
-            this.zLX.DropDownItems.Add(this.rL2);
-            this.zLX.Image = ((System.Drawing.Image)(resources.GetObject("zLX.Image")));
-            this.zLX.LargeImage = ((System.Drawing.Image)(resources.GetObject("zLX.LargeImage")));
-            this.zLX.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Overflow;
-            this.zLX.Name = "zLX";
-            this.zLX.SmallImage = ((System.Drawing.Image)(resources.GetObject("zLX.SmallImage")));
-            this.zLX.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
-            this.zLX.Text = "Tipo OP";
-            this.zLX.ToolTip = "Seleccione el Tipo de Operacion";
-            // 
-            // rL1
-            // 
-            this.rL1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.rL1.Image = ((System.Drawing.Image)(resources.GetObject("rL1.Image")));
-            this.rL1.LargeImage = ((System.Drawing.Image)(resources.GetObject("rL1.LargeImage")));
-            this.rL1.Name = "rL1";
-            this.rL1.SmallImage = ((System.Drawing.Image)(resources.GetObject("rL1.SmallImage")));
-            this.rL1.Text = "L1";
-            this.rL1.ToolTip = "Operacion L1";
-            this.rL1.Click += new System.EventHandler(this.rL1_Click);
-            // 
-            // rL2
-            // 
-            this.rL2.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.rL2.Image = ((System.Drawing.Image)(resources.GetObject("rL2.Image")));
-            this.rL2.LargeImage = ((System.Drawing.Image)(resources.GetObject("rL2.LargeImage")));
-            this.rL2.Name = "rL2";
-            this.rL2.SmallImage = ((System.Drawing.Image)(resources.GetObject("rL2.SmallImage")));
-            this.rL2.Text = "L2";
-            this.rL2.Click += new System.EventHandler(this.rL2_Click);
-            // 
-            // btnAnulaDocumento
-            // 
-            this.btnAnulaDocumento.Image = ((System.Drawing.Image)(resources.GetObject("btnAnulaDocumento.Image")));
-            this.btnAnulaDocumento.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAnulaDocumento.LargeImage")));
-            this.btnAnulaDocumento.Name = "btnAnulaDocumento";
-            this.btnAnulaDocumento.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAnulaDocumento.SmallImage")));
-            this.btnAnulaDocumento.Text = "Anula NC";
-            this.btnAnulaDocumento.Click += new System.EventHandler(this.btnAnulaDocumento_Click);
-            // 
-            // btnGastosFinancieros
-            // 
-            this.btnGastosFinancieros.Image = ((System.Drawing.Image)(resources.GetObject("btnGastosFinancieros.Image")));
-            this.btnGastosFinancieros.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGastosFinancieros.LargeImage")));
-            this.btnGastosFinancieros.Name = "btnGastosFinancieros";
-            this.btnGastosFinancieros.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnGastosFinancieros.SmallImage")));
-            this.btnGastosFinancieros.Text = "Gastos";
-            this.btnGastosFinancieros.Click += new System.EventHandler(this.btnGastosFinancieros_Click);
-            // 
-            // btnChequeRechazado
-            // 
-            this.btnChequeRechazado.Image = ((System.Drawing.Image)(resources.GetObject("btnChequeRechazado.Image")));
-            this.btnChequeRechazado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChequeRechazado.LargeImage")));
-            this.btnChequeRechazado.Name = "btnChequeRechazado";
-            this.btnChequeRechazado.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnChequeRechazado.SmallImage")));
-            this.btnChequeRechazado.Text = "Cheque Rechazado";
-            this.btnChequeRechazado.Click += new System.EventHandler(this.btnChequeRechazado_Click);
-            // 
-            // btnDevChSR
-            // 
-            this.btnDevChSR.Image = ((System.Drawing.Image)(resources.GetObject("btnDevChSR.Image")));
-            this.btnDevChSR.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDevChSR.LargeImage")));
-            this.btnDevChSR.Name = "btnDevChSR";
-            this.btnDevChSR.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDevChSR.SmallImage")));
-            this.btnDevChSR.Text = "Devolucion Sin RECH";
-            this.btnDevChSR.Click += new System.EventHandler(this.btnDevChSR_Click);
-            // 
-            // ribbonButton1
-            // 
-            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
-            this.ribbonButton1.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.LargeImage")));
-            this.ribbonButton1.Name = "ribbonButton1";
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Text = "USER";
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
-            this.btnRegistrar.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.LargeImage")));
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.SmallImage")));
-            this.btnRegistrar.Text = "Registrar T400";
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // btnUnregistrar
-            // 
-            this.btnUnregistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnUnregistrar.Image")));
-            this.btnUnregistrar.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUnregistrar.LargeImage")));
-            this.btnUnregistrar.Name = "btnUnregistrar";
-            this.btnUnregistrar.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnUnregistrar.SmallImage")));
-            this.btnUnregistrar.Text = "Sacar Registro";
-            // 
-            // btnContabilizar
-            // 
-            this.btnContabilizar.Image = global::MASngFE.Properties.Resources.Contabilizar;
-            this.btnContabilizar.LargeImage = global::MASngFE.Properties.Resources.Contabilizar;
-            this.btnContabilizar.Name = "btnContabilizar";
-            this.btnContabilizar.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnContabilizar.SmallImage")));
-            this.btnContabilizar.Text = "Contabilizar";
-            this.btnContabilizar.Click += new System.EventHandler(this.btnContabilizar_Click);
-            // 
-            // btnSolicitarCae
-            // 
-            this.btnSolicitarCae.Image = ((System.Drawing.Image)(resources.GetObject("btnSolicitarCae.Image")));
-            this.btnSolicitarCae.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSolicitarCae.LargeImage")));
-            this.btnSolicitarCae.Name = "btnSolicitarCae";
-            this.btnSolicitarCae.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSolicitarCae.SmallImage")));
-            this.btnSolicitarCae.Text = "Solicitar CAE";
-            this.btnSolicitarCae.Click += new System.EventHandler(this.btnSolicitarCae_Click);
+            this.ribbonSeparator1.Name = "ribbonSeparator1";
             // 
             // t301Bs
             // 
@@ -2531,391 +2954,22 @@
             this.rbtnAjuste.Name = "rbtnAjuste";
             this.rbtnAjuste.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAjuste.SmallImage")));
             // 
-            // cTotalFinal
+            // ribbonButton2
             // 
-            this.cTotalFinal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cTotalFinal.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.cTotalFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTotalFinal.ForeColor = System.Drawing.Color.Navy;
-            this.cTotalFinal.Location = new System.Drawing.Point(551, 27);
-            this.cTotalFinal.Margin = new System.Windows.Forms.Padding(0);
-            this.cTotalFinal.Name = "cTotalFinal";
-            this.cTotalFinal.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cTotalFinal.SetDecimales = 2;
-            this.cTotalFinal.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cTotalFinal.Size = new System.Drawing.Size(101, 21);
-            this.cTotalFinal.TabIndex = 292;
-            this.cTotalFinal.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cTotalFinal.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cTotalFinal.XReadOnly = false;
+            this.ribbonButton2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.Image")));
+            this.ribbonButton2.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.LargeImage")));
+            this.ribbonButton2.Name = "ribbonButton2";
+            this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
+            this.ribbonButton2.Text = "ribbonButton2";
             // 
-            // cPercepcionIIBB
+            // rbtnDiferenciaKg
             // 
-            this.cPercepcionIIBB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cPercepcionIIBB.BackColor = System.Drawing.SystemColors.Control;
-            this.cPercepcionIIBB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cPercepcionIIBB.Location = new System.Drawing.Point(460, 27);
-            this.cPercepcionIIBB.Margin = new System.Windows.Forms.Padding(0);
-            this.cPercepcionIIBB.Name = "cPercepcionIIBB";
-            this.cPercepcionIIBB.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cPercepcionIIBB.SetDecimales = 2;
-            this.cPercepcionIIBB.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cPercepcionIIBB.Size = new System.Drawing.Size(91, 21);
-            this.cPercepcionIIBB.TabIndex = 290;
-            this.cPercepcionIIBB.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cPercepcionIIBB.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cPercepcionIIBB.XReadOnly = false;
-            // 
-            // cIva
-            // 
-            this.cIva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cIva.BackColor = System.Drawing.SystemColors.Control;
-            this.cIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cIva.Location = new System.Drawing.Point(369, 27);
-            this.cIva.Margin = new System.Windows.Forms.Padding(0);
-            this.cIva.Name = "cIva";
-            this.cIva.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cIva.SetDecimales = 2;
-            this.cIva.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cIva.Size = new System.Drawing.Size(91, 21);
-            this.cIva.TabIndex = 288;
-            this.cIva.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cIva.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cIva.XReadOnly = false;
-            // 
-            // cImponible
-            // 
-            this.cImponible.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cImponible.BackColor = System.Drawing.SystemColors.Control;
-            this.cImponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cImponible.Location = new System.Drawing.Point(278, 27);
-            this.cImponible.Margin = new System.Windows.Forms.Padding(0);
-            this.cImponible.Name = "cImponible";
-            this.cImponible.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cImponible.SetDecimales = 2;
-            this.cImponible.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cImponible.Size = new System.Drawing.Size(91, 21);
-            this.cImponible.TabIndex = 286;
-            this.cImponible.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cImponible.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cImponible.XReadOnly = false;
-            // 
-            // cSubtotal
-            // 
-            this.cSubtotal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cSubtotal.BackColor = System.Drawing.SystemColors.Control;
-            this.cSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cSubtotal.Location = new System.Drawing.Point(187, 27);
-            this.cSubtotal.Margin = new System.Windows.Forms.Padding(0);
-            this.cSubtotal.Name = "cSubtotal";
-            this.cSubtotal.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cSubtotal.SetDecimales = 2;
-            this.cSubtotal.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cSubtotal.Size = new System.Drawing.Size(91, 21);
-            this.cSubtotal.TabIndex = 284;
-            this.cSubtotal.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cSubtotal.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cSubtotal.XReadOnly = false;
-            // 
-            // cDescuento
-            // 
-            this.cDescuento.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cDescuento.BackColor = System.Drawing.SystemColors.Control;
-            this.cDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cDescuento.Location = new System.Drawing.Point(96, 27);
-            this.cDescuento.Margin = new System.Windows.Forms.Padding(0);
-            this.cDescuento.Name = "cDescuento";
-            this.cDescuento.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cDescuento.SetDecimales = 2;
-            this.cDescuento.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cDescuento.Size = new System.Drawing.Size(91, 21);
-            this.cDescuento.TabIndex = 282;
-            this.cDescuento.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cDescuento.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cDescuento.XReadOnly = false;
-            // 
-            // cBruto
-            // 
-            this.cBruto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cBruto.BackColor = System.Drawing.SystemColors.Control;
-            this.cBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBruto.Location = new System.Drawing.Point(5, 27);
-            this.cBruto.Margin = new System.Windows.Forms.Padding(0);
-            this.cBruto.Name = "cBruto";
-            this.cBruto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cBruto.SetDecimales = 2;
-            this.cBruto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cBruto.Size = new System.Drawing.Size(91, 21);
-            this.cBruto.TabIndex = 281;
-            this.cBruto.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cBruto.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cBruto.XReadOnly = false;
-            // 
-            // cNetoGasto
-            // 
-            this.cNetoGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cNetoGasto.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.cNetoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cNetoGasto.ForeColor = System.Drawing.Color.Navy;
-            this.cNetoGasto.Location = new System.Drawing.Point(551, 27);
-            this.cNetoGasto.Margin = new System.Windows.Forms.Padding(0);
-            this.cNetoGasto.Name = "cNetoGasto";
-            this.cNetoGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cNetoGasto.SetDecimales = 2;
-            this.cNetoGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cNetoGasto.Size = new System.Drawing.Size(101, 21);
-            this.cNetoGasto.TabIndex = 292;
-            this.cNetoGasto.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cNetoGasto.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cNetoGasto.XReadOnly = false;
-            // 
-            // cIibbGasto
-            // 
-            this.cIibbGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cIibbGasto.BackColor = System.Drawing.SystemColors.Control;
-            this.cIibbGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cIibbGasto.Location = new System.Drawing.Point(460, 27);
-            this.cIibbGasto.Margin = new System.Windows.Forms.Padding(0);
-            this.cIibbGasto.Name = "cIibbGasto";
-            this.cIibbGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cIibbGasto.SetDecimales = 2;
-            this.cIibbGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cIibbGasto.Size = new System.Drawing.Size(91, 21);
-            this.cIibbGasto.TabIndex = 290;
-            this.cIibbGasto.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cIibbGasto.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cIibbGasto.XReadOnly = false;
-            // 
-            // cIvaGasto
-            // 
-            this.cIvaGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cIvaGasto.BackColor = System.Drawing.SystemColors.Control;
-            this.cIvaGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cIvaGasto.Location = new System.Drawing.Point(369, 27);
-            this.cIvaGasto.Margin = new System.Windows.Forms.Padding(0);
-            this.cIvaGasto.Name = "cIvaGasto";
-            this.cIvaGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cIvaGasto.SetDecimales = 2;
-            this.cIvaGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cIvaGasto.Size = new System.Drawing.Size(91, 21);
-            this.cIvaGasto.TabIndex = 288;
-            this.cIvaGasto.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cIvaGasto.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cIvaGasto.XReadOnly = false;
-            // 
-            // cImponibleGasto
-            // 
-            this.cImponibleGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cImponibleGasto.BackColor = System.Drawing.SystemColors.Control;
-            this.cImponibleGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cImponibleGasto.Location = new System.Drawing.Point(278, 27);
-            this.cImponibleGasto.Margin = new System.Windows.Forms.Padding(0);
-            this.cImponibleGasto.Name = "cImponibleGasto";
-            this.cImponibleGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cImponibleGasto.SetDecimales = 2;
-            this.cImponibleGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cImponibleGasto.Size = new System.Drawing.Size(91, 21);
-            this.cImponibleGasto.TabIndex = 286;
-            this.cImponibleGasto.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cImponibleGasto.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cImponibleGasto.XReadOnly = false;
-            // 
-            // cSubtotalGasto
-            // 
-            this.cSubtotalGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cSubtotalGasto.BackColor = System.Drawing.SystemColors.Control;
-            this.cSubtotalGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cSubtotalGasto.Location = new System.Drawing.Point(187, 27);
-            this.cSubtotalGasto.Margin = new System.Windows.Forms.Padding(0);
-            this.cSubtotalGasto.Name = "cSubtotalGasto";
-            this.cSubtotalGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cSubtotalGasto.SetDecimales = 2;
-            this.cSubtotalGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cSubtotalGasto.Size = new System.Drawing.Size(91, 21);
-            this.cSubtotalGasto.TabIndex = 284;
-            this.cSubtotalGasto.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cSubtotalGasto.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cSubtotalGasto.XReadOnly = false;
-            // 
-            // cDescuentoGasto
-            // 
-            this.cDescuentoGasto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cDescuentoGasto.BackColor = System.Drawing.SystemColors.Control;
-            this.cDescuentoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cDescuentoGasto.Location = new System.Drawing.Point(96, 27);
-            this.cDescuentoGasto.Margin = new System.Windows.Forms.Padding(0);
-            this.cDescuentoGasto.Name = "cDescuentoGasto";
-            this.cDescuentoGasto.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cDescuentoGasto.SetDecimales = 2;
-            this.cDescuentoGasto.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cDescuentoGasto.Size = new System.Drawing.Size(91, 21);
-            this.cDescuentoGasto.TabIndex = 282;
-            this.cDescuentoGasto.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cDescuentoGasto.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cDescuentoGasto.XReadOnly = false;
-            // 
-            // cBrutoGastos
-            // 
-            this.cBrutoGastos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cBrutoGastos.BackColor = System.Drawing.SystemColors.Control;
-            this.cBrutoGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBrutoGastos.Location = new System.Drawing.Point(5, 27);
-            this.cBrutoGastos.Margin = new System.Windows.Forms.Padding(0);
-            this.cBrutoGastos.Name = "cBrutoGastos";
-            this.cBrutoGastos.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cBrutoGastos.SetDecimales = 2;
-            this.cBrutoGastos.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cBrutoGastos.Size = new System.Drawing.Size(91, 21);
-            this.cBrutoGastos.TabIndex = 281;
-            this.cBrutoGastos.ValorMaximo = new decimal(new int[] {
-            9999999,
-            0,
-            0,
-            0});
-            this.cBrutoGastos.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cBrutoGastos.XReadOnly = false;
-            // 
-            // cCuitOk
-            // 
-            this.cCuitOk.Location = new System.Drawing.Point(190, 38);
-            this.cCuitOk.Margin = new System.Windows.Forms.Padding(4);
-            this.cCuitOk.Name = "cCuitOk";
-            this.cCuitOk.SetLights = TSControls.CtlSemaforo.ColoresSemaforo.Amarillo;
-            this.cCuitOk.Size = new System.Drawing.Size(23, 23);
-            this.cCuitOk.TabIndex = 18;
-            // 
-            // cTc
-            // 
-            this.cTc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cTc.BackColor = System.Drawing.SystemColors.Control;
-            this.cTc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTc.Location = new System.Drawing.Point(404, 63);
-            this.cTc.Margin = new System.Windows.Forms.Padding(0);
-            this.cTc.Name = "cTc";
-            this.cTc.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cTc.SetDecimales = 2;
-            this.cTc.SetType = TSControls.CtlTextBox.TextBoxType.Decimal;
-            this.cTc.Size = new System.Drawing.Size(52, 21);
-            this.cTc.TabIndex = 97;
-            this.cTc.ValorMaximo = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.cTc.ValorMinimo = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.cTc.XReadOnly = false;
+            this.rbtnDiferenciaKg.Image = ((System.Drawing.Image)(resources.GetObject("rbtnDiferenciaKg.Image")));
+            this.rbtnDiferenciaKg.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnDiferenciaKg.LargeImage")));
+            this.rbtnDiferenciaKg.Name = "rbtnDiferenciaKg";
+            this.rbtnDiferenciaKg.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDiferenciaKg.SmallImage")));
+            this.rbtnDiferenciaKg.Text = "Diferencia KG";
+            this.rbtnDiferenciaKg.Click += new System.EventHandler(this.rbtnDiferenciaKg_Click);
             // 
             // FrmFI61GenerarNotaDebito
             // 
@@ -2946,6 +3000,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv400)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t401Bs)).EndInit();
             this.tabNc.ResumeLayout(false);
             this.tabNc.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -2967,7 +3022,6 @@
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotaDebitoGastos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t401Bs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.t301Bs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -3202,5 +3256,9 @@
         private System.Windows.Forms.RibbonButton btnGastosFinancieros;
         private System.Windows.Forms.RibbonPanel PanelAjustesInternos;
         private System.Windows.Forms.RibbonButton rbtnAjuste;
+        private System.Windows.Forms.RibbonPanel rbOtrosDocumentos;
+        private System.Windows.Forms.RibbonButton rbtnDiferenciaPrecio;
+        private System.Windows.Forms.RibbonButton ribbonButton2;
+        private System.Windows.Forms.RibbonButton rbtnDiferenciaKg;
     }
 }

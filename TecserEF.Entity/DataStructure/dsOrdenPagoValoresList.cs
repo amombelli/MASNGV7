@@ -26,7 +26,7 @@ namespace TecserEF.Entity.DataStructure
                             select new DsOrdenPagoValoresList()
                             {
                                 IdOP = idOP,
-                                Importe = h.IMPORTE.Value,
+                                Importe = h.IMPORTE,
                                 Moneda = h.MON,
                                 Cuenta = h.CUENTA_O,
                                 BancoId = h.CH_BCO,
@@ -34,7 +34,7 @@ namespace TecserEF.Entity.DataStructure
                                 chId = h.CH_ID,
                                 BancoShort = "",
                                 FechaAcred = h.ChequeFecha,
-                                EsTransferencia = h.CK_FIN != null && h.CK_FIN.Value,
+                                EsTransferencia = h.CK_FIN != null && h.CK_FIN,
                             }).ToList();
 
                 foreach (var it in data)

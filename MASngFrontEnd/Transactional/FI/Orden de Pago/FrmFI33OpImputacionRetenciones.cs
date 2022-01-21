@@ -48,7 +48,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             txtVendorDescripction.Text = header.PROV_RS;
             txtVendorId.Text = header.PROV_ID.ToString();
             txtCUIT.Text = header.PROV_CUIT;
-            txtPeriodo.Text = new PeriodoConversion().GetPeriodo(header.OPFECHA.Value);
+            txtPeriodo.Text = new PeriodoConversion().GetPeriodo(header.OPFECHA);
         }
 
 

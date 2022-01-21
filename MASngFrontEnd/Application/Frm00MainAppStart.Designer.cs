@@ -81,6 +81,8 @@
             this.rtxtNewPassword = new System.Windows.Forms.RibbonTextBox();
             this.ribbonSeparator2 = new System.Windows.Forms.RibbonSeparator();
             this.rbtnLogNew = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
+            this.rbExitMAS = new System.Windows.Forms.RibbonButton();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.rbtnCrearNP = new System.Windows.Forms.RibbonButton();
@@ -160,6 +162,7 @@
             this.button62 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button44 = new System.Windows.Forms.Button();
             this.btnTestCustomerSearchControl = new System.Windows.Forms.Button();
             this.button63 = new System.Windows.Forms.Button();
             this.button54 = new System.Windows.Forms.Button();
@@ -173,6 +176,11 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvTcodeList = new System.Windows.Forms.DataGridView();
+            this.visibleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.t0001TRANSACTIONSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rbMainApplication = new System.Windows.Forms.Ribbon();
             this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
@@ -211,24 +219,17 @@
             this.btnRemisionCliente = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
             this.panelBoton1 = new System.Windows.Forms.Panel();
-            this.visibleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.t0001TRANSACTIONSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
-            this.rbExitMAS = new System.Windows.Forms.RibbonButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTcodeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t0001TRANSACTIONSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.stBar1.SuspendLayout();
             this.panelBoton1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.t0001TRANSACTIONSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // aplicacionToolStripMenuItem
@@ -584,6 +585,21 @@
             this.rbtnLogNew.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnLogNew.SmallImage")));
             resources.ApplyResources(this.rbtnLogNew, "rbtnLogNew");
             this.rbtnLogNew.Click += new System.EventHandler(this.rbtnLogNew_Click);
+            // 
+            // ribbonPanel7
+            // 
+            this.ribbonPanel7.Items.Add(this.rbExitMAS);
+            this.ribbonPanel7.Name = "ribbonPanel7";
+            resources.ApplyResources(this.ribbonPanel7, "ribbonPanel7");
+            // 
+            // rbExitMAS
+            // 
+            this.rbExitMAS.Image = ((System.Drawing.Image)(resources.GetObject("rbExitMAS.Image")));
+            this.rbExitMAS.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbExitMAS.LargeImage")));
+            this.rbExitMAS.Name = "rbExitMAS";
+            this.rbExitMAS.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbExitMAS.SmallImage")));
+            resources.ApplyResources(this.rbExitMAS, "rbExitMAS");
+            this.rbExitMAS.Click += new System.EventHandler(this.rbExitMAS_Click);
             // 
             // ribbonTab1
             // 
@@ -1235,6 +1251,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button44);
             this.tabPage1.Controls.Add(this.btnTestCustomerSearchControl);
             this.tabPage1.Controls.Add(this.button63);
             this.tabPage1.Controls.Add(this.button54);
@@ -1262,6 +1279,13 @@
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button44
+            // 
+            resources.ApplyResources(this.button44, "button44");
+            this.button44.Name = "button44";
+            this.button44.UseVisualStyleBackColor = true;
+            this.button44.Click += new System.EventHandler(this.button44_Click);
             // 
             // btnTestCustomerSearchControl
             // 
@@ -1377,6 +1401,38 @@
             resources.ApplyResources(this.dgvTcodeList, "dgvTcodeList");
             this.dgvTcodeList.Name = "dgvTcodeList";
             this.dgvTcodeList.ReadOnly = true;
+            // 
+            // visibleDataGridViewCheckBoxColumn
+            // 
+            this.visibleDataGridViewCheckBoxColumn.DataPropertyName = "Visible";
+            resources.ApplyResources(this.visibleDataGridViewCheckBoxColumn, "visibleDataGridViewCheckBoxColumn");
+            this.visibleDataGridViewCheckBoxColumn.Name = "visibleDataGridViewCheckBoxColumn";
+            this.visibleDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // tCodeDataGridViewTextBoxColumn
+            // 
+            this.tCodeDataGridViewTextBoxColumn.DataPropertyName = "TCode";
+            resources.ApplyResources(this.tCodeDataGridViewTextBoxColumn, "tCodeDataGridViewTextBoxColumn");
+            this.tCodeDataGridViewTextBoxColumn.Name = "tCodeDataGridViewTextBoxColumn";
+            this.tCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            resources.ApplyResources(this.descriptionDataGridViewTextBoxColumn, "descriptionDataGridViewTextBoxColumn");
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // moduleDataGridViewTextBoxColumn
+            // 
+            this.moduleDataGridViewTextBoxColumn.DataPropertyName = "Module";
+            resources.ApplyResources(this.moduleDataGridViewTextBoxColumn, "moduleDataGridViewTextBoxColumn");
+            this.moduleDataGridViewTextBoxColumn.Name = "moduleDataGridViewTextBoxColumn";
+            this.moduleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // t0001TRANSACTIONSBindingSource
+            // 
+            this.t0001TRANSACTIONSBindingSource.DataSource = typeof(TecserEF.Entity.T0001_TRANSACTIONS);
             // 
             // pictureBox1
             // 
@@ -1706,38 +1762,6 @@
             resources.ApplyResources(this.panelBoton1, "panelBoton1");
             this.panelBoton1.Name = "panelBoton1";
             // 
-            // visibleDataGridViewCheckBoxColumn
-            // 
-            this.visibleDataGridViewCheckBoxColumn.DataPropertyName = "Visible";
-            resources.ApplyResources(this.visibleDataGridViewCheckBoxColumn, "visibleDataGridViewCheckBoxColumn");
-            this.visibleDataGridViewCheckBoxColumn.Name = "visibleDataGridViewCheckBoxColumn";
-            this.visibleDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // tCodeDataGridViewTextBoxColumn
-            // 
-            this.tCodeDataGridViewTextBoxColumn.DataPropertyName = "TCode";
-            resources.ApplyResources(this.tCodeDataGridViewTextBoxColumn, "tCodeDataGridViewTextBoxColumn");
-            this.tCodeDataGridViewTextBoxColumn.Name = "tCodeDataGridViewTextBoxColumn";
-            this.tCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            resources.ApplyResources(this.descriptionDataGridViewTextBoxColumn, "descriptionDataGridViewTextBoxColumn");
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // moduleDataGridViewTextBoxColumn
-            // 
-            this.moduleDataGridViewTextBoxColumn.DataPropertyName = "Module";
-            resources.ApplyResources(this.moduleDataGridViewTextBoxColumn, "moduleDataGridViewTextBoxColumn");
-            this.moduleDataGridViewTextBoxColumn.Name = "moduleDataGridViewTextBoxColumn";
-            this.moduleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // t0001TRANSACTIONSBindingSource
-            // 
-            this.t0001TRANSACTIONSBindingSource.DataSource = typeof(TecserEF.Entity.T0001_TRANSACTIONS);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "TCode";
@@ -1756,25 +1780,10 @@
             resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // ribbonPanel7
-            // 
-            this.ribbonPanel7.Items.Add(this.rbExitMAS);
-            this.ribbonPanel7.Name = "ribbonPanel7";
-            resources.ApplyResources(this.ribbonPanel7, "ribbonPanel7");
-            // 
-            // rbExitMAS
-            // 
-            this.rbExitMAS.Image = ((System.Drawing.Image)(resources.GetObject("rbExitMAS.Image")));
-            this.rbExitMAS.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbExitMAS.LargeImage")));
-            this.rbExitMAS.Name = "rbExitMAS";
-            this.rbExitMAS.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbExitMAS.SmallImage")));
-            resources.ApplyResources(this.rbExitMAS, "rbExitMAS");
-            this.rbExitMAS.Click += new System.EventHandler(this.rbExitMAS_Click);
-            // 
             // Frm00MainAppStart
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ControlBox = false;
@@ -1811,11 +1820,11 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTcodeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t0001TRANSACTIONSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.stBar1.ResumeLayout(false);
             this.stBar1.PerformLayout();
             this.panelBoton1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.t0001TRANSACTIONSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2013,5 +2022,6 @@
         private System.Windows.Forms.Button btnTestCustomerSearchControl;
         private System.Windows.Forms.RibbonPanel ribbonPanel7;
         private System.Windows.Forms.RibbonButton rbExitMAS;
+        private System.Windows.Forms.Button button44;
     }
 }

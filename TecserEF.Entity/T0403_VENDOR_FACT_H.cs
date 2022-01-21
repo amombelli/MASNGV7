@@ -18,6 +18,7 @@ namespace TecserEF.Entity
         public T0403_VENDOR_FACT_H()
         {
             this.T0404_VENDOR_FACT_I = new HashSet<T0404_VENDOR_FACT_I>();
+            this.T0212_OrdenPagoDocumentos = new HashSet<T0212_OrdenPagoDocumentos>();
         }
     
         public int IDINT { get; set; }
@@ -68,5 +69,7 @@ namespace TecserEF.Entity
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T0404_VENDOR_FACT_I> T0404_VENDOR_FACT_I { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T0212_OrdenPagoDocumentos> T0212_OrdenPagoDocumentos { get; set; }
     }
 }

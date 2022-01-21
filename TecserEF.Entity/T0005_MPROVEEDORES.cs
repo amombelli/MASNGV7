@@ -25,6 +25,7 @@ namespace TecserEF.Entity
             this.T0204_CTACTESALDOS_PROV = new HashSet<T0204_CTACTESALDOS_PROV>();
             this.T0210_OP_H = new HashSet<T0210_OP_H>();
             this.T0406_RendicionFF_H = new HashSet<T0406_RendicionFF_H>();
+            this.T0210_OrdenPagoHeader = new HashSet<T0210_OrdenPagoHeader>();
         }
     
         public int id_prov { get; set; }
@@ -80,5 +81,7 @@ namespace TecserEF.Entity
         public virtual ICollection<T0210_OP_H> T0210_OP_H { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T0406_RendicionFF_H> T0406_RendicionFF_H { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T0210_OrdenPagoHeader> T0210_OrdenPagoHeader { get; set; }
     }
 }

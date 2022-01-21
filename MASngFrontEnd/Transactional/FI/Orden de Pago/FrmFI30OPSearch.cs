@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using MASngFE.Reports.ReportManager;
 using Tecser.Business.MainApp;
 using Tecser.Business.MasterData;
 using Tecser.Business.Transactional.FI;
@@ -140,27 +141,21 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             }
             //si no es vacio ya fue filtrado!
         }
-        private void ckSoloActivos_CheckedChanged(object sender, EventArgs e)
-        {
-            //cmbRazonSocial.DataSource = new VendorManager().GetCompleteListVendors(ckSoloActivos.Checked);
-            //cmbFantasia.DataSource = new VendorManager().GetCompleteListVendors(ckSoloActivos.Checked);
-            //cmbIdVendor.DataSource = new VendorManager().GetCompleteListVendors(ckSoloActivos.Checked);
-            //cmbRazonSocial.SelectedValue = -1;
-            //cmbFantasia.SelectedValue = -1;
-            //cmbIdVendor.SelectedValue = -1;
-            //dgvOPLista.DataSource = new OrdenPagoFilter().GetOrdenPagoList(null);
-        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         private void btnDetalleDeuda_Click_1(object sender, EventArgs e)
         {
-            if (tsUcVendorSelector1.VendorId.HasValue && tsUcVendorSelector1.VendorId.Value>1)
+            if (tsUcVendorSelector1.VendorId == null || tsUcVendorSelector1.VendorId == -1)
             {
-                var f = new FrmDetalleDeudaProveedeor(tsUcVendorSelector1.VendorId.Value);
-                f.Show();
+                MessageBox.Show(@"Debe seleccionar un proveedor para visualizar su detalle de deuda",
+                    @"Proveedor no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+            var f = new FrmFI33DocumentosPendientesPago(tsUcVendorSelector1.VendorId.Value,0);
+            f.Show();
         }
 
         private void BtnFix_Click(object sender, EventArgs e)
@@ -202,6 +197,47 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             txtSaldoL2.BackColor = vendor.ColorSaldoL2;
             txtSaldoTotalL1.Text = vendor.GetSaldoL1FromT0203(args.VendorId.Value).ToString("C2");
             txtSaldoTotalL2.Text = vendor.GetSaldoL2FromT0203(args.VendorId.Value).ToString("C2");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (tsUcVendorSelector1.VendorId == null)
+            {
+                MessageBox.Show(@"seleccione vendor");
+                return;
+            }
+            var f = new FI31OrdenPagoMainScreen(tsUcVendorSelector1.VendorId.Value);
+            f.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (tsUcVendorSelector1.VendorId == null)
+            {
+                MessageBox.Show(@"seleccione vendor");
+                return;
+            }
+            
+            var f = new FrmFI33DocumentosPendientesPago(tsUcVendorSelector1.VendorId.Value,0);
+            f.Show();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            var f = new FI31OrdenPagoMainScreen((int) ctlTextBox1.GetValueDecimal, 2);
+            f.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var f = new RvpOrdenPagoPrint(400001077);
+            f.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var f = new FrmFI38DetalleImputacionPorDocumento();
+            f.Show();
         }
     }
 }

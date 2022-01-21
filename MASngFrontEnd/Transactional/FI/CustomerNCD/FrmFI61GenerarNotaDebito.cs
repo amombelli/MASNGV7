@@ -30,7 +30,12 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         private DocumentFIStatusManager.StatusHeader _statusDocumento = DocumentFIStatusManager.StatusHeader.Pendiente;
         private DocumentFIStatusManager.StatusHeader _statusDocumento2 = DocumentFIStatusManager.StatusHeader.Pendiente;
         private int _idRetorno = -1; //ID de Retorno de la seleccion de documento
-
+        private enum Lx
+        {
+            L1,
+            L2,
+            NoSeleccionado
+        };
 
         public FrmFI61GenerarNotaDebito(int idCliente)
         {
@@ -44,19 +49,15 @@ namespace MASngFE.Transactional.FI.CustomerNCD
         public FrmFI61GenerarNotaDebito(int idFactura, int modo)
         {
             //todo Constructor para carga de documentos existente
+            //hacer en conjunto con FI51
         }
-        private enum Lx
-        {
-            L1,
-            L2,
-            NoSeleccionado
-        };
 
         private void FrmFI61GenerarNotaDebito_Load(object sender, EventArgs e)
         {
             MapCustomerData();
             _lx = Lx.NoSeleccionado;
             txtStatusDoc1.Text = _statusDocumento.ToString();
+            txtStatusDoc2.Text = _statusDocumento2.ToString();
             rPanelContabilizacion.Enabled = false;
             rPanelRegistracion.Enabled = false;
             ribbonNotaDebito.ActiveTab = rTabCliente;
@@ -327,6 +328,14 @@ namespace MASngFE.Transactional.FI.CustomerNCD
             _motivoDebito = CustomerNd.MotivoNotaDebito.AnulaDocumento;
             RedirigeAccionDespuesPresionarBoton();
         }
+
+        private void rbtnDiferenciaKg_Click(object sender, EventArgs e)
+        {
+            _motivoDebito = CustomerNd.MotivoNotaDebito.DiferenciaKg;
+            RedirigeAccionDespuesPresionarBoton();
+        }
+
+        
         private void btnChequeRechazado_Click(object sender, EventArgs e)
         {
             _motivoDebito = CustomerNd.MotivoNotaDebito.ChequeRechazado;
@@ -424,10 +433,12 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     FxDevolucionChequeSinRechazo();
                     break;
                 case CustomerNd.MotivoNotaDebito.DiferenciaPrecio:
+                    FxDiferenciaPrecioItem();
                     break;
                 case CustomerNd.MotivoNotaDebito.DiferenciaCambio:
                     break;
                 case CustomerNd.MotivoNotaDebito.DiferenciaKg:
+                    FxDiferenciaKgFacturados();
                     break;
                 case CustomerNd.MotivoNotaDebito.CargoGralDocumentos:
                     break;
@@ -440,6 +451,88 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                     throw new ArgumentOutOfRangeException();
             }
         }
+
+        private void FxDiferenciaKgFacturados()
+        {
+            if (_lx == Lx.L1)
+            {
+                cmbTipoDocumento.Items.Clear();
+                cmbTipoDocumento.Items.Add("Nota Debito 'A'");
+                cmbTipoDocumento.SelectedItem = "Nota Debito 'A'";
+            }
+            else
+            {
+                cmbTipoDocumento.Items.Clear();
+                cmbTipoDocumento.Items.Add("Nota Debito 'X'");
+                cmbTipoDocumento.SelectedItem = "Nota Debito 'X'";
+            }
+            string autorizado = "NO-Autorizado";
+            if (cmbAutorizadoPor.SelectedItem != null) autorizado = cmbAutorizadoPor.SelectedItem.Text;
+            _nd = new CustomerNd(CustomerNd.MotivoNotaDebito.DiferenciaPrecio);
+            _nd.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", true, autorizado);
+            using (var f0 = new FrmFi57SeleccionDocModificacionPrecio(_nd, _motivoDebito))
+            {
+                DialogResult dr = f0.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+
+                    dgv400.DataSource = _nd.GetItems();
+                    MapTotalesFactura400(_nd.GetTotalesFromHeader());
+                    MapHeaderDocumento1();
+
+                }
+                else
+                {
+                    MessageBox.Show(@"Se Cancelo la seleccion del documento", @"Seleccion Cancelada",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+        }
+
+
+        private void FxDiferenciaPrecioItem()
+        {
+            if (_lx == Lx.L1)
+            {
+                cmbTipoDocumento.Items.Clear();
+                cmbTipoDocumento.Items.Add("Nota Debito 'A'");
+                cmbTipoDocumento.SelectedItem = "Nota Debito 'A'";
+            }
+            else
+            {
+                cmbTipoDocumento.Items.Clear();
+                cmbTipoDocumento.Items.Add("Nota Debito 'X'");
+                cmbTipoDocumento.SelectedItem = "Nota Debito 'X'";
+            }
+            string autorizado = "NO-Autorizado";
+            if (cmbAutorizadoPor.SelectedItem != null) autorizado = cmbAutorizadoPor.SelectedItem.Text;
+            _nd = new CustomerNd(CustomerNd.MotivoNotaDebito.DiferenciaPrecio);
+            _nd.CreaHeader(_tipoDocumento, _idCliente, _lx.ToString(), dtpFechaDocumento.Value, cTc.GetValueDecimal, "0E", "0.0.0.0", true, autorizado);
+            using (var f0 = new FrmFi57SeleccionDocModificacionPrecio(_nd, _motivoDebito))
+            {
+                DialogResult dr = f0.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+
+                    dgv400.DataSource = _nd.GetItems();
+                    MapTotalesFactura400(_nd.GetTotalesFromHeader());
+                    MapHeaderDocumento1();
+
+                }
+                else
+                {
+                    MessageBox.Show(@"Se Cancelo la seleccion del documento", @"Seleccion Cancelada",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+        }
+
         /// <summary>
         /// Si es Anulacion de documento completo con Nota de Debito se Refiere a Anular por Completo una Nota de Credito
         /// Siempre va a ser un solo documento de contrapartida al que se anula.
@@ -893,6 +986,13 @@ namespace MASngFE.Transactional.FI.CustomerNCD
                 MessageBox.Show(@"Ha Ocurrido un error al solicitar el CAE", @"Error en SOLICITUD DE CAE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void rbtnDiferenciaPrecio_Click(object sender, EventArgs e)
+        {
+            _motivoDebito = CustomerNd.MotivoNotaDebito.DiferenciaPrecio;
+            RedirigeAccionDespuesPresionarBoton();
+        }
+
 
     }
 }

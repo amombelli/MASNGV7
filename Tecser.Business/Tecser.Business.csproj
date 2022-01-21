@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataFix\FixAddFacturaT400InT201.cs" />
     <Compile Include="DataFix\FixCompletaIdT400enTablaCheRechazado.cs" />
     <Compile Include="DataFix\FixContabilizacionIssues.cs" />
     <Compile Include="DataFix\FixFacturaL5_MAS.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Transactional\CO\AsientoContable\AsientoGenerico.cs" />
     <Compile Include="Transactional\CO\AsientoContable\Modules\AsientoOrdenPago.cs" />
     <Compile Include="Transactional\CO\AsientoContable\AsientoVendorSpecific.cs" />
+    <Compile Include="Transactional\CO\AsientoContable\Modules\AsientoOrdenPagoNew.cs" />
     <Compile Include="Transactional\CO\AsientoContable\Modules\AsientoSyJ.cs" />
     <Compile Include="Transactional\CO\AsientoDBManager.cs" />
     <Compile Include="Transactional\CO\CancelaOrdenPago.cs" />
@@ -280,6 +282,7 @@
     <Compile Include="Transactional\FI\Cobranza\ImputacionAuxiliarGetData.cs" />
     <Compile Include="Transactional\FI\CodigoBarrasAfip.cs" />
     <Compile Include="Transactional\FI\ComboboxTipoDocumento.cs" />
+    <Compile Include="Transactional\FI\ContabilizacionProveedores\DetalleDocumentosPP.cs" />
     <Compile Include="Transactional\FI\ContabilizacionProveedores\InterfazItemsIngresados.cs" />
     <Compile Include="Transactional\FI\ContabilizacionProveedores\ItemFactura.cs" />
     <Compile Include="Transactional\FI\ContabilizacionProveedores\ManageContaConRemito.cs" />
@@ -326,6 +329,7 @@
     <Compile Include="Transactional\FI\MainDocumentData\XCustomerDocumentBase.cs" />
     <Compile Include="Transactional\FI\MainDocumentData\XCustomerNCD.cs" />
     <Compile Include="Transactional\FI\OrdenPago\EstadisticasPagoOP.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\OPHeaderManager.cs" />
     <Compile Include="Transactional\FI\OrdenPago\OPImportesManagement.cs" />
     <Compile Include="Transactional\FI\OrdenPago\OPCreateAndUpdateData.cs" />
     <Compile Include="Transactional\FI\MainDocumentData\VendorMainDocument.cs" />
@@ -347,6 +351,12 @@
     <Compile Include="Transactional\FI\GestionPercepciones.cs" />
     <Compile Include="Transactional\FI\Imputacion\ManageVendorImputacionDocumentos.cs" />
     <Compile Include="Transactional\FI\OrdenPago\OPImputacionFactura.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\OPNumeroConversion.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\OPReportDataSource.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\OrdenPagoCreateNew.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\OrdenPagoDetalleImputacion.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\OrdenPagoValidaGenerar.cs" />
+    <Compile Include="Transactional\FI\OrdenPago\PopulateOrdenPagoStructures.cs" />
     <Compile Include="Transactional\FI\PeriodoManager.cs" />
     <Compile Include="Transactional\FI\RegisterManager.cs" />
     <Compile Include="Transactional\FI\TaxModule\TaxModuleManager.cs" />

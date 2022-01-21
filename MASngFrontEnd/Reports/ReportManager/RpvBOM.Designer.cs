@@ -31,20 +31,12 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.T0020_FORMULA_HBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.T0021_FORMULA_IBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.T0020_FORMULA_HBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.T0021_FORMULA_IBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // T0020_FORMULA_HBindingSource
-            // 
-            this.T0020_FORMULA_HBindingSource.DataSource = typeof(TecserEF.Entity.T0020_FORMULA_H);
-            // 
-            // T0021_FORMULA_IBindingSource
-            // 
-            this.T0021_FORMULA_IBindingSource.DataSource = typeof(TecserEF.Entity.T0021_FORMULA_I);
             // 
             // reportViewer1
             // 
@@ -59,14 +51,22 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(882, 509);
+            this.reportViewer1.Size = new System.Drawing.Size(849, 509);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // T0020_FORMULA_HBindingSource
+            // 
+            this.T0020_FORMULA_HBindingSource.DataSource = typeof(TecserEF.Entity.T0020_FORMULA_H);
+            // 
+            // T0021_FORMULA_IBindingSource
+            // 
+            this.T0021_FORMULA_IBindingSource.DataSource = typeof(TecserEF.Entity.T0021_FORMULA_I);
             // 
             // RpvBOM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 509);
+            this.ClientSize = new System.Drawing.Size(849, 509);
             this.Controls.Add(this.reportViewer1);
             this.Name = "RpvBOM";
             this.Text = "RpvBOM";

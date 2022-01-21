@@ -138,6 +138,7 @@
             this.txtChar.Location = new System.Drawing.Point(505, 55);
             this.txtChar.Margin = new System.Windows.Forms.Padding(0);
             this.txtChar.Name = "txtChar";
+            this.txtChar.SeparadorDecimal = true;
             this.txtChar.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
             this.txtChar.SetDecimales = 0;
             this.txtChar.SetType = TSControls.CtlTextBox.TextBoxType.Entero;
@@ -184,13 +185,14 @@
             this.txtVendorId.Location = new System.Drawing.Point(429, 7);
             this.txtVendorId.Margin = new System.Windows.Forms.Padding(0);
             this.txtVendorId.Name = "txtVendorId";
+            this.txtVendorId.SeparadorDecimal = false;
             this.txtVendorId.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
             this.txtVendorId.SetDecimales = 0;
             this.txtVendorId.SetType = TSControls.CtlTextBox.TextBoxType.Entero;
             this.txtVendorId.Size = new System.Drawing.Size(59, 23);
             this.txtVendorId.TabIndex = 131;
             this.txtVendorId.ValorMaximo = new decimal(new int[] {
-            9999,
+            999999,
             0,
             0,
             0});

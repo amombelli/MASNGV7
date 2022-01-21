@@ -27,10 +27,10 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
                     decimal valorIIBB = 0;
                     decimal valorGS = 0;
                     if (item.RetencionIIBB != null)
-                        valorIIBB = item.RetencionIIBB.Value;
+                        valorIIBB = item.RetencionIIBB;
 
                     if (item.RetencionGS != null)
-                        valorGS = item.RetencionGS.Value;
+                        valorGS = item.RetencionGS;
 
                     var importeFacturaImputar = item.FACT_SALDO_IMPUTAR - valorIIBB - valorGS;
 

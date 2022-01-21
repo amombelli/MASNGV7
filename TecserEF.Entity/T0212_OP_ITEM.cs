@@ -18,20 +18,23 @@ namespace TecserEF.Entity
         public int IDITEM { get; set; }
         public Nullable<int> PROVEEDOR { get; set; }
         public string MON { get; set; }
-        public Nullable<decimal> IMPORTE { get; set; }
+        public decimal IMPORTE { get; set; }
         public Nullable<decimal> TC { get; set; }
         public string MON_OP { get; set; }
-        public Nullable<decimal> IMPORTE_OP { get; set; }
+        public decimal IMPORTE_OP { get; set; }
         public string CUENTA_O { get; set; }
         public bool CH_CK { get; set; }
         public string CH_NUM { get; set; }
         public string CH_BCO { get; set; }
         public Nullable<int> CH_ID { get; set; }
-        public Nullable<bool> CK_FIN { get; set; }
-        public Nullable<bool> CK_CANCEL { get; set; }
+        public bool CK_FIN { get; set; }
+        public bool CK_CANCEL { get; set; }
         public Nullable<System.DateTime> ChequeFecha { get; set; }
+        public string GL { get; set; }
+        public bool IsEcheque { get; set; }
+        public string TextoAlterno { get; set; }
     
-        public virtual T0210_OP_H T0210_OP_H { get; set; }
         public virtual T0150_CUENTAS T0150_CUENTAS { get; set; }
+        public virtual T0210_OP_H T0210_OP_H { get; set; }
     }
 }

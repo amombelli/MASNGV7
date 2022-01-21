@@ -22,39 +22,53 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
 
         public decimal GetImporteFacturasAPagar()
         {
-            var sum = new TecserData(GlobalApp.CnnApp).T0213_OP_FACT.Where(c => c.IDOP == _idOP).Sum(c => c.FACT_SALDO_IMPUTAR);
-            return sum ?? 0;
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var x = db.T0213_OP_FACT.Where(c => c.IDOP == _idOP).ToList();
+                return x.Any() == false ? 0 : x.Sum(c => c.FACT_SALDO_IMPUTAR);
+            }
         }
 
         public decimal GetImporteCheques()
         {
             //el importe en cheques contempla la emision de cheques propios (-5)
-            var sum =
-                new TecserData(GlobalApp.CnnApp).T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CUENTA_O == "CHE").Sum(c => c.IMPORTE);
-            sum += new TecserData(GlobalApp.CnnApp).T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CH_ID == -5).Sum(c => c.IMPORTE);
-            return sum != null ? Convert.ToDecimal(sum) : 0;
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                decimal impx = 0;
+                var x = db.T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CUENTA_O == "CHE").ToList();
+                if (x.Any()) impx = x.Sum(c => c.IMPORTE);
+                //
+                x = db.T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CH_ID == -5).ToList();
+                if (x.Any()) impx += x.Sum(c => c.IMPORTE);
+                return impx;
+            }
         }
 
         public decimal GetImporteARS()
         {
-            var sum =
-                new TecserData(GlobalApp.CnnApp).T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CUENTA_O == "ARS").Sum(c => c.IMPORTE);
-            return sum != null ? Convert.ToDecimal(sum) : 0;
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var x = db.T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CUENTA_O == "ARS").ToList();
+                return x.Any() == false ? 0 : x.Sum(c => c.IMPORTE);
+            }
         }
 
         public decimal GetImporteUSD()
         {
-            var sum =
-                new TecserData(GlobalApp.CnnApp).T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CUENTA_O == "USD").Sum(c => c.IMPORTE);
-            return sum != null ? Convert.ToDecimal(sum) : 0;
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var x = db.T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CUENTA_O == "USD").ToList();
+                return x.Any() == false ? 0 : x.Sum(c => c.IMPORTE);
+            }
         }
 
         public decimal GetImporteCreditos()
         {
-            var sum =
-                new TecserData(GlobalApp.CnnApp).T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CUENTA_O == "OPCRED")
-                    .Sum(c => c.IMPORTE);
-            return sum != null ? Convert.ToDecimal(sum) : 0;
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var x = db.T0212_OP_ITEM.Where(c => c.IDOP == _idOP && c.CUENTA_O == "OPCRED").ToList();
+                return x.Any() == false ? 0 : x.Sum(c => c.IMPORTE);
+            }
         }
 
         public decimal GetImporteRetencionesIIBB_FromHeaderOP()
@@ -93,8 +107,11 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
 
         public decimal GetImporteTotalItemsPago_ExcluidoRetenciones()
         {
-            var sum = new TecserData(GlobalApp.CnnApp).T0212_OP_ITEM.Where(c => c.IDOP == _idOP).Sum(c => c.IMPORTE);
-            return sum != null ? Convert.ToDecimal(sum) : 0;
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var x = db.T0212_OP_ITEM.Where(c => c.IDOP == _idOP).ToList();
+                return x.Any() == false ? 0 : x.Sum(c => c.IMPORTE);
+            }
         }
 
         public decimal GetImporteTotalRetenciones()

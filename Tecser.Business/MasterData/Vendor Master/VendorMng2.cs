@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using Tecser.Business.MainApp;
@@ -19,7 +20,37 @@ namespace Tecser.Business.MasterData.Vendor_Master
             Id,
             VendorType
         };
-
+        public static StxVendnorSimple GetVendor(int idVendor)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var vendor = db.T0005_MPROVEEDORES.SingleOrDefault(c => c.id_prov == idVendor);
+                if (vendor == null)
+                {
+                    return new StxVendnorSimple()
+                    {
+                        VendorId = -1,
+                        RazonSocial = "No Encontrado",
+                        Fantasia = "No Encontrado",
+                        Cuit = "00000000000",
+                        Activo = false,
+                        VendorType = "NOX"
+                    };
+                }
+                else
+                {
+                    return new StxVendnorSimple()
+                    {
+                        VendorId = vendor.id_prov,
+                        RazonSocial = vendor.prov_rsocial,
+                        Fantasia = vendor.prov_fantasia,
+                        Cuit = vendor.NTAX1,
+                        Activo = vendor.ACTIVO.Value,
+                        VendorType = vendor.TIPO,
+                    };
+                }
+            }
+        }
         public List<StxVendnorSimple> GetVendorList(bool onlyActive, OrderBy1 ordenadoPor)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
