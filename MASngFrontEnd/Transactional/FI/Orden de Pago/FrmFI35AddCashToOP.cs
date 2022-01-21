@@ -4,6 +4,7 @@ using Tecser.Business.MasterData;
 
 namespace MASngFE.Transactional.FI.Orden_de_Pago
 {
+//#prueba x de aero to dell 
     public partial class FrmFI35AddCashToOP : Form
     {
         public FrmFI35AddCashToOP(string razonSocial,string cuentaId, string monedaOP)
