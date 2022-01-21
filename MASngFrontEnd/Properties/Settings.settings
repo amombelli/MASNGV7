@@ -22,7 +22,7 @@
       <Value Profile="(Default)">6.220118a</Value>
     </Setting>
     <Setting Name="AppMode" Type="System.Char" Scope="User">
-      <Value Profile="(Default)">G</Value>
+      <Value Profile="(Default)">D</Value>
     </Setting>
     <Setting Name="MADBConnectionString2" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
