@@ -43,6 +43,7 @@
             this.lineaArriba = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtGl = new System.Windows.Forms.TextBox();
             this.grbTipoCheque = new System.Windows.Forms.GroupBox();
             this.rbEcheque = new System.Windows.Forms.RadioButton();
             this.rbChequeFisico = new System.Windows.Forms.RadioButton();
@@ -54,7 +55,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtGl = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAddItemPago = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -224,6 +224,15 @@
             this.panel3.Size = new System.Drawing.Size(414, 202);
             this.panel3.TabIndex = 210;
             // 
+            // txtGl
+            // 
+            this.txtGl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGl.Location = new System.Drawing.Point(322, 5);
+            this.txtGl.Name = "txtGl";
+            this.txtGl.ReadOnly = true;
+            this.txtGl.Size = new System.Drawing.Size(73, 25);
+            this.txtGl.TabIndex = 206;
+            // 
             // grbTipoCheque
             // 
             this.grbTipoCheque.Controls.Add(this.rbEcheque);
@@ -345,15 +354,6 @@
             this.label11.Size = new System.Drawing.Size(87, 17);
             this.label11.TabIndex = 127;
             this.label11.Text = "Banco Emisor";
-            // 
-            // txtGl
-            // 
-            this.txtGl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGl.Location = new System.Drawing.Point(322, 5);
-            this.txtGl.Name = "txtGl";
-            this.txtGl.ReadOnly = true;
-            this.txtGl.Size = new System.Drawing.Size(73, 25);
-            this.txtGl.TabIndex = 206;
             // 
             // btnCancelar
             // 

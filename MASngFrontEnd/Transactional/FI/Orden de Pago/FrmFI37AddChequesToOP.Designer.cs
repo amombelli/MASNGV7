@@ -1,6 +1,6 @@
 ﻿namespace MASngFE.Transactional.FI.Orden_de_Pago
 {
-    partial class FrmFI37AddChequesToOP
+    partial class FrmFi37AddChequesToOp
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFI37AddChequesToOP));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFi37AddChequesToOp));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -660,7 +660,7 @@
             this.Controls.Add(this.LineaIzq);
             this.Controls.Add(this.lineaArriba);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "FrmFI37AddChequesToOP";
+            this.Name = "FrmFi37AddChequesToOp";
             this.Text = "FI37 - Add Cheques en Cartera  a Orden de Pago";
             this.Load += new System.EventHandler(this.FrmFI37AddChequesToOP_Load);
             this.panel1.ResumeLayout(false);

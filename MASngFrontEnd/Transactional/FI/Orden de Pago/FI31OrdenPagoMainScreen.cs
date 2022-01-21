@@ -32,9 +32,9 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             _creditosCargados = false;
             InitializeComponent();
         }
-        public FI31OrdenPagoMainScreen(int numeroOP, int mode)
+        public FI31OrdenPagoMainScreen(int numeroOp, int mode)
         {
-            _numeroOP = numeroOP;
+            _numeroOP = numeroOp;
             _mode = mode;
             InitializeComponent();
         }
@@ -311,7 +311,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
         }
         private void rbtChequesTerceros_Click(object sender, EventArgs e)
         {
-            var f = new FrmFI37AddChequesToOP(_tipoLx, this, _xop.ListaIdChequesOp);
+            var f = new FrmFi37AddChequesToOp(_tipoLx, this, _xop.ListaIdChequesOp);
             if (f.ShowDialog() == DialogResult.OK)
             {
                 //Los cheques se van agregando desde el FI37 .- 
@@ -320,11 +320,21 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
         }
         private void rbtEmisionChequeFisico_Click(object sender, EventArgs e)
         {
-
+            var f = new FrmFI39AddChequeEmitidoPropioToOp(this,1);
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                //Los cheques se van agregando desde el FI39 .- 
+                //No hacer nada
+            }
         }
         private void rbtEmisionEcheque_Click(object sender, EventArgs e)
         {
-
+            var f = new FrmFI39AddChequeEmitidoPropioToOp(this, 2);
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                //Los cheques se van agregando desde el FI39 .- 
+                //No hacer nada
+            }
         }
         private void rbtCuentaGL_Click(object sender, EventArgs e)
         {
@@ -361,9 +371,16 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             rbtnTipoLx.Enabled = false;
             return true;
         }
-        public void AddChequeOP(int idcheque)
+        public void AddChequeCarteraToOp(int idcheque)
         {
             _xop.AddChequeCarteraToOp(idcheque);
+            OperacionesAddItemsPago();
+            bTotalCheques.DisplayValue = _xop.Header.ImporteCheques;
+        }
+
+        public void AddChequeEmitido(string cuenta, DateTime fechaAcreditacion, string numeroCheque, bool esECheque, decimal importe)
+        {
+            _xop.AddChequeEmitido(cuenta,fechaAcreditacion,numeroCheque,esECheque,importe);
             OperacionesAddItemsPago();
             bTotalCheques.DisplayValue = _xop.Header.ImporteCheques;
         }

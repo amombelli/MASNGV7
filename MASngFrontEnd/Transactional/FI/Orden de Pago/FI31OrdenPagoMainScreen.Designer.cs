@@ -29,80 +29,108 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FI31OrdenPagoMainScreen));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rb = new System.Windows.Forms.Ribbon();
             this.rtData = new System.Windows.Forms.RibbonTab();
             this.rpProveedor = new System.Windows.Forms.RibbonPanel();
+            this.rbtnVendorDetail = new System.Windows.Forms.RibbonButton();
             this.rpStats = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.rtAccion = new System.Windows.Forms.RibbonTab();
             this.rpTipoOP = new System.Windows.Forms.RibbonPanel();
+            this.rbtnTipoLx = new System.Windows.Forms.RibbonButton();
+            this.rbtnSetL1 = new System.Windows.Forms.RibbonButton();
+            this.rbtnSetL2 = new System.Windows.Forms.RibbonButton();
             this.rpAccionPrincipal = new System.Windows.Forms.RibbonPanel();
+            this.rbtnAsignarNumeroOP = new System.Windows.Forms.RibbonButton();
+            this.rbtnGenerar = new System.Windows.Forms.RibbonButton();
+            this.rbtnCancelar = new System.Windows.Forms.RibbonButton();
             this.rpAddFacturas = new System.Windows.Forms.RibbonPanel();
+            this.rbtnDocumentosPendPago = new System.Windows.Forms.RibbonButton();
             this.rpRetenciones = new System.Windows.Forms.RibbonPanel();
+            this.rbtnAddRetencionArba = new System.Windows.Forms.RibbonButton();
+            this.rbtnAddRetencionGanancias = new System.Windows.Forms.RibbonButton();
             this.rpCreditos = new System.Windows.Forms.RibbonPanel();
+            this.rbtnRemoverCreditosAnteriores = new System.Windows.Forms.RibbonButton();
+            this.rbAsignarCreditosAOP = new System.Windows.Forms.RibbonButton();
             this.rpImprimir = new System.Windows.Forms.RibbonPanel();
+            this.rbtnPrintOP = new System.Windows.Forms.RibbonButton();
             this.rpanSalir = new System.Windows.Forms.RibbonPanel();
+            this.rbtnExit = new System.Windows.Forms.RibbonButton();
+            this.rbtnSaveAndExit = new System.Windows.Forms.RibbonButton();
             this.rtabItemsPago = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.rbtnAddPesos = new System.Windows.Forms.RibbonButton();
+            this.rbtAddUsd = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
+            this.rbtTransfGalicia = new System.Windows.Forms.RibbonButton();
+            this.rbtTransfSantander = new System.Windows.Forms.RibbonButton();
+            this.rbtTransfOtrosBancos = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
+            this.rbtChequesTerceros = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
+            this.rbtEmisionChequeFisico = new System.Windows.Forms.RibbonButton();
+            this.rbtEmisionEcheque = new System.Windows.Forms.RibbonButton();
             this.rpCuentaGL = new System.Windows.Forms.RibbonPanel();
+            this.rbtCuentaGL = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
+            this.rbtCompensacionCliente = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ckAutoGetAlicuotaIIBB = new System.Windows.Forms.CheckBox();
             this.txtNumeroCUIT = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.cAlicuotaIIBB = new TSControls.CtlTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
+            this.txtTipodeCambio = new TSControls.CtlTextBox();
             this.txtComentariosOP = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txtTipoOp = new System.Windows.Forms.TextBox();
@@ -120,71 +148,108 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv1Documentos = new System.Windows.Forms.DataGridView();
+            this._idCtaCte1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._idFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeOriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeArsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saldoPendienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imputadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tCDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._1Del = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._1Imputa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dsFacturasOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bTotalDocumentos = new TSControls.CtlDisplayNumbers2();
+            this.bPendienteImputacionADocumentos = new TSControls.CtlDisplayNumbers2();
             this.label7 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.bTotalImputadoADocumentos = new TSControls.CtlDisplayNumbers2();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bTotalOtros = new TSControls.CtlDisplayNumbers2();
+            this.bTotalCheques = new TSControls.CtlDisplayNumbers2();
+            this.bTotalEfectivo = new TSControls.CtlDisplayNumbers2();
             this.label8 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.dgv2ItemsPago = new System.Windows.Forms.DataGridView();
+            this._2EsCheque = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.eChequeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this._2Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._2cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monedaItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._2ImporteOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gLCuentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chNumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chFechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chBancoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chIdCarteraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textoAlternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._2Del = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.t0212OPITEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.aDisponibleImputar = new TSControls.CtlDisplayNumbers2();
             this.label31 = new System.Windows.Forms.Label();
+            this.aFacturasOP = new TSControls.CtlDisplayNumbers2();
             this.label18 = new System.Windows.Forms.Label();
+            this.aCreditosIncluidos = new TSControls.CtlDisplayNumbers2();
+            this.aSaldoImpago = new TSControls.CtlDisplayNumbers2();
             this.lSaldoTexto = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.aTotalImputado = new TSControls.CtlDisplayNumbers2();
+            this.aPendienteImputacion = new TSControls.CtlDisplayNumbers2();
             this.label24 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.aOtrosValoresOP = new TSControls.CtlDisplayNumbers2();
             this.label15 = new System.Windows.Forms.Label();
+            this.aEfectivoCheques = new TSControls.CtlDisplayNumbers2();
             this.label22 = new System.Windows.Forms.Label();
+            this.aRetenciones = new TSControls.CtlDisplayNumbers2();
             this.label20 = new System.Windows.Forms.Label();
+            this.aImporteTotalOP = new TSControls.CtlDisplayNumbers2();
             this.label23 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.bTotalRetenciones = new TSControls.CtlDisplayNumbers2();
             this.label11 = new System.Windows.Forms.Label();
             this.dgv4Retenciones = new System.Windows.Forms.DataGridView();
+            this.idOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._3IdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._3TipoRetencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._3BaseImponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._3Alicuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._3ImporteRetencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._3Gl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._3Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._3Del = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.t0213OrdenPagoRetencionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.bCreditoPendienteImputar = new TSControls.CtlDisplayNumbers2();
             this.label32 = new System.Windows.Forms.Label();
+            this.bTotalCreditos = new TSControls.CtlDisplayNumbers2();
             this.label17 = new System.Windows.Forms.Label();
             this.dgv3Creditos = new System.Windows.Forms.DataGridView();
+            this._3id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._4TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._4documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._4Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pendiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._4Del = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dsCreditosOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.bCreditoPendienteImputar = new TSControls.CtlDisplayNumbers2();
-            this.bTotalCreditos = new TSControls.CtlDisplayNumbers2();
-            this._3id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pendiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._4Del = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.bTotalRetenciones = new TSControls.CtlDisplayNumbers2();
-            this._3Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._3Del = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.aDisponibleImputar = new TSControls.CtlDisplayNumbers2();
-            this.aFacturasOP = new TSControls.CtlDisplayNumbers2();
-            this.aCreditosIncluidos = new TSControls.CtlDisplayNumbers2();
-            this.aSaldoImpago = new TSControls.CtlDisplayNumbers2();
-            this.aTotalImputado = new TSControls.CtlDisplayNumbers2();
-            this.aPendienteImputacion = new TSControls.CtlDisplayNumbers2();
-            this.aOtrosValoresOP = new TSControls.CtlDisplayNumbers2();
-            this.aEfectivoCheques = new TSControls.CtlDisplayNumbers2();
-            this.aRetenciones = new TSControls.CtlDisplayNumbers2();
-            this.aImporteTotalOP = new TSControls.CtlDisplayNumbers2();
-            this.bTotalOtros = new TSControls.CtlDisplayNumbers2();
-            this.bTotalCheques = new TSControls.CtlDisplayNumbers2();
-            this.bTotalEfectivo = new TSControls.CtlDisplayNumbers2();
-            this._2Del = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.bTotalDocumentos = new TSControls.CtlDisplayNumbers2();
-            this.bPendienteImputacionADocumentos = new TSControls.CtlDisplayNumbers2();
-            this.bTotalImputadoADocumentos = new TSControls.CtlDisplayNumbers2();
-            this._1Del = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._1Imputa = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cAlicuotaIIBB = new TSControls.CtlTextBox();
-            this.txtTipodeCambio = new TSControls.CtlTextBox();
             this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -245,88 +310,23 @@
             this._1RetGs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DETALLE = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DEL = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._4TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._4documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._4Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsCreditosOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._3IdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._3TipoRetencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._3BaseImponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._3Alicuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._3ImporteRetencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._3Gl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.t0213OrdenPagoRetencionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._2EsCheque = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.eChequeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this._2Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._2cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monedaItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._2ImporteOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gLCuentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chNumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chFechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chBancoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chIdCarteraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textoAlternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.t0212OPITEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._idCtaCte1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._idFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeOriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeArsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saldoPendienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imputadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tCDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsFacturasOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rbtnVendorDetail = new System.Windows.Forms.RibbonButton();
-            this.rbtnTipoLx = new System.Windows.Forms.RibbonButton();
-            this.rbtnSetL1 = new System.Windows.Forms.RibbonButton();
-            this.rbtnSetL2 = new System.Windows.Forms.RibbonButton();
-            this.rbtnAsignarNumeroOP = new System.Windows.Forms.RibbonButton();
-            this.rbtnGenerar = new System.Windows.Forms.RibbonButton();
-            this.rbtnCancelar = new System.Windows.Forms.RibbonButton();
-            this.rbtnDocumentosPendPago = new System.Windows.Forms.RibbonButton();
-            this.rbtnAddRetencionArba = new System.Windows.Forms.RibbonButton();
-            this.rbtnAddRetencionGanancias = new System.Windows.Forms.RibbonButton();
-            this.rbtnRemoverCreditosAnteriores = new System.Windows.Forms.RibbonButton();
-            this.rbAsignarCreditosAOP = new System.Windows.Forms.RibbonButton();
-            this.rbtnPrintOP = new System.Windows.Forms.RibbonButton();
-            this.rbtnExit = new System.Windows.Forms.RibbonButton();
-            this.rbtnSaveAndExit = new System.Windows.Forms.RibbonButton();
-            this.rbtnAddPesos = new System.Windows.Forms.RibbonButton();
-            this.rbtAddUsd = new System.Windows.Forms.RibbonButton();
-            this.rbtTransfGalicia = new System.Windows.Forms.RibbonButton();
-            this.rbtTransfSantander = new System.Windows.Forms.RibbonButton();
-            this.rbtTransfOtrosBancos = new System.Windows.Forms.RibbonButton();
-            this.rbtChequesTerceros = new System.Windows.Forms.RibbonButton();
-            this.rbtEmisionChequeFisico = new System.Windows.Forms.RibbonButton();
-            this.rbtEmisionEcheque = new System.Windows.Forms.RibbonButton();
-            this.rbtCuentaGL = new System.Windows.Forms.RibbonButton();
-            this.rbtCompensacionCliente = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1Documentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFacturasOPBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2ItemsPago)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t0212OPITEMBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv4Retenciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t0213OrdenPagoRetencionesBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv3Creditos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCreditosOPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t0213OrdenPagoRetencionesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t0212OPITEMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFacturasOPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rb
@@ -371,6 +371,14 @@
             this.rpProveedor.Name = "rpProveedor";
             this.rpProveedor.Text = "Proveedor";
             // 
+            // rbtnVendorDetail
+            // 
+            this.rbtnVendorDetail.Image = ((System.Drawing.Image)(resources.GetObject("rbtnVendorDetail.Image")));
+            this.rbtnVendorDetail.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnVendorDetail.LargeImage")));
+            this.rbtnVendorDetail.Name = "rbtnVendorDetail";
+            this.rbtnVendorDetail.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnVendorDetail.SmallImage")));
+            this.rbtnVendorDetail.Text = "Detalle Proveedor";
+            // 
             // rpStats
             // 
             this.rpStats.Name = "rpStats";
@@ -399,6 +407,40 @@
             this.rpTipoOP.Name = "rpTipoOP";
             this.rpTipoOP.Text = "Tipo OP";
             // 
+            // rbtnTipoLx
+            // 
+            this.rbtnTipoLx.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.rbtnTipoLx.DropDownItems.Add(this.rbtnSetL1);
+            this.rbtnTipoLx.DropDownItems.Add(this.rbtnSetL2);
+            this.rbtnTipoLx.Image = ((System.Drawing.Image)(resources.GetObject("rbtnTipoLx.Image")));
+            this.rbtnTipoLx.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnTipoLx.LargeImage")));
+            this.rbtnTipoLx.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.DropDown;
+            this.rbtnTipoLx.Name = "rbtnTipoLx";
+            this.rbtnTipoLx.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnTipoLx.SmallImage")));
+            this.rbtnTipoLx.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
+            this.rbtnTipoLx.Text = "SET TIPO";
+            // 
+            // rbtnSetL1
+            // 
+            this.rbtnSetL1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.rbtnSetL1.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSetL1.Image")));
+            this.rbtnSetL1.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnSetL1.LargeImage")));
+            this.rbtnSetL1.Name = "rbtnSetL1";
+            this.rbtnSetL1.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSetL1.SmallImage")));
+            this.rbtnSetL1.Text = "Tipo L1";
+            this.rbtnSetL1.ToolTip = "Define Orden de pago tipo L1";
+            this.rbtnSetL1.Click += new System.EventHandler(this.rbtnSetL1_Click);
+            // 
+            // rbtnSetL2
+            // 
+            this.rbtnSetL2.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.rbtnSetL2.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSetL2.Image")));
+            this.rbtnSetL2.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnSetL2.LargeImage")));
+            this.rbtnSetL2.Name = "rbtnSetL2";
+            this.rbtnSetL2.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSetL2.SmallImage")));
+            this.rbtnSetL2.Text = "Tipo L2";
+            this.rbtnSetL2.Click += new System.EventHandler(this.rbtnSetL2_Click);
+            // 
             // rpAccionPrincipal
             // 
             this.rpAccionPrincipal.Items.Add(this.rbtnAsignarNumeroOP);
@@ -407,11 +449,48 @@
             this.rpAccionPrincipal.Name = "rpAccionPrincipal";
             this.rpAccionPrincipal.Text = "Acciones Primarias";
             // 
+            // rbtnAsignarNumeroOP
+            // 
+            this.rbtnAsignarNumeroOP.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAsignarNumeroOP.Image")));
+            this.rbtnAsignarNumeroOP.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAsignarNumeroOP.LargeImage")));
+            this.rbtnAsignarNumeroOP.Name = "rbtnAsignarNumeroOP";
+            this.rbtnAsignarNumeroOP.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAsignarNumeroOP.SmallImage")));
+            this.rbtnAsignarNumeroOP.Text = "Asignar #";
+            this.rbtnAsignarNumeroOP.Click += new System.EventHandler(this.rbtnAsignarNumeroOP_Click);
+            // 
+            // rbtnGenerar
+            // 
+            this.rbtnGenerar.Image = ((System.Drawing.Image)(resources.GetObject("rbtnGenerar.Image")));
+            this.rbtnGenerar.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnGenerar.LargeImage")));
+            this.rbtnGenerar.Name = "rbtnGenerar";
+            this.rbtnGenerar.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnGenerar.SmallImage")));
+            this.rbtnGenerar.Text = "Generar";
+            this.rbtnGenerar.Click += new System.EventHandler(this.rbtnGenerar_Click);
+            // 
+            // rbtnCancelar
+            // 
+            this.rbtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCancelar.Image")));
+            this.rbtnCancelar.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnCancelar.LargeImage")));
+            this.rbtnCancelar.Name = "rbtnCancelar";
+            this.rbtnCancelar.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCancelar.SmallImage")));
+            this.rbtnCancelar.Text = "Cancelar";
+            // 
             // rpAddFacturas
             // 
             this.rpAddFacturas.Items.Add(this.rbtnDocumentosPendPago);
             this.rpAddFacturas.Name = "rpAddFacturas";
             this.rpAddFacturas.Text = "Agregar Facturas";
+            // 
+            // rbtnDocumentosPendPago
+            // 
+            this.rbtnDocumentosPendPago.Image = ((System.Drawing.Image)(resources.GetObject("rbtnDocumentosPendPago.Image")));
+            this.rbtnDocumentosPendPago.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnDocumentosPendPago.LargeImage")));
+            this.rbtnDocumentosPendPago.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
+            this.rbtnDocumentosPendPago.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
+            this.rbtnDocumentosPendPago.Name = "rbtnDocumentosPendPago";
+            this.rbtnDocumentosPendPago.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDocumentosPendPago.SmallImage")));
+            this.rbtnDocumentosPendPago.Text = "Facturars Pendientes";
+            this.rbtnDocumentosPendPago.Click += new System.EventHandler(this.rbtnDocumentosPendPago_Click);
             // 
             // rpRetenciones
             // 
@@ -420,6 +499,24 @@
             this.rpRetenciones.Name = "rpRetenciones";
             this.rpRetenciones.Text = "Retenciones";
             // 
+            // rbtnAddRetencionArba
+            // 
+            this.rbtnAddRetencionArba.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionArba.Image")));
+            this.rbtnAddRetencionArba.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionArba.LargeImage")));
+            this.rbtnAddRetencionArba.Name = "rbtnAddRetencionArba";
+            this.rbtnAddRetencionArba.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionArba.SmallImage")));
+            this.rbtnAddRetencionArba.Text = "Retenciones  ARBA";
+            this.rbtnAddRetencionArba.Click += new System.EventHandler(this.rbtnAddRetencionArba_Click);
+            // 
+            // rbtnAddRetencionGanancias
+            // 
+            this.rbtnAddRetencionGanancias.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionGanancias.Image")));
+            this.rbtnAddRetencionGanancias.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionGanancias.LargeImage")));
+            this.rbtnAddRetencionGanancias.Name = "rbtnAddRetencionGanancias";
+            this.rbtnAddRetencionGanancias.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionGanancias.SmallImage")));
+            this.rbtnAddRetencionGanancias.Text = "Retenciones Ganancias";
+            this.rbtnAddRetencionGanancias.Click += new System.EventHandler(this.rbtnAddRetencionGanancias_Click);
+            // 
             // rpCreditos
             // 
             this.rpCreditos.Items.Add(this.rbtnRemoverCreditosAnteriores);
@@ -427,11 +524,38 @@
             this.rpCreditos.Name = "rpCreditos";
             this.rpCreditos.Text = "Creditos";
             // 
+            // rbtnRemoverCreditosAnteriores
+            // 
+            this.rbtnRemoverCreditosAnteriores.Image = ((System.Drawing.Image)(resources.GetObject("rbtnRemoverCreditosAnteriores.Image")));
+            this.rbtnRemoverCreditosAnteriores.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnRemoverCreditosAnteriores.LargeImage")));
+            this.rbtnRemoverCreditosAnteriores.Name = "rbtnRemoverCreditosAnteriores";
+            this.rbtnRemoverCreditosAnteriores.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRemoverCreditosAnteriores.SmallImage")));
+            this.rbtnRemoverCreditosAnteriores.Text = "Remove Creditos";
+            this.rbtnRemoverCreditosAnteriores.Click += new System.EventHandler(this.rbtnRemoverCreditosAnteriores_Click);
+            // 
+            // rbAsignarCreditosAOP
+            // 
+            this.rbAsignarCreditosAOP.Image = ((System.Drawing.Image)(resources.GetObject("rbAsignarCreditosAOP.Image")));
+            this.rbAsignarCreditosAOP.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbAsignarCreditosAOP.LargeImage")));
+            this.rbAsignarCreditosAOP.Name = "rbAsignarCreditosAOP";
+            this.rbAsignarCreditosAOP.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbAsignarCreditosAOP.SmallImage")));
+            this.rbAsignarCreditosAOP.Text = "Asignar Creditos";
+            this.rbAsignarCreditosAOP.Click += new System.EventHandler(this.rbAsignarCreditosAOP_Click);
+            // 
             // rpImprimir
             // 
             this.rpImprimir.Items.Add(this.rbtnPrintOP);
             this.rpImprimir.Name = "rpImprimir";
             this.rpImprimir.Text = "Impresion";
+            // 
+            // rbtnPrintOP
+            // 
+            this.rbtnPrintOP.Image = ((System.Drawing.Image)(resources.GetObject("rbtnPrintOP.Image")));
+            this.rbtnPrintOP.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnPrintOP.LargeImage")));
+            this.rbtnPrintOP.Name = "rbtnPrintOP";
+            this.rbtnPrintOP.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnPrintOP.SmallImage")));
+            this.rbtnPrintOP.Text = "Imprimir OP";
+            this.rbtnPrintOP.Click += new System.EventHandler(this.rbtnPrintOP_Click);
             // 
             // rpanSalir
             // 
@@ -439,6 +563,24 @@
             this.rpanSalir.Items.Add(this.rbtnSaveAndExit);
             this.rpanSalir.Name = "rpanSalir";
             this.rpanSalir.Text = "Salir de OP";
+            // 
+            // rbtnExit
+            // 
+            this.rbtnExit.Image = ((System.Drawing.Image)(resources.GetObject("rbtnExit.Image")));
+            this.rbtnExit.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnExit.LargeImage")));
+            this.rbtnExit.Name = "rbtnExit";
+            this.rbtnExit.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnExit.SmallImage")));
+            this.rbtnExit.Text = "SALIR";
+            this.rbtnExit.Click += new System.EventHandler(this.rbtnExit_Click);
+            // 
+            // rbtnSaveAndExit
+            // 
+            this.rbtnSaveAndExit.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSaveAndExit.Image")));
+            this.rbtnSaveAndExit.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnSaveAndExit.LargeImage")));
+            this.rbtnSaveAndExit.Name = "rbtnSaveAndExit";
+            this.rbtnSaveAndExit.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSaveAndExit.SmallImage")));
+            this.rbtnSaveAndExit.Text = "Guardar y SALIR";
+            this.rbtnSaveAndExit.Click += new System.EventHandler(this.rbtnSaveAndExit_Click);
             // 
             // rtabItemsPago
             // 
@@ -458,6 +600,24 @@
             this.ribbonPanel3.Name = "ribbonPanel3";
             this.ribbonPanel3.Text = "Efectivo";
             // 
+            // rbtnAddPesos
+            // 
+            this.rbtnAddPesos.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAddPesos.Image")));
+            this.rbtnAddPesos.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddPesos.LargeImage")));
+            this.rbtnAddPesos.Name = "rbtnAddPesos";
+            this.rbtnAddPesos.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddPesos.SmallImage")));
+            this.rbtnAddPesos.Text = "Efectivo $";
+            this.rbtnAddPesos.Click += new System.EventHandler(this.rbtnAddPesos_Click);
+            // 
+            // rbtAddUsd
+            // 
+            this.rbtAddUsd.Image = ((System.Drawing.Image)(resources.GetObject("rbtAddUsd.Image")));
+            this.rbtAddUsd.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtAddUsd.LargeImage")));
+            this.rbtAddUsd.Name = "rbtAddUsd";
+            this.rbtAddUsd.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtAddUsd.SmallImage")));
+            this.rbtAddUsd.Text = "Efectivo USD";
+            this.rbtAddUsd.Click += new System.EventHandler(this.rbtAddUsd_Click);
+            // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.Items.Add(this.rbtTransfGalicia);
@@ -466,11 +626,49 @@
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Text = "Transferencia";
             // 
+            // rbtTransfGalicia
+            // 
+            this.rbtTransfGalicia.Image = ((System.Drawing.Image)(resources.GetObject("rbtTransfGalicia.Image")));
+            this.rbtTransfGalicia.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfGalicia.LargeImage")));
+            this.rbtTransfGalicia.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
+            this.rbtTransfGalicia.Name = "rbtTransfGalicia";
+            this.rbtTransfGalicia.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfGalicia.SmallImage")));
+            this.rbtTransfGalicia.Text = "Galicia";
+            this.rbtTransfGalicia.Click += new System.EventHandler(this.rbtTransfGalicia_Click);
+            // 
+            // rbtTransfSantander
+            // 
+            this.rbtTransfSantander.Image = ((System.Drawing.Image)(resources.GetObject("rbtTransfSantander.Image")));
+            this.rbtTransfSantander.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfSantander.LargeImage")));
+            this.rbtTransfSantander.Name = "rbtTransfSantander";
+            this.rbtTransfSantander.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfSantander.SmallImage")));
+            this.rbtTransfSantander.Text = "Santander";
+            this.rbtTransfSantander.Click += new System.EventHandler(this.rbtTransfSantander_Click);
+            // 
+            // rbtTransfOtrosBancos
+            // 
+            this.rbtTransfOtrosBancos.Image = ((System.Drawing.Image)(resources.GetObject("rbtTransfOtrosBancos.Image")));
+            this.rbtTransfOtrosBancos.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfOtrosBancos.LargeImage")));
+            this.rbtTransfOtrosBancos.Name = "rbtTransfOtrosBancos";
+            this.rbtTransfOtrosBancos.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfOtrosBancos.SmallImage")));
+            this.rbtTransfOtrosBancos.Text = "Otros Bancos";
+            this.rbtTransfOtrosBancos.Click += new System.EventHandler(this.rbtTransfOtrosBancos_Click);
+            // 
             // ribbonPanel5
             // 
             this.ribbonPanel5.Items.Add(this.rbtChequesTerceros);
             this.ribbonPanel5.Name = "ribbonPanel5";
             this.ribbonPanel5.Text = "Cheques Cartera";
+            // 
+            // rbtChequesTerceros
+            // 
+            this.rbtChequesTerceros.Image = ((System.Drawing.Image)(resources.GetObject("rbtChequesTerceros.Image")));
+            this.rbtChequesTerceros.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtChequesTerceros.LargeImage")));
+            this.rbtChequesTerceros.Name = "rbtChequesTerceros";
+            this.rbtChequesTerceros.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtChequesTerceros.SmallImage")));
+            this.rbtChequesTerceros.Text = "Cheques  Terceros";
+            this.rbtChequesTerceros.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.rbtChequesTerceros.Click += new System.EventHandler(this.rbtChequesTerceros_Click);
             // 
             // ribbonPanel6
             // 
@@ -479,17 +677,58 @@
             this.ribbonPanel6.Name = "ribbonPanel6";
             this.ribbonPanel6.Text = "Emision de Cheques";
             // 
+            // rbtEmisionChequeFisico
+            // 
+            this.rbtEmisionChequeFisico.Image = ((System.Drawing.Image)(resources.GetObject("rbtEmisionChequeFisico.Image")));
+            this.rbtEmisionChequeFisico.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtEmisionChequeFisico.LargeImage")));
+            this.rbtEmisionChequeFisico.Name = "rbtEmisionChequeFisico";
+            this.rbtEmisionChequeFisico.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtEmisionChequeFisico.SmallImage")));
+            this.rbtEmisionChequeFisico.Text = "Cheque Fisico";
+            this.rbtEmisionChequeFisico.Click += new System.EventHandler(this.rbtEmisionChequeFisico_Click);
+            // 
+            // rbtEmisionEcheque
+            // 
+            this.rbtEmisionEcheque.Image = ((System.Drawing.Image)(resources.GetObject("rbtEmisionEcheque.Image")));
+            this.rbtEmisionEcheque.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtEmisionEcheque.LargeImage")));
+            this.rbtEmisionEcheque.Name = "rbtEmisionEcheque";
+            this.rbtEmisionEcheque.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtEmisionEcheque.SmallImage")));
+            this.rbtEmisionEcheque.Text = "E-Cheque";
+            this.rbtEmisionEcheque.Click += new System.EventHandler(this.rbtEmisionEcheque_Click);
+            // 
             // rpCuentaGL
             // 
             this.rpCuentaGL.Items.Add(this.rbtCuentaGL);
             this.rpCuentaGL.Name = "rpCuentaGL";
             this.rpCuentaGL.Text = "Cuenta GL ALL";
             // 
+            // rbtCuentaGL
+            // 
+            this.rbtCuentaGL.Image = ((System.Drawing.Image)(resources.GetObject("rbtCuentaGL.Image")));
+            this.rbtCuentaGL.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtCuentaGL.LargeImage")));
+            this.rbtCuentaGL.Name = "rbtCuentaGL";
+            this.rbtCuentaGL.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtCuentaGL.SmallImage")));
+            this.rbtCuentaGL.Text = "Cuenta GL";
+            this.rbtCuentaGL.Click += new System.EventHandler(this.rbtCuentaGL_Click);
+            // 
             // ribbonPanel7
             // 
             this.ribbonPanel7.Items.Add(this.rbtCompensacionCliente);
             this.ribbonPanel7.Name = "ribbonPanel7";
             this.ribbonPanel7.Text = "Compensacion Facturas";
+            // 
+            // rbtCompensacionCliente
+            // 
+            this.rbtCompensacionCliente.Image = ((System.Drawing.Image)(resources.GetObject("rbtCompensacionCliente.Image")));
+            this.rbtCompensacionCliente.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtCompensacionCliente.LargeImage")));
+            this.rbtCompensacionCliente.Name = "rbtCompensacionCliente";
+            this.rbtCompensacionCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtCompensacionCliente.SmallImage")));
+            this.rbtCompensacionCliente.Text = "Compensacion Cliente";
+            this.rbtCompensacionCliente.Click += new System.EventHandler(this.rbtCompensacionCliente_Click);
+            // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Name = "ribbonTab1";
+            this.ribbonTab1.Text = "ribbonTab1";
             // 
             // groupBox1
             // 
@@ -553,6 +792,32 @@
             this.label10.TabIndex = 200;
             this.label10.Text = "CUIT";
             // 
+            // cAlicuotaIIBB
+            // 
+            this.cAlicuotaIIBB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cAlicuotaIIBB.BackColor = System.Drawing.SystemColors.Control;
+            this.cAlicuotaIIBB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cAlicuotaIIBB.Location = new System.Drawing.Point(441, 72);
+            this.cAlicuotaIIBB.Margin = new System.Windows.Forms.Padding(0);
+            this.cAlicuotaIIBB.Name = "cAlicuotaIIBB";
+            this.cAlicuotaIIBB.SeparadorDecimal = true;
+            this.cAlicuotaIIBB.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cAlicuotaIIBB.SetDecimales = 4;
+            this.cAlicuotaIIBB.SetType = TSControls.CtlTextBox.TextBoxType.Porcentaje;
+            this.cAlicuotaIIBB.Size = new System.Drawing.Size(61, 21);
+            this.cAlicuotaIIBB.TabIndex = 198;
+            this.cAlicuotaIIBB.ValorMaximo = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.cAlicuotaIIBB.ValorMinimo = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.cAlicuotaIIBB.XReadOnly = false;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -573,6 +838,32 @@
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(1, 76);
             this.label53.TabIndex = 190;
+            // 
+            // txtTipodeCambio
+            // 
+            this.txtTipodeCambio.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtTipodeCambio.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTipodeCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipodeCambio.Location = new System.Drawing.Point(280, 72);
+            this.txtTipodeCambio.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTipodeCambio.Name = "txtTipodeCambio";
+            this.txtTipodeCambio.SeparadorDecimal = true;
+            this.txtTipodeCambio.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.txtTipodeCambio.SetDecimales = 2;
+            this.txtTipodeCambio.SetType = TSControls.CtlTextBox.TextBoxType.Decimal;
+            this.txtTipodeCambio.Size = new System.Drawing.Size(66, 21);
+            this.txtTipodeCambio.TabIndex = 196;
+            this.txtTipodeCambio.ValorMaximo = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.txtTipodeCambio.ValorMinimo = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.txtTipodeCambio.XReadOnly = false;
             // 
             // txtComentariosOP
             // 
@@ -778,6 +1069,137 @@
             this.dgv1Documentos.TabIndex = 0;
             this.dgv1Documentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocOp_CellContentClick);
             // 
+            // _idCtaCte1
+            // 
+            this._idCtaCte1.DataPropertyName = "IdCtaCte";
+            this._idCtaCte1.HeaderText = "IdCtaCte";
+            this._idCtaCte1.Name = "_idCtaCte1";
+            this._idCtaCte1.ReadOnly = true;
+            this._idCtaCte1.Visible = false;
+            // 
+            // _idFactura
+            // 
+            this._idFactura.DataPropertyName = "IdFactura";
+            this._idFactura.HeaderText = "IdFactura";
+            this._idFactura.Name = "_idFactura";
+            this._idFactura.ReadOnly = true;
+            this._idFactura.Visible = false;
+            // 
+            // tDocDataGridViewTextBoxColumn
+            // 
+            this.tDocDataGridViewTextBoxColumn.DataPropertyName = "TDoc";
+            this.tDocDataGridViewTextBoxColumn.HeaderText = "TD";
+            this.tDocDataGridViewTextBoxColumn.Name = "tDocDataGridViewTextBoxColumn";
+            this.tDocDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tDocDataGridViewTextBoxColumn.ToolTipText = "Tipo Documento";
+            this.tDocDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // numDocDataGridViewTextBoxColumn
+            // 
+            this.numDocDataGridViewTextBoxColumn.DataPropertyName = "NumDoc";
+            this.numDocDataGridViewTextBoxColumn.HeaderText = "Documento#";
+            this.numDocDataGridViewTextBoxColumn.Name = "numDocDataGridViewTextBoxColumn";
+            this.numDocDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDocDataGridViewTextBoxColumn
+            // 
+            this.fechaDocDataGridViewTextBoxColumn.DataPropertyName = "FechaDoc";
+            dataGridViewCellStyle48.Format = "d";
+            dataGridViewCellStyle48.NullValue = null;
+            this.fechaDocDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle48;
+            this.fechaDocDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDocDataGridViewTextBoxColumn.Name = "fechaDocDataGridViewTextBoxColumn";
+            this.fechaDocDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDocDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // monedaDataGridViewTextBoxColumn
+            // 
+            this.monedaDataGridViewTextBoxColumn.DataPropertyName = "Moneda";
+            this.monedaDataGridViewTextBoxColumn.HeaderText = "Mon";
+            this.monedaDataGridViewTextBoxColumn.Name = "monedaDataGridViewTextBoxColumn";
+            this.monedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.monedaDataGridViewTextBoxColumn.ToolTipText = "Moneda Documento";
+            this.monedaDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // importeOriDataGridViewTextBoxColumn
+            // 
+            this.importeOriDataGridViewTextBoxColumn.DataPropertyName = "ImporteOri";
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle49.Format = "C2";
+            this.importeOriDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle49;
+            this.importeOriDataGridViewTextBoxColumn.HeaderText = "Importe";
+            this.importeOriDataGridViewTextBoxColumn.Name = "importeOriDataGridViewTextBoxColumn";
+            this.importeOriDataGridViewTextBoxColumn.ReadOnly = true;
+            this.importeOriDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // importeArsDataGridViewTextBoxColumn
+            // 
+            this.importeArsDataGridViewTextBoxColumn.DataPropertyName = "ImporteArs";
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle50.Format = "C2";
+            this.importeArsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle50;
+            this.importeArsDataGridViewTextBoxColumn.HeaderText = "ImporteArs";
+            this.importeArsDataGridViewTextBoxColumn.Name = "importeArsDataGridViewTextBoxColumn";
+            this.importeArsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.importeArsDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // saldoPendienteDataGridViewTextBoxColumn
+            // 
+            this.saldoPendienteDataGridViewTextBoxColumn.DataPropertyName = "SaldoPendiente";
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle51.Format = "C2";
+            this.saldoPendienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle51;
+            this.saldoPendienteDataGridViewTextBoxColumn.HeaderText = "Saldo";
+            this.saldoPendienteDataGridViewTextBoxColumn.Name = "saldoPendienteDataGridViewTextBoxColumn";
+            this.saldoPendienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.saldoPendienteDataGridViewTextBoxColumn.ToolTipText = "Saldo Impago";
+            this.saldoPendienteDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // imputadoDataGridViewTextBoxColumn
+            // 
+            this.imputadoDataGridViewTextBoxColumn.DataPropertyName = "Imputado";
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle52.Format = "C2";
+            this.imputadoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle52;
+            this.imputadoDataGridViewTextBoxColumn.HeaderText = "Imputado";
+            this.imputadoDataGridViewTextBoxColumn.Name = "imputadoDataGridViewTextBoxColumn";
+            this.imputadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imputadoDataGridViewTextBoxColumn.ToolTipText = "Imputado OP";
+            // 
+            // tCDataGridViewTextBoxColumn1
+            // 
+            this.tCDataGridViewTextBoxColumn1.DataPropertyName = "TC";
+            this.tCDataGridViewTextBoxColumn1.HeaderText = "TC";
+            this.tCDataGridViewTextBoxColumn1.Name = "tCDataGridViewTextBoxColumn1";
+            this.tCDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tCDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // _1Del
+            // 
+            this._1Del.HeaderText = "DEL";
+            this._1Del.Name = "_1Del";
+            this._1Del.ReadOnly = true;
+            this._1Del.Text = "DEL";
+            this._1Del.ToolTipText = "Eliminar Factura";
+            this._1Del.UseColumnTextForButtonValue = true;
+            this._1Del.Width = 40;
+            // 
+            // _1Imputa
+            // 
+            this._1Imputa.HeaderText = "IMPUTA";
+            this._1Imputa.Name = "_1Imputa";
+            this._1Imputa.ReadOnly = true;
+            this._1Imputa.Text = "IMPUTA";
+            this._1Imputa.ToolTipText = "Modificar Imputacion Documento";
+            this._1Imputa.UseColumnTextForButtonValue = true;
+            this._1Imputa.Width = 60;
+            // 
+            // dsFacturasOPBindingSource
+            // 
+            this.dsFacturasOPBindingSource.DataSource = typeof(TecserEF.Entity.DataStructure.DsFacturasOP);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -804,6 +1226,44 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(723, 81);
             this.panel3.TabIndex = 202;
+            // 
+            // bTotalDocumentos
+            // 
+            this.bTotalDocumentos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalDocumentos.DisplayIcon = false;
+            this.bTotalDocumentos.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalDocumentos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalDocumentos.Location = new System.Drawing.Point(611, 3);
+            this.bTotalDocumentos.Name = "bTotalDocumentos";
+            this.bTotalDocumentos.NumberDecimals = 2;
+            this.bTotalDocumentos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalDocumentos.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalDocumentos.Size = new System.Drawing.Size(109, 24);
+            this.bTotalDocumentos.TabIndex = 196;
+            this.bTotalDocumentos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
+            // bPendienteImputacionADocumentos
+            // 
+            this.bPendienteImputacionADocumentos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bPendienteImputacionADocumentos.DisplayIcon = false;
+            this.bPendienteImputacionADocumentos.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bPendienteImputacionADocumentos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPendienteImputacionADocumentos.Location = new System.Drawing.Point(611, 53);
+            this.bPendienteImputacionADocumentos.Name = "bPendienteImputacionADocumentos";
+            this.bPendienteImputacionADocumentos.NumberDecimals = 2;
+            this.bPendienteImputacionADocumentos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bPendienteImputacionADocumentos.SetIcon = TSControls.CIconos.Mas;
+            this.bPendienteImputacionADocumentos.Size = new System.Drawing.Size(109, 24);
+            this.bPendienteImputacionADocumentos.TabIndex = 200;
+            this.bPendienteImputacionADocumentos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
             // 
             // label7
             // 
@@ -838,6 +1298,25 @@
             this.label28.TabIndex = 199;
             this.label28.Text = "Pendiente Imputacion";
             // 
+            // bTotalImputadoADocumentos
+            // 
+            this.bTotalImputadoADocumentos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalImputadoADocumentos.DisplayIcon = false;
+            this.bTotalImputadoADocumentos.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalImputadoADocumentos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalImputadoADocumentos.Location = new System.Drawing.Point(611, 28);
+            this.bTotalImputadoADocumentos.Name = "bTotalImputadoADocumentos";
+            this.bTotalImputadoADocumentos.NumberDecimals = 2;
+            this.bTotalImputadoADocumentos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalImputadoADocumentos.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalImputadoADocumentos.Size = new System.Drawing.Size(109, 24);
+            this.bTotalImputadoADocumentos.TabIndex = 198;
+            this.bTotalImputadoADocumentos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Gainsboro;
@@ -865,6 +1344,63 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(718, 75);
             this.panel2.TabIndex = 2;
+            // 
+            // bTotalOtros
+            // 
+            this.bTotalOtros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalOtros.DisplayIcon = false;
+            this.bTotalOtros.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalOtros.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalOtros.Location = new System.Drawing.Point(610, 49);
+            this.bTotalOtros.Name = "bTotalOtros";
+            this.bTotalOtros.NumberDecimals = 2;
+            this.bTotalOtros.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalOtros.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalOtros.Size = new System.Drawing.Size(104, 22);
+            this.bTotalOtros.TabIndex = 214;
+            this.bTotalOtros.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
+            // bTotalCheques
+            // 
+            this.bTotalCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalCheques.DisplayIcon = false;
+            this.bTotalCheques.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalCheques.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalCheques.Location = new System.Drawing.Point(610, 26);
+            this.bTotalCheques.Name = "bTotalCheques";
+            this.bTotalCheques.NumberDecimals = 2;
+            this.bTotalCheques.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalCheques.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalCheques.Size = new System.Drawing.Size(104, 22);
+            this.bTotalCheques.TabIndex = 212;
+            this.bTotalCheques.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
+            // bTotalEfectivo
+            // 
+            this.bTotalEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalEfectivo.DisplayIcon = false;
+            this.bTotalEfectivo.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalEfectivo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalEfectivo.Location = new System.Drawing.Point(610, 3);
+            this.bTotalEfectivo.Name = "bTotalEfectivo";
+            this.bTotalEfectivo.NumberDecimals = 2;
+            this.bTotalEfectivo.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalEfectivo.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalEfectivo.Size = new System.Drawing.Size(104, 22);
+            this.bTotalEfectivo.TabIndex = 213;
+            this.bTotalEfectivo.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
             // 
             // label8
             // 
@@ -929,6 +1465,144 @@
             this.dgv2ItemsPago.TabIndex = 0;
             this.dgv2ItemsPago.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemsPago_CellContentClick);
             // 
+            // _2EsCheque
+            // 
+            this._2EsCheque.DataPropertyName = "EsCheque";
+            this._2EsCheque.HeaderText = "CH";
+            this._2EsCheque.Name = "_2EsCheque";
+            this._2EsCheque.ReadOnly = true;
+            this._2EsCheque.ToolTipText = "Es Cheque";
+            this._2EsCheque.Width = 30;
+            // 
+            // eChequeDataGridViewCheckBoxColumn
+            // 
+            this.eChequeDataGridViewCheckBoxColumn.DataPropertyName = "ECheque";
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle53.NullValue = false;
+            this.eChequeDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle53;
+            this.eChequeDataGridViewCheckBoxColumn.HeaderText = "E-Ch";
+            this.eChequeDataGridViewCheckBoxColumn.Name = "eChequeDataGridViewCheckBoxColumn";
+            this.eChequeDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.eChequeDataGridViewCheckBoxColumn.ToolTipText = "Es E-Cheque?";
+            this.eChequeDataGridViewCheckBoxColumn.Width = 40;
+            // 
+            // _2Item
+            // 
+            this._2Item.DataPropertyName = "IdItem";
+            this._2Item.HeaderText = "#";
+            this._2Item.Name = "_2Item";
+            this._2Item.ReadOnly = true;
+            this._2Item.Width = 20;
+            // 
+            // _2cuenta
+            // 
+            this._2cuenta.DataPropertyName = "CuentaItem";
+            this._2cuenta.HeaderText = "Cuenta";
+            this._2cuenta.Name = "_2cuenta";
+            this._2cuenta.ReadOnly = true;
+            this._2cuenta.Width = 50;
+            // 
+            // monedaItemDataGridViewTextBoxColumn
+            // 
+            this.monedaItemDataGridViewTextBoxColumn.DataPropertyName = "MonedaItem";
+            this.monedaItemDataGridViewTextBoxColumn.HeaderText = "Mon";
+            this.monedaItemDataGridViewTextBoxColumn.Name = "monedaItemDataGridViewTextBoxColumn";
+            this.monedaItemDataGridViewTextBoxColumn.ReadOnly = true;
+            this.monedaItemDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // importeItemDataGridViewTextBoxColumn
+            // 
+            this.importeItemDataGridViewTextBoxColumn.DataPropertyName = "ImporteItem";
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle54.Format = "C2";
+            this.importeItemDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle54;
+            this.importeItemDataGridViewTextBoxColumn.HeaderText = "Importe";
+            this.importeItemDataGridViewTextBoxColumn.Name = "importeItemDataGridViewTextBoxColumn";
+            this.importeItemDataGridViewTextBoxColumn.ReadOnly = true;
+            this.importeItemDataGridViewTextBoxColumn.Visible = false;
+            this.importeItemDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // _2ImporteOP
+            // 
+            this._2ImporteOP.DataPropertyName = "ImporteOP";
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle55.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle55.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle55.Format = "C2";
+            this._2ImporteOP.DefaultCellStyle = dataGridViewCellStyle55;
+            this._2ImporteOP.HeaderText = "ImporteOP";
+            this._2ImporteOP.Name = "_2ImporteOP";
+            this._2ImporteOP.ReadOnly = true;
+            this._2ImporteOP.ToolTipText = "Importe en Moneda Orden de Pago";
+            this._2ImporteOP.Width = 75;
+            // 
+            // gLCuentaDataGridViewTextBoxColumn
+            // 
+            this.gLCuentaDataGridViewTextBoxColumn.DataPropertyName = "GLCuenta";
+            this.gLCuentaDataGridViewTextBoxColumn.HeaderText = "GL";
+            this.gLCuentaDataGridViewTextBoxColumn.Name = "gLCuentaDataGridViewTextBoxColumn";
+            this.gLCuentaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gLCuentaDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // chNumeroDataGridViewTextBoxColumn
+            // 
+            this.chNumeroDataGridViewTextBoxColumn.DataPropertyName = "ChNumero";
+            this.chNumeroDataGridViewTextBoxColumn.HeaderText = "Cheque#";
+            this.chNumeroDataGridViewTextBoxColumn.Name = "chNumeroDataGridViewTextBoxColumn";
+            this.chNumeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.chNumeroDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // chFechaDataGridViewTextBoxColumn
+            // 
+            this.chFechaDataGridViewTextBoxColumn.DataPropertyName = "ChFecha";
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle56.Format = "d";
+            dataGridViewCellStyle56.NullValue = null;
+            this.chFechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle56;
+            this.chFechaDataGridViewTextBoxColumn.HeaderText = "FechaAcred";
+            this.chFechaDataGridViewTextBoxColumn.Name = "chFechaDataGridViewTextBoxColumn";
+            this.chFechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.chFechaDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // chBancoDataGridViewTextBoxColumn
+            // 
+            this.chBancoDataGridViewTextBoxColumn.DataPropertyName = "ChBanco";
+            this.chBancoDataGridViewTextBoxColumn.HeaderText = "Banco";
+            this.chBancoDataGridViewTextBoxColumn.Name = "chBancoDataGridViewTextBoxColumn";
+            this.chBancoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // chIdCarteraDataGridViewTextBoxColumn
+            // 
+            this.chIdCarteraDataGridViewTextBoxColumn.DataPropertyName = "ChIdCartera";
+            this.chIdCarteraDataGridViewTextBoxColumn.HeaderText = "CHID";
+            this.chIdCarteraDataGridViewTextBoxColumn.Name = "chIdCarteraDataGridViewTextBoxColumn";
+            this.chIdCarteraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.chIdCarteraDataGridViewTextBoxColumn.Visible = false;
+            this.chIdCarteraDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // textoAlternoDataGridViewTextBoxColumn
+            // 
+            this.textoAlternoDataGridViewTextBoxColumn.DataPropertyName = "TextoAlterno";
+            this.textoAlternoDataGridViewTextBoxColumn.HeaderText = "Texto";
+            this.textoAlternoDataGridViewTextBoxColumn.Name = "textoAlternoDataGridViewTextBoxColumn";
+            this.textoAlternoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.textoAlternoDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // _2Del
+            // 
+            this._2Del.HeaderText = "DEL";
+            this._2Del.Name = "_2Del";
+            this._2Del.ReadOnly = true;
+            this._2Del.Text = "DEL";
+            this._2Del.ToolTipText = "Eliminar Item";
+            this._2Del.UseColumnTextForButtonValue = true;
+            this._2Del.Width = 50;
+            // 
+            // t0212OPITEMBindingSource
+            // 
+            this.t0212OPITEMBindingSource.DataSource = typeof(TecserEF.Entity.T0211_OrdenPagoItems);
+            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -969,6 +1643,25 @@
             this.panel4.Size = new System.Drawing.Size(278, 158);
             this.panel4.TabIndex = 2;
             // 
+            // aDisponibleImputar
+            // 
+            this.aDisponibleImputar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aDisponibleImputar.DisplayIcon = false;
+            this.aDisponibleImputar.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aDisponibleImputar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aDisponibleImputar.Location = new System.Drawing.Point(146, 55);
+            this.aDisponibleImputar.Name = "aDisponibleImputar";
+            this.aDisponibleImputar.NumberDecimals = 2;
+            this.aDisponibleImputar.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aDisponibleImputar.SetIcon = TSControls.CIconos.Mas;
+            this.aDisponibleImputar.Size = new System.Drawing.Size(127, 24);
+            this.aDisponibleImputar.TabIndex = 209;
+            this.aDisponibleImputar.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -980,6 +1673,25 @@
             this.label31.TabIndex = 208;
             this.label31.Text = "Disponible Imputar";
             // 
+            // aFacturasOP
+            // 
+            this.aFacturasOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aFacturasOP.DisplayIcon = false;
+            this.aFacturasOP.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aFacturasOP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aFacturasOP.Location = new System.Drawing.Point(146, 5);
+            this.aFacturasOP.Name = "aFacturasOP";
+            this.aFacturasOP.NumberDecimals = 2;
+            this.aFacturasOP.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aFacturasOP.SetIcon = TSControls.CIconos.Mas;
+            this.aFacturasOP.Size = new System.Drawing.Size(127, 24);
+            this.aFacturasOP.TabIndex = 207;
+            this.aFacturasOP.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -989,6 +1701,45 @@
             this.label18.Size = new System.Drawing.Size(131, 17);
             this.label18.TabIndex = 206;
             this.label18.Text = "Facturas Incluidas OP";
+            // 
+            // aCreditosIncluidos
+            // 
+            this.aCreditosIncluidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aCreditosIncluidos.DisplayIcon = false;
+            this.aCreditosIncluidos.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aCreditosIncluidos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aCreditosIncluidos.Location = new System.Drawing.Point(146, 30);
+            this.aCreditosIncluidos.Name = "aCreditosIncluidos";
+            this.aCreditosIncluidos.NumberDecimals = 2;
+            this.aCreditosIncluidos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aCreditosIncluidos.SetIcon = TSControls.CIconos.Mas;
+            this.aCreditosIncluidos.Size = new System.Drawing.Size(127, 24);
+            this.aCreditosIncluidos.TabIndex = 205;
+            this.aCreditosIncluidos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            this.aCreditosIncluidos.Load += new System.EventHandler(this.ctlDisplayNumbers24_Load);
+            // 
+            // aSaldoImpago
+            // 
+            this.aSaldoImpago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aSaldoImpago.DisplayIcon = false;
+            this.aSaldoImpago.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aSaldoImpago.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aSaldoImpago.Location = new System.Drawing.Point(146, 131);
+            this.aSaldoImpago.Name = "aSaldoImpago";
+            this.aSaldoImpago.NumberDecimals = 2;
+            this.aSaldoImpago.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aSaldoImpago.SetIcon = TSControls.CIconos.Mas;
+            this.aSaldoImpago.Size = new System.Drawing.Size(127, 24);
+            this.aSaldoImpago.TabIndex = 215;
+            this.aSaldoImpago.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
             // 
             // lSaldoTexto
             // 
@@ -1014,6 +1765,44 @@
             this.label16.Text = "Créditos Incluidos OP";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
+            // aTotalImputado
+            // 
+            this.aTotalImputado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aTotalImputado.DisplayIcon = false;
+            this.aTotalImputado.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aTotalImputado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aTotalImputado.Location = new System.Drawing.Point(146, 80);
+            this.aTotalImputado.Name = "aTotalImputado";
+            this.aTotalImputado.NumberDecimals = 2;
+            this.aTotalImputado.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aTotalImputado.SetIcon = TSControls.CIconos.Mas;
+            this.aTotalImputado.Size = new System.Drawing.Size(127, 24);
+            this.aTotalImputado.TabIndex = 201;
+            this.aTotalImputado.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
+            // aPendienteImputacion
+            // 
+            this.aPendienteImputacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aPendienteImputacion.DisplayIcon = false;
+            this.aPendienteImputacion.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aPendienteImputacion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aPendienteImputacion.Location = new System.Drawing.Point(146, 105);
+            this.aPendienteImputacion.Name = "aPendienteImputacion";
+            this.aPendienteImputacion.NumberDecimals = 2;
+            this.aPendienteImputacion.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aPendienteImputacion.SetIcon = TSControls.CIconos.Mas;
+            this.aPendienteImputacion.Size = new System.Drawing.Size(127, 24);
+            this.aPendienteImputacion.TabIndex = 213;
+            this.aPendienteImputacion.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -1034,6 +1823,25 @@
             this.label14.TabIndex = 200;
             this.label14.Text = "Total Imputado";
             // 
+            // aOtrosValoresOP
+            // 
+            this.aOtrosValoresOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aOtrosValoresOP.DisplayIcon = false;
+            this.aOtrosValoresOP.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aOtrosValoresOP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aOtrosValoresOP.Location = new System.Drawing.Point(157, 69);
+            this.aOtrosValoresOP.Name = "aOtrosValoresOP";
+            this.aOtrosValoresOP.NumberDecimals = 2;
+            this.aOtrosValoresOP.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aOtrosValoresOP.SetIcon = TSControls.CIconos.Mas;
+            this.aOtrosValoresOP.Size = new System.Drawing.Size(127, 24);
+            this.aOtrosValoresOP.TabIndex = 218;
+            this.aOtrosValoresOP.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -1044,6 +1852,25 @@
             this.label15.Size = new System.Drawing.Size(117, 17);
             this.label15.TabIndex = 217;
             this.label15.Text = "Valores OP [Otros]";
+            // 
+            // aEfectivoCheques
+            // 
+            this.aEfectivoCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aEfectivoCheques.DisplayIcon = false;
+            this.aEfectivoCheques.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aEfectivoCheques.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aEfectivoCheques.Location = new System.Drawing.Point(157, 44);
+            this.aEfectivoCheques.Name = "aEfectivoCheques";
+            this.aEfectivoCheques.NumberDecimals = 2;
+            this.aEfectivoCheques.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aEfectivoCheques.SetIcon = TSControls.CIconos.Mas;
+            this.aEfectivoCheques.Size = new System.Drawing.Size(127, 24);
+            this.aEfectivoCheques.TabIndex = 211;
+            this.aEfectivoCheques.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
             // 
             // label22
             // 
@@ -1057,6 +1884,25 @@
             this.label22.TabIndex = 210;
             this.label22.Text = "[Efectivo y Cheques]";
             // 
+            // aRetenciones
+            // 
+            this.aRetenciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aRetenciones.DisplayIcon = false;
+            this.aRetenciones.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aRetenciones.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aRetenciones.Location = new System.Drawing.Point(157, 19);
+            this.aRetenciones.Name = "aRetenciones";
+            this.aRetenciones.NumberDecimals = 2;
+            this.aRetenciones.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aRetenciones.SetIcon = TSControls.CIconos.Mas;
+            this.aRetenciones.Size = new System.Drawing.Size(127, 24);
+            this.aRetenciones.TabIndex = 209;
+            this.aRetenciones.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -1067,6 +1913,26 @@
             this.label20.Size = new System.Drawing.Size(110, 17);
             this.label20.TabIndex = 208;
             this.label20.Text = "Total Retenciones";
+            // 
+            // aImporteTotalOP
+            // 
+            this.aImporteTotalOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aImporteTotalOP.DisplayIcon = false;
+            this.aImporteTotalOP.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.aImporteTotalOP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aImporteTotalOP.Location = new System.Drawing.Point(157, 103);
+            this.aImporteTotalOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.aImporteTotalOP.Name = "aImporteTotalOP";
+            this.aImporteTotalOP.NumberDecimals = 2;
+            this.aImporteTotalOP.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.aImporteTotalOP.SetIcon = TSControls.CIconos.Mas;
+            this.aImporteTotalOP.Size = new System.Drawing.Size(160, 28);
+            this.aImporteTotalOP.TabIndex = 197;
+            this.aImporteTotalOP.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
             // 
             // label23
             // 
@@ -1117,6 +1983,25 @@
             this.groupBox5.Paint += new System.Windows.Forms.PaintEventHandler(this.c);
             this.groupBox5.Enter += new System.EventHandler(this.z);
             // 
+            // bTotalRetenciones
+            // 
+            this.bTotalRetenciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalRetenciones.DisplayIcon = false;
+            this.bTotalRetenciones.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalRetenciones.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalRetenciones.Location = new System.Drawing.Point(313, 159);
+            this.bTotalRetenciones.Name = "bTotalRetenciones";
+            this.bTotalRetenciones.NumberDecimals = 2;
+            this.bTotalRetenciones.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalRetenciones.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalRetenciones.Size = new System.Drawing.Size(110, 22);
+            this.bTotalRetenciones.TabIndex = 196;
+            this.bTotalRetenciones.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -1156,6 +2041,101 @@
             this.dgv4Retenciones.TabIndex = 0;
             this.dgv4Retenciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRetencionens_CellContentClick);
             // 
+            // idOPDataGridViewTextBoxColumn
+            // 
+            this.idOPDataGridViewTextBoxColumn.DataPropertyName = "IdOP";
+            this.idOPDataGridViewTextBoxColumn.HeaderText = "IdOP";
+            this.idOPDataGridViewTextBoxColumn.Name = "idOPDataGridViewTextBoxColumn";
+            this.idOPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idOPDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // _3IdItem
+            // 
+            this._3IdItem.DataPropertyName = "IdItemRetencion";
+            this._3IdItem.HeaderText = "#";
+            this._3IdItem.Name = "_3IdItem";
+            this._3IdItem.ReadOnly = true;
+            this._3IdItem.Width = 30;
+            // 
+            // _3TipoRetencion
+            // 
+            this._3TipoRetencion.DataPropertyName = "RetencionTipo";
+            this._3TipoRetencion.HeaderText = "T.Ret";
+            this._3TipoRetencion.Name = "_3TipoRetencion";
+            this._3TipoRetencion.ReadOnly = true;
+            this._3TipoRetencion.Width = 60;
+            // 
+            // _3BaseImponible
+            // 
+            this._3BaseImponible.DataPropertyName = "BaseImponibleCalculo";
+            dataGridViewCellStyle57.Format = "C2";
+            this._3BaseImponible.DefaultCellStyle = dataGridViewCellStyle57;
+            this._3BaseImponible.HeaderText = "BaseImpo";
+            this._3BaseImponible.Name = "_3BaseImponible";
+            this._3BaseImponible.ReadOnly = true;
+            this._3BaseImponible.ToolTipText = "Base Imponible";
+            this._3BaseImponible.Width = 80;
+            // 
+            // _3Alicuota
+            // 
+            this._3Alicuota.DataPropertyName = "Alicuota";
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle58.Format = "P4";
+            dataGridViewCellStyle58.NullValue = null;
+            this._3Alicuota.DefaultCellStyle = dataGridViewCellStyle58;
+            this._3Alicuota.HeaderText = "Alic%";
+            this._3Alicuota.Name = "_3Alicuota";
+            this._3Alicuota.ReadOnly = true;
+            this._3Alicuota.Width = 60;
+            // 
+            // _3ImporteRetencion
+            // 
+            this._3ImporteRetencion.DataPropertyName = "ImporteRetencion";
+            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle59.Format = "C2";
+            this._3ImporteRetencion.DefaultCellStyle = dataGridViewCellStyle59;
+            this._3ImporteRetencion.HeaderText = "Importe";
+            this._3ImporteRetencion.Name = "_3ImporteRetencion";
+            this._3ImporteRetencion.ReadOnly = true;
+            this._3ImporteRetencion.ToolTipText = "Importe Retencion";
+            this._3ImporteRetencion.Width = 80;
+            // 
+            // _3Gl
+            // 
+            this._3Gl.DataPropertyName = "GL";
+            this._3Gl.HeaderText = "GL";
+            this._3Gl.Name = "_3Gl";
+            this._3Gl.ReadOnly = true;
+            this._3Gl.Visible = false;
+            this._3Gl.Width = 50;
+            // 
+            // _3Edit
+            // 
+            this._3Edit.DataPropertyName = "IdOP";
+            this._3Edit.HeaderText = "EDIT";
+            this._3Edit.Name = "_3Edit";
+            this._3Edit.ReadOnly = true;
+            this._3Edit.Text = "EDIT";
+            this._3Edit.ToolTipText = "Editar Retencion";
+            this._3Edit.UseColumnTextForButtonValue = true;
+            this._3Edit.Width = 40;
+            // 
+            // _3Del
+            // 
+            this._3Del.DataPropertyName = "IdOP";
+            this._3Del.HeaderText = "DEL";
+            this._3Del.Name = "_3Del";
+            this._3Del.ReadOnly = true;
+            this._3Del.Text = "DEL";
+            this._3Del.ToolTipText = "Eliminar Retencion";
+            this._3Del.UseColumnTextForButtonValue = true;
+            this._3Del.Width = 40;
+            // 
+            // t0213OrdenPagoRetencionesBindingSource
+            // 
+            this.t0213OrdenPagoRetencionesBindingSource.DataSource = typeof(TecserEF.Entity.T0213_OrdenPagoRetenciones);
+            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.LavenderBlush;
@@ -1171,6 +2151,25 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Visualizacion de Creditos pendientes de Imputacion";
             // 
+            // bCreditoPendienteImputar
+            // 
+            this.bCreditoPendienteImputar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bCreditoPendienteImputar.DisplayIcon = false;
+            this.bCreditoPendienteImputar.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bCreditoPendienteImputar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCreditoPendienteImputar.Location = new System.Drawing.Point(438, 184);
+            this.bCreditoPendienteImputar.Name = "bCreditoPendienteImputar";
+            this.bCreditoPendienteImputar.NumberDecimals = 2;
+            this.bCreditoPendienteImputar.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bCreditoPendienteImputar.SetIcon = TSControls.CIconos.Mas;
+            this.bCreditoPendienteImputar.Size = new System.Drawing.Size(112, 22);
+            this.bCreditoPendienteImputar.TabIndex = 198;
+            this.bCreditoPendienteImputar.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -1181,6 +2180,25 @@
             this.label32.Size = new System.Drawing.Size(180, 14);
             this.label32.TabIndex = 197;
             this.label32.Text = "Creditos Pendientes de Imputar";
+            // 
+            // bTotalCreditos
+            // 
+            this.bTotalCreditos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalCreditos.DisplayIcon = false;
+            this.bTotalCreditos.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalCreditos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalCreditos.Location = new System.Drawing.Point(438, 161);
+            this.bTotalCreditos.Name = "bTotalCreditos";
+            this.bTotalCreditos.NumberDecimals = 2;
+            this.bTotalCreditos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalCreditos.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalCreditos.Size = new System.Drawing.Size(112, 22);
+            this.bTotalCreditos.TabIndex = 196;
+            this.bTotalCreditos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
             // 
             // label17
             // 
@@ -1219,6 +2237,82 @@
             this.dgv3Creditos.TabIndex = 0;
             this.dgv3Creditos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCreditosPendienteImputacion_CellContentClick);
             // 
+            // _3id
+            // 
+            this._3id.DataPropertyName = "Id";
+            this._3id.HeaderText = "#";
+            this._3id.Name = "_3id";
+            this._3id.ReadOnly = true;
+            this._3id.Width = 20;
+            // 
+            // _4TipoDoc
+            // 
+            this._4TipoDoc.DataPropertyName = "TDoc";
+            this._4TipoDoc.HeaderText = "TD";
+            this._4TipoDoc.Name = "_4TipoDoc";
+            this._4TipoDoc.ReadOnly = true;
+            this._4TipoDoc.Width = 35;
+            // 
+            // _4documento
+            // 
+            this._4documento.DataPropertyName = "NumDoc";
+            this._4documento.HeaderText = "Documento#";
+            this._4documento.Name = "_4documento";
+            this._4documento.ReadOnly = true;
+            this._4documento.Width = 90;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle60.Format = "d";
+            dataGridViewCellStyle60.NullValue = null;
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle60;
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // _4Importe
+            // 
+            this._4Importe.DataPropertyName = "Importe";
+            dataGridViewCellStyle61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle61.Format = "C2";
+            this._4Importe.DefaultCellStyle = dataGridViewCellStyle61;
+            this._4Importe.HeaderText = "Importe";
+            this._4Importe.Name = "_4Importe";
+            this._4Importe.ReadOnly = true;
+            this._4Importe.Width = 80;
+            // 
+            // Pendiente
+            // 
+            this.Pendiente.DataPropertyName = "PendienteImputar";
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle62.Format = "C2";
+            this.Pendiente.DefaultCellStyle = dataGridViewCellStyle62;
+            this.Pendiente.HeaderText = "Pendiente";
+            this.Pendiente.Name = "Pendiente";
+            this.Pendiente.ReadOnly = true;
+            this.Pendiente.ToolTipText = "Pendiente de Imputacion";
+            // 
+            // _4Del
+            // 
+            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle63.ForeColor = System.Drawing.Color.Red;
+            this._4Del.DefaultCellStyle = dataGridViewCellStyle63;
+            this._4Del.HeaderText = "DEL";
+            this._4Del.Name = "_4Del";
+            this._4Del.ReadOnly = true;
+            this._4Del.Text = "DEL";
+            this._4Del.ToolTipText = "Eliminar Credito";
+            this._4Del.UseColumnTextForButtonValue = true;
+            this._4Del.Width = 40;
+            // 
+            // dsCreditosOPBindingSource
+            // 
+            this.dsCreditosOPBindingSource.DataSource = typeof(TecserEF.Entity.DataStructure.DsCreditosOP);
+            // 
             // dataGridViewButtonColumn1
             // 
             this.dataGridViewButtonColumn1.DataPropertyName = "IDOP";
@@ -1232,9 +2326,9 @@
             // 
             // dataGridViewButtonColumn2
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Red;
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle64.ForeColor = System.Drawing.Color.Red;
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle64;
             this.dataGridViewButtonColumn2.HeaderText = "DEL";
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             this.dataGridViewButtonColumn2.ReadOnly = true;
@@ -1248,9 +2342,9 @@
             // dataGridViewButtonColumn3
             // 
             this.dataGridViewButtonColumn3.DataPropertyName = "IDOP";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Red;
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle65.ForeColor = System.Drawing.Color.Red;
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle65;
             this.dataGridViewButtonColumn3.HeaderText = "Edit";
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.ReadOnly = true;
@@ -1262,9 +2356,9 @@
             // dataGridViewButtonColumn4
             // 
             this.dataGridViewButtonColumn4.DataPropertyName = "IdOP";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Red;
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle66.ForeColor = System.Drawing.Color.Red;
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle66;
             this.dataGridViewButtonColumn4.HeaderText = "Detalle";
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             this.dataGridViewButtonColumn4.ReadOnly = true;
@@ -1273,512 +2367,12 @@
             this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn4.Width = 60;
             // 
-            // bCreditoPendienteImputar
-            // 
-            this.bCreditoPendienteImputar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bCreditoPendienteImputar.DisplayIcon = false;
-            this.bCreditoPendienteImputar.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bCreditoPendienteImputar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCreditoPendienteImputar.Location = new System.Drawing.Point(438, 184);
-            this.bCreditoPendienteImputar.Name = "bCreditoPendienteImputar";
-            this.bCreditoPendienteImputar.NumberDecimals = 2;
-            this.bCreditoPendienteImputar.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bCreditoPendienteImputar.SetIcon = TSControls.CIconos.Mas;
-            this.bCreditoPendienteImputar.Size = new System.Drawing.Size(112, 22);
-            this.bCreditoPendienteImputar.TabIndex = 198;
-            this.bCreditoPendienteImputar.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // bTotalCreditos
-            // 
-            this.bTotalCreditos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalCreditos.DisplayIcon = false;
-            this.bTotalCreditos.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalCreditos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalCreditos.Location = new System.Drawing.Point(438, 161);
-            this.bTotalCreditos.Name = "bTotalCreditos";
-            this.bTotalCreditos.NumberDecimals = 2;
-            this.bTotalCreditos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalCreditos.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalCreditos.Size = new System.Drawing.Size(112, 22);
-            this.bTotalCreditos.TabIndex = 196;
-            this.bTotalCreditos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // _3id
-            // 
-            this._3id.DataPropertyName = "Id";
-            this._3id.HeaderText = "#";
-            this._3id.Name = "_3id";
-            this._3id.ReadOnly = true;
-            this._3id.Width = 20;
-            // 
-            // Pendiente
-            // 
-            this.Pendiente.DataPropertyName = "PendienteImputar";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.Format = "C2";
-            this.Pendiente.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Pendiente.HeaderText = "Pendiente";
-            this.Pendiente.Name = "Pendiente";
-            this.Pendiente.ReadOnly = true;
-            this.Pendiente.ToolTipText = "Pendiente de Imputacion";
-            // 
-            // _4Del
-            // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Red;
-            this._4Del.DefaultCellStyle = dataGridViewCellStyle16;
-            this._4Del.HeaderText = "DEL";
-            this._4Del.Name = "_4Del";
-            this._4Del.ReadOnly = true;
-            this._4Del.Text = "DEL";
-            this._4Del.ToolTipText = "Eliminar Credito";
-            this._4Del.UseColumnTextForButtonValue = true;
-            this._4Del.Width = 40;
-            // 
-            // bTotalRetenciones
-            // 
-            this.bTotalRetenciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalRetenciones.DisplayIcon = false;
-            this.bTotalRetenciones.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalRetenciones.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalRetenciones.Location = new System.Drawing.Point(313, 159);
-            this.bTotalRetenciones.Name = "bTotalRetenciones";
-            this.bTotalRetenciones.NumberDecimals = 2;
-            this.bTotalRetenciones.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalRetenciones.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalRetenciones.Size = new System.Drawing.Size(110, 22);
-            this.bTotalRetenciones.TabIndex = 196;
-            this.bTotalRetenciones.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // _3Edit
-            // 
-            this._3Edit.DataPropertyName = "IdOP";
-            this._3Edit.HeaderText = "EDIT";
-            this._3Edit.Name = "_3Edit";
-            this._3Edit.ReadOnly = true;
-            this._3Edit.Text = "EDIT";
-            this._3Edit.ToolTipText = "Editar Retencion";
-            this._3Edit.UseColumnTextForButtonValue = true;
-            this._3Edit.Width = 40;
-            // 
-            // _3Del
-            // 
-            this._3Del.DataPropertyName = "IdOP";
-            this._3Del.HeaderText = "DEL";
-            this._3Del.Name = "_3Del";
-            this._3Del.ReadOnly = true;
-            this._3Del.Text = "DEL";
-            this._3Del.ToolTipText = "Eliminar Retencion";
-            this._3Del.UseColumnTextForButtonValue = true;
-            this._3Del.Width = 40;
-            // 
-            // aDisponibleImputar
-            // 
-            this.aDisponibleImputar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aDisponibleImputar.DisplayIcon = false;
-            this.aDisponibleImputar.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aDisponibleImputar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aDisponibleImputar.Location = new System.Drawing.Point(146, 55);
-            this.aDisponibleImputar.Name = "aDisponibleImputar";
-            this.aDisponibleImputar.NumberDecimals = 2;
-            this.aDisponibleImputar.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aDisponibleImputar.SetIcon = TSControls.CIconos.Mas;
-            this.aDisponibleImputar.Size = new System.Drawing.Size(127, 24);
-            this.aDisponibleImputar.TabIndex = 209;
-            this.aDisponibleImputar.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // aFacturasOP
-            // 
-            this.aFacturasOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aFacturasOP.DisplayIcon = false;
-            this.aFacturasOP.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aFacturasOP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aFacturasOP.Location = new System.Drawing.Point(146, 5);
-            this.aFacturasOP.Name = "aFacturasOP";
-            this.aFacturasOP.NumberDecimals = 2;
-            this.aFacturasOP.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aFacturasOP.SetIcon = TSControls.CIconos.Mas;
-            this.aFacturasOP.Size = new System.Drawing.Size(127, 24);
-            this.aFacturasOP.TabIndex = 207;
-            this.aFacturasOP.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // aCreditosIncluidos
-            // 
-            this.aCreditosIncluidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aCreditosIncluidos.DisplayIcon = false;
-            this.aCreditosIncluidos.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aCreditosIncluidos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aCreditosIncluidos.Location = new System.Drawing.Point(146, 30);
-            this.aCreditosIncluidos.Name = "aCreditosIncluidos";
-            this.aCreditosIncluidos.NumberDecimals = 2;
-            this.aCreditosIncluidos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aCreditosIncluidos.SetIcon = TSControls.CIconos.Mas;
-            this.aCreditosIncluidos.Size = new System.Drawing.Size(127, 24);
-            this.aCreditosIncluidos.TabIndex = 205;
-            this.aCreditosIncluidos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            this.aCreditosIncluidos.Load += new System.EventHandler(this.ctlDisplayNumbers24_Load);
-            // 
-            // aSaldoImpago
-            // 
-            this.aSaldoImpago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aSaldoImpago.DisplayIcon = false;
-            this.aSaldoImpago.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aSaldoImpago.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aSaldoImpago.Location = new System.Drawing.Point(146, 131);
-            this.aSaldoImpago.Name = "aSaldoImpago";
-            this.aSaldoImpago.NumberDecimals = 2;
-            this.aSaldoImpago.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aSaldoImpago.SetIcon = TSControls.CIconos.Mas;
-            this.aSaldoImpago.Size = new System.Drawing.Size(127, 24);
-            this.aSaldoImpago.TabIndex = 215;
-            this.aSaldoImpago.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // aTotalImputado
-            // 
-            this.aTotalImputado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTotalImputado.DisplayIcon = false;
-            this.aTotalImputado.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aTotalImputado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aTotalImputado.Location = new System.Drawing.Point(146, 80);
-            this.aTotalImputado.Name = "aTotalImputado";
-            this.aTotalImputado.NumberDecimals = 2;
-            this.aTotalImputado.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aTotalImputado.SetIcon = TSControls.CIconos.Mas;
-            this.aTotalImputado.Size = new System.Drawing.Size(127, 24);
-            this.aTotalImputado.TabIndex = 201;
-            this.aTotalImputado.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // aPendienteImputacion
-            // 
-            this.aPendienteImputacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aPendienteImputacion.DisplayIcon = false;
-            this.aPendienteImputacion.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aPendienteImputacion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aPendienteImputacion.Location = new System.Drawing.Point(146, 105);
-            this.aPendienteImputacion.Name = "aPendienteImputacion";
-            this.aPendienteImputacion.NumberDecimals = 2;
-            this.aPendienteImputacion.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aPendienteImputacion.SetIcon = TSControls.CIconos.Mas;
-            this.aPendienteImputacion.Size = new System.Drawing.Size(127, 24);
-            this.aPendienteImputacion.TabIndex = 213;
-            this.aPendienteImputacion.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // aOtrosValoresOP
-            // 
-            this.aOtrosValoresOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aOtrosValoresOP.DisplayIcon = false;
-            this.aOtrosValoresOP.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aOtrosValoresOP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aOtrosValoresOP.Location = new System.Drawing.Point(157, 69);
-            this.aOtrosValoresOP.Name = "aOtrosValoresOP";
-            this.aOtrosValoresOP.NumberDecimals = 2;
-            this.aOtrosValoresOP.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aOtrosValoresOP.SetIcon = TSControls.CIconos.Mas;
-            this.aOtrosValoresOP.Size = new System.Drawing.Size(127, 24);
-            this.aOtrosValoresOP.TabIndex = 218;
-            this.aOtrosValoresOP.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // aEfectivoCheques
-            // 
-            this.aEfectivoCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aEfectivoCheques.DisplayIcon = false;
-            this.aEfectivoCheques.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aEfectivoCheques.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aEfectivoCheques.Location = new System.Drawing.Point(157, 44);
-            this.aEfectivoCheques.Name = "aEfectivoCheques";
-            this.aEfectivoCheques.NumberDecimals = 2;
-            this.aEfectivoCheques.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aEfectivoCheques.SetIcon = TSControls.CIconos.Mas;
-            this.aEfectivoCheques.Size = new System.Drawing.Size(127, 24);
-            this.aEfectivoCheques.TabIndex = 211;
-            this.aEfectivoCheques.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // aRetenciones
-            // 
-            this.aRetenciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aRetenciones.DisplayIcon = false;
-            this.aRetenciones.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aRetenciones.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aRetenciones.Location = new System.Drawing.Point(157, 19);
-            this.aRetenciones.Name = "aRetenciones";
-            this.aRetenciones.NumberDecimals = 2;
-            this.aRetenciones.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aRetenciones.SetIcon = TSControls.CIconos.Mas;
-            this.aRetenciones.Size = new System.Drawing.Size(127, 24);
-            this.aRetenciones.TabIndex = 209;
-            this.aRetenciones.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // aImporteTotalOP
-            // 
-            this.aImporteTotalOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aImporteTotalOP.DisplayIcon = false;
-            this.aImporteTotalOP.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.aImporteTotalOP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aImporteTotalOP.Location = new System.Drawing.Point(157, 103);
-            this.aImporteTotalOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.aImporteTotalOP.Name = "aImporteTotalOP";
-            this.aImporteTotalOP.NumberDecimals = 2;
-            this.aImporteTotalOP.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.aImporteTotalOP.SetIcon = TSControls.CIconos.Mas;
-            this.aImporteTotalOP.Size = new System.Drawing.Size(160, 28);
-            this.aImporteTotalOP.TabIndex = 197;
-            this.aImporteTotalOP.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // bTotalOtros
-            // 
-            this.bTotalOtros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalOtros.DisplayIcon = false;
-            this.bTotalOtros.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalOtros.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalOtros.Location = new System.Drawing.Point(610, 49);
-            this.bTotalOtros.Name = "bTotalOtros";
-            this.bTotalOtros.NumberDecimals = 2;
-            this.bTotalOtros.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalOtros.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalOtros.Size = new System.Drawing.Size(104, 22);
-            this.bTotalOtros.TabIndex = 214;
-            this.bTotalOtros.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // bTotalCheques
-            // 
-            this.bTotalCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalCheques.DisplayIcon = false;
-            this.bTotalCheques.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalCheques.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalCheques.Location = new System.Drawing.Point(610, 26);
-            this.bTotalCheques.Name = "bTotalCheques";
-            this.bTotalCheques.NumberDecimals = 2;
-            this.bTotalCheques.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalCheques.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalCheques.Size = new System.Drawing.Size(104, 22);
-            this.bTotalCheques.TabIndex = 212;
-            this.bTotalCheques.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // bTotalEfectivo
-            // 
-            this.bTotalEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalEfectivo.DisplayIcon = false;
-            this.bTotalEfectivo.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalEfectivo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalEfectivo.Location = new System.Drawing.Point(610, 3);
-            this.bTotalEfectivo.Name = "bTotalEfectivo";
-            this.bTotalEfectivo.NumberDecimals = 2;
-            this.bTotalEfectivo.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalEfectivo.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalEfectivo.Size = new System.Drawing.Size(104, 22);
-            this.bTotalEfectivo.TabIndex = 213;
-            this.bTotalEfectivo.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // _2Del
-            // 
-            this._2Del.HeaderText = "DEL";
-            this._2Del.Name = "_2Del";
-            this._2Del.ReadOnly = true;
-            this._2Del.Text = "DEL";
-            this._2Del.ToolTipText = "Eliminar Item";
-            this._2Del.UseColumnTextForButtonValue = true;
-            this._2Del.Width = 50;
-            // 
-            // bTotalDocumentos
-            // 
-            this.bTotalDocumentos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalDocumentos.DisplayIcon = false;
-            this.bTotalDocumentos.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalDocumentos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalDocumentos.Location = new System.Drawing.Point(611, 3);
-            this.bTotalDocumentos.Name = "bTotalDocumentos";
-            this.bTotalDocumentos.NumberDecimals = 2;
-            this.bTotalDocumentos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalDocumentos.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalDocumentos.Size = new System.Drawing.Size(109, 24);
-            this.bTotalDocumentos.TabIndex = 196;
-            this.bTotalDocumentos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // bPendienteImputacionADocumentos
-            // 
-            this.bPendienteImputacionADocumentos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bPendienteImputacionADocumentos.DisplayIcon = false;
-            this.bPendienteImputacionADocumentos.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bPendienteImputacionADocumentos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bPendienteImputacionADocumentos.Location = new System.Drawing.Point(611, 53);
-            this.bPendienteImputacionADocumentos.Name = "bPendienteImputacionADocumentos";
-            this.bPendienteImputacionADocumentos.NumberDecimals = 2;
-            this.bPendienteImputacionADocumentos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bPendienteImputacionADocumentos.SetIcon = TSControls.CIconos.Mas;
-            this.bPendienteImputacionADocumentos.Size = new System.Drawing.Size(109, 24);
-            this.bPendienteImputacionADocumentos.TabIndex = 200;
-            this.bPendienteImputacionADocumentos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // bTotalImputadoADocumentos
-            // 
-            this.bTotalImputadoADocumentos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalImputadoADocumentos.DisplayIcon = false;
-            this.bTotalImputadoADocumentos.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalImputadoADocumentos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalImputadoADocumentos.Location = new System.Drawing.Point(611, 28);
-            this.bTotalImputadoADocumentos.Name = "bTotalImputadoADocumentos";
-            this.bTotalImputadoADocumentos.NumberDecimals = 2;
-            this.bTotalImputadoADocumentos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalImputadoADocumentos.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalImputadoADocumentos.Size = new System.Drawing.Size(109, 24);
-            this.bTotalImputadoADocumentos.TabIndex = 198;
-            this.bTotalImputadoADocumentos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // _1Del
-            // 
-            this._1Del.HeaderText = "DEL";
-            this._1Del.Name = "_1Del";
-            this._1Del.ReadOnly = true;
-            this._1Del.Text = "DEL";
-            this._1Del.ToolTipText = "Eliminar Factura";
-            this._1Del.UseColumnTextForButtonValue = true;
-            this._1Del.Width = 40;
-            // 
-            // _1Imputa
-            // 
-            this._1Imputa.HeaderText = "IMPUTA";
-            this._1Imputa.Name = "_1Imputa";
-            this._1Imputa.ReadOnly = true;
-            this._1Imputa.Text = "IMPUTA";
-            this._1Imputa.ToolTipText = "Modificar Imputacion Documento";
-            this._1Imputa.UseColumnTextForButtonValue = true;
-            this._1Imputa.Width = 60;
-            // 
-            // cAlicuotaIIBB
-            // 
-            this.cAlicuotaIIBB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cAlicuotaIIBB.BackColor = System.Drawing.SystemColors.Control;
-            this.cAlicuotaIIBB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cAlicuotaIIBB.Location = new System.Drawing.Point(441, 72);
-            this.cAlicuotaIIBB.Margin = new System.Windows.Forms.Padding(0);
-            this.cAlicuotaIIBB.Name = "cAlicuotaIIBB";
-            this.cAlicuotaIIBB.SeparadorDecimal = true;
-            this.cAlicuotaIIBB.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cAlicuotaIIBB.SetDecimales = 4;
-            this.cAlicuotaIIBB.SetType = TSControls.CtlTextBox.TextBoxType.Porcentaje;
-            this.cAlicuotaIIBB.Size = new System.Drawing.Size(61, 21);
-            this.cAlicuotaIIBB.TabIndex = 198;
-            this.cAlicuotaIIBB.ValorMaximo = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.cAlicuotaIIBB.ValorMinimo = new decimal(new int[] {
-            1,
-            0,
-            0,
-            262144});
-            this.cAlicuotaIIBB.XReadOnly = false;
-            // 
-            // txtTipodeCambio
-            // 
-            this.txtTipodeCambio.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.txtTipodeCambio.BackColor = System.Drawing.SystemColors.Control;
-            this.txtTipodeCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipodeCambio.Location = new System.Drawing.Point(280, 72);
-            this.txtTipodeCambio.Margin = new System.Windows.Forms.Padding(0);
-            this.txtTipodeCambio.Name = "txtTipodeCambio";
-            this.txtTipodeCambio.SeparadorDecimal = true;
-            this.txtTipodeCambio.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.txtTipodeCambio.SetDecimales = 2;
-            this.txtTipodeCambio.SetType = TSControls.CtlTextBox.TextBoxType.Decimal;
-            this.txtTipodeCambio.Size = new System.Drawing.Size(66, 21);
-            this.txtTipodeCambio.TabIndex = 196;
-            this.txtTipodeCambio.ValorMaximo = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.txtTipodeCambio.ValorMinimo = new decimal(new int[] {
-            1,
-            0,
-            0,
-            262144});
-            this.txtTipodeCambio.XReadOnly = false;
-            // 
             // dataGridViewButtonColumn5
             // 
             this.dataGridViewButtonColumn5.DataPropertyName = "IdOP";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Red;
-            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle67.ForeColor = System.Drawing.Color.Red;
+            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle67;
             this.dataGridViewButtonColumn5.HeaderText = "DEL";
             this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
             this.dataGridViewButtonColumn5.ReadOnly = true;
@@ -1799,10 +2393,10 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "IDITEM";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.Format = "C2";
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle68.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle68.Format = "C2";
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle68;
             this.dataGridViewTextBoxColumn2.HeaderText = "IDITEM";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -1811,9 +2405,9 @@
             // 
             // dataGridViewButtonColumn6
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Red;
-            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.Red;
+            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle69;
             this.dataGridViewButtonColumn6.HeaderText = "DEL";
             this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
             this.dataGridViewButtonColumn6.ReadOnly = true;
@@ -1843,9 +2437,9 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "FACT_MON";
-            dataGridViewCellStyle23.Format = "d";
-            dataGridViewCellStyle23.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle70.Format = "d";
+            dataGridViewCellStyle70.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle70;
             this.dataGridViewTextBoxColumn5.HeaderText = "Mon";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -1854,11 +2448,11 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "FACT_SALDO_O";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle24.Format = "C2";
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle71.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle71.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle71.Format = "C2";
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle71;
             this.dataGridViewTextBoxColumn6.HeaderText = "PendPago";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -1868,10 +2462,10 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "FACT_IMPUTADO";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle25.Format = "C2";
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle72.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle72.Format = "C2";
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle72;
             this.dataGridViewTextBoxColumn7.HeaderText = "Imputado";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -1880,10 +2474,10 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "FACT_SALDO_IMPUTAR";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle26.Format = "C2";
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle73.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle73.Format = "C2";
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle73;
             this.dataGridViewTextBoxColumn8.HeaderText = "A Imputar";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -1893,9 +2487,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "RetencionIIBB";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle27.Format = "C2";
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle74.Format = "C2";
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle74;
             this.dataGridViewTextBoxColumn9.HeaderText = "RetIIBB";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -1905,9 +2499,9 @@
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "RetencionGS";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle28.Format = "C2";
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle75.Format = "C2";
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle75;
             this.dataGridViewTextBoxColumn10.HeaderText = "RetGS";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
@@ -1952,9 +2546,9 @@
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "MON";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle29.Format = "C2";
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle76.Format = "C2";
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle76;
             this.dataGridViewTextBoxColumn15.HeaderText = "Mon";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
@@ -1965,10 +2559,10 @@
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.DataPropertyName = "IMPORTE";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle30.Format = "C2";
-            this.dataGridViewTextBoxColumn16.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle77.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle77.Format = "C2";
+            this.dataGridViewTextBoxColumn16.DefaultCellStyle = dataGridViewCellStyle77;
             this.dataGridViewTextBoxColumn16.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
@@ -1996,10 +2590,10 @@
             // dataGridViewTextBoxColumn19
             // 
             this.dataGridViewTextBoxColumn19.DataPropertyName = "CH_BCO";
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.Format = "d";
-            dataGridViewCellStyle31.NullValue = null;
-            this.dataGridViewTextBoxColumn19.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle78.Format = "d";
+            dataGridViewCellStyle78.NullValue = null;
+            this.dataGridViewTextBoxColumn19.DefaultCellStyle = dataGridViewCellStyle78;
             this.dataGridViewTextBoxColumn19.HeaderText = "Banco";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.ReadOnly = true;
@@ -2009,9 +2603,9 @@
             // dataGridViewTextBoxColumn20
             // 
             this.dataGridViewTextBoxColumn20.DataPropertyName = "CH_ID";
-            dataGridViewCellStyle32.Format = "d";
-            dataGridViewCellStyle32.NullValue = null;
-            this.dataGridViewTextBoxColumn20.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle79.Format = "d";
+            dataGridViewCellStyle79.NullValue = null;
+            this.dataGridViewTextBoxColumn20.DefaultCellStyle = dataGridViewCellStyle79;
             this.dataGridViewTextBoxColumn20.HeaderText = "CH_ID";
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             this.dataGridViewTextBoxColumn20.ReadOnly = true;
@@ -2022,9 +2616,9 @@
             // dataGridViewTextBoxColumn21
             // 
             this.dataGridViewTextBoxColumn21.DataPropertyName = "ChequeFecha";
-            dataGridViewCellStyle33.Format = "d";
-            dataGridViewCellStyle33.NullValue = null;
-            this.dataGridViewTextBoxColumn21.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle80.Format = "d";
+            dataGridViewCellStyle80.NullValue = null;
+            this.dataGridViewTextBoxColumn21.DefaultCellStyle = dataGridViewCellStyle80;
             this.dataGridViewTextBoxColumn21.HeaderText = "FechaAcred";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.ReadOnly = true;
@@ -2045,10 +2639,10 @@
             // dataGridViewTextBoxColumn23
             // 
             this.dataGridViewTextBoxColumn23.DataPropertyName = "IMPORTE";
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle34.Format = "C2";
-            this.dataGridViewTextBoxColumn23.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle81.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle81.Format = "C2";
+            this.dataGridViewTextBoxColumn23.DefaultCellStyle = dataGridViewCellStyle81;
             this.dataGridViewTextBoxColumn23.HeaderText = "Del";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.ReadOnly = true;
@@ -2078,8 +2672,8 @@
             // dataGridViewTextBoxColumn26
             // 
             this.dataGridViewTextBoxColumn26.DataPropertyName = "FACT_ID";
-            dataGridViewCellStyle35.Format = "C2";
-            this.dataGridViewTextBoxColumn26.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle82.Format = "C2";
+            this.dataGridViewTextBoxColumn26.DefaultCellStyle = dataGridViewCellStyle82;
             this.dataGridViewTextBoxColumn26.HeaderText = "FACT_ID";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
             this.dataGridViewTextBoxColumn26.ReadOnly = true;
@@ -2090,10 +2684,10 @@
             // dataGridViewTextBoxColumn27
             // 
             this.dataGridViewTextBoxColumn27.DataPropertyName = "FACT_NUM";
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.Format = "P4";
-            dataGridViewCellStyle36.NullValue = null;
-            this.dataGridViewTextBoxColumn27.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle83.Format = "P4";
+            dataGridViewCellStyle83.NullValue = null;
+            this.dataGridViewTextBoxColumn27.DefaultCellStyle = dataGridViewCellStyle83;
             this.dataGridViewTextBoxColumn27.HeaderText = "Documento#";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
             this.dataGridViewTextBoxColumn27.ReadOnly = true;
@@ -2103,9 +2697,9 @@
             // dataGridViewTextBoxColumn28
             // 
             this.dataGridViewTextBoxColumn28.DataPropertyName = "RetencionIIBB";
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle37.Format = "C2";
-            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle84.Format = "C2";
+            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle84;
             this.dataGridViewTextBoxColumn28.HeaderText = "RetIIBB";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             this.dataGridViewTextBoxColumn28.ReadOnly = true;
@@ -2115,9 +2709,9 @@
             // dataGridViewTextBoxColumn29
             // 
             this.dataGridViewTextBoxColumn29.DataPropertyName = "RetencionGS";
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle38.Format = "C2";
-            this.dataGridViewTextBoxColumn29.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle85.Format = "C2";
+            this.dataGridViewTextBoxColumn29.DefaultCellStyle = dataGridViewCellStyle85;
             this.dataGridViewTextBoxColumn29.HeaderText = "RetGS";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
             this.dataGridViewTextBoxColumn29.ReadOnly = true;
@@ -2144,10 +2738,10 @@
             // dataGridViewTextBoxColumn32
             // 
             this.dataGridViewTextBoxColumn32.DataPropertyName = "IDITEM";
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.Format = "d";
-            dataGridViewCellStyle39.NullValue = null;
-            this.dataGridViewTextBoxColumn32.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle86.Format = "d";
+            dataGridViewCellStyle86.NullValue = null;
+            this.dataGridViewTextBoxColumn32.DefaultCellStyle = dataGridViewCellStyle86;
             this.dataGridViewTextBoxColumn32.HeaderText = "IDITEM";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
             this.dataGridViewTextBoxColumn32.ReadOnly = true;
@@ -2156,9 +2750,9 @@
             // dataGridViewTextBoxColumn33
             // 
             this.dataGridViewTextBoxColumn33.DataPropertyName = "PROVEEDOR";
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle40.Format = "C2";
-            this.dataGridViewTextBoxColumn33.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle87.Format = "C2";
+            this.dataGridViewTextBoxColumn33.DefaultCellStyle = dataGridViewCellStyle87;
             this.dataGridViewTextBoxColumn33.HeaderText = "PROVEEDOR";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
             this.dataGridViewTextBoxColumn33.ReadOnly = true;
@@ -2167,9 +2761,9 @@
             // dataGridViewTextBoxColumn34
             // 
             this.dataGridViewTextBoxColumn34.DataPropertyName = "MON_OP";
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle41.Format = "C2";
-            this.dataGridViewTextBoxColumn34.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle88.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle88.Format = "C2";
+            this.dataGridViewTextBoxColumn34.DefaultCellStyle = dataGridViewCellStyle88;
             this.dataGridViewTextBoxColumn34.HeaderText = "MON_OP";
             this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
             this.dataGridViewTextBoxColumn34.ReadOnly = true;
@@ -2178,10 +2772,10 @@
             // dataGridViewTextBoxColumn35
             // 
             this.dataGridViewTextBoxColumn35.DataPropertyName = "TC";
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle42.Format = "C2";
-            this.dataGridViewTextBoxColumn35.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle89.Format = "C2";
+            this.dataGridViewTextBoxColumn35.DefaultCellStyle = dataGridViewCellStyle89;
             this.dataGridViewTextBoxColumn35.HeaderText = "TC";
             this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
             this.dataGridViewTextBoxColumn35.ReadOnly = true;
@@ -2300,11 +2894,11 @@
             // _1SaldoPendientePago
             // 
             this._1SaldoPendientePago.DataPropertyName = "FACT_SALDO_O";
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle43.Format = "C2";
-            this._1SaldoPendientePago.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle90.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle90.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle90.Format = "C2";
+            this._1SaldoPendientePago.DefaultCellStyle = dataGridViewCellStyle90;
             this._1SaldoPendientePago.HeaderText = "PendPago";
             this._1SaldoPendientePago.Name = "_1SaldoPendientePago";
             this._1SaldoPendientePago.ReadOnly = true;
@@ -2314,10 +2908,10 @@
             // _1SaldoImputado
             // 
             this._1SaldoImputado.DataPropertyName = "FACT_IMPUTADO";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle44.Format = "C2";
-            this._1SaldoImputado.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle91.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle91.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle91.Format = "C2";
+            this._1SaldoImputado.DefaultCellStyle = dataGridViewCellStyle91;
             this._1SaldoImputado.HeaderText = "Imputado";
             this._1SaldoImputado.Name = "_1SaldoImputado";
             this._1SaldoImputado.ReadOnly = true;
@@ -2326,10 +2920,10 @@
             // _1SaldoAImputar
             // 
             this._1SaldoAImputar.DataPropertyName = "FACT_SALDO_IMPUTAR";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle45.Format = "C2";
-            this._1SaldoAImputar.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle92.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle92.Format = "C2";
+            this._1SaldoAImputar.DefaultCellStyle = dataGridViewCellStyle92;
             this._1SaldoAImputar.HeaderText = "A Imputar";
             this._1SaldoAImputar.Name = "_1SaldoAImputar";
             this._1SaldoAImputar.ReadOnly = true;
@@ -2339,9 +2933,9 @@
             // _1RetIIBB
             // 
             this._1RetIIBB.DataPropertyName = "RetencionIIBB";
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle46.Format = "C2";
-            this._1RetIIBB.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle93.Format = "C2";
+            this._1RetIIBB.DefaultCellStyle = dataGridViewCellStyle93;
             this._1RetIIBB.HeaderText = "RetIIBB";
             this._1RetIIBB.Name = "_1RetIIBB";
             this._1RetIIBB.ReadOnly = true;
@@ -2350,9 +2944,9 @@
             // _1RetGs
             // 
             this._1RetGs.DataPropertyName = "RetencionGS";
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle47.Format = "C2";
-            this._1RetGs.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle94.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle94.Format = "C2";
+            this._1RetGs.DefaultCellStyle = dataGridViewCellStyle94;
             this._1RetGs.HeaderText = "RetGS";
             this._1RetGs.Name = "_1RetGs";
             this._1RetGs.ReadOnly = true;
@@ -2374,600 +2968,6 @@
             this.DEL.ReadOnly = true;
             this.DEL.Text = "Eliminar Documento de Orden de Pago";
             this.DEL.Width = 40;
-            // 
-            // _4TipoDoc
-            // 
-            this._4TipoDoc.DataPropertyName = "TDoc";
-            this._4TipoDoc.HeaderText = "TD";
-            this._4TipoDoc.Name = "_4TipoDoc";
-            this._4TipoDoc.ReadOnly = true;
-            this._4TipoDoc.Width = 35;
-            // 
-            // _4documento
-            // 
-            this._4documento.DataPropertyName = "NumDoc";
-            this._4documento.HeaderText = "Documento#";
-            this._4documento.Name = "_4documento";
-            this._4documento.ReadOnly = true;
-            this._4documento.Width = 90;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Format = "d";
-            dataGridViewCellStyle13.NullValue = null;
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // _4Importe
-            // 
-            this._4Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.Format = "C2";
-            this._4Importe.DefaultCellStyle = dataGridViewCellStyle14;
-            this._4Importe.HeaderText = "Importe";
-            this._4Importe.Name = "_4Importe";
-            this._4Importe.ReadOnly = true;
-            this._4Importe.Width = 80;
-            // 
-            // dsCreditosOPBindingSource
-            // 
-            this.dsCreditosOPBindingSource.DataSource = typeof(TecserEF.Entity.DataStructure.DsCreditosOP);
-            // 
-            // idOPDataGridViewTextBoxColumn
-            // 
-            this.idOPDataGridViewTextBoxColumn.DataPropertyName = "IdOP";
-            this.idOPDataGridViewTextBoxColumn.HeaderText = "IdOP";
-            this.idOPDataGridViewTextBoxColumn.Name = "idOPDataGridViewTextBoxColumn";
-            this.idOPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idOPDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // _3IdItem
-            // 
-            this._3IdItem.DataPropertyName = "IdItemRetencion";
-            this._3IdItem.HeaderText = "#";
-            this._3IdItem.Name = "_3IdItem";
-            this._3IdItem.ReadOnly = true;
-            this._3IdItem.Width = 30;
-            // 
-            // _3TipoRetencion
-            // 
-            this._3TipoRetencion.DataPropertyName = "RetencionTipo";
-            this._3TipoRetencion.HeaderText = "T.Ret";
-            this._3TipoRetencion.Name = "_3TipoRetencion";
-            this._3TipoRetencion.ReadOnly = true;
-            this._3TipoRetencion.Width = 60;
-            // 
-            // _3BaseImponible
-            // 
-            this._3BaseImponible.DataPropertyName = "BaseImponibleCalculo";
-            dataGridViewCellStyle10.Format = "C2";
-            this._3BaseImponible.DefaultCellStyle = dataGridViewCellStyle10;
-            this._3BaseImponible.HeaderText = "BaseImpo";
-            this._3BaseImponible.Name = "_3BaseImponible";
-            this._3BaseImponible.ReadOnly = true;
-            this._3BaseImponible.ToolTipText = "Base Imponible";
-            this._3BaseImponible.Width = 80;
-            // 
-            // _3Alicuota
-            // 
-            this._3Alicuota.DataPropertyName = "Alicuota";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Format = "P4";
-            dataGridViewCellStyle11.NullValue = null;
-            this._3Alicuota.DefaultCellStyle = dataGridViewCellStyle11;
-            this._3Alicuota.HeaderText = "Alic%";
-            this._3Alicuota.Name = "_3Alicuota";
-            this._3Alicuota.ReadOnly = true;
-            this._3Alicuota.Width = 60;
-            // 
-            // _3ImporteRetencion
-            // 
-            this._3ImporteRetencion.DataPropertyName = "ImporteRetencion";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle12.Format = "C2";
-            this._3ImporteRetencion.DefaultCellStyle = dataGridViewCellStyle12;
-            this._3ImporteRetencion.HeaderText = "Importe";
-            this._3ImporteRetencion.Name = "_3ImporteRetencion";
-            this._3ImporteRetencion.ReadOnly = true;
-            this._3ImporteRetencion.ToolTipText = "Importe Retencion";
-            this._3ImporteRetencion.Width = 80;
-            // 
-            // _3Gl
-            // 
-            this._3Gl.DataPropertyName = "GL";
-            this._3Gl.HeaderText = "GL";
-            this._3Gl.Name = "_3Gl";
-            this._3Gl.ReadOnly = true;
-            this._3Gl.Visible = false;
-            this._3Gl.Width = 50;
-            // 
-            // t0213OrdenPagoRetencionesBindingSource
-            // 
-            this.t0213OrdenPagoRetencionesBindingSource.DataSource = typeof(TecserEF.Entity.T0213_OrdenPagoRetenciones);
-            // 
-            // _2EsCheque
-            // 
-            this._2EsCheque.DataPropertyName = "EsCheque";
-            this._2EsCheque.HeaderText = "CH";
-            this._2EsCheque.Name = "_2EsCheque";
-            this._2EsCheque.ReadOnly = true;
-            this._2EsCheque.ToolTipText = "Es Cheque";
-            this._2EsCheque.Width = 30;
-            // 
-            // eChequeDataGridViewCheckBoxColumn
-            // 
-            this.eChequeDataGridViewCheckBoxColumn.DataPropertyName = "ECheque";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.NullValue = false;
-            this.eChequeDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.eChequeDataGridViewCheckBoxColumn.HeaderText = "E-Ch";
-            this.eChequeDataGridViewCheckBoxColumn.Name = "eChequeDataGridViewCheckBoxColumn";
-            this.eChequeDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.eChequeDataGridViewCheckBoxColumn.ToolTipText = "Es E-Cheque?";
-            this.eChequeDataGridViewCheckBoxColumn.Width = 40;
-            // 
-            // _2Item
-            // 
-            this._2Item.DataPropertyName = "IdItem";
-            this._2Item.HeaderText = "#";
-            this._2Item.Name = "_2Item";
-            this._2Item.ReadOnly = true;
-            this._2Item.Width = 20;
-            // 
-            // _2cuenta
-            // 
-            this._2cuenta.DataPropertyName = "CuentaItem";
-            this._2cuenta.HeaderText = "Cuenta";
-            this._2cuenta.Name = "_2cuenta";
-            this._2cuenta.ReadOnly = true;
-            this._2cuenta.Width = 50;
-            // 
-            // monedaItemDataGridViewTextBoxColumn
-            // 
-            this.monedaItemDataGridViewTextBoxColumn.DataPropertyName = "MonedaItem";
-            this.monedaItemDataGridViewTextBoxColumn.HeaderText = "Mon";
-            this.monedaItemDataGridViewTextBoxColumn.Name = "monedaItemDataGridViewTextBoxColumn";
-            this.monedaItemDataGridViewTextBoxColumn.ReadOnly = true;
-            this.monedaItemDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // importeItemDataGridViewTextBoxColumn
-            // 
-            this.importeItemDataGridViewTextBoxColumn.DataPropertyName = "ImporteItem";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "C2";
-            this.importeItemDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.importeItemDataGridViewTextBoxColumn.HeaderText = "Importe";
-            this.importeItemDataGridViewTextBoxColumn.Name = "importeItemDataGridViewTextBoxColumn";
-            this.importeItemDataGridViewTextBoxColumn.ReadOnly = true;
-            this.importeItemDataGridViewTextBoxColumn.Visible = false;
-            this.importeItemDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // _2ImporteOP
-            // 
-            this._2ImporteOP.DataPropertyName = "ImporteOP";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle8.Format = "C2";
-            this._2ImporteOP.DefaultCellStyle = dataGridViewCellStyle8;
-            this._2ImporteOP.HeaderText = "ImporteOP";
-            this._2ImporteOP.Name = "_2ImporteOP";
-            this._2ImporteOP.ReadOnly = true;
-            this._2ImporteOP.ToolTipText = "Importe en Moneda Orden de Pago";
-            this._2ImporteOP.Width = 75;
-            // 
-            // gLCuentaDataGridViewTextBoxColumn
-            // 
-            this.gLCuentaDataGridViewTextBoxColumn.DataPropertyName = "GLCuenta";
-            this.gLCuentaDataGridViewTextBoxColumn.HeaderText = "GL";
-            this.gLCuentaDataGridViewTextBoxColumn.Name = "gLCuentaDataGridViewTextBoxColumn";
-            this.gLCuentaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gLCuentaDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // chNumeroDataGridViewTextBoxColumn
-            // 
-            this.chNumeroDataGridViewTextBoxColumn.DataPropertyName = "ChNumero";
-            this.chNumeroDataGridViewTextBoxColumn.HeaderText = "Cheque#";
-            this.chNumeroDataGridViewTextBoxColumn.Name = "chNumeroDataGridViewTextBoxColumn";
-            this.chNumeroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.chNumeroDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // chFechaDataGridViewTextBoxColumn
-            // 
-            this.chFechaDataGridViewTextBoxColumn.DataPropertyName = "ChFecha";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Format = "d";
-            dataGridViewCellStyle9.NullValue = null;
-            this.chFechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.chFechaDataGridViewTextBoxColumn.HeaderText = "FechaAcred";
-            this.chFechaDataGridViewTextBoxColumn.Name = "chFechaDataGridViewTextBoxColumn";
-            this.chFechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.chFechaDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // chBancoDataGridViewTextBoxColumn
-            // 
-            this.chBancoDataGridViewTextBoxColumn.DataPropertyName = "ChBanco";
-            this.chBancoDataGridViewTextBoxColumn.HeaderText = "Banco";
-            this.chBancoDataGridViewTextBoxColumn.Name = "chBancoDataGridViewTextBoxColumn";
-            this.chBancoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // chIdCarteraDataGridViewTextBoxColumn
-            // 
-            this.chIdCarteraDataGridViewTextBoxColumn.DataPropertyName = "ChIdCartera";
-            this.chIdCarteraDataGridViewTextBoxColumn.HeaderText = "CHID";
-            this.chIdCarteraDataGridViewTextBoxColumn.Name = "chIdCarteraDataGridViewTextBoxColumn";
-            this.chIdCarteraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.chIdCarteraDataGridViewTextBoxColumn.Visible = false;
-            this.chIdCarteraDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // textoAlternoDataGridViewTextBoxColumn
-            // 
-            this.textoAlternoDataGridViewTextBoxColumn.DataPropertyName = "TextoAlterno";
-            this.textoAlternoDataGridViewTextBoxColumn.HeaderText = "Texto";
-            this.textoAlternoDataGridViewTextBoxColumn.Name = "textoAlternoDataGridViewTextBoxColumn";
-            this.textoAlternoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.textoAlternoDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // t0212OPITEMBindingSource
-            // 
-            this.t0212OPITEMBindingSource.DataSource = typeof(TecserEF.Entity.T0211_OrdenPagoItems);
-            // 
-            // _idCtaCte1
-            // 
-            this._idCtaCte1.DataPropertyName = "IdCtaCte";
-            this._idCtaCte1.HeaderText = "IdCtaCte";
-            this._idCtaCte1.Name = "_idCtaCte1";
-            this._idCtaCte1.ReadOnly = true;
-            this._idCtaCte1.Visible = false;
-            // 
-            // _idFactura
-            // 
-            this._idFactura.DataPropertyName = "IdFactura";
-            this._idFactura.HeaderText = "IdFactura";
-            this._idFactura.Name = "_idFactura";
-            this._idFactura.ReadOnly = true;
-            this._idFactura.Visible = false;
-            // 
-            // tDocDataGridViewTextBoxColumn
-            // 
-            this.tDocDataGridViewTextBoxColumn.DataPropertyName = "TDoc";
-            this.tDocDataGridViewTextBoxColumn.HeaderText = "TD";
-            this.tDocDataGridViewTextBoxColumn.Name = "tDocDataGridViewTextBoxColumn";
-            this.tDocDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tDocDataGridViewTextBoxColumn.ToolTipText = "Tipo Documento";
-            this.tDocDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // numDocDataGridViewTextBoxColumn
-            // 
-            this.numDocDataGridViewTextBoxColumn.DataPropertyName = "NumDoc";
-            this.numDocDataGridViewTextBoxColumn.HeaderText = "Documento#";
-            this.numDocDataGridViewTextBoxColumn.Name = "numDocDataGridViewTextBoxColumn";
-            this.numDocDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDocDataGridViewTextBoxColumn
-            // 
-            this.fechaDocDataGridViewTextBoxColumn.DataPropertyName = "FechaDoc";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.fechaDocDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.fechaDocDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDocDataGridViewTextBoxColumn.Name = "fechaDocDataGridViewTextBoxColumn";
-            this.fechaDocDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDocDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // monedaDataGridViewTextBoxColumn
-            // 
-            this.monedaDataGridViewTextBoxColumn.DataPropertyName = "Moneda";
-            this.monedaDataGridViewTextBoxColumn.HeaderText = "Mon";
-            this.monedaDataGridViewTextBoxColumn.Name = "monedaDataGridViewTextBoxColumn";
-            this.monedaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.monedaDataGridViewTextBoxColumn.ToolTipText = "Moneda Documento";
-            this.monedaDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // importeOriDataGridViewTextBoxColumn
-            // 
-            this.importeOriDataGridViewTextBoxColumn.DataPropertyName = "ImporteOri";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Format = "C2";
-            this.importeOriDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.importeOriDataGridViewTextBoxColumn.HeaderText = "Importe";
-            this.importeOriDataGridViewTextBoxColumn.Name = "importeOriDataGridViewTextBoxColumn";
-            this.importeOriDataGridViewTextBoxColumn.ReadOnly = true;
-            this.importeOriDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // importeArsDataGridViewTextBoxColumn
-            // 
-            this.importeArsDataGridViewTextBoxColumn.DataPropertyName = "ImporteArs";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            this.importeArsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.importeArsDataGridViewTextBoxColumn.HeaderText = "ImporteArs";
-            this.importeArsDataGridViewTextBoxColumn.Name = "importeArsDataGridViewTextBoxColumn";
-            this.importeArsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.importeArsDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // saldoPendienteDataGridViewTextBoxColumn
-            // 
-            this.saldoPendienteDataGridViewTextBoxColumn.DataPropertyName = "SaldoPendiente";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Format = "C2";
-            this.saldoPendienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.saldoPendienteDataGridViewTextBoxColumn.HeaderText = "Saldo";
-            this.saldoPendienteDataGridViewTextBoxColumn.Name = "saldoPendienteDataGridViewTextBoxColumn";
-            this.saldoPendienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.saldoPendienteDataGridViewTextBoxColumn.ToolTipText = "Saldo Impago";
-            this.saldoPendienteDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // imputadoDataGridViewTextBoxColumn
-            // 
-            this.imputadoDataGridViewTextBoxColumn.DataPropertyName = "Imputado";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
-            this.imputadoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.imputadoDataGridViewTextBoxColumn.HeaderText = "Imputado";
-            this.imputadoDataGridViewTextBoxColumn.Name = "imputadoDataGridViewTextBoxColumn";
-            this.imputadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imputadoDataGridViewTextBoxColumn.ToolTipText = "Imputado OP";
-            // 
-            // tCDataGridViewTextBoxColumn1
-            // 
-            this.tCDataGridViewTextBoxColumn1.DataPropertyName = "TC";
-            this.tCDataGridViewTextBoxColumn1.HeaderText = "TC";
-            this.tCDataGridViewTextBoxColumn1.Name = "tCDataGridViewTextBoxColumn1";
-            this.tCDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.tCDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dsFacturasOPBindingSource
-            // 
-            this.dsFacturasOPBindingSource.DataSource = typeof(TecserEF.Entity.DataStructure.DsFacturasOP);
-            // 
-            // rbtnVendorDetail
-            // 
-            this.rbtnVendorDetail.Image = ((System.Drawing.Image)(resources.GetObject("rbtnVendorDetail.Image")));
-            this.rbtnVendorDetail.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnVendorDetail.LargeImage")));
-            this.rbtnVendorDetail.Name = "rbtnVendorDetail";
-            this.rbtnVendorDetail.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnVendorDetail.SmallImage")));
-            this.rbtnVendorDetail.Text = "Detalle Proveedor";
-            // 
-            // rbtnTipoLx
-            // 
-            this.rbtnTipoLx.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.rbtnTipoLx.DropDownItems.Add(this.rbtnSetL1);
-            this.rbtnTipoLx.DropDownItems.Add(this.rbtnSetL2);
-            this.rbtnTipoLx.Image = ((System.Drawing.Image)(resources.GetObject("rbtnTipoLx.Image")));
-            this.rbtnTipoLx.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnTipoLx.LargeImage")));
-            this.rbtnTipoLx.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.DropDown;
-            this.rbtnTipoLx.Name = "rbtnTipoLx";
-            this.rbtnTipoLx.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnTipoLx.SmallImage")));
-            this.rbtnTipoLx.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
-            this.rbtnTipoLx.Text = "SET TIPO";
-            // 
-            // rbtnSetL1
-            // 
-            this.rbtnSetL1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.rbtnSetL1.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSetL1.Image")));
-            this.rbtnSetL1.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnSetL1.LargeImage")));
-            this.rbtnSetL1.Name = "rbtnSetL1";
-            this.rbtnSetL1.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSetL1.SmallImage")));
-            this.rbtnSetL1.Text = "Tipo L1";
-            this.rbtnSetL1.ToolTip = "Define Orden de pago tipo L1";
-            this.rbtnSetL1.Click += new System.EventHandler(this.rbtnSetL1_Click);
-            // 
-            // rbtnSetL2
-            // 
-            this.rbtnSetL2.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.rbtnSetL2.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSetL2.Image")));
-            this.rbtnSetL2.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnSetL2.LargeImage")));
-            this.rbtnSetL2.Name = "rbtnSetL2";
-            this.rbtnSetL2.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSetL2.SmallImage")));
-            this.rbtnSetL2.Text = "Tipo L2";
-            this.rbtnSetL2.Click += new System.EventHandler(this.rbtnSetL2_Click);
-            // 
-            // rbtnAsignarNumeroOP
-            // 
-            this.rbtnAsignarNumeroOP.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAsignarNumeroOP.Image")));
-            this.rbtnAsignarNumeroOP.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAsignarNumeroOP.LargeImage")));
-            this.rbtnAsignarNumeroOP.Name = "rbtnAsignarNumeroOP";
-            this.rbtnAsignarNumeroOP.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAsignarNumeroOP.SmallImage")));
-            this.rbtnAsignarNumeroOP.Text = "Asignar #";
-            this.rbtnAsignarNumeroOP.Click += new System.EventHandler(this.rbtnAsignarNumeroOP_Click);
-            // 
-            // rbtnGenerar
-            // 
-            this.rbtnGenerar.Image = ((System.Drawing.Image)(resources.GetObject("rbtnGenerar.Image")));
-            this.rbtnGenerar.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnGenerar.LargeImage")));
-            this.rbtnGenerar.Name = "rbtnGenerar";
-            this.rbtnGenerar.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnGenerar.SmallImage")));
-            this.rbtnGenerar.Text = "Generar";
-            this.rbtnGenerar.Click += new System.EventHandler(this.rbtnGenerar_Click);
-            // 
-            // rbtnCancelar
-            // 
-            this.rbtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCancelar.Image")));
-            this.rbtnCancelar.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnCancelar.LargeImage")));
-            this.rbtnCancelar.Name = "rbtnCancelar";
-            this.rbtnCancelar.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCancelar.SmallImage")));
-            this.rbtnCancelar.Text = "Cancelar";
-            // 
-            // rbtnDocumentosPendPago
-            // 
-            this.rbtnDocumentosPendPago.Image = ((System.Drawing.Image)(resources.GetObject("rbtnDocumentosPendPago.Image")));
-            this.rbtnDocumentosPendPago.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnDocumentosPendPago.LargeImage")));
-            this.rbtnDocumentosPendPago.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
-            this.rbtnDocumentosPendPago.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
-            this.rbtnDocumentosPendPago.Name = "rbtnDocumentosPendPago";
-            this.rbtnDocumentosPendPago.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDocumentosPendPago.SmallImage")));
-            this.rbtnDocumentosPendPago.Text = "Facturars Pendientes";
-            this.rbtnDocumentosPendPago.Click += new System.EventHandler(this.rbtnDocumentosPendPago_Click);
-            // 
-            // rbtnAddRetencionArba
-            // 
-            this.rbtnAddRetencionArba.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionArba.Image")));
-            this.rbtnAddRetencionArba.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionArba.LargeImage")));
-            this.rbtnAddRetencionArba.Name = "rbtnAddRetencionArba";
-            this.rbtnAddRetencionArba.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionArba.SmallImage")));
-            this.rbtnAddRetencionArba.Text = "Retenciones  ARBA";
-            this.rbtnAddRetencionArba.Click += new System.EventHandler(this.rbtnAddRetencionArba_Click);
-            // 
-            // rbtnAddRetencionGanancias
-            // 
-            this.rbtnAddRetencionGanancias.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionGanancias.Image")));
-            this.rbtnAddRetencionGanancias.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionGanancias.LargeImage")));
-            this.rbtnAddRetencionGanancias.Name = "rbtnAddRetencionGanancias";
-            this.rbtnAddRetencionGanancias.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionGanancias.SmallImage")));
-            this.rbtnAddRetencionGanancias.Text = "Retenciones Ganancias";
-            this.rbtnAddRetencionGanancias.Click += new System.EventHandler(this.rbtnAddRetencionGanancias_Click);
-            // 
-            // rbtnRemoverCreditosAnteriores
-            // 
-            this.rbtnRemoverCreditosAnteriores.Image = ((System.Drawing.Image)(resources.GetObject("rbtnRemoverCreditosAnteriores.Image")));
-            this.rbtnRemoverCreditosAnteriores.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnRemoverCreditosAnteriores.LargeImage")));
-            this.rbtnRemoverCreditosAnteriores.Name = "rbtnRemoverCreditosAnteriores";
-            this.rbtnRemoverCreditosAnteriores.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRemoverCreditosAnteriores.SmallImage")));
-            this.rbtnRemoverCreditosAnteriores.Text = "Remove Creditos";
-            this.rbtnRemoverCreditosAnteriores.Click += new System.EventHandler(this.rbtnRemoverCreditosAnteriores_Click);
-            // 
-            // rbAsignarCreditosAOP
-            // 
-            this.rbAsignarCreditosAOP.Image = ((System.Drawing.Image)(resources.GetObject("rbAsignarCreditosAOP.Image")));
-            this.rbAsignarCreditosAOP.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbAsignarCreditosAOP.LargeImage")));
-            this.rbAsignarCreditosAOP.Name = "rbAsignarCreditosAOP";
-            this.rbAsignarCreditosAOP.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbAsignarCreditosAOP.SmallImage")));
-            this.rbAsignarCreditosAOP.Text = "Asignar Creditos";
-            this.rbAsignarCreditosAOP.Click += new System.EventHandler(this.rbAsignarCreditosAOP_Click);
-            // 
-            // rbtnPrintOP
-            // 
-            this.rbtnPrintOP.Image = ((System.Drawing.Image)(resources.GetObject("rbtnPrintOP.Image")));
-            this.rbtnPrintOP.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnPrintOP.LargeImage")));
-            this.rbtnPrintOP.Name = "rbtnPrintOP";
-            this.rbtnPrintOP.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnPrintOP.SmallImage")));
-            this.rbtnPrintOP.Text = "Imprimir OP";
-            this.rbtnPrintOP.Click += new System.EventHandler(this.rbtnPrintOP_Click);
-            // 
-            // rbtnExit
-            // 
-            this.rbtnExit.Image = ((System.Drawing.Image)(resources.GetObject("rbtnExit.Image")));
-            this.rbtnExit.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnExit.LargeImage")));
-            this.rbtnExit.Name = "rbtnExit";
-            this.rbtnExit.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnExit.SmallImage")));
-            this.rbtnExit.Text = "SALIR";
-            this.rbtnExit.Click += new System.EventHandler(this.rbtnExit_Click);
-            // 
-            // rbtnSaveAndExit
-            // 
-            this.rbtnSaveAndExit.Image = ((System.Drawing.Image)(resources.GetObject("rbtnSaveAndExit.Image")));
-            this.rbtnSaveAndExit.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnSaveAndExit.LargeImage")));
-            this.rbtnSaveAndExit.Name = "rbtnSaveAndExit";
-            this.rbtnSaveAndExit.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSaveAndExit.SmallImage")));
-            this.rbtnSaveAndExit.Text = "Guardar y SALIR";
-            this.rbtnSaveAndExit.Click += new System.EventHandler(this.rbtnSaveAndExit_Click);
-            // 
-            // rbtnAddPesos
-            // 
-            this.rbtnAddPesos.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAddPesos.Image")));
-            this.rbtnAddPesos.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddPesos.LargeImage")));
-            this.rbtnAddPesos.Name = "rbtnAddPesos";
-            this.rbtnAddPesos.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddPesos.SmallImage")));
-            this.rbtnAddPesos.Text = "Efectivo $";
-            this.rbtnAddPesos.Click += new System.EventHandler(this.rbtnAddPesos_Click);
-            // 
-            // rbtAddUsd
-            // 
-            this.rbtAddUsd.Image = ((System.Drawing.Image)(resources.GetObject("rbtAddUsd.Image")));
-            this.rbtAddUsd.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtAddUsd.LargeImage")));
-            this.rbtAddUsd.Name = "rbtAddUsd";
-            this.rbtAddUsd.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtAddUsd.SmallImage")));
-            this.rbtAddUsd.Text = "Efectivo USD";
-            this.rbtAddUsd.Click += new System.EventHandler(this.rbtAddUsd_Click);
-            // 
-            // rbtTransfGalicia
-            // 
-            this.rbtTransfGalicia.Image = ((System.Drawing.Image)(resources.GetObject("rbtTransfGalicia.Image")));
-            this.rbtTransfGalicia.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfGalicia.LargeImage")));
-            this.rbtTransfGalicia.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
-            this.rbtTransfGalicia.Name = "rbtTransfGalicia";
-            this.rbtTransfGalicia.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfGalicia.SmallImage")));
-            this.rbtTransfGalicia.Text = "Galicia";
-            this.rbtTransfGalicia.Click += new System.EventHandler(this.rbtTransfGalicia_Click);
-            // 
-            // rbtTransfSantander
-            // 
-            this.rbtTransfSantander.Image = ((System.Drawing.Image)(resources.GetObject("rbtTransfSantander.Image")));
-            this.rbtTransfSantander.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfSantander.LargeImage")));
-            this.rbtTransfSantander.Name = "rbtTransfSantander";
-            this.rbtTransfSantander.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfSantander.SmallImage")));
-            this.rbtTransfSantander.Text = "Santander";
-            this.rbtTransfSantander.Click += new System.EventHandler(this.rbtTransfSantander_Click);
-            // 
-            // rbtTransfOtrosBancos
-            // 
-            this.rbtTransfOtrosBancos.Image = ((System.Drawing.Image)(resources.GetObject("rbtTransfOtrosBancos.Image")));
-            this.rbtTransfOtrosBancos.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfOtrosBancos.LargeImage")));
-            this.rbtTransfOtrosBancos.Name = "rbtTransfOtrosBancos";
-            this.rbtTransfOtrosBancos.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtTransfOtrosBancos.SmallImage")));
-            this.rbtTransfOtrosBancos.Text = "Otros Bancos";
-            this.rbtTransfOtrosBancos.Click += new System.EventHandler(this.rbtTransfOtrosBancos_Click);
-            // 
-            // rbtChequesTerceros
-            // 
-            this.rbtChequesTerceros.Image = ((System.Drawing.Image)(resources.GetObject("rbtChequesTerceros.Image")));
-            this.rbtChequesTerceros.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtChequesTerceros.LargeImage")));
-            this.rbtChequesTerceros.Name = "rbtChequesTerceros";
-            this.rbtChequesTerceros.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtChequesTerceros.SmallImage")));
-            this.rbtChequesTerceros.Text = "Cheques  Terceros";
-            this.rbtChequesTerceros.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.rbtChequesTerceros.Click += new System.EventHandler(this.rbtChequesTerceros_Click);
-            // 
-            // rbtEmisionChequeFisico
-            // 
-            this.rbtEmisionChequeFisico.Image = ((System.Drawing.Image)(resources.GetObject("rbtEmisionChequeFisico.Image")));
-            this.rbtEmisionChequeFisico.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtEmisionChequeFisico.LargeImage")));
-            this.rbtEmisionChequeFisico.Name = "rbtEmisionChequeFisico";
-            this.rbtEmisionChequeFisico.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtEmisionChequeFisico.SmallImage")));
-            this.rbtEmisionChequeFisico.Text = "Cheque Fisico";
-            this.rbtEmisionChequeFisico.Click += new System.EventHandler(this.rbtEmisionChequeFisico_Click);
-            // 
-            // rbtEmisionEcheque
-            // 
-            this.rbtEmisionEcheque.Image = ((System.Drawing.Image)(resources.GetObject("rbtEmisionEcheque.Image")));
-            this.rbtEmisionEcheque.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtEmisionEcheque.LargeImage")));
-            this.rbtEmisionEcheque.Name = "rbtEmisionEcheque";
-            this.rbtEmisionEcheque.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtEmisionEcheque.SmallImage")));
-            this.rbtEmisionEcheque.Text = "E-Cheque";
-            this.rbtEmisionEcheque.Click += new System.EventHandler(this.rbtEmisionEcheque_Click);
-            // 
-            // rbtCuentaGL
-            // 
-            this.rbtCuentaGL.Image = ((System.Drawing.Image)(resources.GetObject("rbtCuentaGL.Image")));
-            this.rbtCuentaGL.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtCuentaGL.LargeImage")));
-            this.rbtCuentaGL.Name = "rbtCuentaGL";
-            this.rbtCuentaGL.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtCuentaGL.SmallImage")));
-            this.rbtCuentaGL.Text = "Cuenta GL";
-            this.rbtCuentaGL.Click += new System.EventHandler(this.rbtCuentaGL_Click);
-            // 
-            // rbtCompensacionCliente
-            // 
-            this.rbtCompensacionCliente.Image = ((System.Drawing.Image)(resources.GetObject("rbtCompensacionCliente.Image")));
-            this.rbtCompensacionCliente.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtCompensacionCliente.LargeImage")));
-            this.rbtCompensacionCliente.Name = "rbtCompensacionCliente";
-            this.rbtCompensacionCliente.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtCompensacionCliente.SmallImage")));
-            this.rbtCompensacionCliente.Text = "Compensacion Cliente";
-            this.rbtCompensacionCliente.Click += new System.EventHandler(this.rbtCompensacionCliente_Click);
-            // 
-            // ribbonTab1
-            // 
-            this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Text = "ribbonTab1";
             // 
             // FI31OrdenPagoMainScreen
             // 
@@ -2993,6 +2993,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1Documentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFacturasOPBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -3000,6 +3001,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2ItemsPago)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t0212OPITEMBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -3007,13 +3009,11 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv4Retenciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t0213OrdenPagoRetencionesBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv3Creditos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCreditosOPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t0213OrdenPagoRetencionesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t0212OPITEMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFacturasOPBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3032,12 +3032,10 @@
         private System.Windows.Forms.RibbonPanel rpImprimir;
         private System.Windows.Forms.RibbonButton rbtnPrintOP;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFechaOP;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cmbMoneda;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
@@ -3254,5 +3252,7 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn6;
         private System.Windows.Forms.RibbonTab ribbonTab1;
+        public System.Windows.Forms.TextBox txtRazonSocial;
+        public System.Windows.Forms.ComboBox cmbMoneda;
     }
 }

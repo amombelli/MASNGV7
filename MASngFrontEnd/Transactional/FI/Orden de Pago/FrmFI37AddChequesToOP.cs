@@ -8,14 +8,14 @@ using TecserEF.Entity.DataStructure;
 
 namespace MASngFE.Transactional.FI.Orden_de_Pago
 {
-    public partial class FrmFI37AddChequesToOP : Form
+    public partial class FrmFi37AddChequesToOp : Form
     {
         private readonly string _lx;
         private readonly FI31OrdenPagoMainScreen _f;
         private List<int?> _listaChequesInOp;
         private List<TsCheques1> _lista = new List<TsCheques1>();
 
-        public FrmFI37AddChequesToOP(string lx, FI31OrdenPagoMainScreen frm, List<int?> listaChequesInOp)
+        public FrmFi37AddChequesToOp(string lx, FI31OrdenPagoMainScreen frm, List<int?> listaChequesInOp)
         {
             _lx = lx;
             _f = frm;
@@ -68,7 +68,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
                     {
                         _listaChequesInOp = new List<int?>();
                     }
-                    _f.AddChequeOP(idCheque);
+                    _f.AddChequeCarteraToOp(idCheque);
                     RefrescaDgv();
                 }
                 else

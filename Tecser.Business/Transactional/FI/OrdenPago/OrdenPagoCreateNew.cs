@@ -406,6 +406,34 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
             ItemsPagoOP.Add(item);
             Header.SetImportePagoCash(item.ImporteOP);
         }
+
+        public void AddChequeEmitido(string cuenta, DateTime fechaAcreditacion, string numeroCheque, bool esECheque,decimal importe)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var P = new CuentasManager().GetSpecificCuentaInfo(cuenta);
+                var item = new T0211_OrdenPagoItems()
+                {
+                    MonedaItem = "ARS",
+                    ChBanco = cuenta,
+                    ChFecha = fechaAcreditacion,
+                    ChNumero = numeroCheque,
+                    EsCheque = true,
+                    ECheque = esECheque,
+                    IdItem = ItemsPagoOP.Count + 1,
+                    GLCuenta = P.GLMAP,
+                    TextoAlterno = null,
+                    IdOP = Header.NumeroOP,
+                    ImporteOP = importe,
+                    ImporteItem = importe,
+                    ChIdCartera = -1,
+                    CuentaItem = "CHE",
+                };
+                ItemsPagoOP.Add(item);
+                Header.SetImportePagoCheque(item.ImporteOP);
+            }
+        }
+
         public void AddChequeCarteraToOp(int idCheque)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
