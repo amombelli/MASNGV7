@@ -46,17 +46,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ckInterior = new System.Windows.Forms.CheckBox();
             this.ckCaba = new System.Windows.Forms.CheckBox();
-            this.cDiasAcred = new TSControls.CtlTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cImporteMinimo = new TSControls.CtlTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cImporteMaximo = new TSControls.CtlTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtNumeroCheque = new System.Windows.Forms.TextBox();
-            this.cIdCheque = new TSControls.CtlTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -79,6 +75,10 @@
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
+            this.cIdCheque = new TSControls.CtlTextBox();
+            this.cDiasAcred = new TSControls.CtlTextBox();
+            this.cImporteMinimo = new TSControls.CtlTextBox();
+            this.cImporteMaximo = new TSControls.CtlTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -131,7 +131,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 48);
             this.btnCancelar.TabIndex = 205;
-            this.btnCancelar.Text = "Volver";
+            this.btnCancelar.Text = "Cerrar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -140,7 +140,7 @@
             this.btnResetFiltros.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetFiltros.Image = ((System.Drawing.Image)(resources.GetObject("btnResetFiltros.Image")));
             this.btnResetFiltros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResetFiltros.Location = new System.Drawing.Point(872, 113);
+            this.btnResetFiltros.Location = new System.Drawing.Point(872, 103);
             this.btnResetFiltros.Name = "btnResetFiltros";
             this.btnResetFiltros.Size = new System.Drawing.Size(106, 48);
             this.btnResetFiltros.TabIndex = 204;
@@ -213,33 +213,6 @@
             this.ckCaba.UseVisualStyleBackColor = true;
             this.ckCaba.CheckedChanged += new System.EventHandler(this.ckL1_CheckedChanged);
             // 
-            // cDiasAcred
-            // 
-            this.cDiasAcred.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cDiasAcred.BackColor = System.Drawing.SystemColors.Control;
-            this.cDiasAcred.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cDiasAcred.Location = new System.Drawing.Point(567, 5);
-            this.cDiasAcred.Margin = new System.Windows.Forms.Padding(0);
-            this.cDiasAcred.Name = "cDiasAcred";
-            this.cDiasAcred.SeparadorDecimal = false;
-            this.cDiasAcred.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cDiasAcred.SetDecimales = 0;
-            this.cDiasAcred.SetType = TSControls.CtlTextBox.TextBoxType.Entero;
-            this.cDiasAcred.Size = new System.Drawing.Size(56, 23);
-            this.cDiasAcred.TabIndex = 209;
-            this.cDiasAcred.ValorMaximo = new decimal(new int[] {
-            365,
-            0,
-            0,
-            0});
-            this.cDiasAcred.ValorMinimo = new decimal(new int[] {
-            365,
-            0,
-            0,
-            -2147483648});
-            this.cDiasAcred.XReadOnly = false;
-            this.cDiasAcred.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -261,33 +234,6 @@
             this.panel3.Size = new System.Drawing.Size(221, 58);
             this.panel3.TabIndex = 208;
             // 
-            // cImporteMinimo
-            // 
-            this.cImporteMinimo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cImporteMinimo.BackColor = System.Drawing.Color.White;
-            this.cImporteMinimo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cImporteMinimo.Location = new System.Drawing.Point(113, 30);
-            this.cImporteMinimo.Margin = new System.Windows.Forms.Padding(0);
-            this.cImporteMinimo.Name = "cImporteMinimo";
-            this.cImporteMinimo.SeparadorDecimal = false;
-            this.cImporteMinimo.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cImporteMinimo.SetDecimales = 2;
-            this.cImporteMinimo.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cImporteMinimo.Size = new System.Drawing.Size(102, 23);
-            this.cImporteMinimo.TabIndex = 213;
-            this.cImporteMinimo.ValorMaximo = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.cImporteMinimo.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cImporteMinimo.XReadOnly = false;
-            this.cImporteMinimo.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -296,33 +242,6 @@
             this.label2.Size = new System.Drawing.Size(94, 15);
             this.label2.TabIndex = 214;
             this.label2.Text = "Importe Mínimo";
-            // 
-            // cImporteMaximo
-            // 
-            this.cImporteMaximo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cImporteMaximo.BackColor = System.Drawing.Color.White;
-            this.cImporteMaximo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cImporteMaximo.Location = new System.Drawing.Point(113, 5);
-            this.cImporteMaximo.Margin = new System.Windows.Forms.Padding(0);
-            this.cImporteMaximo.Name = "cImporteMaximo";
-            this.cImporteMaximo.SeparadorDecimal = false;
-            this.cImporteMaximo.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cImporteMaximo.SetDecimales = 2;
-            this.cImporteMaximo.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
-            this.cImporteMaximo.Size = new System.Drawing.Size(102, 23);
-            this.cImporteMaximo.TabIndex = 211;
-            this.cImporteMaximo.ValorMaximo = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.cImporteMaximo.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cImporteMaximo.XReadOnly = false;
-            this.cImporteMaximo.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
             // 
             // label1
             // 
@@ -338,7 +257,7 @@
             this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label4.Location = new System.Drawing.Point(11, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(635, 15);
+            this.label4.Size = new System.Drawing.Size(685, 15);
             this.label4.TabIndex = 211;
             this.label4.Text = "FILTRADO DE CHEQUES";
             // 
@@ -349,7 +268,7 @@
             this.panel4.Controls.Add(this.cIdCheque);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(5, 6);
+            this.panel4.Location = new System.Drawing.Point(9, 6);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(149, 58);
             this.panel4.TabIndex = 215;
@@ -364,33 +283,6 @@
             this.txtNumeroCheque.TabIndex = 215;
             this.txtNumeroCheque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroCheque_KeyPress);
             this.txtNumeroCheque.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
-            // 
-            // cIdCheque
-            // 
-            this.cIdCheque.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cIdCheque.BackColor = System.Drawing.Color.White;
-            this.cIdCheque.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cIdCheque.Location = new System.Drawing.Point(76, 30);
-            this.cIdCheque.Margin = new System.Windows.Forms.Padding(0);
-            this.cIdCheque.Name = "cIdCheque";
-            this.cIdCheque.SeparadorDecimal = false;
-            this.cIdCheque.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
-            this.cIdCheque.SetDecimales = 0;
-            this.cIdCheque.SetType = TSControls.CtlTextBox.TextBoxType.Entero;
-            this.cIdCheque.Size = new System.Drawing.Size(66, 23);
-            this.cIdCheque.TabIndex = 213;
-            this.cIdCheque.ValorMaximo = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.cIdCheque.ValorMinimo = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.cIdCheque.XReadOnly = false;
-            this.cIdCheque.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
             // 
             // label5
             // 
@@ -413,9 +305,9 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Snow;
-            this.label7.Location = new System.Drawing.Point(652, 11);
+            this.label7.Location = new System.Drawing.Point(699, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(161, 15);
+            this.label7.Size = new System.Drawing.Size(167, 15);
             this.label7.TabIndex = 216;
             this.label7.Text = "BUSQUEDA DE CHEQUES";
             // 
@@ -429,16 +321,16 @@
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Location = new System.Drawing.Point(11, 29);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(635, 71);
+            this.panel5.Size = new System.Drawing.Size(685, 71);
             this.panel5.TabIndex = 217;
             // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.panel4);
-            this.panel6.Location = new System.Drawing.Point(652, 29);
+            this.panel6.Location = new System.Drawing.Point(699, 29);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(161, 71);
+            this.panel6.Size = new System.Drawing.Size(167, 71);
             this.panel6.TabIndex = 218;
             // 
             // tsCheques1BindingSource
@@ -477,13 +369,13 @@
             this.dataGridViewButtonColumn2});
             this.dgvChequesFull.DataSource = this.tsCheques1BindingSource;
             this.dgvChequesFull.GridColor = System.Drawing.Color.Black;
-            this.dgvChequesFull.Location = new System.Drawing.Point(11, 113);
+            this.dgvChequesFull.Location = new System.Drawing.Point(12, 114);
             this.dgvChequesFull.MultiSelect = false;
             this.dgvChequesFull.Name = "dgvChequesFull";
             this.dgvChequesFull.ReadOnly = true;
             this.dgvChequesFull.RowHeadersWidth = 20;
             this.dgvChequesFull.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChequesFull.Size = new System.Drawing.Size(831, 570);
+            this.dgvChequesFull.Size = new System.Drawing.Size(855, 571);
             this.dgvChequesFull.TabIndex = 219;
             this.dgvChequesFull.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChequesFull_CellContentClick);
             // 
@@ -639,13 +531,122 @@
             this.btnExport.Text = "Exportar";
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // cIdCheque
+            // 
+            this.cIdCheque.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cIdCheque.BackColor = System.Drawing.Color.White;
+            this.cIdCheque.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cIdCheque.Location = new System.Drawing.Point(76, 30);
+            this.cIdCheque.Margin = new System.Windows.Forms.Padding(0);
+            this.cIdCheque.Name = "cIdCheque";
+            this.cIdCheque.SeparadorDecimal = false;
+            this.cIdCheque.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cIdCheque.SetDecimales = 0;
+            this.cIdCheque.SetType = TSControls.CtlTextBox.TextBoxType.Entero;
+            this.cIdCheque.Size = new System.Drawing.Size(66, 23);
+            this.cIdCheque.TabIndex = 213;
+            this.cIdCheque.ValorMaximo = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.cIdCheque.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cIdCheque.XReadOnly = false;
+            this.cIdCheque.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
+            // 
+            // cDiasAcred
+            // 
+            this.cDiasAcred.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cDiasAcred.BackColor = System.Drawing.SystemColors.Control;
+            this.cDiasAcred.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cDiasAcred.Location = new System.Drawing.Point(567, 5);
+            this.cDiasAcred.Margin = new System.Windows.Forms.Padding(0);
+            this.cDiasAcred.Name = "cDiasAcred";
+            this.cDiasAcred.SeparadorDecimal = false;
+            this.cDiasAcred.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cDiasAcred.SetDecimales = 0;
+            this.cDiasAcred.SetType = TSControls.CtlTextBox.TextBoxType.Entero;
+            this.cDiasAcred.Size = new System.Drawing.Size(56, 23);
+            this.cDiasAcred.TabIndex = 209;
+            this.cDiasAcred.ValorMaximo = new decimal(new int[] {
+            365,
+            0,
+            0,
+            0});
+            this.cDiasAcred.ValorMinimo = new decimal(new int[] {
+            365,
+            0,
+            0,
+            -2147483648});
+            this.cDiasAcred.XReadOnly = false;
+            this.cDiasAcred.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
+            // 
+            // cImporteMinimo
+            // 
+            this.cImporteMinimo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cImporteMinimo.BackColor = System.Drawing.Color.White;
+            this.cImporteMinimo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cImporteMinimo.Location = new System.Drawing.Point(113, 30);
+            this.cImporteMinimo.Margin = new System.Windows.Forms.Padding(0);
+            this.cImporteMinimo.Name = "cImporteMinimo";
+            this.cImporteMinimo.SeparadorDecimal = false;
+            this.cImporteMinimo.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cImporteMinimo.SetDecimales = 2;
+            this.cImporteMinimo.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cImporteMinimo.Size = new System.Drawing.Size(102, 23);
+            this.cImporteMinimo.TabIndex = 213;
+            this.cImporteMinimo.ValorMaximo = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.cImporteMinimo.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cImporteMinimo.XReadOnly = false;
+            this.cImporteMinimo.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
+            // 
+            // cImporteMaximo
+            // 
+            this.cImporteMaximo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cImporteMaximo.BackColor = System.Drawing.Color.White;
+            this.cImporteMaximo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cImporteMaximo.Location = new System.Drawing.Point(113, 5);
+            this.cImporteMaximo.Margin = new System.Windows.Forms.Padding(0);
+            this.cImporteMaximo.Name = "cImporteMaximo";
+            this.cImporteMaximo.SeparadorDecimal = false;
+            this.cImporteMaximo.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
+            this.cImporteMaximo.SetDecimales = 2;
+            this.cImporteMaximo.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
+            this.cImporteMaximo.Size = new System.Drawing.Size(102, 23);
+            this.cImporteMaximo.TabIndex = 211;
+            this.cImporteMaximo.ValorMaximo = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.cImporteMaximo.ValorMinimo = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.cImporteMaximo.XReadOnly = false;
+            this.cImporteMaximo.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
             // 
             // FrmFI37AddChequesToOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(989, 693);
+            this.ClientSize = new System.Drawing.Size(986, 693);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvChequesFull);

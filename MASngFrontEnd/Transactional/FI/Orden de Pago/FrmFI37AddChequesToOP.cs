@@ -175,5 +175,28 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             this.ckL2.CheckedChanged += new System.EventHandler(this.ckL1_CheckedChanged);
             this.cImporteMinimo.Validated += new System.EventHandler(this.cImporteMaximo_Validated);
         }
+        private void CopyAlltoClipboard()
+        {
+            dgvChequesFull.SelectAll();
+            DataObject dataObj = dgvChequesFull.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+        }
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            CopyAlltoClipboard();
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Microsoft.Office.Interop.Excel.Application {Visible = true};
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet) xlWorkBook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range
+                cr = (Microsoft.Office.Interop.Excel.Range) xlWorkSheet.Cells[1, 1];
+            cr.Select();
+            xlWorkSheet.PasteSpecial(cr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                true);
+        }
     }
 }

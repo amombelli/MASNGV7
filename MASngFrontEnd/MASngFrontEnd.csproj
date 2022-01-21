@@ -1283,6 +1283,12 @@
     <Compile Include="Transactional\FI\Orden de Pago\FrmFI38DetalleImputacionPorDocumento.Designer.cs">
       <DependentUpon>FrmFI38DetalleImputacionPorDocumento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI39AddChequeEmitidoPropioToOp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\FI\Orden de Pago\FrmFI39AddChequeEmitidoPropioToOp.Designer.cs">
+      <DependentUpon>FrmFI39AddChequeEmitidoPropioToOp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactional\FI\TaxModule\FrmFI13TaxConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2930,6 +2936,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI38DetalleImputacionPorDocumento.resx">
       <DependentUpon>FrmFI38DetalleImputacionPorDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\FI\Orden de Pago\FrmFI39AddChequeEmitidoPropioToOp.resx">
+      <DependentUpon>FrmFI39AddChequeEmitidoPropioToOp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\FI\TaxModule\FrmFI13TaxConfig.resx">
       <DependentUpon>FrmFI13TaxConfig.cs</DependentUpon>

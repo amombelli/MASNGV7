@@ -49,7 +49,6 @@ namespace Tecser.Business.MasterData
         {
             return new TecserData(GlobalApp.CnnApp).T0150_CUENTAS.Where(c => c.DisponibleREG).ToList();
         }
-
         public List<T0150_CUENTAS> GetListaCuentasAvailableForContar(string moneda = "ARS")
         {
             return new TecserData(GlobalApp.CnnApp).T0150_CUENTAS.Where(c => c.DisponibleContar && c.CUENTA_MONEDA.ToUpper().Equals(moneda.ToUpper())).ToList();
@@ -62,7 +61,6 @@ namespace Tecser.Business.MasterData
                 return data == null ? "0.0.0.0" : data.GLMAP;
             }
         }
-
         public decimal GetSaldoCuenta(string nombreCuenta)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -73,7 +71,6 @@ namespace Tecser.Business.MasterData
                 return cta.SALDO.Value;
             }
         }
-
         public decimal GetSaldoCuentaPendienteConversion(string nombreCuenta)
         {
             decimal retornoSinPresentar = 0;
@@ -102,8 +99,6 @@ namespace Tecser.Business.MasterData
                 return retornoSinPresentar;
             }
         }
-
-
         public void UpdateSaldoCuenta(string nombreCuenta, decimal valorConSigno)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -117,14 +112,16 @@ namespace Tecser.Business.MasterData
                 db.SaveChanges();
             }
         }
-
-
         public static List<T0150_CUENTAS> GetCuentasDisponibleSyJ()
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
                 return db.T0150_CUENTAS.Where(c => c.DisponibleSYJ).ToList();
             }
+        }
+        public List<T0150_CUENTAS> GetListaCuentaAvailableEmiteCheque()
+        {
+            return new TecserData(GlobalApp.CnnApp).T0150_CUENTAS.Where(c => c.EmiteCheque).ToList();
         }
     }
 }

@@ -93,7 +93,7 @@
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.Location = new System.Drawing.Point(579, 27);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(100, 39);
+            this.btnSalir.Size = new System.Drawing.Size(106, 48);
             this.btnSalir.TabIndex = 12;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -381,16 +381,19 @@
             // ctlFechaEntrega
             // 
             this.ctlFechaEntrega.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ctlFechaEntrega.BackColor = System.Drawing.SystemColors.Control;
             this.ctlFechaEntrega.CheckPeriodoFIAuto = false;
             this.ctlFechaEntrega.ColorFondoFecha = System.Drawing.Color.Empty;
             this.ctlFechaEntrega.ColorForeFecha = System.Drawing.Color.Empty;
             this.ctlFechaEntrega.FechaMaxima = null;
             this.ctlFechaEntrega.FechaMinima = null;
+            this.ctlFechaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctlFechaEntrega.Location = new System.Drawing.Point(138, 102);
+            this.ctlFechaEntrega.Margin = new System.Windows.Forms.Padding(0);
             this.ctlFechaEntrega.Name = "ctlFechaEntrega";
             this.ctlFechaEntrega.ObtieneTCAuto = false;
             this.ctlFechaEntrega.SetLights = TSControls.CtlFechaTs.ColoreSemaforo.Green;
-            this.ctlFechaEntrega.Size = new System.Drawing.Size(146, 24);
+            this.ctlFechaEntrega.Size = new System.Drawing.Size(97, 23);
             this.ctlFechaEntrega.TabIndex = 31;
             this.ctlFechaEntrega.ValidarRangoFecha = false;
             this.ctlFechaEntrega.Value = null;
@@ -569,7 +572,7 @@
             this.btnUnsetEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUnsetEntrega.Location = new System.Drawing.Point(579, 318);
             this.btnUnsetEntrega.Name = "btnUnsetEntrega";
-            this.btnUnsetEntrega.Size = new System.Drawing.Size(100, 39);
+            this.btnUnsetEntrega.Size = new System.Drawing.Size(106, 48);
             this.btnUnsetEntrega.TabIndex = 31;
             this.btnUnsetEntrega.Text = "UNSET\r\nEntrega";
             this.btnUnsetEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -583,7 +586,7 @@
             this.btnFixID400.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFixID400.Location = new System.Drawing.Point(579, 243);
             this.btnFixID400.Name = "btnFixID400";
-            this.btnFixID400.Size = new System.Drawing.Size(100, 39);
+            this.btnFixID400.Size = new System.Drawing.Size(106, 48);
             this.btnFixID400.TabIndex = 32;
             this.btnFixID400.Text = "FIX\r\nIDT400";
             this.btnFixID400.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -595,7 +598,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(694, 395);
+            this.ClientSize = new System.Drawing.Size(692, 397);
             this.Controls.Add(this.btnFixID400);
             this.Controls.Add(this.btnUnsetEntrega);
             this.Controls.Add(this.label17);
