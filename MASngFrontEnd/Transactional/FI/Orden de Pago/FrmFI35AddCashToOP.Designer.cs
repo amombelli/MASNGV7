@@ -42,8 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ctlImporte = new TSControls.CtlTextBox();
-            this.btnAddItemPago = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtGLItem = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,6 +49,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtMonedaItem = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAddItemPago = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(494, 3);
             this.label13.TabIndex = 198;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label12
             // 
@@ -76,6 +77,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(3, 172);
             this.label12.TabIndex = 197;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // LineaIzq
             // 
@@ -87,6 +89,7 @@
             this.LineaIzq.Name = "LineaIzq";
             this.LineaIzq.Size = new System.Drawing.Size(3, 172);
             this.LineaIzq.TabIndex = 196;
+            this.LineaIzq.Click += new System.EventHandler(this.LineaIzq_Click);
             // 
             // lineaArriba
             // 
@@ -98,6 +101,7 @@
             this.lineaArriba.Name = "lineaArriba";
             this.lineaArriba.Size = new System.Drawing.Size(494, 3);
             this.lineaArriba.TabIndex = 195;
+            this.lineaArriba.Click += new System.EventHandler(this.lineaArriba_Click);
             // 
             // panel1
             // 
@@ -113,6 +117,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(479, 61);
             this.panel1.TabIndex = 199;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBox1
             // 
@@ -122,6 +127,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(55, 25);
             this.textBox1.TabIndex = 130;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -132,6 +138,7 @@
             this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 131;
             this.label3.Text = "Moneda OP";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtProveedor
             // 
@@ -141,6 +148,7 @@
             this.txtProveedor.ReadOnly = true;
             this.txtProveedor.Size = new System.Drawing.Size(383, 25);
             this.txtProveedor.TabIndex = 128;
+            this.txtProveedor.TextChanged += new System.EventHandler(this.txtProveedor_TextChanged);
             // 
             // label4
             // 
@@ -151,6 +159,7 @@
             this.label4.Size = new System.Drawing.Size(69, 17);
             this.label4.TabIndex = 127;
             this.label4.Text = "Proveedor";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtMoneda
             // 
@@ -160,6 +169,7 @@
             this.txtMoneda.ReadOnly = true;
             this.txtMoneda.Size = new System.Drawing.Size(55, 25);
             this.txtMoneda.TabIndex = 129;
+            this.txtMoneda.TextChanged += new System.EventHandler(this.txtMoneda_TextChanged);
             // 
             // label1
             // 
@@ -170,6 +180,7 @@
             this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 129;
             this.label1.Text = "Moneda OP";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -180,6 +191,7 @@
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 200;
             this.label2.Text = "Importe";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // ctlImporte
             // 
@@ -189,6 +201,7 @@
             this.ctlImporte.Location = new System.Drawing.Point(113, 57);
             this.ctlImporte.Margin = new System.Windows.Forms.Padding(0);
             this.ctlImporte.Name = "ctlImporte";
+            this.ctlImporte.SeparadorDecimal = true;
             this.ctlImporte.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
             this.ctlImporte.SetDecimales = 2;
             this.ctlImporte.SetType = TSControls.CtlTextBox.TextBoxType.Moneda;
@@ -205,34 +218,7 @@
             0,
             0});
             this.ctlImporte.XReadOnly = false;
-            // 
-            // btnAddItemPago
-            // 
-            this.btnAddItemPago.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddItemPago.Image = ((System.Drawing.Image)(resources.GetObject("btnAddItemPago.Image")));
-            this.btnAddItemPago.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddItemPago.Location = new System.Drawing.Point(371, 72);
-            this.btnAddItemPago.Name = "btnAddItemPago";
-            this.btnAddItemPago.Size = new System.Drawing.Size(118, 48);
-            this.btnAddItemPago.TabIndex = 202;
-            this.btnAddItemPago.Text = "AGREGAR";
-            this.btnAddItemPago.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddItemPago.UseVisualStyleBackColor = true;
-            this.btnAddItemPago.Click += new System.EventHandler(this.btnAddItemPago_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(371, 120);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(118, 48);
-            this.btnCancelar.TabIndex = 203;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.ctlImporte.Load += new System.EventHandler(this.ctlImporte_Load);
             // 
             // panel2
             // 
@@ -250,6 +236,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(355, 94);
             this.panel2.TabIndex = 200;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txtGLItem
             // 
@@ -259,6 +246,7 @@
             this.txtGLItem.ReadOnly = true;
             this.txtGLItem.Size = new System.Drawing.Size(101, 25);
             this.txtGLItem.TabIndex = 206;
+            this.txtGLItem.TextChanged += new System.EventHandler(this.txtGLItem_TextChanged);
             // 
             // label7
             // 
@@ -269,6 +257,7 @@
             this.label7.Size = new System.Drawing.Size(52, 17);
             this.label7.TabIndex = 205;
             this.label7.Text = "GL Item";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // ctlTasaConversion
             // 
@@ -278,6 +267,7 @@
             this.ctlTasaConversion.Location = new System.Drawing.Point(113, 31);
             this.ctlTasaConversion.Margin = new System.Windows.Forms.Padding(0);
             this.ctlTasaConversion.Name = "ctlTasaConversion";
+            this.ctlTasaConversion.SeparadorDecimal = true;
             this.ctlTasaConversion.SetAlineacion = TSControls.CtlTextBox.Alineacion.Centro;
             this.ctlTasaConversion.SetDecimales = 2;
             this.ctlTasaConversion.SetType = TSControls.CtlTextBox.TextBoxType.Decimal;
@@ -294,6 +284,7 @@
             0,
             0});
             this.ctlTasaConversion.XReadOnly = false;
+            this.ctlTasaConversion.Load += new System.EventHandler(this.ctlTasaConversion_Load);
             // 
             // label5
             // 
@@ -304,6 +295,7 @@
             this.label5.Size = new System.Drawing.Size(103, 17);
             this.label5.TabIndex = 131;
             this.label5.Text = "Tasa Conversion";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtMonedaItem
             // 
@@ -313,6 +305,7 @@
             this.txtMonedaItem.ReadOnly = true;
             this.txtMonedaItem.Size = new System.Drawing.Size(56, 25);
             this.txtMonedaItem.TabIndex = 128;
+            this.txtMonedaItem.TextChanged += new System.EventHandler(this.txtMonedaItem_TextChanged);
             // 
             // label6
             // 
@@ -323,6 +316,35 @@
             this.label6.Size = new System.Drawing.Size(86, 17);
             this.label6.TabIndex = 127;
             this.label6.Text = "Moneda Item";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(371, 120);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(118, 48);
+            this.btnCancelar.TabIndex = 203;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAddItemPago
+            // 
+            this.btnAddItemPago.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddItemPago.Image = ((System.Drawing.Image)(resources.GetObject("btnAddItemPago.Image")));
+            this.btnAddItemPago.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddItemPago.Location = new System.Drawing.Point(371, 72);
+            this.btnAddItemPago.Name = "btnAddItemPago";
+            this.btnAddItemPago.Size = new System.Drawing.Size(118, 48);
+            this.btnAddItemPago.TabIndex = 202;
+            this.btnAddItemPago.Text = "AGREGAR";
+            this.btnAddItemPago.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddItemPago.UseVisualStyleBackColor = true;
+            this.btnAddItemPago.Click += new System.EventHandler(this.btnAddItemPago_Click);
             // 
             // FrmFI35AddCashToOP
             // 

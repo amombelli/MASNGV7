@@ -380,7 +380,7 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
                 if (AddCreditosAuto) AddAllCreditosToOP();
             }
         }
-        public void AddImporteCashToOP(decimal importe, string idCuenta, decimal tasaConversion=1)
+        public void AddImporteCashToOp(decimal importe, string idCuenta, decimal tasaConversion=1)
         {
             //IncializaHeader(TipoLx);
             var P = new CuentasManager().GetSpecificCuentaInfo(idCuenta);
@@ -406,7 +406,6 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
             ItemsPagoOP.Add(item);
             Header.SetImportePagoCash(item.ImporteOP);
         }
-
         public void AddChequeEmitido(string cuenta, DateTime fechaAcreditacion, string numeroCheque, bool esECheque,decimal importe)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -433,7 +432,32 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
                 Header.SetImportePagoCheque(item.ImporteOP);
             }
         }
-
+        public void AddTransferenciaToOp(string cuentaOrigen, DateTime fechaTransferencia, string numeroOp, decimal importe, string bancoDestino)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var P = new CuentasManager().GetSpecificCuentaInfo(cuentaOrigen);
+                var item = new T0211_OrdenPagoItems()
+                {
+                    MonedaItem = "ARS",
+                    ChBanco = cuentaOrigen,
+                    ChFecha = fechaTransferencia,
+                    ChNumero = numeroOp,
+                    EsCheque = false,
+                    ECheque = false,
+                    IdItem = ItemsPagoOP.Count + 1,
+                    GLCuenta = P.GLMAP,
+                    TextoAlterno = bancoDestino,
+                    IdOP = Header.NumeroOP,
+                    ImporteOP = importe,
+                    ImporteItem = importe,
+                    ChIdCartera = -1,
+                    CuentaItem = @"TRANSF.",
+                };
+                ItemsPagoOP.Add(item);
+                Header.SetImportePagoOtros(item.ImporteOP);
+            }
+        }
         public void AddChequeCarteraToOp(int idCheque)
         {
             using (var db = new TecserData(GlobalApp.CnnApp))
@@ -468,7 +492,16 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
             if (itemPago == null) return;
             if (itemPago.EsCheque == false)
             {
-                Header.RemoveImportePagoCash(itemPago.ImporteOP);
+                if (itemPago.CuentaItem == @"TRANSF.")
+                {
+                    Header.RemoveImportePagoOtros(itemPago.ImporteOP);
+                }
+                else
+                {
+                    //Efectivo
+                    Header.RemoveImportePagoCash(itemPago.ImporteOP);
+                }
+               
             }
             else
             {
@@ -653,7 +686,7 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
         public bool DesimputacionTotal()
         {
             if (Header == null) return false;
-            //recompone creditos 
+            //recompone créditos 
             decimal creditosSinImputar = 0;
 
             foreach (var impu0 in ImputacionesFa)

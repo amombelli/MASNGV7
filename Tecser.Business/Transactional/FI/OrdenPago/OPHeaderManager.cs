@@ -178,12 +178,14 @@ namespace Tecser.Business.Transactional.FI.OrdenPago
             ImporteOtros += importe;
             ImporteOrdenPago += importe;
             RequiereImputacion = true;
+            ImporteSaldoImpago = ImporteFacturas - ImporteOrdenPago - ImporteCreditos;
         }
         public void RemoveImportePagoOtros(decimal importe)
         {
             ImporteOtros -= importe;
             ImporteOrdenPago -= importe;
             RequiereImputacion = true;
+            ImporteSaldoImpago = ImporteFacturas - ImporteOrdenPago - ImporteCreditos;
         }
         public void SetImporteFactura(decimal importe)
         {

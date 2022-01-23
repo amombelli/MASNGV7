@@ -24,9 +24,7 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             _tipoCheque = tipoCheque;
             InitializeComponent();
         }
-
-       
-
+     
         private bool ValidaOk()
         {
             if (cmbBancoEmisor.SelectedValue == null)
@@ -123,8 +121,6 @@ namespace MASngFE.Transactional.FI.Orden_de_Pago
             cmbBancoEmisor.DataSource = new CuentasManager().GetListaCuentaAvailableEmiteCheque();
             cmbBancoEmisor.SelectedIndex = -1;
             this.cmbBancoEmisor.SelectedIndexChanged += new System.EventHandler(this.cmbBancoEmisor_SelectedIndexChanged);
-
-
         }
 
         private void cmbBancoEmisor_SelectedIndexChanged(object sender, EventArgs e)

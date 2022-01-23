@@ -18,65 +18,70 @@
         Dim iibb As Object
         Dim ok As Object
         Dim url As String  'Path Produccion o Test
+        Try
+            iibb = CreateObject("IIBB")
+            Me.Version = iibb.Version
+            Me.InstallDir = iibb.InstallDir
+            Me.Modo = "PROD" 'sino usar TEST
 
-        IIBB = CreateObject("IIBB")
-        Me.Version = IIBB.Version
-        Me.InstallDir = IIBB.InstallDir
-        Me.MODO = "PROD" 'sino usar TEST
+            'Establecer Datos de acceso (ARBA)
+            iibb.USUARIO = "30709669091"        'USUARIO
+            iibb.Password = "200812"            'CIT
 
-        'Establecer Datos de acceso (ARBA)
-        IIBB.USUARIO = "30709669091"        'USUARIO
-        IIBB.Password = "200812"            'CIT
-
-        If Me.MODO = "PROD" Then
-            url = "https://dfe.arba.gov.ar/DomicilioElectronico/SeguridadCliente/dfeServicioConsulta.do"
-        Else
-            url = "https://dfe.test.arba.gov.ar/DomicilioElectronico/SeguridadCliente/dfeServicioConsulta.do"
-        End If
-
-        ' Conectar al servidor
-        OK = IIBB.Conectar(url)
-
-        ' Enviar el archivo y procesar la respuesta:
-        OK = IIBB.ConsultarContribuyentes(FechaDesdeYYYYMM, FechaHastaYYYYMM, CUIT)
-
-        ' Hubo error interno?
-        If IIBB.Excepcion <> "" Then
-            Debug.Print(IIBB.Excepcion)
-            Debug.Print(IIBB.Traceback)
-            MsgBox(IIBB.Traceback, vbCritical, "Excepcion:" & IIBB.Excepcion)
-        Else
-            'Debug.Print IIBB.XmlResponse
-            'Debug.Print "Error General:", IIBB.TipoError, "|", IIBB.CODIGOERROR, "|", IIBB.mensajeError
-
-            ' Hubo error general de ARBA?
-            If IIBB.CODIGOERROR <> "" Then
-                MsgBox(IIBB.mensajeError, vbExclamation, "Error " & IIBB.TipoError & ":" & IIBB.CODIGOERROR)
-            End If
-            ' Datos generales de la respuesta:
-            Me.NumComprobante = IIBB.numeroComprobante
-            Me.CodigoHash = CodigoHash
-            ' Datos del contribuyente consultado:
-            If IIBB.CODIGOERROR = "11" Then
-                'La CUIT no esta en ninguna base
-                Me.AlPerc = 0.08       '8%
-                Me.AlRete = 0.04       '4%
+            If Me.Modo = "PROD" Then
+                url = "https://dfe.arba.gov.ar/DomicilioElectronico/SeguridadCliente/dfeServicioConsulta.do"
             Else
-                If IsNothing(IIBB.ALICUOTAPERCEPCION) = True Then
-                    Me.AlPerc = 0.08
-                Else
-                    Me.AlPerc = GetStringFormatoNumerico(IIBB.AlicuotaPercepcion) / 100
-                End If
-                If IsNothing(IIBB.AlicuotaRetencion) = True Then
-                    Me.AlRete = 0.04
-                Else
-                    Me.AlRete = GetStringFormatoNumerico(IIBB.AlicuotaRetencion) / 100
-                End If
-                Me.GrupoPerc = IIBB.grupoPercepcion
-                Me.GrupoRete = IIBB.grupoRetencion
+                url = "https://dfe.test.arba.gov.ar/DomicilioElectronico/SeguridadCliente/dfeServicioConsulta.do"
             End If
-            Me.CUIT = IIBB.CuitContribuyente
-        End If
+
+            ' Conectar al servidor
+            ok = iibb.Conectar(url)
+
+            ' Enviar el archivo y procesar la respuesta:
+            ok = iibb.ConsultarContribuyentes(fechaDesdeYyyymm, fechaHastaYyyymm, CUIT)
+
+            ' Hubo error interno?
+            If iibb.Excepcion <> "" Then
+                Debug.Print(iibb.Excepcion)
+                Debug.Print(iibb.Traceback)
+                MsgBox(iibb.Traceback, vbCritical, "Excepcion:" & iibb.Excepcion)
+            Else
+                'Debug.Print IIBB.XmlResponse
+                'Debug.Print "Error General:", IIBB.TipoError, "|", IIBB.CODIGOERROR, "|", IIBB.mensajeError
+
+                ' Hubo error general de ARBA?
+                If iibb.CODIGOERROR <> "" Then
+                    MsgBox(iibb.mensajeError, vbExclamation, "Error " & iibb.TipoError & ":" & iibb.CODIGOERROR)
+                End If
+                ' Datos generales de la respuesta:
+                Me.NumComprobante = iibb.numeroComprobante
+                Me.CodigoHash = CodigoHash
+                ' Datos del contribuyente consultado:
+                If iibb.CODIGOERROR = "11" Then
+                    'La CUIT no esta en ninguna base
+                    Me.AlPerc = 0.08       '8%
+                    Me.AlRete = 0.04       '4%
+                Else
+                    If IsNothing(iibb.ALICUOTAPERCEPCION) = True Then
+                        Me.AlPerc = 0.08
+                    Else
+                        Me.AlPerc = GetStringFormatoNumerico(iibb.AlicuotaPercepcion) / 100
+                    End If
+                    If IsNothing(iibb.AlicuotaRetencion) = True Then
+                        Me.AlRete = 0.04
+                    Else
+                        Me.AlRete = GetStringFormatoNumerico(iibb.AlicuotaRetencion) / 100
+                    End If
+                    Me.GrupoPerc = iibb.grupoPercepcion
+                    Me.GrupoRete = iibb.grupoRetencion
+                End If
+                Me.Cuit = iibb.CuitContribuyente
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
     End Sub
 
 

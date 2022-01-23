@@ -78,34 +78,26 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rb = new System.Windows.Forms.Ribbon();
-            this.rtData = new System.Windows.Forms.RibbonTab();
-            this.rpProveedor = new System.Windows.Forms.RibbonPanel();
+            this.rTabDatos = new System.Windows.Forms.RibbonTab();
+            this.rPanProveedor = new System.Windows.Forms.RibbonPanel();
             this.rbtnVendorDetail = new System.Windows.Forms.RibbonButton();
-            this.rpStats = new System.Windows.Forms.RibbonPanel();
+            this.rPanStats = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.rtAccion = new System.Windows.Forms.RibbonTab();
-            this.rpTipoOP = new System.Windows.Forms.RibbonPanel();
+            this.rTabAcciones = new System.Windows.Forms.RibbonTab();
+            this.rPanTipoOp = new System.Windows.Forms.RibbonPanel();
             this.rbtnTipoLx = new System.Windows.Forms.RibbonButton();
             this.rbtnSetL1 = new System.Windows.Forms.RibbonButton();
             this.rbtnSetL2 = new System.Windows.Forms.RibbonButton();
-            this.rpAccionPrincipal = new System.Windows.Forms.RibbonPanel();
+            this.rPanAccionesPrimarias = new System.Windows.Forms.RibbonPanel();
             this.rbtnAsignarNumeroOP = new System.Windows.Forms.RibbonButton();
             this.rbtnGenerar = new System.Windows.Forms.RibbonButton();
             this.rbtnCancelar = new System.Windows.Forms.RibbonButton();
-            this.rpAddFacturas = new System.Windows.Forms.RibbonPanel();
-            this.rbtnDocumentosPendPago = new System.Windows.Forms.RibbonButton();
-            this.rpRetenciones = new System.Windows.Forms.RibbonPanel();
-            this.rbtnAddRetencionArba = new System.Windows.Forms.RibbonButton();
-            this.rbtnAddRetencionGanancias = new System.Windows.Forms.RibbonButton();
-            this.rpCreditos = new System.Windows.Forms.RibbonPanel();
-            this.rbtnRemoverCreditosAnteriores = new System.Windows.Forms.RibbonButton();
-            this.rbAsignarCreditosAOP = new System.Windows.Forms.RibbonButton();
-            this.rpImprimir = new System.Windows.Forms.RibbonPanel();
+            this.rPanImpresion = new System.Windows.Forms.RibbonPanel();
             this.rbtnPrintOP = new System.Windows.Forms.RibbonButton();
-            this.rpanSalir = new System.Windows.Forms.RibbonPanel();
+            this.rPanSalir = new System.Windows.Forms.RibbonPanel();
             this.rbtnExit = new System.Windows.Forms.RibbonButton();
             this.rbtnSaveAndExit = new System.Windows.Forms.RibbonButton();
-            this.rtabItemsPago = new System.Windows.Forms.RibbonTab();
+            this.rTabItemsPago = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.rbtnAddPesos = new System.Windows.Forms.RibbonButton();
             this.rbtAddUsd = new System.Windows.Forms.RibbonButton();
@@ -122,7 +114,17 @@
             this.rbtCuentaGL = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
             this.rbtCompensacionCliente = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
+            this.rTabRetenciones = new System.Windows.Forms.RibbonTab();
+            this.rPanRetArba = new System.Windows.Forms.RibbonPanel();
+            this.rbtnRetencionIIBB = new System.Windows.Forms.RibbonButton();
+            this.rbtnConsultaPadron = new System.Windows.Forms.RibbonButton();
+            this.rbtRetAfip = new System.Windows.Forms.RibbonPanel();
+            this.rbtnRetencionGanancias = new System.Windows.Forms.RibbonButton();
+            this.rTabFacturasCreditos = new System.Windows.Forms.RibbonTab();
+            this.rPanFacturas = new System.Windows.Forms.RibbonPanel();
+            this.rbtnAddFacturasOp = new System.Windows.Forms.RibbonButton();
+            this.rPanCreditos = new System.Windows.Forms.RibbonPanel();
+            this.rbtnVerCreditos = new System.Windows.Forms.RibbonButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ckAutoGetAlicuotaIIBB = new System.Windows.Forms.CheckBox();
             this.txtNumeroCUIT = new System.Windows.Forms.TextBox();
@@ -131,8 +133,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.txtTipodeCambio = new TSControls.CtlTextBox();
-            this.txtComentariosOP = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.txtTipoOp = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -146,6 +146,8 @@
             this.dtpFechaOP = new System.Windows.Forms.DateTimePicker();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtComentariosOP = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv1Documentos = new System.Windows.Forms.DataGridView();
             this._idCtaCte1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -165,19 +167,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bTotalDocumentos = new TSControls.CtlDisplayNumbers2();
-            this.bPendienteImputacionADocumentos = new TSControls.CtlDisplayNumbers2();
             this.label7 = new System.Windows.Forms.Label();
+            this.bPendienteImputacionADocumentos = new TSControls.CtlDisplayNumbers2();
             this.label25 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.bTotalImputadoADocumentos = new TSControls.CtlDisplayNumbers2();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.bTotalOtros = new TSControls.CtlDisplayNumbers2();
-            this.bTotalCheques = new TSControls.CtlDisplayNumbers2();
-            this.bTotalEfectivo = new TSControls.CtlDisplayNumbers2();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.dgv2ItemsPago = new System.Windows.Forms.DataGridView();
             this._2EsCheque = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.eChequeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -194,6 +189,13 @@
             this.textoAlternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._2Del = new System.Windows.Forms.DataGridViewButtonColumn();
             this.t0212OPITEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.bTotalOtros = new TSControls.CtlDisplayNumbers2();
+            this.bTotalCheques = new TSControls.CtlDisplayNumbers2();
+            this.bTotalEfectivo = new TSControls.CtlDisplayNumbers2();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.aDisponibleImputar = new TSControls.CtlDisplayNumbers2();
@@ -310,15 +312,16 @@
             this._1RetGs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DETALLE = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DEL = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label30 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1Documentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFacturasOPBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2ItemsPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t0212OPITEMBindingSource)).BeginInit();
+            this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -347,29 +350,30 @@
             this.rb.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.rb.OrbVisible = false;
             this.rb.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.rb.Size = new System.Drawing.Size(1355, 126);
+            this.rb.Size = new System.Drawing.Size(1312, 126);
             this.rb.TabIndex = 0;
-            this.rb.Tabs.Add(this.rtData);
-            this.rb.Tabs.Add(this.rtAccion);
-            this.rb.Tabs.Add(this.rtabItemsPago);
-            this.rb.Tabs.Add(this.ribbonTab1);
+            this.rb.Tabs.Add(this.rTabDatos);
+            this.rb.Tabs.Add(this.rTabAcciones);
+            this.rb.Tabs.Add(this.rTabItemsPago);
+            this.rb.Tabs.Add(this.rTabRetenciones);
+            this.rb.Tabs.Add(this.rTabFacturasCreditos);
             this.rb.TabSpacing = 4;
             this.rb.Text = "OPX";
             this.rb.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
             // 
-            // rtData
+            // rTabDatos
             // 
-            this.rtData.Name = "rtData";
-            this.rtData.Panels.Add(this.rpProveedor);
-            this.rtData.Panels.Add(this.rpStats);
-            this.rtData.Panels.Add(this.ribbonPanel1);
-            this.rtData.Text = "Datos";
+            this.rTabDatos.Name = "rTabDatos";
+            this.rTabDatos.Panels.Add(this.rPanProveedor);
+            this.rTabDatos.Panels.Add(this.rPanStats);
+            this.rTabDatos.Panels.Add(this.ribbonPanel1);
+            this.rTabDatos.Text = "Datos";
             // 
-            // rpProveedor
+            // rPanProveedor
             // 
-            this.rpProveedor.Items.Add(this.rbtnVendorDetail);
-            this.rpProveedor.Name = "rpProveedor";
-            this.rpProveedor.Text = "Proveedor";
+            this.rPanProveedor.Items.Add(this.rbtnVendorDetail);
+            this.rPanProveedor.Name = "rPanProveedor";
+            this.rPanProveedor.Text = "Proveedor";
             // 
             // rbtnVendorDetail
             // 
@@ -379,33 +383,30 @@
             this.rbtnVendorDetail.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnVendorDetail.SmallImage")));
             this.rbtnVendorDetail.Text = "Detalle Proveedor";
             // 
-            // rpStats
+            // rPanStats
             // 
-            this.rpStats.Name = "rpStats";
-            this.rpStats.Text = "Estadisticas";
+            this.rPanStats.Name = "rPanStats";
+            this.rPanStats.Text = "Estadisticas";
             // 
             // ribbonPanel1
             // 
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Text = "";
             // 
-            // rtAccion
+            // rTabAcciones
             // 
-            this.rtAccion.Name = "rtAccion";
-            this.rtAccion.Panels.Add(this.rpTipoOP);
-            this.rtAccion.Panels.Add(this.rpAccionPrincipal);
-            this.rtAccion.Panels.Add(this.rpAddFacturas);
-            this.rtAccion.Panels.Add(this.rpRetenciones);
-            this.rtAccion.Panels.Add(this.rpCreditos);
-            this.rtAccion.Panels.Add(this.rpImprimir);
-            this.rtAccion.Panels.Add(this.rpanSalir);
-            this.rtAccion.Text = "Acciones";
+            this.rTabAcciones.Name = "rTabAcciones";
+            this.rTabAcciones.Panels.Add(this.rPanTipoOp);
+            this.rTabAcciones.Panels.Add(this.rPanAccionesPrimarias);
+            this.rTabAcciones.Panels.Add(this.rPanImpresion);
+            this.rTabAcciones.Panels.Add(this.rPanSalir);
+            this.rTabAcciones.Text = "Acciones";
             // 
-            // rpTipoOP
+            // rPanTipoOp
             // 
-            this.rpTipoOP.Items.Add(this.rbtnTipoLx);
-            this.rpTipoOP.Name = "rpTipoOP";
-            this.rpTipoOP.Text = "Tipo OP";
+            this.rPanTipoOp.Items.Add(this.rbtnTipoLx);
+            this.rPanTipoOp.Name = "rPanTipoOp";
+            this.rPanTipoOp.Text = "Tipo OP";
             // 
             // rbtnTipoLx
             // 
@@ -441,13 +442,13 @@
             this.rbtnSetL2.Text = "Tipo L2";
             this.rbtnSetL2.Click += new System.EventHandler(this.rbtnSetL2_Click);
             // 
-            // rpAccionPrincipal
+            // rPanAccionesPrimarias
             // 
-            this.rpAccionPrincipal.Items.Add(this.rbtnAsignarNumeroOP);
-            this.rpAccionPrincipal.Items.Add(this.rbtnGenerar);
-            this.rpAccionPrincipal.Items.Add(this.rbtnCancelar);
-            this.rpAccionPrincipal.Name = "rpAccionPrincipal";
-            this.rpAccionPrincipal.Text = "Acciones Primarias";
+            this.rPanAccionesPrimarias.Items.Add(this.rbtnAsignarNumeroOP);
+            this.rPanAccionesPrimarias.Items.Add(this.rbtnGenerar);
+            this.rPanAccionesPrimarias.Items.Add(this.rbtnCancelar);
+            this.rPanAccionesPrimarias.Name = "rPanAccionesPrimarias";
+            this.rPanAccionesPrimarias.Text = "Acciones Primarias";
             // 
             // rbtnAsignarNumeroOP
             // 
@@ -474,79 +475,13 @@
             this.rbtnCancelar.Name = "rbtnCancelar";
             this.rbtnCancelar.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCancelar.SmallImage")));
             this.rbtnCancelar.Text = "Cancelar";
+            this.rbtnCancelar.Click += new System.EventHandler(this.rbtnCancelar_Click);
             // 
-            // rpAddFacturas
+            // rPanImpresion
             // 
-            this.rpAddFacturas.Items.Add(this.rbtnDocumentosPendPago);
-            this.rpAddFacturas.Name = "rpAddFacturas";
-            this.rpAddFacturas.Text = "Agregar Facturas";
-            // 
-            // rbtnDocumentosPendPago
-            // 
-            this.rbtnDocumentosPendPago.Image = ((System.Drawing.Image)(resources.GetObject("rbtnDocumentosPendPago.Image")));
-            this.rbtnDocumentosPendPago.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnDocumentosPendPago.LargeImage")));
-            this.rbtnDocumentosPendPago.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
-            this.rbtnDocumentosPendPago.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
-            this.rbtnDocumentosPendPago.Name = "rbtnDocumentosPendPago";
-            this.rbtnDocumentosPendPago.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDocumentosPendPago.SmallImage")));
-            this.rbtnDocumentosPendPago.Text = "Facturars Pendientes";
-            this.rbtnDocumentosPendPago.Click += new System.EventHandler(this.rbtnDocumentosPendPago_Click);
-            // 
-            // rpRetenciones
-            // 
-            this.rpRetenciones.Items.Add(this.rbtnAddRetencionArba);
-            this.rpRetenciones.Items.Add(this.rbtnAddRetencionGanancias);
-            this.rpRetenciones.Name = "rpRetenciones";
-            this.rpRetenciones.Text = "Retenciones";
-            // 
-            // rbtnAddRetencionArba
-            // 
-            this.rbtnAddRetencionArba.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionArba.Image")));
-            this.rbtnAddRetencionArba.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionArba.LargeImage")));
-            this.rbtnAddRetencionArba.Name = "rbtnAddRetencionArba";
-            this.rbtnAddRetencionArba.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionArba.SmallImage")));
-            this.rbtnAddRetencionArba.Text = "Retenciones  ARBA";
-            this.rbtnAddRetencionArba.Click += new System.EventHandler(this.rbtnAddRetencionArba_Click);
-            // 
-            // rbtnAddRetencionGanancias
-            // 
-            this.rbtnAddRetencionGanancias.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionGanancias.Image")));
-            this.rbtnAddRetencionGanancias.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionGanancias.LargeImage")));
-            this.rbtnAddRetencionGanancias.Name = "rbtnAddRetencionGanancias";
-            this.rbtnAddRetencionGanancias.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddRetencionGanancias.SmallImage")));
-            this.rbtnAddRetencionGanancias.Text = "Retenciones Ganancias";
-            this.rbtnAddRetencionGanancias.Click += new System.EventHandler(this.rbtnAddRetencionGanancias_Click);
-            // 
-            // rpCreditos
-            // 
-            this.rpCreditos.Items.Add(this.rbtnRemoverCreditosAnteriores);
-            this.rpCreditos.Items.Add(this.rbAsignarCreditosAOP);
-            this.rpCreditos.Name = "rpCreditos";
-            this.rpCreditos.Text = "Creditos";
-            // 
-            // rbtnRemoverCreditosAnteriores
-            // 
-            this.rbtnRemoverCreditosAnteriores.Image = ((System.Drawing.Image)(resources.GetObject("rbtnRemoverCreditosAnteriores.Image")));
-            this.rbtnRemoverCreditosAnteriores.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnRemoverCreditosAnteriores.LargeImage")));
-            this.rbtnRemoverCreditosAnteriores.Name = "rbtnRemoverCreditosAnteriores";
-            this.rbtnRemoverCreditosAnteriores.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRemoverCreditosAnteriores.SmallImage")));
-            this.rbtnRemoverCreditosAnteriores.Text = "Remove Creditos";
-            this.rbtnRemoverCreditosAnteriores.Click += new System.EventHandler(this.rbtnRemoverCreditosAnteriores_Click);
-            // 
-            // rbAsignarCreditosAOP
-            // 
-            this.rbAsignarCreditosAOP.Image = ((System.Drawing.Image)(resources.GetObject("rbAsignarCreditosAOP.Image")));
-            this.rbAsignarCreditosAOP.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbAsignarCreditosAOP.LargeImage")));
-            this.rbAsignarCreditosAOP.Name = "rbAsignarCreditosAOP";
-            this.rbAsignarCreditosAOP.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbAsignarCreditosAOP.SmallImage")));
-            this.rbAsignarCreditosAOP.Text = "Asignar Creditos";
-            this.rbAsignarCreditosAOP.Click += new System.EventHandler(this.rbAsignarCreditosAOP_Click);
-            // 
-            // rpImprimir
-            // 
-            this.rpImprimir.Items.Add(this.rbtnPrintOP);
-            this.rpImprimir.Name = "rpImprimir";
-            this.rpImprimir.Text = "Impresion";
+            this.rPanImpresion.Items.Add(this.rbtnPrintOP);
+            this.rPanImpresion.Name = "rPanImpresion";
+            this.rPanImpresion.Text = "Impresion";
             // 
             // rbtnPrintOP
             // 
@@ -557,12 +492,12 @@
             this.rbtnPrintOP.Text = "Imprimir OP";
             this.rbtnPrintOP.Click += new System.EventHandler(this.rbtnPrintOP_Click);
             // 
-            // rpanSalir
+            // rPanSalir
             // 
-            this.rpanSalir.Items.Add(this.rbtnExit);
-            this.rpanSalir.Items.Add(this.rbtnSaveAndExit);
-            this.rpanSalir.Name = "rpanSalir";
-            this.rpanSalir.Text = "Salir de OP";
+            this.rPanSalir.Items.Add(this.rbtnExit);
+            this.rPanSalir.Items.Add(this.rbtnSaveAndExit);
+            this.rPanSalir.Name = "rPanSalir";
+            this.rPanSalir.Text = "Salir de OP";
             // 
             // rbtnExit
             // 
@@ -582,16 +517,16 @@
             this.rbtnSaveAndExit.Text = "Guardar y SALIR";
             this.rbtnSaveAndExit.Click += new System.EventHandler(this.rbtnSaveAndExit_Click);
             // 
-            // rtabItemsPago
+            // rTabItemsPago
             // 
-            this.rtabItemsPago.Name = "rtabItemsPago";
-            this.rtabItemsPago.Panels.Add(this.ribbonPanel3);
-            this.rtabItemsPago.Panels.Add(this.ribbonPanel4);
-            this.rtabItemsPago.Panels.Add(this.ribbonPanel5);
-            this.rtabItemsPago.Panels.Add(this.ribbonPanel6);
-            this.rtabItemsPago.Panels.Add(this.rpCuentaGL);
-            this.rtabItemsPago.Panels.Add(this.ribbonPanel7);
-            this.rtabItemsPago.Text = "Items de Pago";
+            this.rTabItemsPago.Name = "rTabItemsPago";
+            this.rTabItemsPago.Panels.Add(this.ribbonPanel3);
+            this.rTabItemsPago.Panels.Add(this.ribbonPanel4);
+            this.rTabItemsPago.Panels.Add(this.ribbonPanel5);
+            this.rTabItemsPago.Panels.Add(this.ribbonPanel6);
+            this.rTabItemsPago.Panels.Add(this.rpCuentaGL);
+            this.rTabItemsPago.Panels.Add(this.ribbonPanel7);
+            this.rTabItemsPago.Text = "Items de Pago";
             // 
             // ribbonPanel3
             // 
@@ -725,14 +660,93 @@
             this.rbtCompensacionCliente.Text = "Compensacion Cliente";
             this.rbtCompensacionCliente.Click += new System.EventHandler(this.rbtCompensacionCliente_Click);
             // 
-            // ribbonTab1
+            // rTabRetenciones
             // 
-            this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Text = "ribbonTab1";
+            this.rTabRetenciones.Name = "rTabRetenciones";
+            this.rTabRetenciones.Panels.Add(this.rPanRetArba);
+            this.rTabRetenciones.Panels.Add(this.rbtRetAfip);
+            this.rTabRetenciones.Text = "Retenciones";
+            // 
+            // rPanRetArba
+            // 
+            this.rPanRetArba.Items.Add(this.rbtnRetencionIIBB);
+            this.rPanRetArba.Items.Add(this.rbtnConsultaPadron);
+            this.rPanRetArba.Name = "rPanRetArba";
+            this.rPanRetArba.Text = "ARBA";
+            // 
+            // rbtnRetencionIIBB
+            // 
+            this.rbtnRetencionIIBB.Image = ((System.Drawing.Image)(resources.GetObject("rbtnRetencionIIBB.Image")));
+            this.rbtnRetencionIIBB.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnRetencionIIBB.LargeImage")));
+            this.rbtnRetencionIIBB.Name = "rbtnRetencionIIBB";
+            this.rbtnRetencionIIBB.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRetencionIIBB.SmallImage")));
+            this.rbtnRetencionIIBB.Text = "Retenciones ARBA";
+            this.rbtnRetencionIIBB.Click += new System.EventHandler(this.rbtnRetencionIIBB_Click);
+            // 
+            // rbtnConsultaPadron
+            // 
+            this.rbtnConsultaPadron.Image = ((System.Drawing.Image)(resources.GetObject("rbtnConsultaPadron.Image")));
+            this.rbtnConsultaPadron.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnConsultaPadron.LargeImage")));
+            this.rbtnConsultaPadron.Name = "rbtnConsultaPadron";
+            this.rbtnConsultaPadron.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnConsultaPadron.SmallImage")));
+            this.rbtnConsultaPadron.Text = "Consulta Padron";
+            this.rbtnConsultaPadron.Click += new System.EventHandler(this.rbtnConsultaPadron_Click);
+            // 
+            // rbtRetAfip
+            // 
+            this.rbtRetAfip.Items.Add(this.rbtnRetencionGanancias);
+            this.rbtRetAfip.Name = "rbtRetAfip";
+            this.rbtRetAfip.Text = "AFIP";
+            // 
+            // rbtnRetencionGanancias
+            // 
+            this.rbtnRetencionGanancias.Image = ((System.Drawing.Image)(resources.GetObject("rbtnRetencionGanancias.Image")));
+            this.rbtnRetencionGanancias.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnRetencionGanancias.LargeImage")));
+            this.rbtnRetencionGanancias.Name = "rbtnRetencionGanancias";
+            this.rbtnRetencionGanancias.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRetencionGanancias.SmallImage")));
+            this.rbtnRetencionGanancias.Text = "Retenciones Ganancias";
+            this.rbtnRetencionGanancias.Click += new System.EventHandler(this.rbtnRetencionGanancias_Click);
+            // 
+            // rTabFacturasCreditos
+            // 
+            this.rTabFacturasCreditos.Name = "rTabFacturasCreditos";
+            this.rTabFacturasCreditos.Panels.Add(this.rPanFacturas);
+            this.rTabFacturasCreditos.Panels.Add(this.rPanCreditos);
+            this.rTabFacturasCreditos.Text = "Facturas y Creditos";
+            // 
+            // rPanFacturas
+            // 
+            this.rPanFacturas.Items.Add(this.rbtnAddFacturasOp);
+            this.rPanFacturas.Name = "rPanFacturas";
+            this.rPanFacturas.Text = "Facturas";
+            // 
+            // rbtnAddFacturasOp
+            // 
+            this.rbtnAddFacturasOp.Image = ((System.Drawing.Image)(resources.GetObject("rbtnAddFacturasOp.Image")));
+            this.rbtnAddFacturasOp.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddFacturasOp.LargeImage")));
+            this.rbtnAddFacturasOp.Name = "rbtnAddFacturasOp";
+            this.rbtnAddFacturasOp.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnAddFacturasOp.SmallImage")));
+            this.rbtnAddFacturasOp.Text = "Agregar Facturas";
+            this.rbtnAddFacturasOp.Click += new System.EventHandler(this.rbtnAddFacturasOp_Click);
+            // 
+            // rPanCreditos
+            // 
+            this.rPanCreditos.Items.Add(this.rbtnVerCreditos);
+            this.rPanCreditos.Name = "rPanCreditos";
+            this.rPanCreditos.Text = "Creditos y No Imputados";
+            // 
+            // rbtnVerCreditos
+            // 
+            this.rbtnVerCreditos.Image = ((System.Drawing.Image)(resources.GetObject("rbtnVerCreditos.Image")));
+            this.rbtnVerCreditos.LargeImage = ((System.Drawing.Image)(resources.GetObject("rbtnVerCreditos.LargeImage")));
+            this.rbtnVerCreditos.Name = "rbtnVerCreditos";
+            this.rbtnVerCreditos.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnVerCreditos.SmallImage")));
+            this.rbtnVerCreditos.Text = "Ver Creditos";
+            this.rbtnVerCreditos.Click += new System.EventHandler(this.rbtnVerCreditos_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.GhostWhite;
+            this.groupBox1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox1.Controls.Add(this.ckAutoGetAlicuotaIIBB);
             this.groupBox1.Controls.Add(this.txtNumeroCUIT);
             this.groupBox1.Controls.Add(this.label10);
@@ -740,8 +754,6 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label53);
             this.groupBox1.Controls.Add(this.txtTipodeCambio);
-            this.groupBox1.Controls.Add(this.txtComentariosOP);
-            this.groupBox1.Controls.Add(this.label29);
             this.groupBox1.Controls.Add(this.txtTipoOp);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
@@ -757,7 +769,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 130);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(735, 152);
+            this.groupBox1.Size = new System.Drawing.Size(735, 128);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encabezado de Orden de Pago";
@@ -864,29 +876,6 @@
             0,
             262144});
             this.txtTipodeCambio.XReadOnly = false;
-            // 
-            // txtComentariosOP
-            // 
-            this.txtComentariosOP.AcceptsReturn = true;
-            this.txtComentariosOP.BackColor = System.Drawing.Color.White;
-            this.txtComentariosOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComentariosOP.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComentariosOP.Location = new System.Drawing.Point(11, 123);
-            this.txtComentariosOP.Multiline = true;
-            this.txtComentariosOP.Name = "txtComentariosOP";
-            this.txtComentariosOP.Size = new System.Drawing.Size(719, 25);
-            this.txtComentariosOP.TabIndex = 195;
-            // 
-            // label29
-            // 
-            this.label29.BackColor = System.Drawing.Color.PowderBlue;
-            this.label29.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.Navy;
-            this.label29.Location = new System.Drawing.Point(11, 102);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(719, 18);
-            this.label29.TabIndex = 194;
-            this.label29.Text = "Comentarios para Imprimir en Orden de Pago";
             // 
             // txtTipoOp
             // 
@@ -1026,15 +1015,38 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Razón Social";
             // 
+            // txtComentariosOP
+            // 
+            this.txtComentariosOP.AcceptsReturn = true;
+            this.txtComentariosOP.BackColor = System.Drawing.Color.White;
+            this.txtComentariosOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComentariosOP.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComentariosOP.Location = new System.Drawing.Point(747, 794);
+            this.txtComentariosOP.Multiline = true;
+            this.txtComentariosOP.Name = "txtComentariosOP";
+            this.txtComentariosOP.Size = new System.Drawing.Size(553, 66);
+            this.txtComentariosOP.TabIndex = 195;
+            // 
+            // label29
+            // 
+            this.label29.BackColor = System.Drawing.Color.PowderBlue;
+            this.label29.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Navy;
+            this.label29.Location = new System.Drawing.Point(747, 773);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(553, 18);
+            this.label29.TabIndex = 194;
+            this.label29.Text = "Comentarios para Imprimir en Orden de Pago";
+            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.DarkBlue;
             this.label4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label4.Location = new System.Drawing.Point(1349, 131);
+            this.label4.Location = new System.Drawing.Point(1305, 126);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(3, 921);
+            this.label4.Size = new System.Drawing.Size(3, 852);
             this.label4.TabIndex = 191;
             // 
             // dgv1Documentos
@@ -1202,12 +1214,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.BackColor = System.Drawing.Color.SlateGray;
             this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Controls.Add(this.dgv1Documentos);
-            this.groupBox2.Location = new System.Drawing.Point(5, 285);
+            this.groupBox2.Location = new System.Drawing.Point(5, 261);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(733, 245);
+            this.groupBox2.Size = new System.Drawing.Size(733, 199);
             this.groupBox2.TabIndex = 194;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Documentos a Incluir en Orden de Pago";
@@ -1217,14 +1229,10 @@
             this.panel3.BackColor = System.Drawing.Color.GhostWhite;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.bTotalDocumentos);
-            this.panel3.Controls.Add(this.bPendienteImputacionADocumentos);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label25);
-            this.panel3.Controls.Add(this.label28);
-            this.panel3.Controls.Add(this.bTotalImputadoADocumentos);
             this.panel3.Location = new System.Drawing.Point(7, 160);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(723, 81);
+            this.panel3.Size = new System.Drawing.Size(723, 34);
             this.panel3.TabIndex = 202;
             // 
             // bTotalDocumentos
@@ -1237,7 +1245,7 @@
             0,
             0});
             this.bTotalDocumentos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalDocumentos.Location = new System.Drawing.Point(611, 3);
+            this.bTotalDocumentos.Location = new System.Drawing.Point(608, 3);
             this.bTotalDocumentos.Name = "bTotalDocumentos";
             this.bTotalDocumentos.NumberDecimals = 2;
             this.bTotalDocumentos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
@@ -1245,6 +1253,17 @@
             this.bTotalDocumentos.Size = new System.Drawing.Size(109, 24);
             this.bTotalDocumentos.TabIndex = 196;
             this.bTotalDocumentos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Navy;
+            this.label7.Location = new System.Drawing.Point(475, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 17);
+            this.label7.TabIndex = 195;
+            this.label7.Text = "Total Facturas en OP";
             // 
             // bPendienteImputacionADocumentos
             // 
@@ -1256,7 +1275,7 @@
             0,
             0});
             this.bPendienteImputacionADocumentos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bPendienteImputacionADocumentos.Location = new System.Drawing.Point(611, 53);
+            this.bPendienteImputacionADocumentos.Location = new System.Drawing.Point(439, 156);
             this.bPendienteImputacionADocumentos.Name = "bPendienteImputacionADocumentos";
             this.bPendienteImputacionADocumentos.NumberDecimals = 2;
             this.bPendienteImputacionADocumentos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
@@ -1265,23 +1284,12 @@
             this.bPendienteImputacionADocumentos.TabIndex = 200;
             this.bPendienteImputacionADocumentos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Navy;
-            this.label7.Location = new System.Drawing.Point(478, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 17);
-            this.label7.TabIndex = 195;
-            this.label7.Text = "Total Facturas en OP";
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Navy;
-            this.label25.Location = new System.Drawing.Point(509, 32);
+            this.label25.Location = new System.Drawing.Point(337, 135);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(96, 17);
             this.label25.TabIndex = 197;
@@ -1292,7 +1300,7 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.Navy;
-            this.label28.Location = new System.Drawing.Point(472, 57);
+            this.label28.Location = new System.Drawing.Point(300, 160);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(133, 17);
             this.label28.TabIndex = 199;
@@ -1308,7 +1316,7 @@
             0,
             0});
             this.bTotalImputadoADocumentos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalImputadoADocumentos.Location = new System.Drawing.Point(611, 28);
+            this.bTotalImputadoADocumentos.Location = new System.Drawing.Point(439, 131);
             this.bTotalImputadoADocumentos.Name = "bTotalImputadoADocumentos";
             this.bTotalImputadoADocumentos.NumberDecimals = 2;
             this.bTotalImputadoADocumentos.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
@@ -1319,118 +1327,16 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox3.Controls.Add(this.panel2);
+            this.groupBox3.BackColor = System.Drawing.Color.Silver;
             this.groupBox3.Controls.Add(this.dgv2ItemsPago);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(6, 536);
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(6, 461);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(732, 518);
+            this.groupBox3.Size = new System.Drawing.Size(732, 440);
             this.groupBox3.TabIndex = 196;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalle de Items de Pago [Efectivo y Cheques]";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.Controls.Add(this.bTotalOtros);
-            this.panel2.Controls.Add(this.bTotalCheques);
-            this.panel2.Controls.Add(this.bTotalEfectivo);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label27);
-            this.panel2.Controls.Add(this.label26);
-            this.panel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(8, 436);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(718, 75);
-            this.panel2.TabIndex = 2;
-            // 
-            // bTotalOtros
-            // 
-            this.bTotalOtros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalOtros.DisplayIcon = false;
-            this.bTotalOtros.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalOtros.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalOtros.Location = new System.Drawing.Point(610, 49);
-            this.bTotalOtros.Name = "bTotalOtros";
-            this.bTotalOtros.NumberDecimals = 2;
-            this.bTotalOtros.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalOtros.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalOtros.Size = new System.Drawing.Size(104, 22);
-            this.bTotalOtros.TabIndex = 214;
-            this.bTotalOtros.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // bTotalCheques
-            // 
-            this.bTotalCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalCheques.DisplayIcon = false;
-            this.bTotalCheques.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalCheques.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalCheques.Location = new System.Drawing.Point(610, 26);
-            this.bTotalCheques.Name = "bTotalCheques";
-            this.bTotalCheques.NumberDecimals = 2;
-            this.bTotalCheques.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalCheques.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalCheques.Size = new System.Drawing.Size(104, 22);
-            this.bTotalCheques.TabIndex = 212;
-            this.bTotalCheques.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // bTotalEfectivo
-            // 
-            this.bTotalEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bTotalEfectivo.DisplayIcon = false;
-            this.bTotalEfectivo.DisplayValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.bTotalEfectivo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalEfectivo.Location = new System.Drawing.Point(610, 3);
-            this.bTotalEfectivo.Name = "bTotalEfectivo";
-            this.bTotalEfectivo.NumberDecimals = 2;
-            this.bTotalEfectivo.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
-            this.bTotalEfectivo.SetIcon = TSControls.CIconos.Mas;
-            this.bTotalEfectivo.Size = new System.Drawing.Size(104, 22);
-            this.bTotalEfectivo.TabIndex = 213;
-            this.bTotalEfectivo.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(529, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 15);
-            this.label8.TabIndex = 195;
-            this.label8.Text = "Total Efectivo";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(541, 52);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(64, 15);
-            this.label27.TabIndex = 199;
-            this.label27.Text = "Total Otros";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(524, 29);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(81, 15);
-            this.label26.TabIndex = 197;
-            this.label26.Text = "Total Cheques";
             // 
             // dgv2ItemsPago
             // 
@@ -1603,13 +1509,120 @@
             // 
             this.t0212OPITEMBindingSource.DataSource = typeof(TecserEF.Entity.T0211_OrdenPagoItems);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.bTotalOtros);
+            this.panel2.Controls.Add(this.bTotalCheques);
+            this.panel2.Controls.Add(this.bTotalEfectivo);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label27);
+            this.panel2.Controls.Add(this.label26);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(6, 901);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(732, 75);
+            this.panel2.TabIndex = 2;
+            // 
+            // bTotalOtros
+            // 
+            this.bTotalOtros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalOtros.DisplayIcon = false;
+            this.bTotalOtros.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalOtros.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalOtros.Location = new System.Drawing.Point(623, 49);
+            this.bTotalOtros.Name = "bTotalOtros";
+            this.bTotalOtros.NumberDecimals = 2;
+            this.bTotalOtros.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalOtros.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalOtros.Size = new System.Drawing.Size(104, 22);
+            this.bTotalOtros.TabIndex = 214;
+            this.bTotalOtros.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
+            // bTotalCheques
+            // 
+            this.bTotalCheques.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalCheques.DisplayIcon = false;
+            this.bTotalCheques.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalCheques.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalCheques.Location = new System.Drawing.Point(623, 26);
+            this.bTotalCheques.Name = "bTotalCheques";
+            this.bTotalCheques.NumberDecimals = 2;
+            this.bTotalCheques.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalCheques.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalCheques.Size = new System.Drawing.Size(104, 22);
+            this.bTotalCheques.TabIndex = 212;
+            this.bTotalCheques.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
+            // bTotalEfectivo
+            // 
+            this.bTotalEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bTotalEfectivo.DisplayIcon = false;
+            this.bTotalEfectivo.DisplayValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.bTotalEfectivo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTotalEfectivo.Location = new System.Drawing.Point(623, 3);
+            this.bTotalEfectivo.Name = "bTotalEfectivo";
+            this.bTotalEfectivo.NumberDecimals = 2;
+            this.bTotalEfectivo.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
+            this.bTotalEfectivo.SetIcon = TSControls.CIconos.Mas;
+            this.bTotalEfectivo.Size = new System.Drawing.Size(104, 22);
+            this.bTotalEfectivo.TabIndex = 213;
+            this.bTotalEfectivo.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(542, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 15);
+            this.label8.TabIndex = 195;
+            this.label8.Text = "Total Efectivo";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(554, 52);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(64, 15);
+            this.label27.TabIndex = 199;
+            this.label27.Text = "Total Otros";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(537, 29);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(81, 15);
+            this.label26.TabIndex = 197;
+            this.label26.Text = "Total Cheques";
+            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox4.Controls.Add(this.panel4);
+            this.groupBox4.Controls.Add(this.bPendienteImputacionADocumentos);
             this.groupBox4.Controls.Add(this.aOtrosValoresOP);
             this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.label25);
+            this.groupBox4.Controls.Add(this.label28);
             this.groupBox4.Controls.Add(this.aEfectivoCheques);
+            this.groupBox4.Controls.Add(this.bTotalImputadoADocumentos);
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Controls.Add(this.aRetenciones);
             this.groupBox4.Controls.Add(this.label20);
@@ -1640,7 +1653,7 @@
             this.panel4.Controls.Add(this.label14);
             this.panel4.Location = new System.Drawing.Point(6, 132);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(278, 158);
+            this.panel4.Size = new System.Drawing.Size(278, 159);
             this.panel4.TabIndex = 2;
             // 
             // aDisponibleImputar
@@ -1720,7 +1733,6 @@
             this.aCreditosIncluidos.Size = new System.Drawing.Size(127, 24);
             this.aCreditosIncluidos.TabIndex = 205;
             this.aCreditosIncluidos.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
-            this.aCreditosIncluidos.Load += new System.EventHandler(this.ctlDisplayNumbers24_Load);
             // 
             // aSaldoImpago
             // 
@@ -1763,7 +1775,6 @@
             this.label16.Size = new System.Drawing.Size(133, 17);
             this.label16.TabIndex = 204;
             this.label16.Text = "Créditos Incluidos OP";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // aTotalImputado
             // 
@@ -1847,7 +1858,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label15.Location = new System.Drawing.Point(36, 73);
+            this.label15.Location = new System.Drawing.Point(34, 73);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(117, 17);
             this.label15.TabIndex = 217;
@@ -1878,7 +1889,7 @@
             this.label22.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label22.Location = new System.Drawing.Point(28, 48);
+            this.label22.Location = new System.Drawing.Point(26, 48);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(125, 17);
             this.label22.TabIndex = 210;
@@ -1908,7 +1919,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.DarkRed;
-            this.label20.Location = new System.Drawing.Point(43, 23);
+            this.label20.Location = new System.Drawing.Point(41, 23);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(110, 17);
             this.label20.TabIndex = 208;
@@ -1924,13 +1935,13 @@
             0,
             0});
             this.aImporteTotalOP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aImporteTotalOP.Location = new System.Drawing.Point(157, 103);
+            this.aImporteTotalOP.Location = new System.Drawing.Point(157, 102);
             this.aImporteTotalOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aImporteTotalOP.Name = "aImporteTotalOP";
             this.aImporteTotalOP.NumberDecimals = 2;
             this.aImporteTotalOP.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
             this.aImporteTotalOP.SetIcon = TSControls.CIconos.Mas;
-            this.aImporteTotalOP.Size = new System.Drawing.Size(160, 28);
+            this.aImporteTotalOP.Size = new System.Drawing.Size(127, 28);
             this.aImporteTotalOP.TabIndex = 197;
             this.aImporteTotalOP.TextAlign = TSControls.CtlDisplayNumbers2.Alineacion.Centro;
             // 
@@ -1940,7 +1951,7 @@
             this.label23.BackColor = System.Drawing.Color.Lavender;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label23.Location = new System.Drawing.Point(23, 107);
+            this.label23.Location = new System.Drawing.Point(23, 106);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(128, 21);
             this.label23.TabIndex = 3;
@@ -1976,12 +1987,10 @@
             this.groupBox5.Controls.Add(this.dgv4Retenciones);
             this.groupBox5.Location = new System.Drawing.Point(744, 648);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(556, 231);
+            this.groupBox5.Size = new System.Drawing.Size(556, 122);
             this.groupBox5.TabIndex = 197;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalle de Retenciones Calculadas en Orden de Pago";
-            this.groupBox5.Paint += new System.Windows.Forms.PaintEventHandler(this.c);
-            this.groupBox5.Enter += new System.EventHandler(this.z);
             // 
             // bTotalRetenciones
             // 
@@ -1993,7 +2002,7 @@
             0,
             0});
             this.bTotalRetenciones.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTotalRetenciones.Location = new System.Drawing.Point(313, 159);
+            this.bTotalRetenciones.Location = new System.Drawing.Point(430, 44);
             this.bTotalRetenciones.Name = "bTotalRetenciones";
             this.bTotalRetenciones.NumberDecimals = 2;
             this.bTotalRetenciones.SetDisplayType = TSControls.CtlDisplayNumbers2.TextBoxType.Moneda;
@@ -2007,7 +2016,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Navy;
-            this.label11.Location = new System.Drawing.Point(204, 163);
+            this.label11.Location = new System.Drawing.Point(433, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 14);
             this.label11.TabIndex = 195;
@@ -2037,7 +2046,7 @@
             this.dgv4Retenciones.ReadOnly = true;
             this.dgv4Retenciones.RowHeadersWidth = 20;
             this.dgv4Retenciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv4Retenciones.Size = new System.Drawing.Size(418, 135);
+            this.dgv4Retenciones.Size = new System.Drawing.Size(418, 95);
             this.dgv4Retenciones.TabIndex = 0;
             this.dgv4Retenciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRetencionens_CellContentClick);
             // 
@@ -2969,18 +2978,33 @@
             this.DEL.Text = "Eliminar Documento de Orden de Pago";
             this.DEL.Width = 40;
             // 
+            // label30
+            // 
+            this.label30.BackColor = System.Drawing.Color.DarkBlue;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label30.Location = new System.Drawing.Point(3, 978);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(1305, 3);
+            this.label30.TabIndex = 217;
+            // 
             // FI31OrdenPagoMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1355, 1061);
+            this.ClientSize = new System.Drawing.Size(1312, 983);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.txtComentariosOP);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label29);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.rb);
@@ -2998,10 +3022,10 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2ItemsPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.t0212OPITEMBindingSource)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -3015,21 +3039,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv3Creditos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCreditosOPBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Ribbon rb;
-        private System.Windows.Forms.RibbonTab rtData;
-        private System.Windows.Forms.RibbonPanel rpProveedor;
+        private System.Windows.Forms.RibbonTab rTabDatos;
+        private System.Windows.Forms.RibbonPanel rPanProveedor;
         private System.Windows.Forms.RibbonButton rbtnVendorDetail;
-        private System.Windows.Forms.RibbonPanel rpStats;
-        private System.Windows.Forms.RibbonTab rtAccion;
-        private System.Windows.Forms.RibbonPanel rpAccionPrincipal;
+        private System.Windows.Forms.RibbonPanel rPanStats;
+        private System.Windows.Forms.RibbonTab rTabAcciones;
+        private System.Windows.Forms.RibbonPanel rPanAccionesPrimarias;
         private System.Windows.Forms.RibbonButton rbtnGenerar;
         private System.Windows.Forms.RibbonButton rbtnCancelar;
-        private System.Windows.Forms.RibbonPanel rpImprimir;
+        private System.Windows.Forms.RibbonPanel rPanImpresion;
         private System.Windows.Forms.RibbonButton rbtnPrintOP;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
@@ -3044,8 +3069,6 @@
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;
-        private System.Windows.Forms.RibbonPanel rpAddFacturas;
-        private System.Windows.Forms.RibbonButton rbtnDocumentosPendPago;
         private System.Windows.Forms.TextBox txtTipoOp;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgv1Documentos;
@@ -3084,11 +3107,8 @@
         private TSControls.CtlDisplayNumbers2 aImporteTotalOP;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.RibbonPanel rpRetenciones;
-        private System.Windows.Forms.RibbonButton rbtnAddRetencionArba;
-        private System.Windows.Forms.RibbonButton rbtnAddRetencionGanancias;
         private System.Windows.Forms.RibbonPanel rpItemsPago;
-        private System.Windows.Forms.RibbonTab rtabItemsPago;
+        private System.Windows.Forms.RibbonTab rTabItemsPago;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.RibbonButton rbtnAddPesos;
         private System.Windows.Forms.RibbonButton rbtAddUsd;
@@ -3106,7 +3126,7 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel7;
         private System.Windows.Forms.RibbonButton rbtCompensacionCliente;
         private System.Windows.Forms.BindingSource t0212OPITEMBindingSource;
-        private System.Windows.Forms.RibbonPanel rpTipoOP;
+        private System.Windows.Forms.RibbonPanel rPanTipoOp;
         private System.Windows.Forms.RibbonButton rbtnTipoLx;
         private System.Windows.Forms.RibbonButton rbtnSetL1;
         private System.Windows.Forms.RibbonButton rbtnSetL2;
@@ -3161,9 +3181,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dgv4Retenciones;
         private System.Windows.Forms.BindingSource t0213OrdenPagoRetencionesBindingSource;
-        private System.Windows.Forms.RibbonPanel rpCreditos;
-        private System.Windows.Forms.RibbonButton rbtnRemoverCreditosAnteriores;
-        private System.Windows.Forms.RibbonButton rbAsignarCreditosAOP;
         private TSControls.CtlDisplayNumbers2 aCreditosIncluidos;
         private System.Windows.Forms.Label label16;
         private TSControls.CtlDisplayNumbers2 aTotalImputado;
@@ -3202,7 +3219,7 @@
         private TSControls.CtlDisplayNumbers2 bTotalCheques;
         private TSControls.CtlDisplayNumbers2 bTotalEfectivo;
         private System.Windows.Forms.RibbonButton rbtnAsignarNumeroOP;
-        private System.Windows.Forms.RibbonPanel rpanSalir;
+        private System.Windows.Forms.RibbonPanel rPanSalir;
         private System.Windows.Forms.RibbonButton rbtnExit;
         private System.Windows.Forms.RibbonButton rbtnSaveAndExit;
         private System.Windows.Forms.CheckBox ckAutoGetAlicuotaIIBB;
@@ -3251,8 +3268,19 @@
         private TSControls.CtlDisplayNumbers2 bCreditoPendienteImputar;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn6;
-        private System.Windows.Forms.RibbonTab ribbonTab1;
+        private System.Windows.Forms.RibbonTab rTabRetenciones;
         public System.Windows.Forms.TextBox txtRazonSocial;
         public System.Windows.Forms.ComboBox cmbMoneda;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.RibbonTab rTabFacturasCreditos;
+        private System.Windows.Forms.RibbonPanel rPanFacturas;
+        private System.Windows.Forms.RibbonPanel rPanCreditos;
+        private System.Windows.Forms.RibbonPanel rPanRetArba;
+        private System.Windows.Forms.RibbonButton rbtnRetencionIIBB;
+        private System.Windows.Forms.RibbonButton rbtnConsultaPadron;
+        private System.Windows.Forms.RibbonPanel rbtRetAfip;
+        private System.Windows.Forms.RibbonButton rbtnRetencionGanancias;
+        private System.Windows.Forms.RibbonButton rbtnAddFacturasOp;
+        private System.Windows.Forms.RibbonButton rbtnVerCreditos;
     }
 }
