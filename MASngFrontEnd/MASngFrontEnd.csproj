@@ -749,6 +749,24 @@
     <Compile Include="Transactional\Cierre\FrmFI70ImportacionOriginal.Designer.cs">
       <DependentUpon>FrmFI70ImportacionOriginal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO28.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO28.Designer.cs">
+      <DependentUpon>FrmCO28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO29CierreMensualGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO29CierreMensualGeneral.Designer.cs">
+      <DependentUpon>FrmCO29CierreMensualGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO32ChequesCarteraCierre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO32ChequesCarteraCierre.Designer.cs">
+      <DependentUpon>FrmCO32ChequesCarteraCierre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactional\CO\Asiento\FrmAsientoContableDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -773,17 +791,47 @@
     <Compile Include="Transactional\CO\CierreRaf\FrmCO14SaldosAP.Designer.cs">
       <DependentUpon>FrmCO14SaldosAP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO33DetalleLibroVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO33DetalleLibroVentas.Designer.cs">
+      <DependentUpon>FrmCO33DetalleLibroVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO34DetalleComprasMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO34DetalleComprasMP.Designer.cs">
+      <DependentUpon>FrmCO34DetalleComprasMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FRMCO35DetalleGastosIndirectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FRMCO35DetalleGastosIndirectos.Designer.cs">
+      <DependentUpon>FRMCO35DetalleGastosIndirectos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactional\CO\CierreRaf\FrmCo36ConciliaDiferenciasEgresos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transactional\CO\CierreRaf\FrmCo36ConciliaDiferenciasEgresos.Designer.cs">
       <DependentUpon>FrmCo36ConciliaDiferenciasEgresos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO36DetalleCobranzassPorCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO36DetalleCobranzassPorCliente.Designer.cs">
+      <DependentUpon>FrmCO36DetalleCobranzassPorCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactional\CO\CierreRaf\FrmCo37ConciliaEgresos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transactional\CO\CierreRaf\FrmCo37ConciliaEgresos.Designer.cs">
       <DependentUpon>FrmCo37ConciliaEgresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO37DetalleComprasDirectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactional\CO\CierreRaf\FrmCO37DetalleComprasDirectos.Designer.cs">
+      <DependentUpon>FrmCO37DetalleComprasDirectos.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactional\CO\CierreRaf\FrmDetalle203.cs">
       <SubType>Form</SubType>
@@ -2676,6 +2724,12 @@
     <EmbeddedResource Include="Transactional\Cierre\FrmFI70ImportacionOriginal.resx">
       <DependentUpon>FrmFI70ImportacionOriginal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO29CierreMensualGeneral.resx">
+      <DependentUpon>FrmCO29CierreMensualGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO32ChequesCarteraCierre.resx">
+      <DependentUpon>FrmCO32ChequesCarteraCierre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\Asiento\FrmAsientoContableDetalle.resx">
       <DependentUpon>FrmAsientoContableDetalle.cs</DependentUpon>
     </EmbeddedResource>
@@ -2688,11 +2742,26 @@
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO14SaldosAP.resx">
       <DependentUpon>FrmCO14SaldosAP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO33DetalleLibroVentas.resx">
+      <DependentUpon>FrmCO33DetalleLibroVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO34DetalleComprasMP.resx">
+      <DependentUpon>FrmCO34DetalleComprasMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FRMCO35DetalleGastosIndirectos.resx">
+      <DependentUpon>FRMCO35DetalleGastosIndirectos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCo36ConciliaDiferenciasEgresos.resx">
       <DependentUpon>FrmCo36ConciliaDiferenciasEgresos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO36DetalleCobranzassPorCliente.resx">
+      <DependentUpon>FrmCO36DetalleCobranzassPorCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCo37ConciliaEgresos.resx">
       <DependentUpon>FrmCo37ConciliaEgresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmCO37DetalleComprasDirectos.resx">
+      <DependentUpon>FrmCO37DetalleComprasDirectos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactional\CO\CierreRaf\FrmDetalle203.resx">
       <DependentUpon>FrmDetalle203.cs</DependentUpon>
@@ -3501,6 +3570,10 @@
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CtaCteCliSaldoAcumuladoStx.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.CtaCteEstiloClienteStructure.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DatosXReg.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsCierreCobranzasxCliente.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsCierreComprasGastos.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsCierreDetalleCompraDirectos.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsCierreVentas.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsCreditosOP.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsFacturasOP.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.DsGescoPagoListo.datasource" />

@@ -17861,6 +17861,324 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="5ea73d95d85b440ea9f80f1b69893efa" Name="Diagram1">
+        <EntityTypeShape EntityType="MADBModel.CustomerMensajes" Width="1.5" PointX="2.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T_AFIP_CAE" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T000" Width="1.5" PointX="12.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0001_TRAN" Width="1.5" PointX="12.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0001_TRANSACTIONS" Width="1.5" PointX="0.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0004_ASN" Width="1.5" PointX="17.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0005_MPROVEEDORES" Width="1.5" PointX="6" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0006_MCLIENTES" Width="1.5" PointX="13.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0007_CLI_ENTREGA" Width="1.5" PointX="16" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0008_REGION" Width="1.5" PointX="23.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0009_MATERIALSPEC" Width="1.5" PointX="5.25" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0010_Container" Width="1.5" PointX="6" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0010_LOCALIDAD" Width="1.5" PointX="28.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0010_MATERIALES" Width="1.5" PointX="3" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0010_PARTIDO" Width="1.5" PointX="26" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0011_MATERIALES_AKA" Width="1.5" PointX="8.25" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0011_MaterialType" Width="1.5" PointX="0.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0012_TIPO_MATERIAL" Width="1.5" PointX="22.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0013_COLORES" Width="1.5" PointX="0.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0014_TIPO_PROVEEDOR" Width="1.5" PointX="3.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0015_TIPO_FACTURA" Width="1.5" PointX="11.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0016_PLANTAS" Width="1.5" PointX="3.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0017_CONDIVA" Width="1.5" PointX="2.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0018_TIPORESP" Width="1.5" PointX="13.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0019_ZTERM" Width="1.5" PointX="23.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0020_FORMULA_H" Width="1.5" PointX="5.25" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0021_FORMULA_I" Width="1.5" PointX="10.5" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0027_ORIGEN" Width="1.5" PointX="4.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0028_SLOC" Width="1.5" PointX="6" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0029_ESTADO_STOCK" Width="1.5" PointX="6" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0030_STOCK" Width="1.5" PointX="8.25" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0032_RECURSOS" Width="1.5" PointX="35" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0034_COSTO_EVAL_NP" Width="1.5" PointX="25.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0035_COSTO_EVAL" Width="1.5" PointX="27.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0036_CostoReposicion" Width="1.5" PointX="38.75" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0037_CostoMfg" Width="1.5" PointX="38.75" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0037_CostRollExplosionL1" Width="1.5" PointX="39.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0038_CostoMfgExplo" Width="1.5" PointX="41" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0039_CostoStandard" Width="1.5" PointX="0.75" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0040_MAT_MOVIMIENTOS" Width="1.5" PointX="35" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0041_LOG_CAMBIOS_NP" Width="1.5" PointX="24.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0042_PRODUCCION_DET" Width="1.5" PointX="37.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0045_OV_HEADER" Width="1.5" PointX="18.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0046_OV_ITEM" Width="1.5" PointX="20.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0047_MATERIAL_CLIENTE" Width="1.5" PointX="10.5" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0048_NOTA_CLIENTES" Width="1.5" PointX="28.75" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0050_REQUISICION" Width="1.5" PointX="5.25" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0055_REMITO_H" Width="1.5" PointX="18.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0056_REMITO_I" Width="1.5" PointX="20.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0057_REMITO_I_PRINT" Width="1.5" PointX="39.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0059_ENTREGAS" Width="1.5" PointX="23.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0059_HOJARUTA_H" Width="1.5" PointX="21.25" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0059_HOJARUTA_I" Width="1.5" PointX="23.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0059_LOGSDPROCESS" Width="1.5" PointX="40.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0060_OCOMPRA_H" Width="1.5" PointX="9" PointY="68.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0063_ITEMS_OC_INGRESADOS" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0065_MATERIAL_PROVEEDOR" Width="1.5" PointX="8.25" PointY="38.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0066_ITEMS_PROVEEDOR_OC" Width="1.5" PointX="8.25" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0070_PLANPRODUCCION" Width="1.5" PointX="5.25" PointY="54.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0072_FORMULA_TEMP" Width="1.5" PointX="7.5" PointY="52.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0073_FORMULA_PRINT" Width="1.5" PointX="7.5" PointY="59.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0080_TIPO_MOVIMIENTOS" Width="1.5" PointX="32.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0085_HHRR_DATOSPERSONALES" Width="1.5" PointX="30.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0085_PERSONAL" Width="1.5" PointX="28" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0086_HHRR_POSICIONES" Width="1.5" PointX="25.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0099_NELS" Width="1.5" PointX="33.75" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0099_NELUPDATE" Width="1.5" PointX="36" PointY="42.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0100_MATERIAL_PROVEEDOR" Width="1.5" PointX="40.75" PointY="38.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0102_EXCHANGE" Width="1.5" PointX="39.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0130_GLL0" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0131_GLL1" Width="1.5" PointX="15" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0132_GLL2" Width="1.5" PointX="17.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0133_GLL3" Width="1.5" PointX="19.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0134_GLL4" Width="1.5" PointX="21.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0135_GLX" Width="1.5" PointX="40.75" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0135_GLX_FF" Width="1.5" PointX="8.25" PointY="95.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0136_GLTREE" Width="1.5" PointX="41.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0137_GL_MAPPING" Width="1.5" PointX="12.75" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0138_PERIODOS" Width="1.5" PointX="41.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0141_MargenVenta" Width="1.5" PointX="42.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0151_MONEDAS" Width="1.5" PointX="6.75" PointY="69.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0155_SALDOS" Width="1.5" PointX="11.25" PointY="73.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0156_CHEQUE_RECH" Width="1.5" PointX="42.75" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0157_INFOCUITCHEQUE" Width="1.5" PointX="42.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0160_BANCOS" Width="1.5" PointX="23.75" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0170BloqueoDocumentos" Width="1.5" PointX="42.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0190_TAX" Width="1.5" PointX="22.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0201_CTACTE" Width="1.5" PointX="16" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0202_CTACTESALDOS" Width="1.5" PointX="16" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0203_CTACTE_PROV" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0203_CTACTE_PROV_IMPU" Width="1.5" PointX="10.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0204_CTACTESALDOS_PROV" Width="1.5" PointX="8.25" PointY="81.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0206_COBRANZA_I" Width="1.5" PointX="11.25" PointY="76.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0207_SPLITFACTURAS" Width="1.5" PointX="42.75" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0208_COB_NO_APLICADA" Width="1.5" PointX="16" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0210_OP_H" Width="1.5" PointX="12" PointY="64.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0212_OP_ITEM" Width="1.5" PointX="14.25" PointY="75.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0213_OP_FACT" Width="1.5" PointX="14.25" PointY="66" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0230_GescoHeader" Width="1.5" PointX="16" PointY="43" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0231_GescoDetail" Width="1.5" PointX="18.25" PointY="42.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0232_GescoPagosListos" Width="1.5" PointX="20.5" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0310_NCDP_H" Width="1.5" PointX="28.75" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0311_NCDP_I" Width="1.5" PointX="31" PointY="42.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0360_RTN" Width="1.5" PointX="43.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0402_FACTURA_PERCEP" Width="1.5" PointX="43.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0403_VENDOR_FACT_H" Width="1.5" PointX="37.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0404_VENDOR_FACT_I" Width="1.5" PointX="40" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0405_FACTURAS_RETENCIONES" Width="1.5" PointX="35.75" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0406_RendicionFF_H" Width="1.5" PointX="8.25" PointY="86.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0407_RendicionFF_I" Width="1.5" PointX="10.5" PointY="89" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0518_ConceptosHR" Width="1.5" PointX="43.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0519_SYJHeader" Width="1.5" PointX="35.75" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0520_SYJItems" Width="1.5" PointX="38" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0525_SueldoAdelanto" Width="1.5" PointX="44.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0601_DOCU_H" Width="1.5" PointX="23.75" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0602_DOCU_S" Width="1.5" PointX="26" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0603_DOCTYPES" Width="1.5" PointX="44.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0605_DOCUCONFIG" Width="1.5" PointX="33.75" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0606_DOCUCONTACLI" Width="1.5" PointX="36" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0800_QMMetodosInspeccion" Width="1.5" PointX="30.75" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0801_QMMasterIPHeader" Width="1.5" PointX="30.75" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0802_QMMasterIPDetail" Width="1.5" PointX="33" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0805_QMIRecordH1" Width="1.5" PointX="33" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0806_QMIRecordH2" Width="1.5" PointX="35.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0807QMIDetail" Width="1.5" PointX="37.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0810_QMHeaderData" Width="1.5" PointX="18.75" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0811_QMDetailData" Width="1.5" PointX="21" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0820_CQ1H" Width="1.5" PointX="12.75" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T1010_GESPA_H" Width="1.5" PointX="44.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T1010_LOGCUSTOMERMERGE" Width="1.5" PointX="44.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T1011_GESPA_MENSAJES" Width="1.5" PointX="44.75" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T1205_CobranzaConvertirHeader" Width="1.5" PointX="44.75" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T1206_CobranzaConvertirItems" Width="1.5" PointX="37.75" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TApplicationConfig" Width="1.5" PointX="39.75" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TAUX_G2" Width="1.5" PointX="44.75" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TAUX_G3" Width="1.5" PointX="0.75" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TblDocumentacionForm" Width="1.5" PointX="30.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TL001_MsgLog" Width="1.5" PointX="45.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.tLogBloqueoClientes" Width="1.5" PointX="2.75" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TLogTcode" Width="1.5" PointX="45.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TMensajes01" Width="1.5" PointX="22.75" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TSecRole" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TSecRoleAssignment" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TSecurityLog" Width="1.5" PointX="45.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TsecurityLogCheck" Width="1.5" PointX="30.75" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TSecUsr" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TTAXRetGananciasConfig" Width="1.5" PointX="45.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TTAXRetPerConfig" Width="1.5" PointX="32.75" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TTAXRetPerData" Width="1.5" PointX="46.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.XREGISTER" Width="1.5" PointX="46.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.XREGISTER_H" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.XREGISTER_I" Width="1.5" PointX="15" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.CAE" Width="1.5" PointX="18.75" PointY="49.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.CRM01XP" Width="1.5" PointX="46.75" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.CRM02XP" Width="1.5" PointX="46.75" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.ErrorLog" Width="1.5" PointX="46.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0002_LOG" Width="1.5" PointX="46.75" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0010_MATERIALES_NCD" Width="1.5" PointX="47.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0022_MRH" Width="1.5" PointX="9.75" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0031_STOCK_CHG" Width="1.5" PointX="47.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0042_MM40_CONFIG" Width="1.5" PointX="47.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0057_DESPACHOS_TEMP" Width="1.5" PointX="24.75" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0057_DESPACHOS_TEMP3" Width="1.5" PointX="26.75" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0075_RESERVA_PF" Width="1.5" PointX="47.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0090_CLIENTE_MATERIAL" Width="1.5" PointX="20.75" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0098_MUESTRAS" Width="1.5" PointX="39.75" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0101_MATERIAL_PROVEEDOR_TEMP" Width="1.5" PointX="41.75" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0121_CCN2" Width="1.5" PointX="43.75" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0139_GL_CIERRE_TEMPORAL" Width="1.5" PointX="45.75" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0140_GL_CIERRE_EJERCICIO" Width="1.5" PointX="47.75" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0290_COMPFACT_T" Width="1.5" PointX="2.75" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0320_MensajeClientes" Width="1.5" PointX="48.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0500_ERROR_MOV_STK" Width="1.5" PointX="48.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0510_ADELANTOS_H" Width="1.5" PointX="11.75" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0511_ADELANTOS_I" Width="1.5" PointX="48.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0821_CQ1I" Width="1.5" PointX="48.75" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T992_DOCUMENTOS_CONFIG" Width="1.5" PointX="48.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TAUX_G4_MSG_HISTORY" Width="1.5" PointX="32.75" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.tbLConfigForm" Width="1.5" PointX="48.75" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TempT403" Width="1.5" PointX="20.75" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.Tmp_T0601_DOCU_H" Width="1.5" PointX="49.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.TX001" Width="1.5" PointX="48.75" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.USR000" Width="1.5" PointX="48.75" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.USR001" Width="1.5" PointX="49.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.USR002" Width="1.5" PointX="32.75" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.USR003" Width="1.5" PointX="49.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.USR005" Width="1.5" PointX="28.75" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.USR999" Width="1.5" PointX="34.75" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.ZBALL2" Width="1.5" PointX="49.75" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0074_PFLOG" Width="1.5" PointX="7.5" PointY="64.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0150_CUENTAS" Width="1.5" PointX="9" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0154_CHEQUES" Width="1.5" PointX="26" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0061_OCOMPRA_I" Width="1.5" PointX="11.25" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0068RequisicionCompra" Width="1.5" PointX="50.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0049_FSR" Width="1.5" PointX="50.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0077_FASONEXT_H" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0078_FASONEXT_I" Width="1.5" PointX="10.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0205_COBRANZA_H" Width="1.5" PointX="16" PointY="49" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0034_CostRollHeader" Width="1.5" PointX="9" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0035_CostRoll" Width="1.5" PointX="11.25" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0140_MargenOperacion" Width="1.5" PointX="50.75" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0039_REPOHISTORY" Width="1.5" PointX="36.75" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0085_HHRR_PERSONAL_BASIC" Width="1.5" PointX="28" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0087_HHRR_DISPONIBILIDAD" Width="1.5" PointX="30.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0088_HHRR_DatosPersonales" Width="1.5" PointX="30.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0550_HHRR_SYJ_Header" Width="1.5" PointX="31" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0551_HHRR_SYJ_Items" Width="1.5" PointX="33.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0552_HHRR_SYJ_Payments" Width="1.5" PointX="35.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0158_CHRTRACKER" Width="1.5" PointX="28.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0300_NCD_H" Width="1.5" PointX="16" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MADBModel.T0301_NCD_I" Width="1.5" PointX="18.25" PointY="56.625" IsExpanded="true" />
+        <AssociationConnector Association="MADBModel.FK_T0005_MPROVEEDORES_T0014_TIPO_PROVEEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0060_OCOMPRA_H_T0005_MPROVEEDORES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0063_ITEMS_OC_INGRESADOS_T0005_MPROVEEDORES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0065_MATERIAL_PROVEEDOR_T0005_MPROVEEDORES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0066_ITEMS_PROVEEDOR_OC_T0005_MPROVEEDORES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0203_CTACTE_PROV_T0005_MPROVEEDORES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0204_CTACTESALDOS_PROV_T0005_MPROVEEDORES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0210_OP_H_T0005_MPROVEEDORES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0406_RendicionFF_H_T0005_MPROVEEDORES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0007_CLI_ENTREGA_T0006_MCLIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0201_CTACTE_T0006_MCLIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0202_CTACTESALDOS_T0006_MCLIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0208_COB_NO_APLICADA_T0006_MCLIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0230_GescoHeader_T0006_MCLIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0045_OV_HEADER_T0007_CLI_ENTREGA" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0055_REMITO_H_T0007_CLI_ENTREGA" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0059_ENTREGAS_T0007_CLI_ENTREGA" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0010_PARTIDO_T0008_REGION" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0009_MATERIALSPEC_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0011_MATERIALES_AKA_T0010_Container" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0010_LOCALIDAD_T0010_PARTIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0010_MATERIALES_T0011_MaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0010_MATERIALES_T0013_COLORES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0011_MATERIALES_AKA_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0020_FORMULA_H_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0020_FORMULA_H_T0010_MATERIALES1" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0021_FORMULA_I_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0030_STOCK_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0050_REQUISICION_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0065_MATERIAL_PROVEEDOR_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0070_PLANPRODUCCION_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0011_MATERIALES_AKA_T0011_MaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0047_MATERIAL_CLIENTE_T0011_MATERIALES_AKA" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0028_SLOC_T0016_PLANTAS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0021_FORMULA_I_T0020_FORMULA_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0030_STOCK_T0028_SLOC" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0030_STOCK_T0029_ESTADO_STOCK" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0042_PRODUCCION_DET_T0032_RECURSOS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0038_CostoMfgExplo_T0037_CostoMfg" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0040_MAT_MOVIMIENTOS_T0080_TIPO_MOVIMIENTOS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0042_PRODUCCION_DET_T0040_MAT_MOVIMIENTOS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0046_OV_ITEM_T0045_OV_HEADER" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0056_REMITO_I_T0055_REMITO_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0059_ENTREGAS_T0055_REMITO_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0059_HOJARUTA_I_T0055_REMITO_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0059_ENTREGAS_T0059_HOJARUTA_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0059_HOJARUTA_I_T0059_HOJARUTA_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0060_OCOMPRA_H_T0151_MONEDAS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0072_FORMULA_TEMP_T0070_PLANPRODUCCION" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0073_FORMULA_PRINT_T0070_PLANPRODUCCION" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0085_HHRR_DATOSPERSONALES_T0085_PERSONAL" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0085_PERSONAL_T0086_HHRR_POSICIONES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0099_NELUPDATE_T0099_NELS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0131_GLL1_T0130_GLL0" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0132_GLL2_T0131_GLL1" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0133_GLL3_T0132_GLL2" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0134_GLL4_T0133_GLL3" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0407_RendicionFF_I_T0135_GLX_FF" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0203_CTACTE_PROV_IMPU_T0203_CTACTE_PROV2" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0212_OP_ITEM_T0210_OP_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0213_OP_FACT_T0210_OP_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0231_GescoDetail_T0230_GescoHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0232_GescoPagosListos_T0231_GescoDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0311_NCDP_I_T0310_NCDP_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0404_VENDOR_FACT_I_T0403_VENDOR_FACT_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0407_RendicionFF_I_T0406_RendicionFF_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0520_SYJItems_T0519_SYJHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0602_DOCU_S_T0601_DOCU_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0606_DOCUCONTA_T0605_DOCUCONFIG" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0802_CQ_IP_DEF_T0800_CQ_METODOS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0807QMIDetail_T0800_QMMetodosInspeccion" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0802_CQ_IP_DEF_T0801_CQ_IP" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0805_QMIRecordH1_T0801_QMMasterIPHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0806_QMIRecordH2_T0805_QMIRecordH1" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0807QMIDetail_T0806_QMIRecordH2" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0811_CQI_T0810_CQH" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_TSecRoleAssignment_TSecRole" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_TSecRoleAssignment_TSecUsr" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_XREGISTER_I_XREGISTER_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0074_PFLOG_T0070_PLANPRODUCCION" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0150_CUENTAS_T0151_MONEDAS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0155_SALDOS_T0150_CUENTAS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0155_SALDOS_T0150_CUENTAS1" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0206_COBRANZA_I_T0150_CUENTAS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0212_OP_ITEM_T0150_CUENTAS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0154_CHEQUES_T0160_BANCOS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0061_OCOMPRA_I_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0061_OCOMPRA_I_T0060_OCOMPRA_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0078_FASONEXT_I_T0063_ITEMS_OC_INGRESADOS" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0078_FASONEXT_I_T0077_FASONEXT_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0205_COBRANZA_H_T0006_MCLIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0035_CostRoll_T0010_MATERIALES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0035_CostRoll_T0034_CostRollHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0085_HHRR_PERSONAL_BASIC_T0086_HHRR_POSICIONES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0087_HHRR_DISPONIBILIDAD_T0085_HHRR_PERSONAL_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0088_HHRR_DatosPersonales_T0085_HHRR_PERSONAL_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0551_EMPLPAYMENTS_I_T0085_HHRR_PERSONAL_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0552_EMPL_PAYMENTS_T0085_HHRR_PERSONAL_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0551_EMPLPAYMENTS_I_T0550_EMPLPAYMENTS_H" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0552_EMPL_PAYMENTS_T0551_EMPLPAYMENTS_I" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0158_CHRTRACKER_T0154_CHEQUES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0300_NCD_H_T0006_MCLIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="MADBModel.FK_T0301_NCD_I_T0300_NCD_H" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>

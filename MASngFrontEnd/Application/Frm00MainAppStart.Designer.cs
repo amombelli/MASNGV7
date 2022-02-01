@@ -49,7 +49,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -162,6 +161,7 @@
             this.button62 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button64 = new System.Windows.Forms.Button();
             this.button44 = new System.Windows.Forms.Button();
             this.btnTestCustomerSearchControl = new System.Windows.Forms.Button();
             this.button63 = new System.Windows.Forms.Button();
@@ -347,13 +347,6 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.SeaShell;
             this.label1.Name = "label1";
-            // 
-            // button7
-            // 
-            resources.ApplyResources(this.button7, "button7");
-            this.button7.Name = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -1251,6 +1244,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button64);
             this.tabPage1.Controls.Add(this.button44);
             this.tabPage1.Controls.Add(this.btnTestCustomerSearchControl);
             this.tabPage1.Controls.Add(this.button63);
@@ -1279,6 +1273,13 @@
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button64
+            // 
+            resources.ApplyResources(this.button64, "button64");
+            this.button64.Name = "button64";
+            this.button64.UseVisualStyleBackColor = true;
+            this.button64.Click += new System.EventHandler(this.button64_Click);
             // 
             // button44
             // 
@@ -1358,7 +1359,6 @@
             this.tabPage2.Controls.Add(this.button47);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.button27);
@@ -1852,7 +1852,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
@@ -2023,5 +2022,6 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel7;
         private System.Windows.Forms.RibbonButton rbExitMAS;
         private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.Button button64;
     }
 }

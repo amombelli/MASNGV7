@@ -10,6 +10,7 @@ using MASngFE.MasterData;
 using MASngFE.MasterData.BOM;
 using MASngFE.MasterData.Vendor;
 using MASngFE.SecurityConfig;
+using MASngFE.Transactional.CO.CierreRaf;
 using MASngFE.Transactional.CO.Cost;
 using MASngFE.Transactional.CO.GL;
 using MASngFE.Transactional.CRM;
@@ -296,8 +297,7 @@ namespace MASngFE.Application
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var f = new FrmFI78ImportacionComprobantesAFIP();
-            f.Show();
+   
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -872,6 +872,12 @@ namespace MASngFE.Application
             int A = 55247;
             //new FixAddFacturaT400InT201().AddRecordFacturaIn201(A);
             new FixAddFacturaT400InT201().AddCobranzaIn201(19136,55246);
+        }
+
+        private void button64_Click(object sender, EventArgs e)
+        {
+            var f = new FrmCo29CierreMensualGeneral();
+            f.Show();
         }
     }
 }

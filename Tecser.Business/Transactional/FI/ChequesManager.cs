@@ -806,182 +806,564 @@ namespace Tecser.Business.Transactional.FI
             }
         }
 
-        public List<TsCheques1> GetListaChequesFiltrada(string lx, bool verDisponible = true, bool verNoDisponible = false,
-            string numeroCheque = "", int idCheque = -1, DateTime? menorIgualaFecha = null, bool verInterior = true, bool verNoInterior = true)
+
+        public List<TsCheques1> ListaChequesStockCierre(DateTime fechaUltimoDiaCierre, string lx)
         {
-            var idCh = idCheque;
+            List<TsCheques1> data1 = new List<TsCheques1>();
+            fechaUltimoDiaCierre = fechaUltimoDiaCierre.Date;
+            fechaUltimoDiaCierre = fechaUltimoDiaCierre.AddDays(1).AddSeconds(-1);
+
             using (var db = new TecserData(GlobalApp.CnnApp))
             {
-                if (idCh > 0)
+                var data = from che in db.T0154_CHEQUES
+                    where che.DISPONIBLE && che.FECHA_RECIBIDO <= fechaUltimoDiaCierre
+                    join bank in db.T0160_BANCOS on che.CHE_BANCO equals bank.ID_BANCO into list1
+                    from che_bank in list1.DefaultIfEmpty()
+                    join vendor in db.T0005_MPROVEEDORES on che.IdProveedorSalida equals vendor.id_prov into list2
+                    from lx2 in list2.DefaultIfEmpty()
+                    join xcob in db.T0205_COBRANZA_H on che.IdCobranza equals xcob.IDCOB into list3
+                    from lx3 in list3.DefaultIfEmpty()
+                    select new TsCheques1()
+                    {
+                        Idcheque = che.IDCHEQUE,
+                        Importe = che.IMPORTE.Value,
+                        Numero = che.CHE_NUMERO,
+                        BancoShort = che_bank.BCO_SHORTDESC,
+                        ClienteRs = che.CLIENTE,
+                        Disponible = che.DISPONIBLE,
+                        Tipo = che.TIPO,
+                        FechaAcreditacion = che.CHE_FECHA,
+                        FechaRecibido = che.FECHA_RECIBIDO,
+                        Comentario = che.COMENTARIO,
+                        BancoId = che.CHE_BANCO,
+                        Interior = che.CHE_INTERIOR.Value,
+                        TipoSalida = che.TIPOSAL,
+                        Rechazado = che.CH_RECH,
+                        FechaEntregado = che.FECHA_ENTREGADO,
+                        EntregadoA = che.PROVEEDOR,
+                        DocumentoSalida = che.OP,
+                        IsEcheque = che.Echeque,
+                        IdClienteRecibido = che.IdClienteRecibido ?? -1,
+                        IdCobranza = che.IdCobranza ?? -1,
+                        StatusCheque = che.StatusCheque,
+                        IdProveedorSalida = che.IdProveedorSalida ?? -1,
+                        ProveedorSalida = lx2.prov_rsocial,
+                    };
+                if (lx == "L1" || lx == "L2")
                 {
-                    //como se provee un IDCheque - Se sobreescribe cualquier filtrado
+                    data1 = data.Where(c => c.Tipo == lx).ToList();
                 }
                 else
                 {
-                    if (verDisponible == verNoDisponible)
-                    {
-                        if (verDisponible == false)
-                        {
-                            return null; //es seleccion de no ver ninguno
-                        }
-                    }
-
-                    if (lx == "L0")
-                        return null;
-                }
-
-                List<TsCheques1> result = new List<TsCheques1>();
-                if (verDisponible && verNoDisponible)
-                {
-                    result = db.T0154_CHEQUES.Join(db.T0160_BANCOS, che => che.CHE_BANCO, ban => ban.ID_BANCO,
-                        (che, ban) => new TsCheques1()
-                        {
-                            Idcheque = che.IDCHEQUE,
-                            Importe = che.IMPORTE.Value,
-                            Numero = che.CHE_NUMERO,
-                            BancoShort = ban.BCO_SHORTDESC,
-                            ClienteRs = che.CLIENTE,
-                            Disponible = che.DISPONIBLE,
-                            Tipo = che.TIPO,
-                            FechaAcreditacion = che.CHE_FECHA,
-                            FechaRecibido = che.FECHA_RECIBIDO,
-                            Comentario = che.COMENTARIO,
-                            BancoId = che.CHE_BANCO,
-                            Interior = che.CHE_INTERIOR.Value,
-                            TipoSalida = che.TIPOSAL,
-                            Rechazado = che.CH_RECH,
-                            FechaEntregado = che.FECHA_ENTREGADO,
-                            EntregadoA = che.PROVEEDOR,
-                            DocumentoSalida = che.OP,
-                            IsEcheque = che.Echeque
-                        }).ToList();
-                }
-                else
-                {
-                    if (verDisponible)
-                    {
-                        result = db.T0154_CHEQUES.Where(c => c.DISPONIBLE).Join(db.T0160_BANCOS, che => che.CHE_BANCO,
-                            ban => ban.ID_BANCO,
-                            (che, ban) => new TsCheques1()
-                            {
-                                Idcheque = che.IDCHEQUE,
-                                Importe = che.IMPORTE.Value,
-                                Numero = che.CHE_NUMERO,
-                                BancoShort = ban.BCO_SHORTDESC,
-                                ClienteRs = che.CLIENTE,
-                                Disponible = che.DISPONIBLE,
-                                Tipo = che.TIPO,
-                                FechaAcreditacion = che.CHE_FECHA,
-                                FechaRecibido = che.FECHA_RECIBIDO,
-                                Comentario = che.COMENTARIO,
-                                BancoId = che.CHE_BANCO,
-                                Interior = che.CHE_INTERIOR.Value,
-                                TipoSalida = che.TIPOSAL,
-                                Rechazado = che.CH_RECH,
-                                FechaEntregado = che.FECHA_ENTREGADO,
-                                EntregadoA = che.PROVEEDOR,
-                                DocumentoSalida = che.OP,
-                                IsEcheque = che.Echeque
-                            }).ToList();
-                    }
-                    else
-                    {
-                        result = db.T0154_CHEQUES.Where(c => c.DISPONIBLE == false).Join(db.T0160_BANCOS,
-                            che => che.CHE_BANCO, ban => ban.ID_BANCO,
-                            (che, ban) => new TsCheques1()
-                            {
-                                Idcheque = che.IDCHEQUE,
-                                Importe = che.IMPORTE.Value,
-                                Numero = che.CHE_NUMERO,
-                                BancoShort = ban.BCO_SHORTDESC,
-                                ClienteRs = che.CLIENTE,
-                                Disponible = che.DISPONIBLE,
-                                Tipo = che.TIPO,
-                                FechaAcreditacion = che.CHE_FECHA,
-                                FechaRecibido = che.FECHA_RECIBIDO,
-                                Comentario = che.COMENTARIO,
-                                BancoId = che.CHE_BANCO,
-                                Interior = che.CHE_INTERIOR.Value,
-                                TipoSalida = che.TIPOSAL,
-                                Rechazado = che.CH_RECH,
-                                FechaEntregado = che.FECHA_ENTREGADO,
-                                EntregadoA = che.PROVEEDOR,
-                                DocumentoSalida = che.OP,
-                                IsEcheque = che.Echeque
-                            }).ToList();
-                    }
+                    data1 = data.ToList();
                 }
                 
-                if (idCh > 0)
+                var data2 = from che in db.T0154_CHEQUES
+                    where che.DISPONIBLE == false && che.FECHA_RECIBIDO <= fechaUltimoDiaCierre &&
+                          che.FECHA_ENTREGADO > fechaUltimoDiaCierre
+                    join bank in db.T0160_BANCOS on che.CHE_BANCO equals bank.ID_BANCO into list1
+                    from che_bank in list1.DefaultIfEmpty()
+                    join vendor in db.T0005_MPROVEEDORES on che.IdProveedorSalida equals vendor.id_prov into list2
+                    from lx2 in list2.DefaultIfEmpty()
+                    join xcob in db.T0205_COBRANZA_H on che.IdCobranza equals xcob.IDCOB into list3
+                    from lx3 in list3.DefaultIfEmpty()
+                    select new TsCheques1()
+                    {
+                        Idcheque = che.IDCHEQUE,
+                        Importe = che.IMPORTE.Value,
+                        Numero = che.CHE_NUMERO,
+                        BancoShort = che_bank.BCO_SHORTDESC,
+                        ClienteRs = che.CLIENTE,
+                        Disponible = che.DISPONIBLE,
+                        Tipo = che.TIPO,
+                        FechaAcreditacion = che.CHE_FECHA,
+                        FechaRecibido = che.FECHA_RECIBIDO,
+                        Comentario = che.COMENTARIO,
+                        BancoId = che.CHE_BANCO,
+                        Interior = che.CHE_INTERIOR.Value,
+                        TipoSalida = che.TIPOSAL,
+                        Rechazado = che.CH_RECH,
+                        FechaEntregado = che.FECHA_ENTREGADO,
+                        EntregadoA = che.PROVEEDOR,
+                        DocumentoSalida = che.OP,
+                        IsEcheque = che.Echeque,
+                        IdClienteRecibido = che.IdClienteRecibido ?? -1,
+                        IdCobranza = che.IdCobranza ?? -1,
+                        StatusCheque = che.StatusCheque,
+                        IdProveedorSalida = che.IdProveedorSalida ?? -1,
+                        ProveedorSalida = lx2.prov_rsocial,
+                    };
+                if (lx == "L1" || lx == "L2")
                 {
-                    return result.Where(c => c.Idcheque == idCh).ToList();
-                }
-      
-                //Se empiezan a aplicar todos los filtrados
-                
-                var r2 = result; //Filtrado x Numero de Cheque (contains)
-                var r3 = result; //Filtrado Interior-NoInterior
-                
-                if (string.IsNullOrEmpty(numeroCheque))
-                {
-                    r2 = result.ToList();
+                    data1.AddRange(data2.ToList().Where(c => c.Tipo == lx).ToList());
                 }
                 else
                 {
-                    r2 = result.Where(c => c.Numero.Contains(numeroCheque)).ToList();
+                    data1.AddRange(data2.ToList());
                 }
-                
-
-                if (verInterior == verNoInterior)
-                {
-                    if (verInterior == false)
-                    {
-                        //debiera retornar nada porque no hay ninguno seleccionado
-                        return null;
-                    }
-                    else
-                    {
-                        r3 = r2.ToList();
-                    }
-                }
-                else
-                {
-                    if (verInterior)
-                    {
-                        r3 = r2.Where(c => c.Interior == true).ToList();
-                    }
-                    else
-                    {
-                        //es verNOINTERIOR
-                        r3 = r2.Where(c => c.Interior == false).ToList();
-                    }
-                }
-
-                if (lx == "L1")
-                {
-                    if (menorIgualaFecha == null)
-                        return r3.Where(c => c.Tipo == "L1").OrderBy(c => c.FechaAcreditacion).ToList();
-                    return r3.Where(c => c.Tipo == "L1" && c.FechaAcreditacion <= menorIgualaFecha)
-                        .OrderBy(c => c.FechaAcreditacion).ToList();
-                }
-                else
-                {
-                    if (lx == "L2")
-                    {
-                        if (menorIgualaFecha == null)
-                            return r3.Where(c => c.Tipo == "L2").OrderBy(c => c.FechaAcreditacion).ToList();
-                        return r3.Where(c => c.Tipo == "L2" && c.FechaAcreditacion <= menorIgualaFecha)
-                            .OrderBy(c => c.FechaAcreditacion).ToList();
-                    }
-                    else
-                    {
-                        if (menorIgualaFecha == null)
-                            return r3.OrderBy(c => c.FechaAcreditacion).ToList();
-                        return r3.Where(c => c.FechaAcreditacion <= menorIgualaFecha).OrderBy(c => c.FechaAcreditacion)
-                            .ToList();
-                    }
-                }
+                return data1.ToList();
             }
+        }
+
+
+        private List<TsCheques1> GetChequeId(int id)
+        {
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                var data = from che in db.T0154_CHEQUES
+                    where che.IDCHEQUE == id
+                    join bank in db.T0160_BANCOS on che.CHE_BANCO equals bank.ID_BANCO into list1
+                    from che_bank in list1.DefaultIfEmpty()
+                    join vendor in db.T0005_MPROVEEDORES on che.IdProveedorSalida equals vendor.id_prov into list2
+                    from lx2 in list2.DefaultIfEmpty()
+                    join xcob in db.T0205_COBRANZA_H on che.IdCobranza equals xcob.IDCOB into list3
+                    from lx3 in list3.DefaultIfEmpty()
+                    select new TsCheques1()
+                    {
+                        Idcheque = che.IDCHEQUE,
+                        Importe = che.IMPORTE.Value,
+                        Numero = che.CHE_NUMERO,
+                        BancoShort = che_bank.BCO_SHORTDESC,
+                        ClienteRs = che.CLIENTE,
+                        Disponible = che.DISPONIBLE,
+                        Tipo = che.TIPO,
+                        FechaAcreditacion = che.CHE_FECHA,
+                        FechaRecibido = che.FECHA_RECIBIDO,
+                        Comentario = che.COMENTARIO,
+                        BancoId = che.CHE_BANCO,
+                        Interior = che.CHE_INTERIOR.Value,
+                        TipoSalida = che.TIPOSAL,
+                        Rechazado = che.CH_RECH,
+                        FechaEntregado = che.FECHA_ENTREGADO,
+                        EntregadoA = che.PROVEEDOR,
+                        DocumentoSalida = che.OP,
+                        IsEcheque = che.Echeque,
+                        IdClienteRecibido = che.IdClienteRecibido ?? -1,
+                        IdCobranza = che.IdCobranza ?? -1,
+                        StatusCheque = che.StatusCheque,
+                        IdProveedorSalida = che.IdProveedorSalida ?? -1,
+                        ProveedorSalida = lx2.prov_rsocial,
+                    };
+                return data.ToList();
+            }
+        }
+
+
+        /// <summary>
+        /// Retorna lista cheque completa generica
+        /// IDCheque - no toma en cuenta los filtros
+        /// Numero Cheque - Si (Retorna ese numero sobre el filtro)
+        /// </summary>
+        /// <returns></returns>
+        public List<TsCheques1> GetListaChequesFiltrada(string lx, bool verDisponible = true, bool verNoDisponible = false,
+            string numeroCheque = "", int idCheque = -1, DateTime? fechaAcreditacionMaxima = null, bool verInterior = true, bool verNoInterior = true, DateTime? fechaRecibidoInicial=null, DateTime? fechaRecibidoFinal=null)
+        {
+            if (idCheque > 1)
+            {
+                return GetChequeId(idCheque).ToList();
+            }
+
+            if (!verDisponible && !verNoDisponible) return null; //condicion no compatible.
+            if (!verInterior && !verNoInterior) return null; //condicion no compatible
+            if (lx == @"L0") return null; //condicion no compatible.
+
+            var fechaRi = DateTime.Today.AddYears(-10);
+            var fechaRf = DateTime.Today;
+            var fechaAcredMax = DateTime.Today.AddYears(1); //fecha acreditacion maximo default 1 año.
+            
+            if (fechaRecibidoInicial != null) fechaRi = fechaRecibidoInicial.Value;
+            if (fechaRecibidoFinal != null) fechaRf = fechaRecibidoFinal.Value;
+            if (fechaAcreditacionMaxima != null) fechaAcredMax = fechaAcreditacionMaxima.Value;
+            bool? zDispo = null;
+            bool? zInterior = null;
+
+            if (verDisponible == verNoDisponible)
+            {
+                zDispo = null;
+            }
+            else
+            {
+                zDispo = verDisponible;
+            }
+
+            if (verInterior == verNoInterior)
+            {
+                zInterior = null;
+            }
+            else
+            {
+                zInterior = verDisponible;
+            }
+
+
+
+            using (var db = new TecserData(GlobalApp.CnnApp))
+            {
+                IQueryable<TsCheques1> data;
+                if (zDispo !=null)
+                {
+                    //Ver Disponible o No Disponible
+                    if (lx == "L1" || lx == "L2")
+                    {
+                        //Ver L1 o L2
+                        data = from che in db.T0154_CHEQUES
+                               where che.CHE_FECHA <= fechaAcredMax &&
+                                     (che.FECHA_RECIBIDO >= fechaRi && che.FECHA_RECIBIDO <= fechaRf) && che.DISPONIBLE == zDispo && che.TIPO==lx
+                               join bank in db.T0160_BANCOS on che.CHE_BANCO equals bank.ID_BANCO into list1
+                               from che_bank in list1.DefaultIfEmpty()
+                               join vendor in db.T0005_MPROVEEDORES on che.IdProveedorSalida equals vendor.id_prov into list2
+                               from lx2 in list2.DefaultIfEmpty()
+                               join xcob in db.T0205_COBRANZA_H on che.IdCobranza equals xcob.IDCOB into list3
+                               from lx3 in list3.DefaultIfEmpty()
+                               select new TsCheques1()
+                               {
+                                   Idcheque = che.IDCHEQUE,
+                                   Importe = che.IMPORTE.Value,
+                                   Numero = che.CHE_NUMERO,
+                                   BancoShort = che_bank.BCO_SHORTDESC,
+                                   ClienteRs = che.CLIENTE,
+                                   Disponible = che.DISPONIBLE,
+                                   Tipo = che.TIPO,
+                                   FechaAcreditacion = che.CHE_FECHA,
+                                   FechaRecibido = che.FECHA_RECIBIDO,
+                                   Comentario = che.COMENTARIO,
+                                   BancoId = che.CHE_BANCO,
+                                   Interior = che.CHE_INTERIOR.Value,
+                                   TipoSalida = che.TIPOSAL,
+                                   Rechazado = che.CH_RECH,
+                                   FechaEntregado = che.FECHA_ENTREGADO,
+                                   EntregadoA = che.PROVEEDOR,
+                                   DocumentoSalida = che.OP,
+                                   IsEcheque = che.Echeque,
+                                   IdClienteRecibido = che.IdClienteRecibido ?? -1,
+                                   IdCobranza = che.IdCobranza ?? -1,
+                                   StatusCheque = che.StatusCheque,
+                                   IdProveedorSalida = che.IdProveedorSalida ?? -1,
+                                   ProveedorSalida = lx2.prov_rsocial,
+                               };
+                    }
+                    else
+                    {
+                        //Ver L1 + L2
+                        data = from che in db.T0154_CHEQUES
+                               where che.CHE_FECHA <= fechaAcredMax &&
+                                     (che.FECHA_RECIBIDO >= fechaRi && che.FECHA_RECIBIDO <= fechaRf) && che.DISPONIBLE == zDispo
+                               join bank in db.T0160_BANCOS on che.CHE_BANCO equals bank.ID_BANCO into list1
+                               from che_bank in list1.DefaultIfEmpty()
+                               join vendor in db.T0005_MPROVEEDORES on che.IdProveedorSalida equals vendor.id_prov into list2
+                               from lx2 in list2.DefaultIfEmpty()
+                               join xcob in db.T0205_COBRANZA_H on che.IdCobranza equals xcob.IDCOB into list3
+                               from lx3 in list3.DefaultIfEmpty()
+                               select new TsCheques1()
+                               {
+                                   Idcheque = che.IDCHEQUE,
+                                   Importe = che.IMPORTE.Value,
+                                   Numero = che.CHE_NUMERO,
+                                   BancoShort = che_bank.BCO_SHORTDESC,
+                                   ClienteRs = che.CLIENTE,
+                                   Disponible = che.DISPONIBLE,
+                                   Tipo = che.TIPO,
+                                   FechaAcreditacion = che.CHE_FECHA,
+                                   FechaRecibido = che.FECHA_RECIBIDO,
+                                   Comentario = che.COMENTARIO,
+                                   BancoId = che.CHE_BANCO,
+                                   Interior = che.CHE_INTERIOR.Value,
+                                   TipoSalida = che.TIPOSAL,
+                                   Rechazado = che.CH_RECH,
+                                   FechaEntregado = che.FECHA_ENTREGADO,
+                                   EntregadoA = che.PROVEEDOR,
+                                   DocumentoSalida = che.OP,
+                                   IsEcheque = che.Echeque,
+                                   IdClienteRecibido = che.IdClienteRecibido ?? -1,
+                                   IdCobranza = che.IdCobranza ?? -1,
+                                   StatusCheque = che.StatusCheque,
+                                   IdProveedorSalida = che.IdProveedorSalida ?? -1,
+                                   ProveedorSalida = lx2.prov_rsocial,
+                               };
+                    }
+                }
+                else
+                {
+                    //Ver Disponible+NoDisponible
+                    if (lx == "L1" || lx == "L2")
+                    {
+                        //Ver L1 o L2
+                        data = from che in db.T0154_CHEQUES
+                               where che.CHE_FECHA <= fechaAcredMax &&
+                                     (che.FECHA_RECIBIDO >= fechaRi && che.FECHA_RECIBIDO <= fechaRf) && che.TIPO == lx
+                               join bank in db.T0160_BANCOS on che.CHE_BANCO equals bank.ID_BANCO into list1
+                               from che_bank in list1.DefaultIfEmpty()
+                               join vendor in db.T0005_MPROVEEDORES on che.IdProveedorSalida equals vendor.id_prov into list2
+                               from lx2 in list2.DefaultIfEmpty()
+                               join xcob in db.T0205_COBRANZA_H on che.IdCobranza equals xcob.IDCOB into list3
+                               from lx3 in list3.DefaultIfEmpty()
+                               select new TsCheques1()
+                               {
+                                   Idcheque = che.IDCHEQUE,
+                                   Importe = che.IMPORTE.Value,
+                                   Numero = che.CHE_NUMERO,
+                                   BancoShort = che_bank.BCO_SHORTDESC,
+                                   ClienteRs = che.CLIENTE,
+                                   Disponible = che.DISPONIBLE,
+                                   Tipo = che.TIPO,
+                                   FechaAcreditacion = che.CHE_FECHA,
+                                   FechaRecibido = che.FECHA_RECIBIDO,
+                                   Comentario = che.COMENTARIO,
+                                   BancoId = che.CHE_BANCO,
+                                   Interior = che.CHE_INTERIOR.Value,
+                                   TipoSalida = che.TIPOSAL,
+                                   Rechazado = che.CH_RECH,
+                                   FechaEntregado = che.FECHA_ENTREGADO,
+                                   EntregadoA = che.PROVEEDOR,
+                                   DocumentoSalida = che.OP,
+                                   IsEcheque = che.Echeque,
+                                   IdClienteRecibido = che.IdClienteRecibido ?? -1,
+                                   IdCobranza = che.IdCobranza ?? -1,
+                                   StatusCheque = che.StatusCheque,
+                                   IdProveedorSalida = che.IdProveedorSalida ?? -1,
+                                   ProveedorSalida = lx2.prov_rsocial,
+                               };
+                    }
+                    else
+                    {
+                        //Ver L1 + L2
+                        data = from che in db.T0154_CHEQUES
+                               where che.CHE_FECHA <= fechaAcredMax &&
+                                     (che.FECHA_RECIBIDO >= fechaRi && che.FECHA_RECIBIDO <= fechaRf)
+                               join bank in db.T0160_BANCOS on che.CHE_BANCO equals bank.ID_BANCO into list1
+                               from che_bank in list1.DefaultIfEmpty()
+                               join vendor in db.T0005_MPROVEEDORES on che.IdProveedorSalida equals vendor.id_prov into list2
+                               from lx2 in list2.DefaultIfEmpty()
+                               join xcob in db.T0205_COBRANZA_H on che.IdCobranza equals xcob.IDCOB into list3
+                               from lx3 in list3.DefaultIfEmpty()
+                               select new TsCheques1()
+                               {
+                                   Idcheque = che.IDCHEQUE,
+                                   Importe = che.IMPORTE.Value,
+                                   Numero = che.CHE_NUMERO,
+                                   BancoShort = che_bank.BCO_SHORTDESC,
+                                   ClienteRs = che.CLIENTE,
+                                   Disponible = che.DISPONIBLE,
+                                   Tipo = che.TIPO,
+                                   FechaAcreditacion = che.CHE_FECHA,
+                                   FechaRecibido = che.FECHA_RECIBIDO,
+                                   Comentario = che.COMENTARIO,
+                                   BancoId = che.CHE_BANCO,
+                                   Interior = che.CHE_INTERIOR.Value,
+                                   TipoSalida = che.TIPOSAL,
+                                   Rechazado = che.CH_RECH,
+                                   FechaEntregado = che.FECHA_ENTREGADO,
+                                   EntregadoA = che.PROVEEDOR,
+                                   DocumentoSalida = che.OP,
+                                   IsEcheque = che.Echeque,
+                                   IdClienteRecibido = che.IdClienteRecibido ?? -1,
+                                   IdCobranza = che.IdCobranza ?? -1,
+                                   StatusCheque = che.StatusCheque,
+                                   IdProveedorSalida = che.IdProveedorSalida ?? -1,
+                                   ProveedorSalida = lx2.prov_rsocial,
+                               };
+                    }
+                }
+                if (zInterior != null)
+                {
+                    data = data.Where(c => c.Interior == zInterior);
+                }
+
+                if (!string.IsNullOrEmpty(numeroCheque))
+                {
+                    return data.Where(c => c.Numero.Contains(numeroCheque)).ToList();
+                }
+                return data.ToList();
+            }
+            
+            //if (verDisponible == verNoDisponible)
+            //    {
+            //        if (verDisponible == false)
+            //        {
+            //            return null; //Condicion Incompatible
+            //        }
+            //    }
+            //    if (lx == "L0") return null; //Tipo Incompatible
+
+            //    List<TsCheques1> result = new List<TsCheques1>();
+            //    if (verDisponible && verNoDisponible)
+            //    {
+            //        result = db.T0154_CHEQUES.Join(db.T0160_BANCOS, che => che.CHE_BANCO, ban => ban.ID_BANCO,
+            //            (che, ban) => new TsCheques1()
+            //            {
+            //                Idcheque = che.IDCHEQUE,
+            //                Importe = che.IMPORTE.Value,
+            //                Numero = che.CHE_NUMERO,
+            //                BancoShort = ban.BCO_SHORTDESC,
+            //                ClienteRs = che.CLIENTE,
+            //                Disponible = che.DISPONIBLE,
+            //                Tipo = che.TIPO,
+            //                FechaAcreditacion = che.CHE_FECHA,
+            //                FechaRecibido = che.FECHA_RECIBIDO,
+            //                Comentario = che.COMENTARIO,
+            //                BancoId = che.CHE_BANCO,
+            //                Interior = che.CHE_INTERIOR.Value,
+            //                TipoSalida = che.TIPOSAL,
+            //                Rechazado = che.CH_RECH,
+            //                FechaEntregado = che.FECHA_ENTREGADO,
+            //                EntregadoA = che.PROVEEDOR,
+            //                DocumentoSalida = che.OP,
+            //                IsEcheque = che.Echeque,
+            //                IdClienteRecibido = che.IdClienteRecibido ?? -1,
+            //                IdCobranza = che.IdCobranza ?? -1,
+            //                StatusCheque = che.StatusCheque,
+            //                IdProveedorSalida = che.IdProveedorSalida ?? -1,
+            //                ProveedorSalida = "",
+
+
+            //            }).ToList();
+            //    }
+            //    else
+            //    {
+            //        if (verDisponible)
+            //        {
+            //            result = db.T0154_CHEQUES.Where(c => c.DISPONIBLE).Join(db.T0160_BANCOS, che => che.CHE_BANCO,
+            //                ban => ban.ID_BANCO,
+            //                (che, ban) => new TsCheques1()
+            //                {
+            //                    Idcheque = che.IDCHEQUE,
+            //                    Importe = che.IMPORTE.Value,
+            //                    Numero = che.CHE_NUMERO,
+            //                    BancoShort = ban.BCO_SHORTDESC,
+            //                    ClienteRs = che.CLIENTE,
+            //                    Disponible = che.DISPONIBLE,
+            //                    Tipo = che.TIPO,
+            //                    FechaAcreditacion = che.CHE_FECHA,
+            //                    FechaRecibido = che.FECHA_RECIBIDO,
+            //                    Comentario = che.COMENTARIO,
+            //                    BancoId = che.CHE_BANCO,
+            //                    Interior = che.CHE_INTERIOR.Value,
+            //                    TipoSalida = che.TIPOSAL,
+            //                    Rechazado = che.CH_RECH,
+            //                    FechaEntregado = che.FECHA_ENTREGADO,
+            //                    EntregadoA = che.PROVEEDOR,
+            //                    DocumentoSalida = che.OP,
+            //                    IsEcheque = che.Echeque,
+            //                    IdClienteRecibido = che.IdClienteRecibido ?? -1,
+            //                    IdCobranza = che.IdCobranza ?? -1,
+            //                    StatusCheque = che.StatusCheque,
+            //                    IdProveedorSalida = che.IdProveedorSalida ?? -1,
+            //                    ProveedorSalida = "",
+            //                }).ToList();
+            //        }
+            //        else
+            //        {
+            //            result = db.T0154_CHEQUES.Where(c => c.DISPONIBLE == false).Join(db.T0160_BANCOS,
+            //                che => che.CHE_BANCO, ban => ban.ID_BANCO,
+            //                (che, ban) => new TsCheques1()
+            //                {
+            //                    Idcheque = che.IDCHEQUE,
+            //                    Importe = che.IMPORTE.Value,
+            //                    Numero = che.CHE_NUMERO,
+            //                    BancoShort = ban.BCO_SHORTDESC,
+            //                    ClienteRs = che.CLIENTE,
+            //                    Disponible = che.DISPONIBLE,
+            //                    Tipo = che.TIPO,
+            //                    FechaAcreditacion = che.CHE_FECHA,
+            //                    FechaRecibido = che.FECHA_RECIBIDO,
+            //                    Comentario = che.COMENTARIO,
+            //                    BancoId = che.CHE_BANCO,
+            //                    Interior = che.CHE_INTERIOR.Value,
+            //                    TipoSalida = che.TIPOSAL,
+            //                    Rechazado = che.CH_RECH,
+            //                    FechaEntregado = che.FECHA_ENTREGADO,
+            //                    EntregadoA = che.PROVEEDOR,
+            //                    DocumentoSalida = che.OP,
+            //                    IsEcheque = che.Echeque,
+            //                    IdClienteRecibido = che.IdClienteRecibido ?? -1,
+            //                    IdCobranza = che.IdCobranza ?? -1,
+            //                    StatusCheque = che.StatusCheque,
+            //                    IdProveedorSalida = che.IdProveedorSalida ?? -1,
+            //                    ProveedorSalida = "",
+            //                }).ToList();
+            //        }
+            //    }
+                
+            //    //Se empiezan a aplicar todos los filtrados
+                
+            //    var r2 = result; //Filtrado x Numero de Cheque (contains)
+            //    var r3 = result; //Filtrado Interior-NoInterior
+            //    var r4 = result; //Filtrado Fecha Recibido Inicial y Final
+                
+            //    if (string.IsNullOrEmpty(numeroCheque))
+            //    {
+            //        r2 = result.ToList();
+            //    }
+            //    else
+            //    {
+            //        r2 = result.Where(c => c.Numero.Contains(numeroCheque)).ToList();
+            //    }
+                
+
+            //    if (verInterior == verNoInterior)
+            //    {
+            //        if (verInterior == false)
+            //        {
+            //            //debiera retornar nada porque no hay ninguno seleccionado
+            //            return null;
+            //        }
+            //        else
+            //        {
+            //            r3 = r2.ToList();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (verInterior)
+            //        {
+            //            r3 = r2.Where(c => c.Interior == true).ToList();
+            //        }
+            //        else
+            //        {
+            //            //es verNOINTERIOR
+            //            r3 = r2.Where(c => c.Interior == false).ToList();
+            //        }
+            //    }
+
+            //    r4 = r3;
+
+            //    if (fechaRecibidoInicial != null)
+            //    {
+            //        r4 = r3.Where(c => c.FechaRecibido >= fechaRecibidoInicial).ToList();
+            //    }
+
+            //    if (fechaRecibidoFinal != null)
+            //    {
+            //        r4 = r4.Where(c => c.FechaRecibido <= fechaRecibidoFinal).ToList();
+            //    }
+
+
+
+            //    if (lx == "L1")
+            //    {
+            //        if (menorIgualaFecha == null)
+            //            return r4.Where(c => c.Tipo == "L1").OrderBy(c => c.FechaAcreditacion).ToList();
+            //        return r4.Where(c => c.Tipo == "L1" && c.FechaAcreditacion <= menorIgualaFecha)
+            //            .OrderBy(c => c.FechaAcreditacion).ToList();
+            //    }
+            //    else
+            //    {
+            //        if (lx == "L2")
+            //        {
+            //            if (menorIgualaFecha == null)
+            //                return r4.Where(c => c.Tipo == "L2").OrderBy(c => c.FechaAcreditacion).ToList();
+            //            return r4.Where(c => c.Tipo == "L2" && c.FechaAcreditacion <= menorIgualaFecha)
+            //                .OrderBy(c => c.FechaAcreditacion).ToList();
+            //        }
+            //        else
+            //        {
+            //            if (menorIgualaFecha == null)
+            //                return r4.OrderBy(c => c.FechaAcreditacion).ToList();
+            //            return r4.Where(c => c.FechaAcreditacion <= menorIgualaFecha).OrderBy(c => c.FechaAcreditacion)
+            //                .ToList();
+            //        }
+            //    }
+            //}
         }
 
         public ChequesStats GetChequeStats(string cuit, DateTime? fechaDesde = null)

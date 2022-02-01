@@ -33,30 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvT403 = new System.Windows.Forms.DataGridView();
-            this.t403Bs = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgv2T203 = new System.Windows.Forms.DataGridView();
-            this.iDCTACTEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tDOCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dOCINTERNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nUMDOCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zTERMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDPROVDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mONEDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tCDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iMPORTEORIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iMPORTEARSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sALDOFACTURADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tIPODataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idFacturaXDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDOCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.t0005MPROVEEDORESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.t203Bs = new System.Windows.Forms.BindingSource(this.components);
             this.iDINTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDPROVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pROVRSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,10 +67,32 @@
             this.lOGDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lOGUSERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCtaCte1dgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gLAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIPODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.t403Bs = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgv2T203 = new System.Windows.Forms.DataGridView();
+            this.iDCTACTEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tDOCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOCINTERNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nUMDOCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zTERMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDPROVDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mONEDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tCDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iMPORTEORIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iMPORTEARSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sALDOFACTURADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIPODataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFacturaXDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDOCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.t0005MPROVEEDORESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.t203Bs = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvT403)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t403Bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2T203)).BeginInit();
@@ -142,8 +140,6 @@
             this.lOGDATEDataGridViewTextBoxColumn,
             this.lOGUSERDataGridViewTextBoxColumn,
             this.tCODEDataGridViewTextBoxColumn,
-            this.idCtaCte1dgv,
-            this.gLAPDataGridViewTextBoxColumn,
             this.statusDocumentoDataGridViewTextBoxColumn,
             this.tIPODataGridViewTextBoxColumn});
             this.dgvT403.DataSource = this.t403Bs;
@@ -153,199 +149,6 @@
             this.dgvT403.Size = new System.Drawing.Size(1360, 426);
             this.dgvT403.TabIndex = 0;
             this.dgvT403.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvT403_CellContentClick);
-            // 
-            // t403Bs
-            // 
-            this.t403Bs.DataSource = typeof(TecserEF.Entity.T0403_VENDOR_FACT_H);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(3, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(717, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Detalle de Facturas Ingresadas (T403)";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dgv2T203
-            // 
-            this.dgv2T203.AllowUserToAddRows = false;
-            this.dgv2T203.AllowUserToDeleteRows = false;
-            this.dgv2T203.AutoGenerateColumns = false;
-            this.dgv2T203.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv2T203.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDCTACTEDataGridViewTextBoxColumn1,
-            this.tDOCDataGridViewTextBoxColumn,
-            this.dOCINTERNODataGridViewTextBoxColumn,
-            this.nUMDOCDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn1,
-            this.zTERMDataGridViewTextBoxColumn,
-            this.iDPROVDataGridViewTextBoxColumn1,
-            this.mONEDADataGridViewTextBoxColumn,
-            this.tCDataGridViewTextBoxColumn1,
-            this.iMPORTEORIDataGridViewTextBoxColumn,
-            this.iMPORTEARSDataGridViewTextBoxColumn,
-            this.sALDOFACTURADataGridViewTextBoxColumn,
-            this.logDateDataGridViewTextBoxColumn1,
-            this.logUsuarioDataGridViewTextBoxColumn,
-            this.tIPODataGridViewTextBoxColumn1,
-            this.zOPDataGridViewTextBoxColumn,
-            this.idFacturaXDataGridViewTextBoxColumn1,
-            this.iDDOCDataGridViewTextBoxColumn,
-            this.t0005MPROVEEDORESDataGridViewTextBoxColumn,
-            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn});
-            this.dgv2T203.DataSource = this.t203Bs;
-            this.dgv2T203.Location = new System.Drawing.Point(3, 473);
-            this.dgv2T203.Name = "dgv2T203";
-            this.dgv2T203.ReadOnly = true;
-            this.dgv2T203.Size = new System.Drawing.Size(928, 184);
-            this.dgv2T203.TabIndex = 2;
-            // 
-            // iDCTACTEDataGridViewTextBoxColumn1
-            // 
-            this.iDCTACTEDataGridViewTextBoxColumn1.DataPropertyName = "IDCTACTE";
-            this.iDCTACTEDataGridViewTextBoxColumn1.HeaderText = "IDCTACTE";
-            this.iDCTACTEDataGridViewTextBoxColumn1.Name = "iDCTACTEDataGridViewTextBoxColumn1";
-            this.iDCTACTEDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // tDOCDataGridViewTextBoxColumn
-            // 
-            this.tDOCDataGridViewTextBoxColumn.DataPropertyName = "TDOC";
-            this.tDOCDataGridViewTextBoxColumn.HeaderText = "TDOC";
-            this.tDOCDataGridViewTextBoxColumn.Name = "tDOCDataGridViewTextBoxColumn";
-            this.tDOCDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dOCINTERNODataGridViewTextBoxColumn
-            // 
-            this.dOCINTERNODataGridViewTextBoxColumn.DataPropertyName = "DOC_INTERNO";
-            this.dOCINTERNODataGridViewTextBoxColumn.HeaderText = "DOC_INTERNO";
-            this.dOCINTERNODataGridViewTextBoxColumn.Name = "dOCINTERNODataGridViewTextBoxColumn";
-            this.dOCINTERNODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nUMDOCDataGridViewTextBoxColumn
-            // 
-            this.nUMDOCDataGridViewTextBoxColumn.DataPropertyName = "NUMDOC";
-            this.nUMDOCDataGridViewTextBoxColumn.HeaderText = "NUMDOC";
-            this.nUMDOCDataGridViewTextBoxColumn.Name = "nUMDOCDataGridViewTextBoxColumn";
-            this.nUMDOCDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn1
-            // 
-            this.fechaDataGridViewTextBoxColumn1.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn1.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn1.Name = "fechaDataGridViewTextBoxColumn1";
-            this.fechaDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // zTERMDataGridViewTextBoxColumn
-            // 
-            this.zTERMDataGridViewTextBoxColumn.DataPropertyName = "ZTERM";
-            this.zTERMDataGridViewTextBoxColumn.HeaderText = "ZTERM";
-            this.zTERMDataGridViewTextBoxColumn.Name = "zTERMDataGridViewTextBoxColumn";
-            this.zTERMDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDPROVDataGridViewTextBoxColumn1
-            // 
-            this.iDPROVDataGridViewTextBoxColumn1.DataPropertyName = "IDPROV";
-            this.iDPROVDataGridViewTextBoxColumn1.HeaderText = "IDPROV";
-            this.iDPROVDataGridViewTextBoxColumn1.Name = "iDPROVDataGridViewTextBoxColumn1";
-            this.iDPROVDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // mONEDADataGridViewTextBoxColumn
-            // 
-            this.mONEDADataGridViewTextBoxColumn.DataPropertyName = "MONEDA";
-            this.mONEDADataGridViewTextBoxColumn.HeaderText = "MONEDA";
-            this.mONEDADataGridViewTextBoxColumn.Name = "mONEDADataGridViewTextBoxColumn";
-            this.mONEDADataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tCDataGridViewTextBoxColumn1
-            // 
-            this.tCDataGridViewTextBoxColumn1.DataPropertyName = "TC";
-            this.tCDataGridViewTextBoxColumn1.HeaderText = "TC";
-            this.tCDataGridViewTextBoxColumn1.Name = "tCDataGridViewTextBoxColumn1";
-            this.tCDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // iMPORTEORIDataGridViewTextBoxColumn
-            // 
-            this.iMPORTEORIDataGridViewTextBoxColumn.DataPropertyName = "IMPORTE_ORI";
-            this.iMPORTEORIDataGridViewTextBoxColumn.HeaderText = "IMPORTE_ORI";
-            this.iMPORTEORIDataGridViewTextBoxColumn.Name = "iMPORTEORIDataGridViewTextBoxColumn";
-            this.iMPORTEORIDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iMPORTEARSDataGridViewTextBoxColumn
-            // 
-            this.iMPORTEARSDataGridViewTextBoxColumn.DataPropertyName = "IMPORTE_ARS";
-            this.iMPORTEARSDataGridViewTextBoxColumn.HeaderText = "IMPORTE_ARS";
-            this.iMPORTEARSDataGridViewTextBoxColumn.Name = "iMPORTEARSDataGridViewTextBoxColumn";
-            this.iMPORTEARSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sALDOFACTURADataGridViewTextBoxColumn
-            // 
-            this.sALDOFACTURADataGridViewTextBoxColumn.DataPropertyName = "SALDOFACTURA";
-            this.sALDOFACTURADataGridViewTextBoxColumn.HeaderText = "SALDOFACTURA";
-            this.sALDOFACTURADataGridViewTextBoxColumn.Name = "sALDOFACTURADataGridViewTextBoxColumn";
-            this.sALDOFACTURADataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // logDateDataGridViewTextBoxColumn1
-            // 
-            this.logDateDataGridViewTextBoxColumn1.DataPropertyName = "LogDate";
-            this.logDateDataGridViewTextBoxColumn1.HeaderText = "LogDate";
-            this.logDateDataGridViewTextBoxColumn1.Name = "logDateDataGridViewTextBoxColumn1";
-            this.logDateDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // logUsuarioDataGridViewTextBoxColumn
-            // 
-            this.logUsuarioDataGridViewTextBoxColumn.DataPropertyName = "LogUsuario";
-            this.logUsuarioDataGridViewTextBoxColumn.HeaderText = "LogUsuario";
-            this.logUsuarioDataGridViewTextBoxColumn.Name = "logUsuarioDataGridViewTextBoxColumn";
-            this.logUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tIPODataGridViewTextBoxColumn1
-            // 
-            this.tIPODataGridViewTextBoxColumn1.DataPropertyName = "TIPO";
-            this.tIPODataGridViewTextBoxColumn1.HeaderText = "TIPO";
-            this.tIPODataGridViewTextBoxColumn1.Name = "tIPODataGridViewTextBoxColumn1";
-            this.tIPODataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // zOPDataGridViewTextBoxColumn
-            // 
-            this.zOPDataGridViewTextBoxColumn.DataPropertyName = "ZOP";
-            this.zOPDataGridViewTextBoxColumn.HeaderText = "ZOP";
-            this.zOPDataGridViewTextBoxColumn.Name = "zOPDataGridViewTextBoxColumn";
-            this.zOPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idFacturaXDataGridViewTextBoxColumn1
-            // 
-            this.idFacturaXDataGridViewTextBoxColumn1.DataPropertyName = "IdFacturaX";
-            this.idFacturaXDataGridViewTextBoxColumn1.HeaderText = "IdFacturaX";
-            this.idFacturaXDataGridViewTextBoxColumn1.Name = "idFacturaXDataGridViewTextBoxColumn1";
-            this.idFacturaXDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // iDDOCDataGridViewTextBoxColumn
-            // 
-            this.iDDOCDataGridViewTextBoxColumn.DataPropertyName = "IDDOC";
-            this.iDDOCDataGridViewTextBoxColumn.HeaderText = "IDDOC";
-            this.iDDOCDataGridViewTextBoxColumn.Name = "iDDOCDataGridViewTextBoxColumn";
-            this.iDDOCDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // t0005MPROVEEDORESDataGridViewTextBoxColumn
-            // 
-            this.t0005MPROVEEDORESDataGridViewTextBoxColumn.DataPropertyName = "T0005_MPROVEEDORES";
-            this.t0005MPROVEEDORESDataGridViewTextBoxColumn.HeaderText = "T0005_MPROVEEDORES";
-            this.t0005MPROVEEDORESDataGridViewTextBoxColumn.Name = "t0005MPROVEEDORESDataGridViewTextBoxColumn";
-            this.t0005MPROVEEDORESDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // t0203CTACTEPROVIMPUDataGridViewTextBoxColumn
-            // 
-            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn.DataPropertyName = "T0203_CTACTE_PROV_IMPU";
-            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn.HeaderText = "T0203_CTACTE_PROV_IMPU";
-            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn.Name = "t0203CTACTEPROVIMPUDataGridViewTextBoxColumn";
-            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // t203Bs
-            // 
-            this.t203Bs.DataSource = typeof(TecserEF.Entity.T0203_CTACTE_PROV);
             // 
             // iDINTDataGridViewTextBoxColumn
             // 
@@ -605,20 +408,6 @@
             this.tCODEDataGridViewTextBoxColumn.ReadOnly = true;
             this.tCODEDataGridViewTextBoxColumn.Width = 50;
             // 
-            // idCtaCte1dgv
-            // 
-            this.idCtaCte1dgv.DataPropertyName = "IdCtaCte";
-            this.idCtaCte1dgv.HeaderText = "IDCTACTE";
-            this.idCtaCte1dgv.Name = "idCtaCte1dgv";
-            this.idCtaCte1dgv.ReadOnly = true;
-            // 
-            // gLAPDataGridViewTextBoxColumn
-            // 
-            this.gLAPDataGridViewTextBoxColumn.DataPropertyName = "GL Ap";
-            this.gLAPDataGridViewTextBoxColumn.HeaderText = "GLAP";
-            this.gLAPDataGridViewTextBoxColumn.Name = "gLAPDataGridViewTextBoxColumn";
-            this.gLAPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // statusDocumentoDataGridViewTextBoxColumn
             // 
             this.statusDocumentoDataGridViewTextBoxColumn.DataPropertyName = "StatusDocumento";
@@ -632,6 +421,199 @@
             this.tIPODataGridViewTextBoxColumn.HeaderText = "Lx";
             this.tIPODataGridViewTextBoxColumn.Name = "tIPODataGridViewTextBoxColumn";
             this.tIPODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // t403Bs
+            // 
+            this.t403Bs.DataSource = typeof(TecserEF.Entity.T0403_VENDOR_FACT_H);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(717, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Detalle de Facturas Ingresadas (T403)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dgv2T203
+            // 
+            this.dgv2T203.AllowUserToAddRows = false;
+            this.dgv2T203.AllowUserToDeleteRows = false;
+            this.dgv2T203.AutoGenerateColumns = false;
+            this.dgv2T203.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2T203.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDCTACTEDataGridViewTextBoxColumn1,
+            this.tDOCDataGridViewTextBoxColumn,
+            this.dOCINTERNODataGridViewTextBoxColumn,
+            this.nUMDOCDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn1,
+            this.zTERMDataGridViewTextBoxColumn,
+            this.iDPROVDataGridViewTextBoxColumn1,
+            this.mONEDADataGridViewTextBoxColumn,
+            this.tCDataGridViewTextBoxColumn1,
+            this.iMPORTEORIDataGridViewTextBoxColumn,
+            this.iMPORTEARSDataGridViewTextBoxColumn,
+            this.sALDOFACTURADataGridViewTextBoxColumn,
+            this.logDateDataGridViewTextBoxColumn1,
+            this.logUsuarioDataGridViewTextBoxColumn,
+            this.tIPODataGridViewTextBoxColumn1,
+            this.zOPDataGridViewTextBoxColumn,
+            this.idFacturaXDataGridViewTextBoxColumn1,
+            this.iDDOCDataGridViewTextBoxColumn,
+            this.t0005MPROVEEDORESDataGridViewTextBoxColumn,
+            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn});
+            this.dgv2T203.DataSource = this.t203Bs;
+            this.dgv2T203.Location = new System.Drawing.Point(3, 473);
+            this.dgv2T203.Name = "dgv2T203";
+            this.dgv2T203.ReadOnly = true;
+            this.dgv2T203.Size = new System.Drawing.Size(928, 184);
+            this.dgv2T203.TabIndex = 2;
+            // 
+            // iDCTACTEDataGridViewTextBoxColumn1
+            // 
+            this.iDCTACTEDataGridViewTextBoxColumn1.DataPropertyName = "IDCTACTE";
+            this.iDCTACTEDataGridViewTextBoxColumn1.HeaderText = "IDCTACTE";
+            this.iDCTACTEDataGridViewTextBoxColumn1.Name = "iDCTACTEDataGridViewTextBoxColumn1";
+            this.iDCTACTEDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tDOCDataGridViewTextBoxColumn
+            // 
+            this.tDOCDataGridViewTextBoxColumn.DataPropertyName = "TDOC";
+            this.tDOCDataGridViewTextBoxColumn.HeaderText = "TDOC";
+            this.tDOCDataGridViewTextBoxColumn.Name = "tDOCDataGridViewTextBoxColumn";
+            this.tDOCDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dOCINTERNODataGridViewTextBoxColumn
+            // 
+            this.dOCINTERNODataGridViewTextBoxColumn.DataPropertyName = "DOC_INTERNO";
+            this.dOCINTERNODataGridViewTextBoxColumn.HeaderText = "DOC_INTERNO";
+            this.dOCINTERNODataGridViewTextBoxColumn.Name = "dOCINTERNODataGridViewTextBoxColumn";
+            this.dOCINTERNODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nUMDOCDataGridViewTextBoxColumn
+            // 
+            this.nUMDOCDataGridViewTextBoxColumn.DataPropertyName = "NUMDOC";
+            this.nUMDOCDataGridViewTextBoxColumn.HeaderText = "NUMDOC";
+            this.nUMDOCDataGridViewTextBoxColumn.Name = "nUMDOCDataGridViewTextBoxColumn";
+            this.nUMDOCDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn1
+            // 
+            this.fechaDataGridViewTextBoxColumn1.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn1.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn1.Name = "fechaDataGridViewTextBoxColumn1";
+            this.fechaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // zTERMDataGridViewTextBoxColumn
+            // 
+            this.zTERMDataGridViewTextBoxColumn.DataPropertyName = "ZTERM";
+            this.zTERMDataGridViewTextBoxColumn.HeaderText = "ZTERM";
+            this.zTERMDataGridViewTextBoxColumn.Name = "zTERMDataGridViewTextBoxColumn";
+            this.zTERMDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDPROVDataGridViewTextBoxColumn1
+            // 
+            this.iDPROVDataGridViewTextBoxColumn1.DataPropertyName = "IDPROV";
+            this.iDPROVDataGridViewTextBoxColumn1.HeaderText = "IDPROV";
+            this.iDPROVDataGridViewTextBoxColumn1.Name = "iDPROVDataGridViewTextBoxColumn1";
+            this.iDPROVDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mONEDADataGridViewTextBoxColumn
+            // 
+            this.mONEDADataGridViewTextBoxColumn.DataPropertyName = "MONEDA";
+            this.mONEDADataGridViewTextBoxColumn.HeaderText = "MONEDA";
+            this.mONEDADataGridViewTextBoxColumn.Name = "mONEDADataGridViewTextBoxColumn";
+            this.mONEDADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tCDataGridViewTextBoxColumn1
+            // 
+            this.tCDataGridViewTextBoxColumn1.DataPropertyName = "TC";
+            this.tCDataGridViewTextBoxColumn1.HeaderText = "TC";
+            this.tCDataGridViewTextBoxColumn1.Name = "tCDataGridViewTextBoxColumn1";
+            this.tCDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // iMPORTEORIDataGridViewTextBoxColumn
+            // 
+            this.iMPORTEORIDataGridViewTextBoxColumn.DataPropertyName = "IMPORTE_ORI";
+            this.iMPORTEORIDataGridViewTextBoxColumn.HeaderText = "IMPORTE_ORI";
+            this.iMPORTEORIDataGridViewTextBoxColumn.Name = "iMPORTEORIDataGridViewTextBoxColumn";
+            this.iMPORTEORIDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iMPORTEARSDataGridViewTextBoxColumn
+            // 
+            this.iMPORTEARSDataGridViewTextBoxColumn.DataPropertyName = "IMPORTE_ARS";
+            this.iMPORTEARSDataGridViewTextBoxColumn.HeaderText = "IMPORTE_ARS";
+            this.iMPORTEARSDataGridViewTextBoxColumn.Name = "iMPORTEARSDataGridViewTextBoxColumn";
+            this.iMPORTEARSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sALDOFACTURADataGridViewTextBoxColumn
+            // 
+            this.sALDOFACTURADataGridViewTextBoxColumn.DataPropertyName = "SALDOFACTURA";
+            this.sALDOFACTURADataGridViewTextBoxColumn.HeaderText = "SALDOFACTURA";
+            this.sALDOFACTURADataGridViewTextBoxColumn.Name = "sALDOFACTURADataGridViewTextBoxColumn";
+            this.sALDOFACTURADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // logDateDataGridViewTextBoxColumn1
+            // 
+            this.logDateDataGridViewTextBoxColumn1.DataPropertyName = "LogDate";
+            this.logDateDataGridViewTextBoxColumn1.HeaderText = "LogDate";
+            this.logDateDataGridViewTextBoxColumn1.Name = "logDateDataGridViewTextBoxColumn1";
+            this.logDateDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // logUsuarioDataGridViewTextBoxColumn
+            // 
+            this.logUsuarioDataGridViewTextBoxColumn.DataPropertyName = "LogUsuario";
+            this.logUsuarioDataGridViewTextBoxColumn.HeaderText = "LogUsuario";
+            this.logUsuarioDataGridViewTextBoxColumn.Name = "logUsuarioDataGridViewTextBoxColumn";
+            this.logUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tIPODataGridViewTextBoxColumn1
+            // 
+            this.tIPODataGridViewTextBoxColumn1.DataPropertyName = "TIPO";
+            this.tIPODataGridViewTextBoxColumn1.HeaderText = "TIPO";
+            this.tIPODataGridViewTextBoxColumn1.Name = "tIPODataGridViewTextBoxColumn1";
+            this.tIPODataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // zOPDataGridViewTextBoxColumn
+            // 
+            this.zOPDataGridViewTextBoxColumn.DataPropertyName = "ZOP";
+            this.zOPDataGridViewTextBoxColumn.HeaderText = "ZOP";
+            this.zOPDataGridViewTextBoxColumn.Name = "zOPDataGridViewTextBoxColumn";
+            this.zOPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idFacturaXDataGridViewTextBoxColumn1
+            // 
+            this.idFacturaXDataGridViewTextBoxColumn1.DataPropertyName = "IdFacturaX";
+            this.idFacturaXDataGridViewTextBoxColumn1.HeaderText = "IdFacturaX";
+            this.idFacturaXDataGridViewTextBoxColumn1.Name = "idFacturaXDataGridViewTextBoxColumn1";
+            this.idFacturaXDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // iDDOCDataGridViewTextBoxColumn
+            // 
+            this.iDDOCDataGridViewTextBoxColumn.DataPropertyName = "IDDOC";
+            this.iDDOCDataGridViewTextBoxColumn.HeaderText = "IDDOC";
+            this.iDDOCDataGridViewTextBoxColumn.Name = "iDDOCDataGridViewTextBoxColumn";
+            this.iDDOCDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // t0005MPROVEEDORESDataGridViewTextBoxColumn
+            // 
+            this.t0005MPROVEEDORESDataGridViewTextBoxColumn.DataPropertyName = "T0005_MPROVEEDORES";
+            this.t0005MPROVEEDORESDataGridViewTextBoxColumn.HeaderText = "T0005_MPROVEEDORES";
+            this.t0005MPROVEEDORESDataGridViewTextBoxColumn.Name = "t0005MPROVEEDORESDataGridViewTextBoxColumn";
+            this.t0005MPROVEEDORESDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // t0203CTACTEPROVIMPUDataGridViewTextBoxColumn
+            // 
+            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn.DataPropertyName = "T0203_CTACTE_PROV_IMPU";
+            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn.HeaderText = "T0203_CTACTE_PROV_IMPU";
+            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn.Name = "t0203CTACTEPROVIMPUDataGridViewTextBoxColumn";
+            this.t0203CTACTEPROVIMPUDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // t203Bs
+            // 
+            this.t203Bs.DataSource = typeof(TecserEF.Entity.T0203_CTACTE_PROV);
             // 
             // FrmDetalle403
             // 

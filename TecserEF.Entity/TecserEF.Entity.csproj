@@ -85,6 +85,10 @@
     <Compile Include="DataStructure\CompleteMaterialList.cs" />
     <Compile Include="DataStructure\Costos\StxCRManufactura.cs" />
     <Compile Include="DataStructure\Costos\StxCRReposicion.cs" />
+    <Compile Include="DataStructure\DsCierreCobranzasxCliente.cs" />
+    <Compile Include="DataStructure\DsCierreComprasGastos.cs" />
+    <Compile Include="DataStructure\DsCierreDetalleCompraDirectos.cs" />
+    <Compile Include="DataStructure\DsCierreVentas.cs" />
     <Compile Include="DataStructure\dsFacturasOP.cs" />
     <Compile Include="DataStructure\DsCreditosOP.cs" />
     <Compile Include="DataStructure\DsOpDetalleImputacionPorFactura.cs" />
@@ -475,6 +479,9 @@
       <DependentUpon>TecserModel.tt</DependentUpon>
     </Compile>
     <Compile Include="T0139_GL_CIERRE_TEMPORAL.cs">
+      <DependentUpon>TecserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T0139_ResumenCierre.cs">
       <DependentUpon>TecserModel.tt</DependentUpon>
     </Compile>
     <Compile Include="T0140_GL_CIERRE_EJERCICIO.cs">

@@ -125,7 +125,7 @@ namespace MASngFE.Transactional.FI.Transferencias
                 {
                     BsListaCheques.DataSource =
                         new ChequesManager().GetListaChequesFiltrada("", true,
-                            menorIgualaFecha: dtpFechaTransaccion.Value);
+                            fechaAcreditacionMaxima: dtpFechaTransaccion.Value);
                 }
                 else
                 {
@@ -219,7 +219,7 @@ namespace MASngFE.Transactional.FI.Transferencias
                 if (ckVerSoloParaDepositar.Checked)
                 {
                     BsListaCheques.DataSource = new ChequesManager().GetListaChequesFiltrada(tipo, true,
-                        menorIgualaFecha: dtpFechaTransaccion.Value);
+                        fechaAcreditacionMaxima: dtpFechaTransaccion.Value);
                 }
                 else
                 {
@@ -231,7 +231,7 @@ namespace MASngFE.Transactional.FI.Transferencias
                 if (ckVerSoloParaDepositar.Checked)
                 {
                     BsListaCheques.DataSource = new ChequesManager().GetListaChequesFiltrada("", true,
-                        menorIgualaFecha: dtpFechaTransaccion.Value);
+                        fechaAcreditacionMaxima: dtpFechaTransaccion.Value);
                 }
                 else
                 {

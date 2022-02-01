@@ -25,6 +25,10 @@ namespace TecserEF.Entity.DataStructure
         public string TipoSalida { get; set; }
         public bool Rechazado { get; set; }
         public bool IsEcheque { get; set; }
-
+        public int IdCobranza { get; set; } 
+        public int IdClienteRecibido { get; set; }
+        public string ProveedorSalida { get; set; }
+        public string StatusCheque { get; set; }
+        public int IdProveedorSalida { get; set; }
     }
 }

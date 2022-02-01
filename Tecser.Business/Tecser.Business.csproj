@@ -202,10 +202,15 @@
     <Compile Include="Tools\TsDialogo.cs" />
     <Compile Include="Tools\Validaciones.cs" />
     <Compile Include="Tools\ValidacionManager.cs" />
+    <Compile Include="Transactional\Cierre\CierreCobranzas.cs" />
+    <Compile Include="Transactional\Cierre\CierreDetalleDirectos.cs" />
+    <Compile Include="Transactional\Cierre\ComprasGastosMensual.cs" />
     <Compile Include="Transactional\Cierre\ConciliacionSaldos203_204.cs" />
     <Compile Include="Transactional\Cierre\ConciliaGeneral.cs" />
+    <Compile Include="Transactional\Cierre\StockCheques.cs" />
     <Compile Include="Transactional\Cierre\VendorConcil.cs" />
     <Compile Include="Transactional\Cierre\VendorEgresosConcilia.cs" />
+    <Compile Include="Transactional\Cierre\VentasMensual.cs" />
     <Compile Include="Transactional\CO\AsientoContable\ACustomerL2_T400.cs" />
     <Compile Include="Transactional\CO\AsientoContable\AsientoCopia.cs" />
     <Compile Include="Transactional\CO\AsientoContable\AsientoMateriales.cs" />
@@ -492,6 +497,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.Cc1AnalisisDiferenciaStructure.datasource" />
+    <None Include="Properties\DataSources\TecserEF.Entity.DataStructure.TsCheques1.datasource" />
     <None Include="Properties\DataSources\TecserEF.Entity.T0030_STOCK.datasource" />
     <None Include="Tecser.Business.AFIP\app.config" />
     <None Include="Tecser.Business.AFIP\My Project\Settings.settings" />

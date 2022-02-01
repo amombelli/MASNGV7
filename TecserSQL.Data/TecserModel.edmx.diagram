@@ -322,6 +322,7 @@
         <AssociationConnector Association="MADBModel.FK_T0212_OP_ITEM_T0210_OP_H" />
         <EntityTypeShape EntityType="MADBModel.T0210_OrdenPagoHeader" Width="1.5" PointX="8.25" PointY="118.125" />
         <AssociationConnector Association="MADBModel.FK_T0210_OrdenPagoHeader_T0005_MPROVEEDORES" />
+        <EntityTypeShape EntityType="MADBModel.T0139_ResumenCierre" Width="1.5" PointX="10.375" PointY="24.75" />
       </Diagram>
       <Diagram DiagramId="500e54f8af1d4dc4b48895dea01dede3" Name="FI" >
         <EntityTypeShape EntityType="MADBModel.T0017_CONDIVA" Width="1.5" PointX="2" PointY="1.375" FillColor="255, 128, 0" />

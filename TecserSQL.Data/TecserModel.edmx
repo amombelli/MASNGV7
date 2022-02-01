@@ -2241,6 +2241,24 @@ advertencia 6002: La tabla o vista 'MADB.dbo.T0139_GL_CIERRE_TEMPORAL' no tiene 
           <Property Name="LOG_U_MODI" Type="nvarchar" MaxLength="255" />
           <Property Name="LOG_D_MODI" Type="datetime" />
         </EntityType>
+        <EntityType Name="T0139_ResumenCierre">
+          <Key>
+            <PropertyRef Name="Periodo" />
+          </Key>
+          <Property Name="Periodo" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="FechaUpdate" Type="datetime" Nullable="false" />
+          <Property Name="SaldoCheques" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SaldoIcbc" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SaldoSantander" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SaldoGalicia" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="KgVendidos" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="KgComprados" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalFacturado" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalComprado" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalGasto" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalPagado" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LX" Type="nvarchar" MaxLength="2" Nullable="false" />
+        </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'MADB.dbo.T0140_GL_CIERRE_EJERCICIO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="T0140_GL_CIERRE_EJERCICIO">
@@ -5360,18 +5378,6 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_T0203_CTACTE_PROV_IMPU_T0203_CTACTE_PROV2">
-          <End Role="T0203_CTACTE_PROV" Type="Self.T0203_CTACTE_PROV" Multiplicity="1" />
-          <End Role="T0203_CTACTE_PROV_IMPU" Type="Self.T0203_CTACTE_PROV_IMPU" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="T0203_CTACTE_PROV">
-              <PropertyRef Name="IDCTACTE" />
-            </Principal>
-            <Dependent Role="T0203_CTACTE_PROV_IMPU">
-              <PropertyRef Name="CTACTE2" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_T0203_CTACTE_PROV_T0005_MPROVEEDORES">
           <End Role="T0005_MPROVEEDORES" Type="Self.T0005_MPROVEEDORES" Multiplicity="1" />
           <End Role="T0203_CTACTE_PROV" Type="Self.T0203_CTACTE_PROV" Multiplicity="*" />
@@ -6015,6 +6021,7 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <EntitySet Name="T0136_GLTREE" EntityType="Self.T0136_GLTREE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0137_GL_MAPPING" EntityType="Self.T0137_GL_MAPPING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0138_PERIODOS" EntityType="Self.T0138_PERIODOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T0139_ResumenCierre" EntityType="Self.T0139_ResumenCierre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0140_MargenOperacion" EntityType="Self.T0140_MargenOperacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0141_MargenVenta" EntityType="Self.T0141_MargenVenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T0150_CUENTAS" EntityType="Self.T0150_CUENTAS" Schema="dbo" store:Type="Tables" />
@@ -6928,10 +6935,6 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
           <AssociationSet Name="FK_T0202_CTACTESALDOS_T0006_MCLIENTES" Association="Self.FK_T0202_CTACTESALDOS_T0006_MCLIENTES">
             <End Role="T0006_MCLIENTES" EntitySet="T0006_MCLIENTES" />
             <End Role="T0202_CTACTESALDOS" EntitySet="T0202_CTACTESALDOS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_T0203_CTACTE_PROV_IMPU_T0203_CTACTE_PROV2" Association="Self.FK_T0203_CTACTE_PROV_IMPU_T0203_CTACTE_PROV2">
-            <End Role="T0203_CTACTE_PROV" EntitySet="T0203_CTACTE_PROV" />
-            <End Role="T0203_CTACTE_PROV_IMPU" EntitySet="T0203_CTACTE_PROV_IMPU" />
           </AssociationSet>
           <AssociationSet Name="FK_T0203_CTACTE_PROV_T0005_MPROVEEDORES" Association="Self.FK_T0203_CTACTE_PROV_T0005_MPROVEEDORES">
             <End Role="T0005_MPROVEEDORES" EntitySet="T0005_MPROVEEDORES" />
@@ -12640,6 +12643,7 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             <End Role="T0210_OrdenPagoHeader" EntitySet="T0210_OrdenPagoHeader" />
             <End Role="T0213_OrdenPagoRetenciones" EntitySet="T0213_OrdenPagoRetenciones" />
           </AssociationSet>
+          <EntitySet Name="T0139_ResumenCierre" EntityType="MADBModel.T0139_ResumenCierre" />
           </EntityContainer>
         <ComplexType Name="GetDataOrdenCompra_byOCNum_Result">
           <Property Type="Int32" Name="IDORDENCOMPRA" Nullable="false" />
@@ -14061,6 +14065,24 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="T0139_ResumenCierre">
+          <Key>
+            <PropertyRef Name="Periodo" />
+          </Key>
+          <Property Name="Periodo" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FechaUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SaldoCheques" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SaldoIcbc" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SaldoSantander" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SaldoGalicia" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="KgVendidos" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="KgComprados" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TotalFacturado" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TotalComprado" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TotalGasto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TotalPagado" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="LX" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -18820,6 +18842,25 @@ advertencia 6002: La tabla o vista 'MADB.dbo.ZBALL2' no tiene definida ninguna c
                 <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="IdOP" ColumnName="IdOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T0139_ResumenCierre">
+            <EntityTypeMapping TypeName="MADBModel.T0139_ResumenCierre">
+              <MappingFragment StoreEntitySet="T0139_ResumenCierre">
+                <ScalarProperty Name="LX" ColumnName="LX" />
+                <ScalarProperty Name="TotalPagado" ColumnName="TotalPagado" />
+                <ScalarProperty Name="TotalGasto" ColumnName="TotalGasto" />
+                <ScalarProperty Name="TotalComprado" ColumnName="TotalComprado" />
+                <ScalarProperty Name="TotalFacturado" ColumnName="TotalFacturado" />
+                <ScalarProperty Name="KgComprados" ColumnName="KgComprados" />
+                <ScalarProperty Name="KgVendidos" ColumnName="KgVendidos" />
+                <ScalarProperty Name="SaldoGalicia" ColumnName="SaldoGalicia" />
+                <ScalarProperty Name="SaldoSantander" ColumnName="SaldoSantander" />
+                <ScalarProperty Name="SaldoIcbc" ColumnName="SaldoIcbc" />
+                <ScalarProperty Name="SaldoCheques" ColumnName="SaldoCheques" />
+                <ScalarProperty Name="FechaUpdate" ColumnName="FechaUpdate" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -19,10 +19,10 @@
       <Value Profile="(Default)">Data Source=ANDREWS2;Initial Catalog=MADB;Persist Security Info=True;User ID=sa;Password=Andrews555;MultipleActiveResultSets=True;Application Name=EntityFramework</Value>
     </Setting>
     <Setting Name="AppVersion" Type="System.String" Scope="User">
-      <Value Profile="(Default)">6.220118a</Value>
+      <Value Profile="(Default)">6.220124d</Value>
     </Setting>
     <Setting Name="AppMode" Type="System.Char" Scope="User">
-      <Value Profile="(Default)">G</Value>
+      <Value Profile="(Default)">P</Value>
     </Setting>
     <Setting Name="MADBConnectionString2" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

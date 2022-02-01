@@ -250,6 +250,7 @@ namespace TecserEF.Entity
         public virtual DbSet<T0213_OrdenPagoRetenciones> T0213_OrdenPagoRetenciones { get; set; }
         public virtual DbSet<T0212_OP_ITEM> T0212_OP_ITEM { get; set; }
         public virtual DbSet<T0210_OrdenPagoHeader> T0210_OrdenPagoHeader { get; set; }
+        public virtual DbSet<T0139_ResumenCierre> T0139_ResumenCierre { get; set; }
     
         public virtual ObjectResult<GetDataOrdenCompra_byOCNum_Result> GetDataOrdenCompra_byOCNum(Nullable<int> numeroOC)
         {
